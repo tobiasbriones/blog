@@ -238,6 +238,20 @@ class TreeAxesCanvas extends MrmCanvas {
 }
 ```
 
+Then
+
+```ts
+const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
+const axesCanvas = new TreeAxesCanvas();
+
+axesCanvas.init(canvasEl);
+axesCanvas.render();
+```
+
+**Axes Canvas**
+
+![Axes Canvas Screenshot](axes-canvas-screenshot.png)
+
 ### Drawing the Tree
 
 The tree canvas is quite more complicated. The class consists of the following
@@ -370,6 +384,22 @@ ctx.fillText(txt, x, y + txtHeight / 2);
 Notice in the call to `measureText`, we use an advanced Canvas API to get the
 text height and be able to center it vertically. It is horizontally centered
 with `ctx.textAlign = 'center'`.
+
+By running at this stage we obtain the fist node drawn representing the initial
+decision year:
+
+```ts
+const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
+const canvas = new SolutionsTreeCanvas();
+
+canvas.rootNode = this.solver.getSolutionsTree(); // Use your tree here
+canvas.init(canvasEl);
+
+canvas.render();
+```
+
+**Draw Node Circle and Content**
+![Draw Node Circle and Content Screenshot](draw-circle-and-content-screenshot.png)
 
 #### Line with Labels from Node to Node (`drawNodeLines`)
 
@@ -512,3 +542,9 @@ canvas.init(canvasEl);
 
 canvas.render();
 ```
+
+By running now, we get the desired result:
+
+**Solutions Tree Canvas**
+
+![Solutions Tree Canvas Screenshot](solutions-tree-canvas.png)
