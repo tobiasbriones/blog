@@ -58,6 +58,14 @@ article:
 
 ![Module mrm-canvas (UML Class Diagram)](mrm-module-uml-class-diagram.svg)
 
+This function is going to help with some calculations:
+
+```ts
+function getHypotenuse(triangleX: number, triangleY: number) {
+  return Math.sqrt(Math.pow(triangleX, 2) + Math.pow(triangleY, 2));
+}
+```
+
 ### Data Structures
 
 The solutions tree for the machine replacement model consists of the following
