@@ -548,3 +548,41 @@ By running now, we get the desired result:
 **Solutions Tree Canvas**
 
 ![Solutions Tree Canvas Screenshot](solutions-tree-canvas.png)
+
+### Analysis
+
+#### Memoization
+
+If we remove the memoization, nodes will be rendered more than once which is not
+accepted. The results are shown below. Recall that we still render the node
+circle and content to fix incorrectness but the lines and labels must not be
+drawn more than once. Excluding the lines (and labels) drawing is partial
+drawing, so we only draw the circle and content.
+
+The tree is binary containing `15` nodes.
+
+| Technique                                     | Rendering Times |
+|-----------------------------------------------|-----------------|
+| With Memoization (partial drawings)           | 15              |
+| With Memoization (whole and partial drawings) | 21              |
+| Without Memoization                           | 31              |
+
+Hence, the `drawNode` function is called `21` times to render the whole tree but
+just `15` of those are full rendering.
+
+With memoization off is visually clear that nodes are being rendered on top of
+themselves, so it's easy to stop that flaw:
+
+**Memoization Off**
+
+![Memoization Off Screenshot](memoization-off.png)
+
+The problem if we use full memoization is as said before, correctness:
+
+**Full Memoization**
+
+![Full Memoization Screenshot](full-memoization.png)
+
+The optimization can be addressed by computing a more accurate model and just
+drawing the exact required line tangent to the nodes, so they don't overlap with
+the other content. 
