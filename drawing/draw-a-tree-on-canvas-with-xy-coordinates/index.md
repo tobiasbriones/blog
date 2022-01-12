@@ -2,6 +2,8 @@
 
 ## Requirements
 
+### Knowledge
+
 Moderate:
 
 - Tree data structure
@@ -12,3 +14,10 @@ Basic:
 - TS/JS, DOM and Canvas APIs
 - HTML
 - Trigonometry
+
+### Tools
+
+- Internet Browser
+- Text editor/IDE (Webstorm, VSC, ...)
+- GitHub
+- Tree object (provided [here](root-node.json))
