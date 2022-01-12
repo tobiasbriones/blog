@@ -9,6 +9,6 @@ Moderate:
 
 Basic:
 
-- JS/TS, DOM and Canvas APIs
+- TS/JS, DOM and Canvas APIs
 - HTML
 - Trigonometry
