@@ -472,6 +472,24 @@ The initial method `drawNode` is called recursively (recall that `drawNode` was
 the caller and `drawNodeLines` is the callee) and the `memoization`
 set is carried to the method call.
 
+##### Take Away
+
+One important design here to notice is that I placed the `drawNode` method first
+and then the `drawNodeLines` method later. The mathematical way to sort
+functions, methods or any source code structure is by the abstraction level.
+High level constructs go first and the details go later. But there is more on
+it. Therefore, I always place caller functions/methods above the callee ones.
+This way an infinite loop is avoided and the code is well-defined and naturally
+sorted (including cohesiveness too). Now, notice that this method is an
+exception to the case since we are using recursion (thus we have a recursive
+step) and the below method calls the above one (the other way around as normal).
+Constants, enums, mutators, accessors, etc., are not sorted this way (they are
+top-level constructs used by constructs placed below them) as they are
+definitions and not implementations or actions like functions. Just consider
+these design concepts but have in mind that in practice, time and staff talent
+is pretty limited and not everytime will be feasible to apply rigorous concepts
+by the engineering practitioner.
+
 ### Result
 
 Importing the developed module, the API is consumed as follows:
