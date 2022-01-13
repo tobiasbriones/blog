@@ -250,7 +250,7 @@ axesCanvas.render();
 
 **Axes Canvas**
 
-![Axes Canvas Screenshot](axes-canvas-screenshot.png)
+![Axes Canvas](axes-canvas.png)
 
 ### Drawing the Tree
 
@@ -399,7 +399,7 @@ canvas.render();
 ```
 
 **Draw Node Circle and Content**
-![Draw Node Circle and Content Screenshot](draw-circle-and-content-screenshot.png)
+![Draw Node Circle and Content](draw-circle-and-content.png)
 
 #### Line with Labels from Node to Node (`drawNodeLines`)
 
@@ -547,7 +547,7 @@ By running now, we get the desired result:
 
 **Solutions Tree Canvas**
 
-![Solutions Tree Canvas Screenshot](solutions-tree-canvas.png)
+![Solutions Tree Canvas](solutions-tree-canvas.png)
 
 ### Analysis
 
@@ -575,13 +575,13 @@ themselves, so it's easy to stop that flaw:
 
 **Memoization Off**
 
-![Memoization Off Screenshot](memoization-off.png)
+![Memoization Off](memoization-off.png)
 
 The problem if we use full memoization is as said before, correctness:
 
 **Full Memoization**
 
-![Full Memoization Screenshot](full-memoization.png)
+![Full Memoization](full-memoization.png)
 
 The optimization can be addressed by computing a more accurate model and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
