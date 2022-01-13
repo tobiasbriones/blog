@@ -431,6 +431,8 @@ The rectangle triangle defined by the two node points is going to be useful for
 computing the directions for the outgoing lines from the current node to the
 next one. We simply use similar triangles to obtain the requesting points.
 
+![Triangle](triangle.svg)
+
 ```ts
 const triangle = (next: TreeNode) => {
   const nextCP = this.getNodeCP(next);
