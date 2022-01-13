@@ -66,6 +66,13 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 }
 ```
 
+#### Resources
+
+- [root-node.json](root-node.json)
+- [model.ts](model.ts)
+- [mrm-canvas.ts](mrm-canvas.ts)
+- [triangle.py](triangle.py)
+
 ### Data Structures
 
 The solutions tree for the machine replacement model consists of the following
@@ -587,4 +594,4 @@ The problem if we use full memoization is as said before, correctness:
 
 The optimization can be addressed by computing a more accurate model and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
-the other content. 
+the other content.
