@@ -33,7 +33,6 @@ Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
 
 ```html
-
 <div id="solutionsTreeParent">
   <canvas id="solutionsTree">
   </canvas>
