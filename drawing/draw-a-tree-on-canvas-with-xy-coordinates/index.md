@@ -1,5 +1,11 @@
 # Draw a Tree on Canvas with XY Coordinates
 
+In this article a detailed design and development of how to draw a tree data
+structure with HTML Canvas and TypeScript is given. The problem arose from the
+development of a solutions-tree useful for the machine replacement problem from
+the operations research field. A detailed analysis on the recursion applied is
+also developed.
+
 ## Introduction
 
 The **Machine Replacement Model** is a deterministic dynamic programming model
@@ -194,8 +200,8 @@ abstract class MrmCanvas {
 
 This reminds me of my other project
 [Gencesk 2D](https://github.com/tobiasbriones/gencesk-2d) which was a game
-framework/engine prototype. I think this project might as well be super useful
-in the future.
+framework/engine prototype. I think it might as well be super useful in the
+future.
 
 ### Drawing the Axes
 
