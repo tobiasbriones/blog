@@ -1,5 +1,45 @@
 # Draw a Tree on Canvas with XY Coordinates
 
+## Introduction
+
+The **Machine Replacement Model** is a deterministic dynamic programming model
+from Operations Research. It states that you have a machine with an initial age.
+You have a number of decision years to know what to do with that machine. Then,
+for each decision year, there are two options: keep the machine and pay
+maintenance (K), or replace the machine with a new one (R). All the possible
+outcomes starting from the first decision year can be visually represented as a
+tree which grows horizontally.
+
+The first solutions-tree I created, was made with HTML, CSS and the DOM
+API (`div` elements). That version can be found at
+[EP: MRM](https://github.com/tobiasbriones/ep-machine-replacement-model). It's
+recommended to check it out for understanding the problem better and getting
+text book references. You can also review
+the [Repsymo Solver](https://repsymo.com) for a complete insight on this
+problem (and more).
+
+![Solutions Tree with HTML and CSS](ep-mrm-tree-screenshot.png)
+
+The chances are obviously limited and the lines from node to node are missing
+(hence the pairs (K, R) as labels). The other problem is that the data structure
+was a two-dimensional array but the problem model corresponds to a tree. This
+solution was a very good fit back in the day for moving forward faster with the
+development.
+
+The problem consists of populating the binary tree data structure onto a canvas
+and also the xy-axes.
+
+A browser canvas (or canvas in general) is not the best performant solution but
+is a great step for this problem in terms of rendering and correctness.
+
+Other more common tree data structure is a file explorer which loads your
+directories and files from your disk. For working with trees we natively
+implement recursion as the natural or mathematical definition of the problem.
+Here another project showing some recursion and designed to work with file
+systems
+[CP: Dist. Text File System](https://github.com/tobiasbriones/cp-unah-mm545-distributed-text-file-system)
+where its left panel with a populated root directory is also a tree.
+
 ## Requirements
 
 ### Knowledge
