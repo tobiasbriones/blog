@@ -641,3 +641,12 @@ The problem if we use full memoization is as said before, correctness:
 The optimization can be addressed by computing a more accurate model and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
 the other content.
+
+#### Order of Rendering
+
+By counting the time a node was drawn with full memoization and drawing it on
+top of the node in blue we can easily debug or follow the recursion process.
+Recall that, as said above, the last nodes from the bottom are partially drawn
+more times later.
+
+![Drawing Order](drawing-order.png)
