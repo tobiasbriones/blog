@@ -110,11 +110,14 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 - [root-node.json](root-node.json)
 - [model.ts](model.ts)
 - [mrm-canvas.ts](mrm-canvas.ts)
+
+##### Other Resources
+
 - [triangle.py](triangle.py)
 
 ### Data Structures
 
-The solutions tree for the machine replacement model consists of the following
+The solutions-tree for the machine replacement model consists of the following
 data structure:
 
 ```ts
@@ -437,10 +440,9 @@ decision year:
 ```ts
 const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
 const canvas = new SolutionsTreeCanvas();
-
 canvas.rootNode = this.solver.getSolutionsTree(); // Use your tree here
-canvas.init(canvasEl);
 
+canvas.init(canvasEl);
 canvas.render();
 ```
 
