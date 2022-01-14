@@ -596,7 +596,7 @@ by the engineering practitioner.
 For managing more proper rendering sizes
 [this may be an idea](https://github.com/repsymo/2dp-repsymo-solver/pull/22).
 
-Another option is to call the method `render` on window size changed, adding 
+Another option is to call the method `init` on window size changed, adding
 scroll, etc. Performance should be considered here.
 
 ### Result
