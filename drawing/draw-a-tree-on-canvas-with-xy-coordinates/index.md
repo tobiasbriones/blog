@@ -591,6 +591,14 @@ these design concepts but have in mind that in practice, time and staff talent
 is pretty limited and not everytime will be feasible to apply rigorous concepts
 by the engineering practitioner.
 
+### Enhancing Rendering Sizes
+
+For managing more proper rendering sizes
+[this may be an idea](https://github.com/repsymo/2dp-repsymo-solver/pull/22).
+
+Another option is to call the method `render` on window size changed, adding 
+scroll, etc. Performance should be considered here.
+
 ### Result
 
 Importing the developed module, the API is consumed as follows:
