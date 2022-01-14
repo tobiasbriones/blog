@@ -650,3 +650,17 @@ Recall that, as said above, the last nodes from the bottom are partially drawn
 more times later.
 
 ![Drawing Order](drawing-order.png)
+
+## Conclusion
+
+A typescript module was designed and developed to render a xy-axis and then the
+solutions-tree required. The HTML 5 Canvas API was used to achieve the main
+objective. A detailed analysis regarding recursion was given and also several
+recommendations and references to the reader.
+
+Similar triangles was applied to position the node labels. For fixing and
+optimizing the recursive tree traversal rendering, a standard memoization with
+a `Set` was applied.
+
+An introduction with further scope of the machine replacement model was given as
+a value-added to the reader.
