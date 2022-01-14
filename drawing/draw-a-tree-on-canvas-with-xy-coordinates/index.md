@@ -190,6 +190,11 @@ abstract class MrmCanvas {
 }
 ```
 
+This reminds me of my other project
+[Gencesk 2D](https://github.com/tobiasbriones/gencesk-2d) which was a game
+framework/engine prototype. I think this project might as well be super useful
+in the future.
+
 ### Drawing the Axes
 
 First, the axes lines are easily drawn:
