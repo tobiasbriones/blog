@@ -1,9 +1,9 @@
 # Draw a Tree on Canvas with XY Coordinates
 
-In this article a detailed design and development of how to draw a tree data
-structure with HTML Canvas and TypeScript is given. The problem arose from the
+In this article, a detailed design and development of how to draw a tree data
+structure with HTML Canvas and TypeScript are given. The problem arose from the
 development of a solutions-tree useful for the machine replacement problem from
-the operations research field. A detailed analysis on the recursion applied is
+the operations research field. Detailed analysis on the recursion applied is
 also developed.
 
 ## Introduction
@@ -14,13 +14,13 @@ You have a number of decision years to know what to do with that machine. Then,
 for each decision year, there are two options: keep the machine and pay
 maintenance (K), or replace the machine with a new one (R). All the possible
 outcomes starting from the first decision year can be visually represented as a
-tree which grows horizontally.
+tree that grows horizontally.
 
-The first solutions-tree I created, was made with HTML, CSS and the DOM
+The first solutions-tree I created, was made with HTML, CSS, and the DOM
 API (`div` elements). That version can be found at
 [EP: MRM](https://github.com/tobiasbriones/ep-machine-replacement-model). It's
 recommended to check it out for understanding the problem better and getting
-text book references. You can also review
+textbook references. You can also review
 the [Repsymo Solver](https://repsymo.com) for a complete insight on this
 problem (and more).
 
@@ -38,10 +38,10 @@ and also the xy-axes.
 A browser canvas (or canvas in general) is not the best performant solution but
 is a great step for this problem in terms of rendering and correctness.
 
-Other more common tree data structure is a file explorer which loads your
+Another more common tree data structure is a file explorer which loads your
 directories and files from your disk. For working with trees we natively
 implement recursion as the natural or mathematical definition of the problem.
-Here another project showing some recursion and designed to work with file
+Here is another project showing some recursion and designed to work with file
 systems
 [CP: Dist. Text File System](https://github.com/tobiasbriones/cp-unah-mm545-distributed-text-file-system)
 where its left panel with a populated root directory is also a tree.
@@ -57,7 +57,7 @@ Moderate:
 
 Basic:
 
-- TS/JS, OOP, DOM and Canvas APIs
+- TS/JS, OOP, DOM, and Canvas APIs
 - HTML
 - Trigonometry
 
@@ -71,7 +71,7 @@ Basic:
 ## Development
 
 Two elements are required to draw on the canvas, namely, the 2D-Axis and the
-tree which grows horizontally.
+tree that grows horizontally.
 
 ### Getting Started
 
@@ -79,7 +79,6 @@ Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
 
 ```html
-
 <div id="solutionsTreeParent">
   <canvas id="solutionsTree">
   </canvas>
@@ -96,10 +95,10 @@ Some styles can be added.
 }
 ```
 
-Now everything will be programmatically.
+Now everything will be programmatically developed.
 
 Create the module `mrm-canvas` that is going to be developed. It's going to
-contain the following specification that is going to be detailed along this
+contain the following specification that is going to be detailed along with this
 article:
 
 ![Module mrm-canvas (UML Class Diagram)](mrm-module-uml-class-diagram.svg)
@@ -152,7 +151,7 @@ a `model.ts` module.
 The following base class is going to manage the canvases. It has the
 `HTMLCanvasElement` (with its respective context) member so the drawing is
 performed on that canvas element. The init method sets the canvas element and
-its size according its parent element. The render method runs a standard game
+its size according to its parent element. The render method runs a standard game
 loop operation when the model is updated and then the drawing is performed with
 the new model values computed. That means the tree can be re-rendered in
 different states if the `render` method is called.
@@ -219,7 +218,7 @@ ctx.lineWidth = 1;
 ctx.stroke();
 ```
 
-To draw the `X` axis labels, set the text align center and draw the abscissa
+To draw the `X` axis labels, set the text-align center and draw the abscissa
 value from `0` until a maximum set value. There is a variable `cellSizePx` that
 tells the width and height of each cell in the `xy` plane (first quadrant).
 
@@ -448,7 +447,7 @@ Notice in the call to `measureText`, we use an advanced Canvas API to get the
 text height and be able to center it vertically. It is horizontally centered
 with `ctx.textAlign = 'center'`.
 
-By running at this stage we obtain the fist node drawn representing the initial
+By running at this stage we obtain the first node drawn representing the initial
 decision year:
 
 ```ts
@@ -476,7 +475,7 @@ const isNodeBelow = (next: TreeNode) => node.machineAge < next.machineAge;
 
 The `x`, `y` coordinates are the center of the node (Center Point). The arrows
 tell us if the next node is just to the right of the current node
-(iff both nodes' ordinates are the same and equals to `1` for this problem).
+(iff both nodes' ordinates are the same and equal to `1` for this problem).
 
 Drawing the line is straightforward:
 
@@ -489,7 +488,7 @@ ctx.lineTo(nextX, nextY);
 ctx.stroke();
 ```
 
-The rectangle triangle defined by the two node points is going to be useful for
+The rectangle triangle defined by the two-node points is going to be useful for
 computing the directions for the outgoing lines from the current node to the
 next one. We simply use similar triangles to obtain the requesting points.
 
@@ -534,7 +533,7 @@ const drawRightLabel = (next: TreeNode, label: string) => {
 };
 ```
 
-Then just call to one of these functions to draw the appropriate line:
+Then just call one of these functions to draw the appropriate line:
 
 ```ts
 const drawLabelTo = (next: TreeNode, label: string) => {
@@ -579,7 +578,7 @@ set is carried to the method call.
 One important design here to notice is that I placed the `drawNode` method first
 and then the `drawNodeLines` method later. The mathematical way to sort
 functions, methods or any source code structure is by the abstraction level.
-High level constructs go first and the details go later. But there is more on
+High-level constructs go first and the details go later. But there is more on
 it. Therefore, I always place caller functions/methods above the callee ones.
 This way an infinite loop is avoided and the code is well-defined and naturally
 sorted (including cohesiveness too). Now, notice that this method is an
@@ -589,8 +588,8 @@ Constants, enums, mutators, accessors, etc., are not sorted this way (they are
 top-level constructs used by constructs placed below them) as they are
 definitions and not implementations or actions like functions. Just consider
 these design concepts but have in mind that in practice, time and staff talent
-is pretty limited and not everytime will be feasible to apply rigorous concepts
-by the engineering practitioner.
+is pretty limited, and not every time will be feasible to apply rigorous
+concepts by the engineering practitioner.
 
 ### Enhancing Rendering Sizes
 
@@ -649,7 +648,7 @@ themselves, so it's easy to stop that flaw:
 
 ![Memoization Off](memoization-off.png)
 
-The problem if we use full memoization is as said before, correctness:
+The problem, if we use full memoization, is as said before, correctness:
 
 **Full Memoization**
 
@@ -670,8 +669,8 @@ more times later.
 
 ### More Recursion
 
-From the equipment replacement problem we have a solution that tells you what to
-do with the machine or equipment from the first decision year
+From the equipment replacement problem, we have a solution that tells you what
+to do with the machine or equipment from the first decision year
 (result chains). For a given year, it might turn out that both solutions, keep
 or replace, yield the exact same effect, hence we have a bifurcation:
 we have to follow two branches, if we keep and if we replace. This produces a
@@ -683,7 +682,7 @@ the next year.
 ![Result Chains](result-chains.png)
 
 Since the solutions-tree is the set of all possible solutions to the problem,
-and particularly, the problem solution belongs to the three which, with more
+and particularly, the problem-solution belongs to the three which, with more
 clever work can be traced onto the same solutions-tree:
 
 **Traced Solutions Tree:** The model solution can be drawn into the tree.
@@ -698,11 +697,11 @@ Many design and performance issues should be deeply addressed but that's another
 topic. The problem is that these languages TS/JS and platforms like web browser
 runtimes are not good for these problems. I would encourage instead, something
 like Haskell for academic purposes and Rust/JavaFX/WebAssembly for engineering.
-Recall that, just functional languages implement at first class TCE and TCO so
+Recall that, just functional languages implement at first-class TCE and TCO so
 the engineer or mathematician must be careful when using recursion. For most
-languages imperative loops are to be used instead. For mathematical models is
-key to design declarative systems but general purpose computers don't support
-many abstractions and unfortunately, recursion is not so widely used due to
+languages, imperative loops are to be used instead. For mathematical models is
+key to design declarative systems but general-purpose computers don't support
+many abstractions and unfortunately, recursion is not so widely used due to the
 hardware being imperative.
 
 ## Conclusion
@@ -712,8 +711,8 @@ solutions-tree required. The HTML 5 Canvas API was used to achieve the main
 objective. A detailed analysis regarding recursion was given and also several
 recommendations and references to the reader.
 
-Similar triangles was applied to position the node labels. For fixing and
-optimizing the recursive tree traversal rendering, a standard memoization with
+Similar triangles were applied to position the node labels. For fixing and
+optimizing the recursive tree traversal rendering, standard memoization with
 a `Set` was applied.
 
 An introduction with further scope of the machine replacement model was given as
