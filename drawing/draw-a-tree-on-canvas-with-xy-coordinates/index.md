@@ -79,6 +79,7 @@ Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
 
 ```html
+
 <div id="solutionsTreeParent">
   <canvas id="solutionsTree">
   </canvas>
@@ -116,8 +117,8 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 - [root-node.json](root-node.json): sample tree object to render.
 - [model.ts](model.ts): assumed data model.
 - [mrm-canvas.ts](mrm-canvas.ts): underlying module.
-- [gh-pr](https://github.com/repsymo/2dp-repsymo-solver/pull/21): pull 
-  request containing the initial development step by step. 
+- [gh-pr](https://github.com/repsymo/2dp-repsymo-solver/pull/21): pull request
+  containing the initial development step by step.
 
 ##### Other Resources
 
@@ -666,6 +667,43 @@ Recall that, as said above, the last nodes from the bottom are partially drawn
 more times later.
 
 ![Drawing Order](drawing-order.png)
+
+### More Recursion
+
+From the equipment replacement problem we have a solution that tells you what to
+do with the machine or equipment from the first decision year
+(result chains). For a given year, it might turn out that both solutions, keep
+or replace, yield the exact same effect, hence we have a bifurcation:
+we have to follow two branches, if we keep and if we replace. This produces a
+directed graph structure that looks similar to the tree that was developed.
+
+**Result Chains:** Replace the first year and then, two ways can be taken for
+the next year.
+
+![Result Chains](result-chains.png)
+
+Since the solutions-tree is the set of all possible solutions to the problem,
+and particularly, the problem solution belongs to the three which, with more
+clever work can be traced onto the same solutions-tree:
+
+**Traced Solutions Tree:** The model solution can be drawn into the tree.
+
+![Traced Solutions Tree](traced-solutions-tree.png)
+
+Check out
+[Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
+to learn more about it.
+
+Many design and performance issues should be deeply addressed but that's another
+topic. The problem is that these languages TS/JS and platforms like web browser
+runtimes are not good for these problems. I would encourage instead, something
+like Haskell for academic purposes and Rust/JavaFX/WebAssembly for engineering.
+Recall that, just functional languages implement at first class TCE and TCO so
+the engineer or mathematician must be careful when using recursion. For most
+languages imperative loops are to be used instead. For mathematical models is
+key to design declarative systems but general purpose computers don't support
+many abstractions and unfortunately, recursion is not so widely used due to
+hardware being imperative.
 
 ## Conclusion
 
