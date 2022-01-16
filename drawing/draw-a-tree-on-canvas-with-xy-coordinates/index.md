@@ -6,6 +6,10 @@ development of a solutions-tree useful for the machine replacement problem from
 the operations research field. Detailed analysis on the recursion applied is
 also developed.
 
+## Contents
+
+{:toc}
+
 ## Introduction
 
 The **Machine Replacement Model** is a deterministic dynamic programming model
