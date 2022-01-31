@@ -1,2 +1,21 @@
 theme: jekyll-theme-minimal
 permalink: /:basename
+
+title: Blog | Math Software Engineer
+author: Tobias Briones
+
+social-network-links:
+  email: "contact@mathsoftware.engineer"
+  github: tobiasbriones
+  twitter: tobiasbriones_
+  reddit: tobiasbriones
+  linkedin: tobiasbriones
+  stackoverflow: "9560258/tobiasbriones"
+  instagram: tobiasbriones
+  
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
+
+post_search: true
