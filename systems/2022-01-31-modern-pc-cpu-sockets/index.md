@@ -1,6 +1,6 @@
 # Modern PC CPU Sockets
 
-In this research article a brief resume about modern PC sockets is given with
+In this research article, a brief resume about modern PC sockets is given with
 respect to the year 2022.
 
 <iframe 
