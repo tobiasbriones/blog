@@ -2,7 +2,7 @@
 
 [![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/tobiasbriones/blog)
 
-My professional's domain blog.
+Math Software Engineer's Blog.
 
 ## Articles
 
@@ -23,7 +23,7 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 **Blog**
 
-My professional's domain blog.
+Math Software Engineer's Blog.
 
 Copyright © 2021-2022 Tobias Briones. All rights reserved.
 
