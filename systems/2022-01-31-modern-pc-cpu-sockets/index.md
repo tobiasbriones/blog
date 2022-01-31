@@ -1,3 +1,7 @@
+---
+permalink: /2022-01-31-modern-pc-cpu-sockets
+---
+
 # Modern PC CPU Sockets
 
 In this research article a brief resume about modern PC sockets is given with
