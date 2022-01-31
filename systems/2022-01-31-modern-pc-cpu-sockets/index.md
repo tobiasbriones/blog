@@ -1,7 +1,7 @@
 ---
 permalink: /2022-01-31-modern-pc-cpu-sockets
 ---
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 
 # Modern PC CPU Sockets
 
