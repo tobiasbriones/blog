@@ -15,9 +15,6 @@ respect to the year 2022.
     height="800px">
 </iframe>
 
-<script type="text/javascript" charset="utf-8" src="
-https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
-https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 <p>For sequences of numbers, <em>limit inferior</em> and <em>limit
 superior</em> are defined as $\liminf (a_n):=\sup\{\inf\{a_k:k \ge
