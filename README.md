@@ -8,7 +8,9 @@ My professional's domain blog.
 
 This is a temporal list of articles I start publishing:
 
-- [Draw a Tree on Canvas with XY Coordinates](https://blog.mathsoftware.engineer/drawing/draw-a-tree-on-canvas-with-xy-coordinates/)
+- [Draw a Tree on Canvas with XY Coordinates](https://blog.mathsoftware.engineer/draw-a-tree-on-canvas-with-xy-coordinates)
+
+- [Modern PC CPU Sockets (2022)](https://blog.mathsoftware.engineer/2022-01-31-modern-pc-cpu-sockets).
 
 ## Contact
 
