@@ -4,12 +4,6 @@
 
 My professional's domain blog.
 
-## Articles
-
-This is a temporal list of articles I start publishing:
-
-- [Draw a Tree on Canvas with XY Coordinates](https://blog.mathsoftware.engineer/drawing/draw-a-tree-on-canvas-with-xy-coordinates/)
-
 ## Contact
 
 This project: [Website](https://blog.mathsoftware.engineer),
