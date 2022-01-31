@@ -1,3 +1,7 @@
+---
+permalink: /draw-a-tree-on-canvas-with-xy-coordinates
+---
+
 # Draw a Tree on Canvas with XY Coordinates
 
 In this article, a detailed design and development of how to draw a tree data
