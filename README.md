@@ -1,5 +1,7 @@
 # Blog
 
+<link rel="icon" type="image/png" href="favicon.png">
+
 [![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/tobiasbriones/blog)
 
 Math Software Engineer's Blog.
