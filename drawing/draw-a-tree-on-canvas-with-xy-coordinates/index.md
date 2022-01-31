@@ -6,6 +6,34 @@ development of a solutions-tree useful for the machine replacement problem from
 the operations research field. Detailed analysis on the recursion applied is
 also developed.
 
+## Table of Contents
+
+- [Draw a Tree on Canvas with XY Coordinates](#draw-a-tree-on-canvas-with-xy-coordinates)
+  * [Introduction](#introduction)
+  * [Requirements](#requirements)
+    + [Knowledge](#knowledge)
+    + [Tools](#tools)
+  * [Development](#development)
+    + [Getting Started](#getting-started)
+      - [Resources](#resources)
+        * [Other Resources](#other-resources)
+    + [Data Structures](#data-structures)
+      - [Canvas](#canvas)
+    + [Drawing the Axes](#drawing-the-axes)
+    + [Drawing the Tree](#drawing-the-tree)
+      - [Drawing a Node (`drawNode`)](#drawing-a-node---drawnode--)
+      - [Node Circle and Content (`drawNodeCircle` and `drawNodeContent`)](#node-circle-and-content---drawnodecircle--and--drawnodecontent--)
+      - [Line with Labels from Node to Node (`drawNodeLines`)](#line-with-labels-from-node-to-node---drawnodelines--)
+        * [Take Away](#take-away)
+    + [Enhancing Rendering Sizes](#enhancing-rendering-sizes)
+    + [Result](#result)
+    + [Analysis](#analysis)
+      - [Memoization](#memoization)
+      - [Order of Rendering](#order-of-rendering)
+    + [More Recursion](#more-recursion)
+  * [Conclusion](#conclusion)
+  * [Bibliography](#bibliography)
+
 ## Introduction
 
 The **Machine Replacement Model** is a deterministic dynamic programming model
