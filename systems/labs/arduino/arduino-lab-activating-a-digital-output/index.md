@@ -14,6 +14,27 @@ permalink: /arduino-lab-activating-a-digital-output
 </script>
 # Arduino Laboratory: Activating a Digital Output
 
+## Table of Contents
+
+- [Arduino Laboratory: Activating a Digital Output](#arduino-laboratory--activating-a-digital-output)
+  * [Objectives](#objectives)
+    + [General Objective](#general-objective)
+    + [Specific Objectives](#specific-objectives)
+  * [Framework](#framework)
+    + [Arduino](#arduino)
+    + [Proteus Simulator](#proteus-simulator)
+      - [Review](#review)
+      - [Arduino Designer](#arduino-designer)
+      - [Install Arduino Board](#install-arduino-board)
+    + [Compute the LED Resistor Value](#compute-the-led-resistor-value)
+  * [Experimental Procedure](#experimental-procedure)
+    + [Create Arduino Program](#create-arduino-program)
+    + [Run Simulation in Proteus](#run-simulation-in-proteus)
+  * [Analysis of Results](#analysis-of-results)
+  * [Conclusions](#conclusions)
+  * [Referencias](#referencias)
+
+
 ## Objectives
 
 ### General Objective
@@ -145,13 +166,13 @@ calculation of the resistor of the LED.
 
 For other calculations with series configuration we have [@szyk-2022]:
 
-- $R = \frac{V - n*V_0}{I_0}$
+- $$R = \frac{V - n*V_0}{I_0}$$.
 
 - $$P_0 = V_0 * I_0$$.
 
-- $$P = n * V_0 * I_0$$
+- $$P = n * V_0 * I_0$$.
 
-- $$P_r = I_0^2 * R$$
+- $$P_r = I_0^2 * R$$.
 
 ## Experimental Procedure
 
