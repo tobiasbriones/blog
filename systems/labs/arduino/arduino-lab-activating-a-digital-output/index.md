@@ -228,6 +228,8 @@ the Arduino given a set interval. Then, a simulation of the circuit by adding an
 LED as a load to the $12$ output of the Arduino. It was calculated from
 beforehand the resistance of the LED so that it was protection for it.
 
+See also: [Tobias Briones | Course Project at UNAH-IS911: Microprocessors](https://github.com/tobiasbriones/cp-unah-is911-microprocessors).
+
 ## Referencias
 
 - [Arduino - Home (@arduino-2022)](https://www.arduino.cc)
