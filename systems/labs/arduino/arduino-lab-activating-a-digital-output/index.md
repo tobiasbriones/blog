@@ -137,13 +137,13 @@ calculation of the resistor of the LED.
 
 For other calculations with series configuration we have [@szyk-2022]:
 
-- $R = \frac{V - n*V_0}{I_0}$
+$R = \frac{V - n*V_0}{I_0}$
 
-- $P_0 = V_0 * I_0$
+$P_0 = V_0 * I_0$
 
-- $P = n * V_0 * I_0$
+$P = n * V_0 * I_0$
 
-- $P_r = I_0^2 * R$
+$P_r = I_0^2 * R$
 
 ## Experimental Procedure
 
