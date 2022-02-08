@@ -131,13 +131,13 @@ calculation of the resistor of the LED.
 
 For other calculations with series configuration we have [@szyk-2022]:
 
-- $R = \frac{V - n*V_0}{I_0}$
+- $$R = \frac{V - n*V_0}{I_0}$$.
 
-- $P_0 = V_0 * I_0$
+- $$P_0 = V_0 * I_0$$.
 
-- $P = n * V_0 * I_0$
+- $$P = n * V_0 * I_0$$.
 
-- $P_r = I_0^2 * R$
+- $$P_r = I_0^2 * R$$.
 
 ## Experimental Procedure
 
@@ -228,11 +228,11 @@ the Arduino given a set interval. Then, a simulation of the circuit by adding an
 LED as a load to the $12$ output of the Arduino. It was calculated from
 beforehand the resistance of the LED so that it was protection for it.
 
-See also: [Tobias Briones | Course Project at UNAH-IS911: Microprocessors](https://github.com/tobiasbriones/cp-unah-is911-microprocessors).
+See also: [Tobias Briones &#124; Course Project at UNAH-IS911: Microprocessors](https://github.com/tobiasbriones/cp-unah-is911-microprocessors).
 
 ## Referencias
 
 - [Arduino - Home (@arduino-2022)](https://www.arduino.cc)
-- [Omni Calculator | LED Resistor Calculator (@szyk-2022)](https://www.omnicalculator.com/physics/led)
-- [Labcenter Electronics | Arduino Simulation Software - Processor, Shields and Peripherals (@labcenter-electronics-2022)](https://www.labcenter.com/visualdesigner/arduino)
-- [Instructables | How to Add Arduino Library in to Proteus 7 \& 8 (@instructables-2018)](https://www.instructables.com/How-to-add-Arduino-Library-in-to-Proteus-7-8)
+- [Omni Calculator &#124; LED Resistor Calculator (@szyk-2022)](https://www.omnicalculator.com/physics/led)
+- [Labcenter Electronics &#124; Arduino Simulation Software - Processor, Shields and Peripherals (@labcenter-electronics-2022)](https://www.labcenter.com/visualdesigner/arduino)
+- [Instructables &#124; How to Add Arduino Library in to Proteus 7 \& 8 (@instructables-2018)](https://www.instructables.com/How-to-add-Arduino-Library-in-to-Proteus-7-8)
