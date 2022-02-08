@@ -14,27 +14,6 @@ permalink: /arduino-lab-activating-a-digital-output
 </script>
 # Arduino Laboratory: Activating a Digital Output
 
-## Table of Contents
-
-- [Arduino Laboratory: Activating a Digital Output](#arduino-laboratory--activating-a-digital-output)
-  * [Objectives](#objectives)
-    + [General Objective](#general-objective)
-    + [Specific Objectives](#specific-objectives)
-  * [Framework](#framework)
-    + [Arduino](#arduino)
-    + [Proteus Simulator](#proteus-simulator)
-      - [Review](#review)
-      - [Arduino Designer](#arduino-designer)
-      - [Install Arduino Board](#install-arduino-board)
-    + [Compute the LED Resistor Value](#compute-the-led-resistor-value)
-  * [Experimental Procedure](#experimental-procedure)
-    + [Create Arduino Program](#create-arduino-program)
-    + [Run Simulation in Proteus](#run-simulation-in-proteus)
-  * [Analysis of Results](#analysis-of-results)
-  * [Conclusions](#conclusions)
-  * [Referencias](#referencias)
-
-
 ## Objectives
 
 ### General Objective
@@ -79,8 +58,7 @@ In addition, Arduino is:
 To write the programs and get the object code (compiled in hex) you use Arduino
 IDE which is the official Arduino IDE to program these boards and is available
 from its
-[official download](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing)
-.
+[official download](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing).
 
 ### Proteus Simulator
 
@@ -127,10 +105,12 @@ According to official information, with the capabilities of Proteus we can:
 > Source: *Arduino Simulation Software - Processor, Shields and Peripherals*
 > [@labcenter-electronics-2022]
 
+**Arduino Board in Proteus**
+
 ![Arduino Board in Proteus](images/proteus.png)
 
-Source: *Arduino Simulation Software - Processor, Shields and
-Peripherals* [@labcenter-electronics-2022], under fair use.
+> Source: *Arduino Simulation Software - Processor, Shields and Peripherals*
+> [@labcenter-electronics-2022]. Under fair use.
 
 #### Install Arduino Board
 
@@ -153,9 +133,9 @@ variables:
 
 - **V:** Voltage source.
 
-- **$$V_0$$:** Voltage drop for each LED.
+- **$V_0$:** Voltage drop for each LED.
 
-- **$$I_0$$:** Current per LED.
+- **$I_0$:** Current per LED.
 
 The most common standard values are serial configuration; power supplies or
 batteries from $1.5-12V$; LED voltage of $1.7-3.6V$ which depends on the color
@@ -182,6 +162,8 @@ The procedure consists of the implementation in Arduino IDE and in Proteus.
 
 First you have to open a new project in Arduino IDE.
 
+**Initial Sketch in Arduino IDE**
+
 ![Initial Sketch in Arduino IDE](images/arduino-1.png)
 
 To update the name of the program go to File -\> Save As and select the
@@ -207,6 +189,8 @@ void loop()
 }
 ```
 
+**Final Sketch to Run**
+
 ![Final Sketch to Run](images/arduino-2.png)
 
 To get the compiled hex binary from the source code, go to Sketch -\> Export
@@ -230,7 +214,9 @@ Start Files".
 
 Next - Finish.
 
-![Initial setup of Proteus with Arduino Uno](images/sim-1.png)
+**Initial Set Up of Proteus with Arduino Uno**
+
+![Initial Set Up of Proteus with Arduino Uno](images/sim-1.png)
 
 The program that was written must be loaded into the simulator. Right-click on
 the Arduino board and go to Properties. In select the binary file that was
@@ -244,7 +230,9 @@ $$R_{LED} = \frac{5v}{20mA} = 100\Omega$$
 If the resistance in commercial value is not exact, it should be rounded up or
 apply another configuration to obtain the equivalent resistance.
 
-![Final circuit setup on Proteus](images/sim-2.png)
+**Final Circuit Set Up on Proteus**
+
+![Final Circuit Set Up on Proteus](images/sim-2.png)
 
 ## Analysis of Results
 
@@ -253,14 +241,14 @@ according to the iterations established in the program. Take into account that
 the simulation can run more or less fast according to the speed of the
 simulator.
 
-The Arduino card issued the digital signals through pin $$12$$ which is defined in
-the program loop.
+The Arduino card issued the digital signals through pin $$12$$ which is defined
+in the program loop.
 
 ## Conclusions
 
-A program was developed in Arduino IDE that activates the signal of pin $$12$$ of
-the Arduino given a set interval. Then, a simulation of the circuit by adding an
-LED as a load to the $$12$$ output of the Arduino. It was calculated from
+A program was developed in Arduino IDE that activates the signal of pin $$12$$
+of the Arduino given a set interval. Then, a simulation of the circuit by adding
+an LED as a load to the $$12$$ output of the Arduino. It was calculated from
 beforehand the resistance of the LED so that it was protection for it.
 
 See also: [Tobias Briones &#124; Course Project at UNAH-IS911: Microprocessors](https://github.com/tobiasbriones/cp-unah-is911-microprocessors).
