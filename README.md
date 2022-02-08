@@ -14,6 +14,8 @@ This is a temporal list of articles I start publishing:
 
 - [Modern PC CPU Sockets (2022)](https://blog.mathsoftware.engineer/2022-01-31-modern-pc-cpu-sockets).
 
+- [Arduino Lab: Activating a Digital Output](https://blog.mathsoftware.engineer/arduino-lab-activating-a-digital-output)
+
 ## Contact
 
 This project: [Website](https://blog.mathsoftware.engineer),
