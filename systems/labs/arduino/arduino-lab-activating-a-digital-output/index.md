@@ -147,7 +147,7 @@ For other calculations with series configuration we have [@szyk-2022]:
 
 - $R = \frac{V - n*V_0}{I_0}$
 
-- $$P_0 = V_0 * I_0$$
+- $$P_0 = V_0 * I_0$$.
 
 - $$P = n * V_0 * I_0$$
 
