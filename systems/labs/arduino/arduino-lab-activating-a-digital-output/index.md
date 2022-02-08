@@ -1,38 +1,38 @@
 # Arduino Laboratory: Activating a Digital Output
 
-## Objetivos
+## Objectives
 
-### Objetivo General
+### General Objective
 
-Desarrollar y simular un programa de Arduino que encienda y apague
-iterativamente un LED.
+Develop and simulate an Arduino program that turns on and off iteratively an
+LED.
 
-### Objetivos Específicos
+### Specific Objectives
 
-- General el código objeto (hex) del programa de Arduino.
-- Arreglar una tarjeta Arduino Uno en Proteus.
-- Diseñar un circuito electrónico trivial para conectar el LED a la salida del
-  Arduino en Proteus.
-- Cargar y ejecutar el programa en Proteus.
+- Generate the object code (hex) of the Arduino program.
+- Add an Arduino Uno board in Proteus.
+- Design a trivial electronic circuit to connect the LED to the output of the
+  Arduino in Proteus.
+- Load and run the program in Proteus.
 
-## Marco Teórico
+## Framework
 
-Para cubrir este laboratorio se utilizará Arduino y Proteus para poder simular
-el programa que se desarrollará.
+To cover this laboratory, Arduino and Proteus are used to simulate the program
+that will be developed.
 
 ### Arduino
 
-Oficialmente temenos que:
+Officially, we have that:
 
 > Arduino is an open-source electronics platform based on easy-to-use hardware
 > and software. It's intended for anyone making interactive projects.
 > Source: Arduino.cc [@arduino-2022]
 
-Destaca que es una plataforma de hardware de código abierto lo cual es una buena
-característica de plataformas actuales modernas y que son de utilidad, ya que se
-cuenta con sus comunidades de colaboradores de código abierto.
+It highlights that it is an open source hardware platform which is a good
+characteristic of current modern platforms and that are useful, since they have
+their communities of open source contributors.
 
-Además tenemos que Arduino es:
+In addition, Arduino is:
 
 > Arduino designs, manufactures, and supports electronic devices and software,
 > allowing people around the world to easily access advanced technologies that
@@ -41,96 +41,95 @@ Además tenemos que Arduino es:
 > the way to professional developers.
 > Source: Arduino.cc [@arduino-2022]
 
-Para escribir los programas y el código objeto (compilado en hex) se utiliza
-Arduino IDE el cual es el IDE oficial de Arduino para programar estas tarjetas y
-está disponible desde
-su [descarga oficial](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing)
+To write the programs and get the object code (compiled in hex) you use Arduino
+IDE which is the official Arduino IDE to program these boards and is available
+from its
+[official download](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing)
 .
 
-### Simulador Proteus
+### Proteus Simulator
 
-Según *Labcenter Electronics*[@labcenter-electronics-2022] -Empresa proveedora
-de Proteus-:
+According to *Labcenter Electronics*[@labcenter-electronics-2022] -Proteus
+provider company-:
 
 > The Proteus Design Suite combines ease of use with a powerful feature set to
 > enable the rapid design, test and layout of professional printed circuit
 > boards.
 > Source: *Labcenter Electronics*[@labcenter-electronics-2022]
 
-#### Reseña
+#### Review
 
-Proteus es un software de uso en áreas como la ingeniería en electrónica donde
-se puede hacer simulaciones de todo tipo de circuito electrónico. Este software
-ha sido de gran utilidad tanto para profesionales como estudiantes, aunque ya ha
-quedado muy obsoleto y con altos modelos de monetización debido a que ha estado
-muchas décadas ya en el mercado. En lo personal, yo he usado Proteus de forma
-básica desde que estudié electrónica en la secundaria.
+Proteus is software for use in areas such as electronic engineering where you
+can do simulations of all kinds of electronic circuits. This software has been
+very useful for both professionals and students, although it has already become
+very obsolete and with high-cost monetization models because it has been many
+decades already on the market. Personally, I have used Proteus in a basic way
+since I studied electronics at high school.
 
-#### Diseñador para Arduino
+#### Arduino Designer
 
-La plataforma Proteus permite entre tantos, diseñar y correr simulaciones en la
-tarjeta Arduino.
+The Proteus platform allows, among many others, designing and running
+simulations in the Arduino board.
 
-Según la información oficial, con las capacidades de Proteus podemos:
+According to official information, with the capabilities of Proteus we can:
 
 > Often the trickiest part of embedded development is the hardware design.
 > The Arduino™ ecosystem goes a long way to solving this problem with lots of
 > ready made shields. Visual Designer takes this into the software domain, using
-> our professional schematic capture and Proteus VSM simulation engine to make 
+> our professional schematic capture and Proteus VSM simulation engine to make
 > simulation of complete Arduino systems possible. The Peripheral Gallery in
-> Visual Designer then simplifies the whole process as it will autoplace and 
+> Visual Designer then simplifies the whole process as it will autoplace and
 > autoconnect the electronics on the schematic for you. Finally, Visual Designer
 > provides high level methods to enable the control of the embedded system from
 > a flowchart editor.
-> 
-> In addition to full Arduino Shields we have included many 
-> individual sensors and modules from the Grove system and also added a bunch of 
+>
+> In addition to full Arduino Shields we have included many
+> individual sensors and modules from the Grove system and also added a bunch of
 > useful parts as breakout boards. More advanced users can even place and wire
-> their own custom hardware directly on the schematic using the thousands of 
+> their own custom hardware directly on the schematic using the thousands of
 > simulation models in Proteus VSM.
-> 
+>
 > Source: *Arduino Simulation Software - Processor, Shields and Peripherals*
 > [@labcenter-electronics-2022]
 
-![Tarjeta Arduino en Proteus](images/proteus.png)
+![Arduino Board in Proteus](images/proteus.png)
 
-Fuente: *Arduino Simulation Software - Processor, Shields and
-Peripherals* [@labcenter-electronics-2022], bajo uso justo.
+Source: *Arduino Simulation Software - Processor, Shields and
+Peripherals* [@labcenter-electronics-2022], under fair use.
 
-#### Instalar la Biblioteca de Arduino
+#### Install Arduino Board
 
-En caso de ser necesario, se deberá instalar la biblioteca de Arduino para
-Proteus. Al finalizar con la simple instalación ya se podrá agregar la tarjeta
-Arduino desde la lista de dispositivos. Para mayor detalles, ir a *How to Add
-Arduino Library in to Proteus 7 $\&$ 8*
+If necessary, the Arduino library must be installed to Proteus. At the end of
+the simple installation, you can add the card Arduino from the list of devices.
+For more details, go to *How to Add Arduino Library in to Proteus 7 $\&$ 8*
 [@instructables-2018].
 
-### Cálculo de la Resistencia del LED
+### Compute the LED Resistor Value
 
-El diodo LED se alimenta usualmente de una fuente directa de $3-5V$. La
-corriente y potencia del LED está especificada de acuerdo a cada diodo pero se
-sabe de antemano que algunos valores aproximados funcionan bien para un simple
-LED que se utilizará. Según *Omni Calculator*
-[@szyk-2022] tenemos que conocer las siguientes variables:
+The LED diode is usually powered from a direct $3-5V$ source. The current and
+power of the LED is specified according to each diode, but it is knows in
+advance that some approximate values work well for a simple LED to be used.
+According to *Omni Calculator*[@szyk-2022] we need to know the following
+variables:
 
-- **Tipo de Circuito:** Serie o paralelo.
+- **Circuit Type:** Series or parallel.
 
-- **n:** Número de LEDs conectados.
+- **n:** Number of connected LEDs.
 
-- **V:** Fuente de voltaje.
+- **V:** Voltage source.
 
-- **$V_0$:** Caída de voltaje por cada LED.
+- **$V_0$:** Voltage drop for each LED.
 
-- **$I_0$:** Corriente por LED.
+- **$I_0$:** Current per LED.
 
-Los valores estándar más comunes son configuración en serie; pilas, fuentes o
-baterías desde $1.5-12V$; voltaje de LED de $1.7-3.6V$ que depende del color del
-LED; y corrientes de $20-30mA$ [@szyk-2022].
+The most common standard values are serial configuration; power supplies or
+batteries from $1.5-12V$; LED voltage of $1.7-3.6V$ which depends on the color
+of the LEDs; and currents of$20-30mA$ [@szyk-2022].
 
-Como bien sabemos por la ley de Ohm $R = \frac{V}{I}$ por lo que se deberá
-aplicar en el cálculo de la resistencia del LED.
+As we know from Ohm's law $R = \frac{V}{I}$ so it should be applied in the
+calculation of the resistor of the LED.
 
-Para otros cálculos con configuración en serie tenemos que [@szyk-2022]:
+For other calculations with series configuration we have [@szyk-2022]:
 
 - $R = \frac{V - n*V_0}{I_0}$
 
@@ -140,21 +139,21 @@ Para otros cálculos con configuración en serie tenemos que [@szyk-2022]:
 
 - $P_r = I_0^2 * R$
 
-## Procedimiento Experimental
+## Experimental Procedure
 
-El procedimiento consiste en la implementación en Arduino IDE y en Proteus.
+The procedure consists of the implementation in Arduino IDE and in Proteus.
 
-### Crear Programa Arduino
+### Create Arduino Program
 
-Primero hay que abrir un nuevo proyecto en Arduino IDE.
+First you have to open a new project in Arduino IDE.
 
-![Programa inicial en Arduino IDE](images/arduino-1.png)
+![Initial Sketch in Arduino IDE](images/arduino-1.png)
 
-Para actualizar el nombre del programa ir a File -\> Save As y seleccionar el
-directorio de destino y nombre del programa. En este caso, el nombre del
-programa es "activating-a-digital-output".
+To update the name of the program go to File -\> Save As and select the
+destination directory and program name. In this case, the name of the program
+is "activating-a-digital-output".
 
-Se utilizará el siguiente programa sensillo para este laboratorio:
+The following simple program will be used for this lab:
 
 ```c
 const int PIN = 12;
@@ -173,61 +172,61 @@ void loop()
 }
 ```
 
-![Programa final a correr](images/arduino-2.png)
+![Final Sketch to Run](images/arduino-2.png)
 
-Para obtener el binario hexadecimal compilado del código fuente, ir a Sketch -\>
-Export compiled binary. Ahora, los archivos .hex compilados se encontrarán en el
-directorio donde del programa fue guardado.
+To get the compiled hex binary from the source code, go to Sketch -\> Export
+compiled binary. Now the compiled .hex files will be found in the directory
+where the program was saved.
 
-### Correr simulación en Proteus
+### Run Simulation in Proteus
 
-Para correr la simulación se usará Proteus.
+To run the simulation, Proteus will be used.
 
-Al abrir Proteus, ir a File - New Project dar un nombre al proyecto.
+When opening Proteus, go to File - New Project give the project a name.
 
-Siguiente - Seleccionar "Crear un esquema del template seleccionado" con la
-opción "DEFAULT".
+Next - Select "Create an outline of the selected template" with the
+"DEFAULT" option.
 
-Siguiente - Seleccionar "No crear un layout PCB".
+Next - Select "Do not create a PCB layout".
 
-Siguiente - Seleccionar con las opciones de Familia: ARDUINO, Controlador:
-Arduino Uno y Compilador: Arduino AVR (Proteus). Dejar seleccionado "Crear
-Archivos de Inicio Rápido".
+Next - Select with the Family options: ARDUINO, Controller:
+Arduino Uno and Compiler: Arduino AVR (Proteus). Leave "Create selected. Quick
+Start Files".
 
-Siguiente - Terminar.
+Next - Finish.
 
-![Configuración inicial del Proteus con Arduino Uno](images/sim-1.png)
+![Initial setup of Proteus with Arduino Uno](images/sim-1.png)
 
-En el simulador se debe cargar el programa que se escribió. Dar clic derecho a
-la tarjeta de Arduino e ir a Propiedades. En seleccionar el archivo binario que
-se compiló, que contiene el bootloader. En este caso, el archivo es
+The program that was written must be loaded into the simulator. Right-click on
+the Arduino board and go to Properties. In select the binary file that was
+compiled, which contains the bootloader. In this case, the file is
 "activating-a-digital-output.ino.withbootloader.standard.hex".
 
-Calculando el valor de la resistencia tenemos que con valores estándar
+Calculating the value of the resistance we have that with standard values
 
 $$R_{LED} = \frac{5v}{20mA} = 100\Omega$$
 
-En caso de no ser exacto la resistencia en valor comercial se deberá redondear o
-aplicar otra configuración para obtener la resistencia equivalente.
+If the resistance in commercial value is not exact, it should be rounded up or
+apply another configuration to obtain the equivalent resistance.
 
-![Configuración del circuito final en Proteus](images/sim-2.png)
+![Final circuit setup on Proteus](images/sim-2.png)
 
-## Análisis de Resultados
+## Analysis of Results
 
-Al correr satisfactoriamente el programa en Proteus, el LED $D2$ parpadea de
-acuerdo a las iteraciones establecidas en el programa. Tener en cuenta que la
-simulación puede correr más o menos rápido de acuerdo a la velocidad del
-simulador.
+Upon successful execution of the program in Proteus, the $D2$ LED flashes
+according to the iterations established in the program. Take into account that
+the simulation can run more or less fast according to the speed of the
+simulator.
 
-La tarjeta Arduino emitió las señales digitales mediante el pin $12$ que se
-definió en el loop del programa.
+The Arduino card issued the digital signals through pin $12$ which is defined in
+the program loop.
 
-## Conclusiones
+## Conclusions
 
-Se desarrolló un programa en Arduino IDE que activa la señal del pin $12$ del
-Arduino dado un intervalo establecido. Luego, se creó una simulación del
-circuito agregando un LED como carga a la salida $12$ del Arduino. Se calculó de
-antemano la resistencia del LED de forma que fuera de protección para este.
+A program was developed in Arduino IDE that activates the signal of pin $12$ of
+the Arduino given a set interval. Then, a simulation of the circuit by adding an
+LED as a load to the $12$ output of the Arduino. It was calculated from
+beforehand the resistance of the LED so that it was protection for it.
 
 ## Referencias
 
