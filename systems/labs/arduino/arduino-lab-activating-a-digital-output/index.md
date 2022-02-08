@@ -1,3 +1,7 @@
+---
+permalink: /arduino-lab-activating-a-digital-output
+---
+<link rel="icon" type="image/png" href="favicon.png">
 # Arduino Laboratory: Activating a Digital Output
 
 ## Objectives
