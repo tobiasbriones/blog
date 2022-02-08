@@ -253,14 +253,14 @@ according to the iterations established in the program. Take into account that
 the simulation can run more or less fast according to the speed of the
 simulator.
 
-The Arduino card issued the digital signals through pin $12$ which is defined in
+The Arduino card issued the digital signals through pin $$12$$ which is defined in
 the program loop.
 
 ## Conclusions
 
-A program was developed in Arduino IDE that activates the signal of pin $12$ of
+A program was developed in Arduino IDE that activates the signal of pin $$12$$ of
 the Arduino given a set interval. Then, a simulation of the circuit by adding an
-LED as a load to the $12$ output of the Arduino. It was calculated from
+LED as a load to the $$12$$ output of the Arduino. It was calculated from
 beforehand the resistance of the LED so that it was protection for it.
 
 See also: [Tobias Briones &#124; Course Project at UNAH-IS911: Microprocessors](https://github.com/tobiasbriones/cp-unah-is911-microprocessors).
