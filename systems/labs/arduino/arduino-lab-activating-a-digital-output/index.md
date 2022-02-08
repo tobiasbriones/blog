@@ -248,7 +248,7 @@ apply another configuration to obtain the equivalent resistance.
 
 ## Analysis of Results
 
-Upon successful execution of the program in Proteus, the $D2$ LED flashes
+Upon successful execution of the program in Proteus, the $$D2$$ LED flashes
 according to the iterations established in the program. Take into account that
 the simulation can run more or less fast according to the speed of the
 simulator.
