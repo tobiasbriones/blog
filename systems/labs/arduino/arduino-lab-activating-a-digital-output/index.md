@@ -4,6 +4,14 @@ permalink: /arduino-lab-activating-a-digital-output
 <link rel="icon" type="image/png" href="favicon.png">
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 # Arduino Laboratory: Activating a Digital Output
 
 ## Objectives
@@ -137,7 +145,7 @@ calculation of the resistor of the LED.
 
 For other calculations with series configuration we have [@szyk-2022]:
 
-- $$R = \frac{V - n*V_0}{I_0}$$
+- $R = \frac{V - n*V_0}{I_0}$
 
 - $$P_0 = V_0 * I_0$$
 
