@@ -24,10 +24,9 @@ el programa que se desarrollará.
 
 Oficialmente temenos que:
 
-> Arduino es una plataforma electrónica de código abierto basada en
-> hardware y software fáciles de usar. Está destinado a cualquier
-> persona que realice proyectos interactivos.\
-> Fuente: Arduino.cc [@arduino-2022]
+> Arduino is an open-source electronics platform based on easy-to-use hardware
+> and software. It's intended for anyone making interactive projects.
+> Source: Arduino.cc [@arduino-2022]
 
 Destaca que es una plataforma de hardware de código abierto lo cual es una buena
 característica de plataformas actuales modernas y que son de utilidad, ya que se
@@ -35,13 +34,12 @@ cuenta con sus comunidades de colaboradores de código abierto.
 
 Además tenemos que Arduino es:
 
-> Arduino diseña, fabrica y admite dispositivos electrónicos y software,
-> lo que permite a las personas de todo el mundo acceder fácilmente a
-> tecnologías avanzadas que interactúan con el mundo físico. Nuestros
-> productos son sencillos, simples y potentes, listos para satisfacer
-> las necesidades de los usuarios, desde estudiantes hasta creadores y
-> hasta desarrolladores profesionales.\
-> Fuente: Arduino.cc [@arduino-2022]
+> Arduino designs, manufactures, and supports electronic devices and software,
+> allowing people around the world to easily access advanced technologies that
+> interact with the physical world. Our products are straightforward, simple,
+> and powerful, ready to satisfy users’ needs from students to makers and all
+> the way to professional developers.
+> Source: Arduino.cc [@arduino-2022]
 
 Para escribir los programas y el código objeto (compilado en hex) se utiliza
 Arduino IDE el cual es el IDE oficial de Arduino para programar estas tarjetas y
@@ -54,10 +52,10 @@ su [descarga oficial](https://docs.arduino.cc/software/ide-v2/tutorials/getting-
 Según *Labcenter Electronics*[@labcenter-electronics-2022] -Empresa proveedora
 de Proteus-:
 
-> Proteus Design Suite combina la facilidad de uso con un potente
-> conjunto de funciones para permitir el diseño, la prueba y el diseño
-> rápidos de placas de circuito impreso profesionales.\
-> Fuente: *Labcenter Electronics*[@labcenter-electronics-2022]
+> The Proteus Design Suite combines ease of use with a powerful feature set to
+> enable the rapid design, test and layout of professional printed circuit
+> boards.
+> Source: *Labcenter Electronics*[@labcenter-electronics-2022]
 
 #### Reseña
 
@@ -75,25 +73,24 @@ tarjeta Arduino.
 
 Según la información oficial, con las capacidades de Proteus podemos:
 
-> A menudo, la parte más complicada del desarrollo integrado es el
-> diseño del hardware. El ecosistema Arduino™ contribuye en gran medida
-> a resolver este problema con muchos escudos listos para usar. Visual
-> Designer lleva esto al dominio del software, utilizando nuestra
-> captura esquemática profesional y el motor de simulación Proteus VSM
-> para hacer posible la simulación de sistemas Arduino completos. La
-> Galería de periféricos en Visual Designer luego simplifica todo el
-> proceso, ya que colocará y conectará automáticamente los componentes
-> electrónicos en el esquema por usted. Finalmente, Visual Designer
-> proporciona métodos de alto nivel para permitir el control del sistema
-> integrado desde un editor de diagramas de flujo.
->
-> Además de Arduino Shields completos, hemos incluido muchos sensores y
-> módulos individuales del sistema Grove y también hemos agregado un
-> montón de piezas útiles como placas de conexión. Los usuarios más
-> avanzados pueden incluso colocar y conectar su propio hardware
-> personalizado directamente en el esquema usando los miles de modelos
-> de simulación en Proteus VSM. Fuente: *Arduino Simulation Software -
-> Processor, Shields and Peripherals* [@labcenter-electronics-2022]
+> Often the trickiest part of embedded development is the hardware design.
+> The Arduino™ ecosystem goes a long way to solving this problem with lots of
+> ready made shields. Visual Designer takes this into the software domain, using
+> our professional schematic capture and Proteus VSM simulation engine to make 
+> simulation of complete Arduino systems possible. The Peripheral Gallery in
+> Visual Designer then simplifies the whole process as it will autoplace and 
+> autoconnect the electronics on the schematic for you. Finally, Visual Designer
+> provides high level methods to enable the control of the embedded system from
+> a flowchart editor.
+> 
+> In addition to full Arduino Shields we have included many 
+> individual sensors and modules from the Grove system and also added a bunch of 
+> useful parts as breakout boards. More advanced users can even place and wire
+> their own custom hardware directly on the schematic using the thousands of 
+> simulation models in Proteus VSM.
+> 
+> Source: *Arduino Simulation Software - Processor, Shields and Peripherals*
+> [@labcenter-electronics-2022]
 
 ![Tarjeta Arduino en Proteus](images/proteus.png)
 
