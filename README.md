@@ -16,6 +16,8 @@ This is a temporal list of articles I start publishing:
 
 - [Arduino Lab: Activating a Digital Output](https://blog.mathsoftware.engineer/arduino-lab-activating-a-digital-output)
 
+NOTE: Structural and low-level changes are being implemented to the platform so several things are not stable yet.
+
 ## Contact
 
 This project: [Website](https://blog.mathsoftware.engineer),
