@@ -14,6 +14,14 @@ permalink: /arduino-lab-activating-a-digital-output
 </script>
 # Arduino Laboratory: Activating a Digital Output
 
+
+Let $C$ and $d$ respectively be the circumference and diameter of a circle. 
+Then, $\pi$ is the ratio of the circumference of the circle over its 
+diameter, that is:
+
+\[\pi = \frac{C}{d}\]
+
+
 ## Objectives
 
 ### General Objective
