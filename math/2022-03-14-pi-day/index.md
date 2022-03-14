@@ -17,7 +17,7 @@ $$\pi = \frac{C}{d}$$
 
 Next, I will dedicate some of my best words to Pi:
 
-Pi is an abstraction that is always found in nature but circles too.
+Pi is an abstraction that is always found in nature but, circles too.
 
 The Pi abstraction is defined by, but not limited to, circles just like, but not
 limited to, the open balls from the usual Euclidean topological basis populating
