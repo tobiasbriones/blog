@@ -1,3 +1,17 @@
+---
+permalink: /2022-03-14-pi-day
+---
+<link rel="icon" type="image/png" href="favicon.png">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 # Pi Day (2022/03/14)
 
 ![Piaxid Monochromatic 1/4](piaxid-monochromatic-1-4.svg)
