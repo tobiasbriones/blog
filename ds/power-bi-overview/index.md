@@ -63,22 +63,18 @@ are 23 times more likely to acquire customers, 6.5 times as likely to retain
 customers, and 18.8 times as likely to be profitable.
 
 ![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
-
 <figcaption>
 Extensive use of customer analytics drives corporate performance heavily<br>
 Source: <it>Five facts: How customer analytics boosts corporate
 performance &vert; McKinsey</it> [7] (under fair use)
 </figcaption>
 
-
 ![mckinsey-exhibit-2](images/mckinsey-exhibit-2.svgz)
-
 <figcaption>
 Successful companies outperform the competition across full customer lifecycle<br>
 Source: <it>Five facts: How customer analytics boosts corporate
 performance &vert; McKinsey</it> [7] (under fair use)
 </figcaption>
-
 
 ## References
 
