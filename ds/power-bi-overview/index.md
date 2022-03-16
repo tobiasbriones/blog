@@ -36,6 +36,45 @@ Power BI is like using any other tool from the Microsoft Office suite. That
 enables organization to quickly generate reports that may be deployed to the
 web, the desktop or mobile.
 
+### Data Driven Organization
+
+According to *Building a Data-Driven Organization &vert; O’Reilly Media* [2] a
+Data Driven Organization should have a culture to use data for decision-making,
+the organization with the structure to support it and the technology that
+supports it. The key is to develop that culture. Everything is data, for
+literally any decision to take, use data as a fact to lead to that decision.
+
+A problem with traditional organizations is requiring the so-called HIPPO
+(Highest-Paid Person in the Office)
+to make decisions [2]. Recall that you also need data permissions to acquire
+them, so you usually depend on the HIPPO who will be far from good results,
+that's a big problem for the data driven organization.
+
+Everyone should use data in the organization so the results are more accurate,
+and you can check your organization is data driven when data initiatives are
+coming from the bottom of the hierarchy rather than the top or bureaucrats [2].
+
+According to the *Five facts: How customer analytics boosts corporate
+performance &vert; McKinsey* [7] survey, states that data-driven organizations
+are 23 times more likely to acquire customers, 6.5 times as likely to retain
+customers, and 18.8 times as likely to be profitable.
+
+![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
+
+<figcaption>
+Extensive use of customer analytics drives corporate performance heavily<br>
+Source: <it>Five facts: How customer analytics boosts corporate
+performance &vert; McKinsey</it> [7] (under fair use)
+</figcaption>
+
+![mckinsey-exhibit-2](images/mckinsey-exhibit-2.svgz)
+
+<figcaption>
+Successful companies outperform the competition across full customer lifecycle<br>
+Source: <it>Five facts: How customer analytics boosts corporate
+performance &vert; McKinsey</it> [7] (under fair use)
+</figcaption>
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
