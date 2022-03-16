@@ -24,4 +24,4 @@ from [Without An Opinion, You're Just Another Person With Data &vert; Forbes](ht
 [6] Numpy.org. (2022). GitHub - numpy/numpy: The fundamental package for
 scientific computing with Python. Numpy &vert; GitHub Repository. Retrieved
 March 15, 2022,
-from [Numpy &vert; GitHub Repositoy](https://github.com/numpy/numpy).
+from [Numpy &vert; GitHub Repository](https://github.com/numpy/numpy).
