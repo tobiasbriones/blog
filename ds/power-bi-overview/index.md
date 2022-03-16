@@ -70,6 +70,7 @@ Source: <it>Five facts: How customer analytics boosts corporate
 performance &vert; McKinsey</it> [7] (under fair use)
 </figcaption>
 
+
 ![mckinsey-exhibit-2](images/mckinsey-exhibit-2.svgz)
 
 <figcaption>
@@ -77,6 +78,7 @@ Successful companies outperform the competition across full customer lifecycle<b
 Source: <it>Five facts: How customer analytics boosts corporate
 performance &vert; McKinsey</it> [7] (under fair use)
 </figcaption>
+
 
 ## References
 
