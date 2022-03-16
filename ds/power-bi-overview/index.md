@@ -1,3 +1,6 @@
+---
+permalink: /power-bi-overview
+---
 # Power BI Overview
 
 ## Introduction
