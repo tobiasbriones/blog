@@ -3,44 +3,44 @@
 ## Introduction
 
 Organizations should own their data but also have a way to make proper use of
-them. Data are facts and with data science we can infer accurate reports about
-what's going on the organization.
+them. Data are facts and with data science, we can infer accurate reports about
+what's going on in the organization.
 
-There are many ways of performing data analysis, the most populars, say:
+There are many ways of performing data analysis, the most popular are:
 
 - Python libraries (Numpy and Pandas).
-- The Julia programming language which is a niche for that domain.
+- The Julia programming language is a niche for that domain.
 - Jupyter Notebooks that can document results with Markdown but run the code
   right there.
-- Even other popular programming languages like Kotlin, Java and C# are used for
-  data analysis or similar applications.
-- Needless to say, systems programming languages like Rust, C++ or C also take
-  part into this adventure for high performance computations [^1].
+- Even other popular programming languages like Kotlin, Java, and C# are used
+  for data analysis or similar applications.
+- Needless to say, systems programming languages like Rust, C++, or C also take
+  part in this adventure for high-performance computations [^1].
 
 [^1]: For example, Python libraries like Numpy are partly written in C so that
-    Python is used as a C interface with easier syntax but the underlying code is
-    written is C [6].
+    Python is used as a C interface with an easier syntax but the underlying code is
+    written in C [6].
 
 Moreover, those are technical ways of developing data science applications. For
-end users, there are plenty of options too. One of the most populars are, of
+end-users, there are plenty of options too. One of the most popular is, of
 course, Microsoft Power BI and Excel, and other competition like Tableau.
 
 Power BI is a Microsoft 365 product that consists of apps and services to create
-a powerful client for creating end users reports from data. Like any other
-Microsoft product, it uses a binary format, so it's useful for end users to
+a powerful client for creating end-users reports from data. Like any other
+Microsoft product, it uses a binary format, so it's useful for end-users to
 understand their data rather than for data professionals.
 
-Even though, Power BI is a tool aimed for office professionals, it still allows
-a more advanced use for technical staff, but it is not require knowing. Using
+Even though Power BI is a tool aimed at office professionals, it still allows a
+more advanced use for technical staff, but it does not require knowing. Using
 Power BI is like using any other tool from the Microsoft Office suite. That
-enables organization to quickly generate reports that may be deployed to the
-web, the desktop or mobile.
+enables an organization to quickly generate reports that may be deployed to the
+web, the desktop, or mobile.
 
-### Data Driven Organization
+### Data-Driven Organization
 
-According to *Building a Data-Driven Organization &vert; O’Reilly Media* [2] a
-Data Driven Organization should have a culture to use data for decision-making,
-the organization with the structure to support it and the technology that
+According to *Building a Data-Driven Organization &vert; O’Reilly Media* [2], a
+Data-Driven Organization should have a culture to use data for decision-making,
+the organization with the structure to support it, and the technology that
 supports it. The key is to develop that culture. Everything is data, for
 literally any decision to take, use data as a fact to lead to that decision.
 
@@ -48,10 +48,10 @@ A problem with traditional organizations is requiring the so-called HIPPO
 (Highest-Paid Person in the Office)
 to make decisions [2]. Recall that you also need data permissions to acquire
 them, so you usually depend on the HIPPO who will be far from good results,
-that's a big problem for the data driven organization.
+that's a big problem for the data-driven organization.
 
 Everyone should use data in the organization so the results are more accurate,
-and you can check your organization is data driven when data initiatives are
+and you can check your organization is data-driven when data initiatives are
 coming from the bottom of the hierarchy rather than the top or bureaucrats [2].
 
 According to the *Five facts: How customer analytics boosts corporate
@@ -86,11 +86,11 @@ performance &vert; McKinsey</it> [7] (under fair use)
 The **CIO (Chief Information Officer)** is the top executive who has the
 expertise to take the lead on the organization's information. It is a
 professional for the business rather than for the product. The CIO has to make
-sure about managing and getting results from the organization information and
-keep up with the new information technologies. Instead of focusing on the
+sure about managing and getting results from the organization's information and
+keeping up with the new information technologies. Instead of focusing on the
 technical result of a product, the CIO focuses on the business results instead.
 
-According to *Chief Information Officer (CIO)* [3] the definition of CIO is as
+According to *Chief Information Officer (CIO)* [3], the definition of CIO is as
 follows:
 
 > A chief information officer (CIO) is the company executive responsible for the
@@ -129,7 +129,7 @@ Source: *CIO Agenda 2018* &vert; Gartner [4]
 ### Watch Out Fake Friends
 
 I found a fascinating article that actually encouraged me to write this entry.
-First, lets see the following quote:
+First, let's see the following quote:
 
 > Without data you’re just a person with an opinion.
 >
@@ -143,8 +143,8 @@ Like anything in else in real life, this does not help too much in practice. Now
 we know that "Without data you’re just a person with an opinion", right?.
 
 Now check this out. Data are collected from social interactions which turn them
-into not real facts extremely temporal-and-human-coupled, data is everywhere
-nowadays, and you must keep in mind the glorious inequality 
+into not-real facts, extremely temporal-and-human-coupled, data are everywhere
+nowadays, and finally, you must keep in mind the glorious inequality
 `quality > quantity`.
 
 This recalls me
@@ -152,18 +152,18 @@ that [Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
 wanted to make computer software out of theorems proving every library
 correctness but in real life, computer science is as stated by its name, a
 science and not math, so you prove a program wrong with unit testing instead
-directly proving it right. That is also said by 
+directly proving it right. That is also said by
 [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) in one his
 lectures.
 
-Facts and math are important, but you need to know how to use them properly. 
-An example can be the correctness proof for a significant subset of the Rust 
-programming language's safe type system at the 
+Facts and math are important, but you need to know how to use them properly. An
+example can be the correctness proof for a significant subset of the Rust
+programming language's safe type system at the
 [RustBelt: Securing the Foundations of the Rust Programming Language](https://people.mpi-sws.org/~dreyer/papers/rustbelt/paper.pdf).
 
-The article I talked about at the beginning of this subsection is *Without 
-An Opinion, You're Just Another Person With Data* &vert; Forbes. Pay 
-attention to the following interesting assertions: 
+The article I talked about at the beginning of this subsection is *Without An
+Opinion, You're Just Another Person With Data* &vert; Forbes. Pay attention to
+the following interesting assertions:
 
 > ... Roberta Wohlstetter argued that the Japanese attack succeeded because 
 > of an overabundance of data: “At the time of Pearl Harbor the circumstances of
@@ -196,11 +196,12 @@ So, going back to the original quote, watch out instead for
 "Without An Opinion, You're Just Another Person With Data". When you get to be
 an expert at what you do then you will eventually be able to use data as facts.
 
-I hope to had given you enough insight about data driven organizations and why
-you must make proper use of your data in this introduction. Next, I will provide
-along the article an overview about Power BI that will help as an entry point to
+In this introduction, I hope to had given you enough insight about data-driven
+organizations and why you must make proper use of your data, so you can
+articulate all this information into useful approaches. Next, I will provide
+with the article an overview of Power BI that will help as an entry point to
 building reports. That knowledge can also be used for any other tool or concept
-in the data science filed and, it's not necessarily coupled to Power BI.
+in the data science field and, it's not necessarily coupled to Power BI.
 
 ## References
 
