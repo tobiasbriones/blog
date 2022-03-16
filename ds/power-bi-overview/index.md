@@ -126,6 +126,82 @@ following comparison:
 
 Source: *CIO Agenda 2018* &vert; Gartner [4]
 
+### Watch Out Fake Friends
+
+I found a fascinating article that actually encouraged me to write this entry.
+First, lets see the following quote:
+
+> Without data you’re just a person with an opinion.
+>
+> --- W. Edwards Deming (patron saint of the Total Quality Management (TQM)
+> movement)
+
+Then it makes sense, as stated before, data are facts, and you build science
+with facts. If you don't have the facts then you just have an opinion.
+
+Like anything in else in real life, this does not help too much in practice. Now
+we know that "Without data you’re just a person with an opinion", right?.
+
+Now check this out. Data are collected from social interactions which turn them
+into not real facts extremely temporal-and-human-coupled, data is everywhere
+nowadays, and you must keep in mind the glorious inequality 
+`quality > quantity`.
+
+This recalls me
+that [Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
+wanted to make computer software out of theorems proving every library
+correctness but in real life, computer science is as stated by its name, a
+science and not math, so you prove a program wrong with unit testing instead
+directly proving it right. That is also said by 
+[Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) in one his
+lectures.
+
+Facts and math are important, but you need to know how to use them properly. 
+An example can be the correctness proof for a significant subset of the Rust 
+programming language's safe type system at the 
+[RustBelt: Securing the Foundations of the Rust Programming Language](https://people.mpi-sws.org/~dreyer/papers/rustbelt/paper.pdf).
+
+The article I talked about at the beginning of this subsection is *Without 
+An Opinion, You're Just Another Person With Data* &vert; Forbes. Pay 
+attention to the following interesting assertions: 
+
+> ... Roberta Wohlstetter argued that the Japanese attack succeeded because 
+> of an overabundance of data: “At the time of Pearl Harbor the circumstances of
+> collection in the sense of access to a huge variety of data were…close to
+> ideal.” Problems arose, not from too little information, but from too much,
+> and from the inability to glean useful "information" from mere "data." She 
+> concluded that the job of lifting signals out of a confusion of noise is an
+> activity that is very much aided by hypotheses.
+> 
+> Source: *Without An Opinion, You're Just Another Person With Data* &vert; 
+> Forbes [5]
+
+Having a lot of data is a responsibility and problem that needs to be managed
+properly, otherwise it'll never work. This tells us that mere data are not facts
+but noise.
+
+Next, we have this quote to conclude this subsection:
+
+> Executives who make effective decisions know that one does not start with 
+> facts. One starts with opinions… The understanding that underlies the right 
+> decision grows out of the clash and conflict of divergent opinions and out of
+> serious consideration of competing alternatives. To get the facts first is
+> impossible. There are no facts unless one has a criterion of relevance.”
+> --- Peter Drucker
+> 
+> Source: *Without An Opinion, You're Just Another Person With Data* &vert;
+> Forbes [5]
+
+So, going back to the original quote, watch out instead for
+"Without An Opinion, You're Just Another Person With Data". When you get to be
+an expert at what you do then you will eventually be able to use data as facts.
+
+I hope to had given you enough insight about data driven organizations and why
+you must make proper use of your data in this introduction. Next, I will provide
+along the article an overview about Power BI that will help as an entry point to
+building reports. That knowledge can also be used for any other tool or concept
+in the data science filed and, it's not necessarily coupled to Power BI.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
