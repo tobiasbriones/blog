@@ -1,5 +1,41 @@
 # Power BI Overview
 
+## Introduction
+
+Organizations should own their data but also have a way to make proper use of
+them. Data are facts and with data science we can infer accurate reports about
+what's going on the organization.
+
+There are many ways of performing data analysis, the most populars, say:
+
+- Python libraries (Numpy and Pandas).
+- The Julia programming language which is a niche for that domain.
+- Jupyter Notebooks that can document results with Markdown but run the code
+  right there.
+- Even other popular programming languages like Kotlin, Java and C# are used for
+  data analysis or similar applications.
+- Needless to say, systems programming languages like Rust, C++ or C also take
+  part into this adventure for high performance computations [^1].
+
+[^1]: For example, Python libraries like Numpy are partly written in C so that
+Python is used as a C interface with easier syntax but the underlying code is
+written is C [6].
+
+Moreover, those are technical ways of developing data science applications. For
+end users, there are plenty of options too. One of the most populars are, of
+course, Microsoft Power BI and Excel, and other competition like Tableau.
+
+Power BI is a Microsoft 365 product that consists of apps and services to create
+a powerful client for creating end users reports from data. Like any other
+Microsoft product, it uses a binary format, so it's useful for end users to
+understand their data rather than for data professionals.
+
+Even though, Power BI is a tool aimed for office professionals, it still allows
+a more advanced use for technical staff, but it is not require knowing. Using
+Power BI is like using any other tool from the Microsoft Office suite. That
+enables organization to quickly generate reports that may be deployed to the
+web, the desktop or mobile.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
