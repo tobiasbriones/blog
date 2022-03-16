@@ -81,6 +81,51 @@ performance &vert; McKinsey</it> [7] (under fair use)
 
 ---
 
+### The Role of the CIO
+
+The **CIO (Chief Information Officer)** is the top executive who has the
+expertise to take the lead on the organization's information. It is a
+professional for the business rather than for the product. The CIO has to make
+sure about managing and getting results from the organization information and
+keep up with the new information technologies. Instead of focusing on the
+technical result of a product, the CIO focuses on the business results instead.
+
+According to *Chief Information Officer (CIO)* [3] the definition of CIO is as
+follows:
+
+> A chief information officer (CIO) is the company executive responsible for the
+> management, implementation, and usability of information and computer
+> technologies. Because technology is increasing and reshaping industries
+> globally, the role of the CIO has increased in popularity and importance. The
+> CIO analyzes how various technologies benefit the company or improve an
+> existing business process and then integrates a system to realize that benefit 
+> or improvement.
+>
+> Source: *Chief Information Officer (CIO)* &vert; Investopedia [3]
+
+As said before, the CIO must keep up with the current technological trends. An
+effect of this is that, the definition of CIO before used to be more technical
+but now with cloud computing, the new mainstream and emerging technologies there
+is a plenty of opportunities for businesses to move faster but, this also
+implies the CIO and, most importantly, the whole culture also keeps up to date
+to be capable of constantly moving forward. This can be resumed into the
+following comparison:
+
+| **From**               | **To**                       |
+|------------------------|------------------------------|
+| IT-outcome-focused     | Business-outcome-focused     |
+| Order-taking           | Collaborative agenda-setting |
+| Supporting             | Compelling                   |
+| Cost-controlling       | Revenue-building             |
+| Process re-engineering | Data-exploiting              |
+| Sourcing               | Creating                     |
+| Function-focused       | Platform-focused             |
+| Seeking parity         | Seeking differentiation      |
+| Within IT              | Everywhere                   |
+| IT-risk-focused        | Business-risk-focused        |
+
+Source: *CIO Agenda 2018* &vert; Gartner [4]
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
