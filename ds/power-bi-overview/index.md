@@ -62,18 +62,24 @@ customers, and 18.8 times as likely to be profitable.
 ![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
 
 <figcaption>
-Extensive use of customer analytics drives corporate performance heavily<br>
+<strong>Extensive use of customer analytics drives corporate performance 
+heavily</strong><br>
 Source: <it>Five facts: How customer analytics boosts corporate
 performance &vert; McKinsey</it> [7] (under fair use)
 </figcaption>
+
+---
 
 ![mckinsey-exhibit-2](images/mckinsey-exhibit-2.svgz)
 
 <figcaption>
-Successful companies outperform the competition across full customer lifecycle<br>
+<strong>Successful companies outperform the competition across full customer 
+lifecycle</strong><br>
 Source: <it>Five facts: How customer analytics boosts corporate
 performance &vert; McKinsey</it> [7] (under fair use)
 </figcaption>
+
+---
 
 ## References
 
