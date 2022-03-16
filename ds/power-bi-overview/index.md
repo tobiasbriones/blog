@@ -61,3 +61,8 @@ from [Without An Opinion, You're Just Another Person With Data &vert; Forbes](ht
 scientific computing with Python. Numpy &vert; GitHub Repository. Retrieved
 March 15, 2022,
 from [Numpy &vert; GitHub Repository](https://github.com/numpy/numpy).
+
+[7] Bokman, A., Fiedler, L., Perrey, J., & Pickersgill, A. (2018, February 5)
+. Five facts: How customer analytics boosts corporate performance. McKinsey &
+Company. Retrieved March 15, 2022,
+from [Five facts: How customer analytics boosts corporate performance &vert; McKinsey](https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/five-facts-how-customer-analytics-boosts-corporate-performance).
