@@ -1,4 +1,4 @@
-# Power BI Overview
+# Data-Driven Organizations and Power BI Overview
 
 ## Introduction
 

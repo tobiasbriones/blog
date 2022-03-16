@@ -14,4 +14,4 @@ See [LICENSE](LICENSE.md) for more details.
 
 The following modules contain third party content:
 
-- [power-bi-overview](ds/power-bi-overview/images/notice.md)
+- [power-bi-overview](ds/ddo-and-power-bi-overview/images/notice.md)
