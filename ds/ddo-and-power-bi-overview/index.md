@@ -209,6 +209,21 @@ So, going back to the original quote, watch out instead for
 "Without An Opinion, You're Just Another Person With Data". When you get to be
 an expert at what you do then you will eventually be able to use data as facts.
 
+### Your Dataset
+
+Consider the following general requirement to make sure your dataset is 
+high-quality. Your dataset must be:
+
+- Precise
+- Clean
+- Unbiased
+- Trustable
+
+And of course, your dataset should not be too small to lack information or too 
+big to obfuscate the information.
+
+### Next Steps
+
 In this introduction, I hope to had given you enough insight about data-driven
 organizations and why you must make proper use of your data, so you can
 articulate all this information into useful approaches. Next, I will provide
