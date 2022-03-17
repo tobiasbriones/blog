@@ -290,3 +290,7 @@ from [Five facts: How customer analytics boosts corporate performance &vert; McK
 [8] Investopedia. (2021, June 23). How Business Intelligence – BI Works.
 Retrieved March 16, 2022,
 from [Business Intelligence (BI) &vert;Investopedia](https://www.investopedia.com/terms/b/business-intelligence-bi.asp).
+
+[9] UNSW Online. (2020, January 29). Descriptive, Predictive, Prescriptive
+Analytics &vert; UNSW Online. Retrieved March 16, 2022,
+from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? &vert; UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
