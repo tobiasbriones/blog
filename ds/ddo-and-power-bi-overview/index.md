@@ -275,6 +275,24 @@ soon as possible.
 Advanced techniques require lots of data and knowledge, so you must make sure of
 doing descriptive analysis.
 
+### Predictive Analysis
+
+As its name states it, this data analysis tells or predicts what could happen in
+the future. Think of it as an extrapolation of your descriptive analysis. It is
+a more advanced technique based on probabilities and makes use of data mining,
+statistical models and machine learning.
+
+As it's based on probabilities (like many useful techniques) it is not perfect,
+but it yields great results. Make sure to keep your data healthy to get better
+insights.
+
+Predictive analysis is useful for the following applications [9]:
+
+- Efficiency
+- Customer service
+- Fraud detection prevention
+- Risk reduction
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
