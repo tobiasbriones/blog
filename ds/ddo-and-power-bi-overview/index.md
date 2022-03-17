@@ -249,7 +249,7 @@ We have the following definition of Business Intelligence:
 >
 > Source: *Business Intelligence (BI)* &vert; Investopedia [8]
 
-The process wil follow the next structure:
+The process will follow the next structure:
 
 - Collecting
 - Integrating
