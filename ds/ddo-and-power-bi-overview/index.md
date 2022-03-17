@@ -216,6 +216,10 @@ with the article an overview of Power BI that will help as an entry point to
 building reports. That knowledge can also be used for any other tool or concept
 in the data science field and, it's not necessarily coupled to Power BI.
 
+## Get Started with Power BI
+
+This is not a 
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
@@ -246,3 +250,7 @@ from [Numpy &vert; GitHub Repository](https://github.com/numpy/numpy).
 . Five facts: How customer analytics boosts corporate performance. McKinsey &
 Company. Retrieved March 15, 2022,
 from [Five facts: How customer analytics boosts corporate performance &vert; McKinsey](https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/five-facts-how-customer-analytics-boosts-corporate-performance).
+
+[8] Investopedia. (2021, June 23). How Business Intelligence – BI Works.
+Retrieved March 16, 2022,
+from [Business Intelligence (BI) &vert;Investopedia](https://www.investopedia.com/terms/b/business-intelligence-bi.asp).
