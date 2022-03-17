@@ -1,5 +1,18 @@
 # Data-Driven Organizations and Power BI Overview
 
+![Cover](images/cover.jpg)
+
+<figcaption>
+Image from 
+<it>
+<a href="https://pixabay.com/photos/chart-data-business-graph-finance-6765401">Pixabay
+</a>
+</it>
+by Mariakray
+</figcaption>
+
+---
+
 ## Introduction
 
 Organizations should own their data but also have a way to make proper use of
