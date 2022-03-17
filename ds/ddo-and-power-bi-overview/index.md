@@ -216,9 +216,30 @@ with the article an overview of Power BI that will help as an entry point to
 building reports. That knowledge can also be used for any other tool or concept
 in the data science field and, it's not necessarily coupled to Power BI.
 
-## Get Started with Power BI
+## Business Intelligence
 
-This is not a 
+Business Intelligence consists of the process to take data as facts and turn
+them into informed or objective decisions. That is a long undertake and as said
+before, you have to make sure that your whole organization is capable of going
+ahead with a data-driven culture.
+
+We have the following definition of Business Intelligence:
+
+> Business intelligence (BI) refers to the procedural and technical
+> infrastructure that collects, stores, and analyzes the data produced by a
+> company’s activities.
+>
+> BI is a broad term that encompasses data mining, process analysis, performance
+> benchmarking, and descriptive analytics.
+>
+> Source: *Business Intelligence (BI)* &vert; Investopedia [8]
+
+The process wil follow the next structure:
+
+- Collecting
+- Integrating
+- Analyzing
+- Presenting
 
 ## References
 
