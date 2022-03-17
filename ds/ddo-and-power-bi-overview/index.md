@@ -293,6 +293,41 @@ Predictive analysis is useful for the following applications [9]:
 - Fraud detection prevention
 - Risk reduction
 
+### Prescriptive Analysis
+
+Lastly, the prescriptive analysis is the most advanced technique for data 
+analysis. It requires lots of data, knowledge or expertise and use of models 
+and tools.
+
+The prescriptive analysis tells what should be done in a -what, when, and 
+why- fashion. It is the main mind that gives you advance information like 
+why something might happen, so you can take immediate action to optimize 
+it or 
+fix it.
+
+Needless to say, if you don't even have a descriptive analysis 
+implementation then you'll 
+never make it to this stage. That's why it's crucial to start with the 
+data-driven culture and data analysis as soon as possible to not lose 
+valuable time in your organization.
+
+A downside of this approach is the extensive amount of data required 
+(internal and external) so machine learning tools can automate inferences,
+but it is also not completely accurate due to the usage of probabilities 
+that also happens with the predictive analysis.
+
+Even though, if well done, the ultimate prescriptive analysis leads the 
+business to have great insights. Think about all those who didn't make it to 
+this point, and you will appreciate being here.
+
+Common applications of prescriptive analysis are [9]:
+
+- GPS
+- Oil and manufacturing
+- Healthcare
+- Insurance
+- Pharmaceutical research
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
