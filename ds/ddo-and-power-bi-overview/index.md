@@ -326,6 +326,31 @@ Common applications of prescriptive analysis are [9]:
 - Insurance
 - Pharmaceutical research
 
+### Take Away
+
+Data are facts and if you don't have a data-driven culture populated into your
+organization then you must start doing so as soon as possible to stay
+competitive and optimize your business decision-making and results.
+
+Don't go just for mere data but for your own data, keeping it healthy that is
+going to be useful for the accuracy of the models. Also, be careful with your
+user's privacy and data privacy laws.
+
+If you are not aware of all these, then you better start pushing these data
+analysis techniques as soon as possible. Every competent business must make sure
+to have at least descriptive analysis functioning for daily and basic reports
+and keep moving forward to be able to make informed decisions.
+
+![Descriptive Predictive and Prescriptive Analysis](descriptive-predictive-and-prescriptive-analysis.svg)
+
+<figcaption>
+
+**Descriptive Predictive and Prescriptive Analysis**
+
+</figcaption>
+
+---
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
