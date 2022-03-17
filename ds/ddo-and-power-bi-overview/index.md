@@ -256,6 +256,25 @@ The process will follow the next structure:
 - Analyzing
 - Presenting
 
+### Descriptive Analysis
+
+The descriptive analysis tells you what has happened or what your organization
+has, and it's the first step of this data analysis process.
+
+This encompasses daily activities like selling reports, inventory, warehouse,
+surveys and social media interactions. Hence, the way of performing this
+analysis is basic consisting of daily tools like Power BI and entry mathematics
+and statistics including also entry visualizations like bar or pie charts.
+
+You must have this stage as it's the base for the rest of the analysis. Many
+companies even lack this stage or are not capable of moving forward. If you
+don't have descriptive analysis implemented then you're completely lost. If you
+are stuck or don't have any data culture initiative, make sure to start here as
+soon as possible.
+
+Advanced techniques require lots of data and knowledge, so you must make sure of
+doing descriptive analysis.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
