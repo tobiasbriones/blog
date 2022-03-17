@@ -277,10 +277,10 @@ doing descriptive analysis.
 
 ### Predictive Analysis
 
-As its name states it, this data analysis tells or predicts what could happen in
+As its name states, this data analysis tells or predicts what could happen in
 the future. Think of it as an extrapolation of your descriptive analysis. It is
 a more advanced technique based on probabilities and makes use of data mining,
-statistical models and machine learning.
+statistical models, and machine learning.
 
 As it's based on probabilities (like many useful techniques) it is not perfect,
 but it yields great results. Make sure to keep your data healthy to get better
@@ -295,12 +295,12 @@ Predictive analysis is useful for the following applications [9]:
 
 ### Prescriptive Analysis
 
-Lastly, the prescriptive analysis is the most advanced technique for data
-analysis. It requires lots of data, knowledge or expertise and use of models and
+Lastly, prescriptive analysis is the most advanced technique for data analysis.
+It requires lots of data, knowledge, or expertise and the use of models and
 tools.
 
 The prescriptive analysis tells what should be done in a -what, when, and why-
-fashion. It is the main mind that gives you advance information like why
+fashion. It is the main mind that gives you advanced information like why
 something might happen, so you can take immediate action to optimize it or fix
 it.
 
