@@ -3,12 +3,11 @@
 ![Cover](images/cover.jpg)
 
 <figcaption>
+
 Image from 
-<it>
-<a href="https://pixabay.com/photos/chart-data-business-graph-finance-6765401">Pixabay
-</a>
-</it>
+*[Pixabay](https://pixabay.com/photos/chart-data-business-graph-finance-6765401)*
 by Mariakray
+
 </figcaption>
 
 ---
