@@ -520,6 +520,37 @@ data on your Power BI report will be sync and changes will be reflected.
 This option only works for database connections. You can add databases from
 localhost, Azure, MySQL, your server, and many options more.
 
+### Power Query
+
+Power Query is a big feature in Power BI that allows to make data
+transformations. This is useful when adding your data source to your project, so
+you can perform the typical data cleaning, filtering, or curation before going
+ahead with your reports.
+
+It extracts data from any data source.
+
+It has transformations like merging, combining, cleaning, or enhancing data.
+
+It loads all data, so they can be processed or analyzed in Power BI.
+
+### Common Data Transformations
+
+You can apply the following data transformations:
+
+- Add columns
+- Divide columns
+- Filter data
+- Change data type
+- Replace values
+- Add queries
+- Combine queries
+
+Power BI has data type inference that you customize so for example your data
+imported from Excel or CSV will likely have an appropriate data type. Data types
+are required to work with Power BI. If you don't have a relational database
+already then you will likely have to make more work on this data transformation
+stage.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
