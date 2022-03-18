@@ -361,6 +361,10 @@ better about Power BI from
 the [Power BI on Microsoft Learn &vert; Microsoft Docs](https://docs.microsoft.com/en-us/learn/powerplatform/power-bi)
 resource. This way you can go further with more details.
 
+If you are interested in Power BI is also recommended checking the official blog
+[Power BI Blog](https://powerbi.microsoft.com/en-us/blog) where you can find
+lots of post about it.
+
 Next, a practical and resumed experience is given to make your getting starting
 to this product faster. Recall that other BI analytics products like Tableau
 work under the same concepts. There are other similar products doing the same
