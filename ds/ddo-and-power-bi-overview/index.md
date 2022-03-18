@@ -368,6 +368,30 @@ but Power BI and Tableau are the leading. For example, IBM Watson Analytics is
 discontinued according to
 [TrustRadius](https://www.trustradius.com/products/ibm-watson-analytics/reviews#overview).
 
+### Available Platforms
+
+Microsoft Power BI offers a variety but not completely options for working.
+There's a cloud service similar to what other Microsoft products offer and the
+desktop, web, and mobile applications.
+
+You can use the web application at
+[app.powerbi.com](https://app.powerbi.com/home) to leverage the collaborative
+and cross-platform service offered by the web.
+
+You will likely be using the desktop app to work on your reports. It's important
+to know that the desktop app is only available for Windows from its app store
+and there's no version for macOS. If you want to use this app on macOS you will
+have to emulate it with some visualization software like Wine or VirtualBox.
+Recall that you always have the web app available, but professionals should
+usually employ desktop apps to have more performance, stability, and features.
+
+Last but not least, there's a mobile app for Android and iOS. With this app,
+other users like non-technical stakeholders can get their reports to consume
+them. Recall that there would be a scenario where someone is going to develop
+the technical task (probably on the desktop app) and there will be at least
+someone else who will need to use those results and this is a good use case that
+fits the mobile app.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
