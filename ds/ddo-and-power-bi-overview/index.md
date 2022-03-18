@@ -477,8 +477,7 @@ its usage.
 ### Data Sources
 
 Power BI allows to use a great amount of data sources to work with the data
-contained in those files or databases. The following approaches are to be
-considered when adding a new dataset or creating a new project:
+contained in those files or databases.
 
 Popular data sources used are:
 
@@ -503,6 +502,20 @@ They are classified into these data source types:
 - Azure
 - Online
 - Other
+
+Data can be normalized or denormalized. Normalized data passed through the
+formalization of a relational database (1, 2, 3, etc. Normal Form) in order to
+have an optimum way of storing the data with attributes like avoiding
+duplications, referential integrity, and storage optimization. On the other
+hand, denormalized data is the opposite or normalized, that is, data redundancy
+with high query speed but high storage wastage too. What kind of approach to
+take depends on the application but a normalized relational model is always
+required for modeling business applications because you always find relations in
+your business entities (like employees, products, categories, etc.), hence the
+usefulness of relational models.
+
+The following approaches are to be considered when adding a new dataset or
+creating a new project:
 
 #### Import
 
