@@ -533,7 +533,11 @@ It has transformations like merging, combining, cleaning, or enhancing data.
 
 It loads all data, so they can be processed or analyzed in Power BI.
 
-### Common Data Transformations
+One downside of this feature is that does not allow you to undo your changes, so
+you will have to be careful when performing actions or else you will have to
+start again.
+
+#### Common Data Transformations
 
 You can apply the following data transformations:
 
