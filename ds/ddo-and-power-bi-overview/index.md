@@ -30,8 +30,8 @@ There are many ways of performing data analysis, the most popular are:
   part in this adventure for high-performance computations [^1].
 
 [^1]: For example, Python libraries like Numpy are partly written in C so that
-    Python is used as a C interface with an easier syntax but the underlying code is
-    written in C [6].
+    Python is used as a C interface with an easier syntax but the underlying
+    code is written in C [6].
 
 Moreover, those are technical ways of developing data science applications. For
 end-users, there are plenty of options too. One of the most popular is, of
