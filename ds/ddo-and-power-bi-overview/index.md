@@ -392,6 +392,84 @@ the technical task (probably on the desktop app) and there will be at least
 someone else who will need to use those results and this is a good use case that
 fits the mobile app.
 
+### Pricing
+
+As usual, you have a free version available and then a suite of prices all the
+way up as far as your needs require it. There are certain soft limitations with
+the free version so if you're not an established business this may hurt your
+wallet. Students should not have any problem to use the product and services for
+educational or personal purposes.
+
+#### Free
+
+It has:
+
+- Use and collaborate on Power BI in Microsoft Teams.
+
+Also check:
+
+- 1GB of storage, only public report sharing.
+- No simultaneous collaboration.
+
+#### Pro
+
+> License individual users with modern, self-service analytics to visualize data
+> with live dashboards and reports, and share insights across your organization.
+>
+> Source: https://powerbi.microsoft.com/en-us/pricing
+
+It has:
+
+- What Free has.
+- Create Power BI Pro workspaces.
+- Create Power BI Pro workspaces.
+- Share datasets, dashboards, and reports with other Power BI Pro users.
+- Get intelligent and augmented analytics capabilities.
+
+Also check:
+
+- 10GB of storage.
+- Can share with internal users paying the Pro version too.
+- On-premises data sources with a Power BI gateway.
+- Limits datasets on shared capacity to 8 daily refreshes.
+
+The current pricing for the Pro version is $9.99 per user per month.
+
+#### Premium and More
+
+For a complete comparison among the different paying versions please check the
+pricing link given above.
+
+Next they have a Premium per use model at $20 per user per month, and:
+
+> License individual users to accelerate access to insights with advanced AI,
+> unlock self-service data prep for big data, and simplify data management and
+> access at enterprise scale.
+
+Also check (for Premium):
+
+- 100TB of storage.
+- Share with internal users with no Pro license.
+- Better scalability and performance.
+- Limits datasets on shared capacity to 48 daily refreshes.
+
+A Premium per capacity model from $4,995 per capacity per month, and:
+
+> License your organization with capacity to accelerate access to insights with
+> advanced AI, unlock self-service data prep for big data, and simplify data
+> management and access at enterprise scale—without per-user licenses for
+> content consumers.
+
+And, there's also an Autoscale plan with the following information:
+
+> Respond to occasional, unplanned overage spikes in Power BI Premium
+> capacity by automatically adding one vCore at a time per 24-hour period as 
+> your organization’s needs change with the flexibility of an Azure 
+> subscription.
+
+That is the information you need to know about how Power BI works according to
+its usage.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
