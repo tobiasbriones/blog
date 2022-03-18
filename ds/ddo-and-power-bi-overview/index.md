@@ -350,6 +350,24 @@ and keep moving forward to be able to make informed decisions.
 
 ---
 
+## Power BI Overview
+
+In this section, an overview of Power BI is given to understand what it is and
+how can be useful for you as a stakeholder in your business or data analyst.
+
+First, it is absolutely recommended reading the official docs from Microsoft.
+They are user-friendly and arranged like a reading course, so you can learn
+better about Power BI from
+the [Power BI on Microsoft Learn &vert; Microsoft Docs](https://docs.microsoft.com/en-us/learn/powerplatform/power-bi)
+resource. This way you can go further with more details.
+
+Next, a practical and resumed experience is given to make your getting starting
+to this product faster. Recall that other BI analytics products like Tableau
+work under the same concepts. There are other similar products doing the same
+but Power BI and Tableau are the leading. For example, IBM Watson Analytics is
+discontinued according to
+[TrustRadius](https://www.trustradius.com/products/ibm-watson-analytics/reviews#overview).
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
