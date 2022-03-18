@@ -474,6 +474,52 @@ And, there's also an Autoscale plan with the following information:
 That is the information you need to know about how Power BI works according to
 its usage.
 
+### Data Sources
+
+Power BI allows to use a great amount of data sources to work with the data
+contained in those files or databases. The following approaches are to be
+considered when adding a new dataset or creating a new project:
+
+Popular data sources used are:
+
+- Excel
+- Text/CSV
+- XML
+- JSON
+- SQL Server
+- Access
+- Other DBs like Oracle, MySQL, etc.
+- Azure SQL
+- Power BI datasets
+- Dataverse
+- Web
+- Many more...
+
+They are classified into these data source types:
+
+- File
+- Database
+- Power Platform
+- Azure
+- Online
+- Other
+
+#### Import
+
+This option lets you open a data source and make a copy into Power BI's memory
+so that the origin data source is decoupled from the work done on Power BI.
+
+This option works for any data source, that is, files or databases.
+
+#### Direct Query
+
+This is the other option and enables synchronization to keep the connectivity
+with your data source. That means that if your database is updated then your
+data on your Power BI report will be sync and changes will be reflected.
+
+This option only works for database connections. You can add databases from
+localhost, Azure, MySQL, your server, and many options more.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
