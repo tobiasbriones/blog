@@ -1,3 +1,6 @@
+---
+permalink: /ddo-and-power-bi-overview
+---
 # Data-Driven Organizations and Power BI Overview
 
 ![Cover](images/cover.jpg)
