@@ -568,6 +568,27 @@ are required to work with Power BI. If you don't have a relational database
 already then you will likely have to make more work on this data transformation
 stage.
 
+## Power BI vs Tableau
+
+This section contains a quick summary of data found at the links I leave you to
+the end.
+
+Both products are the market leaders for analytics and BI platforms. Tableau has
+more trajectory (since 2003) while Power BI is newer (since 2011/2013). Both
+products have the same objectives, and your knowledge of them is quite
+interchangeable.
+
+Key differences are: Tableau works on macOS, Tableau offers more certifications,
+prices vary, and Power BI is part of Office 365 so is like using other Microsoft
+products, unlike Tableau which integrates easier with Salesforce.
+
+If you want more context and details then go to these resources to make your
+conclusions:
+
+[Compare Tableau to Microsoft Power BI: Key Considerations &vert; Tableau](https://www.tableau.com/compare/tableau-power-bi)
+
+[Power BI vs Tableau: Which one should you choose? &vert; DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
