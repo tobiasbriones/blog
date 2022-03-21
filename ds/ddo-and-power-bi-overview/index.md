@@ -24,6 +24,36 @@ understand software like Power BI or Tableau and how they can be advantageous
 for your organization. This information is introductory and useful for any
 stakeholder or data analyst.
 
+## Contents
+
+- [Data-Driven Organizations and Power BI Overview](#data-driven-organizations-and-power-bi-overview)
+  * [Introduction](#introduction)
+    + [Data-Driven Organization](#data-driven-organization)
+    + [The Role of the CIO](#the-role-of-the-cio)
+    + [Watch Out Fake Friends](#watch-out-fake-friends)
+    + [Your Dataset](#your-dataset)
+    + [Next Steps](#next-steps)
+  * [Business Intelligence](#business-intelligence)
+    + [Descriptive Analysis](#descriptive-analysis)
+    + [Predictive Analysis](#predictive-analysis)
+    + [Prescriptive Analysis](#prescriptive-analysis)
+    + [Take Away](#take-away)
+  * [Power BI Overview](#power-bi-overview)
+    + [Available Platforms](#available-platforms)
+    + [Pricing](#pricing)
+      - [Free](#free)
+      - [Pro](#pro)
+      - [Premium and More](#premium-and-more)
+    + [Data Sources](#data-sources)
+      - [Import](#import)
+      - [Direct Query](#direct-query)
+    + [Power Query](#power-query)
+      - [Common Data Transformations](#common-data-transformations)
+  * [Power BI vs Tableau](#power-bi-vs-tableau)
+  * [Conclusion](#conclusion)
+  * [References](#references)
+
+
 ## Introduction
 
 Organizations should own their data but also have a way to make proper use of
@@ -610,6 +640,8 @@ possible. Also, an overview about entry tools that anyone can use like Power BI
 was detailed so that organizations can learn more about how to get started on
 developing analytics, and acquiring value from their data.
 
+Follow me on Twitter for more original content <a href="https://twitter.com/tobiasbriones_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @tobiasbriones_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
@@ -648,3 +680,19 @@ from [Business Intelligence (BI) | Investopedia](https://www.investopedia.com/te
 [9] UNSW Online. (2020, January 29). Descriptive, Predictive, Prescriptive
 Analytics | UNSW Online. Retrieved March 16, 2022,
 from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? | UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
+
+---
+
+**Math Software Engineer's Blog.**
+
+Copyright © 2021-2022 Tobias Briones. All rights reserved.
+
+**License**
+
+Content licensed under the [CC-BY-4.0 License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-CC). Code licensed
+under the [MIT License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-MIT). See [LICENSE](https://github.com/tobiasbriones/blog/blob/main/LICENSE.md) for more
+details.
+
+---
+
+Third party content marked available under their respective copyright and/or license. See [NOTICE](https://github.com/tobiasbriones/blog/blob/main/NOTICE.md) for more details.
