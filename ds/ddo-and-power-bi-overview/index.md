@@ -599,6 +599,14 @@ conclusions:
 
 [Power BI vs Tableau: Which one should you choose?, DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
 
+## Conclusion
+
+In this framework, context, data, and analysis were given to introduce the
+reader to the importance of implementing a data-driven organization as soon as
+possible. Also, an overview about entry tools that anyone can use like Power BI
+was detailed so that organizations can learn more about how to get started on
+developing analytics, and acquiring value from their data.
+
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
