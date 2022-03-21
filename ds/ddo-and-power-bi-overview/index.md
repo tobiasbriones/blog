@@ -119,7 +119,7 @@ follows:
 > existing business process and then integrates a system to realize that benefit 
 > or improvement.
 >
-> Source: *Chief Information Officer (CIO)* &vert; Investopedia [3]
+> Source: *Chief Information Officer (CIO)* | Investopedia [3]
 
 As said before, the CIO must keep up with the current technological trends. An
 effect of this is that, the definition of CIO before used to be more technical
@@ -350,7 +350,8 @@ and keep moving forward to be able to make informed decisions.
 
 <figcaption>
 
-<strong>Descriptive Predictive and Prescriptive Analysis</strong>
+<p align="center"><strong>Descriptive Predictive and Prescriptive 
+Analysis</strong></p>
 
 </figcaption>
 
@@ -591,9 +592,9 @@ products, unlike Tableau which integrates easier with Salesforce.
 If you want more context and details then go to these resources to make your
 conclusions:
 
-[Compare Tableau to Microsoft Power BI: Key Considerations &vert; Tableau](https://www.tableau.com/compare/tableau-power-bi)
+[Compare Tableau to Microsoft Power BI: Key Considerations, Tableau](https://www.tableau.com/compare/tableau-power-bi)
 
-[Power BI vs Tableau: Which one should you choose? &vert; DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
+[Power BI vs Tableau: Which one should you choose?, DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
 
 ## References
 
