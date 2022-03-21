@@ -94,7 +94,7 @@ performance &vert; McKinsey</it> [7] (under fair use)
 <strong>Successful companies outperform the competition across full customer 
 lifecycle</strong><br>
 Source: <it>Five facts: How customer analytics boosts corporate
-performance &vert; McKinsey</it> [7] (under fair use)
+performance | McKinsey</it> [7] (under fair use)
 </figcaption>
 
 ---
