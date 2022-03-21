@@ -7,7 +7,7 @@ permalink: /ddo-and-power-bi-overview
 
 <figcaption>
 
-Image from 
+Image from
 <it>
 <a href="https://pixabay.com/photos/chart-data-business-graph-finance-6765401">Pixabay
 </a>
@@ -73,7 +73,7 @@ and you can check your organization is data-driven when data initiatives are
 coming from the bottom of the hierarchy rather than the top or bureaucrats [2].
 
 According to the *Five facts: How customer analytics boosts corporate
-performance &vert; McKinsey* [7] survey, states that data-driven organizations
+performance | McKinsey* [7] survey, states that data-driven organizations
 are 23 times more likely to acquire customers, 6.5 times as likely to retain
 customers, and 18.8 times as likely to be profitable.
 
@@ -83,7 +83,7 @@ customers, and 18.8 times as likely to be profitable.
 <strong>Extensive use of customer analytics drives corporate performance 
 heavily</strong><br>
 Source: <it>Five facts: How customer analytics boosts corporate
-performance &vert; McKinsey</it> [7] (under fair use)
+performance | McKinsey</it> [7] (under fair use)
 </figcaption>
 
 ---
@@ -119,7 +119,7 @@ follows:
 > existing business process and then integrates a system to realize that benefit 
 > or improvement.
 >
-> Source: *Chief Information Officer (CIO)* &vert; Investopedia [3]
+> Source: *Chief Information Officer (CIO)* | Investopedia [3]
 
 As said before, the CIO must keep up with the current technological trends. An
 effect of this is that, the definition of CIO before used to be more technical
@@ -142,7 +142,7 @@ following comparison:
 | Within IT              | Everywhere                   |
 | IT-risk-focused        | Business-risk-focused        |
 
-Source: *CIO Agenda 2018* &vert; Gartner [4]
+Source: *CIO Agenda 2018* | Gartner [4]
 
 ### Watch Out Fake Friends
 
@@ -180,7 +180,7 @@ programming language's safe type system at the
 [RustBelt: Securing the Foundations of the Rust Programming Language](https://people.mpi-sws.org/~dreyer/papers/rustbelt/paper.pdf).
 
 The article I talked about at the beginning of this subsection is *Without An
-Opinion, You're Just Another Person With Data* &vert; Forbes. Pay attention to
+Opinion, You're Just Another Person With Data* | Forbes. Pay attention to
 the following interesting assertions:
 
 > ... Roberta Wohlstetter argued that the Japanese attack succeeded because 
@@ -191,7 +191,7 @@ the following interesting assertions:
 > concluded that the job of lifting signals out of a confusion of noise is an
 > activity that is very much aided by hypotheses.
 > 
-> Source: *Without An Opinion, You're Just Another Person With Data* &vert; 
+> Source: *Without An Opinion, You're Just Another Person With Data* | 
 > Forbes [5]
 
 Having a lot of data is a responsibility and problem that needs to be managed
@@ -207,7 +207,7 @@ Next, we have this quote to conclude this subsection:
 > impossible. There are no facts unless one has a criterion of relevance.”
 > --- Peter Drucker
 > 
-> Source: *Without An Opinion, You're Just Another Person With Data* &vert;
+> Source: *Without An Opinion, You're Just Another Person With Data* |
 > Forbes [5]
 
 So, going back to the original quote, watch out instead for
@@ -252,7 +252,7 @@ We have the following definition of Business Intelligence:
 > BI is a broad term that encompasses data mining, process analysis, performance
 > benchmarking, and descriptive analytics.
 >
-> Source: *Business Intelligence (BI)* &vert; Investopedia [8]
+> Source: *Business Intelligence (BI)* | Investopedia [8]
 
 The process will follow the next structure:
 
@@ -364,7 +364,7 @@ how can be useful for you as a stakeholder in your business or data analyst.
 First, it is absolutely recommended reading the official docs from Microsoft.
 They are user-friendly and arranged like a reading course, so you can learn
 better about Power BI from
-the [Power BI on Microsoft Learn &vert; Microsoft Docs](https://docs.microsoft.com/en-us/learn/powerplatform/power-bi)
+the [Power BI on Microsoft Learn | Microsoft Docs](https://docs.microsoft.com/en-us/learn/powerplatform/power-bi)
 resource. This way you can go further with more details.
 
 If you are interested in Power BI is also recommended checking the official blog
@@ -591,45 +591,45 @@ products, unlike Tableau which integrates easier with Salesforce.
 If you want more context and details then go to these resources to make your
 conclusions:
 
-[Compare Tableau to Microsoft Power BI: Key Considerations &vert; Tableau](https://www.tableau.com/compare/tableau-power-bi)
+[Compare Tableau to Microsoft Power BI: Key Considerations | Tableau](https://www.tableau.com/compare/tableau-power-bi)
 
-[Power BI vs Tableau: Which one should you choose? &vert; DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
+[Power BI vs Tableau: Which one should you choose? | DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
 
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
 March 15, 2022,
-from [Power BI on Microsoft Learn &vert; Microsoft Docs](https://docs.microsoft.com/en-us/learn/powerplatform/power-bi).
+from [Power BI on Microsoft Learn | Microsoft Docs](https://docs.microsoft.com/en-us/learn/powerplatform/power-bi).
 
 [2] Thusoo, A. (2022). Creating a Data-Driven Enterprise with DataOps. O’Reilly
 Online Learning. Retrieved March 15, 2022,
-from [4. Building a Data-Driven Organization - Creating a Data-Driven Enterprise with DataOps [Book] &vert; O’Reilly Media](https://www.oreilly.com/library/view/creating-a-data-driven/9781492049227/ch04.html).
+from [4. Building a Data-Driven Organization - Creating a Data-Driven Enterprise with DataOps [Book] | O’Reilly Media](https://www.oreilly.com/library/view/creating-a-data-driven/9781492049227/ch04.html).
 
 [3] Chief Information Officer (CIO). (2021, June 17). Investopedia. Retrieved
 March 15, 2022,
-from [Chief Information Officer (CIO) &vert; Investopedia](https://www.investopedia.com/terms/c/cio.asp).
+from [Chief Information Officer (CIO) | Investopedia](https://www.investopedia.com/terms/c/cio.asp).
 
 [4] Gartner. (2018). Mastering the New Business Executive Job of the CIO.
-[CIO Agenda 2018 &vert; Gartner](https://www.gartner.com/imagesrv/cio-trends/pdf/cio_agenda_2018.pdf).
+[CIO Agenda 2018 | Gartner](https://www.gartner.com/imagesrv/cio-trends/pdf/cio_agenda_2018.pdf).
 
 [5] Silberzahn, M. J. A. P. (2016, March 15). Without An Opinion, You’re Just
 Another Person With Data. Forbes. Retrieved March 15, 2022,
-from [Without An Opinion, You're Just Another Person With Data &vert; Forbes](https://www.forbes.com/sites/silberzahnjones/2016/03/15/without-an-opinion-youre-just-another-person-with-data/?sh=10542115699f).
+from [Without An Opinion, You're Just Another Person With Data | Forbes](https://www.forbes.com/sites/silberzahnjones/2016/03/15/without-an-opinion-youre-just-another-person-with-data/?sh=10542115699f).
 
 [6] Numpy.org. (2022). GitHub - numpy/numpy: The fundamental package for
-scientific computing with Python. Numpy &vert; GitHub Repository. Retrieved
+scientific computing with Python. Numpy | GitHub Repository. Retrieved
 March 15, 2022,
-from [Numpy &vert; GitHub Repository](https://github.com/numpy/numpy).
+from [Numpy | GitHub Repository](https://github.com/numpy/numpy).
 
 [7] Bokman, A., Fiedler, L., Perrey, J., & Pickersgill, A. (2018, February 5)
 . Five facts: How customer analytics boosts corporate performance. McKinsey &
 Company. Retrieved March 15, 2022,
-from [Five facts: How customer analytics boosts corporate performance &vert; McKinsey](https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/five-facts-how-customer-analytics-boosts-corporate-performance).
+from [Five facts: How customer analytics boosts corporate performance | McKinsey](https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/five-facts-how-customer-analytics-boosts-corporate-performance).
 
 [8] Investopedia. (2021, June 23). How Business Intelligence – BI Works.
 Retrieved March 16, 2022,
-from [Business Intelligence (BI) &vert; Investopedia](https://www.investopedia.com/terms/b/business-intelligence-bi.asp).
+from [Business Intelligence (BI) | Investopedia](https://www.investopedia.com/terms/b/business-intelligence-bi.asp).
 
 [9] UNSW Online. (2020, January 29). Descriptive, Predictive, Prescriptive
-Analytics &vert; UNSW Online. Retrieved March 16, 2022,
-from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? &vert; UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
+Analytics | UNSW Online. Retrieved March 16, 2022,
+from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? | UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
