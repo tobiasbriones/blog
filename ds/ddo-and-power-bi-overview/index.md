@@ -8,7 +8,10 @@ permalink: /ddo-and-power-bi-overview
 <figcaption>
 
 Image from 
-*[Pixabay](https://pixabay.com/photos/chart-data-business-graph-finance-6765401)*
+<it>
+<a href="https://pixabay.com/photos/chart-data-business-graph-finance-6765401">Pixabay
+</a>
+</it>
 by Mariakray
 
 </figcaption>
@@ -53,7 +56,7 @@ web, the desktop, or mobile.
 
 ### Data-Driven Organization
 
-According to *Building a Data-Driven Organization &vert; O’Reilly Media* [2], a
+According to *Building a Data-Driven Organization | O’Reilly Media* [2], a
 Data-Driven Organization should have a culture to use data for decision-making,
 the organization with the structure to support it, and the technology that
 supports it. The key is to develop that culture. Everything is data, for
