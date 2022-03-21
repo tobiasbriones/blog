@@ -18,6 +18,12 @@ by Mariakray
 
 ---
 
+An introductory framework about the data-driven culture and why it's fundamental
+for any business is given in this article, then an overview is given to
+understand software like Power BI or Tableau and how they can be advantageous
+for your organization. This information is introductory and useful for any
+stakeholder or data analyst.
+
 ## Introduction
 
 Organizations should own their data but also have a way to make proper use of
@@ -80,8 +86,8 @@ customers, and 18.8 times as likely to be profitable.
 ![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
 
 <figcaption>
-<strong>Extensive use of customer analytics drives corporate performance 
-heavily</strong><br>
+<p align="center"><strong>Extensive use of customer analytics drives corporate 
+performance heavily</strong></p>
 Source: <it>Five facts: How customer analytics boosts corporate
 performance | McKinsey</it> [7] (under fair use)
 </figcaption>
@@ -91,8 +97,8 @@ performance | McKinsey</it> [7] (under fair use)
 ![mckinsey-exhibit-2](images/mckinsey-exhibit-2.svgz)
 
 <figcaption>
-<strong>Successful companies outperform the competition across full customer 
-lifecycle</strong><br>
+<p align="center"><strong>Successful companies outperform the competition 
+across full customer lifecycle</strong></p>
 Source: <it>Five facts: How customer analytics boosts corporate
 performance | McKinsey</it> [7] (under fair use)
 </figcaption>
@@ -595,6 +601,14 @@ conclusions:
 [Compare Tableau to Microsoft Power BI: Key Considerations, Tableau](https://www.tableau.com/compare/tableau-power-bi)
 
 [Power BI vs Tableau: Which one should you choose?, DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
+
+## Conclusion
+
+In this framework, context, data, and analysis were given to introduce the
+reader to the importance of implementing a data-driven organization as soon as
+possible. Also, an overview about entry tools that anyone can use like Power BI
+was detailed so that organizations can learn more about how to get started on
+developing analytics, and acquiring value from their data.
 
 ## References
 
