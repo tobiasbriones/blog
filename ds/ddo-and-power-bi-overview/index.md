@@ -155,7 +155,7 @@ follows:
 > existing business process and then integrates a system to realize that benefit 
 > or improvement.
 >
-> Source: *Chief Information Officer (CIO)* | Investopedia [3]
+> Source: *Chief Information Officer (CIO)* \| Investopedia [3]
 
 As said before, the CIO must keep up with the current technological trends. An
 effect of this is that, the definition of CIO before used to be more technical
