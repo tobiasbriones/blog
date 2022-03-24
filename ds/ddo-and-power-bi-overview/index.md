@@ -24,36 +24,6 @@ understand software like Power BI or Tableau and how they can be advantageous
 for your organization. This information is introductory and useful for any
 stakeholder or data analyst.
 
-## Contents
-
-- [Data-Driven Organizations and Power BI Overview](#data-driven-organizations-and-power-bi-overview)
-  * [Introduction](#introduction)
-    + [Data-Driven Organization](#data-driven-organization)
-    + [The Role of the CIO](#the-role-of-the-cio)
-    + [Watch Out Fake Friends](#watch-out-fake-friends)
-    + [Your Dataset](#your-dataset)
-    + [Next Steps](#next-steps)
-  * [Business Intelligence](#business-intelligence)
-    + [Descriptive Analysis](#descriptive-analysis)
-    + [Predictive Analysis](#predictive-analysis)
-    + [Prescriptive Analysis](#prescriptive-analysis)
-    + [Take Away](#take-away)
-  * [Power BI Overview](#power-bi-overview)
-    + [Available Platforms](#available-platforms)
-    + [Pricing](#pricing)
-      - [Free](#free)
-      - [Pro](#pro)
-      - [Premium and More](#premium-and-more)
-    + [Data Sources](#data-sources)
-      - [Import](#import)
-      - [Direct Query](#direct-query)
-    + [Power Query](#power-query)
-      - [Common Data Transformations](#common-data-transformations)
-  * [Power BI vs Tableau](#power-bi-vs-tableau)
-  * [Conclusion](#conclusion)
-  * [References](#references)
-
-
 ## Introduction
 
 Organizations should own their data but also have a way to make proper use of
@@ -98,8 +68,8 @@ the organization with the structure to support it, and the technology that
 supports it. The key is to develop that culture. Everything is data, for
 literally any decision to take, use data as a fact to lead to that decision.
 
-A problem with traditional organizations is requiring the so-called HIPPO
-(Highest-Paid Person in the Office)
+A problem with traditional organizations is requiring the so-called **HIPPO
+(Highest-Paid Person in the Office)**
 to make decisions [2]. Recall that you also need data permissions to acquire
 them, so you usually depend on the HIPPO who will be far from good results,
 that's a big problem for the data-driven organization.
@@ -111,7 +81,9 @@ coming from the bottom of the hierarchy rather than the top or bureaucrats [2].
 According to the *Five facts: How customer analytics boosts corporate
 performance | McKinsey* [7] survey, states that data-driven organizations
 are 23 times more likely to acquire customers, 6.5 times as likely to retain
-customers, and 18.8 times as likely to be profitable.
+customers, and 18.8 times as likely to be profitable. That is, 
+**organizations leveraging analytics are significantly more competitive than 
+those that don't**.
 
 ![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
 
@@ -161,7 +133,7 @@ As said before, the CIO must keep up with the current technological trends. An
 effect of this is that, the definition of CIO before used to be more technical
 but now with cloud computing, the new mainstream and emerging technologies there
 is a plenty of opportunities for businesses to move faster but, this also
-implies the CIO and, most importantly, the whole culture also keeps up to date
+implies the CIO and, most importantly, the whole culture also keep up to date
 to be capable of constantly moving forward. This can be resumed into the
 following comparison:
 
@@ -203,9 +175,9 @@ nowadays, and finally, you must keep in mind the glorious inequality
 
 This recalls me
 that [Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
-wanted to make computer software out of theorems proving every library
-correctness but in real life, computer science is as stated by its name, a
-science and not math, so you prove a program wrong with unit testing instead
+wanted to make computer software out of theorems proving every library's
+correctness, but in real life, computer science is as stated by its name, a
+science and not math, so you prove a program wrong with unit testing instead of
 directly proving it right. That is also said by
 [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) in one his
 lectures.
@@ -227,7 +199,7 @@ the following interesting assertions:
 > concluded that the job of lifting signals out of a confusion of noise is an
 > activity that is very much aided by hypotheses.
 > 
-> Source: *Without An Opinion, You're Just Another Person With Data* | 
+> Source: *Without An Opinion, You're Just Another Person With Data* \| 
 > Forbes [5]
 
 Having a lot of data is a responsibility and problem that needs to be managed
@@ -243,7 +215,7 @@ Next, we have this quote to conclude this subsection:
 > impossible. There are no facts unless one has a criterion of relevance.”
 > --- Peter Drucker
 > 
-> Source: *Without An Opinion, You're Just Another Person With Data* |
+> Source: *Without An Opinion, You're Just Another Person With Data* \|
 > Forbes [5]
 
 So, going back to the original quote, watch out instead for
@@ -288,7 +260,7 @@ We have the following definition of Business Intelligence:
 > BI is a broad term that encompasses data mining, process analysis, performance
 > benchmarking, and descriptive analytics.
 >
-> Source: *Business Intelligence (BI)* | Investopedia [8]
+> Source: *Business Intelligence (BI)* \| Investopedia [8]
 
 The process will follow the next structure:
 
@@ -628,7 +600,7 @@ products, unlike Tableau which integrates easier with Salesforce.
 If you want more context and details then go to these resources to make your
 conclusions:
 
-[Compare Tableau to Microsoft Power BI: Key Considerations, Tableau](https://www.tableau.com/compare/tableau-power-bi)
+[Compare Tableau to Microsoft Power BI: Key Considerations \| Tableau](https://www.tableau.com/compare/tableau-power-bi)
 
 [Power BI vs Tableau: Which one should you choose?, DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
 
@@ -639,8 +611,6 @@ reader to the importance of implementing a data-driven organization as soon as
 possible. Also, an overview about entry tools that anyone can use like Power BI
 was detailed so that organizations can learn more about how to get started on
 developing analytics, and acquiring value from their data.
-
-Follow me on Twitter for more original content <a href="https://twitter.com/tobiasbriones_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @tobiasbriones_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>.
 
 ## References
 
@@ -680,19 +650,3 @@ from [Business Intelligence (BI) | Investopedia](https://www.investopedia.com/te
 [9] UNSW Online. (2020, January 29). Descriptive, Predictive, Prescriptive
 Analytics | UNSW Online. Retrieved March 16, 2022,
 from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? | UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
-
----
-
-**Math Software Engineer's Blog.**
-
-Copyright © 2021-2022 Tobias Briones. All rights reserved.
-
-**License**
-
-Content licensed under the [CC-BY-4.0 License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-CC). Code licensed
-under the [MIT License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-MIT). See [LICENSE](https://github.com/tobiasbriones/blog/blob/main/LICENSE.md) for more
-details.
-
----
-
-Third party content marked available under their respective copyright and/or license. See [NOTICE](https://github.com/tobiasbriones/blog/blob/main/NOTICE.md) for more details.
