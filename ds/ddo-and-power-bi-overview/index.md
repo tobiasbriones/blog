@@ -65,8 +65,8 @@ the organization with the structure to support it, and the technology that
 supports it. The key is to develop that culture. Everything is data, for
 literally any decision to take, use data as a fact to lead to that decision.
 
-A problem with traditional organizations is requiring the so-called HIPPO
-(Highest-Paid Person in the Office)
+A problem with traditional organizations is requiring the so-called **HIPPO
+(Highest-Paid Person in the Office)**
 to make decisions [2]. Recall that you also need data permissions to acquire
 them, so you usually depend on the HIPPO who will be far from good results,
 that's a big problem for the data-driven organization.
@@ -78,7 +78,9 @@ coming from the bottom of the hierarchy rather than the top or bureaucrats [2].
 According to the *Five facts: How customer analytics boosts corporate
 performance | McKinsey* [7] survey, states that data-driven organizations
 are 23 times more likely to acquire customers, 6.5 times as likely to retain
-customers, and 18.8 times as likely to be profitable.
+customers, and 18.8 times as likely to be profitable. That is, 
+**organizations leveraging analytics are significantly more competitive than 
+those that don't**.
 
 ![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
 
@@ -122,13 +124,13 @@ follows:
 > existing business process and then integrates a system to realize that benefit 
 > or improvement.
 >
-> Source: *Chief Information Officer (CIO)* | Investopedia [3]
+> Source: *Chief Information Officer (CIO)* \| Investopedia [3]
 
 As said before, the CIO must keep up with the current technological trends. An
 effect of this is that, the definition of CIO before used to be more technical
 but now with cloud computing, the new mainstream and emerging technologies there
 is a plenty of opportunities for businesses to move faster but, this also
-implies the CIO and, most importantly, the whole culture also keeps up to date
+implies the CIO and, most importantly, the whole culture also keep up to date
 to be capable of constantly moving forward. This can be resumed into the
 following comparison:
 
@@ -145,7 +147,7 @@ following comparison:
 | Within IT              | Everywhere                   |
 | IT-risk-focused        | Business-risk-focused        |
 
-Source: *CIO Agenda 2018* | Gartner [4]
+Source: *CIO Agenda 2018* \| Gartner [4]
 
 ### Watch Out Fake Friends
 
@@ -166,7 +168,7 @@ we know that "Without data you’re just a person with an opinion", right?.
 Now check this out. Data are collected from social interactions which turn them
 into not-real facts, extremely temporal-and-human-coupled, data are everywhere
 nowadays, and finally, you must keep in mind the glorious inequality
-`quality > quantity`.
+**quality > quantity**.
 
 This recalls me
 that [Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
@@ -194,7 +196,7 @@ the following interesting assertions:
 > concluded that the job of lifting signals out of a confusion of noise is an
 > activity that is very much aided by hypotheses.
 > 
-> Source: *Without An Opinion, You're Just Another Person With Data* | 
+> Source: *Without An Opinion, You're Just Another Person With Data* \| 
 > Forbes [5]
 
 Having a lot of data is a responsibility and problem that needs to be managed
@@ -210,7 +212,7 @@ Next, we have this quote to conclude this subsection:
 > impossible. There are no facts unless one has a criterion of relevance.”
 > --- Peter Drucker
 > 
-> Source: *Without An Opinion, You're Just Another Person With Data* |
+> Source: *Without An Opinion, You're Just Another Person With Data* \|
 > Forbes [5]
 
 So, going back to the original quote, watch out instead for
@@ -255,7 +257,7 @@ We have the following definition of Business Intelligence:
 > BI is a broad term that encompasses data mining, process analysis, performance
 > benchmarking, and descriptive analytics.
 >
-> Source: *Business Intelligence (BI)* | Investopedia [8]
+> Source: *Business Intelligence (BI)* \| Investopedia [8]
 
 The process will follow the next structure:
 
@@ -266,8 +268,8 @@ The process will follow the next structure:
 
 ### Descriptive Analysis
 
-The descriptive analysis tells you what has happened or what your organization
-has, and it's the first step of this data analysis process.
+The descriptive analysis tells you **what has happened or what your organization
+has**, and it's the first step of this data analysis process.
 
 This encompasses daily activities like selling reports, inventory, warehouse,
 surveys and social media interactions. Hence, the way of performing this
@@ -285,10 +287,10 @@ doing descriptive analysis.
 
 ### Predictive Analysis
 
-As its name states, this data analysis tells or predicts what could happen in
-the future. Think of it as an extrapolation of your descriptive analysis. It is
-a more advanced technique based on probabilities and makes use of data mining,
-statistical models, and machine learning.
+As its name states, this data analysis tells or predicts **what could happen in
+the future**. Think of it as an extrapolation of your descriptive analysis. It
+is a more advanced technique based on probabilities and makes use of data
+mining, statistical models, and machine learning.
 
 As it's based on probabilities (like many useful techniques) it is not perfect,
 but it yields great results. Make sure to keep your data healthy to get better
@@ -307,14 +309,14 @@ Lastly, prescriptive analysis is the most advanced technique for data analysis.
 It requires lots of data, knowledge, or expertise and the use of models and
 tools.
 
-The prescriptive analysis tells what should be done in a -what, when, and why-
-fashion. It is the main mind that gives you advanced information like why
+The prescriptive analysis tells **what should be done** in a -what, when, and
+why- fashion. It is the main mind that gives you advanced information like why
 something might happen, so you can take immediate action to optimize it or fix
 it.
 
 Needless to say, if you don't even have a descriptive analysis implementation
-then you'll never make it to this stage. That's why it's crucial to start with
-the data-driven culture and data analysis as soon as possible to not lose
+then you'll never make it to this stage. That's why **it's crucial to start with
+the data-driven culture and data analysis as soon as possible** to not lose
 valuable time in your organization.
 
 A downside of this approach is the extensive amount of data required
@@ -595,9 +597,9 @@ products, unlike Tableau which integrates easier with Salesforce.
 If you want more context and details then go to these resources to make your
 conclusions:
 
-[Compare Tableau to Microsoft Power BI: Key Considerations, Tableau](https://www.tableau.com/compare/tableau-power-bi)
+[Compare Tableau to Microsoft Power BI: Key Considerations \| Tableau](https://www.tableau.com/compare/tableau-power-bi)
 
-[Power BI vs Tableau: Which one should you choose?, DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
+[Power BI vs Tableau: Which one should you choose? \| DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
 
 ## Conclusion
 
