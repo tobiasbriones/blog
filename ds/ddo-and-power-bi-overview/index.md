@@ -24,6 +24,35 @@ understand software like Power BI or Tableau and how they can be advantageous
 for your organization. This information is introductory and useful for any
 stakeholder or data analyst.
 
+## Contents
+
+- [Data-Driven Organizations and Power BI Overview](#data-driven-organizations-and-power-bi-overview)
+  * [Introduction](#introduction)
+    + [Data-Driven Organization](#data-driven-organization)
+    + [The Role of the CIO](#the-role-of-the-cio)
+    + [Watch Out Fake Friends](#watch-out-fake-friends)
+    + [Your Dataset](#your-dataset)
+    + [Next Steps](#next-steps)
+  * [Business Intelligence](#business-intelligence)
+    + [Descriptive Analysis](#descriptive-analysis)
+    + [Predictive Analysis](#predictive-analysis)
+    + [Prescriptive Analysis](#prescriptive-analysis)
+    + [Take Away](#take-away)
+  * [Power BI Overview](#power-bi-overview)
+    + [Available Platforms](#available-platforms)
+    + [Pricing](#pricing)
+      - [Free](#free)
+      - [Pro](#pro)
+      - [Premium and More](#premium-and-more)
+    + [Data Sources](#data-sources)
+      - [Import](#import)
+      - [Direct Query](#direct-query)
+    + [Power Query](#power-query)
+      - [Common Data Transformations](#common-data-transformations)
+  * [Power BI vs Tableau](#power-bi-vs-tableau)
+  * [Conclusion](#conclusion)
+  * [References](#references)
+
 ## Introduction
 
 Organizations should own their data but also have a way to make proper use of
@@ -171,7 +200,7 @@ we know that "Without data you’re just a person with an opinion", right?.
 Now check this out. Data are collected from social interactions which turn them
 into not-real facts, extremely temporal-and-human-coupled, data are everywhere
 nowadays, and finally, you must keep in mind the glorious inequality
-`quality > quantity`.
+**quality > quantity**.
 
 This recalls me
 that [Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
@@ -271,8 +300,8 @@ The process will follow the next structure:
 
 ### Descriptive Analysis
 
-The descriptive analysis tells you what has happened or what your organization
-has, and it's the first step of this data analysis process.
+The descriptive analysis tells you **what has happened or what your organization
+has**, and it's the first step of this data analysis process.
 
 This encompasses daily activities like selling reports, inventory, warehouse,
 surveys and social media interactions. Hence, the way of performing this
@@ -290,10 +319,10 @@ doing descriptive analysis.
 
 ### Predictive Analysis
 
-As its name states, this data analysis tells or predicts what could happen in
-the future. Think of it as an extrapolation of your descriptive analysis. It is
-a more advanced technique based on probabilities and makes use of data mining,
-statistical models, and machine learning.
+As its name states, this data analysis tells or predicts **what could happen in
+the future**. Think of it as an extrapolation of your descriptive analysis. It
+is a more advanced technique based on probabilities and makes use of data
+mining, statistical models, and machine learning.
 
 As it's based on probabilities (like many useful techniques) it is not perfect,
 but it yields great results. Make sure to keep your data healthy to get better
@@ -312,14 +341,14 @@ Lastly, prescriptive analysis is the most advanced technique for data analysis.
 It requires lots of data, knowledge, or expertise and the use of models and
 tools.
 
-The prescriptive analysis tells what should be done in a -what, when, and why-
-fashion. It is the main mind that gives you advanced information like why
+The prescriptive analysis tells **what should be done** in a -what, when, and
+why- fashion. It is the main mind that gives you advanced information like why
 something might happen, so you can take immediate action to optimize it or fix
 it.
 
 Needless to say, if you don't even have a descriptive analysis implementation
-then you'll never make it to this stage. That's why it's crucial to start with
-the data-driven culture and data analysis as soon as possible to not lose
+then you'll never make it to this stage. That's why **it's crucial to start with
+the data-driven culture and data analysis as soon as possible** to not lose
 valuable time in your organization.
 
 A downside of this approach is the extensive amount of data required
@@ -602,7 +631,7 @@ conclusions:
 
 [Compare Tableau to Microsoft Power BI: Key Considerations \| Tableau](https://www.tableau.com/compare/tableau-power-bi)
 
-[Power BI vs Tableau: Which one should you choose?, DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
+[Power BI vs Tableau: Which one should you choose? \| DataCamp](https://www.datacamp.com/blog/power-bi-vs-tableau-which-one-should-you-choose)
 
 ## Conclusion
 
@@ -611,6 +640,8 @@ reader to the importance of implementing a data-driven organization as soon as
 possible. Also, an overview about entry tools that anyone can use like Power BI
 was detailed so that organizations can learn more about how to get started on
 developing analytics, and acquiring value from their data.
+
+Follow me on Twitter for more original content <a href="https://twitter.com/tobiasbriones_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @tobiasbriones_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>.
 
 ## References
 
@@ -650,3 +681,19 @@ from [Business Intelligence (BI) | Investopedia](https://www.investopedia.com/te
 [9] UNSW Online. (2020, January 29). Descriptive, Predictive, Prescriptive
 Analytics | UNSW Online. Retrieved March 16, 2022,
 from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? | UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
+
+---
+
+**Math Software Engineer's Blog.**
+
+Copyright © 2021-2022 Tobias Briones. All rights reserved.
+
+**License**
+
+Content licensed under the [CC-BY-4.0 License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-CC). Code licensed
+under the [MIT License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-MIT). See [LICENSE](https://github.com/tobiasbriones/blog/blob/main/LICENSE.md) for more
+details.
+
+---
+
+Third party content available under their respective source, copyright, and/or license. See [NOTICE](https://github.com/tobiasbriones/blog/blob/main/NOTICE.md) for more details.
