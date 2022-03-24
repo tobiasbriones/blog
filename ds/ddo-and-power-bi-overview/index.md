@@ -170,9 +170,9 @@ nowadays, and finally, you must keep in mind the glorious inequality
 
 This recalls me
 that [Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
-wanted to make computer software out of theorems proving every library
-correctness but in real life, computer science is as stated by its name, a
-science and not math, so you prove a program wrong with unit testing instead
+wanted to make computer software out of theorems proving every library's
+correctness, but in real life, computer science is as stated by its name, a
+science and not math, so you prove a program wrong with unit testing instead of
 directly proving it right. That is also said by
 [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) in one his
 lectures.
