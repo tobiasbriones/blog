@@ -1,6 +1,13 @@
 ---
 permalink: /ddo-and-power-bi-overview
+description: An introductory framework about the data-driven culture and why it's fundamental
+for any business is given in this article, then an overview is given to
+understand software like Power BI or Tableau and how they can be advantageous
+for your organization. This information is introductory and useful for any
+stakeholder or data analyst.
 ---
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+
 # Data-Driven Organizations and Power BI Overview
 
 ![Cover](images/cover.jpg)
