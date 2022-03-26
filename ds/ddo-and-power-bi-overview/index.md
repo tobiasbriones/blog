@@ -684,19 +684,3 @@ from [Business Intelligence (BI) | Investopedia](https://www.investopedia.com/te
 [9] UNSW Online. (2020, January 29). Descriptive, Predictive, Prescriptive
 Analytics | UNSW Online. Retrieved March 16, 2022,
 from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? | UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
-
----
-
-**Math Software Engineer's Blog.**
-
-Copyright © 2021-2022 Tobias Briones. All rights reserved.
-
-**License**
-
-Content licensed under the [CC-BY-4.0 License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-CC). Code licensed
-under the [MIT License](https://github.com/tobiasbriones/blog/blob/main/LICENSE-MIT). See [LICENSE](https://github.com/tobiasbriones/blog/blob/main/LICENSE.md) for more
-details.
-
----
-
-Third party content available under their respective source, copyright, and/or license. See [NOTICE](https://github.com/tobiasbriones/blog/blob/main/NOTICE.md) for more details.
