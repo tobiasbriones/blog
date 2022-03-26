@@ -644,8 +644,6 @@ possible. Also, an overview about entry tools that anyone can use like Power BI
 was detailed so that organizations can learn more about how to get started on
 developing analytics, and acquiring value from their data.
 
-Follow me on Twitter for more original content <a href="https://twitter.com/tobiasbriones_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @tobiasbriones_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>.
-
 ## References
 
 [1] Microsoft. (2022). Power BI on Microsoft Learn. Microsoft Docs. Retrieved
