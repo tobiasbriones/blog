@@ -6,16 +6,6 @@
 
 Math Software Engineer's Blog.
 
-## Articles
-
-This is a temporal list of articles I start publishing:
-
-- [Draw a Tree on Canvas with XY Coordinates](https://blog.mathsoftware.engineer/draw-a-tree-on-canvas-with-xy-coordinates)
-
-- [Modern PC CPU Sockets (2022)](https://blog.mathsoftware.engineer/2022-01-31-modern-pc-cpu-sockets).
-
-- [Arduino Lab: Activating a Digital Output](https://blog.mathsoftware.engineer/arduino-lab-activating-a-digital-output)
-
 NOTE: Structural and low-level changes are being implemented to the platform so several things are not stable yet.
 
 ## Contact
