@@ -1,3 +1,6 @@
+---
+permalink: /everything-is-relative
+---
 # Everything is Relative
 
 Your life is going to change like mine did when you truly understand that
