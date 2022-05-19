@@ -3,7 +3,9 @@ permalink: /everything-is-relative
 ---
 # Everything is Relative
 
-Your life is going to change like mine did when you truly understand that
+$$x^2=\frac{3x}{y_3}$$
+
+Your life is going to $\bar{x}$ change like mine did when you truly understand that
 everything is relative.
 
 I used to see everything as absolute, now I can see relativism after years of
