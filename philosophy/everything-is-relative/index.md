@@ -1,3 +1,7 @@
+<!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+<!-- This file is part of https://github.com/tobiasbriones/blog -->
+
 # Everything is Relative
 
 Your life is going to change like mine did when you truly understand that
