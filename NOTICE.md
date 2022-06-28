@@ -2,7 +2,7 @@
 
 ## Blog
 
-Copyright © 2021 Tobias Briones. All rights reserved.
+Copyright © 2021-present Tobias Briones. All rights reserved.
 
 Content licensed under the [CC-BY-4.0 License](LICENSE-CC).
 
