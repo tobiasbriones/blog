@@ -23,3 +23,8 @@ Copyright © 2021-present Tobias Briones. All rights reserved.
 
 Content licensed under the [CC-BY-4.0 License](LICENSE-CC). Code licensed
 under the [MIT License](LICENSE-MIT).
+
+---
+
+This project contains third-party content available under their respective
+source, copyright, and/or license. See [NOTICE](NOTICE.md) for more details.
