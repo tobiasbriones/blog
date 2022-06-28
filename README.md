@@ -17,7 +17,7 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 Math Software Engineer's Blog.
 
-Copyright © 2021 Tobias Briones. All rights reserved.
+Copyright © 2021-present Tobias Briones. All rights reserved.
 
 ### License
 
