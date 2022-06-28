@@ -15,7 +15,7 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 **Blog**
 
-My professional's domain blog.
+Math Software Engineer's Blog.
 
 Copyright © 2021 Tobias Briones. All rights reserved.
 
