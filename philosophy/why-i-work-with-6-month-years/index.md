@@ -553,3 +553,34 @@ heterogeneous things, so impureness means that it can't be mathematical
 analysed, or it's too hard to reason about or model which leads to inherently
 incorrect/impure systems that propagate those impurities as monoliths that will
 eventually fall apart.
+
+## The Normal Year is a Monolith
+
+Monoliths fragment logic into many places and then in the end of a period of 
+time, usually a month or year those problems have to be addressed from everywhere
+with uncertainty.
+
+The impurities introduced by those practices lead to have to deal with that
+burnout: the more you go the more wrong you get.
+
+That's why organizations and people always have to do these kinds of
+rituals like Christmas, new year eve, accounting month end, etc.
+
+Problems propagate until those days, so they have to burn that energy
+that was spread by the impurities of the monolithic year.
+
+They wait for next year to be happy, or achieve something, so their
+lives end up waiting for that day to come.
+
+One red flag of those practices is always stereotypes or boilerplate like
+"weekend", "sunday is the day to rest", "next year will be better", etc.
+
+For example, they impose you to rest on Sundays because that's the 
+stereotype for "the day we rest" (e.g. put "controllers" in this package, 
+"middlewares" in this package, etc.). Here we come again with cheap ideas 
+for cheap-minded indoctrinated people. Remember that everything is relative, 
+so they can't tell you generic formulas, there's no good or bad, it depends 
+on the case. 
+
+Thus, a normal year of 365 years is a big monolith, and you know what 
+monoliths are all about if you've been reading me.
