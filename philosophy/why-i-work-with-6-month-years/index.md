@@ -408,6 +408,50 @@ become monolithic monsters full of impurities until they have to die
 naturally to restore that energy (workarounds) that was used to barely hold the 
 monolith.
 
+##### Comparison of Doing It Right versus Workarounds
+
+Everything from "real life" runs on software, so they \*are likely\* to be 
+homeomorphic spaces, therefore I can use my SWE knowledge, principles, and 
+experience into real life as everything is a system. In other words, SWE skills
+are interoperable with real life as everything from real life is mapped to 
+software.
+
+FP allows you to do things right: errors must be handled, or it won't compile as
+we have **algebraic data types (ADTs)** that are math definitions based on set
+theory like sum types and product types, you must *define* the logic for all
+cases to be matched, or it won't compile. The sum type consists of a 
+partition of its subsets, just like math theorems that use partitions to 
+provide better formulas. Think about topological basis, they're smaller 
+subsets that give us the shape or information about the whole topology they 
+populate, they are *simple*, and we can get more useful theorems from that 
+property I'm talking in this entry about being simple.
+
+On the other hand, ordinary mechanisms have used unchecked exceptions
+[^2] where all errors get stacked everywhere, or even worse, returning -1.
+
+[^2]: the only mainstream language with checked exceptions is Java so is not a 
+    popular error handling approach
+
+As implied from above, is not the same partitioning as fragmenting.
+
+That was an example comparison about error handling.
+
+Debugging skills are another workaround, my debugging skills are minimum, we
+don't need more than that. Programmers need to learn awful debugging tools
+because they get paid to write bugs. Bugs are not created alone, programmers
+have to push them, and the more we minimize the impurities the less
+debugging skills we need. The Rust language gives you the errors on the same
+compilation message, so that's a great example of doing it right. Now we
+don't have to pay scammers who write bugs intentionally to get paid to
+maintain them, including many companies with vertical hierarchies that
+copy-paste proprietary software ideas that are already done, but they have to
+sell their own proprietary garbage instead of reusing and contributing. SWE
+is about reusing.
+
+Now I hope that the difference between being a professional who acquires 
+skills from *direct knowledge* like math/science/real-engineering versus
+applying workarounds is completely clear.
+
 ##### Avoid Workarounds
 
 If hardware, imperative, procedural programming are inherently broken, why 
