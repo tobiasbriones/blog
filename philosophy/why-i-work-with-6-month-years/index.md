@@ -253,6 +253,9 @@ just cheap workarounds to bypass the actual problems. Impurities lead to cheap
 poorly-defined systems that eventually must die when you can't hold the monolith
 anymore.
 
+Just imagine that coupling OOP has, but I didn't even talk about inheritance 
+yet!!!.
+
 Now can you see why FP/recursion/homogeneity/pureness/math is infinitely 
 scalable, we don't see stupid fuzzywords or marketing in the factorial 
 function, with a simple number like 1 we can populate the whole logic. 
@@ -340,7 +343,78 @@ naturally impure).
 > 
 > Source: [techtarget.com](https://www.techtarget.com/whatis/definition/workaround#:~:text=A%20workaround%20is%20a%20method,a%20workaround%20is%20usually%20abandoned.)
 
-Just imagine that coupling, but I didn't even talk about inheritance!!!
+#### Do not Allow Workarounds
+
+Now this subsection is about enforcing the philosophy of being professional 
+and do things right.
+
+Here applies a good phrase that looks fool-obvious, but it's necessary to
+repeat to your chimp human mind all the time: **the only way to do things
+right is doing them right** (no workarounds allowed). If we keep doing nonsense
+that can't be proved but can only be sold, we'll be stuck in this nonsense
+circle of workarounds forever.
+
+##### My Story
+
+I learned that phrase long ago (and it hurt) when I had to work with some
+authoritarian piglets who love to have free employees just because they have
+many degrees, and I was just a fool/nerd student with the best grades and
+professor recommendations, so I was treated just as a "student without a
+degree to join the bureaucrats" or peon in my words, but they do need the
+free work!. Just an inferior student but who gives you the work of a
+professional.
+
+Companies or universities itself scam you because if you don't
+have a degree on hand they don't value your work, so they make you work for
+free, and you have to be "intelligent but be humble", don't criticise because
+they achieve knowledge from a piece of degree paper, you're automatically
+wrong because they have many degrees, and you're just a student (I'll write
+more about this later) you're work is not valued because you don't have a degree
+on hands but your free work does matter for them.
+
+I'm usually open and trust people, they're supposed to be "educated" at 
+university, but I learned for life that I must have not coupled my own projects
+and creativity to work for free for any piglet because they're not your friends.
+
+They're a complete mess as individuals/organizations, I really advice to never 
+get related to those people.
+
+How can you move forward if we need to pass by universities? We don't need to,
+just go do social engineering at university, taking care of whom you contact 
+to.
+
+We don't need universities since they're a scam, an archaic way of "getting 
+educated", they are absolutists like if you actually need them to fulfil your 
+dreams and life (a monopoly of "educated" people), otherwise if you're not 
+approved by them then they think you're supposed to be a loser for life (what 
+can you be/do without a degree?).
+
+One thing is to "validate your studies" which we all can do and in the end have
+to do in practice working for some organization so university was just another
+workaround to feel you learned, and another thing is to graduate a university
+with internal agenda and businesses even if they're public.
+
+As you can see, universities are monoliths or monopolies, they don't have 
+real professionals unless they're prohibited top 25 universities, they're 
+not simple as you need to go 5 years (another monolith) "to barely be 
+someone in this life", the more degrees you get the more vertical you grow,
+and you know what happens to monoliths. They don't have real professionals like 
+industry because they're full of those impurities I mentioned (and more).
+
+##### Be Professional
+
+I learned for life to not come out with workarounds because the only way to 
+do things right is to do them right.
+
+You won't fix workarounds later, that's a myth, workarounds are not even 
+fixable, just look at the disasters of "null" and "OOP" issues. Piglets want 
+to sell, but you're a professional, so you want to do things right instead.
+
+Nothing is perfect, you can fix small issues, but when something is not 
+right, then is just NOT right to proceed. As an engineer you need to master 
+the art of balancing tradeoffs.
+
+#### I Give Factual Opinions
 
 This is not just an opinion since I use to state factual arguments rather 
 than give opinions. Being a mathematician, the worse you can do is to give 
@@ -349,9 +423,9 @@ opinions on core topics like these.
 Well, in
 [DDO and Power BI Overview](https://blog.mathsoftware.engineer/ddo-and-power-bi-overview)
 I talked about "Without An Opinion, You’re Just Another Person With Data" 
-but we're then talking about prototypes or early stage designs, as a leader 
-and mathematician you need to know how to emit factual opinions is what I 
-try to say.
+but we're then talking about prototypes or early stage designs, what I
+try to say is that, as a leader and mathematician you need to know how to emit
+factual opinions.
 
 #### Take Away
 
