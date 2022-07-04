@@ -283,7 +283,62 @@ False
 ```
 
 So any workarounds like OOP won't scale at all, and will just eventually 
-become monolithic monsters full of impurities until the by nature have to die.
+become monolithic monsters full of impurities until they have to die 
+naturally to restore that energy (workarounds) that was used to barely hold the 
+monolith.
+
+##### Avoid Workarounds
+
+If hardware, imperative, procedural programming are inherently broken, why 
+keep on this line of paradigms if it'll happen what I explained? Impureness
+are propagated. This tells us that software doesn't need to be perfect, it's 
+a feature not a bug (reference the meme), so we use OOP for cheap programmers
+writing cheap software.
+
+Engineering software properly can only be achieved using math just like an 
+electrical engineer uses physics laws, so FP is the way to go here.
+
+They can say, we can formalize and prove OOP, define new math, new science, 
+etc., but that doesn't work that way. We can prove theorems without lemas 
+and already-proved theorems, we can prove the monolith all at same, it's 
+valid, but it's nonsense as we could get into a monster cyclomatic 
+complexity leading into a system that *is not simple*. We should make FP 
+more performant instead, like the innovations we see in the Rust language 
+with zero-cost-abstractions.
+
+I think it's imperative (pun intended) to say that my ultimate objective or 
+wet dream as a math software engineer is to have everything formalized so 
+that we run math as is, instead of workarounds like "C++ spaghetti bugged 
+high-performance scientific code". For this, hardware architecture has to 
+play well with pure math, but I'm not a computer engineer, so I can't work 
+on that, and it'd be absolutely crazy and expensive to achieve something like 
+that, so we have to use imperative general-purpose hardware, so I can think 
+of a virtual machine since a physical one is out of my domain: the math virtual 
+machine (MVM) as the platform to run math (as is).
+
+We have to avoid workarounds, I'll provide you with the underlying 
+definitions to make it clear:
+
+> **workaround:** a method for overcoming a problem or limitation in a 
+> program or system.
+> 
+> Source: [Oxford Languages and Google](https://languages.oup.com/google-dictionary-en)
+
+So workarounds are literally (in Spanish) an "alternative solution". If we 
+add patches like this, impurities come and propagated into the systems, and 
+they start becoming monoliths, and you know the rest of the process. Recall 
+that OOP is about building monoliths by definition, and that everything is 
+relative, so how do you know it's a monolith or not?, hint. zoom in/out the 
+system representation. But, math is pure by definition (while OOP is 
+naturally impure).
+
+> **Workaround:** A workaround is a method, sometimes used temporarily, for 
+> achieving a task or goal when the usual or planned method isn't working.
+> In information technology, a workaround is often used to overcome hardware,
+> programming, or communication problems. Once a problem is fixed, a workaround
+> is usually abandoned.
+> 
+> Source: [techtarget.com](https://www.techtarget.com/whatis/definition/workaround#:~:text=A%20workaround%20is%20a%20method,a%20workaround%20is%20usually%20abandoned.)
 
 Just imagine that coupling, but I didn't even talk about inheritance!!!
 
