@@ -122,3 +122,35 @@ function f(n) {
 Notice how we *define* the basic step with the number 1. That tells us that
 from a simple number like just 1 we can populate any logic or tree via
 declarative recursion or mathematical induction. It's homogeneous, so it's pure.
+
+#### Why Use Recursion in Programming?
+
+This is a perfect question that just came into my mind right now. When I was
+given free programming tuition at university I left an assigment to
+students to find out why they should use recursion even when computers are
+stupid enough to not understand recursion and pollute the stack of function
+calls.
+
+I researched such benefits before that day, but it wasn't too clear for me
+what recursion was up to.
+
+Now I can perfectly understand many advanced concepts by merging math and
+engineering. It's not just about writing easier to understand code
+(although recursion it's super hard to understand for many programmers), but
+for declarativeness, homogeneity, scalability in the logical aspect of
+course, etc.
+
+I fell in love with recursion when I started prototyping the
+[EP: Machine Replacement Model](https://github.com/tobiasbriones/ep-machine-replacement-model)
+and then the [Repsymo Solver](https://repsymo.com).
+
+That was when I was studying the deterministic dynamic programming models from
+operations research or mathematical programming courses.
+
+I created those two projects to be able to properly teach those topics in my
+university presentations.
+
+Now I can represent (hence Repsymo) those models in a useful way for the
+practitioner!
+
+We have the power of representing the beauty of recursion and math with Repsymo.
