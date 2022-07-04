@@ -584,3 +584,43 @@ on the case.
 
 Thus, a normal year of 365 years is a big monolith, and you know what 
 monoliths are all about if you've been reading me.
+
+### Why We Must Evolve Forward
+
+Impureness are always present in practice, but as mentioned many times here, 
+we must minimize them to burn them as little as possible.
+
+All days are the same for me to keep pureness or homogeneity.
+
+I do something when it has to be done (again, a case by case basis).
+
+I can't wait for Sunday or next year to take a rest, this is obvios, but
+people are stupid by having the imperative step-by-step reasoning that
+hardware has, so you have to remain them about obvious things all the time.
+
+They're so stupid they get brainwashed with the idea of "university degrees",
+"rest on Sundays", "next year you will become millionaire if you buy this 
+course", "you need a lot of degrees to be a boss and successful" (you don't 
+want to be a stupid boss if you're reading this, they thought me at 
+university we are bosses, so I learned how NOT to be at university),
+so all that garbage is imperative step-by-step brainwash.
+
+Humans (and hardware) are imperative, it makes sense since humans are closer 
+to primitive beings like cavemen than evolved beings like "super humans" or 
+composition of human and machine. Hardware too, because it has to be 
+general-purpose, otherwise you'd have to buy a new computer each time an 
+update is delivered.
+
+If you can only rest on Sundays then you're not an autonomous professional
+but a slave of capitalism (a.k.a. employee) because they don't give you 
+conditions such that you can fit yourself, your own needs, they don't allow 
+you to fulfil the purpose of your life, something I also define as being a 
+peon. You're then just a machinery to be replaced and labeled. 
+
+The fact that capitalism does "great things" does not mean is right, a 
+social system has to be put and capitalism is what we have over here. 
+Slavery was also legal and morally right, and they also "got stuff done". 
+It can be sold but not proven at all. We must move forward to 
+build a better system, otherwise there wouldn't be forward evolution.
+
+Evolution created us to evolve forward so let's carry on.
