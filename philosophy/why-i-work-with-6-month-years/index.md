@@ -8,7 +8,12 @@ The simplest designs are the best, they are more suitable to be proved and
 if it can be proved, then we have math. Something simple like a recursive
 logic that maps to a universe set a single value like 1 in the base step.
 
-## Easy Does Not Necessarily Equal Simple
+## Introduction
+
+I'll give you insights as a mini framework, so you understand what my logic 
+is about.
+
+### Easy Does Not Necessarily Equal Simple
 
 The easiest designs are monoliths with primitive obsession, but the simplest 
 designs are devised in a case by case basis. So easy designs are bad but easy 
@@ -30,7 +35,7 @@ complicated non-linear algebra.
 
 Notice that in engineering we *design* unlike math where we *model*.
 
-### Illustration of What Simple Looks Like
+#### Illustration of What Simple Looks Like
 
 Next, I'll give definitions so you can infer similar conclusions:
 
@@ -107,7 +112,7 @@ Notice how we *define* the basic step with the number 1. That tells us that
 from a simple number like just 1 we can populate any logic or tree via
 declarative recursion or mathematical induction. It's homogeneous, so it's pure.
 
-#### Why Use Recursion in Programming?
+##### Why Use Recursion in Programming?
 
 This is a perfect question that just came into my mind right now. When I was
 given free programming tuition at university I left an assigment to
