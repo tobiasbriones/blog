@@ -13,3 +13,4 @@ Go to:
 - [ddo-and-power-bi-overview](ds/ddo-and-power-bi-overview)
 - [2022-03-14-pi-day](math/2022-03-14-pi-day)
 - [everything-is-relative](philosophy/everything-is-relative)
+- [why-i-work-with-6-month-years](philosophy/why-i-work-with-6-month-years)
