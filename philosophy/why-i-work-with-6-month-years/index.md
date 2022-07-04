@@ -185,6 +185,24 @@ another whole topic I use to talk about. Needless to say that you should
 use partitions (e.g. ATDs) to keep cohesiveness unlike heterogeneous 
 fragmentation.
 
+#### Monoliths Lead to Workarounds
+
+If you look at the pyramid of power (a vertical structure), you can see 
+peons are inferior to managers (I call them mega-peons) and mega peons are 
+inferior to piglets. That's just a chess game with heterogeneous entities. 
+
+They're not even real professionals. Real professionals are (autonomous)
+engineers, scientists, mathematicians, researchers, doctors, etc., since we
+don't need cringe-buzzwords/marketing/politics/capitalism derivatives. Just
+imagine if an electrical engineer who deploys or builds satellites would use
+absolutely stupid buzzwords fuzzywords like programmers or software "engineers"
+do (e.g. "WET", "DRY", "AI systems 170k+ followers") instead of scientific facts
+like electric charge, Coulomb law, etc. That's why software "engineers" are 
+looked down as clowns for many people. But software engineering is not like 
+their garbage, it is more like real science, facts, research, math, engineering
+as is. That's up to you, and I encourage you to keep growing in the right career 
+path as an engineer (a real one).
+
 You wonder why OOP is inherently broken and is like capitalism? That's a
 whole topic.
 
@@ -221,6 +239,51 @@ conclude that they create cheap software/solutions by using the *easy*
 approach and then having messed-up systems that have to be workaround with
 heterogeneous fragmented boilerplate policies or patterns until
 it gets so coupled that it's impossible to change at all.
+
+Some marketers say that structured programming is the "structure" and OOP is 
+the "superstructure" (I'll talk more about it in another entry), so you can 
+see the problem with the impurities I talk about (coupling things like crazy)
+, because that cheap idea of OOP just doesn't scale. See the pattern (if 
+you're a programmer you can easily follow me): structure -> superstructure.
+
+The cheap idea of OOP doesn't scale because of its impurities. What if you
+want to create a huge software system for going to Mars or another planet? You
+will have SuperSuperStructureFactory, and you know the rest of the joke, they're
+just cheap workarounds to bypass the actual problems. Impurities lead to cheap
+poorly-defined systems that eventually must die when you can't hold the monolith
+anymore.
+
+Now can you see why FP/recursion/homogeneity/pureness/math is infinitely 
+scalable, we don't see stupid fuzzywords or marketing in the factorial 
+function, with a simple number like 1 we can populate the whole logic. 
+Literally everything in a computer is a number, or bytes, so why don't use 
+FP with mathematical background? That's why I say that **software 
+engineering is the engineering that requires math skills the most** similar 
+to electrical engineering where you see many two-majors with physics. 
+
+As I've said before, OOP is just useful for workarounds in messed-up systems, 
+for cheap software, but for good or bad, most software has to be like that, and 
+hardware is inherently broken so OOP just makes it worse. Thus, OOP-done-right
+is also inherently (pun intended) broken because hardware is meant to be used 
+to write cheap software. If you do OOP-done-wrong (most OOP we see) then that's 
+just nonsense.
+
+Hardware does not even understand floating points, I just ran on Python a 
+popular problem with floating point calculations, see the results below:
+
+```python
+>>> a = 0.2
+>>> b = 0.1
+>>> c = a + b
+>>> c
+0.30000000000000004
+>>> c == 0.3
+False
+>>>
+```
+
+So any workarounds like OOP won't scale at all, and will just eventually 
+become monolithic monsters full of impurities until the by nature have to die.
 
 Just imagine that coupling, but I didn't even talk about inheritance!!!
 
