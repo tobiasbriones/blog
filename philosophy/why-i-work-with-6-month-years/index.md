@@ -23,22 +23,6 @@ We can say that:
   equivalence using an if-and-only-if biconditional, so they're correct: 
   hard to create but easy to use/understand.
 
-Many ordinary engineers/programmers would say that "you can't learn FP or 
-OOP" because it's too hard and takes a lot of time, but that's something 
-normal!. *Real* engineering is hard and rigorous, not like math or physics 
-but following that very fashion. Website painters are not engineers but whatever
-else, they complain the most but don't have the right to do so, how many 
-juniors come up every year now that programming has hot jobs and salaries?, 
-they're probably in exponential grow all these years.
-
-The difference is that OOP is hard to learn (I quite passed over there) and 
-it gets the wrong thing all the time, although sometimes is useful but the 
-real underlying problem is not just OOP but the fact that machines (hardware)
-are made to be imperfect, so OOP will always be wrong, general-purpose 
-hardware is inherently wrong so OOP just scales that incorrectness.
-
-While FP is hard and gets you the mathematical correctness.
-
 Even in chaotic systems or stochastic processes we're interested in 
 *modeling* simple equations even when they're no deterministic, but simple
 linear models can be used to solve the problems properly rather than leveraging
