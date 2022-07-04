@@ -79,14 +79,14 @@ pure. You can chop a tree, and you'll get a tree -it's infinitely scalable-,
 but if you have impureness like vertical hierarchies you will have a
 pyramidal hierarchy and if you chop a pyramid in halves (use your imagination)
 the "peons" on the bottom will be doomed and "piglets" in the top will
-barely still have a smaller pyramids, so pyramids are not reusable.
+barely still have a smaller pyramid, so pyramids are not reusable.
 
 Scalability is such a topic here, I will elaborate much more in a next article
 with my recent discoveries. I know I have pretty unique thoughts and
-discoveries because I'm a mathematician as is and an engineer as is, at same,
-while ordinary professionals are just how universities indoctrinate them:
-just a plain mathematician or a plain engineer, which is a vertical
-integration of knowledge (really bad).
+discoveries because I'm a mathematician as is, and an engineer as is, at 
+the same time, while ordinary professionals are just how universities
+indoctrinate them: just a plain mathematician or a plain engineer, which is 
+a vertical integration of knowledge (really bad).
 
 Check the popular function to compute the factorial, that is simple:
 
@@ -126,8 +126,7 @@ what recursion was up to.
 Now I can perfectly understand many advanced concepts by merging math and
 engineering. It's not just about writing easier to understand code
 (although recursion it's super hard to understand for many programmers), but
-for declarativeness, homogeneity, scalability in the logical aspect of
-course, etc.
+for declarativeness, homogeneity, scalability in the logical aspect, etc.
 
 I fell in love with recursion when I started prototyping the
 [EP: Machine Replacement Model](https://github.com/tobiasbriones/ep-machine-replacement-model)
@@ -169,10 +168,25 @@ Real engineers always need a substancial scientific and mathematical
 background to come up with robust designs, so you have to be good at all 
 these if you want to be an engineer anyway!.
 
+Imagine the total cohesion of a pure function that does one thing well, it's
+so homogeneous/cohesive/pure that it even calls itself!.
+
+OOP tells you to write cohesive classes but that's just a workaround and a scam
+for what I explain more below. Ultimate cohesion are functions.
+
+I concluded that the universe is made up of matter and energy in the same
+homeomorphic way that computers systems (the virtual universe) are made up of
+data and functionality, respectively. Don't say concepts like "behaviour" or
+"methods" here in this context, it's functionality instead of behaviour. I'll
+write more on this for sure. So anything else is made-up, is impure.
+"Objects" don't exist, they're just workarounds, which is easily seen by the
+fact that they're monoliths their definition (data + behaviour), and all
+monoliths are impure.
+
 Like the example of computing the factorial with recursion, we only had one 
 value (number 1) and one function leading to homogeneity, unlike OOP where 
 you usually need to fragment logic, -as if was about a corporate policies-, 
-into separate "UseCase"s. 
+into separate "UseCase"s.
 
 Corporates are full of heterogeneous peons (employees), so what does human 
 resources has to do with engineering? I have lost many productivity because
@@ -185,11 +199,102 @@ another whole topic I use to talk about. Needless to say that you should
 use partitions (e.g. ATDs) to keep cohesiveness unlike heterogeneous 
 fragmentation.
 
+#### Monoliths are Used for Cheap Systems
+
+Boilerplate is another measure to qualify cheap software. Cheap programmers 
+use stereotypes to write generic software with generic rules that "get stuff 
+done" (I don't mean generic programming, but generic formulas or patterns). OOP 
+creates funny names when coupling data and behaviour too.
+
+Writing quality software requires quality domain-specific professionals, 
+it's expensive, it's hard. If you're an engineer you MUST pass by those 
+constraints because there's no workaround, engineering is hard by nature 
+almost like science and math.
+
+Many "engineers" learn "engineering" on YouTube and don't have the 
+background required to be an engineer. Don't get it wrong, YouTube and such
+platforms are great to learn development but not actual engineering at all. 
+Development is just a subset of engineering.
+
+Going to a university is not a necessary or sufficient condition to be an 
+engineer, there are many engineering disciplines to let archaic men or 
+organizations to indoctrinate us with formula-based good-student generic 
+engineering. That's up to you. But **you always need the knowledge, 
+skills, and valid experience**. Universities are a clear example of cheap-generic 
+organizations, they are monoliths. You won't be able to "become" an engineer 
+nowadays in the traditional way because they only have traditional formula-based 
+engineering, and they're change-refusing organizations.
+
+Cheap software used to look like the following, now there are better practices 
+like components in NestJS or Angular-like projects.
+
+```
+- src
+    - controllers
+    - services
+    - middlewares
+    - more garbages
+```
+
+Two red flags are noticed: plurals and boilerplate stereotypes. That is 
+cheap software because it's not defined in a case-by-case basis.
+
+All monoliths need that kind of structure, they need boilerplate to hold 
+themselves. Wonder why Java is so verbose? because monoliths need comments 
+or boilerplate patterns to hold themselves:
+
+```java
+public static final int ID = 1;
+public final List<String> strings;
+public int variable;
+```
+
+Not to say factories, OOP design patterns, and stuff carrying boilerplate. So 
+like capitalism, you're just a peon: they put generic labels on you, and 
+then it's time to sell.
+
+Those labels lead to heterogeneous systems, or monoliths full of impureness.
+
+Verbosity tells you that constants, first class functions, immutability are 
+not supported on Java and you can use them as exceptions (that's why Java is 
+so bad, it got all defaults wrong), while a mutable variable (for OOP 
+affairs) is first-class supported by the language.
+
+Now that we visualized how verbosity is a measure and a code smell, just 
+count how many times your IDE will give you when searching for stereotypes 
+caused by writing monoliths like "*Controller", "*Service", etc.
+
+We can organize the nonsense architecture from above like this:
+
+```
+- src
+    - product
+        - ProductController
+        - ProductService
+        - ...
+    - subdomain
+        - SubdomainController
+        - SubdomainService
+        - ...
+```
+
+That's much saner, but since that is still a monolith, we need the cheap 
+boilerplate to hold it instead of using language features and hence 
+domain-specific systems (expensive, not feasible many times). OOP leads to 
+monoliths (cheap software) by its nature.
+
+Recall that math is the universal language, so your programming language 
+must make you able to create your DSLs. If you're using boilerplate or too 
+many comments then your building monoliths for sure. Nothing's perfect in 
+real life but all this can be minimized (again, a.k.a. loose coupling, high 
+cohesion). Your work as a mathematician or engineer is to optimize.
+
 #### Monoliths Lead to Workarounds
 
 If you look at the pyramid of power (a vertical structure), you can see 
 peons are inferior to managers (I call them mega-peons) and mega peons are 
-inferior to piglets. That's just a chess game with heterogeneous entities. 
+inferior to piglets or swines. That's just a chess game with heterogeneous 
+entities.
 
 They're not even real professionals. Real professionals are (autonomous)
 engineers, scientists, mathematicians, researchers, doctors, etc., since we
@@ -212,20 +317,36 @@ science) since they give you inherently coupled and lowly cohesive systems by
 the definition of classes or "objects" and then they sell you nonsense 
 marketing. In other words, you are supposed to write loosely coupled and highly
 cohesive software (that's what OOP teaches you and it's right but...) OOP is 
-inherently extremely coupled and lowly cohesive:
+inherently extremely-coupled and lowly-cohesive:
 
 - It couples data and behavior.
-- It does two things at the same time: hold data and define behavior 
-  (not cohesive and not reusable classes, they're big monoliths).
+- It does two things at the same time: hold data and define behavior for 
+  that data (not cohesive and not reusable classes, they're big monoliths).
+
+Just imagine that coupling OOP has, but I didn't even talk about inheritance
+yet!!!.
+
+As far as I understand, the idea of 
+[Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) of OOP is to have mini 
+computers (objects) that send messages just like the internet works with 
+many computers connected to the same network. I think that approach can be good 
+because you decouple "objects", otherwise the internet would be a huge 
+unmanageable monolith that wouldn't scale, hence the internet exists as we know 
+it. But that might work for stateful programs, and that's what we must avoid, we 
+**must avoid non-simple designs**, we're not going to count in how many 
+permutations we can change the state to prove correctness or even for just 
+"getting stuff done".
 
 We write OO programs that are inherently coupled (like I said, OOP scales up
-hardware incorrectness) with heterogeneous hierarchies. Why we depend on 
-other departments like HR if they don't have anything to do with us?
+hardware incorrectness) with heterogeneous hierarchies.
 
 Extremely coupled software/organizations end up like this, with 
 heterogeneous hierarchies, of course, full of impureness.
 
-They make you talk to recruiting people for example, once, I thought they 
+Why we depend on other departments like HR if they don't have anything to do 
+with us?
+
+They make you talk to recruiting people. For example, once, I thought they 
 understood about tech at least in general, but they're not tech 
 professionals but psychologists so why we have to work with them for tech 
 affairs?
@@ -242,8 +363,8 @@ it gets so coupled that it's impossible to change at all.
 
 Some marketers say that structured programming is the "structure" and OOP is 
 the "superstructure" (I'll talk more about it in another entry), so you can 
-see the problem with the impurities I talk about (coupling things like crazy)
-, because that cheap idea of OOP just doesn't scale. See the pattern (if 
+see the problem with the impurities I talk about (coupling things like crazy),
+because that cheap idea of OOP just doesn't scale. See the pattern (if 
 you're a programmer you can easily follow me): structure -> superstructure.
 
 The cheap idea of OOP doesn't scale because of its impurities. What if you
@@ -252,9 +373,6 @@ will have SuperSuperStructureFactory, and you know the rest of the joke, they're
 just cheap workarounds to bypass the actual problems. Impurities lead to cheap
 poorly-defined systems that eventually must die when you can't hold the monolith
 anymore.
-
-Just imagine that coupling OOP has, but I didn't even talk about inheritance 
-yet!!!.
 
 Now can you see why FP/recursion/homogeneity/pureness/math is infinitely 
 scalable, we don't see stupid fuzzywords or marketing in the factorial 
@@ -348,7 +466,7 @@ naturally impure).
 Now this subsection is about enforcing the philosophy of being professional 
 and do things right.
 
-Here applies a good phrase that looks fool-obvious, but it's necessary to
+Here applies a good phrase that looks foolish-obvious, but it's necessary to
 repeat to your chimp human mind all the time: **the only way to do things
 right is doing them right** (no workarounds allowed). If we keep doing nonsense
 that can't be proved but can only be sold, we'll be stuck in this nonsense
@@ -394,12 +512,13 @@ to do in practice working for some organization so university was just another
 workaround to feel you learned, and another thing is to graduate a university
 with internal agenda and businesses even if they're public.
 
-As you can see, universities are monoliths or monopolies, they don't have 
-real professionals unless they're prohibited top 25 universities, they're 
-not simple as you need to go 5 years (another monolith) "to barely be 
+As you can see, *universities are monoliths* or monopolies, they don't have 
+real professionals unless they're prohibited top 25 universities, *they're 
+not simple* as you need to go over 5 years (another monolith) "to barely be 
 someone in this life", the more degrees you get the more vertical you grow,
 and you know what happens to monoliths. They don't have real professionals like 
-industry because they're full of those impurities I mentioned (and more).
+those in industry because they're full of those impurities I mentioned (and 
+more).
 
 ##### Be Professional
 
@@ -429,10 +548,8 @@ factual opinions.
 
 #### Take Away
 
-In short, monoliths are impure because they are extremely coupled to many 
-things so impure means that it can't be mathematical analysed, or it's too hard
-to reason about or model leading to inherently incorrect systems and stuff 
-like "trillion-dollar mistake" just because many "engineers" learn 
-"engineering" on YouTube and don't have the background required to be an 
-engineer. Don't get it wrong, YouTube and such platforms are great to learn
-development but not engineering at all. Development is a subset of engineering.
+In short, monoliths are impure because they're extremely coupled to many 
+heterogeneous things, so impureness means that it can't be mathematical 
+analysed, or it's too hard to reason about or model which leads to inherently
+incorrect/impure systems that propagate those impurities as monoliths that will
+eventually fall apart.
