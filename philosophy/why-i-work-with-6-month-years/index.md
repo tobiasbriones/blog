@@ -143,3 +143,104 @@ Now I can represent (hence Repsymo) those models in a useful way for the
 practitioner!
 
 We have the power of representing the beauty of recursion and math with Repsymo.
+
+### Monoliths are Full of Impureness
+
+From my experience, I can tell that **monoliths are born from coupling two or 
+more different things**. Yes, coupling is necessary to provide useful value, 
+but they add impurities and must be minimized (a.k.a. loose coupling).
+
+The most important engineering principles for any kind of engineering I can 
+give so far are understanding:
+
+- Abstraction
+- Cohesion
+- Coupling
+
+I can give more like modules, homogeneity, etc., but I think you should 
+focus on them to come up with further analysis. For example, you can *couple 
+modules*, *high cohesion leads to homogeneity* by having the same 
+responsibility, etc.
+
+You must perfectly understand those at least to be a great engineer. Math 
+gives you the training for acquiring that reasoning, but it requires plenty 
+of study-time and intelligence to be equally good at math and engineering. 
+Real engineers always need a substancial scientific and mathematical 
+background to come up with robust designs, so you have to be good at all 
+these if you want to be an engineer anyway!.
+
+Like the example of computing the factorial with recursion, we only had one 
+value (number 1) and one function leading to homogeneity, unlike OOP where 
+you usually need to fragment logic, -as if was about a corporate policies-, 
+into separate "UseCase"s. 
+
+Corporates are full of heterogeneous peons (employees), so what does human 
+resources has to do with engineering? I have lost many productivity because
+unrelated-incapable people have to do our jobs. Everything is fragmented in
+corporations. If you're clever enough to pay attention to details and
+abstractions you can clearly see this.
+
+Math creates partitions while OOP/capitalists fragment everything, that's 
+another whole topic I use to talk about. Needless to say that you should 
+use partitions (e.g. ATDs) to keep cohesiveness unlike heterogeneous 
+fragmentation.
+
+You wonder why OOP is inherently broken and is like capitalism? That's a
+whole topic.
+
+I recently came up to the conclusion that OOP is a complete scam (as many 
+say, the trillion-dollar mistake, that's why you must be good at math and 
+science) since they give you inherently coupled and lowly cohesive systems by 
+the definition of classes or "objects" and then they sell you nonsense 
+marketing. In other words, you are supposed to write loosely coupled and highly
+cohesive software (that's what OOP teaches you and it's right but...) OOP is 
+inherently extremely coupled and lowly cohesive:
+
+- It couples data and behavior.
+- It does two things at the same time: hold data and define behavior 
+  (not cohesive and not reusable classes, they're big monoliths).
+
+We write OO programs that are inherently coupled (like I said, OOP scales up
+hardware incorrectness) with heterogeneous hierarchies. Why we depend on 
+other departments like HR if they don't have anything to do with us?
+
+Extremely coupled software/organizations end up like this, with 
+heterogeneous hierarchies, of course, full of impureness.
+
+They make you talk to recruiting people for example, once, I thought they 
+understood about tech at least in general, but they're not tech 
+professionals but psychologists so why we have to work with them for tech 
+affairs?
+
+That's why I talk about autonomous engineers moving along the dependency 
+tree of diverse domains. You need to have your domain as an engineer to 
+scale well.
+
+What does OOP have to do with capitalism? After what I said, I can also
+conclude that they create cheap software/solutions by using the *easy*
+approach and then having messed-up systems that have to be workaround with
+heterogeneous fragmented boilerplate policies or patterns until
+it gets so coupled that it's impossible to change at all.
+
+Just imagine that coupling, but I didn't even talk about inheritance!!!
+
+This is not just an opinion since I use to state factual arguments rather 
+than give opinions. Being a mathematician, the worse you can do is to give 
+opinions on core topics like these.
+
+Well, in
+[DDO and Power BI Overview](https://blog.mathsoftware.engineer/ddo-and-power-bi-overview)
+I talked about "Without An Opinion, You’re Just Another Person With Data" 
+but we're then talking about prototypes or early stage designs, as a leader 
+and mathematician you need to know how to emit factual opinions is what I 
+try to say.
+
+#### Take Away
+
+In short, monoliths are impure because they are extremely coupled to many 
+things so impure means that it can't be mathematical analysed, or it's too hard
+to reason about or model leading to inherently incorrect systems and stuff 
+like "trillion-dollar mistake" just because many "engineers" learn 
+"engineering" on YouTube and don't have the background required to be an 
+engineer. Don't get it wrong, YouTube and such platforms are great to learn
+development but not engineering at all. Development is a subset of engineering.
