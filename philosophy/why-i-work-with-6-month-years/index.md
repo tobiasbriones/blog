@@ -668,3 +668,60 @@ It can be sold but not proven at all. We must move forward to
 build a better system, otherwise there wouldn't be forward evolution.
 
 Evolution created us to evolve forward so let's carry on.
+
+### Take a More Pure Approach
+
+Real life can't be perfect with zero impurities, so even I also have to burn the
+energy of the monoliths in my life, but it's something that I've had to design 
+carefully: **I'm the engineer who designs its own life**.
+
+Let's go back for a moment to the section where I wrote about how real life 
+and SWE skills are interoperable:
+[comparison-of-doing-it-right-versus-workarounds](#comparison-of-doing-it-right-versus-workarounds).
+
+From there, I can say that I, and you as engineers, can design our own lives.
+
+But also that you need an "end of year" to burn the energy of the monoliths 
+spreading impurities that are fragmented everywhere. So instead of doing well
+every single time, you're doing a bit bad all the time, and it sums up until you 
+have to burn all that energy the end of year/month to round up stuff. Then we
+have heterogeneous stereotypes.
+
+This problem also leads to anemic entities while we need to be autonomous. 
+Everything must be autonomous so its logic is not fragmented anywhere else, 
+and the "sum up" I said above is zero (no monolith) which is the ideal case.
+
+For example:
+
+```java
+- src
+    - domain
+        - model
+            - product
+                - Product
+        - usecase
+            - AddProductToBasketUseCase
+```
+
+We have a monolith, and we can see stereotypes (domain, model, usecase), and 
+boilerplate (*UseCase), but most important here, *fragmentation*: The logic 
+of `Product` is fragmented to the stereotype package `usecase`.
+
+They say OOP should not be used for servers but for GUIs and mutable 
+programs. I can say OOP should be avoided at all costs anyway, why use OOP 
+when we have better ways of doing the same and with more correctness? At least,
+use Rust's trait objects if you're doing "OOP", because that's the only OOP 
+that makes sense \*when\* managing mutable data.
+
+What is annoying is that those marketers who sell OOP are supposed to teach 
+you about "loosely coupled and cohesive classes" when they literally do the 
+opposite, if you read above, this confirms my point on why OOP is a fraud or 
+scam.
+
+So you can see, we can use a functional approach to model that domain properly:
+
+```rust
+
+```
+
+https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=7c477627acaf139b7568b46d176aed02
