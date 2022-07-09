@@ -83,6 +83,6 @@ terms of logic.
 **Image from the [Repsymo Solver](https://repsymo.com) I invented**. Guess what 
 those little numbers mean:
 
-![Drawing Order](drawing-order.png)
+![MRM Tree Drawing Order | Repsymo](mrm-tree-drawing-order---repsymo.png)
 
-**Drawing Order**
+**MRM Tree Drawing Order | Repsymo**
