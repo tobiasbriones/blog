@@ -11,5 +11,5 @@
 Go to:
 
 - [ddo-and-power-bi-overview](ds/ddo-and-power-bi-overview)
-- [2022-03-14-pi-day](math/2022-03-14-pi-day)
+- [pi-day-2022-03-14](math/pi-day-2022-03-14)
 - [everything-is-relative](philosophy/everything-is-relative)
