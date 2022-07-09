@@ -16,15 +16,13 @@ I design modules and trees. What are low-level and high-level?
 
 Everything is a domain, homogeneity is key for pureness.
 
-The root is not low-level or high-level as is, it depends on the observer.
+The root of a tree is not low-level or high-level as is, it depends on the
+observer.
 
 You can always take a subtree, and its root role will change.
 
 The business logic can be high-level for the business but then the presentation
 layer is a low-level detail.
-
-For the end-user is the other way around. We moved the observers or the frame of
-reference.
 
 If you chop a tree you still get a tree, but if you chop a pyramid it'll stop
 working as they're not homogeneous.
@@ -33,18 +31,19 @@ Therefore, capitalism, universities, and all those archaic hierarchies of power
 are evil and unnecessary, can you see the abstraction I inferred?.
 
 Therefore, we don't need buzzwords like Managers, SCRUM, Startups, OOP jungle of
-patterns, ...
+patterns, there's a lot to elaborate on this (workarounds).
 
 We need autonomous engineers where some will be the root of technical domains
 and others will be skilled in the root of people domains smoothly following the
-dependency tree.
+dependency/domain tree.
 
 I'm technically skilled, but I've also proved to be socially skilled by scaling
-horizontally my skills.
+my skills horizontally.
 
 I've been good at socializing in person with students with no technical
 knowledge, they are enthusiasts or superficial instead. That's because the
-underlying domain is the same and SCALES.
+underlying *domain* is the same and *scales* unlike a pyramidal-like structure 
+that is vertical, that is, it can't scale.
 
 I won't want to talk to an accountant for example, but that doesn't mean I don't
 have communication skills.
@@ -64,14 +63,26 @@ if they are engineers they suck at (everything) math.
 But if you are a mere manager or whatever unicorn-hyped buzzword made up by
 capitalists, then you can't scale that skill, and you might be able to talk to
 some people but nothing else, and you will never be an engineer with technical
-competence. Being so is still part of humanity though.
+competence. Although, being so is still part of humanity.
 
 Einstein was a genius to have figured it out against what ordinary people were
-programmed to think. I think he used to be high as F. like me too. He imagined
+programmed to think. I think he used to be high like me too as he imagined
 crazy ideas in his mind. Now we have machines in this era, and I can expand on
 that idea.
 
+I've asked myself how can I develop a step-by-step output for any arbitrary 
+computation. I'd be talking here about a project I used to call Didalgoring 
+Lesson (Didactic Algorithm Lesson) but I've evolved the idea after studying 
+and figuring out many ways and concepts over the years. I posed these 
+problems to myself when I had to teach data structures, for example, I had 
+to create the steps with Photoshop, so I needed to scale and devise that idea of 
+representing any arbitrary algorithm. I certainly must be on the homogeneous
+(pure/relative/simplest/functional) side to achieve the ultimate scalability in 
+terms of logic.
+
+**Image from the [Repsymo Solver](https://repsymo.com) I invented**. Guess what 
+those little numbers mean:
+
 ![Drawing Order](drawing-order.png)
 
-**Image from the MRM | Repsymo Solver I invented**. Guess what those little 
-numbers mean.
+**Drawing Order**
