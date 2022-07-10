@@ -211,6 +211,66 @@ has to think and send signals to move their muscles but declarative or
 functional: the art where your body knows how to move itself declaratively. 
 Your muscles know themselves and are autonomous, they go domain-specific.
 
+### Teach Yourself
+
+Teachers or professors are workarounds, they are seen as "superior persons"
+who are supposed to "give you the knowledge", but they are just another
+smell of something that is wrong.
+
+Your brain is integrated into your system, and a human is also a monolith, so
+it's even more coupled to yourself.
+
+They teach, you have to be a "good" student and have many degrees, but that's
+relative: if your university sucks then it's just in vain, and top 25
+universities are an intellectual monopoly, so they're not viable options by
+any mean anyway.
+
+The only thing you can do is to *teach you about yourself*, you need to be
+an expert at *yourself*. They want you to be "someone" in this life like an
+engineer, doctor or lawyer, but people are stupid enough that they forget to
+work on themselves first. That is key as your brain is yours and if you're
+expert at yourself then you can move forward without carrying problems or 
+workarounds since inception. Knowing yourself is inception of your life journey.
+
+Hence, teachers or professors are more workarounds to sell cheap education
+for cheap students even if they have "honours" diplomas.
+
+A teacher is an entity physically far from you, so if you need a teacher to 
+learn something then it means that your intelligence is *fragmented* --another
+common smell of heterogeneous systems--.
+
+External systems (managers, teachers, etc.) acting on fragmented systems
+(OO programs, primitive obsession practices, students, employees, etc.) can
+only indoctrinate with generic rules because they're not domain experts.
+
+If you need a teacher then you're not learning cohesively because you're
+requiring an external system to work with your brain which is already internal
+and close to itself and yourself, the knowledge is worked out inside your brain 
+in the end, so you have to keep highly cohesive there by learning about 
+yourself and so be much more efficient.
+
+If you are autonomous then you're the domain expert, or expert at being
+yourself, at fulfilling your purpose in life or the reason you exist.
+
+If that's not enough insight, then let's go back to the fact that a
+programming language is build in itself, e.g. Rust's compiler is built on Rust.
+See [Bootstrapping_(compilers) \| Wikipedia](https://en.wikipedia.org/wiki/Bootstrapping_(compilers))
+for further information on this. A general-purpose language has to be an 
+expert at itself, so it can compile itself and be homogeneous there, and 
+also be considered a serious general-purpose programming language.
+
+See the example I give: I work on my domain or my purpose in life, if you
+find out interesting what I do then you will know how to "compile yourself"
+and "import" this knowledge I write into your system to scale it 
+horizontally. What I do is decoupled, it scales, you can use composition to 
+take it. Universities are extremely coupled on the other hand.
+
+In short, find what is relative/local/domain-specific/close/cohesive
+/efficient instead of more absolute approaches like teachers or managers. 
+The keyword is *find,* so it refers to an art of knowing it in a case-by-case 
+basis. Absolute systems are easier to understand but are inherently wrong. 
+Relativity is for true intellectuals as you can see.
+
 ## Final Thought
 
 Einstein was a genius to have figured it out against what ordinary people were
