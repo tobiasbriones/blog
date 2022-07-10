@@ -42,6 +42,19 @@ When you go domain specific you have *more information* to take more optimal
 decisions in a case-by-case basis. Hence, being absolutist is nothing but plain
 stupid.
 
+### Stay Away from Absolutists
+
+There's another definition of someone stupid that says that a stupid person 
+or organization hurts others and also hurts themselves. For example, a 
+stupid robber will not steal your phone because of incapability but will also 
+hurt or kill you so both end up losing.
+
+Lose-lose relationships are the opposite of what you need to fulfil your
+purpose in life or be relative.
+
+Absolutists are stupid, stupids create lose-lose relationships, therefore, 
+stay away from absolutists.
+
 ## Perspective: Business vs User
 
 The business logic can be high-level for the business but then the presentation
