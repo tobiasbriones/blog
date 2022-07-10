@@ -55,6 +55,26 @@ purpose in life or be relative.
 Absolutists are stupid, stupids create lose-lose relationships, therefore, 
 stay away from absolutists.
 
+### I'm Relativist and You Should Too
+
+I'm relativist after learning and analysing tons of math, science, 
+engineering, and philosophy. Where the last is the underlying category of 
+this article.
+
+I learned to create win-win relationships, so I'm the opposite of stupid, I'm a 
+genius. Stupids create lose-lose relationships whilst intellectuals create 
+win-win relationships.
+
+You should be relativist too to create win-win relationships and so fulfil 
+your purpose in life and other's purpose in life too. When that happens, the 
+system is highly cohesive, it can message itself, that is, is homogeneous.
+
+Think about this, imperative programming is stupid as is full of workarounds 
+like managing/tracking mutable state whilst declarative programming or FP is 
+based on formal definitions, it just happens what it must happen because the 
+*logic is not fragmented* like OOP systems, but instead, *everything is 
+relative*.
+
 ## Perspective: Business vs User
 
 The business logic can be high-level for the business but then the presentation
