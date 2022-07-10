@@ -531,6 +531,77 @@ sell in the end, so companies are impure monoliths that have to break apart
 after all as said in 
 [Vertical Structures Can't Scale Up](#vertical-structures-cant-scale-up).
 
+#### Atomic Responsibility to Avoid Cyclomatic Complexity
+
+Only you can teach you about yourself.
+
+Knowing yourself is recursive, with that homogeneity, you define yourself like
+a recursive function does, if not, then you'll need workarounds. Can you see
+why you need to do the right-thing-right?.
+
+It's like using a ternary system to build computers: it gets stuff done, but the
+cyclomatic complexity would be near impossible to understand, so it can't scale.
+The minimum amount of bits required to design computers is 2 (or it may even 
+be 1) so the system is cohesive and can interface *with itself*. If you put 
+more, it'll be a monolith with workarounds like, say, managers gluing the
+fragmented logic.
+
+We need binary computers to be cohesive or satisfy the principle that says 
+to have unique responsibility, if we add more than base two then we'd need 
+workarounds to hold the logic, and workarounds or bad designs are propagated 
+and escalated so that would be a terrible design.
+
+If a transistor could be in tree or more possible states, then the cyclomatic 
+complexity would ruin the design as we have to something gross: manage the 
+mutable state, and now image that mess at hardware level.
+
+Only having a unary system is singular or exceptional, but it is emerging and
+according to Wikipedia, 
+
+> ...because the value of a digit does not depend on its position, it is not a 
+> form of positional notation, and it is unclear whether it would be appropriate
+> to say that it has a base (or "radix") of 1, as it behaves differently from 
+> all other bases...
+> 
+> Source: [Unary system \| Wikipedia](https://en.wikipedia.org/wiki/Unary_numeral_system)
+> (under fair use)
+
+But, on the other hand, according to 
+[unarycomputing.github.io](https://unarycomputing.github.io) a unary 
+computer can perform simple computations, e.g. a sum is a logic OR and a 
+multiplication is a logic AND. It's also valid for the minimum and maximum 
+functions. It also documents that unary computers are emerging technologies that
+can be useful. I'd like to see that, just check the simplicity of having the
+fact that all numbers are the same, a purely homogeneous systems. Homogeneity 
+leads to simplicity so it scales. Those operations are more awkward in other 
+bases leading to "algorithms", and algorithms exist because the data is 
+fragmented from *its* logic. Ever wondered why there are a mess different 
+kind of algorithms that can be implemented?, several algorithms for the 
+same purpose exist because they're workarounds, otherwise there would only 
+be one logic in the right place.
+
+So base two is the necessary (if we quit unary computing) and sufficient numeric
+base to design cohesive computers that scale, so we can represent virtually
+anything as numbers, or in other words, math or numbers is the inherent 
+principle of software.
+
+I'd say that the base to use *is relative* since unary or binary data 
+makes sense for the computer platform, but it's awkward to write down for 
+humans, so base 10 is a composition that makes sense for the level of humans.
+The difference is where *the root of the tree* is
+(see to the MRM Repsymo screenshot).
+
+On the other hand, quantum computers work under probabilities and are
+radically different. I currently think of them like anti-cohesive systems that
+are meant for getting good-enough but not perfect results (like AI, or a
+genetic algorithms).
+
+If you've been following me here, you should start realizing that "do the right
+thing right" and employing pure mathematical concepts like recursion and
+being homogeneous, pure, etc., makes perfect sense. This is how I see the
+universe, I stopped being an ordinary human long ago to move on to the next
+level of composition.
+
 ## Final Thought
 
 Einstein was a genius to have figured it out against what ordinary people were
