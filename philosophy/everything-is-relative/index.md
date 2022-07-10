@@ -481,6 +481,56 @@ When you need someone else then you take the good (e.g. MIT videos) to keep
 flattened or scale horizontally, so we have functional programming, a
 homogeneous system that is a cohesive whole.
 
+#### If You Don't Teach Yourself Then a Heterogeneous Stereotype Will Do it For You
+
+Business admins are clearly more workarounds, stupid people think they will
+study programming or CS to become a "10X revenue unicorn Silicon Valley
+startup" buzzwords, and they found out after many years that computer 
+*science* is literally a "science" as the name states it, but they thought 
+it was about playing at the computer and getting rich with a YouTube channel.
+
+As I've said, anemic models need managers and others to glue the logic that
+is fragmented when that entity becomes anemic, that is, non-autonomous, so
+if you don't know yourself you'll be doomed into workarounds.
+
+A successful organization is domain specific, it's an expert *on themselves*
+just like I explained in [Tech Yourself](#teach-yourself).
+
+That implies that you don't need "managers" or MBAs. Those workarounds can
+only be an external system that indoctrinate generic rules into yourself or
+your organization.
+
+A founder must be someone who is the domain expert. For example, I've taken
+many years to figure out that I was a mathematical software engineer, that
+career doesn't exist because universities are generic, so I had to figured it 
+out.
+
+Therefore, we have that, a domain expert can populate their knowledge 
+horizontally to the organization while a clown like a manager/admin/etc. who 
+doesn't know about the domain and have many degrees can only fragment the logic
+of the organization with heterogeneous jobs. Capitalism is impure enough to keep
+hiring more clowns!. We need to work on well-defined organizations instead of
+commercial companies that make up problems that don't exist. They are good 
+at propagating workarounds.
+
+I read some time ago on the internet a story about 
+[Tesla, Inc.](https://en.wikipedia.org/wiki/Tesla,_Inc.) but I can't 
+guaranty the reference right now. Just read the moral of the story: while 
+traditional companies require an engineer to pass over bureaucracy with 
+heterogeneous staff like admins or accountants who are not related (cohesive)
+to engineering, this company instead, makes engineers *autonomous* so if the 
+engineer values that a resistor is needed then the engineer can go buy it 
+which yields a more efficient or cohesive flow inside the organization 
+placing it above the competition.
+
+Needless to say, you should be competing against other monoliths or 
+companies but that's the nature of capitalism. That's why I don't want to 
+create a commercial company since I found this out. We must work on 
+*domains* to address *well-defined problems* instead. Companies just want to 
+sell in the end, so companies are impure monoliths that have to break apart 
+after all as said in 
+[Vertical Structures Can't Scale Up](#vertical-structures-cant-scale-up).
+
 ## Final Thought
 
 Einstein was a genius to have figured it out against what ordinary people were
