@@ -348,6 +348,139 @@ The keyword is *find,* so it refers to an art of knowing it in a case-by-case
 basis. Absolute systems are easier to understand but are inherently wrong.
 Relativity is for true intellectuals as you can see.
 
+#### Universities are External Systems
+
+A university force you to be the way they are and learn what they want,
+instead of being like *you* are and learning what *you* want, so
+universities are indoctrination because in the end they're nothing else but
+bureaucracy so alumni usually ends up knowing nothing or being like the PhD
+in computer science who thought that real life was about "making a unicorn
+company to become rich and save the world", "being an MBA", and
+"play Minecraft".
+
+Software engineering or even worse, *newer careers* like data science are not
+available at universities as they're reluctant to adapt to change (they're
+stupid literally), so you're enforced to take an awful outdated career to move
+on, and you have to take all the ~60 (~110 in my case) classes whether they
+make sense or not at all, until then, "you'll be someone in this life". In
+other words, universities are huge monoliths, they're absolutists, and a
+stupid monopoly.
+
+Going back to [Absolutist are Stupid](#absolutists-are-stupid) we can see
+that for example, universities put you a career plan you have to marry for
+life, so all possible outcomes of software engineering end up like
+"systems engineering" which was my case. Their "systems engineering" is
+nothing but a stereotype and a monolith with:
+
+- Fundamentals (calculus, physics, etc.)
+- Programming
+- Accountability/Bureaucracy/Taxes/Business-Admin
+- System Admin
+- Networking
+- Databases
+- Electronics/Electrical-Engineering
+- AI
+- Security
+- Whatever that gets stuff done
+
+The accountability item is absurd, I've never seen that in another curriculum,
+and the reason why they push you so much off-topic garbage is because the
+government and traditional absolutist companies like banks *need* employees,
+so *universities or absolutists build employees* or labourers, but not real
+professionals. So much garbage there when they struggle a lot to teach HTML
+and CSS to bottom students (most of them) of final year, and I've had to have
+the same substandard or third-world treatment that ordinary students also have
+because *universities are absolutist*.
+
+That's another way of seeing how *inheritance is plain wrong*. They don't 
+care if you do things right, they see you as a peon to sell more off-topic
+workarounds, and ordinary students are the majority so universities or schools
+only work for them, but do not work if you're different from the ordinary peon. 
+Hence, the traditional education system is another workaround to "get stuff 
+done".
+
+Even though I was massively successful at that traditional system, is not
+because I was ordinary and studied mechanically, but because I let my self-study
+be the implication of my good grades. I have self-study (homogeneous, 
+auto-study) and the implications are the good grades, but not the other way 
+around.
+
+As a fun fact, I've had the *absolute* best grades at university at both
+majors (math and engineering) and I have the diplomas over there. I've been
+the absolute best for many times from primary school to university, but now
+*I'm relativist* so being "the best" now means something different, I'm the best
+of myself (homogeneous) whilst absolutists teach you to be the best on
+top of others (heterogeneous).
+
+I clearly, state that universities are heterogeneous: you're an inferior
+student and then you "become" an engineer/doctor/etc. Needless to say, that
+paradigm must not exist and must be replaced by a better system that is
+homogeneous and modular:
+
+- You're a professional since day one from zero (literally) to any level you
+  want to get, so there's no heterogeneity between "student" and
+  "engineer"/"doctor"/etc. Bad doctors also have degrees, but in the end you
+  choose them wisely from their practice and trajectory, and not by their 
+  degrees.
+
+- You study or take courses you like, so the system is modular, and instead of
+  being a student who first has to "learn" and hold ~60 classes at once for
+  life (they actually forget all of them anyway) and then "become" an
+  "engineer"/"doctor"/etc. you can just interoperate or "compile yourself"
+  to build up your experience and apply your *current* skills as a
+  professional at some level of experience.
+
+The university monolith *fragments* you into two stages: a "learning" stage
+(you're useless) and a "professional" stage (you have a degree on hand) but
+that's nonsense. Modern computing is *concurrent* and that's how my brain works
+too. I can solve logical problems in my mind like improving this article while  
+I'm at work or exam then I know what I have to do when I have the free time
+to realize it, and I can achieve being unbiased on my concurrent thoughts.
+
+Why wait for 5 years to have a first job and stop being a dirty student who
+can't have a job before (in your domain), can't be happy because you have to 
+be a "good" student, and get by with a miserable amount of money as a "student".
+
+Ordinary knowledge tells you that you have to go to university. But it
+doesn't tell you the reason why, I'll tell you here: because universities are
+intellectual monopolies, you're a professional or "someone in this life"
+only if you go to universities, but they don't even have the talent, I mean,
+private sector is the one that develops the world while universities are
+searching for funds for nonsense "researches" since that is what tell sell,
+they sell copyright, whilst in contrast, I create quality content for free
+and a with a permissive license. Universities don't follow my example ( 
+leading by example) because they're business even if they're public.
+
+Universities don't even scale because that monopoly physically runs out of
+space or room pretty soon, so you need to be elite to even go to an ordinary
+university.
+
+So they make you think or indoctrinate you that universities are mandatory
+whilst they're just another option you can take, *they are external systems*,
+and you have to be careful in *not falling into the scam of absolutists* as 
+they brainwash you to buy their workarounds or problems on top of problems 
+(hence the OOP `ProblemFactory`, see how `*Factory` is boilerplate, so it's 
+wrong to follow that paradigm, it's more biased to absolutism).
+
+Universities win when you graduate because they sell "professionals" but
+that's not the case most of the time. A university can validate your studies,
+but you can be a bottom engineer in real life, since universities are
+external systems that do not know you but only emit *generic judgements*. They
+don't even know about a particular profession as they have many careers and
+are not focused on one.
+
+I set the example of MIT which is the "Institute of Technology" so it makes
+sense to study at MIT and be good at, and they also share free content. I
+used to watch the MIT videos when I was in Calculus I, etc., so I was into a
+third-world university with bottom standards for scientific careers, but I
+was already an expert at myself, and *I knew* that I had to act like that to
+obtain a better result for myself, that is, no one told me what I had to do,
+I just "compile myself", I'm homogeneous or pure.
+
+When you need someone else then you take the good (e.g. MIT videos) to keep
+flattened or scale horizontally, so we have functional programming, a
+homogeneous system that is a cohesive whole.
+
 ## Final Thought
 
 Einstein was a genius to have figured it out against what ordinary people were
