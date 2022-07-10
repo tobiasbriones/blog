@@ -602,6 +602,31 @@ being homogeneous, pure, etc., makes perfect sense. This is how I see the
 universe, I stopped being an ordinary human long ago to move on to the next
 level of composition.
 
+#### Atomic Responsibility in Your Job Too
+
+From [Atomic Responsibility to Avoid Cyclomatic Complexity](#atomic-responsibility-to-avoid-cyclomatic-complexity)
+I said that virtually everything is a number in a computer and that math or 
+numbers is the inherent principle of software.
+
+Hence, you must be good at math to be a good software engineer as literally
+everything is a number here, not to say abstractions that require formal
+mathematics. Some would say that you need to be good at providing value for the
+business first (e.g. your app can be good, but you need to sell it first, or
+it won't make sense disregarding how well-done it is), but that's not
+engineering as is, that's entrepreneurship or intrapreneurship, an engineer
+or scientist doesn't have to sell the product, so make your mind: are you an
+engineer/scientist or anything else?. That's why you have to do the right
+thing right: e.g. I created MathSwe (the right thing for my purpose in life) and
+now I am working hard to get it *right*.
+
+You can't have a single homogeneous responsibility that scales if you have
+to be a business expert at the same time, unless you are like me where my
+"business" domain is literally the same engineering and mathematics, so I
+can perfectly be the domain expert at the same time as the engineer or
+mathematician. So be careful with those advices that people give on social
+media, most people's opinions frequently *depend on the context* so that's
+why I've had to learn to emit *factual opinions* instead of ordinary opinions.
+
 ## Final Thought
 
 Einstein was a genius to have figured it out against what ordinary people were
