@@ -173,6 +173,28 @@ I call them Example Projects). I'm pretty sure that Einstein would've thought
 like that where they will remind you by your actions forever instead of just
 giving birth to empty-disk temporal humans.
 
+Do you wonder why children of "geniuses" like Einstein are not "geniuses" too?
+Why vertical hierarchies with inheritance like king and prince (and many more
+you can imagine) are nonsense? I had wondered since I'm a good observer and an
+intellectual.
+
+Absolutists think they are superior because they have better genes by being
+"descendants of the king" or whatever underlying hierarchy, but sorry to
+break it, their genes are mostly boilerplate, so they can't be more wrong.
+
+There are better ways to reproduce than inheritance, only primates use
+inheritance to give offspring. Recall that there are two components to
+develop:
+
+- physical (general-purpose), and
+- intellectual (domain-specific) so you want to reproduce the intellectual one
+  much more as the physical one is just boilerplate.
+
+So that's another point on homogeneity (all humans are the same) and
+speciality (domain-specific) to understand yourself to eventually fulfil
+your purpose in life instead of being a peon of an absolutist. When you
+fulfil your purpose in life, the logic is cohesive and flows naturally.
+
 Sex is another stereotype and can only be used to define primitive animals but
 people still classify you as "man" or "woman" as if it were inheritance.
 Here comes the common programmer advice to use composition instead of
