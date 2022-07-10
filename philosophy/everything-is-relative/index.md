@@ -99,6 +99,43 @@ more absolutely), but after learning a lot, that's the last move I want to do.
 Money and impurities are imminent out there, but as I said, we can be more 
 homogeneous to do much better.
 
+### Humans are Not Needed
+
+Manual manpower was required in the past century when computers (useful 
+computers we know today) and globalization didn't exist. Now most of the 
+manual work made by humans is done by machines, but also better done since 
+*humans themselves are just another workaround* who have to evolve to get rid 
+of themselves. 
+
+Think of human stages, times are completely different, so it reminds of the 
+[Rust compiler that is written in Rust](https://github.com/rust-lang/rust/tree/master/compiler)
+--a general-purpose language has to be built in itself-- and has to get rid of 
+itself in order to evolve.
+
+In the long run, you can't even compare an old version of human or programming 
+language to a modern version. *The only constant is change* so that leads us 
+to be domain-specific to be able to be at top of evolution by accurately 
+defining what we need for our purpose of life.
+
+Manual manpower was mostly deprecated long ago, now, traditional corporations 
+with remarkable vertical hierarchies (they're literally superior to you 
+according to them) are being suppressed by startups which have better 
+structures that are more homogeneous but still full of buzzwords. Will 
+managers/bosses/teachers/coaches/mediators/... be next to be 
+deprecated? I don't think so as humans are stupid enough to keep on the 
+status quo, but in the meantime machines are evolving at a faster pace than 
+human primates.
+
+Machines are fast to evolve, as a fun advise, watch "Futurama: Evolution and 
+the Missing Link".
+
+Thus, it looks like humans are just peons of evolution doing workarounds to 
+build better systems from the rules of evolution. A peon for me is an entity 
+that does not satisfy its purpose of life. If you need workarounds then 
+you're definitely a peon and the only way out is to be more homogeneous 
+contrary to what humans are, to eventually achieve the-right-thing-right that I 
+define as fulfilling the purpose of each entity.
+
 ## Final Thought
 
 Einstein was a genius to have figured it out against what ordinary people were
