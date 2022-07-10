@@ -136,6 +136,81 @@ you're definitely a peon and the only way out is to be more homogeneous
 contrary to what humans are, to eventually achieve the-right-thing-right that I 
 define as fulfilling the purpose of each entity.
 
+Humans are heterogeneous by nature and work as peons or workarounds 
+(otherwise life would be perfect for humans) and [heterogeneous systems are 
+not needed](#heterogeneous-systems-are-not-needed) so humans are not 
+required too, since a near perfect civilization will necessarily have to be
+homogeneous in order to scale and so not to be human.
+
+So humans are not needed because machines end up doing a better job, evolve 
+faster, and humans who were peons can evolve into something further to optimize 
+their purpose in life via human-machine composition. As you can see, 
+inheritance (like the OOP way) with heterosexual reproduction was just another 
+workaround, I have better ways of reproducing myself by writing formal articles
+and sharing my thoughts for example, so I'll teach by giving the example (hence
+I call them Example Projects). I'm pretty sure that Einstein would've thought
+like that where they will remind you by your actions forever instead of just
+giving birth to empty-disk temporal humans.
+
+Sex is another stereotype and can only be used to define primitive animals but
+people still classify you as "man" or "woman" as if it were inheritance. 
+Here comes the common programmer advice to use composition instead of 
+inheritance. Your sex is not a base class that defines you as an 
+extremely-coupled vertical hierarchy, it's part of you but not "the base class".
+
+The way how something is depends on the observer, the result of what will 
+happen depends on who makes the observations, if others understand 
+inheritance they will interface with you in that way, if they understand 
+composition they are likely to be much clever and interface with 
+mathematicians or computer scientists, you can read the
+[Conway's law \| Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_law) 
+adage to know something similar on how the way organization's products end up
+being is relative to the way the underlying organization is. Their 
+perception of the universe change their reality, and you decide if you want 
+to see the universe the way the see it. That's why it's recommended to have 
+a "positive mindset" not because it'll change the bad but because it'll 
+unlock dormant parts of your body according to my own experience. So you can 
+have a terrible day when it could've perfectly been a great day if you apply 
+relativity and change the reality by employing a better mindset.  
+
+A pure being does not have sex defined as it's homogeneous like a recursive 
+function and composable, it "compiles itself". I can say I'm "auto sexual" as I
+love myself which leads to the fact that I'm an expert at myself, so I have a
+well-defined domain or purpose that can be coupled or imported into another
+pure being like me but who has a different domain.
+
+A monolith like a human or animal has to born, get old, and then die because of
+their impurities that corrupt their existence. A pure being doesn't get old,
+or born or die since there's no monolith that draws that energy from that 
+being as I talk in 
+[Why I Work with 6-Month Years](../why-i-work-with-6--month-years) explaining 
+why monoliths are such a weight to hold, hence they age and eventually die or fall apart. 
+
+Suppose there's a human who is not a peon, then that's a contradiction as 
+humans are full of heterogeneity or impurities and workarounds, so they're 
+peons by definition. Therefore, humans will have to evolve (and are doing it 
+[^1]) via human-machine composition to achieve a more homogeneous design.
+
+[^1]: Check [Nanobots - an overview | ScienceDirect Topics](https://www.sciencedirect.com/topics/engineering/nanobots)
+
+As a fun fact, I'll add here words of Zamasu that are good to contrast with
+peons and mutable state (OOP): 
+
+> ...beings living in an eternal war...
+> 
+> [Zamasu](https://dragonball.fandom.com/wiki/Zamasu) (Dragon Ball Super)
+
+Imagine constantly living by workaround back and forth to keep mutable state 
+and "OOP patterns" that can't be proved but only sold, you need to learn to 
+do the right thing right which is an art like ultra instinct (DBS) to get 
+out of that circle or "eternal war".
+
+[Ultra instinct](https://dragonballuniverse.fandom.com/wiki/Ultra_Instinct)
+makes you move without thinking, it's not imperative where the ordinary mortal
+has to think and send signals to move their muscles but declarative or
+functional: the art where your body knows how to move itself declaratively. 
+Your muscles know themselves and are autonomous, they go domain-specific.
+
 ## Final Thought
 
 Einstein was a genius to have figured it out against what ordinary people were
