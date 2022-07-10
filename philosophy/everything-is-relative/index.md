@@ -21,6 +21,27 @@ observer.
 
 You can always take a subtree, and its root role will change.
 
+## Absolutists are Stupid
+
+We have that:
+
+> **stupid:** having or showing a great lack of intelligence or common sense.
+>
+> Source: [Oxford Languages](https://languages.oup.com/google-dictionary-en)
+
+Absolutists tell you stone-written rules because they're stupid, but certainly,
+*the only constant is change*, so you have to adapt to change to be intelligent
+(intelligence definition apparently said by
+[Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking)) so you
+need to go domain specific --which is an art-- to match a case-by-case basis.
+That is the opposite of absolute, *it's relative* and that's why human
+common sense can only lead to wrong conclusions that are easy or absolute to
+understand while in fact, *everything is relative*.
+
+When you go domain specific you have *more information* to take more optimal
+decisions in a case-by-case basis. Hence, being absolutist is nothing but plain
+stupid.
+
 ## Perspective: Business vs User
 
 The business logic can be high-level for the business but then the presentation
