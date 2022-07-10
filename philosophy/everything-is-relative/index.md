@@ -76,6 +76,9 @@ representation of the abstraction of doing things wrong by employing workarounds
 that bypass the real problems that actually have to be addressed with real 
 science and facts instead of made-up buzzwords. 
 
+Why do you think companies only last one or two centuries at best while 
+science, math and engineering are always universal (mostly math)?
+
 ## Heterogeneous Systems are Not Needed
 
 Therefore, capitalism, universities, and all those archaic hierarchies of power
