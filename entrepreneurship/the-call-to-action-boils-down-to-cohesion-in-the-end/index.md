@@ -46,8 +46,57 @@ you *want them* to make sure to buy your stuff and do it right, so you maximize
 your profit and also the user's effort to get value from your business.
 
 That doesn't mean you can only put a function into a file or a button into a
-screen, but instead, the same logic for a module, the same logic for a screen, 
+screen, but instead, the same logic for a module, the same logic for a screen,
 etc.
+
+### Understand When It's Bloated
+
+An adult human mind can only hold 4 different things on average [1]. So, what
+matters is not to limit to "one button per screen" but the same kind of
+logic/interaction in one screen (scales horizontally).
+
+*It's relative:*
+
+- if you go to [StackOverflow](https://stackoverflow.com) you
+  can see a cohesive whole as the entire website and that makes sense for you
+  as a user who wants to move around the website to obtain value from it, but
+- if you're the programmer then the whole website is a monolith with many
+  *orthogonal* concepts.
+
+The science of this is that you have to define *homogeneous* entities or things.
+
+The actions in the top right menu are cohesive, I can know that because
+*they're close to each other*, so I expect the underlying logic to be
+homogeneous too, all menu items are homogeneous or of the same type so the 
+bundle of actions in the menu is cohesive.
+
+Notice that "close" is *relative* to your metric, so you can define you 
+metric space or use the Euclidean distance, now you can see why you must be 
+good at math to be a good software engineer.
+
+A small change in the input (mouse cursor or keyboard keys) produces a small 
+output close to the sibling entities (menu actions) output. This *measure* of 
+homogeneity is what defines the quality of the software or design of your 
+system.
+
+The art of cohesion places homogeneous entities/things close, so they can 
+build a united cohesive whole. A highly cohesive system can be more 
+mathematically proved whilst heterogeneous systems with orthogonal 
+integrations are a complete mess.
+
+As a side note, some people might say that there are systems where "a small 
+change of the input produces a random change in the output" like chaotic 
+dynamic systems, cryptography, stochastic processes, etc., but those are 
+just temporal workarounds to get good-enough results faster, we want forward 
+engineering here, I talk more about this in other entries like 
+[everything is relative](../../philosophy/everything-is-relative). 
+
+Therefore, if you want to optimize for an action in your screen, you must 
+give the clear UI/UX to the user to achieve only *that action,* so you *call 
+to the action*. If you give orthogonal options to that action to the user 
+then it's become a heterogeneous system and the results are more difficult 
+to prove or test and the user will likely take a suboptimal decision if any at 
+all.
 
 ## References
 
