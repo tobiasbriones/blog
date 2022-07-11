@@ -13,3 +13,10 @@
 </figcaption>
 
 ---
+
+The *call to action* boils down to cohesion in the end. Marketing, capitalist
+buzzwords, and OOP always have to end up in the same fundamental principles of
+FP/math/science/real-engineering.
+
+Although buzzwords have *something helpful*: they're easy to understand for
+non-geniuses or average people. In this case, for business people.
