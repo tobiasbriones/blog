@@ -98,6 +98,15 @@ then it's become a heterogeneous system and the results are more difficult
 to prove or test and the user will likely take a suboptimal decision if any at
 all.
 
+#### The Subscription Model Example
+
+We usually see that subscription plans are minimal and give 3 options on 
+average. You can go to any commercial platform and verify this.
+
+If they give more options, then the user will start overthinking 
+*workarounds* but if you employ highly cohesive flows then the user only has 
+to focus on one thing at a time and thus make a more optimal decision.
+
 ### Marketers vs Scientist
 
 Cohesion is one of the most important universal principles, and I teach it a
