@@ -89,7 +89,7 @@ change of the input produces a random change in the output" like chaotic
 dynamic systems, cryptography, stochastic processes, etc., but those are 
 just temporal workarounds to get good-enough results faster, we want forward 
 engineering here, I talk more about this in other entries like 
-[everything is relative](../../philosophy/everything-is-relative). 
+[everything is relative](../../philosophy/everything-is-relative).
 
 Therefore, if you want to optimize for an action in your screen, you must 
 give the clear UI/UX to the user to achieve only *that action,* so you *call 
@@ -130,6 +130,25 @@ A real engineer must understand the scientific principles of their
 engineering discipline like for example, electric charge/field for electrical 
 engineers, differential equations for civil engineers, set theory for 
 software engineers, etc.
+
+## Cohesion is Universal
+
+The dictionary states that cohesion "forms a united whole" so here your work as
+an engineer is to define what the homogeneous "whole" means since everything is
+relative, that is, you must remove the heterogeneity to get a cohesive "whole".
+That proves that cohesion is a universal axiom of design.
+
+Cohesion is a universal principle, it can even be proved that "lexical cohesion
+is computationally feasible to identify" [2]. The education system doesn't teach
+you any of these fundamental topics, they're clearly not cohesive organizations
+so schools are just cheap workarounds instead of what they're supposed to be.
+
+FP tells you *what to do* or what functions you can call, FP concepts 
+also ensure to keep the logic flow cohesive. You can't call a function that 
+is far away and does not make sense for the current data type. It's like a 
+`Result` which can only be defined as `Ok` or `Err` so you *know what to do* 
+and carry on.
+
 
 ## References
 
