@@ -48,3 +48,13 @@ your profit and also the user's effort to get value from your business.
 That doesn't mean you can only put a function into a file or a button into a
 screen, but instead, the same logic for a module, the same logic for a screen, 
 etc.
+
+## References
+
+[1] Finn, E. (2011, June 23). When four is not four, but rather two plus two.
+MIT News | Massachusetts Institute of Technology. Retrieved July 11, 2022,
+from https://news.mit.edu/2011/miller-memory-0623
+
+[2] Morris, J., & Hirst, G. (1991). Lexical Cohesion Computed by Thesaural
+Relations as an Indicator of the Structure of Text. ACL Anthology. Retrieved
+July 11, 2022, from https://aclanthology.org/J91-1002.pdf
