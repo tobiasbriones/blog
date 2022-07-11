@@ -149,6 +149,21 @@ is far away and does not make sense for the current data type. It's like a
 `Result` which can only be defined as `Ok` or `Err` so you *know what to do* 
 and carry on.
 
+## Conclusion
+
+The call to action is a modern approach to interface with our users that helps
+build cohesive flows so that the user is focused on retrieving value from our
+software/products/services and the business also maximises their profit by
+having more engaged users who are presented a clear way to solve their problems.
+
+If you do it wrong, you'll bloat users with orthogonal options that only 
+create an unmanageable cyclomatic complexity. So users will not even keep 
+burning their heads into your platform and won't be clear *what to do*.
+
+I'm a relativist who enjoys and applies these principles all the time, you have
+to read my article on
+[everything is relative](../../philosophy/everything-is-relative), I've been 
+developing these days with more insights I have every day.
 
 ## References
 
