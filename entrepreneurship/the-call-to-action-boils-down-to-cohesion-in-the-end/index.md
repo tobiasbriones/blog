@@ -98,6 +98,39 @@ then it's become a heterogeneous system and the results are more difficult
 to prove or test and the user will likely take a suboptimal decision if any at 
 all.
 
+### Marketers vs Scientist
+
+Cohesion is one of the most important universal principles, and I teach it a
+lot, as you can see, it applies to any problem, disregarding the buzzwords they
+make.
+
+OOP marketers (they're not programmers) call it SOLID, etc., but in the end,
+everything formally ends up in the same scientific principles (with no marketing
+buzzwords). The way they see it, is just an easier way to understand it for 
+their context.
+
+Like some say, OOP ends up much like FP when applying "OOP principles".
+
+Imagine if real engineers like electrical/civil engineers or math software 
+engineers would use cringe buzzwords fuzzy words like "WET", "YAGNI", "Tell 
+Don't Ask", etc., (I don't even know/remember what they mean, and we DO NOT 
+want to know either). Then now, imagine cities, electrical systems of your 
+house, spacecrafts, car engines, traffic lights, etc., would be a complete mess 
+developed by a chunk of stupid people unable to understand science.
+
+It's deplorable that many "engineers" or "programmers" don't know what it 
+means "DSL", and they even say that they don't care, but they obviously know 
+the cringe OOP words because they're cheap programmers. It's fair if you 
+don't know something but being a bottom programmer (IT labourer actually) is 
+completely different. I've also explained that *everything is a language* so 
+a software engineer must positively understand what "DSL" means, to then build 
+homogeneous systems. 
+
+A real engineer must understand the scientific principles of their 
+engineering discipline like for example, electric charge/field for electrical 
+engineers, differential equations for civil engineers, set theory for 
+software engineers, etc.
+
 ## References
 
 [1] Finn, E. (2011, June 23). When four is not four, but rather two plus two.
