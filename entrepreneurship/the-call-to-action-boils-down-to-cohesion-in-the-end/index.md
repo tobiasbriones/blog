@@ -3,3 +3,13 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # The Call to Action Boils Down to Cohesion in the End
+
+![Call To Action](images/call-to-action-poster.png)
+
+<figcaption align="center">
+
+<strong>Call to Action</strong>
+
+</figcaption>
+
+---
