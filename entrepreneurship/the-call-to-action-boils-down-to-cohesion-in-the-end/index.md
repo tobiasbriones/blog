@@ -30,8 +30,8 @@ options in the same window. Or bloated unresponsive websites full of options
 and advertisements.
 
 Software used to be a monolith in those archaic times of computers and
-incipient programming (recall that computers were square back in the day and
-everything was unclear and full of obnoxious workarounds 😂).
+incipient programming (recall when computer monitors were square back in the 
+day and everything was unclear and full of obnoxious workarounds 😂).
 
 Now we have the capability to enforce better-designed systems that
 are cohesive:
