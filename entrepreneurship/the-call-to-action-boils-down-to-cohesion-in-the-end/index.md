@@ -84,19 +84,58 @@ build a united cohesive whole. A highly cohesive system can be more
 mathematically proved whilst heterogeneous systems with orthogonal
 integrations are a complete mess.
 
-As a side note, some people might say that there are systems where "a small
-change of the input produces a random change in the output" like chaotic
-dynamic systems, cryptography, stochastic processes, etc., but those are
-just temporal workarounds to get good-enough results faster, we want forward
-engineering here, I talk more about this in other entries like
-[everything is relative](../../philosophy/everything-is-relative).
-
 Therefore, if you want to optimize for an action in your screen, you must
 give the clear UI/UX to the user to achieve only *that action,* so you *call
 to the action*. If you give orthogonal options to that action to the user
 then it's become a heterogeneous system and the results are more difficult
 to prove or test and the user will likely take a suboptimal decision if any at
 all.
+
+#### Side Note on (Un)Deterministic Input and Output
+
+Some people might say that there are systems where "a small change of the input
+produces a random change in the output" like chaotic dynamic systems,
+cryptography, stochastic processes, etc., but those are just temporal
+workarounds to get good-enough results faster, we want forward engineering here
+instead.
+
+I'd call those systems that are not cohesive like AI, data science, or
+stochastic processes *minimal workarounds* or *controlled workarounds* since
+they produce great results but are just temporal or short-lived *methods*.
+
+I see them as minimal workarounds that are proved-enough or partially proved
+hence they work. How do you know AI or DS is going to work? Because they're 
+not deterministic but have been proved-enough to make *much* fewer mistakes 
+than humans, so they are good at fixing the workarounds of the 
+non-deterministic mess we find in real life like getting information out of 
+semi-structured HTML files downloaded from the news external website that 
+are not modeled like we were the owners of the news company (notice how 
+"you" and "the news company" are external systems and heterogeneous, so we 
+need the temporal workaround I talk so much).
+
+On the other hand we find nonsense like "enterprise OO systems" which
+build workarounds on top of workarounds so, they're anything but minimal or 
+controlled workarounds, they're just a nonsense mess.
+
+Your business logic is not short-lived, it's more like gravity or physics
+constants: they're long-lasting. So the less temporal the more cohesive it
+has to be.
+
+Imagine if you jump and end up in another galaxy, see my point? On the other 
+hand, we can have arbitrary t-shirt colors from one day to another and that 
+*short-lived event* doesn't change the raw universal laws that are cohesive and 
+*long-lasting*.
+
+That's why non-cohesive AI, stochastic models, etc. work, because
+they are for temporal solutions and *are built* on top of cohesive models
+like algebra, physics constants, deterministic models. Have you heard a
+stochastic process yields a different output from *family* of know possible
+outcomes unlike differential equations that give a deterministic output given
+the same initial condition? Can you get me? They are based on math and 
+physics laws in their core anyway, so they're controlled workarounds.
+
+I develop on these wonderful topics in my other article [everything is 
+relative](../../philosophy/everything-is-relative). 
 
 #### The Subscription Model Example
 
