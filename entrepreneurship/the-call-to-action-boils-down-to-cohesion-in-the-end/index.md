@@ -197,6 +197,38 @@ is far away and does not make sense for the current data type. It's like a
 `Result` which can only be defined as `Ok` or `Err` so you *know what to do*
 and carry on.
 
+### Cohesive Flows
+
+As you can see, we find how cohesion is formally applied as a measure for
+
+- Physics
+- Software Engineering
+- Natural Language Grammar
+- Even Marketing
+
+You can employ cohesion for any long-lasting design.
+
+Highly cohesive flows are about building homogeneous subsystems that focus
+on the same content, so you can go back and forth and don't get burned.
+
+In contrast, see how a heterogeneous system that has vertical integrations
+draws a lot of energy. Think of a switch or a three-phase industry-power engine
+that has to turn on and off: the drastic change of inertia takes a huge
+amount of energy and does not focus on the same thing, my UPS goes to 
+battery at the moment they turn on this kind of equipment, so *non-cohesive
+systems affect random external systems* that have nothing to do. What does my 
+computer has to do with the side effect of turning on a far away washing 
+machine? That's because those electric systems get from zero to full power 
+at once, so that implies a lot of things to do at once, and so poorly done. 
+
+Another way to put this even more clear: non-cohesive systems do not focus 
+on one united whole, but they fragment that whole (like OOP does) and side 
+effects from that fragmentation are going to end up in my computer UPS 🥴.
+
+You need to have cohesive workdays to avoid getting tired with heterogeneous or
+vertical tasks that make you change the context uncontrollably, so cohesion, 
+of course, also applies to your personal life.
+
 ## Conclusion
 
 The call to action is a modern approach to interface with our users that helps
