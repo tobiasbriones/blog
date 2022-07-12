@@ -153,6 +153,76 @@ If they give more options, then the user will start overthinking
 *workarounds* but if you employ highly cohesive flows then the user only has 
 to focus on one thing at a time and thus make a more optimal decision.
 
+### The Mobile Navigation Example
+
+Menus or navigations use to be at the top of the website or app in most 
+devices, but I learned from UX designers to place them on the bottom for 
+mobile devices.
+
+The reason is that mobile phones are used when you hold them and so your 
+fingers are *close* to the bottom and center of the screen but far from the top
+of the screen, so it's awkward or "spaghettified" to stretch your fingers 
+out of their natural position to press the top of the screen.
+
+For something important like a navigation item that *is clicked many times* 
+you need to place it in a *cohesive* location so there is only *one move* to 
+take an immediate action and naturally take more moves for a less cohesive 
+action (avoid the latter anyway).
+
+So when you design the GUI input close to the human user input you *made a 
+cohesive whole that is homogeneous*, that is, the human-triggered touch event 
+together with the app logic, or have a homogeneous flow, the natural 
+position of the user fingers is a *united* whole with the app logic, it only 
+needs one move to get immediate value.
+
+If you had to take more awkward moves, then it'd be unnecessary so less 
+efficient. The logic is also fragmented because the "homogeneous whole" gets 
+fragmented between the original idea and external systems with workaround 
+steps. When the user wanted to click on an awkward app interface they will 
+start focusing on something else until they get burned. That's why I say 
+that all monoliths will eventually fall apart.
+
+Having the main navigation in the bottom for mobile is certainly another 
+example of ~~call to action~~ cohesion because you want the user to interact in 
+first-class with the menu actions, it's a semantic design that conveys the 
+intention of the app designer.
+
+Another clear example is the Android FAB (Floating Action Button), and they 
+even tell you have you can only place one FAB per activity or screen by 
+obvious reasons I've explained in the entire article, so UI/UX designers 
+can also see this universal principle of cohesion to avoid bloating the user 
+with too many options.
+
+The difference is that we are engineers or mathematicians, so we have the 
+universal panorama of the design concepts, just notice how I'm technical to 
+explain out.
+
+Here you can measure cohesiveness with the number of steps that take to do 
+something immediate.
+
+Don't fragment the logic. OO and corporate systems are good at doing that for 
+instance, so you need a "manager" or "teacher" to try to glue the broken 
+whole. Imagine that you need to comply with bureaucracy, you're put a 
+label like any peon of capitalism, so they make you wear a school uniform and 
+walk to school: in the end, you're just tired of so much *workaround* 
+garbage and can't keep on studying anymore. So don't make your users feel 
+like that.
+
+Last but not least, I fully recommend you this YouTube channel where, for 
+example, I learned about the position of the mobile navigation in 
+[Your Mobile Navigations STINK! Better UX AWAITS! \| DesignCourse](https://youtu.be/1D4FzPcEiN4)
+I really mean it, watch the video!.
+
+Since I'm pretty intelligent, I remember what I do by having relations in my 
+mind, so for example, here I knew that I watched that video and learned 
+something useful about this topic about 2 years ago, and I know where to look
+for things in those scenarios, I think of people or things semantically, so I 
+got to the level in which I can index all my experiences and knowledge,
+but that's another topic. I know I had in my internal memory that 
+"DesignCourse" is a "friend" channel, so I remember things from there more 
+accurately despite the fact that I just learn once and then just keep on but 
+don't forget those details.
+
 ### Marketers vs Scientist
 
 Cohesion is one of the most important universal principles, and I teach it a
