@@ -323,6 +323,16 @@ on:
 
 ![Good Direct Knowledge Basis](good-direct-knowledge-basis.svg)
 
+The system that you see in the diagram above is a *united whole* so cohesive 
+by definition, and you can see that the communication is effective, the 
+system is homogeneous as it can interface with itself, so it works 
+cohesively. If we remove the core, you would need workarounds to get by 
+since the lack of fundamentals would fragment the homogeneous whole. The 
+core of that system *factorizes* the common mechanism, so it's mathematically 
+elegant. See how cool it is when you're also a mathematician? I have the 
+luxury of possessing all these insights, knowledge, and skills, it feels 
+superb 😊!.
+
 If you possess the direct knowledge then you only have to move on small
 details to learn ordinary knowledge. For example, you can easily learn a new
 tool (that's what an engineer does) like CAD, another game engine, another
