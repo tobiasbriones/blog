@@ -65,14 +65,21 @@ logic/interaction in one screen (scales horizontally).
 
 The science of this is that you have to define *homogeneous* entities or things.
 
+Although seeing the abstraction of what "the homogeneous whole" is, is an art 
+with no generic rule that tells you how to find it, the scientific part lies 
+when you formally establish it, so you can *measure it*.
+
+For that, we have to go in a case-by-case basis and then formalize each case, 
+so we can infer quality measurements.
+
 The actions in the top right menu are cohesive, I can know that because
 *they're close to each other*, so I expect the underlying logic to be
 homogeneous too, all menu items are homogeneous or of the same type so the
 bundle of actions in the menu is cohesive.
 
-Notice that "close" is *relative* to your metric, so you can define you
-metric space or use the Euclidean distance, now you can see why you must be
-good at math to be a good software engineer.
+Notice that "close" is *relative* to *your metric*, so you can define a metric
+space or use the Euclidean distance, now you can see why you must be good at
+math to be a good software engineer and why the cohesion principle is science.
 
 A small change in the input (mouse cursor or keyboard keys) produces a small
 output close to the sibling entities (menu actions) output. This *measure* of
