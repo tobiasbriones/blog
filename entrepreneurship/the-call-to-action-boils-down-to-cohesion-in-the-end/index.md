@@ -388,10 +388,10 @@ If you do it wrong, you'll bloat users with orthogonal options that only
 create an unmanageable cyclomatic complexity. So users will not even keep
 burning their heads into your platform and won't be clear *what to do*.
 
-I'm a relativist who enjoys and applies these principles all the time, you have
-to read my article on
+I'm a relativist who enjoys and applies these principles all the time, I 
+advise to read my article on
 [everything is relative](../../philosophy/everything-is-relative), I've been
-developing these days with more insights I have every day.
+developing it these days with more insights I face every day.
 
 ## References
 
