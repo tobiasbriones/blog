@@ -281,7 +281,9 @@ As you can see, we find how cohesion is formally applied as a measure for
 - Physics
 - Software Engineering
 - Natural Language Grammar
+- UI/UX
 - Even Marketing
+- ...
 
 You can employ cohesion for any long-lasting design.
 
