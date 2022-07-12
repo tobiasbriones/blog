@@ -306,6 +306,65 @@ You need to have cohesive workdays to avoid getting tired with heterogeneous or
 vertical tasks that make you change the context uncontrollably, so cohesion, 
 of course, also applies to your personal life.
 
+### Universal Principles are Always Needed
+
+I've worked with some people who struggle to understand what "call to action"
+means even if they think they understand it.
+
+As I showed above, all this is about universal principles like cohesion in
+the end.
+
+Developing code and related IT jobs are something that burns many practitioners
+as it's a constant fast-changing industry. I therefore advise to have a solid
+understanding on the "useless" theory or principles, so you have a basis to hold
+on:
+
+![Good Direct Knowledge Basis](good-direct-knowledge-basis.svg)
+
+If you possess the direct knowledge then you only have to move on small 
+details to learn ordinary knowledge. For example, you can easily learn a new 
+tool (that's what an engineer does) like CAD, another game engine, another 
+JS framework, a new concurrency model on Android, etc. But you need a 
+fundamental base that holds you.
+
+Direct knowledge *factorizes* the common set of skills that you need to be 
+an engineer, so take it. Direct knowledge is universal and long-lasting 
+unlike ordinary knowledge like (another) new JS framework that depends on 
+web browsers or JS, and accountability that depends on capitalism or 
+sociology that depends on humanity (notice the level of pureness here).
+
+Have you wondered how to learn newer programming languages? It's not hard 
+when you already have the *concepts*, I don't feel threatened when I face a new
+language I don't know (unless is a natural language). Learn FP to know how 
+to build software and OOP to learn how NOT to build it, so you have the 
+solid base to move between small details like a particular language or another.
+
+Direct knowledge like math does not depend on humans at all (the opposite is 
+law that depend on humans and on top of that, on capitalism too, so it's 
+easily one of the most impure we can find) and science works with humans
+sometimes but is inherently *objective*. Then we have engineers who are a
+spectrum from cheap bottom bunglers who can't even be called engineers to 
+the most developed professional practitioners of engineering. 
+
+On the other hand, with no direct knowledge, and only ordinary knowledge,
+practitioners have to relearn everything from scratch and have constant 
+vertical integrations or workflows so that's a big reason why they get burnout.
+
+Many jobs are not good, so as said, they have constant vertical workflows so 
+your direct knowledge won't help you there, so that's to take into account too.
+
+Try to apply direct knowledge as much as possible as a practitioner, that's 
+the best rewarding outcome, but frequently challenging in real life.
+
+When we understand direct knowledge, we can follow any direction so as I've 
+said along this article, I understand cohesion which is something pretty 
+abstract and most people don't understand abstractions, you even need to 
+understand relativism as a requirement. Then I'm able to manage back and forth
+the buzzwords that come out like "call to action", but if you're, for instance,
+a marketer/manager/etc. then you will lock into the small reality of yours. 
+It's like when they say, a mathematician/physicist have the capacity to 
+become an engineer but not the other way around.
+
 ## Conclusion
 
 The call to action is a modern approach to interface with our users that helps
