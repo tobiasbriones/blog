@@ -1,0 +1,5 @@
+<!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+<!-- This file is part of https://github.com/tobiasbriones/blog -->
+
+# I Just Turned the Lights Off, Put My Headphones On and Read This Crazy Paper About SWE Commandments
