@@ -77,3 +77,11 @@ religious stance.
 I don't endorse it, but you can read its conclusions for some insights.
 
 If I go back read this paper more deeply I might as well add more thoughts here.
+
+## Conclusion
+
+I gave context about the funny stuff I was doing today/weekend 15/10/2022 
+while I was searching for some concerning things on Google to refresh my
+thoughts after a week spent at work that resulted on this article where I 
+explain some concepts I've been devising, what I had in mind this day, and the 
+review I made for the crazy paper I found. 
