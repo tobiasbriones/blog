@@ -1,6 +1,3 @@
-<!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
-<!-- SPDX-License-Identifier: CC-BY-4.0 -->
-<!-- This file is part of https://github.com/tobiasbriones/blog -->
 ---
 permalink: /i-just-turned-the-lights-off-put-my-headphones-on-and-read-this-crazy-paper-about-swe-commandments-2022-10-15
 ---
