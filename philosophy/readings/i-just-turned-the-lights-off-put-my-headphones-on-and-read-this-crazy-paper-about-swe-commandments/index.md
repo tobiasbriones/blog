@@ -30,3 +30,27 @@ had developed for years even before the university.
 
 In short, I was searching for interesting stuff and found this paper, so I 
 read it and shared it in this article.
+
+### Fun Fact
+
+In that little validation task I also found
+[arcade.software](https://arcade.software) which I
+[recommended to social media](https://www.linkedin.com/posts/tobiasbriones_arcade-create-interactive-product-demos-activity-6987219197386727424-9BDy)
+because I liked they use the "software" TLD to reference it as a more
+domain-specific tool, and it looks as an interesting tool I can also 
+employ/recommend.
+
+In other words, I was searching for "site:*.software" in Google 😝.
+
+My specific domain is clearly — after the previous context explanations —
+[math.software](https://math.software) (coming soon) to merge two unique 
+universes, follow the line of "math software engineering/engineer/dev". So 
+what called my attention from the paper I found from these searches was: 
+"Programming the Universe" as its title says.
+
+I also have unpublished articles about deep ideas I've inferred over the
+years.
+
+So, I came out with the idea of adding this experience I had today to the
+blog since I have many others entries *almost done* for months (because details
+matter) but not published yet, and this entry is quite fast and easy to build.
