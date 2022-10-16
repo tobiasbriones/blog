@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# I Just Turned the Lights Off, Put My Headphones On and Read This Crazy Paper About SWE Commandments
+# I Just Turned the Lights Off, Put My Headphones On and Read This Crazy Paper About SWE Commandments (2022/10/15)
 
 I just turned the lights off, put my headphones on, and read this crazy
 paper:
@@ -87,8 +87,8 @@ If I go back read this paper more deeply I might as well add more thoughts here.
 
 ## Conclusion
 
-I gave context about the funny stuff I was doing today/weekend 15/10/2022 
-while I was searching for some concerning things on Google to refresh my
-thoughts after a week spent at work that resulted on this article where I 
-explain some concepts I've been devising, what I had in mind this day, and the 
-review I made for the crazy paper I found. 
+I gave context about the funny stuff I was doing today/weekend while I was
+searching for some concerning things on Google to refresh my thoughts after a
+week spent at work that resulted on this article where I explain some concepts 
+I've been devising, what I had in mind this day, and the review I made for the
+crazy paper I found. 
