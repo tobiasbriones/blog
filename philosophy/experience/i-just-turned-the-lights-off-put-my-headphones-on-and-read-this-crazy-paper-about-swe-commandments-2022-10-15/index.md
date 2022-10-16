@@ -62,7 +62,7 @@ place to post important information instead, and I avoid giving LinkedIn my
 content. I think posting to centralized social media is a way of the "poor man's 
 copyright" too, so it's an advantage of social media on the other hand.
 
-## Review
+## Paper Review
 
 The paper has crazy ideas like "developing and deploying **REAL FUCKING**
 systems".
