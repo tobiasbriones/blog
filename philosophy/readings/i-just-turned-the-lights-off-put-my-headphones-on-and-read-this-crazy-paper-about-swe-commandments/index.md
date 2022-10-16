@@ -55,6 +55,13 @@ So, I came out with the idea of adding this experience I had today to the
 blog since I have many others entries *almost done* for months (because details
 matter) but not published yet, and this entry is quite fast and easy to build.
 
+I was going to publish this as a short post to LinkedIn, but I was kind of 
+afraid the public could've /*stolen/* some of my ideas, and I haven't even 
+bought the super premium "math.software" name 🤣, so the blog is the healthy 
+place to post important information instead, and I avoid giving LinkedIn my 
+content. I think posting to centralized social media is a way of the "poor man's 
+copyright" too, so it's an advantage of social media on the other hand.
+
 ## Review
 
 The paper has crazy ideas like "developing and deploying **REAL FUCKING**
