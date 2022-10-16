@@ -9,6 +9,10 @@ paper:
 [Programming the Universe: The First Commandment of Software Engineering for all
 Varieties of Information Systems](https://arxiv.org/ftp/arxiv/papers/1609/1609.07818.pdf).
 
+In this article I tell what I experienced and was thinking today regarding: 
+math, software, philosophy, TLDs, social media, feelings/conclusions, and the 
+paper above that I just found which is about "Programming the Universe".
+
 ## Context
 
 I've been devising axiomatization and philosophies almost since I started
