@@ -54,3 +54,26 @@ years.
 So, I came out with the idea of adding this experience I had today to the
 blog since I have many others entries *almost done* for months (because details
 matter) but not published yet, and this entry is quite fast and easy to build.
+
+## Review
+
+The paper has crazy ideas like "developing and deploying **REAL FUCKING**
+systems".
+
+It talks about genome, electronics, the fact that engineering is not science 
+or even worse: formal science (or math). Finding the "commandments" is not 
+easy at all to universally accept, software has to be reliable nowadays and 
+we as software engineers have to establish those universal rules.
+
+So, I interpreted the following feeling: is it software engineering something
+real that can be factual so deduced from biological/scientific laws to build
+reliable software or just a human made-up bunch of tricks (yes, to get stuff 
+done, or cheap software as I call it)? 
+
+The paper is crazy, it makes up cringe words that remind me of OOP 
+"principles" 😂. It even translates "the commandment" to hebrew to add it a 
+religious stance.
+
+I don't endorse it, but you can read its conclusions for some insights.
+
+If I go back read this paper more deeply I might as well add more thoughts here.
