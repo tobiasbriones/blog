@@ -61,10 +61,13 @@ matter) but not published yet, and this entry is quite fast and easy to build.
 
 I was going to publish this as a short post to LinkedIn, but I was kind of 
 afraid the public could've \*stolen\* some of my ideas, and I haven't even 
-bought the super premium "math.software" name 🤣, so the blog is the healthy 
+bought the super premium "math.software" name, so the blog is the healthy 
 place to post important information instead, and I avoid giving LinkedIn my 
-content. I think posting to centralized social media is a way of the "poor man's 
-copyright" too, so it's an advantage of social media on the other hand.
+content. On the other hand, I think posting to centralized social media is a 
+way of the "poor man's copyright" too, so that could be an advantage of using 
+social media in this era. I publish mostly everything as
+open-source/free-culture, but even so, we have to take care of certain attacks 
+like cybersquatting for example.
 
 ## Paper Review
 
