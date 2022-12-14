@@ -108,3 +108,30 @@ design.
 The pipe operator is a fundamental element of functional programming (and so
 MathSwe) so I considered it as a high-priority to add it as the third hyphen
 in file names.
+
+### Example
+
+This also was when I came out with this design:
+
+From `solutions-tree-with-html-and-css---ep-mrm.png` to `Solutions Tree
+with HTML and CSS | EP: MRM` when styled as the (high-level) image name.
+
+Now notice how the pipe gives context on where the first part of the value
+belongs to (is relative), from the particular subset
+to the more universal set. 
+
+In this case, "EP: MRM" is an example project about operations research, so 
+the subset (as a whole) "Solutions Tree with HTML and CSS" belongs to the 
+universe set "EP: MRM" (the whole project that gives context to the previous 
+element) and this is denoted via the pipe operator.
+
+Using the pipe symbol avoids absolutist designs like boilerplate by 
+arranging entire wholes in a cohesive way with respect to the underlying 
+content. In other words, I noticed I could put titles closer to the 
+article content if I put the detail first and separate the stereotype or 
+universe to the last, that is a relative design. 
+
+Technically, you apply the value to the next function via the pipe operator,
+so the detail (what is unique, does not repeat) is passed to the superset
+(the potential boilerplate), and recall that I work with articles as source 
+code too.
