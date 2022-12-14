@@ -4,6 +4,20 @@
 
 # How I Standardized Hyphen and Pipe Symbols on File Names
 
+## Hyphen and Pipe Symbols Semantics in File Names
+
+Hyphens (-) (actual hyphens, not word separators) and pipes (|) can have 
+relevant semantics in file names and can also be encoded into file names 
+for that purpose. 
+
+A clear example is when rendering an article title from its file name:
+
+From `how-i-standardized-hypen-and-pipe-symbols-on-file-names`
+to `How I Standardized Hyphen and Pipe Symbols on File Names`.
+
+But these can have other semantics like the title `Thoughts on XYZ
+State-of-the-Art Model | Blog | Math Software Engineer`.
+
 Some symbols like "|" are not allowed as file names, and they would 
 convolute the file system if used anyway so we better not use them there.
 
