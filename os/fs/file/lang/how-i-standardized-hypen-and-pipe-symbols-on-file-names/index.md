@@ -77,3 +77,10 @@ actual hyphen.
 
 In other words, the whitespace and hyphen representations are both word 
 separators so this design decision is cohesive and progressive.
+
+### Example
+
+This was when I came out with this design:
+
+From `triangle-for-tangent-point-at-node--to--node-line.svg` to
+`Triangle for Tangent Point at Node-to-Node Line`.
