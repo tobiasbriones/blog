@@ -98,3 +98,13 @@ So, adding this to design listed in [Encode a Hyphen](#encode-a-hyphen):
 
 - A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word 
   Separator | Blog`.
+
+### Analysis
+
+Adding a third hyphen to denote a pipe is cohesive and progressive for what 
+was said about word separators [above](#encode-a-pipe) so this is a correct 
+design.
+
+The pipe operator is a fundamental element of functional programming (and so 
+MathSwe) so I considered it as a high-priority to add it as the third hyphen 
+in file names.
