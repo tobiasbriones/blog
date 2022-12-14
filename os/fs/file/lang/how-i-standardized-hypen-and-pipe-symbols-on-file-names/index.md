@@ -67,3 +67,13 @@ that is:
   `Word Separator`.
 - A second hyphen is mapped to an actual hyphen: from 
   `state--of--the--art-word-separator` to `State-of-the-Art Word Separator`.
+
+### Analysis
+
+Adding a second hyphen to denote an actual hyphen is cohesive as both styles 
+keep words together and is also progressive as on hyphen is naturally a 
+whitespace so then two hyphens are represented as another separator: the 
+actual hyphen.
+
+In other words, the whitespace and hyphen representations are both word 
+separators so this design decision is cohesive and progressive.
