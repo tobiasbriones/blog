@@ -26,3 +26,16 @@ e. homogeneous).
 If hyphens (-) are already used as word-separators or whitespaces in file 
 names, and pipes (|) are not allowed and are too complex for file names 
 anyway, so how to encode them in the simplest way?
+
+## Standard File Names
+
+Standard file names use to contain lowercase symbols from the below:
+
+- Alphanumeric.
+- Simple symbols like:
+    - Hyphen (-): to denote a whitespace.
+    - Underscore (_): to denote a whitespace.
+    - Dot (.): to denote file extension or semantics.
+
+Some exceptions can have capital or uppercase styles like camel/pascal case
+and root files like `README.md` or `LICENSE` which are uppercase.
