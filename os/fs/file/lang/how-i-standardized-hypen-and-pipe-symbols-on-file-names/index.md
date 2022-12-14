@@ -84,3 +84,17 @@ This was when I came out with this design:
 
 From `triangle-for-tangent-point-at-node--to--node-line.svg` to
 `Triangle for Tangent Point at Node-to-Node Line`.
+
+## Encode a Pipe
+
+As per the global standard, pipes (|) are not allowed into file names so a 
+simple extension is to be designed to add pipe symbols to file names.
+
+Since pipes (|) are (more meaningful) word separators just like whitespaces 
+(default and most used) and hyphens (second most used), then a proper design 
+is to add a third hyphen (---) to denote a pipe (|). 
+
+So, adding this to design listed in [Encode a Hyphen](#encode-a-hyphen):
+
+- A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word 
+  Separator | Blog`.
