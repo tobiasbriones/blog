@@ -60,8 +60,8 @@ As per the global standard, hyphens (-) are used to separate words in file
 names so a simple extension is to be designed to add actual hyphens into 
 file names.
 
-The simplest and most naturally-extensible design is to add a second hyphen, 
-that is:
+The simplest and most naturally-extensible design is to add a second hyphen 
+(--), that is:
 
 - A hyphen is a word separator as per standard: from `word-separator` to 
   `Word Separator`.
