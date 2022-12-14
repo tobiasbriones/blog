@@ -22,3 +22,7 @@ for simple and language-readable or programming-readable source code
 files (i.e. no white spaces, only lowercase-alphanumeric and simple symbols).
 Notice that articles are a language for me too (everything is a language, i.
 e. homogeneous).
+
+If hyphens (-) are already used as word-separators or whitespaces in file 
+names, and pipes (|) are not allowed and are too complex for file names 
+anyway, so how to encode them in the simplest way?
