@@ -6,9 +6,9 @@
 
 ## Hyphen and Pipe Symbols Semantics in File Names
 
-Hyphens (-) (actual hyphens, not word separators) and pipes (|) can have 
-relevant semantics in file names and can also be encoded into file names 
-for that purpose. 
+Hyphens (-) (actual hyphens, not word separators) and pipes (|) can have
+relevant semantics in file names and can also be encoded into file names
+for that purpose.
 
 A clear example is when rendering an article title from its file name:
 
@@ -18,27 +18,27 @@ to `How I Standardized Hyphen and Pipe Symbols on File Names`.
 But these can have other semantics like the title `Thoughts on XYZ
 State-of-the-Art Model | Blog | Math Software Engineer`.
 
-Some symbols like "|" are not allowed as file names, and they would 
+Some symbols like "|" are not allowed as file names, and they would
 convolute the file system if used anyway so we better not use them there.
 
-Source code has to keep in a well-designed shape so file names must be 
-simple, but we can still encode relevant semantics to them to empower our 
+Source code has to keep in a well-designed shape so file names must be
+simple, but we can still encode relevant semantics to them to empower our
 source tree and get a clever system.
 
-Encoding information on file/directory names as well as tree structures is 
-important to naturally build a DSL from our file tree, so we have an 
-expressive system that won't get fragmented since we're adding logic to each 
-place (e.g. we don't need a centralized "index" file to tell file semantics 
+Encoding information on file/directory names as well as tree structures is
+important to naturally build a DSL from our file tree, so we have an
+expressive system that won't get fragmented since we're adding logic to each
+place (e.g. we don't need a centralized "index" file to tell file semantics
 because our domain-specific system naturally knows that information).
 
-I've started to encode the hyphen (-) and pipe (|) symbols into file names 
-for simple and language-readable or programming-readable source code 
+I've started to encode the hyphen (-) and pipe (|) symbols into file names
+for simple and language-readable or programming-readable source code
 files (i.e. no white spaces, only lowercase-alphanumeric and simple symbols).
 Notice that articles are a language for me too (everything is a language, i.e.
 homogeneous).
 
-If hyphens (-) are already used as word-separators or whitespaces in file 
-names, and pipes (|) are not allowed and are too complex for file names 
+If hyphens (-) are already used as word-separators or whitespaces in file
+names, and pipes (|) are not allowed and are too complex for file names
 anyway, so how to encode them in the simplest way?
 
 ## Standard File Names
@@ -56,26 +56,26 @@ and root files like `README.md` or `LICENSE` which are uppercase.
 
 ## Encode a Hyphen
 
-As per the global standard, hyphens (-) are used to separate words in file 
-names so a simple extension is to be designed to add actual hyphens into 
+As per the global standard, hyphens (-) are used to separate words in file
+names so a simple extension is to be designed to add actual hyphens into
 file names.
 
-The simplest and most naturally-extensible design is to add a second hyphen 
+The simplest and most naturally-extensible design is to add a second hyphen
 (--), that is:
 
-- A hyphen is a word separator as per standard: from `word-separator` to 
+- A hyphen is a word separator as per standard: from `word-separator` to
   `Word Separator`.
-- A second hyphen is mapped to an actual hyphen: from 
+- A second hyphen is mapped to an actual hyphen: from
   `state--of--the--art-word-separator` to `State-of-the-Art Word Separator`.
 
 ### Analysis
 
-Adding a second hyphen to denote an actual hyphen is cohesive as both styles 
-keep words together and is also progressive as on hyphen is naturally a 
-whitespace so then two hyphens are represented as another separator: the 
+Adding a second hyphen to denote an actual hyphen is cohesive as both styles
+keep words together and is also progressive as on hyphen is naturally a
+whitespace so then two hyphens are represented as another separator: the
 actual hyphen.
 
-In other words, the whitespace and hyphen representations are both word 
+In other words, the whitespace and hyphen representations are both word
 separators so this design decision is cohesive and progressive.
 
 ### Example
@@ -87,24 +87,24 @@ From `triangle-for-tangent-point-at-node--to--node-line.svg` to
 
 ## Encode a Pipe
 
-As per the global standard, pipes (|) are not allowed into file names so a 
+As per the global standard, pipes (|) are not allowed into file names so a
 simple extension is to be designed to add pipe symbols to file names.
 
-Since pipes (|) are (more meaningful) word separators just like whitespaces 
-(default and most used) and hyphens (second most used), then a proper design 
-is to add a third hyphen (---) to denote a pipe (|). 
+Since pipes (|) are (more meaningful) word separators just like whitespaces
+(default and most used) and hyphens (second most used), then a proper design
+is to add a third hyphen (---) to denote a pipe (|).
 
 So, adding this to design listed in [Encode a Hyphen](#encode-a-hyphen):
 
-- A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word 
+- A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word
   Separator | Blog`.
 
 ### Analysis
 
-Adding a third hyphen to denote a pipe is cohesive and progressive for what 
-was said about word separators [above](#encode-a-pipe) so this is a correct 
+Adding a third hyphen to denote a pipe is cohesive and progressive for what
+was said about word separators [above](#encode-a-pipe) so this is a correct
 design.
 
-The pipe operator is a fundamental element of functional programming (and so 
-MathSwe) so I considered it as a high-priority to add it as the third hyphen 
+The pipe operator is a fundamental element of functional programming (and so
+MathSwe) so I considered it as a high-priority to add it as the third hyphen
 in file names.
