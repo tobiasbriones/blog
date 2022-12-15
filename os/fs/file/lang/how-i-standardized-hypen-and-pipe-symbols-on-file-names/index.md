@@ -1,5 +1,6 @@
 ---
 permalink: /how-i-standardized-hypen-and-pipe-symbols-on-file-names
+ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/os/fs/file/lang/how-i-standardized-hypen-and-pipe-symbols-on-file-names/og-image.png
 ---
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
