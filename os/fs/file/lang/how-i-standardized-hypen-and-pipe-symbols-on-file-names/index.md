@@ -4,6 +4,10 @@
 
 # How I Standardized Hyphen and Pipe Symbols on File Names
 
+File names can denote meaningful information so that we can use file systems 
+as a domain-specific language by encoding symbols like hyphens (-) and pipes 
+(|) into file names by extending the usual standard for source code file names.
+
 ## Hyphen and Pipe Symbols Semantics in File Names
 
 Hyphens (-) (actual hyphens, not word separators) and pipes (|) can have
