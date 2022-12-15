@@ -26,7 +26,7 @@ simple, but we can still encode relevant semantics to them to empower our
 source tree and get a clever system.
 
 Encoding information on file/directory names as well as tree structures is
-important to naturally build a DSL from our file tree, so we have an
+important to naturally build a DSL from our file system tree, so we have an
 expressive system that won't get fragmented since we're adding logic to each
 place (e.g. we don't need a centralized "index" file to tell file semantics
 because our domain-specific system naturally knows that information).
@@ -63,20 +63,22 @@ file names.
 The simplest and most naturally-extensible design is to add a second hyphen
 (--), that is:
 
-- A hyphen is a word separator as per standard: from `word-separator` to
-  `Word Separator`.
+- A hyphen is a word separator as per the usual standard: from
+  `word-separator` to `Word Separator`.
 - A second hyphen is mapped to an actual hyphen: from
   `state--of--the--art-word-separator` to `State-of-the-Art Word Separator`.
 
 ### Analysis
 
 Adding a second hyphen to denote an actual hyphen is cohesive as both styles
-keep words together and is also progressive as on hyphen is naturally a
-whitespace so then two hyphens are represented as another separator: the
-actual hyphen.
+keep words together and is also progressive as one hyphen is naturally a word
+separator or a whitespace so, therefore two hyphens are represented as another
+separator: the actual hyphen.
 
-In other words, the whitespace and hyphen representations are both word
-separators so this design decision is cohesive and progressive.
+In other words, the whitespace (-) and hyphen (--) representations are both word
+separators and the former is more frequent than the latter (hence the 
+preferences in the number of hyphens to add) so this design decision is 
+cohesive and progressive.
 
 ### Example
 
@@ -94,7 +96,7 @@ Since pipes (|) are (more meaningful) word separators just like whitespaces
 (default and most used) and hyphens (second most used), then a proper design
 is to add a third hyphen (---) to denote a pipe (|).
 
-So, adding this to design listed in [Encode a Hyphen](#encode-a-hyphen):
+So, adding this to the design listed in [Encode a Hyphen](#encode-a-hyphen):
 
 - A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word
   Separator | Blog`.
@@ -111,27 +113,7 @@ in file names.
 
 ### Example
 
-This also was when I came out with this design:
+This was also when I came out with this design:
 
 From `solutions-tree-with-html-and-css---ep-mrm.png` to `Solutions Tree
 with HTML and CSS | EP: MRM` when styled as the (high-level) image name.
-
-Now notice how the pipe gives context on where the first part of the value
-belongs to (is relative), from the particular subset
-to the more universal set. 
-
-In this case, "EP: MRM" is an example project about operations research, so 
-the subset (as a whole) "Solutions Tree with HTML and CSS" belongs to the 
-universe set "EP: MRM" (the whole project that gives context to the previous 
-element) and this is denoted via the pipe operator.
-
-Using the pipe symbol avoids absolutist designs like boilerplate by 
-arranging entire wholes in a cohesive way with respect to the underlying 
-content. In other words, I noticed I could put titles closer to the 
-article content if I put the detail first and separate the stereotype or 
-universe to the last, that is a relative design. 
-
-Technically, you apply the value to the next function via the pipe operator,
-so the detail (what is unique, does not repeat) is passed to the superset
-(the potential boilerplate), and recall that I work with articles as source 
-code too.
