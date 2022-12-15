@@ -14,4 +14,4 @@ Go to:
 - [2022-03-14-pi-day](2022-03-14-pi-day)
 - [everything-is-relative](everything-is-relative)
 - [i-just-turned-the-lights-off-put-my-headphones-on-and-read-this-crazy-paper-about-swe-commandments-2022-10-15](i-just-turned-the-lights-off-put-my-headphones-on-and-read-this-crazy-paper-about-swe-commandments-2022-10-15)
-- [how-i-standardized-hypen-and-pipe-symbols-on-file-names](os/fs/file/lang/how-i-standardized-hypen-and-pipe-symbols-on-file-names)
+- [how-i-standardized-hypen-and-pipe-symbols-on-file-names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
