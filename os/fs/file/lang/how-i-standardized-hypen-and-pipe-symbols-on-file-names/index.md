@@ -117,3 +117,13 @@ This was also when I came out with this design:
 
 From `solutions-tree-with-html-and-css---ep-mrm.png` to `Solutions Tree
 with HTML and CSS | EP: MRM` when styled as the (high-level) image name.
+
+## Standardize Hyphens and Pipes on File Names
+
+Hyphens (-) and pipes (|) can have relevant semantics to empower cleverer 
+domain-specific file systems, but it's not trivial to denote such symbols as 
+per the usual standard so, an extended standard was designed to define 
+double hyphens (--) to be represented as hyphens (-) and triple hyphens (---)
+as pipes (|) which for instance, can be useful to render image names from their 
+file name, which leads us to turn file names into a language just like 
+usual source code is.
