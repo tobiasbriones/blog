@@ -1,5 +1,7 @@
 ---
 permalink: /how-i-standardized-hypen-and-pipe-symbols-on-file-names
+title: How I Standardized Hyphen and Pipe Symbols on File Names | Blog | Math Software Engineer
+description: File names can denote meaningful information so that we can use file systems as a domain-specific language by encoding symbols like hyphens (-) and pipes (|) into file names by extending the usual standard for source code file names.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/os/fs/file/lang/how-i-standardized-hypen-and-pipe-symbols-on-file-names/og-image.png
 ---
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
