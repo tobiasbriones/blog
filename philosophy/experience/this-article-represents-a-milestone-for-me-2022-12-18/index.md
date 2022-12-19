@@ -147,3 +147,42 @@ the "Conclusion" boilerplate.
 
 Then, that is the output of the article that you can "plug" to a next article to 
 get greater value and tha also builds a rich well-informed system.
+
+## How I Applied Cohesion to This Same Article
+
+This is the example of how I applied what I've been developing in this 
+article into this same article.
+
+![How I Applied Cohesion to This Same Article](how-i-applied-cohesion-to-this-same-article.png)
+
+<figcaption>
+<p align="center"><strong>How I Applied Cohesion to This Same Article</strong></p>
+</figcaption>
+
+From my illustration, it's easily readable to follow how I *connected* 
+sections by *concluding* with the idea of *the next section* so content is
+*smooth*[^5], and it shows how it builds a **greater whole** out of 
+**composable** and **highly-cohesive** sections as if they were functions.  
+
+[^5]: Smooth curves is my definition of beauty
+
+If you notice, all these concepts are *the same* (homogeneity again!), for 
+example, to be cohesive requires no off-topic to remove any fragmentation or 
+impurity, so it can build an entire whole (as per cohesion definition). When 
+removing impurities that fragment the whole into heterogeneous parts, we end 
+up with a homogeneous whole. To compose they need no have impurities so be 
+cohesive or homogeneous. 
+
+Imagine if I talk about some off-topic then I wouldn't be able to compose 
+sections since if one only section is not able to build a united itself, then
+it's even worse adding more together, they're ending nowhere.
+
+It's like OOP which is inherently wrong by coupling data and methods (by 
+definition) so it's not one thing or the other and in the end it doesn't 
+scale and just can't be composed because is tightly coupled to heterogeneous 
+parts with top-down hierarchies, like e.g. "public methods" are more 
+"important" than "private" methods, so they have "management" and "peon" based 
+pseudoscience.
+
+Detecting impurities introduces relativity but that's another topic: 
+[Everything is Relative](everything-is-relative).
