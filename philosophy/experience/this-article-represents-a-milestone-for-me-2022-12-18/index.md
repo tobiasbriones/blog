@@ -15,7 +15,7 @@ concepts of:
 - Smooth homogeneous content that moves on the system tree.
 - Got a new open graph cover.
 
-## Composable Content
+## Composable
 
 This powerful concept will allow readers to move over the system tree
 smoothly and enable me to create unlimited scalable articles by writing
@@ -33,7 +33,7 @@ about the underlying topic of the article or **expand within other related
 content as much as needed** within an **uncoupled** (or composable) ***sum* of
 highly-cohesive content that builds a greater whole**.
 
-## Cohesive Content
+## Cohesive
 
 As an intellectual I always want to write about many contents I have in mind,
 but for any article, I've eventually resolved to write or talk about one topic
@@ -46,7 +46,7 @@ Now I'm pretty careful about off-topic that must go somewhere else.
 Articles must be united wholes that are about the **same** content, so we can
 *sum* (scale) them up to build a greater system tree of high-quality content.
 
-## Homogeneous Content
+## Homogeneous
 
 Homogeneous content allows me to achieve simplicity, so I don't need to employ
 bureaucratic/academic stereotypes like *heterogeneous sections* that are 
