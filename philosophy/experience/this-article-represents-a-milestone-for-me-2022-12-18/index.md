@@ -157,6 +157,33 @@ and
 as such. The commit messages go like `Add introduction ...`, `Add conclusion 
 ...` when it would normally be `Add section ...`.
 
+### Do not Use Plurals
+
+As a rule of thumb don't use plurals, I usually hate them as they represent 
+stereotypes and are complicated. Go as simple as possible, and plurals are 
+typically not simple at all!
+
+One direct example of this for this topic is when they tell you to add to 
+your work sections:
+
+- Objectives
+- Conclusions
+- Recommendations
+
+Back in the time after writing my B.Math thesis when I began to post content 
+to [mathsoftware.engineer](https://mathsoftware.engineer) I stopped writing in 
+plurals and at least used the singular forms: "Objective", and "Conclusion".
+
+When adding plurals you naturally write down a list of items next, so it 
+means you skip actual content for generic items.
+
+Plurals also indicate that section is mere off-topic just to comply with 
+their low-standards because you have to publish an "academic journal" that 
+is a huge monolith no one is going to read. I mean, objectives, 
+recommendations, are contents that can be address anywhere else out there, 
+and adding them into the same "PDF" only makes it a bigger bureaucratic 
+top-down monolith.
+
 ## How I Applied Cohesion to This Same Article
 
 This is the example of how I applied what I've been developing in this 
