@@ -148,6 +148,15 @@ the "Conclusion" boilerplate.
 Then, that is the output of the article that you can "plug" to a next article to 
 get greater value and tha also builds a rich well-informed system.
 
+### Check the Commits
+
+See how I treated the domain-specific 
+[introduction](https://github.com/tobiasbriones/blog/pull/20/commits/2681b15fe70ce0be4980066c7a4609e79b00cd91)
+and
+[conclusion](https://github.com/tobiasbriones/blog/pull/20/commits/f2e74ff736f67ecdf2acd5de014367ed2b634407)
+as such. The commit messages go like `Add introduction ...`, `Add conclusion 
+...` when it would normally be `Add section ...`.
+
 ## How I Applied Cohesion to This Same Article
 
 This is the example of how I applied what I've been developing in this 
