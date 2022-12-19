@@ -37,8 +37,9 @@ highly-cohesive content that builds a greater whole**.
 
 As an intellectual I always want to write about many contents I have in mind,
 but for any article, I've eventually resolved to write or talk about one topic
-and if details should/must be stated then draft them out and build other
-articles.
+and leave details or derivative topics that should/must be stated as a draft 
+and then build other articles that will be probably related to each other 
+but still being highly cohesive.
 
 Now I'm pretty careful about off-topic that must go somewhere else.
 
