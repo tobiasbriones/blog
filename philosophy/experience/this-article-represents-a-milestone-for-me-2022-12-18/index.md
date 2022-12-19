@@ -78,3 +78,72 @@ instead.
 Articles are about the same idea, sometimes we need to think a bit more to 
 write what has to be written and that leaves cheap articles behind and 
 creates high-quality content.
+
+### How I Homogenized My Previous Article
+
+I'm writing this article as a milestone for paradigm shift and the updates about
+content structure is pretty interesting.
+
+I've always put the abstract in the beginning of my writings and make them
+as short as possible to resume the whole article.
+
+Now notice how we normally would put sections for "Introduction", 
+"Conclusion", etc., when writing formal or semiformal content. As said above,
+I don't write about "Introduction" or "Body", I'm not a "Introduction 
+Engineer", that is, those are stereotypes for generic/bureaucratic artifacts.
+
+And bureaucrats enforce that kind of repetitive structure to be "correct" 
+when in fact they don't have idea of what they're talking about.
+
+Content **must be homogeneous** to give all benefits of its value, 
+**homogeneity is key for pureness**.
+
+What I do is **applying informed designs** to systems, so I remove 
+boilerplate[^2] and make them 💯 original, as if was a huge universe set where
+every point is unique[^3], and we *sum* them up as a partition that induces the 
+equivalence classes[^4] with the *exact* properties we need which leads to
+mathematical elegance and correctness as well as infinitely scalability.
+
+[^2]: Boilerplate is proper of poorly-defined generic software like OO programs
+    or also procedural Go programs
+
+[^3]: All elements within a set are unique as the relation that defines 
+    whether an element $$x \in X$$ is binary so $$x$$ belongs or not to $$X$$
+    and although $$x$$ can be listed many times it is the same element
+
+[^4]: Math or FP classes are not the same as OOP classes at all
+
+I have to say I got quite excited with the previous paragraph 🤗 and it shows
+one more time how I'm fully capable of leading the mathematical software 
+industry.
+
+Now, notice how I got rid of the "Introduction" stereotype by moving smoothly 
+over the sections as if they were **functions** with input and output that can 
+obviously be composed, so I created a **particular** section that plays the 
+traditional "Introduction" section but being domain-specific or well-informed
+instead of being generic:
+[Hyphen and Pipe Symbols Semantics in File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names#hyphen-and-pipe-symbols-semantics-in-file-names).
+
+That section **smoothly** introduces the reader without **imperatively** 
+saying it is an "Introduction" (can you see the beauty of FP and DSLs?).
+
+Therefore, all sections can be composed together, and the reader only has to 
+read what it's needed and content can be optimally displayed.
+
+Also notice how all everything is homogeneous of course, so a section is the 
+same as a whole article or the whole 
+[mathsoftware.engineer](https://mathsoftware.engineer) for me so that we can
+leverage this pureness to get the most out of the content. That also means 
+that every section must have a micro abstract and conclusion to be smooth 
+and move from one section to another or skip them.
+
+Then, the "Conclusion" came, so I took **all the inner sections** (without 
+abstract, title, and conclusion itself) and **resumed what a reader who 
+*already read* the article has achieved** (a.k.a. conclusion) and make it 
+original: 
+[Standardize Hyphens and Pipes on File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names#standardize-hyphens-and-pipes-on-file-names),
+noticing how I also **micro resumed the section title itself** to eradicate 
+the "Conclusion" boilerplate.
+
+Then, that is the output of the article that you can "plug" to a next article to 
+get greater value and tha also builds a rich well-informed system.
