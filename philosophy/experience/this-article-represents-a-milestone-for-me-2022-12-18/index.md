@@ -222,3 +222,13 @@ pseudoscience.
 
 Detecting impurities introduces relativity but that's another topic: 
 [Everything is Relative](everything-is-relative).
+
+### Recursive Fun Fact
+
+The above image is form this same article, so it plays well with the content 
+I developed, but I also want it to add it to section [Cohesive](#cohesive) 
+which appears in the screenshot as well!
+
+That would've been a recursive move but only possible if done 
+programmatically as I'm not hacking into Photopea — a great and free version 
+of Photoshop —.
