@@ -32,3 +32,15 @@ The idea is that the system tree is informed, so we can either read just
 about the underlying topic of the article or **expand within other related
 content as much as needed** within an **uncoupled** (or composable) ***sum* of 
 highly-cohesive entries that build a greater whole**.
+
+## Cohesive Entries
+
+As an intellectual I always want to write about many contents I have in mind,
+but for any entry I've eventually resolved to write or talk about one topic 
+and if details should/must be stated then draft them out and build other 
+entries.
+
+Now I'm pretty careful about off-topic that must go somewhere else.
+
+Entries must be united wholes that are about the **same** content, so we can
+*sum* (scale) them up to build a greater system tree of high-quality content.
