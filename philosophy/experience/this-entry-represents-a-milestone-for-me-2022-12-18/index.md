@@ -44,3 +44,36 @@ Now I'm pretty careful about off-topic that must go somewhere else.
 
 Entries must be united wholes that are about the **same** content, so we can
 *sum* (scale) them up to build a greater system tree of high-quality content.
+
+## Homogeneous Content
+
+Homogeneous content allows me to achieve simplicity, so I don't need to employ
+bureaucratic/academic stereotypes like *heterogeneous sections* that are 
+literally called "Introduction", "Body", or "Conclusion" since I'm writing
+content as it was source code, and I leverage functional programming for making
+informed decisions every day.
+
+All those boilerplate-based and off-topic sections are used to hold 
+academic monoliths[^1] and if you're clever enough, you must come out with your 
+DSLs because you're a domain expert completely able provide actual value 
+instead of off-topic academic and corporate marketing. 
+
+[^1]: Think why Java used to be overly verbose since 90's and 00's software
+    (and hardware) were monstrous monoliths and Java was the excellent 
+    language for that era
+
+Such sections (for example) are clearly noticed as off-topic since your 
+article has a central topic `X` and you're not talking about "Introduction", or 
+"Body" but `X`. Those generic boilerplate-driven titles recalls us cheap 
+poorly-defined software.
+
+It's like: your app is about `Song-to-Text Recognition` not about stupid 
+`Controllers` or `Services` (yes, cheap software built with OOP), those 
+generic buzzwords are stereotypes that bypass what an actual engineer would 
+do as a domain expert, so I expect modules called like say `["song", "text", 
+"transform", "play", "bass", "pitch", "amplitude", "some-ml-model"]` 
+instead.
+
+Articles are about the same idea, sometimes we need to think a bit more to 
+write what has to be written and that leaves cheap articles behind and 
+creates high-quality content.
