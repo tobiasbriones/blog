@@ -87,8 +87,8 @@ In other words, everything should be a domain, and this also applies to
 articles of course.
 
 Articles are about the same idea, sometimes we need to think a bit more to
-write what has to be written and that leaves cheap articles behind and
-creates high-quality content.
+write **what has to be written** instead of using **generic templates** and
+that endeavor leaves cheap articles behind and promotes high-quality content.
 
 ### How I Homogenized My Previous Article
 
