@@ -135,7 +135,7 @@ same as a whole article or the whole
 [mathsoftware.engineer](https://mathsoftware.engineer) for me so that we can
 leverage this pureness to get the most out of the content. That also means 
 that every section must have a micro abstract and conclusion to be smooth 
-and move from one section to another or skip them.
+so the reader can move from one section to another or skip them.
 
 Then, the "Conclusion" came, so I took **all the inner sections** (without 
 abstract, title, and conclusion itself) and **resumed what a reader who 
