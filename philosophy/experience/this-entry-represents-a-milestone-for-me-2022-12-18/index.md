@@ -39,6 +39,7 @@ concepts of:
     + [We Should Check Out the Pipe on the Home Value As Well](#we-should-check-out-the-pipe-on-the-home-value-as-well)
   * [I am Infinitely Thankful](#i-am-infinitely-thankful)
 
+
 ## Composable
 
 This powerful concept will allow readers to move over the system tree
@@ -93,15 +94,23 @@ article has a central topic `X` and you're not talking about "Introduction", or
 poorly-defined software.
 
 It's like: your app is about `Song-to-Text Recognition` not about stupid
-`Controllers` or `Services` (yes, cheap software built with OOP), those
-generic buzzwords are stereotypes that bypass what an actual engineer would
-do as a domain expert, so I expect modules called like say `["song", "text",
-"transform", "play", "bass", "pitch", "amplitude", "some-ml-model"]`
-instead.
+`Controllers`, `Middlewares` or `Services` (pretty common to see in cheap
+generic software out there, and quite related to OOP and top-down
+imposed/bureaucratic hierarchies). You "sell" "song recognition" and
+similar works, but you don't "sell" "Controllers" and such, so those generic
+buzzwords are stereotypes that bypass what an actual engineer would do as a
+domain expert, so I expect modules called like say `["song", "text",
+"transform", "control", "bass", "pitch", "amplitude", "some-ml-model"]` instead.
+
+When being homogeneous, in the example above, an API is the same kind of
+software a "business-domain" is, or a GUI tree is. So there's no need to
+differentiate among them and say that APIs have "Controller" as a template.
+In other words, everything should be a domain, and this also applies to
+articles of course.
 
 Articles are about the same idea, sometimes we need to think a bit more to
-write what has to be written and that leaves cheap articles behind and
-creates high-quality content.
+write **what has to be written** instead of using **generic templates** and
+that endeavor leaves cheap articles behind and promotes high-quality content.
 
 ### How I Homogenized My Previous Article
 
