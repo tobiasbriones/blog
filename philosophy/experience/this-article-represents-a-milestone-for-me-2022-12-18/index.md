@@ -232,3 +232,45 @@ which appears in the screenshot as well!
 That would've been a recursive move but only possible if done 
 programmatically as I'm not hacking into Photopea — a great and free version 
 of Photoshop —.
+
+## Open Graph Cover
+
+Lastly, I'll mention the new template I created for the social media preview of
+the articles.
+
+This is from my previous article, so for the record:
+
+![First OG Cover from Previous Article | Photopea](images/first-og-cover-from-previous-article---photopea.png)
+
+<figcaption>
+<p align="center"><strong>First OG Cover from Previous Article | Photopea</strong></p>
+<p align="center">Source: Screenshot | <it>Photopea</it> (under fair use)</p>
+</figcaption>
+
+It contains the article title, the author image with the small and first[^6] 
+version of MathSwe logo I created[^7] attached to the bottom-right, and 
+icons[^8] for home, keywords, and reading time.
+
+[^6]: The first MathSwe logo is too tiny and doesn't look well as a small 
+    icon, so I then created a main version which is bigger and much better and its 
+    displayed properly at any display size and the reason I still don't use it's 
+    that I want to get it as a vector source code first, so I don't have 
+    to take a huge amount of time (I've made a huge amount of efforts  
+    over the years, and it's about time to automate and move forward now) fighting 
+    with manual graphic editing on Photopea for beauty details like the smooth 
+    curves and my perfectionist measurements
+
+[^7]: I got influence from my earlier and original creations (Piaxid) 
+    for designing MathSwe of course
+
+[^8]: I've always taken Google's Material Design as a first-class UI/UX 
+    guideline so these icons are from (community-led) 
+    [Material Design Icons](https://materialdesignicons.com) as well
+
+And then, here it is the current cover for this article:
+
+![OG Cover](og-cover.png)
+
+<figcaption>
+<p align="center"><strong>OG Cover</strong></p>
+</figcaption>
