@@ -72,11 +72,13 @@ article has a central topic `X` and you're not talking about "Introduction", or
 poorly-defined software.
 
 It's like: your app is about `Song-to-Text Recognition` not about stupid
-`Controllers` or `Services` (yes, cheap software built with OOP), those
-generic buzzwords are stereotypes that bypass what an actual engineer would
-do as a domain expert, so I expect modules called like say `["song", "text",
-"transform", "play", "bass", "pitch", "amplitude", "some-ml-model"]`
-instead.
+`Controllers`, `Middlewares` or `Services` (pretty common to see in cheap
+generic software out there, and quite related to OOP and top-down
+imposed/bureaucratic hierarchies). You "sell" "song recognition" and 
+similar works, but you don't "sell" "Controllers" and such, so those generic 
+buzzwords are stereotypes that bypass what an actual engineer would do as a 
+domain expert, so I expect modules called like say `["song", "text", 
+"transform", "control", "bass", "pitch", "amplitude", "some-ml-model"]` instead.
 
 Articles are about the same idea, sometimes we need to think a bit more to
 write what has to be written and that leaves cheap articles behind and
