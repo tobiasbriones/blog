@@ -4,4 +4,4 @@
 
 ### Photopea
 
-- [Photopea OG Cover](og-cover---photopea.png)
+- [Photopea OG Cover](first-og-cover-from-previous-article---photopea.png)
