@@ -146,7 +146,7 @@ noticing how I also **micro resumed the section title itself** to eradicate
 the "Conclusion" boilerplate.
 
 Then, that is the output of the article that you can "plug" to a next article to
-get greater value and tha also builds a rich well-informed system.
+get greater value and that also builds a rich well-informed system.
 
 ### Check the Commits
 
