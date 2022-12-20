@@ -303,3 +303,25 @@ top-to-bottom (I'm not talking about top-down structure but the position of your
 the right for granular detail. In other words, the pipe creates the effect
 of either keeping "inside" or moving away to other domain when applying it,
 like for example, in this case, `mathsoftware.engineer` is a `Blog`s "exit".
+
+## I am Infinitely Thankful
+
+Whenever I want to get knowledge or take decisions I only have to use my math
+and functional-programming basis to infer a proper solution to each particular
+problem, in other words, I only have to think to get new knowledge and 
+answers which is an in-house first-class representation of simplicity induced 
+by math and FP.
+
+Programming, engineering, math, philosophy, research, and others have
+systematically structured my brain all over the years.
+
+Math, relativism, and functional programming, have shifted my personal and
+professional life to the next dimension of consciousness, and they're the ones 
+whom I have to thank for everything I've built up and been able to understand,
+since when you get to this level you are just capable to do whatever you want as
+an engineer.
+
+In this article I developed what I currently have as one of my milestones for
+[mathsoftware.engineer](https://mathsoftware.engineer) and MathSwe content
+including last-days insights and thoughts based on my
+[previous article](how-i-standardized-hypen-and-pipe-symbols-on-file-names).
