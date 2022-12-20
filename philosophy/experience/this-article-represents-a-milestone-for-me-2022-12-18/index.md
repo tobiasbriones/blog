@@ -278,6 +278,8 @@ And then, here it is the current cover for this article:
 <p align="center"><strong>OG Cover</strong></p>
 </figcaption>
 
+A next step is to automate all this of course 👾.
+
 ### We Should Check Out the Pipe on the Home Value As Well
 
 Notice how interesting is when I wrote about how I encode the pipe operator 
