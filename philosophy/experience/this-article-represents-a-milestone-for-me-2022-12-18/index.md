@@ -80,6 +80,12 @@ buzzwords are stereotypes that bypass what an actual engineer would do as a
 domain expert, so I expect modules called like say `["song", "text", 
 "transform", "control", "bass", "pitch", "amplitude", "some-ml-model"]` instead.
 
+When being homogeneous, in the example above, an API is the same kind of 
+software a "business-domain" is, or a GUI tree is. So there's no need to 
+differentiate among them and say that APIs have "Controller" as a template. 
+In other words, everything should be a domain, and this also applies to 
+articles of course.
+
 Articles are about the same idea, sometimes we need to think a bit more to
 write what has to be written and that leaves cheap articles behind and
 creates high-quality content.
