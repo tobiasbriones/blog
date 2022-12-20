@@ -264,7 +264,7 @@ the articles.
 
 This is from my previous article, so for the record:
 
-![First OG Cover from Previous Article | Photopea](images/first-og-cover-from-previous-article---photopea.png)
+![First OG Cover from Previous Article \| Photopea](images/first-og-cover-from-previous-article---photopea.png)
 
 <figcaption>
 <p align="center"><strong>First OG Cover from Previous Article | Photopea</strong></p>
