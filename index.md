@@ -15,3 +15,4 @@ Go to:
 - [everything-is-relative](everything-is-relative)
 - [i-just-turned-the-lights-off-put-my-headphones-on-and-read-this-crazy-paper-about-swe-commandments-2022-10-15](i-just-turned-the-lights-off-put-my-headphones-on-and-read-this-crazy-paper-about-swe-commandments-2022-10-15)
 - [how-i-standardized-hypen-and-pipe-symbols-on-file-names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
+- [this-entry-represents-a-milestone-for-me-2022-12-18](this-entry-represents-a-milestone-for-me-2022-12-18)
