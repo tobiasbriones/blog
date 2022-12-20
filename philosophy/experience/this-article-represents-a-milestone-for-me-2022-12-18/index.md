@@ -274,3 +274,32 @@ And then, here it is the current cover for this article:
 <figcaption>
 <p align="center"><strong>OG Cover</strong></p>
 </figcaption>
+
+### We Should Check Out the Pipe on the Home Value As Well
+
+Notice how interesting is when I wrote about how I encode the pipe operator 
+into file names in 
+[How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
+and I also applied the pipe to the first cover image for that article.
+
+I've also applied the pipe to one of the images above too.
+
+In this case, these articles are hosted at
+[Blog | Math Software Engineer](https://blog.mathsoftware.engineer) or the same,
+[Blog | mathsoftware.engineer](https://blog.mathsoftware.engineer) and that 
+means that you're reading the blog, so you see **what kind of content to 
+expect**, and then it expands out to further details for the rest of the domain 
+name.
+
+Notice how `Blog` is a factual detail and then the pipe *compose* it to
+build an entire and bigger whole altogether with the complete website. `Blog`
+is a subset of `mathsoftware.engineer` (a subdomain technically), so this 
+way we see how FP goes **from factual "small" truths to universal properties** 
+unlike *alternative* programming paradigms.
+
+Also notice how reading is smooth as you can naturally do it from
+top-to-bottom (I'm not talking about top-down structure but the position of your
+"cursor") within the same level of abstraction, and you can go further to
+the right for granular detail. In other words, the pipe creates the effect
+of either keeping "inside" or moving away to other domain when applying it,
+like for example, in this case, `mathsoftware.engineer` is a `Blog`s "exit".
