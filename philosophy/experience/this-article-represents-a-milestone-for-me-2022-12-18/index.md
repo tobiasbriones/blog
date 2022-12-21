@@ -5,7 +5,7 @@
 # This Article Represents a Milestone for Me (2022/12/18)
 
 From recent results, I will develop my experience, content design, and some news
-that represent one of my latest milestones on date 2022/12/18.
+representing one of my latest milestones on 2022/12/18.
 
 I have to say that
 [this article](how-i-standardized-hypen-and-pipe-symbols-on-file-names) [I
