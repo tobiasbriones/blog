@@ -1,7 +1,7 @@
 ---
 permalink: /this-entry-represents-a-milestone-for-me-2022-12-18
 title: This Entry Represents a Milestone for Me (2022/12/17)
-description: From recent results, I will develop my experience, content design, and some news that represent one of my latest milestones on date 2022/12/18.
+description: From recent results, I will develop my experience, content design, and some news representing one of my latest milestones on 2022/12/18.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/philosophy/experience/this-entry-represents-a-milestone-for-me-2022-12-18/og-cover.png
 ---
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
@@ -10,8 +10,7 @@ ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/philosoph
 
 # This Article Represents a Milestone for Me (2022/12/18)
 
-From recent results, I will develop my experience, content design, and some news
-that represent one of my latest milestones on date 2022/12/18.
+From recent results, I will develop my experience, content design, and some news representing one of my latest milestones on 2022/12/18.
 
 I have to say that
 [this article](how-i-standardized-hypen-and-pipe-symbols-on-file-names) [I
