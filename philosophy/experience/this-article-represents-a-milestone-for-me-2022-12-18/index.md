@@ -87,6 +87,10 @@ particularly designing so if I tell you what modules to write it would be a
 bureaucratic template (like OOD) instead of a DSL, hence DSLs are explicitly 
 called "specific" although in FP I would just call them "languages".
 
+The only domain we can find that boilerplate to be relatively correct to use is 
+for prototypes or for cheap software (like corporate apps) so the engineer 
+has to take the decision whether to employ them sometimes.
+
 When being homogeneous, in the example above, an API is the same kind of
 software a "business-domain" is, or a GUI tree is. So there's no need to
 differentiate among them and say that APIs have "Controller" as a template.
