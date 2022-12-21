@@ -1,6 +1,6 @@
 ---
 permalink: /this-entry-represents-a-milestone-for-me-2022-12-18
-title: This Entry Represents a Milestone for Me (2022/12/17)
+title: This Entry Represents a Milestone for Me (2022/12/18)
 description: From recent results, I will develop my experience, content design, and some news representing one of my latest milestones on 2022/12/18.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/philosophy/experience/this-entry-represents-a-milestone-for-me-2022-12-18/og-cover.png
 ---
