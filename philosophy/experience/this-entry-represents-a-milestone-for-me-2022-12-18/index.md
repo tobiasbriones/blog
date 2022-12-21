@@ -117,10 +117,10 @@ for prototypes or cheap software (like corporate apps) so the engineer has to
 decide whether to employ them sometimes.
 
 When being homogeneous, in the example above, an API is the same kind of
-software a "business domain" is, or a GUI tree is. So there's no need to
-differentiate among them and say that APIs have a "Controller" as a template.
-In other words, everything should be a domain, and this also applies to
-articles of course.
+software a "business domain" is, a GUI tree is, or any module is. So there's no 
+need to differentiate among them and say that APIs have a "Controller" as a
+template. In other words, everything should be a domain, and this also applies 
+to articles of course.
 
 Articles are about the same idea, sometimes we need to think a bit more to
 write **what has to be written** instead of using **generic templates** and
