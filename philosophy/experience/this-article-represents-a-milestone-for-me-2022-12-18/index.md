@@ -242,13 +242,6 @@ Imagine if I talk about some off-topic then I wouldn't be able to compose
 sections since if one only section is not able to build a united itself, then
 it's even worse adding more together, they're ending nowhere.
 
-It's like OOP which is inherently wrong by coupling data and methods (by
-definition) so it's not one thing or the other and in the end it doesn't
-scale and just can't be composed because is tightly coupled to heterogeneous
-parts with top-down hierarchies, like e.g. "public methods" are more
-"important" than "private" methods, so they have "management" and "peon" based
-pseudoscience.
-
 Detecting impurities introduces relativity but that's another topic:
 [Everything is Relative](everything-is-relative).
 
