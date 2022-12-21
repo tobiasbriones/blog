@@ -28,8 +28,8 @@ just read straight ahead if not needed.
 
 A great representation of the correctness and beauty of functional programming
 and composition lies when **you take what you need and don't take what you
-don't need** which is something impossible to actually do with other paradigms
-(OOP, procedural, imperative, mixed, etc.).
+don't need** which is something impossible to actually do with alternative 
+paradigms.
 
 The idea is that the system tree is informed, so we can either read just
 about the underlying topic of the article or **expand within other related
