@@ -234,6 +234,10 @@ removing impurities that fragment the whole into heterogeneous parts, we end
 up with a homogeneous whole. To compose they need no have impurities so be
 cohesive or homogeneous.
 
+Also notice how the unit of abstraction in FP is the function *itself*! 
+while in alternative paradigms you have to come out with arbitrary 
+(heterogeneous) workarounds.
+
 Imagine if I talk about some off-topic then I wouldn't be able to compose
 sections since if one only section is not able to build a united itself, then
 it's even worse adding more together, they're ending nowhere.
