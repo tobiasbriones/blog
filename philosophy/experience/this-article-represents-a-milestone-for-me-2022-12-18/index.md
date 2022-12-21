@@ -87,6 +87,9 @@ particularly designing so if I tell you what modules to write it would be a
 bureaucratic template (like OOD) instead of a DSL, hence DSLs are explicitly 
 called "specific" although in FP I would just call them "languages".
 
+Notice I'm not talking about "generic programming" here but generic ways that 
+stereotype systems.
+
 The only domain we can find that boilerplate to be relatively correct to use is 
 for prototypes or for cheap software (like corporate apps) so the engineer 
 has to take the decision whether to employ them sometimes.
