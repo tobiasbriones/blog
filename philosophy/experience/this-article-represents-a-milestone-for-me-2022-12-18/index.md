@@ -331,7 +331,7 @@ like for example, in this case, `mathsoftware.engineer` is a `Blog`s "exit".
 ## I am Infinitely Thankful
 
 Whenever I want to get knowledge or take decisions I only have to use my math
-and functional-programming basis to infer a proper solution to each particular
+and functional programming basis to infer a proper solution to each particular
 problem, in other words, I only have to think to get new knowledge and 
 answers which is an in-house first-class representation of simplicity induced 
 by math and FP.
