@@ -72,13 +72,17 @@ article has a central topic `X` and you're not talking about "Introduction", or
 poorly-defined software.
 
 It's like: your app is about `Song-to-Text Recognition` not about stupid
-`Controllers`, `Middlewares` or `Services` (pretty common to see in cheap
-generic software out there, and quite related to OOP and top-down
+`Controllers`, `Middlewares`, `Services`, or `UseCase` (pretty common to see in 
+cheap generic software out there, due to top-down template-based
 imposed/bureaucratic hierarchies). You "sell" "song recognition" and
 similar works, but you don't "sell" "Controllers" and such, so those generic
 buzzwords are stereotypes that bypass what an actual engineer would do as a
-domain expert, so I expect modules called like say `["song", "text",
-"transform", "control", "bass", "pitch", "amplitude", "some-ml-model"]` instead.
+domain expert, so I expect modules called like say for example `["song", "text",
+"transform", "control", "bass", "pitch", "amplitude", "some-ml-model"]` 
+instead. Those modules depend on what you're particularly designing so if I 
+tell you what modules to write it would be a bureaucratic template (like OOD)
+instead of a DSL, hence DSLs are explicitly called "specific" although in FP 
+I would just call them "languages".
 
 When being homogeneous, in the example above, an API is the same kind of
 software a "business-domain" is, or a GUI tree is. So there's no need to
