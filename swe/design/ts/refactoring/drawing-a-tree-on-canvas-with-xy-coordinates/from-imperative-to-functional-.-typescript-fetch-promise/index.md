@@ -36,3 +36,27 @@ And lack of:
     sounds familiar isn't it? yes, Rust 🦀
 
 Then we have reasons why the "functional" snippet doesn't get **even better**.
+
+Another keynote to notice is that imperative versions will lead you to add
+multiple return statements which increment the code complexity making it
+hard to reason, follow and pretty prone to error.
+
+Also, notice how throwing from a `try-catch` block **is an antipattern** as it
+becomes a `goto`[^2][^3].
+
+[^2]: You can learn plenty of these details from IntelliJ IDEA inspections
+
+[^3]: Understanding these details are what make you stand away from bad 
+    programmers and make you a competent one
+
+If TS had `try`-expressions (like Kotlin) the imperative version would get
+much better regarding correctness and style, but **expressions are
+declarative so functional** in the end 😋.
+
+**The more you make a program better, the more functional it gets**, that's
+because **FP is the only/original programming paradigm there exists as per
+scientific concerns**, and all other paradigms are just cheap workarounds.
+
+Another good one I know a lot from experience is that **the more I refactor code
+to improve it the more domain-specific it gets**, and FP is clearly the natural
+way to go for DSLs.
