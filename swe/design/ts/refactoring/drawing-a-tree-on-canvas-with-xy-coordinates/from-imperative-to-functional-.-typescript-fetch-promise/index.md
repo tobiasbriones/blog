@@ -132,7 +132,9 @@ Another good one I know a lot from experience is that **the more I refactor code
 to improve it the more domain-specific it gets**, and FP is clearly the natural
 way to go for DSLs.
 
-I used to be a huge fan of Java (still have my good reasons) but I got to
-understand those "clever" ways of programming are **just intellectual
-distractions**, and my favorite phrase I use to teach others or tell my story is
-that the **simplest designs are the best**.
+I used to be a huge fan of Java as an OO approach (still have my good reasons) 
+but I got to understand those "clever" ways of programming are **just 
+intellectual distractions**.
+
+So, my favorite phrase I use to teach others or tell my story is that the
+**simplest designs are the best** and FP is all about simplicity.
