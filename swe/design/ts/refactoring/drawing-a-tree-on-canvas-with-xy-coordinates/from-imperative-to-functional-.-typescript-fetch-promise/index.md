@@ -88,6 +88,23 @@ And lack of:
 
 Then we have reasons why the "functional" snippet doesn't get **even better**.
 
+The imperative version has the following visible problems, and I encourage 
+you to reason the code snippets to figure them out:
+
+- Imperatively needs to add `async` to the function signature which leads to 
+  the "async-await hell" and more boilerplate.
+- Usage of mutable variable `tree` for returning the function value in order 
+  to avoid a multiple return mess.
+- Usage of `try-catch` for error handling which has many disadvantages and 
+  can be replaced with sum types or monads like Rust does, so there's no 
+  reason why we should keep using `try-catch` blocks in robust software 
+  development.
+- Usage of OOP which enhances lower-level imperative code but is complete 
+  nonsense for high-level software (most code) and yes, more boilerplate.
+- As I say below, it still has and needs mixed components 
+  (functional/declarative, OO, etc.) so if we could go fully functional 
+  (with better languages) why keep writing cheap code like that?
+
 Another keynote to notice is that imperative versions will lead you to add
 multiple return statements which increment the code complexity making it
 hard to reason, follow, and pretty prone to error.
