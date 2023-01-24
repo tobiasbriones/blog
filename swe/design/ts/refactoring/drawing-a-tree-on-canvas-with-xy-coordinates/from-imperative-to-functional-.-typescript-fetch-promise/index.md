@@ -1,5 +1,5 @@
 ---
-permalink: /from-imperative-to-functional-.-typescript-fetch-promise
+permalink: /from-imperative-to-functional-_-typescript-fetch-promise
 title: This gist shows how more functional code is superior to imperative code to perform a simple fetch request.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/design/ts/refactoring/drawing-a-tree-on-canvas-with-xy-coordinates/from-imperative-to-functional-.-typescript-fetch-promise/from-imperative-to-functional-.-typescript-fetch-promise.png
 ---
