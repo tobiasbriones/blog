@@ -9,7 +9,7 @@
 This
 [gist](https://gist.github.com/tobiasbriones/544350fc301ffe32c1dd64d2f6ec6d81)
 shows how more functional code is superior to imperative code to
-perform a simple fetch request to get JSON value that models a tree data
+perform a simple fetch request to get a JSON value that models a tree data
 structure to be represented later by `HTMLCanvasElement`.
 
 Both versions are correct and do the same, the "functional" version still has
