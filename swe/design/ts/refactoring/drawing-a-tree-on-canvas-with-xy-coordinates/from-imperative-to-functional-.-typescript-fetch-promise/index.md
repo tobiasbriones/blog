@@ -16,6 +16,57 @@ Both versions are correct and do the same, but the "functional" version
 still has some imperative style because JS/TS is not a functional language but
 the difference **is clear** again.
 
+The difference between both snippets is the following:
+
+```ts
+async function fetchTree(path: string): Promise<TreeNode> {
+  const onError = reason => showError({ reason, msg: 'Failed to fetch tree' });
+  let tree = newTreeNode();
+
+  try {
+    const res = await fetch(path);
+
+    if (res.ok) {
+      tree = await res.json();
+    }
+    else {
+      onError(new Error(res.statusText));
+    }
+  }
+  catch (reason) {
+    onError(reason);
+  }
+  return tree;
+}
+```
+
+<figcaption>
+<p align="center"><strong>Imperative</strong></p>
+</figcaption>
+
+
+```ts
+function fetchTree(path: string): Promise<TreeNode> {
+  return fetch(path)
+    .then(res => res.ok ? res : Promise.reject(res.statusText))
+    .then(res => res.json())
+    .catch(reason => {
+      showError({ reason, msg: 'Failed to fetch tree' });
+      console.error(reason);
+      return newTreeNode();
+    });
+}
+```
+
+<figcaption>
+<p align="center"><strong>More Functional</strong></p>
+</figcaption>
+
+The refactored code (a.k.a. "more functional") **is not functional**, but it 
+gets close. This is to avoid introducing functional abstractions like pipes, 
+monads, etc., on top of JS/TS which is not a functional language but a mixed 
+one as the underlying project is pretty short.
+
 By noticing the:
 
 👎🏻 return statement
