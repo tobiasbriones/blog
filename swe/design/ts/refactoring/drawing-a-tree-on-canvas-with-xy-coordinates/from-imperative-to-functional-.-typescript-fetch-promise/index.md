@@ -97,7 +97,7 @@ you to reason the code snippets** to figure them out:
   to avoid a multiple-`return` mess.
 - Usage of `try`-`catch` for error handling which has many disadvantages and 
   can be replaced with sum types or monads like Rust does, so there's no 
-  reason why we should keep using `try-catch` blocks in robust software 
+  reason why we should keep using `try`-`catch` blocks in robust software 
   development.
 - Usage of OOP which might enhance lower-level imperative code but is complete 
   nonsense for high-level software (most projects) and yes, more boilerplate.
@@ -113,7 +113,7 @@ you to reason the code snippets** to figure them out:
   directly to fail when parsing the `JSON` data. Who cares when code is 
   imperative anyway?
 
-Also, notice how throwing from a `try-catch` block **is an antipattern** as it
+Also, notice how throwing from a `try`-`catch` block **is an antipattern** as it
 becomes a `goto`[^2][^3].
 
 [^2]: You can learn plenty of these details from IntelliJ IDEA inspections
