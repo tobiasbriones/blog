@@ -104,10 +104,9 @@ you to reason the code snippets to figure them out:
 - As I say below, it still has and needs mixed components 
   (functional/declarative, OO, etc.) so if we could go fully functional 
   (with better languages) why keep writing cheap code like that?
-
-Another keynote to notice is that imperative versions will lead you to add
-multiple return statements which increment the code complexity making it
-hard to reason, follow, and pretty prone to error.
+- Has more formatting constraints, I always put the `else` branch on a new 
+  line (so more LoC) as it is factually the best way to format it.
+- It's obviously quite prone to error and hard to read.
 
 Also, notice how throwing from a `try-catch` block **is an antipattern** as it
 becomes a `goto`[^2][^3].
