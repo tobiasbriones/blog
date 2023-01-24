@@ -125,6 +125,9 @@ declarative so functional** in the end 😋.
 because **FP is the only/original programming paradigm there exists as per
 scientific concerns**, and all other paradigms are just cheap workarounds.
 
+Notice we can go "pure functional" but not "pure imperative" or "pure OO" so 
+the **workarounds** are clearly the alternative non-functional paradigms.
+
 Another good one I know a lot from experience is that **the more I refactor code
 to improve it the more domain-specific it gets**, and FP is clearly the natural
 way to go for DSLs.
