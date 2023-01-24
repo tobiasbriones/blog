@@ -12,9 +12,9 @@ shows how more functional code is superior to imperative code to
 perform a simple fetch request to get a JSON value that models a tree data
 structure to be represented later by `HTMLCanvasElement`.
 
-Both versions are correct and do the same, the "functional" version still has
-some imperative style because JS/TS is not a functional language but the
-difference **is clear** again.
+Both versions are correct and do the same, but the "functional" version
+still has some imperative style because JS/TS is not a functional language but
+the difference **is clear** again.
 
 By noticing the:
 
@@ -39,7 +39,7 @@ Then we have reasons why the "functional" snippet doesn't get **even better**.
 
 Another keynote to notice is that imperative versions will lead you to add
 multiple return statements which increment the code complexity making it
-hard to reason, follow and pretty prone to error.
+hard to reason, follow, and pretty prone to error.
 
 Also, notice how throwing from a `try-catch` block **is an antipattern** as it
 becomes a `goto`[^2][^3].
