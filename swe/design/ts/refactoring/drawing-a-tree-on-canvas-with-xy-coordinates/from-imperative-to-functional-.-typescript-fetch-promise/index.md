@@ -88,25 +88,30 @@ And lack of:
 
 Then we have reasons why the "functional" snippet doesn't get **even better**.
 
-The imperative version has the following visible problems, and I encourage 
-you to reason the code snippets to figure them out:
+The imperative version has the following visible problems, and **I encourage 
+you to reason the code snippets** to figure them out:
 
 - Imperatively needs to add `async` to the function signature which leads to 
   the "async-await hell" and more boilerplate.
 - Usage of mutable variable `tree` for returning the function value in order 
-  to avoid a multiple return mess.
-- Usage of `try-catch` for error handling which has many disadvantages and 
+  to avoid a multiple-`return` mess.
+- Usage of `try`-`catch` for error handling which has many disadvantages and 
   can be replaced with sum types or monads like Rust does, so there's no 
   reason why we should keep using `try-catch` blocks in robust software 
   development.
-- Usage of OOP which enhances lower-level imperative code but is complete 
-  nonsense for high-level software (most code) and yes, more boilerplate.
+- Usage of OOP which might enhance lower-level imperative code but is complete 
+  nonsense for high-level software (most projects) and yes, more boilerplate.
 - As I say below, it still has and needs mixed components 
   (functional/declarative, OO, etc.) so if we could go fully functional 
   (with better languages) why keep writing cheap code like that?
 - Has more formatting constraints, I always put the `else` branch on a new 
-  line (so more LoC) as it is factually the best way to format it.
+  line (which gives more LoC) as it is factually the best way to format it.
 - It's obviously quite prone to error and hard to read.
+- Even the Mozilla docs for `Promise` only show toy examples, and real life 
+  error handling gets worse with imperative code. Code on the internet like 
+  docs or tutorials almost always skip the status `ok` error handling and go 
+  directly to fail when parsing the `JSON` data. Who cares when code is 
+  imperative anyway?
 
 Also, notice how throwing from a `try-catch` block **is an antipattern** as it
 becomes a `goto`[^2][^3].
