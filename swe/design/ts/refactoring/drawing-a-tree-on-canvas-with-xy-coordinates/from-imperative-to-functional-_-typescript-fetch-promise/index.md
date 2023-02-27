@@ -97,8 +97,14 @@ you to reason the code snippets** to figure them out:
     **heterogeneous** system that differentiates between "normal" functions
     and "`async`" functions.
   - More boilerplate.
-- Usage of mutable variable `tree` for returning the function value in order 
-  to avoid a multiple-`return` mess.
+  - In con of this asynchronous model read the JEP for Java's virtual threads 
+    at the "Alternatives" section and watch the timestamp at "Async Await" I 
+    added to the [bibliography](#bibliography).
+  - In "pro" of imperative (but not `async-await`) watch what B. Goetz also 
+    had to say about reactive programming on the [bibliography](#bibliography)
+    but keep in mind that this and the above sub-item are in the context of 
+    Java and the other workaround languages like JavaScript, C++, C#, Kotlin...
+  
 - Usage of `try`-`catch` for error handling which has many disadvantages and 
   can be replaced with sum types or monads like Rust does, so there's no 
   reason why we should keep using `try`-`catch` blocks in robust software 
