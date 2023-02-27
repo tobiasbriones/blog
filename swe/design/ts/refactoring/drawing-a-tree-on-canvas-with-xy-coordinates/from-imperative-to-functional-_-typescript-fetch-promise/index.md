@@ -97,12 +97,12 @@ you to reason the code snippets** to figure them out:
     **heterogeneous** system that differentiates between "normal" functions
     and "`async`" functions.
   - More boilerplate.
-  - In con of this asynchronous model read the JEP for Java's virtual threads 
-    at the "Alternatives" section and watch the timestamp at "Async Await" I 
+  - In con of this asynchronous model read the JEP for Java's virtual threads
+    at the "Alternatives" section and watch the timestamp at "Async Await" I
     added to the [bibliography](#bibliography).
-  - In "pro" of imperative (but not `async-await`) watch what B. Goetz also 
+  - In "pro" of imperative (but not `async`-`await`) watch what B. Goetz also
     had to say about reactive programming on the [bibliography](#bibliography)
-    but keep in mind that this and the above sub-item are in the context of 
+    but keep in mind that this and the above sub-item are in the context of
     Java and the other workaround languages like JavaScript, C++, C#, Kotlin...
 
 - Usage of *mutable* variable `tree` for returning the function value:
