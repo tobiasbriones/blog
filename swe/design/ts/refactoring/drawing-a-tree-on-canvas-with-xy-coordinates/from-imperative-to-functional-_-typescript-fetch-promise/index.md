@@ -155,3 +155,4 @@ knowledge.
 ## Bibliography
 
 - [Propping Threads Up by Missing Their Point \| State of Loom \| OpenJDK](https://cr.openjdk.org/~rpressler/loom/loom/sol1_part1.html#propping-threads-up-by-missing-their-point)
+- [Async Await \| AMA About the Java Language — Brian Goetz and Nicolai Parlog \| YouTube](https://youtu.be/9si7gK94gLo?t=1704)
