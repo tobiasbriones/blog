@@ -149,3 +149,5 @@ and clearness by leveraging their available features and our computer science
 knowledge.
 
 ## Bibliography
+
+- [Propping Threads Up by Missing Their Point \| State of Loom \| OpenJDK](https://cr.openjdk.org/~rpressler/loom/loom/sol1_part1.html#propping-threads-up-by-missing-their-point)
