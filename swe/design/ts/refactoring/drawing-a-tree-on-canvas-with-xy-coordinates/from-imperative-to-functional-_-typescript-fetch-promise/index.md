@@ -91,8 +91,12 @@ Then we have reasons why the "functional" snippet doesn't get **even better**.
 The imperative version has the following visible problems, and **I encourage 
 you to reason the code snippets** to figure them out:
 
-- Imperatively needs to add `async` to the function signature which leads to 
-  the "async-await hell" and more boilerplate.
+- Imperatively needs to add `async` to the function signature:
+  - It leads to the "async-await hell".
+  - It "colors" functions because of the above sub-item, so we have a
+    **heterogeneous** system that differentiates between "normal" functions
+    and "`async`" functions.
+  - More boilerplate.
 - Usage of mutable variable `tree` for returning the function value in order 
   to avoid a multiple-`return` mess.
 - Usage of `try`-`catch` for error handling which has many disadvantages and 
