@@ -104,6 +104,12 @@ you to reason the code snippets** to figure them out:
     had to say about reactive programming on the [bibliography](#bibliography)
     but keep in mind that this and the above sub-item are in the context of 
     Java and the other workaround languages like JavaScript, C++, C#, Kotlin...
+
+- Usage of *mutable* variable `tree` for returning the function value:
+  - Otherwise, we'd have a multiple-`return` mess (to get rid of the
+    variable), whilst a competent (programmer, language) might as well
+    directly replace it with a high-level declarative approach (e.g. ADTs with
+    pattern matching).
   
 - Usage of `try`-`catch` for error handling which has many disadvantages and 
   can be replaced with sum types or monads like Rust does, so there's no 
