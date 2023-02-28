@@ -179,6 +179,13 @@ Regarding minor issues that arise in this basic code snippet are the following:
   directly to fail when parsing the `JSON` data. Who cares when code is 
   imperative anyway?
 
+- Imperative has more **whitespaces** like `await fetch(path).then(...)`
+  which makes the code **less cohesive**. Whitespaces are a horrible design,
+  imagine file names with capital and whitespaces, it yields many bugs and
+  workarounds, and by fragmenting our code in this case it makes it worse to
+  build **a fluent DSL**. You'd likely chain other `then`s so using a mix is a
+  heterogeneous approach again.
+
 Also, notice how throwing from a `try`-`catch` block **is an antipattern** as it
 becomes a `goto`[^2][^3].
 
