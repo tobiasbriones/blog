@@ -89,7 +89,14 @@ And lack of:
 Then we have reasons why the "functional" snippet doesn't get **even better**.
 
 The imperative version has the following visible problems, and **I encourage 
-you to reason the code snippets** to figure them out:
+you to reason the code snippets** to figure them out.
+
+## General Concerns
+
+I'll address concerns from this snippet that can be explained out generally 
+as listed items.
+
+### Async Await
 
 - Imperatively needs to add `async` to the function signature:
   - It leads to the "async-await hell".
@@ -105,12 +112,16 @@ you to reason the code snippets** to figure them out:
     but keep in mind that this and the above sub-item are in the context of
     Java and the other workaround languages like JavaScript, C++, C#, Kotlin...
 
+### Mutable Variable
+
 - Usage of *mutable* variable `tree` for returning the function value:
   - Otherwise, we'd have a multiple-`return` mess (to get rid of the
     variable), whilst a competent `(programmer, language)` might as well
     directly replace it with a high-level declarative approach (e.g. ADTs with
     pattern matching).
   
+### Try Catch
+
 - Usage of `try`-`catch` for error handling which has many disadvantages and 
   can be replaced with sum types or monads like Rust does, so there's no 
   reason why we should keep using `try`-`catch` blocks in robust software 
@@ -136,10 +147,14 @@ you to reason the code snippets** to figure them out:
   - Therefore, code gets quite messy, worked-around, and simple FP 
     approaches perfectly replace this archaic feature.
   
+### OOP
+
 - Usage of OOP which might enhance lower-level imperative code but is complete 
   nonsense for high-level software (most projects) and yes, more boilerplate:
   - Notice the `new Error` line.
   
+### Mixed Paradigm
+
 - As I say below, it still has and needs mixed components 
   (functional/declarative, OO, etc.) so **if we could go fully functional** 
   (with better languages) **why keep writing cheap code like that?**:
@@ -166,6 +181,8 @@ you to reason the code snippets** to figure them out:
     but functional doesn't need other paradigms as *it's homogeneous*, or 
     simply put, math.
       
+### Minor Issues
+
 Regarding minor issues that arise in this basic code snippet are the following:
 
 - Has more formatting constraints, I always put the `else` branch on a new 
@@ -185,6 +202,8 @@ Regarding minor issues that arise in this basic code snippet are the following:
   workarounds, and by fragmenting our code in this case it makes it worse to
   build **a fluent DSL**. You'd likely chain other `then`s so using a mix is a
   heterogeneous approach again.
+
+## Final Observations
 
 Also, notice how throwing from a `try`-`catch` block **is an antipattern** as it
 becomes a `goto`[^2][^3].
@@ -215,6 +234,8 @@ intellectual distractions**.
 
 So, my favorite phrase I use to teach others or tell my story is that the
 **simplest designs are the best** and FP is all about simplicity.
+
+## Leveraging FP as the Universal Approach It Is
 
 Mainstream languages like JavaScript, TypeScript, and Java don't have good
 functional support, but we can still build better code regarding robustness 
