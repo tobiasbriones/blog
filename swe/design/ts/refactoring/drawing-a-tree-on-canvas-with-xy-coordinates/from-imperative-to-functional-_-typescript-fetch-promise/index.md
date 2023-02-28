@@ -141,8 +141,32 @@ you to reason the code snippets** to figure them out:
   - Notice the `new Error` line.
   
 - As I say below, it still has and needs mixed components 
-  (functional/declarative, OO, etc.) so if we could go fully functional 
-  (with better languages) why keep writing cheap code like that?
+  (functional/declarative, OO, etc.) so **if we could go fully functional** 
+  (with better languages) **why keep writing cheap code like that?**:
+  - The functional component is universal as it's always present: 
+    - Methods and procedures are poor man's functions as they always have 
+      the vague idea of "inputs", "transformation", and "output".
+    - Multiple-return methods are a poor man's ADT with pattern matching.
+    - Same for anything else, we only use *alternative paradigms* because of 
+      pragmatic convince like (if you checked the Java 
+      [bibliography](#bibliography)) "Everyone already uses Java, and reactive 
+      programming doesn't match Java-centric imperative constructs like control 
+      and loop structures and also its tooling like stacktraces" so then 
+      it's not a reactive's or functional problem but a Java one.
+    - FP is universal as it's (attempts to be) a `1:1` mapping of math. Now 
+      regarding Java for instance, the language is convoluted these days so 
+      the "good enough" is not "enough" any longer (it ages poorly like most 
+      languages) and I'd add my phrase here "All monoliths will eventually 
+      fall apart" so we better build *homogeneous* systems instead if we don't 
+      want our engineering artifacts be a waste.
+  - Understanding that "most" of time we use (you like it or not) poor man's 
+    FP, then that $$~80/90%$$ of time **can converge to fully-functional** 
+    (evaluate for under/over-engineering here), **but not the other way 
+    around** as said above that imperative always needs a mix of paradigms 
+    but functional doesn't need other paradigms as *it's homogeneous*, or 
+    simply put, math.
+      
+
 - Has more formatting constraints, I always put the `else` branch on a new 
   line (which gives more LoC) as it is factually the best way to format it.
 - It's obviously quite prone to error and hard to read.
