@@ -18,15 +18,15 @@ the difference **is clear** again.
 
 ## Difference
 
-First, I clarify that I added as much imperative code to the "imperative" 
-version to compare both approaches here, but my original code wasn't actually 
-refactored from the "imperative" version below to the "more functional" one, 
-but from a "saner imperative" version in between to the "more functional" one 
+First, I clarify that I added as much imperative code to the "imperative"
+version to compare both approaches here, but my original code wasn't actually
+refactored from the "imperative" version below to the "more functional" one,
+but from a "saner imperative" version in between to the "more functional" one
 instead.
 
 So, we'll need to start analysing both versions, knowing that
-[everything is relative](everything-is-relative), so I'm measuring here 
-"imperative" vs "more functional" **with respect** to this code snippet or 
+[everything is relative](everything-is-relative), so I'm measuring here
+"imperative" vs "more functional" **with respect** to this code snippet or
 problem.
 
 The difference between both snippets is the following:
@@ -57,7 +57,6 @@ async function fetchTree(path: string): Promise<TreeNode> {
 <p align="center"><strong>Imperative</strong></p>
 </figcaption>
 
-
 ```ts
 function fetchTree(path: string): Promise<TreeNode> {
   return fetch(path)
@@ -75,14 +74,14 @@ function fetchTree(path: string): Promise<TreeNode> {
 <p align="center"><strong>More Functional</strong></p>
 </figcaption>
 
-The refactored code (a.k.a. "more functional") **is not functional**, but it 
-gets close. This is to avoid introducing functional abstractions like pipes, 
-monads, etc., on top of JS/TS which is not a functional language but a mixed 
+The refactored code (a.k.a. "more functional") **is not functional**, but it
+gets close. This is to avoid introducing functional abstractions like pipes,
+monads, etc., on top of JS/TS which is not a functional language but a mixed
 one as the underlying project is pretty short.
 
 ## Getting Started on Noticing Details
 
-This is an analytical endeavour so observation is key to get the most out of it 
+This is an analytical endeavour so observation is key to get the most out of it
 by applying our CS and SWE knowledge and experience.
 
 By noticing the:
@@ -106,7 +105,7 @@ And lack of:
 
 Then we have reasons why the "functional" snippet doesn't get **even better**.
 
-The imperative version has the following visible problems, and **I encourage 
+The imperative version has the following visible problems, and **I encourage
 you to reason the code snippets** to figure them out.
 
 ## General Concerns
@@ -138,64 +137,64 @@ Usage of *mutable* variable `tree` for returning the function value:
   variable), whilst a competent `(programmer, language)` might as well
   directly replace it with a high-level declarative approach (e.g. ADTs with
   pattern matching).
-  
+
 ### Try Catch
 
-Usage of `try`-`catch` for error handling which has many disadvantages and 
-can be replaced with sum types or monads like Rust does, so there's no 
-reason why we should keep using `try`-`catch` blocks in robust software 
+Usage of `try`-`catch` for error handling which has many disadvantages and
+can be replaced with sum types or monads like Rust does, so there's no
+reason why we should keep using `try`-`catch` blocks in robust software
 development:
 
 - Code only gets more tightly-coupled.
 - Provokes many mundane workarounds like the mutable variable I said above,
-  the `goto` antipattern I mention later, multiple-`return` mess, and 
+  the `goto` antipattern I mention later, multiple-`return` mess, and
   completely stupid checked/unchecked exceptions (both are terrible).
-- Java is the only useful language that implements *checked exceptions*, so 
-  they're not a good feature as no other language have them, and 
-  *unchecked exceptions* are much more terrible as they constantly hide 
+- Java is the only useful language that implements *checked exceptions*, so
+  they're not a good feature as no other language have them, and
+  *unchecked exceptions* are much more terrible as they constantly hide
   errors and that **disallows us** to produce *engineering grade* software.
-- Go and Rust error handling techniques are vastly superior to that of 
-  imperative exceptions, and although Go is imperative, its approach is 
-  returning a *tuple* (a math concept so functional) that works as a poor 
+- Go and Rust error handling techniques are vastly superior to that of
+  imperative exceptions, and although Go is imperative, its approach is
+  returning a *tuple* (a math concept so functional) that works as a poor
   man's `Result` sum type.
-- As always, it fragments functions into two kinds (like the asynchronous 
-  item above): normal functions and the ones that `throw` an error. So we 
-  have again a **heterogeneous** system that could otherwise be a 
-  simple-and-robust *homogeneous* system (i.e. FP) that returns values like 
-  `Result` instead of *procedures* or *methods* that only yield 
+- As always, it fragments functions into two kinds (like the asynchronous
+  item above): normal functions and the ones that `throw` an error. So we
+  have again a **heterogeneous** system that could otherwise be a
+  simple-and-robust *homogeneous* system (i.e. FP) that returns values like
+  `Result` instead of *procedures* or *methods* that only yield
   arbitrary **side effects**.
-- Therefore, code gets quite messy, worked-around, and simple FP 
+- Therefore, code gets quite messy, worked-around, and simple FP
   approaches perfectly replace this archaic feature.
-  
+
 ### Mixed Paradigm
 
-As I say below, it still has and needs mixed components 
-(functional/declarative, OO, etc.) so **if we could go fully functional** 
+As I say below, it still has and needs mixed components
+(functional/declarative, OO, etc.) so **if we could go fully functional**
 (with better languages) **why keep writing cheap code like that?**:
 
-- The functional component is universal as it's always present: 
-  - Methods and procedures are poor man's functions as they always have 
+- The functional component is universal as it's always present:
+  - Methods and procedures are poor man's functions as they always have
     the vague idea of "inputs", "transformation", and "output".
   - Multiple-return methods are a poor man's ADT with pattern matching.
-  - Same for anything else, we only use *alternative paradigms* because of 
-    pragmatic convince like (if you checked the Java 
-    [bibliography](#bibliography)) "Everyone already uses Java, and reactive 
-    programming doesn't match Java-centric imperative constructs like control 
-    and loop structures and also its tooling like stacktraces" so then 
+  - Same for anything else, we only use *alternative paradigms* because of
+    pragmatic convince like (if you checked the Java
+    [bibliography](#bibliography)) "Everyone already uses Java, and reactive
+    programming doesn't match Java-centric imperative constructs like control
+    and loop structures and also its tooling like stacktraces" so then
     it's not a reactive's or functional problem but a Java one.
-  - FP is universal as it's (attempts to be) a `1:1` mapping of math. Now 
-    regarding Java for instance, the language is convoluted these days so 
-    the "good enough" is not "enough" any longer (it ages poorly like most 
-    languages) and I'd add my phrase here "All monoliths will eventually 
-    fall apart" so we better build *homogeneous* systems instead if we don't 
+  - FP is universal as it's (attempts to be) a `1:1` mapping of math. Now
+    regarding Java for instance, the language is convoluted these days so
+    the "good enough" is not "enough" any longer (it ages poorly like most
+    languages) and I'd add my phrase here "All monoliths will eventually
+    fall apart" so we better build *homogeneous* systems instead if we don't
     want our engineering artifacts be a waste.
-- Understanding that "most" of time we use (you like it or not) poor man's 
-  FP, then that $$~80/90%$$ of time **can converge to fully-functional** 
-  (evaluate for under/over-engineering here), **but not the other way 
-  around** as said above that imperative always needs a mix of paradigms 
-  but functional doesn't need other paradigms as *it's homogeneous*, or 
+- Understanding that "most" of time we use (you like it or not) poor man's
+  FP, then that $$~80/90%$$ of time **can converge to fully-functional**
+  (evaluate for under/over-engineering here), **but not the other way
+  around** as said above that imperative always needs a mix of paradigms
+  but functional doesn't need other paradigms as *it's homogeneous*, or
   simply put, math.
-      
+
 ### Minor Issues
 
 Regarding minor issues that arise in this basic code snippet are the following:
@@ -204,10 +203,10 @@ Regarding minor issues that arise in this basic code snippet are the following:
 
 Imperative is obviously quite prone to error and hard to read.
 
-Even the Mozilla docs for `Promise` only show toy examples, and real life 
-error handling gets worse with imperative code. Code on the internet like 
-docs or tutorials almost always skip the status `ok` error handling and go 
-directly to fail when parsing the `JSON` data. Who cares when code is 
+Even the Mozilla docs for `Promise` only show toy examples, and real life
+error handling gets worse with imperative code. Code on the internet like
+docs or tutorials almost always skip the status `ok` error handling and go
+directly to fail when parsing the `JSON` data. Who cares when code is
 imperative anyway?
 
 ### Whitespaces are a Terrible Design
@@ -231,21 +230,21 @@ nonsense for high-level software (most projects) and yes, more boilerplate:
 
 - Notice the `new Error` line.
 
-OOP belongs to the imperative paradigm line, so it might make sense for 
-applications like FSMs with mutable state, so this proves my position 
-regarding OOP as a workaround: if imperative is terrible per se, so OO is a 
-solution for the **symptoms** build on top of imperative, and that gives us a 
-proportion of huge magnitude regarding how often we should use it. It's a 
+OOP belongs to the imperative paradigm line, so it might make sense for
+applications like FSMs with mutable state, so this proves my position
+regarding OOP as a workaround: if imperative is terrible per se, so OO is a
+solution for the **symptoms** build on top of imperative, and that gives us a
+proportion of huge magnitude regarding how often we should use it. It's a
 patch on top of something inherently messy, you should rarely use it.
 
-No doubt that OOP "done right" ends up like **poor man's FP** (again) based on 
-poor and **cheap marketable** versions of the same functional principles, 
-because if we used OOP as it should actually be used to enhance imperative or 
+No doubt that OOP "done right" ends up like **poor man's FP** (again) based on
+poor and **cheap marketable** versions of the same functional principles,
+because if we used OOP as it should actually be used to enhance imperative or
 procedural programs we'd end up applying it in very few cases.
 
-So, I just put the `new Error` line to the imperative version to try 🤭 to go 
-"fully imperative" to get the difference between both approaches in this study 
-case, but it's obviously not required to "build" an object instead of passing a 
+So, I just put the `new Error` line to the imperative version to try 🤭 to go
+"fully imperative" to get the difference between both approaches in this study
+case, but it's obviously not required to "build" an object instead of passing a
 simple struct.
 
 ## Final Observations
@@ -266,15 +265,15 @@ declarative so functional** in the end 😋.
 because **FP is the only/original programming paradigm there exists as per
 scientific concerns**, and all other paradigms are just cheap workarounds.
 
-Notice we can go "pure functional" but not "pure imperative" or "pure OO" so 
+Notice we can go "pure functional" but not "pure imperative" or "pure OO" so
 the **workarounds** are clearly the alternative non-functional paradigms.
 
 Another good one I know a lot from experience is that **the more I refactor code
 to improve it the more domain-specific it gets**, and FP is clearly the natural
 way to go for DSLs.
 
-I used to be a huge fan of Java as an OO approach (still have my good reasons) 
-but I got to understand those "clever" ways of programming are **just 
+I used to be a huge fan of Java as an OO approach (still have my good reasons)
+but I got to understand those "clever" ways of programming are **just
 intellectual distractions**.
 
 So, my favorite phrase I use to teach others or tell my story is that the
@@ -283,8 +282,8 @@ So, my favorite phrase I use to teach others or tell my story is that the
 ## Leveraging FP as the Universal Approach It Is
 
 Mainstream languages like JavaScript, TypeScript, and Java don't have good
-functional support, but we can still build better code regarding robustness 
-and clearness by leveraging their available features and our computer science 
+functional support, but we can still build better code regarding robustness
+and clearness by leveraging their available features and our computer science
 knowledge.
 
 ## Bibliography
