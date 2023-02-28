@@ -16,6 +16,8 @@ Both versions are correct and do the same, but the "functional" version
 still has some imperative style because JS/TS is not a functional language but
 the difference **is clear** again.
 
+## Difference
+
 The difference between both snippets is the following:
 
 ```ts
@@ -66,6 +68,8 @@ The refactored code (a.k.a. "more functional") **is not functional**, but it
 gets close. This is to avoid introducing functional abstractions like pipes, 
 monads, etc., on top of JS/TS which is not a functional language but a mixed 
 one as the underlying project is pretty short.
+
+## Getting Started on Noticing Details
 
 By noticing the:
 
