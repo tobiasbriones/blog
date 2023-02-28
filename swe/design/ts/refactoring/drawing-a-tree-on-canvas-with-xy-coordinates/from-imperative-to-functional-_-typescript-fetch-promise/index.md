@@ -71,6 +71,9 @@ one as the underlying project is pretty short.
 
 ## Getting Started on Noticing Details
 
+This is an analytical endeavour so observation is key to get the most out of it 
+by applying our CS and SWE knowledge and experience.
+
 By noticing the:
 
 👎🏻 return statement
