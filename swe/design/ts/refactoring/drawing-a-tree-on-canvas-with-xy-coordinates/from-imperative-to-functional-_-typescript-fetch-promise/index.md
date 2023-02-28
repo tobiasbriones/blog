@@ -114,7 +114,28 @@ you to reason the code snippets** to figure them out:
 - Usage of `try`-`catch` for error handling which has many disadvantages and 
   can be replaced with sum types or monads like Rust does, so there's no 
   reason why we should keep using `try`-`catch` blocks in robust software 
-  development.
+  development:
+  - Code only gets more tightly-coupled.
+  - Provokes many mundane workarounds like the mutable variable I said above,
+    the `goto` antipattern I mention later, multiple-`return` mess, and 
+    completely stupid checked/unchecked exceptions (both are terrible).
+  - Java is the only useful language that implements *checked exceptions*, so 
+    they're not a good feature as no other language have them, and 
+    *unchecked exceptions* are much more terrible as they constantly hide 
+    errors and that **disallows us** to produce *engineering grade* software.
+  - Go and Rust error handling techniques are vastly superior to that of 
+    imperative exceptions, and although Go is imperative, its approach is 
+    returning a *tuple* (a math concept so functional) that works as a poor 
+    man's `Result` sum type.
+  - As always, it fragments functions into two kinds (like the asynchronous 
+    item above): normal functions and the ones that `throw` an error. So we 
+    have again a **heterogeneous** system that could otherwise be a 
+    simple-and-robust *homogeneous* system (i.e. FP) that returns values like 
+    `Result` instead of *procedures* or *methods* that only yield 
+    arbitrary **side effects**.
+  - Therefore, code gets quite messy, worked-around, and simple FP 
+    approaches perfectly replace this archaic feature.
+  
 - Usage of OOP which might enhance lower-level imperative code but is complete 
   nonsense for high-level software (most projects) and yes, more boilerplate.
 - As I say below, it still has and needs mixed components 
