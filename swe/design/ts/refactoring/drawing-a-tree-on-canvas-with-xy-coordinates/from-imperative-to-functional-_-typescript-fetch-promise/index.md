@@ -220,6 +220,23 @@ nonsense for high-level software (most projects) and yes, more boilerplate:
 
 - Notice the `new Error` line.
 
+OOP belongs to the imperative paradigm line, so it might make sense for 
+applications like FSMs with mutable state, so this proves my position 
+regarding OOP as a workaround: if imperative is terrible per se, so OO is a 
+solution for the **symptoms** build on top of imperative, and that gives us a 
+proportion of huge magnitude regarding how often we should use it. It's a 
+patch on top of something inherently messy, you should rarely use it.
+
+No doubt that OOP "done right" ends up like **poor man's FP** (again) based on 
+poor and **cheap marketable** versions of the same functional principles, 
+because if we used OOP as it should actually be used to enhance imperative or 
+procedural programs we'd end up applying it in very few cases.
+
+So, I just put the `new Error` line to the imperative version to try 🤭 to go 
+"fully imperative" to get the difference between both approaches in this study 
+case, but it's obviously not required to "build" an object instead of passing a 
+simple struct.
+
 ## Final Observations
 
 Also, notice how throwing from a `try`-`catch` block **is an antipattern** as it
