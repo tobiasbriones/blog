@@ -18,6 +18,17 @@ the difference **is clear** again.
 
 ## Difference
 
+First, I clarify that I added as much imperative code to the "imperative" 
+version to compare both approaches here, but my original code wasn't actually 
+refactored from the "imperative" version below to the "more functional" one, 
+but from a "saner imperative" version in between to the "more functional" one 
+instead.
+
+So, we'll need to start analysing both versions, knowing that
+[everything is relative](everything-is-relative), so I'm measuring here 
+"imperative" vs "more functional" **with respect** to this code snippet or 
+problem.
+
 The difference between both snippets is the following:
 
 ```ts
