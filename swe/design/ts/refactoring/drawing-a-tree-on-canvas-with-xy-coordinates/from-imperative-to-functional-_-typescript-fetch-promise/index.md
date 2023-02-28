@@ -166,10 +166,13 @@ you to reason the code snippets** to figure them out:
     but functional doesn't need other paradigms as *it's homogeneous*, or 
     simply put, math.
       
+Regarding minor issues that arise in this basic code snippet are the following:
 
 - Has more formatting constraints, I always put the `else` branch on a new 
   line (which gives more LoC) as it is factually the best way to format it.
+
 - It's obviously quite prone to error and hard to read.
+
 - Even the Mozilla docs for `Promise` only show toy examples, and real life 
   error handling gets worse with imperative code. Code on the internet like 
   docs or tutorials almost always skip the status `ok` error handling and go 
