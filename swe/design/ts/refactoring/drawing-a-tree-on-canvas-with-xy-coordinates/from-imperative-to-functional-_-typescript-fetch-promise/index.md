@@ -137,7 +137,9 @@ you to reason the code snippets** to figure them out:
     approaches perfectly replace this archaic feature.
   
 - Usage of OOP which might enhance lower-level imperative code but is complete 
-  nonsense for high-level software (most projects) and yes, more boilerplate.
+  nonsense for high-level software (most projects) and yes, more boilerplate:
+  - Notice the `new Error` line.
+  
 - As I say below, it still has and needs mixed components 
   (functional/declarative, OO, etc.) so if we could go fully functional 
   (with better languages) why keep writing cheap code like that?
