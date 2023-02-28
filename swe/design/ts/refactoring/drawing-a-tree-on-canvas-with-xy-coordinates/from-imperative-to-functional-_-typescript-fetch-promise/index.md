@@ -93,93 +93,97 @@ you to reason the code snippets** to figure them out.
 
 ## General Concerns
 
-I'll address concerns from this snippet that can be explained out generally 
-as listed items.
+I'll address concerns from this snippet that can be explained out generally.
 
 ### Async Await
 
-- Imperatively needs to add `async` to the function signature:
-  - It leads to the "async-await hell".
-  - It "colors" functions because of the above sub-item, so we have a
-    **heterogeneous** system that differentiates between "normal" functions
-    and "`async`" functions.
-  - More boilerplate.
-  - In con of this asynchronous model read the JEP for Java's virtual threads
-    at the "Alternatives" section and watch the timestamp at "Async Await" I
-    added to the [bibliography](#bibliography).
-  - In "pro" of imperative (but not `async`-`await`) watch what B. Goetz also
-    had to say about reactive programming on the [bibliography](#bibliography)
-    but keep in mind that this and the above sub-item are in the context of
-    Java and the other workaround languages like JavaScript, C++, C#, Kotlin...
+Imperatively needs to add `async` to the function signature:
+
+- It leads to the "async-await hell".
+- It "colors" functions because of the above sub-item, so we have a
+  **heterogeneous** system that differentiates between "normal" functions
+  and "`async`" functions.
+- More boilerplate.
+- In con of this asynchronous model read the JEP for Java's virtual threads
+  at the "Alternatives" section and watch the timestamp at "Async Await" I
+  added to the [bibliography](#bibliography).
+- In "pro" of imperative (but not `async`-`await`) watch what B. Goetz also
+  had to say about reactive programming on the [bibliography](#bibliography)
+  but keep in mind that this and the above sub-item are in the context of
+  Java and the other workaround languages like JavaScript, C++, C#, Kotlin...
 
 ### Mutable Variable
 
-- Usage of *mutable* variable `tree` for returning the function value:
-  - Otherwise, we'd have a multiple-`return` mess (to get rid of the
-    variable), whilst a competent `(programmer, language)` might as well
-    directly replace it with a high-level declarative approach (e.g. ADTs with
-    pattern matching).
+Usage of *mutable* variable `tree` for returning the function value:
+
+- Otherwise, we'd have a multiple-`return` mess (to get rid of the
+  variable), whilst a competent `(programmer, language)` might as well
+  directly replace it with a high-level declarative approach (e.g. ADTs with
+  pattern matching).
   
 ### Try Catch
 
-- Usage of `try`-`catch` for error handling which has many disadvantages and 
-  can be replaced with sum types or monads like Rust does, so there's no 
-  reason why we should keep using `try`-`catch` blocks in robust software 
-  development:
-  - Code only gets more tightly-coupled.
-  - Provokes many mundane workarounds like the mutable variable I said above,
-    the `goto` antipattern I mention later, multiple-`return` mess, and 
-    completely stupid checked/unchecked exceptions (both are terrible).
-  - Java is the only useful language that implements *checked exceptions*, so 
-    they're not a good feature as no other language have them, and 
-    *unchecked exceptions* are much more terrible as they constantly hide 
-    errors and that **disallows us** to produce *engineering grade* software.
-  - Go and Rust error handling techniques are vastly superior to that of 
-    imperative exceptions, and although Go is imperative, its approach is 
-    returning a *tuple* (a math concept so functional) that works as a poor 
-    man's `Result` sum type.
-  - As always, it fragments functions into two kinds (like the asynchronous 
-    item above): normal functions and the ones that `throw` an error. So we 
-    have again a **heterogeneous** system that could otherwise be a 
-    simple-and-robust *homogeneous* system (i.e. FP) that returns values like 
-    `Result` instead of *procedures* or *methods* that only yield 
-    arbitrary **side effects**.
-  - Therefore, code gets quite messy, worked-around, and simple FP 
-    approaches perfectly replace this archaic feature.
+Usage of `try`-`catch` for error handling which has many disadvantages and 
+can be replaced with sum types or monads like Rust does, so there's no 
+reason why we should keep using `try`-`catch` blocks in robust software 
+development:
+
+- Code only gets more tightly-coupled.
+- Provokes many mundane workarounds like the mutable variable I said above,
+  the `goto` antipattern I mention later, multiple-`return` mess, and 
+  completely stupid checked/unchecked exceptions (both are terrible).
+- Java is the only useful language that implements *checked exceptions*, so 
+  they're not a good feature as no other language have them, and 
+  *unchecked exceptions* are much more terrible as they constantly hide 
+  errors and that **disallows us** to produce *engineering grade* software.
+- Go and Rust error handling techniques are vastly superior to that of 
+  imperative exceptions, and although Go is imperative, its approach is 
+  returning a *tuple* (a math concept so functional) that works as a poor 
+  man's `Result` sum type.
+- As always, it fragments functions into two kinds (like the asynchronous 
+  item above): normal functions and the ones that `throw` an error. So we 
+  have again a **heterogeneous** system that could otherwise be a 
+  simple-and-robust *homogeneous* system (i.e. FP) that returns values like 
+  `Result` instead of *procedures* or *methods* that only yield 
+  arbitrary **side effects**.
+- Therefore, code gets quite messy, worked-around, and simple FP 
+  approaches perfectly replace this archaic feature.
   
 ### OOP
 
-- Usage of OOP which might enhance lower-level imperative code but is complete 
-  nonsense for high-level software (most projects) and yes, more boilerplate:
-  - Notice the `new Error` line.
+Usage of OOP which might enhance lower-level imperative code but is complete 
+nonsense for high-level software (most projects) and yes, more boilerplate:
+
+- Notice the `new Error` line.
   
 ### Mixed Paradigm
 
-- As I say below, it still has and needs mixed components 
-  (functional/declarative, OO, etc.) so **if we could go fully functional** 
-  (with better languages) **why keep writing cheap code like that?**:
-  - The functional component is universal as it's always present: 
-    - Methods and procedures are poor man's functions as they always have 
-      the vague idea of "inputs", "transformation", and "output".
-    - Multiple-return methods are a poor man's ADT with pattern matching.
-    - Same for anything else, we only use *alternative paradigms* because of 
-      pragmatic convince like (if you checked the Java 
-      [bibliography](#bibliography)) "Everyone already uses Java, and reactive 
-      programming doesn't match Java-centric imperative constructs like control 
-      and loop structures and also its tooling like stacktraces" so then 
-      it's not a reactive's or functional problem but a Java one.
-    - FP is universal as it's (attempts to be) a `1:1` mapping of math. Now 
-      regarding Java for instance, the language is convoluted these days so 
-      the "good enough" is not "enough" any longer (it ages poorly like most 
-      languages) and I'd add my phrase here "All monoliths will eventually 
-      fall apart" so we better build *homogeneous* systems instead if we don't 
-      want our engineering artifacts be a waste.
-  - Understanding that "most" of time we use (you like it or not) poor man's 
-    FP, then that $$~80/90%$$ of time **can converge to fully-functional** 
-    (evaluate for under/over-engineering here), **but not the other way 
-    around** as said above that imperative always needs a mix of paradigms 
-    but functional doesn't need other paradigms as *it's homogeneous*, or 
-    simply put, math.
+As I say below, it still has and needs mixed components 
+(functional/declarative, OO, etc.) so **if we could go fully functional** 
+(with better languages) **why keep writing cheap code like that?**:
+
+- The functional component is universal as it's always present: 
+  - Methods and procedures are poor man's functions as they always have 
+    the vague idea of "inputs", "transformation", and "output".
+  - Multiple-return methods are a poor man's ADT with pattern matching.
+  - Same for anything else, we only use *alternative paradigms* because of 
+    pragmatic convince like (if you checked the Java 
+    [bibliography](#bibliography)) "Everyone already uses Java, and reactive 
+    programming doesn't match Java-centric imperative constructs like control 
+    and loop structures and also its tooling like stacktraces" so then 
+    it's not a reactive's or functional problem but a Java one.
+  - FP is universal as it's (attempts to be) a `1:1` mapping of math. Now 
+    regarding Java for instance, the language is convoluted these days so 
+    the "good enough" is not "enough" any longer (it ages poorly like most 
+    languages) and I'd add my phrase here "All monoliths will eventually 
+    fall apart" so we better build *homogeneous* systems instead if we don't 
+    want our engineering artifacts be a waste.
+- Understanding that "most" of time we use (you like it or not) poor man's 
+  FP, then that $$~80/90%$$ of time **can converge to fully-functional** 
+  (evaluate for under/over-engineering here), **but not the other way 
+  around** as said above that imperative always needs a mix of paradigms 
+  but functional doesn't need other paradigms as *it's homogeneous*, or 
+  simply put, math.
       
 ### Minor Issues
 
