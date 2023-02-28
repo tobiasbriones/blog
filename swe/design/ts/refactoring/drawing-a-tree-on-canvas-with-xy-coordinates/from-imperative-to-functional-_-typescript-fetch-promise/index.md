@@ -209,6 +209,17 @@ docs or tutorials almost always skip the status `ok` error handling and go
 directly to fail when parsing the `JSON` data. Who cares when code is
 imperative anyway?
 
+#### Mixed Paradigms is not Quite a Good Idea
+
+Mixing paradigms is useful for alternative paradigms like imperative, and
+OOP but when we can write homogeneous simple functional programs we must
+keep writing functional programs.
+
+The reason is simple: FP is homogeneous (pure) so if you introduce
+workarounds (imperative, OO, etc.) it becomes heterogeneous 😖, it's like
+"proving" a theorem with human chimp 🙉 opinions instead of using math to prove
+itself recursively.
+
 ### Whitespaces are a Terrible Design
 
 Imperative has more **whitespaces** like `await fetch(path).then(...)`
@@ -278,6 +289,13 @@ intellectual distractions**.
 
 So, my favorite phrase I use to teach others or tell my story is that the
 **simplest designs are the best** and FP is all about simplicity.
+
+## Towards the Future
+
+As the [math software engineer](https://mathsoftware.engineer) founder I 
+must optimize for domain-specific affairs.
+
+
 
 ## Leveraging FP as the Universal Approach It Is
 
