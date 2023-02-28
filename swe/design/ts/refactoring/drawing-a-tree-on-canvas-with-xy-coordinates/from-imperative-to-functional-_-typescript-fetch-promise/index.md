@@ -107,7 +107,7 @@ you to reason the code snippets** to figure them out:
 
 - Usage of *mutable* variable `tree` for returning the function value:
   - Otherwise, we'd have a multiple-`return` mess (to get rid of the
-    variable), whilst a competent (programmer, language) might as well
+    variable), whilst a competent `(programmer, language)` might as well
     directly replace it with a high-level declarative approach (e.g. ADTs with
     pattern matching).
   
