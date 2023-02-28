@@ -156,13 +156,6 @@ development:
 - Therefore, code gets quite messy, worked-around, and simple FP 
   approaches perfectly replace this archaic feature.
   
-### OOP
-
-Usage of OOP which might enhance lower-level imperative code but is complete 
-nonsense for high-level software (most projects) and yes, more boilerplate:
-
-- Notice the `new Error` line.
-  
 ### Mixed Paradigm
 
 As I say below, it still has and needs mixed components 
@@ -196,23 +189,36 @@ As I say below, it still has and needs mixed components
 
 Regarding minor issues that arise in this basic code snippet are the following:
 
-- Has more formatting constraints, I always put the `else` branch on a new 
-  line (which gives more LoC) as it is factually the best way to format it.
+### Maintainability
 
-- It's obviously quite prone to error and hard to read.
+Imperative is obviously quite prone to error and hard to read.
 
-- Even the Mozilla docs for `Promise` only show toy examples, and real life 
-  error handling gets worse with imperative code. Code on the internet like 
-  docs or tutorials almost always skip the status `ok` error handling and go 
-  directly to fail when parsing the `JSON` data. Who cares when code is 
-  imperative anyway?
+Even the Mozilla docs for `Promise` only show toy examples, and real life 
+error handling gets worse with imperative code. Code on the internet like 
+docs or tutorials almost always skip the status `ok` error handling and go 
+directly to fail when parsing the `JSON` data. Who cares when code is 
+imperative anyway?
 
-- Imperative has more **whitespaces** like `await fetch(path).then(...)`
-  which makes the code **less cohesive**. Whitespaces are a horrible design,
-  imagine file names with capital and whitespaces, it yields many bugs and
-  workarounds, and by fragmenting our code in this case it makes it worse to
-  build **a fluent DSL**. You'd likely chain other `then`s so using a mix is a
-  heterogeneous approach again.
+### Whitespaces are a Terrible Design
+
+Imperative has more **whitespaces** like `await fetch(path).then(...)`
+which makes the code **less cohesive**. Whitespaces are a horrible design,
+imagine file names with capital and whitespaces, it yields many bugs and
+workarounds, and by fragmenting our code in this case it makes it worse to
+build **a fluent DSL**. You'd likely chain other `then`s so using a mix is a
+heterogeneous approach again.
+
+### Unclear Constraints
+
+Imperative has more formatting constraints, I always put the `else` branch on a
+new line (which gives more LoC) as it is factually the best way to format it.
+
+### OOP
+
+Usage of OOP which might enhance lower-level imperative code but is complete
+nonsense for high-level software (most projects) and yes, more boilerplate:
+
+- Notice the `new Error` line.
 
 ## Final Observations
 
