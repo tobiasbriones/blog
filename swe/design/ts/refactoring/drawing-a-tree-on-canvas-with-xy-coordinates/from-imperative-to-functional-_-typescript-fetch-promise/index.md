@@ -220,6 +220,50 @@ workarounds (imperative, OO, etc.) it becomes heterogeneous 😖, it's like
 "proving" a theorem with human chimp 🙉 opinions instead of using math to prove
 itself recursively.
 
+#### A SWE Experience
+
+After writing the
+[first and short version of this article](https://github.com/tobiasbriones/blog/pull/24)
+some days later I had an experience with a SWE applicant, and it was fascinating
+that I noticed the same issues I said here. The *fetching client code* in TS
+was **confusing**, **missing error handling at all** (a must to have had),
+and a **mix of `await` with `then`**.
+
+But that's not it, it's also hilarious that obviously (one more time), the
+`res.json()` error wasn't handled if the `JSON` response is corrupt to avoiding
+a cryptic error as I had already said in
+[Maintainability](#maintainability), but check this out: **if that wasn't
+enough**, there was an **injection** vulnerability because of a "JSON" that was
+actually a hardcoded string with format that was returned from the backend,
+and if you inject the `"}` symbol to ruin that string representation of what
+should be an actual `JSON` response then *you get the holy cryptic error I'd
+already warned here*.
+
+That imperative code felt like code that has to be written all the way wrong, 
+as if they get paid to write bugs on top of bugs (popular among programmers I 
+think).
+
+Even so, the code was good overall (compared to the hell of spaghetti I've
+had to review in several other experiences in my professional life), and also
+taking into account that a codebase doesn't have to be perfect at the beginning.
+
+All these sorts of issues must not be propagated as we're in a relatively
+advanced 🐵 tech era in 2023 already! (who still writes `for` loops anymore when
+we have high-level functional APIs?) since that's where the *engineering grade*
+I talk about lies within! As (math) software engineers on the other hand, we can
+take *informed decisions*, and we know that a *necessary* condition to apply FP
+is *to know what you're doing (i.e. informed decisions)*. That's a reason why
+the SWE industry keeps using awful mainstream languages: because they don't have
+idea of what they're doing, they just want to build businesses for profit but
+not for the *engineering*.
+
+So, that was a (another) great exemplification for me of all the wrongdoings
+that happen with imperative mixed code like this.
+
+So, *here we come again*, **when it comes to imperative, who even cares?**
+it's just programmer chimp 🐵 opinion-based programming with no
+engineering-grade principles.
+
 ### Whitespaces are a Terrible Design
 
 Imperative has more **whitespaces** like `await fetch(path).then(...)`
