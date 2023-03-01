@@ -206,8 +206,8 @@ Imperative is obviously quite prone to error and hard to read.
 Even the Mozilla docs for `Promise` only show toy examples, and real life
 error handling gets worse with imperative code. Code on the internet like
 docs or tutorials almost always skip the status `ok` error handling and go
-directly to fail when parsing the `JSON` data. Who cares when code is
-imperative anyway?
+directly to fail when parsing the `JSON` data. **Who cares when code is
+imperative anyway?**
 
 #### Mixed Paradigms is not Quite a Good Idea
 
