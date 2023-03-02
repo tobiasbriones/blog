@@ -213,10 +213,6 @@ As I say below, it still has and needs mixed components
   simply put, math. What **actually needs mixed paradigms** are 
   human-centric issues, but FP doesn't.
 
-### Minor Issues
-
-Regarding minor issues that arise in this basic code snippet are the following:
-
 ### Maintainability
 
 Imperative is obviously quite prone to error and hard to read.
@@ -416,6 +412,10 @@ Also recall that traditional engineering is based on facts like electricity so
 to turn mainstream SWE into (real) SWE we need a "fact check" domain, a perfect 
 example is mathematical software, i.e. SWE ruled by math the same way EE is 
 ruled by heavy physics so that's the pattern I always have in mind.
+
+## Minor Issues
+
+The following are minor issues that arise regarding this basic code snippet.
 
 ### Whitespaces are a Terrible Design
 
