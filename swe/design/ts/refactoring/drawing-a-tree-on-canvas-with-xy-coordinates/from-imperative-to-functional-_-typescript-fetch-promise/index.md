@@ -130,6 +130,21 @@ Imperatively needs to add `async` to the function signature:
   but keep in mind that this and the above sub-item are in the context of
   Java and the other workaround languages like JavaScript, C++, C#, Kotlin...
 
+#### Usefulness of Imperative with Async Await
+
+`Async`-`Await` is syntax sugar for JS/TS in this case, so it *should* be
+useful for making code simpler, but the important notice is *when*.
+
+I've written backend and frontend code like this either with `async` or not, I
+believed that "raw" `Promise`s were caveman some years ago, but found that
+can be leveraged to promote "more-functional" code.
+
+I have the conclusion that, **if writing imperative code is needed** for any
+reason (bounded to one function hopefully), **then it's the only way
+`async`-`await` fits correctly**, it makes the code cleaner, but functional is
+still superior as it would get to make it way more robust and cleaner altogether
+by eliminating the imperative component.
+
 ### Mutable Variable
 
 Usage of *mutable* variable `tree` for returning the function value:
@@ -197,21 +212,6 @@ As I say below, it still has and needs mixed components
   but functional doesn't need other paradigms as *it's homogeneous*, or
   simply put, math. What **actually needs mixed paradigms** are 
   human-centric issues, but FP doesn't.
-
-### Usefulness of Imperative with Async Await
-
-`Async`-`Await` is syntax sugar for JS/TS in this case, so it should be
-useful for making code simpler, but the important notice is *when*.
-
-I've written backend and frontend code like this either with `async` or not, I
-believed that "raw" `Promise`s were caveman some years ago, but found that
-can be leveraged to promote "more-functional" code.
-
-I have the conclusion that, **if writing imperative code is needed** for any
-reason (bounded to one function hopefully), **then it's the only way
-`async`-`await` fits correctly**, it makes the code cleaner, but functional is
-still superior as it would get to make it way more robust and cleaner altogether
-by eliminating the imperative component.
 
 ### Minor Issues
 
