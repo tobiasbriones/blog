@@ -220,11 +220,36 @@ Regarding minor issues that arise in this basic code snippet are the following:
 
 Imperative is obviously quite prone to error and hard to read.
 
-Even the Mozilla docs for `Promise` only show toy examples, and real life
-error handling gets worse with imperative code. Code on the internet like
-docs or tutorials almost always skip the status `ok` error handling and go
-directly to fail when parsing the `JSON` data. **Who cares when code is
-imperative anyway?**
+I always go back to read the imperative version and is easily noticeable that 
+is heterogeneous, and harder to figure out, I ask, how do I quickly know this 
+works? It's literally imperative (pun intended).
+
+Many details get hidden into that imperativeness, it levels up the 
+maintenance overhead with technical debt requiring more professional 
+programmers to debug and read line-by-line if something's missing.
+
+If I want to see if (all) the errors are being handled and how, it's quite 
+messy, the stupid `try`-`catch` supposed to "handle errors" is useless because
+`throwing` from the `try` block is an antipattern as I 
+explained, and decoupling imperative code to establish boundaries is 
+**inherently hard** as code like that (mutable vars, loops, side-effects, 
+etc.) is **tightly coupled**.
+
+Notice how I emphasize in handling all the errors, and *I spotted* that the 
+`HTTP` `status` errors are underrated. You even need to be abe to handle all 
+errors to work in tech companies, so it's more important in the industry than 
+you probably think!
+
+Another problem is that, we can attempt to write functional code, but JS is 
+full of garbage (not a secret), so for example, `res.json()` `throws` an error 
+which is imperative thus completely unfavorable for us by disabling us to 
+employ functional features.
+
+Even the Mozilla docs for `Promise` and `Response.json()` only show toy
+examples, and real life error handling gets worse with imperative code. Code on 
+the internet like docs or tutorials almost always skip the status `ok` error 
+handling and go directly to fail when parsing the `JSON` data. **Who cares when
+code is imperative anyway?**
 
 #### Mixed Paradigms is not Quite a Good Idea
 
