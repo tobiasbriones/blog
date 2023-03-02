@@ -194,7 +194,8 @@ As I say below, it still has and needs mixed components
   (evaluate for under/over-engineering here), **but not the other way
   around** as said above that imperative always needs a mix of paradigms
   but functional doesn't need other paradigms as *it's homogeneous*, or
-  simply put, math.
+  simply put, math. What **actually needs mixed paradigms** are 
+  human-centric issues, but FP doesn't.
 
 ### Usefulness of Imperative with Async Await
 
