@@ -236,7 +236,7 @@ explained, and decoupling imperative code to establish boundaries is
 etc.) is **tightly coupled**.
 
 Notice how I emphasize in handling all the errors, and *I spotted* that the 
-`HTTP` `status` errors are underrated. You even need to be abe to handle all 
+`HTTP` `status` errors are undervalued. You even need to be abe to handle all 
 errors to work in tech companies, so it's more important in the industry than 
 you probably think!
 
@@ -244,6 +244,63 @@ Another problem is that, we can attempt to write functional code, but JS is
 full of garbage (not a secret), so for example, `res.json()` `throws` an error 
 which is imperative thus completely unfavorable for us by disabling us to 
 employ functional features.
+
+I just resembled this code that is pretty common and opened up the browser
+console to run it with the following results:
+
+```js
+fetch('not-found.json')
+    .then(r => r.json())
+    .then(console.log)
+    .catch(console.error)
+```
+
+<figcaption>
+<p align="center"><strong>Common Error Mishandling (Functional API)</strong></p>
+</figcaption>
+
+With responses:
+
+- `GET https://{ ... } 404`
+- `SyntaxError: Unexpected token '<', "<!doctype "... is not valid JSON`.
+
+So the error is not correctly handled, and despite using the functional API
+it's just equivalent to its imperative counterpart:
+
+```js
+try {
+  const res = await fetch('not-found.json');
+  const body = await res.json();
+  console.log(body);
+}
+catch (reason) {
+  console.error(reason);
+}
+```
+
+<figcaption>
+<p align="center"><strong>Common Error Mishandling (Imperative)</strong></p>
+</figcaption>
+
+So **imperative code written as fluent calls** is not functional, so we have
+the same issues when `Stream`s were introduced to Java and exceptions were
+thrown from ~~functions~~ (sugared anonymous objects implementing a
+`FunctionalInterface` 🤪), therefore we can't take the advantages of powerful
+functional abstractions (now imagine Java programmers writing `try`-`catch`
+inside `list.map(...)` 😂).
+
+The problem is not functional, or that functional doesn't fit Java, the
+problem is that you can't write functional 🧠 when thinking imperatively 🦍.
+
+Moreover, functional doesn't need other paradigms as it's homogeneous but other
+paradigms **always** needs a mix, the detail is that **effects (programmers)
+are the ones who actually need mixed**, because merging functional and mixed is
+like merging science 🧠 and politics 💩, that is, incompatible. In other words,
+awful code goes to the boundaries, so we're *able* to practice FP most of the
+time but mundane mainstream languages *won't help at this* as previously seen.
+
+In the end you always have to use functional (whether you like it or not) so
+leveraging its full advantages is a trait of competent engineers.
 
 Even the Mozilla docs for `Promise` and `Response.json()` only show toy
 examples, and real life error handling gets worse with imperative code. Code on 
