@@ -264,6 +264,59 @@ So, *here we come again*, **when it comes to imperative, who even cares?**
 it's just programmer chimp 🐵 opinion-based programming with no
 engineering-grade principles.
 
+#### Shaping SWE Properly
+
+You can say **horrible code can be written in any paradigm** but there's **a
+fact** that FP is algebra and **not a matter of style** so can *actually* be
+(re)factorized like those "useless" polynomial factors from high-school or
+college most software "engineers" fail to use in real life while alternative
+paradigms are instead mere opinion-based (OOP is the worst in this regard).
+Do you wonder why Rust (an imperative systems language inspired in functional
+languages) is able (i.e. *is informed*) to give such meaningful compiling
+messages?
+
+Another take to make it clearer is, if you don't match all the sum types
+(e.g. the holy error) it won't even compile, but imperative is like 🐒 return
+`-1` as an error "code" or use implicit `goto`s, so "whatever it gets stuff
+done", so I can't call those uninformed practices "engineering" but "stuff
+doing" instead.
+
+So those are "bad" programming practices then don't write code like that, 
+right? But when you fix all those wrongdoings it ends up as a DSL 
+**converging** to FP. For instance, you create a `Result` `enum` to `match` it,
+so you're forced to handle the error, and it also has an appropriate data type 
+instead of nonsense like `-1` 😂.
+
+Another annoying take is when they say "use the right tool for the job" or 
+"if a future exists is because it has its use". That's a problem because 
+stupid programmers often solve the **symptoms** not the real problem so "the 
+right tool" is frequently misunderstood. For example, you get sold on Java 
+and use OOP, so now you have to "buy" (unfortunately popular) old nonsense 
+books about OO "architectures" to write "clean" code to fix the problems on 
+top of problems (a.k.a. `ProblemFactory`), so employing a "hex architecture" or 
+"encapsulation" sounds like a "good" practice at first but a better programmer 
+who actually studied CS and doesn't think that Java or Python is the only 
+language there exists and knows, will flatten the roots of the problem instead.
+
+The above can be straightforwardly seen by understanding that math is 
+homogeneous and doesn't have "face" or "opinions" but other domains like 
+businesses have a lot of impurities, so they need designs like "private" 
+property to "protect" them from the same human evils, thus it makes sense to 
+use "OO encapsulation" in these cases, although they're just workarounds 
+propagating out of the computing space and that's why **they will never scale**.
+
+So in short, you'll **mostly** need facts (FP) for any SWE application and will 
+have to add (to the boundaries hopefully) heterogeneous workarounds to fit 
+your domain, and not because "FP needs a complement" but because you're all 
+mere mortals, who lets say, "need management to hide secrets, pay a lot to
+capitalist manipulator scammers who get profit from badly designed systems and 
+social needs to sell the patches, ...".
+
+Also recall that traditional engineering is based on facts like electricity so
+to turn mainstream SWE into (real) SWE we need a "fact check" domain, a perfect 
+example is mathematical software, i.e. SWE ruled by math the same way EE is 
+ruled by heavy physics so that's the pattern I always have in mind.
+
 ### Whitespaces are a Terrible Design
 
 Imperative has more **whitespaces** like `await fetch(path).then(...)`
