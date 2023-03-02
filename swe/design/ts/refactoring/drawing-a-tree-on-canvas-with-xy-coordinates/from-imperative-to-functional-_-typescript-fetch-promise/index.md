@@ -173,7 +173,8 @@ As I say below, it still has and needs mixed components
 (functional/declarative, OO, etc.) so **if we could go fully functional**
 (with better languages) **why keep writing cheap code like that?**:
 
-- The functional component is universal as it's always present:
+- The functional component is universal as it's always present in some way 
+  or another:
   - Methods and procedures are poor man's functions as they always have
     the vague idea of "inputs", "transformation", and "output".
   - Multiple-return methods are a poor man's ADT with pattern matching.
