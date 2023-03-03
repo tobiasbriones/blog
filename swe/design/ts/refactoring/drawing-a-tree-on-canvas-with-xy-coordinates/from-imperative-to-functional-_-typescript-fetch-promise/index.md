@@ -642,13 +642,6 @@ intellectual distractions**.
 So, my favorite phrase I use to teach others or tell my story is that the
 **simplest designs are the best** and FP is all about simplicity.
 
-## Towards the Future
-
-As the [math software engineer](https://mathsoftware.engineer) founder I 
-must optimize for domain-specific affairs.
-
-
-
 ## Leveraging FP as the Universal Approach It Is
 
 Mainstream languages like JavaScript, TypeScript, and Java don't have good
