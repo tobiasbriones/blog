@@ -248,6 +248,48 @@ development:
 - Therefore, code gets quite messy, worked-around, and simple FP
   approaches perfectly replace this archaic feature.
 
+#### Explaining the GoTo Antipattern
+
+I'll explain the `goto` antipattern here:
+
+```js
+async function foo(path) {
+  try {
+    const res = await fetch(path);
+
+    // Check for response status OK
+    if (res.ok) { /* ... */ }
+    else {
+      // 🚩 Go to the catch block, unclear whether it actually throws or catches
+      throw Error(`Response not OK: ${ res.statusText }`)
+    }
+  }
+  catch (reason) { /* ... */ }
+}
+```
+
+**Notice** also how unclear imperative code is: if you copy-paste (popular
+among programmers, even more now with "ChatGPT") the code above, it can either
+(pun intended) `throw` if it's not into a scoped `try` block or else `goto`
+the immediate `catch` block otherwise like the snippet above.
+
+So as I say in [maintainability](#maintainability), if stupid `try`-`catch`
+blocks are supposed to handle "errors" but we have all this working around
+setups because the designers (if anyone even cared to do it) of these features
+took pragmatic decisions back in that time (e.g. many mainstream languages we
+use like JS and PHP weren't designed at all from the beginning), but now we have
+much technology in $$2023$$ so **why keep writing cheap software like that when
+we can employ informed FP?**.
+
+The answer to the above question is that we shouldn't keep writing code like
+that. Even imperative (modern) languages like Rust replace all these "bad OL'
+tricks" with correct functional approaches (e.g. sum types, pattern matching),
+more of these "imperative, OO old tricks" are not found at all in many
+turing-complete languages, e.g. there are no exceptions or `try`-`catch` in
+Rust, Go, and functional languages at all and were replaced with tuples, enum,
+ADT, i.e. **factual functional features that should've been there since the
+beginning**.
+
 ### Mixed Paradigm
 
 As I say below, it still has and needs mixed components
