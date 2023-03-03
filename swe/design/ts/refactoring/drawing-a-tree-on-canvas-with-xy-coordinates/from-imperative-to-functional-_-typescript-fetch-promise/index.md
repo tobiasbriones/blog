@@ -248,6 +248,14 @@ development:
 - Therefore, code gets quite messy, worked-around, and simple FP
   approaches perfectly replace this archaic feature.
 
+**Notice** how throwing from a `try`-`catch` block **is an antipattern** as it
+becomes a `goto`[^2][^3].
+
+[^2]: You can learn plenty of these details from IntelliJ IDEA inspections
+
+[^3]: Understanding these details are what make you stand away from bad
+  programmers and make you a competent one
+
 #### Explaining the GoTo Antipattern
 
 I'll explain the `goto` antipattern here:
@@ -289,6 +297,19 @@ turing-complete languages, e.g. there are no exceptions or `try`-`catch` in
 Rust, Go, and functional languages at all and were replaced with tuples, enum,
 ADT, i.e. **factual functional features that should've been there since the
 beginning**.
+
+Now check this out, **there's a version of `try`-`catch` much better than the
+old one** most programmers are used to, but that only shows (again) that
+imperative is doomed (in an ideal setup) indeed:
+
+If TS had `try`-expressions (like Kotlin) the imperative version would get
+much better regarding correctness and style (no multiple-returns, no mutable
+variable, lets think about it), but **expressions are declarative so
+functional** in the end 😋.
+
+Therefore, even a factually better `try`-`catch` ends up **converging**
+closer to FP, and we don't even need it as languages like Rust don't even
+have them at all as said above.
 
 #### Trying with Less Coupled Functions
 
@@ -602,18 +623,6 @@ case, but it's obviously not required to "build" an object instead of passing a
 simple struct.
 
 ## Final Observations
-
-Also, notice how throwing from a `try`-`catch` block **is an antipattern** as it
-becomes a `goto`[^2][^3].
-
-[^2]: You can learn plenty of these details from IntelliJ IDEA inspections
-
-[^3]: Understanding these details are what make you stand away from bad 
-    programmers and make you a competent one
-
-If TS had `try`-expressions (like Kotlin) the imperative version would get
-much better regarding correctness and style, but **expressions are
-declarative so functional** in the end 😋.
 
 **The more you make a program better, the more functional it gets**, that's
 because **FP is the only/original programming paradigm there exists as per
