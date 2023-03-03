@@ -290,6 +290,44 @@ Rust, Go, and functional languages at all and were replaced with tuples, enum,
 ADT, i.e. **factual functional features that should've been there since the
 beginning**.
 
+#### Trying with Less Coupled Functions
+
+The next imperative approach attempts to reduce coupling, but when knowing
+functional languages, why should I do this at all?
+
+```js
+async function fetchTree(path) {
+  try {
+    const res = await fetchRes(path);
+    return await res.json(); // Might throw too
+  }
+  catch (reason) { /* ... */ }
+  return newTreeNode();
+}
+
+async function fetchRes(path) {
+  const res = await fetch(path);
+
+  if (!res.ok) {
+    // Catch it from production logs, maybe too late 😁 //
+    // Throwing from here is OK this time as it's not a goto //
+    throw Error(`Response not OK: ${ res.statusText }`);
+  }
+  return res;
+}
+```
+
+<figcaption>
+<p align="center"><strong>Uncoupling Functions is Still Unclear</strong></p>
+</figcaption>
+
+Add to this getting experienced programmers to balance all these unclear
+~~tradeoffs~~ workarounds to the technical debt if that wasn't enough. In
+these contexts there will always be biases for one approach or other, so
+you're failing to build engineering because even if the taken approach is
+good for the problem someone else (guaranteed) will always get zealot about
+it so what you're doing is who-knows-who-opinion-based development instead.
+
 ### Mixed Paradigm
 
 As I say below, it still has and needs mixed components
