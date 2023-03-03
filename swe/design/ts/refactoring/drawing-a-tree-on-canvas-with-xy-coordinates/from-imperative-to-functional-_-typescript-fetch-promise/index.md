@@ -154,6 +154,72 @@ Usage of *mutable* variable `tree` for returning the function value:
   directly replace it with a high-level declarative approach (e.g. ADTs with
   pattern matching).
 
+```js
+async function fetchTree(path) {
+  let tree = newTreeNode();
+
+  try {
+    const res = await fetch(path);
+
+    if (res.ok) {
+      tree = await res.json();
+    } 
+    else { /* ... */ }
+  } 
+  catch (reason) { /* ... */ }
+  return tree;
+}
+```
+
+<figcaption>
+<p align="center"><strong>Using Mutability to Avoid 
+Multiple-Returns</strong></p>
+</figcaption>
+
+```js
+async function fetchTree(path) {
+  try {
+    const res = await fetch(path);
+
+    if (res.ok) {
+      return await res.json();
+    } 
+    else {
+      // Can't throw here as it's an antipattern //
+      /* ... */
+      return newTreeNode();
+    }
+  } 
+  catch (reason) { /* ... */ }
+  // Return until the last statement or inside the catch block? //
+  return newTreeNode();
+}
+```
+
+<figcaption>
+<p align="center"><strong>Multiple-Returns are Worse</strong></p>
+</figcaption>
+
+Notice the last `return` statement, it could be placed inside the `catch` 
+block or even both redundantly, and it'd apparently work well in the end. 
+That's why **imperative is for "whatever it gets stuff done"-driven 
+programming**, and we can't say a mixed language is "functional" just because it
+only has some "functional" features. **A functional language is based on 
+actual CS (math) instead so a random programmer can't make it up** just because 
+"it works" or "pays their bills", so **FP does allow real SWE** because of 
+this.
+
+No doubt functional languages have massive applications for engineering 
+domains like telecom, fault-tolerant systems, etc., that most "engineers" 
+(many are more marketers, mundane programmers or whatever else than engineers 
+but get called "engineers") will never get in touch with.
+
+Multiple-returns are super confusing, are also marked by your IDE as such,
+increase the cyclomatic complexity, and if in some particular situation a 
+mundane programmer tell you they look like "the right tool for the job" then 
+there's for sure a simple matching approach that can replace them (but maybe not
+the language support and programmer's talent).
+
 ### Try Catch
 
 Usage of `try`-`catch` for error handling which has many disadvantages and
