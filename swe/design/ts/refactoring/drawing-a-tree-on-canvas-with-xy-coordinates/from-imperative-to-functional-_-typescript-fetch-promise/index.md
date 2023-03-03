@@ -654,7 +654,9 @@ must optimize for domain-specific affairs.
 Mainstream languages like JavaScript, TypeScript, and Java don't have good
 functional support, but we can still build better code regarding robustness
 and clearness by leveraging their available features and our computer science
-knowledge.
+knowledge that was applied in this case study to address relevant concerns
+about TS Fetch API by observing the underlying imperative and
+more-functional features.
 
 ## Bibliography
 
