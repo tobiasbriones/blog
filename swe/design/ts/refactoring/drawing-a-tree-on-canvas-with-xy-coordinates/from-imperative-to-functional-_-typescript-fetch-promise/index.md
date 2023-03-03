@@ -571,9 +571,9 @@ propagating out of the computing space and that's why **they will never scale**.
 So in short, you'll **mostly** need facts (FP) for any SWE application and will 
 have to add (to the boundaries hopefully) heterogeneous workarounds to fit 
 your domain, and not because "FP needs a complement" but because you're all 
-mere mortals, who lets say, "need management to hide secrets, pay a lot to
-capitalist manipulator scammers who get profit from badly designed systems and 
-social needs to sell the patches, ...".
+mere mortals, who lets say (in an artistic fashion), "need management to hide 
+"secrets", pay a lot to capitalist manipulator scammers who get profit from 
+badly designed systems and social needs to sell the patches, ...".
 
 Also recall that traditional engineering is based on facts like electricity so
 to turn mainstream SWE into (real) SWE we need a "fact check" domain, a perfect 
