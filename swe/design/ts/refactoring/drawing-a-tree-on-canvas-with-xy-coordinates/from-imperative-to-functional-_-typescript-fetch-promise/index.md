@@ -298,9 +298,11 @@ Rust, Go, and functional languages at all and were replaced with tuples, enum,
 ADT, i.e. **factual functional features that should've been there since the
 beginning**.
 
+#### Enhanced `Try`-`Catch`: `Try` Expression
+
 Now check this out, **there's a version of `try`-`catch` much better than the
 old one** most programmers are used to, but that only shows (again) that
-imperative is doomed (in an ideal setup) indeed:
+imperative is doomed (in an ideal world) indeed:
 
 If TS had `try`-expressions (like Kotlin) the imperative version would get
 much better regarding correctness and style (no multiple-returns, no mutable
@@ -310,6 +312,67 @@ functional** in the end 😋.
 Therefore, even a factually better `try`-`catch` ends up **converging**
 closer to FP, and we don't even need it as languages like Rust don't even
 have them at all as said above.
+
+```ts
+async function fetchTree(path) {
+  return try {
+    const res = await fetch(path);
+
+    if (res.ok) {
+      await res.json()
+    } 
+    else {
+      /* ... */
+      newTreeNode()
+    }
+  } 
+  catch (reason) {
+    /* ... */
+    newTreeNode()
+  }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Pseudocode if TS had "try" and "if" 
+expressions</strong></p>
+</figcaption>
+
+If TS had `try` and `if` expressions (like Kotlin) we'd solve the "mutable 
+var" and "multiple-return mess" straightforwardly with a declarative (so more 
+domain-specific and functional) approach.
+
+```ts
+async function fetchTree(path) = try {
+  const res = await fetch(path);
+
+  if (res.ok) {
+    await res.json()
+  } 
+  else {
+    /* ... */
+    newTreeNode()
+  }
+} 
+catch (reason) {
+  /* ... */
+  newTreeNode()
+}
+```
+
+<figcaption>
+<p align="center"><strong>Pseudocode if TS had "try" and "if" 
+expressions removing boilerplate</strong></p>
+</figcaption>
+
+In this previous snippet you can see how the imperative `return` boilerplate 
+is removed, so we have now some kind of **matching expression** (see the `=` 
+operator as a `match`) that factually increased the quality of the code by
+removing (imperative) boilerplate and converging to a more-functional approach.
+
+Also notice how even boilerplate like `;` gets eliminated as well because 
+*we're transforming code from imperative to declarative*. I also 
+intentionally put `;` in imperative lines like `const res = await fetch(path);`.
 
 #### Trying with Less Coupled Functions
 
