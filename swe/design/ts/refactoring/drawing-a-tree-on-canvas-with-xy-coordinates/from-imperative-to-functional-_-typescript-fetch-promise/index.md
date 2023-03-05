@@ -415,6 +415,48 @@ you're failing to build engineering because even if the taken approach is
 good for the problem someone else (guaranteed) will always get zealot about
 it so what you're doing is who-knows-who-opinion-based development instead.
 
+#### Heterogeneous Approaches Cannot be More Stupid
+
+One of the most interesting questions about exceptions I used to think about
+is when to use them of course.
+
+So, my logic was to use exceptions when "the error is exceptional", i.e. "an
+actual exception to the case" but that's too vague and not required as
+exceptions are not part of CS but a dirty trick more to kind of make
+programs run.
+
+I wanted to use exceptions for side effect problems like IO, and functional
+for factual logic like domain.
+
+My logic was wonderful if we'd have to use exceptions, but we don't have to,
+at all (as proved above in [Try Catch](#try-catch)).
+
+A sane design would tell you that we have functions and these have inputs
+and image, so if something goes "wrong" you can define an output of type
+`Result` so we still have functions and don't introduce a **side effect** to
+a function by `throwing` so we now have something **complicated: a function
+and also a side effect that is "thrown" on top of it**.
+
+There's no reason to use a heterogeneous workaround that **differentiates
+between a "normal" value with an "error" value when everything is actually a
+value as equal**, so if we are *classist* like 🚩OO[^x] encapsulation and
+inheritance we treat an "error" as a third-citizen and those absurd OO
+designs that are "easy for humans 🙉 to understand" only bring overly impure
+and complicated unintelligible systems that mostly reflect in the source
+code the garbage humans are full of like nonsense analogies and social classism.
+
+[^x]: OOPs, object-oriented did it again (notice sarcasm when saying "OOPs")
+
+Leveraging a homogeneous approach that treats values as equal gives us a
+simple, natural functional solution that will humbly keep flatten and will not
+turn out as a `ProblemFactory` because a heterogeneous workaround was
+introduced which provoked an arbitrary number of unforeseeable side effects take
+place like having to frequently build solutions for the symptoms.
+
+The only thing I want to `throw` at this stage (and you should too) are
+alternative paradigms 🤭, and even mostly when it comes to mathematical 
+software of course.
+
 ### Mixed Paradigm
 
 As I say below, it still has and needs mixed components
