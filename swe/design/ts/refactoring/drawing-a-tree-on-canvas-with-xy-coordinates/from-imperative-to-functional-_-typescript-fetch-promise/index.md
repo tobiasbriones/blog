@@ -374,6 +374,9 @@ Also notice how even boilerplate like `;` gets eliminated as well because
 *we're transforming code from imperative to declarative*. I also 
 intentionally put `;` in imperative lines like `const res = await fetch(path);`.
 
+Here we're already noticing a 
+[paradigm shift challenge](#the-paradigm-shift-at-these-stages).
+
 #### Trying with Less Coupled Functions
 
 The next imperative approach attempts to reduce coupling, but when knowing
@@ -442,6 +445,64 @@ As I say below, it still has and needs mixed components
   but functional doesn't need other paradigms as *it's homogeneous*, or
   simply put, math. What **actually needs mixed paradigms** are 
   human-centric issues, but FP doesn't.
+
+### The Paradigm Shift at These Stages
+
+All these changes that are implied to transform an imperative human-native
+rationale into functional are likely hard to accept at the beginning for many
+due to the huge learning curve that professional engineering requires.
+
+So, we face a complete **paradigm shift** where we now **have to develop on
+robust engineering principles** unlike the way ordinary programming from
+alternative paradigms do and which are *incompatible*[^x][^x] to this new
+rationale.
+
+[^x]: FP and alternative paradigms are incompatible because functional is
+    homogeneous like math and the others are heterogeneous, in other words, in
+    functional everything is a function as unit of abstraction, so it maximizes
+    the problem's simplicity versus other paradigms consisting of a mix of
+    mundane features that kind of work and are kind of understood
+
+[^x]: Functional features can (and must) be mixed with other paradigms to
+    enhance the code, but it's still heterogeneous so no functional, in other
+    words, $$mess + mess = mess$$ and $$mess-but-better + mess-but-better =
+    mess-but-better$$ (still a mess), what can be done instead is to push those
+    impurities to the boundary of the system, e.g. using fully functional for
+    the "application domain logic" and a suitable tool like JS to interact with
+    the external mundane world, or it can even be a compiler that optimizes the
+    functional code for performance
+
+Java programmers will tell you that boilerplate makes code "easier" to read,
+and I agree for cases when we have **cheap general-purpose software**
+(e.g. a business app) that is not well-defined, and it's just for the sake of
+"getting stuff done" to get profit, but regarding actual SWE, thinking that
+boilerplate is "more readable" only shows your **insecurities** and that you
+think { your zealot PL } is the only language there exists. Truth is, that
+functional abstractions are always *more powerful* (by being actually defined)
+than any boilerplate-driven OOP they sell you, and even if you do so call
+"OO well-done" it ends up converging to the same we're talking about.
+
+Insecurities can be frequently seen in those who fear **type inference** as
+well — besides boilerplate-free designs — because they can't understand it, and
+are used to having an imperative 🦍 reasoning.
+
+If this isn't clear yet, just look at the fact that expressions are
+**functional abstractions** but a `return` is just a **mundane feature** to
+make lower-level imperative code work with the machine, and in this era, we can
+even get more clever hardware that is more domain-specific and won't
+eventually need many of those "bad OL' tricks" any longer.
+
+Something key to save from the said above is that functional *decouples*
+everything so overhead can be minimized and one problem can be solved
+correctly. Now, if you wonder, **what do your application logic has to do with
+hardware? It has nothing to do**, declarative FP decouples all this unlike
+alternative paradigms where **they want to solve everything at once and poorly
+done**.
+
+So, if hardware has nothing to do with our high-level application there's no
+reason why we should still be using meaningless features like `return`, and
+even worse, multiple-`return`s. **Good engineers are good at measuring
+coupling**.
 
 ### Maintainability
 
@@ -688,22 +749,22 @@ simple struct.
 ## Final Observations
 
 **The more you make a program better, the more functional it gets**, that's
-because **FP is the only/original programming paradigm there exists as per
-scientific concerns**, and all other paradigms are just cheap workarounds.
-
-Notice we can go "pure functional" but not "pure imperative" or "pure OO" so
-the **workarounds** are clearly the alternative non-functional paradigms.
+because **FP is the original paradigm**, and all other paradigms are 
+pragmatic alternatives.
 
 Another good one I know a lot from experience is that **the more I refactor code
 to improve it the more domain-specific it gets**, and FP is clearly the natural
 way to go for DSLs.
 
-I used to be a huge fan of Java as an OO approach (still have my good reasons)
-but I got to understand those "clever" ways of programming are **just
-intellectual distractions**.
+I used to be quite aligned with Java as an OO approach (still have my good
+reasons about Java but no OO) but I came to understand those "clever" ways
+of programming are **just intellectual distractions**.
 
 So, my favorite phrase I use to teach others or tell my story is that the
 **simplest designs are the best** and FP is all about simplicity.
+
+Even if a functional program is a mess, it can **be factually refactored** 
+as FP is algebra, but alternative paradigms can't.
 
 ## Leveraging FP as the Universal Approach It Is
 
