@@ -14,9 +14,16 @@
 
 ---
 
+Everything ends up converging to a formally-specified theory, in particular,
+the call to action, which is a marketing concept that can be either applied
+as a superficial idea by marketers, or on the contrary, as a powerful
+abstraction applied by a full-featured engineer who goes from fundamental truths
+to the soft-skills that make the product efficient to use for both the end user
+and the engineer.
+
 The *call to action* boils down to cohesion in the end. Marketing, capitalist
-buzzwords, and OOP always have to end up in the same fundamental principles of
-FP/math/science/real-engineering.
+buzzwords, OOP/OOD, and anything human-made always have to end up in the same 
+fundamental principles of [math, FP, science, (real) engineering]. 
 
 Although buzzwords have *something helpful*: they're easy to understand for
 non-geniuses or average people. In this case, for business people.
