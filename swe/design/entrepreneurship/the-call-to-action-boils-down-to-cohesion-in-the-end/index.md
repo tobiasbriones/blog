@@ -177,6 +177,18 @@ all (so no capitalism 😊), see for example,
 
 The key is to **be capable to grow horizontally** as said before.
 
+#### Pseudowork
+
+As a side reference, I'll leave the idea of what pseudoworkers do:
+
+> A bullshit job or pseudowork is meaningless or unnecessary wage labour which
+> the worker is obliged to pretend to have a purpose. Polling in the United
+> Kingdom and the Netherlands indicates that around 40% of workers consider
+> their job to fit this description.
+>
+> **Source:** Bullshit job |
+> [Wikipedia](https://en.wikipedia.org/wiki/Bullshit_job) (under CC BY-SA 3.0)
+
 ### Understand When It's Bloated
 
 An adult human mind can only hold 4 different things on average [1]. So, what
