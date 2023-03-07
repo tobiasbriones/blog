@@ -13,3 +13,4 @@ Go to:
 - [ddo-and-power-bi-overview](ds/ddo-and-power-bi-overview)
 - [pi-day-2022-03-14](math/pi-day-2022-03-14)
 - [everything-is-relative](philosophy/everything-is-relative)
+- [how-i-standardized-hypen-and-pipe-symbols-on-file-names](os/fs/file/lang/how-i-standardized-hypen-and-pipe-symbols-on-file-names)
