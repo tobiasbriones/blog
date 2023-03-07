@@ -167,7 +167,7 @@ the same initial condition? Can you get me? They are based on math and
 physics laws in their core anyway, so they're controlled workarounds.
 
 I develop on these wonderful topics in my other article 
-[everything is relative](../../philosophy/everything-is-relative).
+[everything is relative](../../../../philosophy/everything-is-relative).
 
 #### The Subscription Model Example
 
@@ -415,7 +415,7 @@ burning their heads into your platform and won't be clear *what to do*.
 
 I'm a relativist who enjoys and applies these principles all the time, I 
 advise to read my article on
-[everything is relative](../../philosophy/everything-is-relative), I've been
+[everything is relative](../../../../philosophy/everything-is-relative), I've been
 developing it these days with more insights I face every day.
 
 ## References
