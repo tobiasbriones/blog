@@ -189,6 +189,58 @@ As a side reference, I'll leave the idea of what pseudoworkers do:
 > **Source:** Bullshit job |
 > [Wikipedia](https://en.wikipedia.org/wiki/Bullshit_job) (under CC BY-SA 3.0)
 
+### Why Cohesion
+
+Cohesion is a universal principle that engineers (of any kind) and scientists
+must understand. It's even extremely useful for grammar, so I know how to 
+redact my writings *correctly*, for example, see 
+[This Article Represents a Milestone for Me (2022/12/18)](this-article-represents-a-milestone-for-me-2022-12-18).
+
+> the action or fact of forming a united whole.
+> 
+> **PHYSICS:** the sticking together of particles of the same substance.
+> 
+> **Source:** cohesion \| [Oxford Languages](https://languages.oup.com/google-dictionary-en)
+> (under fair use)
+
+What I changed about that definition is to introduce **homogeneous** so it 
+becomes: "... of forming a homogeneous united whole". If you notice, the 
+physics definition also uses this idea: "... particles of the **same** 
+substance".
+
+So by homogeneous we mean something **relative**, for example, and IDE can 
+be homogeneous if you *measure* it as an app, but as a programming component,
+the editor and the menu are heterogeneous because you cannot just put them 
+both together to build a greater whole, unlike the editor + the file 
+explorer, because in that case, you open a file into the editor so highly 
+cohesive in the logical and graphical sense.
+
+For example, a keyboard + mouse are a highly cohesive setup, but a keyboard + a
+potato is lowly cohesive as you can't create something where both work together
+to build a bigger system that makes sense by putting a keyboard with a potato, 
+that would be nonsense!
+
+If you notice, we can build greater wholes properly as much scale as needed. 
+We start with a fundamental truth, some pragmatic engineering, until the end 
+when we put this together to deliver impactful value efficiently.
+
+**If you understand fundamental principles like cohesion, you will naturally 
+understand reductionist concepts like CTA but not the other way around**. 
+CTA in this case is just a rip-off reductionist term so that mere mortals 
+like marketers, and ordinary engineers can use[^x].
+
+[^x]: Same reason why they told me regarding the physics course at university 
+    that engineers 🦍 get taught Newton because "forces" are easier to 
+    understand than actual relativity
+
+Needless to say, that relativity is key to succeed as a full professional, so 
+you need more intellectual capacity than ordinary engineers. Recall that 
+only the mere paradigm shift from imperative to declarative functional (which is
+a must to understand relativity) is overwhelming for anyone.
+
+Cohesion is the universal principle that enables us to create value that 
+makes sense by making subsystems work efficiently together one for the another.
+
 ### Understand When It's Bloated
 
 An adult human mind can only hold 4 different things on average [1]. So, what
