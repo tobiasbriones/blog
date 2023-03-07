@@ -30,31 +30,49 @@ non-geniuses or average people. In this case, for business people.
 
 ## Call to Action Design
 
-Call to action consists of giving a clear way to the user to do what the
-business wants them to do (e.g. add to cart) unlike those archaic desktop 2000s
-WinXP apps with hundreds of bloated enterprise and small forms, buttons, and
-options in the same window. Or bloated unresponsive websites full of options
-and advertisements.
+The "call to action" consists of giving a natural way to the user to do what the
+business wants them to do so we have a win-win relationship where the user
+efficiently gets value from the app *to solve their problems* and the business
+*gets profit back* faster by making this interaction as trivial as possible.
+
+Now, forget about *business* and *profit* because we're not anemic laborers
+like CEO's, managers, or marketers who scam people with pseudoscience. We're
+engineers who apply technical skills to soft skills the same way we apply them
+to hard skills, and this is the point of this article.
+
+Now, thinking about those archaic desktop WinXP apps from $$2,000$$s with
+hundreds of bloated enterprise and small forms, buttons, and options on the same
+window, or also, bloated unresponsive websites full of options and 
+advertisements. They're unclear and don't have a "call to action" so users 
+get lost in an ocean of badly design UX/UI. Notice that they're tightly coupled
+in the best case and are also lowly cohesive.
 
 Software used to be a monolith in those archaic times of computers and
 incipient programming (recall when computer monitors were square back in the
-day and everything was unclear and full of obnoxious workarounds 😂).
+day and everything was unclear and full of obnoxious workarounds).
 
-Now we have the capability to enforce better-designed systems that
+Now in this era we have the capability to enforce better-designed systems that
 are cohesive:
 
-- 🐵 do one thing (homogeneous whole) and well done, instead of
+👉🏻 do one thing (homogeneous whole) and well done, instead of
 
-- 🙈 everything (a monolith) and done mediocre full of workarounds like OO
-  systems.
+🙈 everything (a monolith) and poorly done requiring tons of workarounds to 
+  paste the fragmented parts.
 
-If you present the user with a bloated app they won't focus on what to do, but
-you *want them* to make sure to buy your stuff and do it right, so you maximize
-your profit and also the user's effort to get value from your business.
+If you present the user with a bloated app they won't focus on what to do.
+
+You *want them* to make sure to ~~buy~~ engage into your product and do it 
+right in an efficient way, so you *maximize* your ~~profit~~ impact and also 
+*minimize* the user's effort to get value from your ~~business~~ work.
 
 That doesn't mean you can only put a function into a file or a button into a
 screen, but instead, the same logic for a module, the same logic for a screen,
-etc.
+etc., homogeneously distributed.
+
+This shows how we as engineers can *factually* apply our technical knowledge to 
+soft skills on which depend the impact our software will have in society. So 
+disgusting capitalism and "people-skilled" jobs are not required at all but 
+instead, good engineers who can apply their *factual* skills crossdomain.
 
 ### Understand When It's Bloated
 
