@@ -74,6 +74,109 @@ soft skills on which depend the impact our software will have in society. So
 disgusting capitalism and "people-skilled" jobs are not required at all but 
 instead, good engineers who can apply their *factual* skills crossdomain.
 
+### Good Engineering is Enough
+
+As said in [Call to Action Design](#call-to-action-design) a good engineer
+applies their technical skills to the soft ones. In other words, if you're
+clever, you can apply that intellect to solve your own issues recursively.
+
+For example, I watched a video about "intelligent people have issues because
+they're people like anyone else too so here are the problems high-IQ people
+have", but indeed, if you're actually clever, *you can address hard problems*,
+but *in particular* the soft problems of being overly clever.
+
+In other words, being a good engineer is enough for all problems, but
+companies hire cheap anemic engineers, so they then need to hire a pile of
+"people-skilled" pseudoworkers who are unfairly overrated to patch that
+deficiency of their organization.
+
+Anything people-skilled like managers, coaches, etc. are *anemic* (see
+anemic model from DDD for example) because they're on the most superficial
+layer, they can give you an opinion but *don't have the right to do so*.
+
+A marketer can tell you "make this button's width $$100%$$ because is CTA"
+but that's it, it's anemic, it doesn't have any fundamental logic to *proof* the
+reason why.
+
+As a (fully-featured) engineer I can tell you to "make this button's width
+$$100%$$" from fundamental truths where I apply [engineering, math, domain,
+UX, etc.] knowledge and skills that *scale horizontally*, so I know that,
+for instance, for a solver app that has user input and solver output:
+
+- the input and the output have a high degree of relationship, so
+- the *(abstract) distance* between both is minimal because one follows the
+  other from the normal use case design, so
+- components that are (factually/logically) close are two entire wholes related 
+  one to the another, so
+- engineering builds great artifacts out of abstractions, so lets put both 
+  components together as we are allowed to do so by the items above and because 
+  both components are loosely coupled so they're ~$$100%$$ reusable what 
+  *maximizes* our resources (a.k.a. profit) and so
+- the resulting component will be an *entire homogeneous whole* (not
+  fragmented so good UX), so
+- they need a connection which is a "solve" button, so
+- a "solver" app and a "solve button" are concepts with minimum distance (i.
+  e. homogeneous, fully compatible) so the "solve" button is CTA for the
+  "solver" app, so
+- there can only be one CTA per app otherwise our system is tightly coupled
+  what makes it hard to use so bad UX so keep that *statement* in mind for
+  *design decisions*, so
+- we have found that the "input" and the "output" must be put together via a
+  CTA "solve button", and CTA must be the biggest widget to remark it as
+  that's our *optimization* point common to our whole system or app, so
+- there are UX/UI principles established so use those frameworks to deliver 
+  a tested GUI implementation, so
+- other engineering entrepreneurs we know have the *same* domain of 
+  expertise, so *we have two components again*, and *they're homogeneous*, so
+- we can build a greater whole (i.e. cohesion) between our engineering and 
+  theirs (notice the "components" here are **humans**, not programming modules 
+  or GUIs anymore), so
+- we have a ~~profitable business~~ impactful engineering-grade artifact that 
+  makes our civilization grow in a **genuine** way.
+
+As you can see I used my:
+
+- domain (solver, input, output),
+- math (abstraction, metric spaces, homogeneous, optimization),
+- engineering (abstraction, cohesion, coupling, fragmented, artifact, 
+  component, implementation),
+- graphics design (biggest),
+- soft (human, genuine)
+- entrepreneurial (profit, user, CTA),
+
+knowledge and skills *homogeneously* (i.e. evenly or horizontally scaled
+serving the *same* purpose) to **demonstrate** why to "make this button's width
+$$100%$$" (and a bit more).
+
+I — and any engineer who possesses a domain of expertise like math in my 
+particular case so math software engineer — are fully able to do all this
+efficiently without hiring "people-skilled staff". You don't have to develop all
+the given steps[^x], **if you're competent you do it automatically with zero 
+overhead but are also able to factually demonstrate it as well** and that's what
+makes us actual professionals like say, doctor, engineer, scientist, etc., 
+unlike those who hold pseudowork jobs *and are stealing ours* because of 
+capitalism[^x] 😡.
+
+[^x]: Declarativism must supersede imperativism to be successful at this
+
+[^x]: Literally any idiot can become a software "engineer" or a "scientist"
+    these days, a TikTok or YouTube "influencer" earns more than real
+    professionals like doctors, real engineers, etc., and hard skills are
+    extremely underrated according to all my previous job experiences, they only
+    want to sell for profit and not for the social impact (if they 🐷 tell you 
+    otherwise they're manipulating you for sure) but keep calling themselves
+    "engineers" what it's just disgusting because I'm literally overqualified
+    all the damn time, my "sin" is to be too clever, I live in the wrong era
+    unfortunately
+
+I got a conjecture about a relation I've noticed: **the more employees you
+need the more pseudowork your business is about**. Needless to say I'm
+obsessed with a fully-scalable/automated model where I don't need employees at
+all (so no capitalism 😊), see for example,
+[Rust is not a Company \| Mara's Blog](https://blog.m-ou.se/rust-is-not-a-company).
+
+The key is to **be capable to grow horizontally** as said before.
+
 ### Understand When It's Bloated
 
 An adult human mind can only hold 4 different things on average [1]. So, what
