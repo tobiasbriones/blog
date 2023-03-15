@@ -65,6 +65,11 @@ It can be proved that $$\pi$$ is transcendental, and with this, it can be
 proved that it's impossible to "square" the circle by a ruler-and-compass 
 construction [3].
 
+Math enables us to create from fundamentally abstract concepts like axioms 
+and I devised the concept of mapping it $$1:1$$ to the virtual universe of 
+software via *mathematical software*, and today (2023/03/14) is the glorious 
+day of $$\pi$$ in which I take the opportunity to get inspired and celebrate it.
+
 ## References
 
 [1] Mendelson, E. (2015). Introduction to Mathematical Logic. CRC Press.
