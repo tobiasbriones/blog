@@ -1,6 +1,6 @@
 ---
 permalink: /pi-day-2023-03-14
-title: Piaxid Monochromatic 1/4: Axiom. Axioms are the fundamental unit of mathematical logic that inductively enable creation.
+title: Axioms are the fundamental unit of mathematical logic that inductively enable creation.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/pi-day-2023-03-14/axiom---piaxid-monochromatic-1-4.png
 ---
 <link rel="icon" type="image/png" href="favicon.png">
