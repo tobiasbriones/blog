@@ -20,10 +20,10 @@ Math is pure as it's homogeneous: math creates math.
 
 Math is the abstraction of abstractions.
 
+---
+
 One immediate example of this are the axioms for the formal creation of the 
 natural numbers [1]:
-
----
 
 - $$(i)$$ $$0$$ is a natural number.
 - $$(ii)$$ If $$x$$ is a natural number, there is another natural number 
@@ -56,10 +56,10 @@ The declarativeness of math enables creation with mathematical elegance unlike
 the imperativeness of those impure where every instance is to be addressed 
 (i.e. defined or demonstrated) imperatively at a time.
 
+---
+
 Finally, the last example shows an immediate application of $$\pi$$. First, 
 lets define algebraic numbers [2]:
-
----
 
 A real number $$x$$ is said to be an algebraic number is there is a natural 
 number $$n$$ and integers $$a_0, a_1, ..., a_n$$ with $$a_0 \neq 0$$ such that
@@ -74,6 +74,8 @@ transcendental number.
 It can be proved that $$\pi$$ is transcendental, and with this, it can be 
 proved that it's impossible to "square" the circle by a ruler-and-compass 
 construction [3].
+
+---
 
 Math enables us to create from fundamentally abstract concepts like axioms 
 and I devised the concept of mapping it $$1:1$$ to the virtual universe of 
