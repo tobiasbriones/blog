@@ -79,8 +79,9 @@ construction [3].
 
 Math enables us to create from fundamentally abstract concepts like axioms 
 and I devised the concept of mapping it $$1:1$$ to the virtual universe of 
-software via *mathematical software*, and today (2023/03/14) is the glorious 
-day of $$\pi$$ in which I take the opportunity to get inspired and celebrate it.
+software via *mathematical software (engineering)*, and today (2023/03/14) is 
+the glorious day of $$\pi$$ in which I take the opportunity to get inspired and 
+celebrate it.
 
 ## References
 
