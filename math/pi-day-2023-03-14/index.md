@@ -10,6 +10,16 @@
 
 ---
 
+Axioms are the fundamental unit of mathematical logic that inductively enable
+creation.
+
+Axioms are true statements that enable meaningful definitions, and any other 
+kind of high-level statements like theorems.
+
+Math is pure as it's homogeneous: math creates math.
+
+Math is the abstraction of abstractions.
+
 One immediate example of this are the axioms for the formal creation of the 
 natural numbers [1]:
 
