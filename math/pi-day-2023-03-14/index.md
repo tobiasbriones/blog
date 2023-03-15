@@ -29,6 +29,19 @@ natural numbers [1]:
 
 ---
 
+Another example is the creation of the Fibonacci sequence inductively:
+
+```haskell
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
+```
+
+<figcaption>
+<p align="center"><strong>The Fibonacci Sequence (a.k.a. "the 'Hello, world!' 
+of Haskell programming"</strong>[4]</p>
+</figcaption>
+
 ## References
 
 [1] Mendelson, E. (2015). Introduction to Mathematical Logic. CRC Press.
