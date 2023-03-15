@@ -1,5 +1,7 @@
 ---
 permalink: /pi-day-2023-03-14
+title: Axioms are the fundamental unit of mathematical logic that inductively enable creation.
+ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/pi-day-2023-03-14/axiom---piaxid-monochromatic-1-4.svg
 ---
 <link rel="icon" type="image/png" href="favicon.png">
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
