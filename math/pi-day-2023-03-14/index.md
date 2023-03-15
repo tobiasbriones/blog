@@ -46,6 +46,24 @@ The declarativeness of math enables creation with mathematical elegance unlike
 the imperativeness of those impure where every instance is to be addressed 
 (i.e. defined or demonstrated) imperatively at a time.
 
+Finally, the last example shows an immediate application of $$\pi$$. First, 
+lets define algebraic numbers [2]:
+
+---
+
+A real number $$x$$ is said to be an algebraic number is there is a natural 
+number $$n$$ and integers $$a_0, a_1, ..., a_n$$ with $$a_0 \neq 0$$ such that
+
+$$a_0x^n + a_1x^{n-1} + ... + a_{n-1}x + a_n = 0$$
+
+A real number which is not and algebraic number is said to be a 
+transcendental number.
+
+---
+
+It can be proved that $$\pi$$ is transcendental, and with this, it can be 
+proved that it's impossible to "square" the circle by a ruler-and-compass 
+construction [3].
 
 ## References
 
