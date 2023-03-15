@@ -42,6 +42,11 @@ fib n = fib (n-1) + fib (n-2)
 of Haskell programming"</strong>[4]</p>
 </figcaption>
 
+The declarativeness of math enables creation with mathematical elegance unlike 
+the imperativeness of those impure where every instance is to be addressed 
+(i.e. defined or demonstrated) imperatively at a time.
+
+
 ## References
 
 [1] Mendelson, E. (2015). Introduction to Mathematical Logic. CRC Press.
