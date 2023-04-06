@@ -59,6 +59,30 @@ form of a problem** so that the other part can constantly keep changing
 peacefully. That's also a way to see and prove how boilerplate is a measure 
 for bad quality of software, **you have to factorize it**.
 
+Now, the drawings I was playing with today were about circles and a version
+of the Sierpiński triangle.
+
+I drew a flower petal as a base for the drawing, and put some triangles as
+`source-atop` composite operation. I made them smoother with arcs, so they're
+smooth curves instead of ugly lines with discontinuities [^1] as plane
+triangles would otherwise be. I added some colors to the shadows, etc.
+
+It's not perfect, and not symmetric, but it's a pretty nice and valid result.
+
+It was an improvised drawing, out of passion and curiosity to relieve the
+stress of these days.
+
+I liked it a lot, the shapes, the colors, the experience, it was lovely.
+
+Right now, I'm not providing source code or projects regarding these drawings,
+but a lot is coming to Repsymo and MathSwe.
+
+I've also thought about automating the creation of this kind of content, so I
+already have a mature idea of what to do.
+
+[^1]: For me, mathematical beauty lies in smooth curves with continues 
+    derivatives
+
 ![Drawing](drawing.png)
 
 <figcaption>
