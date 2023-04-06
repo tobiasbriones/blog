@@ -8,7 +8,25 @@
 
 ---
 
-One example is the above drawing with animation I was checking the last time:
+Today at this moment, I was thinking about fractals and mandalas. I'm always
+thinking about these concepts, but I just got excited about it and stayed
+playing with some drawings I figured out.
+
+It's a way to feel better, that I'm doing what I love, I just had to do it
+even though I had no schedule for that.
+
+Among being a mathematician, engineer, philosopher, entrepreneur, gamer, and
+others..., being an artist who designs the meaning of all this knowledge is
+part of my stance.
+
+I've wished to formalize the MathSwe logo, so it can be defined
+declaratively via recursion or an elegant equation instead of Photopea or
+raster graphics.
+
+So, I've been playing with some recursion and fractals once in a while the
+last days.
+
+One example is the below drawing with animation I was checking last time:
 
 ![Basic Fractal with Circles](basic-fractal-with-circles.gif)
 
