@@ -20,8 +20,8 @@ others..., being an artist who designs the meaning of all this knowledge is
 part of my stance.
 
 I've wished to formalize the MathSwe logo, so it can be defined
-declaratively via recursion or an elegant equation instead of Photopea or
-raster graphics.
+declaratively via recursion or an elegant equation instead of Photopea 
+vector shapes or raster graphics.
 
 So, I've been playing with some recursion and fractals once in a while the
 last days.
