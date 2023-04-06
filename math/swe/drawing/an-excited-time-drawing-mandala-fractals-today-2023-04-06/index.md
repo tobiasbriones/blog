@@ -85,6 +85,10 @@ but a lot is coming to Repsymo and MathSwe.
 I've also thought about automating the creation of this kind of content, so I
 already have a mature idea of what to do.
 
+It was good to had worked with drawings, mandala fractals, and ideas these 
+days as they gave insights, relax, I'm closer to fulfil some objectives 
+about MathSwe and Repsymo, and I'll keep doing the great job.
+
 [^1]: For me, mathematical beauty lies in smooth curves with continues 
     derivatives
 
