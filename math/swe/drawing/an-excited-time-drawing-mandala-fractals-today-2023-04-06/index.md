@@ -74,6 +74,11 @@ stress of these days.
 
 I liked it a lot, the shapes, the colors, the experience, it was lovely.
 
+I also learned about what particularly "mandala fractals" are since they're a
+specific type of mandala drawings that use fractals and are created using
+computer graphics, so it's convenient for me to work with them, because of the
+fractal and computing part they consist of.
+
 Right now, I'm not providing source code or projects regarding these drawings,
 but a lot is coming to Repsymo and MathSwe.
 
