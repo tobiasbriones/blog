@@ -8,3 +8,8 @@
 
 ---
 
+![Drawing](drawing.png)
+
+<figcaption>
+<p align="center"><strong>Drawing</strong></p>
+</figcaption>
