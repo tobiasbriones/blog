@@ -20,8 +20,10 @@ others..., being an artist who designs the meaning of all this knowledge is
 part of my stance.
 
 I've wished to formalize the MathSwe logo, so it can be defined
-declaratively via recursion or an elegant equation instead of Photopea 
+declaratively via recursion or an elegant equation instead of Photopea [^1]
 vector shapes or raster graphics.
+
+[^1]: Photopea is a free version of Photoshop
 
 So, I've been playing with some recursion and fractals once in a while the
 last days.
@@ -62,12 +64,14 @@ for bad quality of software, **you have to factorize it**.
 Now, the drawings I was playing with today were about circles and a version
 of the Sierpiński triangle.
 
-I drew a flower petal as a base for the drawing, and put some triangles as
+I drew [^2] a flower petal as a base for the drawing, and put some triangles as
 `source-atop` composite operation. I made them smoother with arcs, so they're
-smooth curves instead of ugly lines with discontinuities [^1] as plane
+smooth curves instead of ugly lines with discontinuities [^3] as plane
 triangles would otherwise be. I added some colors to the shadows, etc.
 
-[^1]: For me, mathematical beauty lies in smooth curves with continuous
+[^2]: I've been using HTML canvas lately for this
+
+[^3]: For me, mathematical beauty lies in smooth curves with continuous
     derivatives
 
 It's not perfect, and not symmetric, but it's a pretty nice and valid result.
