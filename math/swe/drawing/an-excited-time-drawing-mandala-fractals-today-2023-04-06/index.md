@@ -67,6 +67,9 @@ I drew a flower petal as a base for the drawing, and put some triangles as
 smooth curves instead of ugly lines with discontinuities [^1] as plane
 triangles would otherwise be. I added some colors to the shadows, etc.
 
+[^1]: For me, mathematical beauty lies in smooth curves with continuous
+    derivatives
+
 It's not perfect, and not symmetric, but it's a pretty nice and valid result.
 
 It was an improvised drawing, out of passion and curiosity to relieve the
@@ -88,9 +91,6 @@ already have a mature idea of what to do.
 It was good to had worked with drawings, mandala fractals, and ideas these 
 days as they gave insights, relax, I'm closer to fulfil some objectives 
 about MathSwe and Repsymo, and I'll keep doing the great job.
-
-[^1]: For me, mathematical beauty lies in smooth curves with continues 
-    derivatives
 
 ![Drawing](drawing.png)
 
