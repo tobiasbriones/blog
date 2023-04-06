@@ -3,3 +3,8 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # An Excited Time Drawing Mandala Fractals Today (2023-04-06)
+
+![Cover](cover.png)
+
+---
+
