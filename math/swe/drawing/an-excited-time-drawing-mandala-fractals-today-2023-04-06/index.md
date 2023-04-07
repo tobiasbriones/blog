@@ -4,7 +4,7 @@ title: An Excited Time Drawing Mandala Fractals Today (2023-04-06)
 description: Today at this moment, I was thinking about fractals and mandalas. I'm always thinking about these concepts, but I just got excited about it and stayed playing with some drawings I figured out.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/drawing/an-excited-time-drawing-mandala-fractals-today-2023-04-06/cover.png
 ---
-<!-- Copyright (c) 2022-present Tobias Briones. All rights reserved. -->
+<!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
@@ -42,7 +42,7 @@ One example is the below drawing with animation I was checking last time:
 <p align="center"><strong>Basic Fractal with Circles</strong></p>
 </figcaption>
 
-It just was a basic PoC and I got some insights, for example: recalled that
+It was just a basic PoC, and I got some insights, for example: recalled that
 understanding the *constant part of relativity* and recursion is a *key* to 
 understanding relativity, and that, as the radius gets bigger the circle looks
 relatively "flat" but it's still a circle, so you can use your imagination or 
@@ -114,4 +114,3 @@ objectives about MathSwe and Repsymo, and I'll keep doing this great job.
 - [Fractal Geometry \| Computer Science \| Loyola Marymount University](https://cs.lmu.edu/~ray/notes/fractals)
 - [Creative Self-Care: Make Art! \| Healthy IU \| Indiana University](https://healthy.iu.edu/campus-programs-services/university/creative-self-care/mandalas.html)
 - [Restoring Creative Balance: How to Create Mental ‘Space’ and Design a Mandala \| The Elm \| University of Maryland](https://elm.umaryland.edu/elm-stories/Elm-Stories-Content/Restoring-Creative-Balance-How-to-Create-Mental-Space-and-Design-a-Mandala.php)
-
