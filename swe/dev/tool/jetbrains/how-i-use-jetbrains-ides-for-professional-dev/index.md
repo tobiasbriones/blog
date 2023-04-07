@@ -5,3 +5,5 @@
 # How I Use JetBrains IDEs for Professional Dev
 
 ## Local History
+
+### Recovering File History From Local Changes
