@@ -12,21 +12,21 @@ Today at this moment, I was thinking about fractals and mandalas. I'm always
 thinking about these concepts, but I just got excited about it and stayed
 playing with some drawings I figured out.
 
-It's a way to feel better, that I'm doing what I love, I just had to do it
-even though I had no schedule for that.
+It's a way to feel better, that I'm doing what I love, I just had to do it even
+though I had no schedule for that.
 
 Among being a mathematician, engineer, philosopher, entrepreneur, gamer, and
-others..., being an artist who designs the meaning of all this knowledge is
-part of my stance.
+others..., being an artist who designs the meaning of all this knowledge is part
+of my stance.
 
-I've wished to formalize the MathSwe logo, so it can be defined
-declaratively via recursion or an elegant equation instead of Photopea [^1]
-vector shapes or raster graphics.
+I've wished to formalize the MathSwe logo, so it can be defined declaratively 
+via recursion or an elegant equation instead of Photopea [^1] vector shapes 
+or raster graphics.
 
 [^1]: Photopea is a free version of Photoshop
 
-So, I've been playing with some recursion and fractals once in a while the
-last days.
+So, I've been playing with some recursion and fractals once in a while the last
+days.
 
 One example is the below drawing with animation I was checking last time:
 
@@ -37,19 +37,18 @@ One example is the below drawing with animation I was checking last time:
 </figcaption>
 
 It just was a basic PoC and I got some insights, for example: recall that
-understanding the *constant part of relativity* and recursion is a
-*key* for understanding relativity, and that, as the radius gets bigger the
-circle looks relatively "flat" but it's still a circle, so you can use your
-imagination or creativity which is another *key* and think that "you're getting
-closer to the surface of the sun", so many will believe that "the sun is
-flat" because that's what they see in their local, fragmented, or absolute
-perspective but as we understand relativity we know what's actually happening,
-and that these shapes are actually circles (relatively).
+understanding the *constant part of relativity* and recursion is a *key* for 
+understanding relativity, and that, as the radius gets bigger the circle looks
+relatively "flat" but it's still a circle, so you can use your imagination or 
+creativity which is another *key* and think that "you're getting closer to the
+surface of the sun", so many will believe that "the sun is flat" because that's
+what they see in their local, fragmented, or absolute perspective but as we
+understand relativity we know what's actually happening, and that these shapes
+are actually circles (relatively).
 
-Notice how recursion contains *that constant part of relativity*: the
-recursive function is the **pattern** that **keeps constant** (one part),
-and the observer is the domain of the function that **keeps changing**
-(second part).
+Notice how recursion contains *that constant part of relativity*: the recursive
+function is the **pattern** that **keeps constant** (one part), and the observer
+is the domain of the function that **keeps changing** (second part).
 
 That sounds familiar, it's like induction (so math). Base step,
 recursive/inductive step.
@@ -66,8 +65,8 @@ of the Sierpiński triangle.
 
 I drew [^2] a flower petal as a base for the drawing, and put some triangles as
 `source-atop` composite operation. I made them smoother with arcs, so they're
-smooth curves instead of ugly lines with discontinuities [^3] as plane
-triangles would otherwise be. I added some colors to the shadows, etc.
+smooth curves instead of ugly lines with discontinuities [^3] as plane triangles
+would otherwise be. I added some colors to the shadows, etc.
 
 [^2]: I've been using HTML canvas lately for this
 
@@ -76,8 +75,8 @@ triangles would otherwise be. I added some colors to the shadows, etc.
 
 It's not perfect, and not symmetric, but it's a pretty nice and valid result.
 
-It was an improvised drawing, out of passion and curiosity to relieve the
-stress of these days.
+It was an improvised drawing, out of passion and curiosity to relieve the stress
+of these days.
 
 I liked it a lot, the shapes, the colors, the experience, it was lovely.
 
@@ -93,8 +92,8 @@ I've also thought about automating the creation of this kind of content, so I
 already have a mature idea of what to do.
 
 It was good to had worked with drawings, mandala fractals, and ideas these
-days as they gave insights, relax, I'm closer to fulfil some objectives
-about MathSwe and Repsymo, and I'll keep doing the great job.
+days as they gave insights, relax, I'm closer to fulfil some objectives about
+MathSwe and Repsymo, and I'll keep doing the great job.
 
 ![Drawing](drawing.png)
 
