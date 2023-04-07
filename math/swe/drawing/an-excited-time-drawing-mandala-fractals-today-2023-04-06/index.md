@@ -26,7 +26,7 @@ or raster graphics.
 [^1]: Photopea is a free version of Photoshop
 
 So, I've been playing with some recursion and fractals once in a while the last
-days.
+few days.
 
 One example is the below drawing with animation I was checking last time:
 
@@ -36,15 +36,15 @@ One example is the below drawing with animation I was checking last time:
 <p align="center"><strong>Basic Fractal with Circles</strong></p>
 </figcaption>
 
-It just was a basic PoC and I got some insights, for example: recall that
-understanding the *constant part of relativity* and recursion is a *key* for 
+It just was a basic PoC and I got some insights, for example: recalled that
+understanding the *constant part of relativity* and recursion is a *key* to 
 understanding relativity, and that, as the radius gets bigger the circle looks
 relatively "flat" but it's still a circle, so you can use your imagination or 
 creativity which is another *key* and think that "you're getting closer to the
 surface of the sun", so many will believe that "the sun is flat" because that's
 what they see in their local, fragmented, or absolute perspective but as we
-understand relativity we know what's actually happening, and that these shapes
-are actually circles (relatively).
+understand relativity we know what's happening, and that these shapes are
+circles (relatively).
 
 Notice how recursion contains *that constant part of relativity*: the recursive
 function is the **pattern** that **keeps constant** (one part), and the observer
@@ -58,7 +58,7 @@ That is, mathematical elegance with homogeneity, as I say in
 *the simplest designs are the best*, and **homogeneity yields the simplest
 form of a problem** so that the other part can constantly keep changing
 peacefully. That's also a way to see and prove how boilerplate is a measure
-for bad quality of software, **you have to factorize it**.
+of bad quality of software, **you have to factorize it**.
 
 Now, the drawings I was playing with today were about circles and a version
 of the Sierpiński triangle.
@@ -68,7 +68,7 @@ I drew [^2] a flower petal as a base for the drawing, and put some triangles as
 smooth curves instead of ugly lines with discontinuities [^3] as plane triangles
 would otherwise be. I added some colors to the shadows, etc.
 
-[^2]: I've been using HTML canvas lately for this
+[^2]: I've been using HTML Canvas lately for this
 
 [^3]: For me, mathematical beauty lies in smooth curves with continuous
     derivatives
@@ -91,9 +91,9 @@ but a lot is coming to Repsymo and MathSwe.
 I've also thought about automating the creation of this kind of content, so I
 already have a mature idea of what to do.
 
-It was good to had worked with drawings, mandala fractals, and ideas these
-days as they gave insights, relax, I'm closer to fulfil some objectives about
-MathSwe and Repsymo, and I'll keep doing the great job.
+It was good to have worked with drawings, mandala fractals, and ideas these
+days as they gave insights, and relaxation, I'm closer to fulfilling some
+objectives about MathSwe and Repsymo, and I'll keep doing this great job.
 
 ![Drawing](drawing.png)
 
