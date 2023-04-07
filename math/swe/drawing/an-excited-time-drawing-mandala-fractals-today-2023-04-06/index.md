@@ -36,7 +36,7 @@ One example is the below drawing with animation I was checking last time:
 <p align="center"><strong>Basic Fractal with Circles</strong></p>
 </figcaption>
 
-It just was a basic PoC and I got some insights, for example: recalled that
+It was just a basic PoC, and I got some insights, for example: recalled that
 understanding the *constant part of relativity* and recursion is a *key* to 
 understanding relativity, and that, as the radius gets bigger the circle looks
 relatively "flat" but it's still a circle, so you can use your imagination or 
