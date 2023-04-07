@@ -48,17 +48,17 @@ and that these shapes are actually circles (relatively).
 
 Notice how recursion contains *that constant part of relativity*: the
 recursive function is the **pattern** that **keeps constant** (one part),
-and the observer is the domain of the function that **keeps changing** 
+and the observer is the domain of the function that **keeps changing**
 (second part).
 
-That sounds familiar, it's like induction (so math). Base step, 
+That sounds familiar, it's like induction (so math). Base step,
 recursive/inductive step.
 
 That is, mathematical elegance with homogeneity, as I say in
 [From Imperative to Functional: TypeScript Fetch Promise](from-imperative-to-functional-_-typescript-fetch-promise),
 *the simplest designs are the best*, and **homogeneity yields the simplest
 form of a problem** so that the other part can constantly keep changing
-peacefully. That's also a way to see and prove how boilerplate is a measure 
+peacefully. That's also a way to see and prove how boilerplate is a measure
 for bad quality of software, **you have to factorize it**.
 
 Now, the drawings I was playing with today were about circles and a version
@@ -92,8 +92,8 @@ but a lot is coming to Repsymo and MathSwe.
 I've also thought about automating the creation of this kind of content, so I
 already have a mature idea of what to do.
 
-It was good to had worked with drawings, mandala fractals, and ideas these 
-days as they gave insights, relax, I'm closer to fulfil some objectives 
+It was good to had worked with drawings, mandala fractals, and ideas these
+days as they gave insights, relax, I'm closer to fulfil some objectives
 about MathSwe and Repsymo, and I'll keep doing the great job.
 
 ![Drawing](drawing.png)
