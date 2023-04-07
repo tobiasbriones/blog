@@ -103,8 +103,8 @@ objectives about MathSwe and Repsymo, and I'll keep doing this great job.
 
 ## Bibliography
 
-- [The Sierpinski Triangle | Math | Boston University](https://math.bu.edu/DYSYS/chaos-game/node2.html)
-- [CanvasRenderingContext2D.globalCompositeOperation | Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
-- [Fractal Geometry | Computer Science | Loyola Marymount University](https://cs.lmu.edu/~ray/notes/fractals)
-- [Creative Self-Care: Make Art! | Healthy IU | Indiana University](https://healthy.iu.edu/campus-programs-services/university/creative-self-care/mandalas.html)
-- [Restoring Creative Balance: How to Create Mental ‘Space’ and Design a Mandala | The Elm | University of Maryland](https://elm.umaryland.edu/elm-stories/Elm-Stories-Content/Restoring-Creative-Balance-How-to-Create-Mental-Space-and-Design-a-Mandala.php)
+- [The Sierpinski Triangle \| Math \| Boston University](https://math.bu.edu/DYSYS/chaos-game/node2.html)
+- [CanvasRenderingContext2D.globalCompositeOperation \| Web APIs \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
+- [Fractal Geometry \| Computer Science \| Loyola Marymount University](https://cs.lmu.edu/~ray/notes/fractals)
+- [Creative Self-Care: Make Art! \| Healthy IU \| Indiana University](https://healthy.iu.edu/campus-programs-services/university/creative-self-care/mandalas.html)
+- [Restoring Creative Balance: How to Create Mental ‘Space’ and Design a Mandala \| The Elm \| University of Maryland](https://elm.umaryland.edu/elm-stories/Elm-Stories-Content/Restoring-Creative-Balance-How-to-Create-Mental-Space-and-Design-a-Mandala.php)
