@@ -4,6 +4,8 @@
 
 # How I Use JetBrains IDEs for Professional Dev
 
+## Composable Views
+
 ## Local History
 
 Sometimes, git is still not available to save the changes made to our code, and
