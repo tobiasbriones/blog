@@ -799,21 +799,21 @@ simple struct.
 ## After Advanced Refactorizations
 
 **The more you make a program better, the more functional it gets**, that's
-because **FP is the original paradigm**, and all other paradigms are 
-pragmatic alternatives.
+because **FP is the original paradigm**, and all other paradigms are pragmatic
+alternatives.
 
 Another good one I know a lot from experience is that **the more I refactor code
 to improve it the more domain-specific it gets**, and FP is clearly the natural
 way to go for DSLs.
 
 I used to be quite aligned with Java as an OO approach (still have my good
-reasons about Java but no OO) but I came to understand those "clever" ways
-of programming are **just intellectual distractions**.
+reasons about Java but no OO) but I came to understand those "clever" ways of
+programming are **just intellectual distractions**.
 
 So, my favorite phrase I use to teach others or tell my story is that the
 **simplest designs are the best** and FP is all about simplicity.
 
-Even if a functional program is a mess, it can **be factually refactored** 
+Even if a functional program is a mess, it can **be factually refactored**
 as FP is algebra and homogeneous, but alternative paradigms can't.
 
 ## Leveraging FP as the Universal Approach It Is
