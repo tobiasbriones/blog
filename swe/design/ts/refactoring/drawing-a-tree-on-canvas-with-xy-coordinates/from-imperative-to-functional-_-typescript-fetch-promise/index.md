@@ -814,7 +814,7 @@ So, my favorite phrase I use to teach others or tell my story is that the
 **simplest designs are the best** and FP is all about simplicity.
 
 Even if a functional program is a mess, it can **be factually refactored** 
-as FP is algebra, but alternative paradigms can't.
+as FP is algebra and homogeneous, but alternative paradigms can't.
 
 ## Leveraging FP as the Universal Approach It Is
 
