@@ -796,7 +796,7 @@ So, I just put the `new Error` line to the imperative version to try 🤭 to go
 case, but it's obviously not required to "build" an object instead of passing a
 simple struct.
 
-## Final Observations
+## After Advanced Refactorizations
 
 **The more you make a program better, the more functional it gets**, that's
 because **FP is the original paradigm**, and all other paradigms are 
