@@ -10,11 +10,15 @@ Refactoring code from its imperative version to a more functional one improves
 its engineering grade, as demonstrated in the following observations made to a
 simple fetch request.
 
-This
-[gist](https://gist.github.com/tobiasbriones/544350fc301ffe32c1dd64d2f6ec6d81)
-contains context about the source code.
+## Source Code
 
-The fetch request gets a `JSON` value that models a tree data structure to be
+The underlying analysis is based on the two snippets given below in
+[Difference](#difference).
+
+More context can be found in
+[this gist](https://gist.github.com/tobiasbriones/544350fc301ffe32c1dd64d2f6ec6d81).
+
+This fetch request gets a `JSON` value that models a tree data structure to be
 represented later by `HTMLCanvasElement`.
 
 Both versions are correct and do the same, but the "more functional" version
