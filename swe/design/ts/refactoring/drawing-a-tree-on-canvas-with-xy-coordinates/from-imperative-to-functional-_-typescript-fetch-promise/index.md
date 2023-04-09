@@ -90,10 +90,10 @@ one as the underlying project is pretty short.
 
 ## Getting Started on Noticing Details
 
-This is an analytical endeavour so observation is key to get the most out of it
-by applying our CS and SWE knowledge and experience.
+This is an analytical endeavor, so observation is the key to get the most out
+of it by applying our CS and SWE knowledge and experience.
 
-By noticing the:
+By noticing in the "more functional" snippet the:
 
 👎🏻 return statement
 
@@ -110,12 +110,12 @@ And lack of:
 👉🏻 expressions[^1]
 
 [^1]: Notice the stupid semicolons appear when the line of code is imperative,
-    sounds familiar isn't it? yes, Rust 🦀
+sounds familiar isn't it? yes, Rust 🦀
 
-Then we have reasons why the "functional" snippet doesn't get **even better**.
+We find reasons why the "more functional" code doesn't get **even better**.
 
-The imperative version has the following visible problems, and **I encourage
-you to reason the code snippets** to figure them out.
+The imperative version has the following visible problems addressed next, and
+**I encourage you to reason the code snippets** to figure them out.
 
 ## General Concerns
 
