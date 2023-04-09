@@ -205,6 +205,41 @@ its powerful abstractions[^x].
     of imperative + declarative that can be easily written in poorly designed 
     languages
 
+#### Workaround Excuses
+
+As said above, they say "reactive is not compatible with the Java platform",
+"the advantage of `async`-`await` in JS is that you keep using familiar control
+flows like `try`-`catch`, etc., and you lose the stacktrace info in anonymous
+functions if you don't use it".
+
+As engineers, we have to spot **other's comfort zone because otherwise they'll
+keep building for the symptoms**.
+
+If you consider that a platform is a comfort zone for cheap programmers[^x]
+or merchants who only want to sell "enterprise" licenses or books then take a
+better approach that solves the problem roots. Emotions or feelings do not apply
+to engineering decisions, e.g. I've mostly left tech like Angular and Java
+despite the fact that I used to love and grow with them.
+
+[^x]: Fun fact 🐯: "Cheap Thrills by Sia" was played at the moment of writing 
+    this
+
+The problem is that pushing even more functional ways to disgusting languages
+you must always work with like JS/TS/Python only makes this more complicated
+as fighting against the normal flow of a language's mechanism is something I
+don't recommend from experience, and that's why you see such design decisions in
+Java for example.
+
+Java is an existing language with existing principles like conservatism,
+stability, wide general-purpose support, verbosity, etc. So if that fills the
+engineering requirements get it or else leave it. Another reason I always give
+to learn Java is that you'll easily get professional knowledge in these kinds of
+design decisions which are crucial to understand for any software engineer.
+
+Now, regarding TS, what can be further done to get out of the workaround circle
+is to use Purescript —a purely functional language aimed for replacing JS that
+resembles Haskell.
+
 ### Mutable Variable
 
 Usage of *mutable* variable `tree` for returning the function value:
