@@ -794,8 +794,8 @@ because if we used OOP as it should actually be used to enhance imperative or
 procedural programs we'd end up applying it in very few cases.
 
 So, I just put the `new Error` line to the imperative version to try 🤭 to go
-"fully imperative" to get the difference between both approaches in this study
-case, but it's obviously not required to "build" an object instead of passing a
+"fully imperative" to get the difference between both approaches in this case
+study, but it's obviously not required to "build" an object instead of passing a
 simple struct.
 
 ## After Advanced Refactorizations
