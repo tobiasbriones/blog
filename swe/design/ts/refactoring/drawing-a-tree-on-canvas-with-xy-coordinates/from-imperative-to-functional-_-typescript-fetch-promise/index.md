@@ -17,7 +17,7 @@ contains context about the source code.
 The fetch request gets a `JSON` value that models a tree data structure to be
 represented later by `HTMLCanvasElement`.
 
-Both versions are correct and do the same, but the "functional" version
+Both versions are correct and do the same, but the "more functional" version
 still has some imperative style because JS/TS is not a functional language but
 the difference **is clear** again.
 
@@ -25,13 +25,13 @@ the difference **is clear** again.
 
 First, I clarify that I added as much imperative code to the "imperative"
 version to compare both approaches here, but my original code wasn't actually
-refactored from the "imperative" version below to the "more-functional" one,
-but from a "saner imperative" version in between to the "more-functional" one
+refactored from the "imperative" version below to the "more functional" one,
+but from a "saner imperative" version in between to the "more functional" one
 instead.
 
 So, we'll need to start analysing both versions, knowing that
 [everything is relative](everything-is-relative), so I'm measuring here
-"imperative" vs "more-functional" **with respect** to this code snippet or
+"imperative" vs "more functional" **with respect** to this code snippet or
 problem, and that these observations still apply to universal cases.
 
 The difference between both snippets is the following:
@@ -76,10 +76,10 @@ function fetchTree(path: string): Promise<TreeNode> {
 ```
 
 <figcaption>
-<p align="center"><strong>More-Functional</strong></p>
+<p align="center"><strong>More Functional</strong></p>
 </figcaption>
 
-The refactored code (a.k.a. "more-functional") **is not functional**, but it
+The refactored code (a.k.a. "more functional") **is not functional**, but it
 gets close. This is to avoid introducing functional abstractions like pipes,
 monads, etc., on top of JS/TS which is not a functional language but a mixed
 one as the underlying project is pretty short.
@@ -141,7 +141,7 @@ useful for making code simpler, but the important notice is *when*.
 
 I've written backend and frontend code like this either with `async` or not, I
 believed that "raw" `Promise`s were caveman some years ago, but found that
-can be leveraged to promote "more-functional" code.
+can be leveraged to promote "more functional" code.
 
 I have the conclusion that, **if writing imperative code is needed** for any
 reason (bounded to one function hopefully), **then it's the only way
@@ -372,7 +372,7 @@ expressions removing boilerplate</strong></p>
 In this previous snippet you can see how the imperative `return` boilerplate 
 is removed, so we have now some kind of **matching expression** (see the `=` 
 operator as a `match`) that factually increased the quality of the code by
-removing (imperative) boilerplate and converging to a more-functional approach.
+removing (imperative) boilerplate and converging to a more functional approach.
 
 Also notice how even boilerplate like `;` gets eliminated as well because 
 *we're transforming code from imperative to declarative*. I also 
@@ -819,7 +819,7 @@ functional support, but we can still build better code regarding robustness
 and clearness by leveraging their available features and our computer science
 knowledge that was applied in this case study to address relevant concerns
 about TS Fetch API by observing the underlying imperative and
-more-functional features.
+more functional features.
 
 ## Bibliography
 
