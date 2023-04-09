@@ -27,16 +27,15 @@ the difference **is clear** again.
 
 ## Difference
 
-First, I clarify that I added as much imperative code to the "imperative"
-version to compare both approaches here, but my original code wasn't actually
-refactored from the "imperative" version below to the "more functional" one,
-but from a "saner imperative" version in between to the "more functional" one
-instead.
+First, I clarify that I intentionally added a deeper imperative component to the
+"imperative" snippet below to highlight the contrast with the "more functional"
+version. However, I refactored my original code from a "saner imperative"
+version.
 
-So, we'll need to start analysing both versions, knowing that
-[everything is relative](everything-is-relative), so I'm measuring here
-"imperative" vs "more functional" **with respect** to this code snippet or
-problem, and that these observations still apply to universal cases.
+So, we'll start analyzing both, recalling that
+[everything is relative](everything-is-relative), so I'm measuring the
+"imperative" versus "more functional" **with respect** to this snippet or
+problem. These observations are also valid to apply to universal cases.
 
 The difference between both snippets is the following:
 
@@ -85,8 +84,11 @@ function fetchTree(path: string): Promise<TreeNode> {
 
 The refactored code (a.k.a. "more functional") **is not functional**, but it
 gets close. This is to avoid introducing functional abstractions like pipes,
-monads, etc., on top of JS/TS which is not a functional language but a mixed
-one as the underlying project is pretty short.
+monads, etc., on top of a non-functional (mixed) language like JS/TS since the
+underlying project was pretty short.
+
+The code difference given above is the target of this case study to be strongly
+addressed here.
 
 ## Getting Started on Noticing Details
 
