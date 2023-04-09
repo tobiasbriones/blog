@@ -800,23 +800,39 @@ simple struct.
 
 ## After Advanced Refactorizations
 
-**The more you make a program better, the more functional it gets**, that's
+**The more you make a program better, the more functional it gets**, and that's
 because **FP is the original paradigm**, and all other paradigms are pragmatic
-alternatives.
+*alternatives*.
 
-Another good one I know a lot from experience is that **the more I refactor code
-to improve it the more domain-specific it gets**, and FP is clearly the natural
-way to go for DSLs.
+Another relevant conclusion I know much from experience is that **the more I
+refactor code to improve it, the more domain-specific it gets**, and FP is
+clearly the natural way to go for DSLs[^x].
 
-I used to be quite aligned with Java as an OO approach (still have my good
-reasons about Java but no OO) but I came to understand those "clever" ways of
-programming are **just intellectual distractions**.
+[^x]: DSLs are robust (engineering grade), high-level (declarative), and
+    require first-class domain expertise (i.e. to know what you're doing) which
+    are all perfect requirements to go fully functional
+
+I used to be pretty much aligned with Java as an OO approach (although I still
+have my good reasons about Java but not about OOP/OOD), but I came to understand
+those "clever" ways of programming are **just intellectual distractions**.
 
 So, my favorite phrase I use to teach others or tell my story is that the
-**simplest designs are the best** and FP is all about simplicity.
+**simplest designs are the best**, and FP is all about simplicity[^x].
+
+[^x]: This is also applied in general computer programming as for example, a
+    common thought about using (modern) procedural instead of OO as it's much
+    simpler, but in the end, understanding FP will enable you to have this 
+    skill of applying simplicity anywhere you go
 
 Even if a functional program is a mess, it can **be factually refactored**
-as FP is algebra and homogeneous, but alternative paradigms can't.
+as FP is algebraic and homogeneous, but alternative paradigms can't[^x].
+
+[^x]: FP attempts to map math 1:1 to computer programming so FP is algebraic and
+    homogeneous or pure like math so that property of closure keeps it
+    functional (e.g. `FP + FP is FP`) (what real engineering is about) unlike
+    heterogeneous languages with no closure (e.g. `OO + FP is mixed`) that can
+    only consist of workarounds or subjective pseudoscience or opinion-based
+    development that goes nowhere (e.g. what businesses are about)
 
 ## Leveraging FP as the Universal Approach It Is
 
