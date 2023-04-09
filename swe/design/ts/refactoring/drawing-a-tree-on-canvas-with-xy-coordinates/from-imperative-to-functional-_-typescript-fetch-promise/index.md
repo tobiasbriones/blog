@@ -155,6 +155,21 @@ reason (bounded to one function hopefully), **then it's the only way
 still superior as it would get to make it way more robust and cleaner altogether
 by eliminating the imperative component.
 
+So, using `async`-`await` is advantageous only when code has to be imperative,
+but imperative code has to be refactored what usually turns it into mixed,
+and mixed programming is horrendous[^x], so we need to aim to go functional as
+much as possible, so that implies that `async`-`await` is to be avoided
+altogether.
+
+[^x]: Heterogeneous code is horrible, just look at our imperative snippet
+    that has many "jumps", and for example, some Kotlin codebases that mix
+    declarative with imperative which proves how horrible is mixing
+    paradigms, e.g. while FP has (strong) abstractions, a mix of declarative
+    with imperative makes Kotlin look like a general-purpose scripting
+    language like Python with many "jumps" when a random programmer just
+    writes code "that just works", so it's key to go functional to remove
+    those "jumps" as FP is homogeneous
+
 ### Mutable Variable
 
 Usage of *mutable* variable `tree` for returning the function value:
