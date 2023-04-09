@@ -22,7 +22,7 @@ This fetch request gets a `JSON` value that models a tree data structure to be
 represented later by `HTMLCanvasElement`.
 
 Both versions are correct and do the same, but the "more functional" version
-still has some imperative style because JS/TS is not a functional language but
+still has some imperative style because JS/TS is not a functional language, but
 the difference **is clear** again.
 
 ## Difference
