@@ -6,12 +6,16 @@
 
 ![From Imperative to Functional: TypeScript Fetch Promise](from-imperative-to-functional-_-typescript-fetch-promise.png)
 
+Refactoring code from its imperative version to a more functional one improves
+its engineering grade, as demonstrated in the following observations made to a
+simple fetch request.
+
 This
 [gist](https://gist.github.com/tobiasbriones/544350fc301ffe32c1dd64d2f6ec6d81)
-and the following observations show how code refactorized to more-functional is 
-superior to its imperative version in both general and particular terms to
-this snippet that performs a simple fetch request to get a `JSON` value that 
-models a tree data structure to be represented later by `HTMLCanvasElement`.
+contains context about the source code.
+
+The fetch request gets a `JSON` value that models a tree data structure to be
+represented later by `HTMLCanvasElement`.
 
 Both versions are correct and do the same, but the "functional" version
 still has some imperative style because JS/TS is not a functional language but
