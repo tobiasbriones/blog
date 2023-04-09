@@ -37,11 +37,58 @@ and need to recover uncommitted local changes.
 
 ### Recovering File History From Local Changes
 
+This happened to me when I was redesigning the initial codebase, and I was ready
+with changes to save them, but a local error occurred which interrupted my
+normal workflow.
+
+I was working with several packages and I just can't apply a ball-of-mud [^x]
+commit. As a professional engineer I have to understand what I'm doing (a.k.a.
+domain expert), so I can also communicate more efficiently [^x].
+
+[^x]: Ball of mud or spaghetti careless design
+
+[^x]: I used this technique in another project for a tech interview I was
+    immediately hired since I'm able to go back and forth with my IDE and use
+    commits to explain what/why/how/when I did something, and these traits
+    make you different from the crowd $$~98.5%$$ of other applicants who got
+    rejected that year
+
+Sometimes commits should be deferred for later since we're not sure about
+changes, and we're still in a PoC[^x] stage, and committing changes to then
+commit a change to uncommit them later and them commit them again is a whole
+mess 😵[^x].
+
+[^x]: PoC stands for Proof of Concept
+
+[^x]: I can tell horror stories they've done with commits since is trivial
+    to come up with unprofessional devs or so-called "engineers" these days
+
+Once I had working changes, I applied some commits that follow good principles
+so the project history grows smoothly or highly cohesively. Sometimes we can't
+afford to do this $$100%$$ but it's fine, that's why engineers *design* and
+mathematicians *model* (I'm both 😸).
+
+Now, it's interesting that I found a realistic issue: for some reason — related
+to Go tools I guess — I wasn't able to go back (CTRL+Z) and "lost" what I
+did in that file:
+
 ![Local History: Cannot Undo](images/local-history-.-cannot-undo.png)
 
 <figcaption>
 <p align="center"><strong>Local History: Cannot Undo</strong></p>
 </figcaption>
+
+I'm not afraid of those kinds of issues happening because I know I'm backed
+with my professional experience and professional tools! So this is a normal
+part of my routine[^x].
+
+[^x]: Being experienced with tools is important to achieve this and that's
+    why I chose IntelliJ products as I'm relatively well-versed and
+    extremely familiar with them
+
+After you have the issue, you go right click to the affecting file >
+**Local History** > **Show History**, and then you get a git history 
+the IDE (any modern IDE or text editor) creates under the hood:
 
 ![Local History](images/local-history.png)
 
@@ -55,6 +102,8 @@ and need to recover uncommitted local changes.
 <p align="center"><strong>Local History: Local Diff</strong></p>
 </figcaption>
 
+Then you can recover your local changes and move on:
+
 ![Local History: Commit 1](images/local-history-.-commit-1.png)
 
 <figcaption>
@@ -66,3 +115,7 @@ and need to recover uncommitted local changes.
 <figcaption>
 <p align="center"><strong>Local History: Commit 2</strong></p>
 </figcaption>
+
+Goland helped me this way obtain unversioned modifications straightforwardly
+and safely, and this feature has also been useful once in a while other times 
+ago.
