@@ -170,6 +170,41 @@ altogether.
     writes code "that just works", so it's key to go functional to remove
     those "jumps" as FP is homogeneous
 
+#### Rust has Async Await
+
+An `async`-`await` model can be found in Rust too, but recall that Rust is a
+system language, so it's imperative and stateful where this kind of
+machinery plays a role there.
+
+But why use such low-level concepts in languages like TS? Even so, Rust's
+`async`-`await` is more functional than that of TS —a supposedly "high"-level
+language.
+
+It can be noticed that Rust's `await` is more functional because it removes the
+annoying whitespaces: `const res = await fetch(path);` vs
+`let res = reqwest::get(path).await?;`. That stance is more functional as it
+lacks the stupid whitespace[^x] in between `await` and `fetch` found in the TS
+line that just fragments the code even more by making it less cohesive.
+
+[^x]: Whitespaces are unfriendly characters for computer programming
+
+The question mark operator `?` is also an example of how the fragmentation
+said above is avoided in Rust error handling by focusing on functional features
+first, so programs are built highly-cohesively. In that case, `?` avoids
+fragmenting the function from "might throw" and "doesn't trow", the same that
+happens when this idiotic asynchronous model "tint" functions leading to the
+"`async`-`await` hell".
+
+One peculiarity of Rust is that despite being an imperative system language,
+it can successfully leverage functional style within imperative code because of
+its powerful abstractions[^x].
+
+[^x]: From what I said about how mix code is horrendous, we can see 
+    that if we aim for a functional centric approach we can obtain powerful 
+    abstractions found in languages like Rust and so avoid the horrible hassle 
+    of imperative + declarative that can be easily written in poorly designed 
+    languages
+
 ### Mutable Variable
 
 Usage of *mutable* variable `tree` for returning the function value:
