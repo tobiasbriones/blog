@@ -1076,6 +1076,10 @@ functional features obtained from the provided code snippets.
 [Algebraic Effects for Functional Programming (Type Directed Compilation of Row-typed Algebraic Effects)](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/algeff-tr-2016-v2.pdf).
 Microsoft Research, pp. 1, 4, 5, 14.
 
+[2] The Rust Team. (2023, January). Operator expressions. The Rust Reference.
+Retrieved April 9, 2023, from
+[Operator expressions](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-question-mark-operator).
+
 ## Bibliography
 
 - [Propping Threads Up by Missing Their Point \| State of Loom \| OpenJDK](https://cr.openjdk.org/~rpressler/loom/loom/sol1_part1.html#propping-threads-up-by-missing-their-point)
