@@ -497,6 +497,54 @@ facts (FP)** so programmers who only know imperative will never be engineers.
 This observation demonstrated how imperative code gets to be highly ambiguous
 and opinion based.
 
+#### Why Keep Writing Workarounds?
+
+If stupid `try`-`catch` blocks are supposed to handle "errors" but they even
+give more errors because the designers (if anyone even cared to do it) of these
+features took pragmatic decisions back in that time[^x], but now we have
+much technology in $$2023$$, so **why keep writing cheap software like that?**.
+
+[^x]: E.g. many mainstream languages we use like JS and PHP weren't designed at
+    all from the beginning so computer programming has always been far away from
+    engineering grade
+
+The answer to the above question is that **we shouldn't keep writing code like
+that**. Even imperative (modern) languages like Rust replace all these "bad ol'
+tricks" with correct functional approaches (e.g. sum types, pattern matching),
+more of these "imperative, OO old tricks" are not found at all in many
+turing-complete languages, e.g. there are no exceptions or `try`-`catch` in
+Rust, Go, and functional languages at all and were replaced with tuples, enum,
+ADT, i.e. **factual functional features that should've been there since the
+beginning**.
+
+Unfortunately, those marvelous and basic functional features have been shadowed
+because absolute nonsense analogies like OOP/OOD[^x] have been marketable.
+
+[^x]: There are "geniuses" who compare biological inheritance with Java's, so
+    according to their "rationale" 🙈 if at all, we can say that, when your 
+    grandma sneezes your nose also itches because both are tightly-coupled by
+    being a "child" who "inherits" from you're "superiors" 🤣 
+
+How come you'll tell me you're a software "engineer" with degrees, etc., but
+don't even know what a plain simple sum type is? What a disappointment, it's
+extremely hard to get good professionals in general, but good software engineers
+are extremely harder to get, and if this is not depressing enough, add the sad
+fact that from my experience, some or many startups hire you as software
+"developer"/"engineer" but the actual job requires a plain idiot who knows more
+about the company product and Google Docs with so-called "soft skills" than 5
+years of CS/CSE career, you know, you need to be "profitable" for the
+~~company~~ family[^x].
+
+[^x]: Fun fact 🐯: I advise to just go listen a good ol' title like
+    "Celebration by David Guetta/Madonna" which was the song that played when
+    writing this, so you can clean up your thoughts 🦾 from these sad facts
+
+After many developments, we don't need to keep writing code like that, since we
+can leverage basic functional concepts with better tools and decent engineers to
+get rid of many bad old workarounds. Moreover, we need to keep fighting against
+pseudoscience like capitalist and bad programmers to push a healthy engineering
+ecosystem.
+
 #### Enhanced `Try`-`Catch`: `Try` Expression
 
 Now check this out, **there's a version of `try`-`catch` much better than the
