@@ -393,7 +393,12 @@ can be replaced with sum types or monads like Rust does, so there's no
 reason why we should keep using `try`-`catch` blocks in robust software
 development:
 
-- Code only gets more tightly-coupled.
+- It's a side effect that mutates the structure of the function unlike `Result`
+  (a.k.a. the functional way) where functions keep being functions.
+- It fragments functions into two kinds: normal and the ones that `throw`. So we
+  have again a **heterogeneous** system that could otherwise be a *homogeneous*
+  one that returns values like `Result` instead of *procedures* or *methods* 
+  that only yield arbitrary **side effects**.
 - Provokes many mundane workarounds like the mutable variable I said above,
   the `goto` antipattern I mention later, multiple-`return` mess, and
   completely stupid checked/unchecked exceptions (both are terrible).
@@ -405,14 +410,7 @@ development:
   imperative exceptions, and although Go is imperative, its approach is
   returning a *tuple* (a math concept so functional) that works as a poor
   man's `Result` sum type.
-- As always, it fragments functions into two kinds (like the asynchronous
-  item above): normal functions and the ones that `throw` an error. So we
-  have again a **heterogeneous** system that could otherwise be a
-  simple-and-robust *homogeneous* system (i.e. FP) that returns values like
-  `Result` instead of *procedures* or *methods* that only yield
-  arbitrary **side effects**.
-- Therefore, code gets quite messy, worked-around, and simple FP
-  approaches perfectly replace this archaic feature.
+- Code only gets more tightly-coupled.
 
 **Notice** how throwing from a `try`-`catch` block **is an antipattern** as it
 becomes a `goto`[^2][^3].
@@ -420,7 +418,7 @@ becomes a `goto`[^2][^3].
 [^2]: You can learn plenty of these details from IntelliJ IDEA inspections
 
 [^3]: Understanding these details are what make you stand away from bad
-  programmers and make you a competent one
+    programmers and make you a competent one
 
 #### Explaining the GoTo Antipattern
 
