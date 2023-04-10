@@ -295,9 +295,9 @@ Handlers</strong></p>
 > **Source:** Algebraic Effects for Functional Programming \| *Microsoft
 > Research* [1] (under fair use)
 
-Notice how **the type/effect typing** is what defines the asynchronous 
-behavior. Strong types are proper of functional languages that solve the problem 
-roots.
+Notice how **the type/effect-typing** is what defines the asynchronous 
+behavior. Strong types are proper to functional languages that solve the 
+problem roots.
 
 Common imperative constructs like `async`-`await` might have some relation 
 to functional concepts like Haskell's `do` notation or algebraic effects, 
