@@ -440,27 +440,62 @@ async function foo(path) {
 }
 ```
 
-**Notice** also how unclear imperative code is: if you copy-paste (popular
-among programmers, even more now with "ChatGPT") the code above, it can either
-(pun intended) `throw` if it's not into a scoped `try` block or else `goto`
-the immediate `catch` block otherwise like the snippet above.
+#### Ambiguity in Imperative Code
 
-So as I say in [maintainability](#maintainability), if stupid `try`-`catch`
-blocks are supposed to handle "errors" but we have all this working around
-setups because the designers (if anyone even cared to do it) of these features
-took pragmatic decisions back in that time (e.g. many mainstream languages we
-use like JS and PHP weren't designed at all from the beginning), but now we have
-much technology in $$2023$$ so **why keep writing cheap software like that when
-we can employ informed FP?**.
+**Notice** how unclear imperative code is: if you copy-paste[^x] the code above,
+it can either (pun intended) `throw` if it's not into a scoped `try` block or
+else `goto` the immediate `catch` block otherwise like the snippet above. That
+is:
 
-The answer to the above question is that we shouldn't keep writing code like
-that. Even imperative (modern) languages like Rust replace all these "bad OL'
-tricks" with correct functional approaches (e.g. sum types, pattern matching),
-more of these "imperative, OO old tricks" are not found at all in many
-turing-complete languages, e.g. there are no exceptions or `try`-`catch` in
-Rust, Go, and functional languages at all and were replaced with tuples, enum,
-ADT, i.e. **factual functional features that should've been there since the
-beginning**.
+[^x]: Popular among programmers, even more now with the popular "ChatGPT"
+
+```js
+// If you copy-paste the red flag it gives more side effects: //
+
+// This function "throws" as the keyword "throw" implies
+function foo() {
+  // ...
+  throw Error(`Response not OK: ${ res.statusText }`);
+}
+
+// This other version of the function above doesn't "throw" anymore!
+// Even though we're still using the ambigous "throw"/"goto" keyword
+function foo2() {
+  try {
+    // ... "get stuff done" 😂
+    throw Error('Just add a try catch to the main function 🤣'); // 🚩 Go to catch
+  }
+  catch(reason) {
+    // "do whatever it works" 🦍
+    // You can handle or rethrow
+  }
+}
+```
+
+It sounds like a joke 😂, but you'll find the idiot who will shamelessly tell 
+you "but I like to use this antipatter" 🦍, what shows how opinion-based 
+ordinary programming is and that programmers are not engineers. 
+
+They could also tell you that "`try`-`catch` is an 'abstraction' for imperative
+to avoid `if`-`else` spaghetti" as well as generic arguments they always say 
+like "you don't know how to use it" that can only prove our point further.
+
+If `try`-`catch`, OOP, etc., is an "abstraction" to improve code is because it
+actually improves **the symptoms** or the mess like `if`-`else` or mutable state
+that is already there, but not the real problems[^x].
+
+[^x]: Visualizing in your daily life when you attend the symptoms of problems is
+    pretty interesting and helps you have this skill of spotting problem
+    symptoms
+
+The imperative paradigm is a workaround factory that **builds solutions for the
+symptoms which makes it an opinion-based paradigm**.
+
+**What makes you an engineer is the ability to take technical decisions from
+facts (FP)** so programmers who only know imperative will never be engineers.
+
+This observation demonstrated how imperative code gets to be highly ambiguous
+and opinion based.
 
 #### Enhanced `Try`-`Catch`: `Try` Expression
 
