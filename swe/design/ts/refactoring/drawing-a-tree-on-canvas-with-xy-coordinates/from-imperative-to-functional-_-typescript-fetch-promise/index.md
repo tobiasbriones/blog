@@ -433,7 +433,7 @@ async function foo(path) {
     if (res.ok) { /* ... */ }
     else {
       // 🚩 Go to the catch block, unclear whether it actually throws or catches
-      throw Error(`Response not OK: ${ res.statusText }`)
+      throw Error(`Response not OK: ${ res.statusText }`);
     }
   }
   catch (reason) { /* ... */ }
