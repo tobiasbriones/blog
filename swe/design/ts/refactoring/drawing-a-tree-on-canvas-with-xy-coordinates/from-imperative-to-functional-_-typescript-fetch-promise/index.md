@@ -545,7 +545,7 @@ get rid of many bad old workarounds. Moreover, we need to keep fighting against
 pseudoscience like capitalist and bad programmers to push a healthy engineering
 ecosystem.
 
-#### Enhanced `Try`-`Catch`: `Try` Expression
+#### Enhanced Try Catch: Try Expression
 
 Now check this out, **there's a version of `try`-`catch` much better than the
 old one** most programmers are used to, but that only shows (again) that
@@ -585,8 +585,8 @@ async function fetchTree(path) {
 expressions</strong></p>
 </figcaption>
 
-If TS had `try` and `if` expressions (like Kotlin) we'd solve the "mutable 
-var" and "multiple-return mess" straightforwardly with a declarative (so more 
+If TS had `try` and `if` expressions (like Kotlin) we'd solve the "mutable
+var" and "multiple-return mess" straightforwardly with a declarative (so more
 domain-specific and functional) approach.
 
 ```ts
@@ -612,12 +612,12 @@ catch (reason) {
 expressions removing boilerplate</strong></p>
 </figcaption>
 
-In this previous snippet you can see how the imperative `return` boilerplate 
-is removed, so we have now some kind of **matching expression** (see the `=` 
+In this previous snippet you can see how the imperative `return` boilerplate
+is removed, so we have now some kind of **matching expression** (see the `=`
 operator as a `match`) that factually increased the quality of the code by
 removing (imperative) boilerplate and converging to a more functional approach.
 
-Also notice **how even boilerplate like `;` gets eliminated as well because 
+Also notice **how even boilerplate like `;` gets eliminated as well because
 we're transforming code from imperative to declarative**. I also intentionally
 put `;` in imperative lines like `const res = await fetch(path);`.
 
