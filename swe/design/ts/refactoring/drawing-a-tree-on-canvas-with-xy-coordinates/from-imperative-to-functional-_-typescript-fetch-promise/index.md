@@ -928,6 +928,12 @@ knowledge that was applied in this case study to address relevant concerns
 about the TS fetch API by observing the underlying imperative and more
 functional features obtained from the provided code snippets.
 
+## References
+
+[1] Leijen, D. L. (2016). 
+[Algebraic Effects for Functional Programming (Type Directed Compilation of Row-typed Algebraic Effects)](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/algeff-tr-2016-v2.pdf).
+Microsoft Research, pp. 1, 4, 5, 14.
+
 ## Bibliography
 
 - [Propping Threads Up by Missing Their Point \| State of Loom \| OpenJDK](https://cr.openjdk.org/~rpressler/loom/loom/sol1_part1.html#propping-threads-up-by-missing-their-point)
