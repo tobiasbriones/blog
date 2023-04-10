@@ -674,6 +674,87 @@ you're failing to build engineering because even if the taken approach is
 good for the problem someone else (guaranteed) will always get zealot about
 it so what you're doing is who-knows-who-opinion-based development instead.
 
+#### The Error Propagation Expression for Result
+
+Rust doesn't have exceptions that mutate the structure of the function, but
+instead it uses the `Result` type to naturally handle errors even in an
+imperative approach that was figured out to play well with a core of functional
+designs.
+
+The question mark operator or error propagation expression `?` in Rust allows us
+to [2]:
+
+- Get the value if `Result` is `Ok`, or
+- Return the error to the calling function
+
+```rust
+fn try_to_parse() -> Result<i32, ParseIntError> {
+    let x: i32 = "123".parse()?; // x = 123
+    let y: i32 = "24a".parse()?; // returns an Err() immediately
+    Ok(x + y)                    // Doesn't run.
+}
+```
+
+<figcaption>
+<p align="center"><strong>Error Propagation in Rust</strong></p>
+<p align="center">Source: Operator Expressions | 
+<it>The Rust Reference</it> [2] (under MIT)</p>
+</figcaption>
+
+If we don't use the `?` expression we'd have the following equivalent
+boilerplate:
+
+```rust
+fn try_to_parse() -> Result<i32, ParseIntError> {
+    let x = match "123".parse::<i32>() {
+        Ok(val) => val,
+        Err(err) => return Err(err),
+    };
+    let y = match "24a".parse::<i32>() {
+        Ok(val) => val,
+        Err(err) => return Err(err), // Returns to try_to_parse
+    };
+    Ok(x + y)
+}
+```
+
+<figcaption>
+<p align="center"><strong>Rust Example without the Error Propagation 
+Expression</strong></p>
+</figcaption>
+
+That can be written in Go as follows:
+
+```go
+func tryToParse() (int, error) {
+    x, err := strconv.Atoi("123")
+    if err != nil {
+        return 0, err
+    }
+
+    y, err := strconv.Atoi("24a")
+    if err != nil {
+        return 0, err
+    }
+
+    return x + y, nil
+}
+```
+
+<figcaption>
+<p align="center"><strong>Way to Handle Errors in Go</strong></p>
+</figcaption>
+
+The Go code is convoluted and mediocre, but *it's not a side effect and is
+still simple!* [^x].
+
+[^x]: That's the way to handle errors in Go, recall that Go is an opinionated
+    language as well
+
+Therefore, we still have normal functions with a homogeneous approach where
+everything (including errors) is a value as equal instead of side effects
+like exceptions.
+
 #### Throwing Try Catch and Heterogeneous Away
 
 There's no reason to use a heterogeneous workaround that **differentiates
