@@ -240,6 +240,77 @@ Now, regarding TS, what can be further done to get out of the workaround circle
 is to use Purescript —a purely functional language aimed for replacing JS that
 resembles Haskell.
 
+#### Going Further with Algebraic Effects
+
+FP is becoming more required and there's also research about what can be done to
+correctly solve the problems of imperative `async`-`await`, and `try`-`catch`
+with algebraic effects.
+
+This kind of serious/scientific research can't happen with alternative
+paradigms like OOP because they're mere opinion-based development, so it's
+foolish for us to lose time on that pseudoscience.
+
+In the developments of functional in response to its usefulness, we can find
+the following insight:
+
+> Algebraic effect handlers, are recently gaining in popularity as a purely
+> functional approach to modeling effects...
+> 
+> ...In particular, we show how algebraic effects generalize over common 
+> constructs like exception handling, state, iterators and async-await...
+>
+> **Source:** Algebraic Effects for Functional Programming \| *Microsoft
+> Research* [1] (under fair use)
+
+```koka
+effect async {
+    readline() : string
+}
+
+fun ask-age() {
+    println(”what is your name?”)
+    val name = readline() // asynchronous!
+    println(”hello ” + name)
+}
+```
+
+<figcaption>
+<p align="center"><strong>Code Snippets for Algebraic Effect 
+Handlers</strong></p>
+<p align="center">Source: Algebraic Effects for Functional Programming | 
+<it>Microsoft Research</it>[1] (under fair use)</p>
+</figcaption>
+
+> ...Note that even though the previous example is now asynchronous, the program
+> is written in an entirely straightforward manner where the type of the program
+> signifies asynchronicity. In async-await style programming an async call site
+> is signaled by an await keyword and each asynchronous method with an async
+> keyword. This can be helpful for understanding the code. With our effect
+> typing, the type signifies the effects code can have and the asynchronicity is
+> immediately apparent through the inferred types of any expression...
+>
+> Algebraic effect handlers concisely describe many complex control-flow
+> constructs in various programming languages.
+>
+> **Source:** Algebraic Effects for Functional Programming \| *Microsoft
+> Research* [1] (under fair use)
+
+Notice how **the type/effect typing** is what defines the asynchronous 
+behavior. Strong types are proper of functional languages that solve the problem 
+roots.
+
+Common imperative constructs like `async`-`await` might have some relation 
+to functional concepts like Haskell's `do` notation or algebraic effects, 
+but they're pretty lame and esoteric narrowed down to "try to enhance here" 
+imperative tricks.
+
+JS `Promise` are not monads, and `async`-`await` is not an algebraic effect 
+(JS "type" system is a meme so no way in JS 😁).
+
+Functional type systems address problems correctly, so we need to look for 
+languages with this characteristic, like Purescript, if, for instance, we want 
+to throw JS away.
+
 ### Mutable Variable
 
 Usage of *mutable* variable `tree` for returning the function value:
