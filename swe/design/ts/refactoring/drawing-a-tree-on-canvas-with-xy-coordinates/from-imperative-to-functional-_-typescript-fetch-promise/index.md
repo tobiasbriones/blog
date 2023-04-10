@@ -755,6 +755,20 @@ Therefore, we still have normal functions with a homogeneous approach where
 everything (including errors) is a value as equal instead of side effects
 like exceptions.
 
+#### Trying to Refactor Try Catch
+
+As vastly demonstrated previously, the more we refactor imperative code, the
+more declarative and functional it gets, by seeking for simpler and more
+informed approaches.
+
+Some languages have the imperative stance by nature, but is clear how functional
+is **the guide** to make them better in all directions.
+
+When *trying to refactor `try`-`catch`* we found that, for example, 
+`try`-expressions were the next step after plain old imperative `try`-`catch`
+blocks, but then, this actually ends up converging to declarative functional 
+programming and leaving alternative paradigms all the way behind.
+
 #### Throwing Try Catch and Heterogeneous Away
 
 There's no reason to use a heterogeneous workaround that **differentiates
