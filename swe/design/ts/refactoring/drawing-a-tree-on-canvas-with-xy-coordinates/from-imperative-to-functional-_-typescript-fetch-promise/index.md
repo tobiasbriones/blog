@@ -617,9 +617,9 @@ is removed, so we have now some kind of **matching expression** (see the `=`
 operator as a `match`) that factually increased the quality of the code by
 removing (imperative) boilerplate and converging to a more functional approach.
 
-Also notice how even boilerplate like `;` gets eliminated as well because 
-*we're transforming code from imperative to declarative*. I also 
-intentionally put `;` in imperative lines like `const res = await fetch(path);`.
+Also notice **how even boilerplate like `;` gets eliminated as well because 
+we're transforming code from imperative to declarative**. I also intentionally
+put `;` in imperative lines like `const res = await fetch(path);`.
 
 Here we're already noticing a 
 [paradigm shift challenge](#the-paradigm-shift-at-these-stages).
