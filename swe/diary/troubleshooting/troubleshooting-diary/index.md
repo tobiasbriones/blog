@@ -16,3 +16,7 @@ software engineer with proposed solutions I used to fix them.
 ## Dev
 
 This section lists troubleshooting I faced during dev projects.
+
+### Course Project
+
+Troubleshooting from course projects are listed next.
