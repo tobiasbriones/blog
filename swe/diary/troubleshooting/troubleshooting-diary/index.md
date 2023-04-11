@@ -25,3 +25,7 @@ Troubleshooting from course projects are listed next.
 
 Documentation:
 [Distributed Text File System | CP | DEV](https://dev.mathsoftware.engineer/distributed-text-file-system---cp).
+
+## Miscellaneous
+
+I list random troubleshooting experiences I face next.
