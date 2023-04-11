@@ -13,7 +13,7 @@ ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/diary
 ![Cover](images/cover.png)
 
 
-Image from [Pixabay](images#cover")
+Image from [Pixabay](/troubleshooting-diary/images#cover)
 
 
 ---
