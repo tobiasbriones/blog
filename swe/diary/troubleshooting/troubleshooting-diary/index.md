@@ -20,3 +20,8 @@ This section lists troubleshooting I faced during dev projects.
 ### Course Project
 
 Troubleshooting from course projects are listed next.
+
+#### Distributed Text File System
+
+Documentation:
+[Distributed Text File System | CP | DEV](https://dev.mathsoftware.engineer/distributed-text-file-system---cp).
