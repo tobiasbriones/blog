@@ -6,17 +6,7 @@
 
 ![Cover](images/cover.png)
 
-<figcaption>
-
-Image from
-<it>
-<a href="https://pixabay.com/illustrations/rubiks-cube-cube-rubik-puzzle-toy-2583645">
-Pixabay
-</a>
-</it>
-by <a href="https://pixabay.com/users/alexantropov86-2691829">AlexAntropov86</a>
-
-</figcaption>
+Image from [Pixabay](/troubleshooting-diary/images#cover)
 
 ---
 
