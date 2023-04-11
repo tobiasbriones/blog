@@ -29,3 +29,8 @@ Documentation:
 ## Miscellaneous
 
 I list random troubleshooting experiences I face next.
+
+### Math Software
+
+The next issues are related to mathematical software like numerical
+computations, etc.
