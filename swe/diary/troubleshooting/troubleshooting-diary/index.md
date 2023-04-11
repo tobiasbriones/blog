@@ -12,3 +12,7 @@ Image from [Pixabay](images#cover)
 
 In this article, I will document and keep updating routine problems I face as a
 software engineer with proposed solutions I used to fix them.
+
+## Dev
+
+This section lists troubleshooting I faced during dev projects.
