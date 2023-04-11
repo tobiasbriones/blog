@@ -2,7 +2,7 @@
 
 ## Cover
 
-<img src="cover.png" width="160px">
+<img src="cover.png" alt="cover.png" width="160" />
 
 [Cover](cover.png):
 
