@@ -11,16 +11,9 @@ ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/diary
 
 ![Cover](images/cover.png)
 
-<figcaption>
 
-Image from
-<it>
-<a href="images#cover">
-Pixabay
-</a>
-</it>
+Image from [Pixabay](images#cover")
 
-</figcaption>
 
 ---
 
