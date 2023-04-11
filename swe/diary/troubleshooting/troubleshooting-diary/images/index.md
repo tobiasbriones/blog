@@ -1,3 +1,8 @@
+---
+permalink: /troubleshooting-diary/images
+title: Notice | Troubleshooting Diary
+---
+
 # Notice
 
 ## Cover
