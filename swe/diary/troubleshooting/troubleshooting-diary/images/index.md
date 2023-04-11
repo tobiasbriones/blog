@@ -7,6 +7,8 @@ title: Notice | Troubleshooting Diary
 
 ## Cover
 
+<img src="cover.png" width="160px">
+
 [Cover](cover.png):
 
 - From: 
