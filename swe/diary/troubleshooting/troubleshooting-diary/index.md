@@ -26,6 +26,16 @@ Troubleshooting from course projects are listed next.
 Documentation:
 [Distributed Text File System | CP | DEV](https://dev.mathsoftware.engineer/distributed-text-file-system---cp).
 
+Addressed issues:
+
+- **Binary Incompatibility Issues:** When refactoring app package name from
+  `io.github.tobiasbriones` to `com.github.tobiasbriones`, and loading
+  older serialized objects from FS.
+- **Storage:** When the linux container running a Java app runs out of space,
+  what gives `java.io.IOException: No space left on device`.
+- **Fix IntelliJ Gradle JVM:** I needed to change the Gradle JVM version
+  used by IntellJ IDEA build tools to the correct version.
+
 ## Miscellaneous
 
 I list random troubleshooting experiences I face next.
