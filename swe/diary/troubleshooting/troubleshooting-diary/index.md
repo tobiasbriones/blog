@@ -10,7 +10,7 @@
 
 Image from
 <it>
-<a href="https://pixabay.com/illustrations/rubiks-cube-cube-rubik-puzzle-toy-2583645">
+<a href="images#cover">
 Pixabay
 </a>
 </it>
