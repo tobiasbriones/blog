@@ -40,7 +40,7 @@ Addressed issues:
 
 I list random troubleshooting experiences I face next.
 
-### Math Software
+### Machine Learning
 
 The next issues are related to mathematical software like numerical
 computations, etc.
