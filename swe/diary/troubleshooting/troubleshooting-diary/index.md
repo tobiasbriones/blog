@@ -6,7 +6,7 @@
 
 ![Cover](images/cover.png)
 
-Image from [Pixabay](/troubleshooting-diary/images#cover)
+Image from [Pixabay](images#cover)
 
 ---
 
