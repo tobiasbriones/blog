@@ -19,3 +19,6 @@ by <a href="https://pixabay.com/users/alexantropov86-2691829">AlexAntropov86</a>
 </figcaption>
 
 ---
+
+In this article, I will document and keep updating routine problems I face as a
+software engineer with proposed solutions I used to fix them.
