@@ -33,10 +33,53 @@ following the reverse DNS Java convention for app packages. You'll need the
 (`sierpinskipetal`).
 
 It's important to note the `module-info.java` in the module's source root
-(`src` dir), as we use Java modules to import JavaFX mods in this case. 
-Exporting your root package is also necessary, as JavaFX is a framework that 
+(`src` dir), as we use Java modules to import JavaFX mods in this case.
+Exporting your root package is also necessary, as JavaFX is a framework that
 uses reflection and needs to find your `Main` class.
 
 With this, Java and JavaFX should be available on your machine as well as the
 dev tools, environment, and starting project, so we can start writing the JavaFX
 code.
+
+### Hello World
+
+Our Hello World app looks like the following:
+
+```java
+public class Main extends Application {
+    private static final double WINDOW_WIDTH = 960.0;
+    private static final double WINDOW_HEIGHT = 640.0;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        var root = new VBox();
+        var scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+        var btn = new Button();
+
+        primaryStage.setTitle("Sierpinski Petal");
+
+        btn.setText("Hello World");
+        btn.setOnAction(actionEvent -> System.out.println("Hello World"));
+
+        root.setAlignment(Pos.CENTER);
+        root.getChildren().add(btn);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Hello World Program</strong></p>
+</figcaption>
+
+![Hello World](hello-world.png)
+
+<figcaption>
+<p align="center"><strong>Hello World Scene</strong></p>
+</figcaption>
