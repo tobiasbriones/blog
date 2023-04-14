@@ -60,6 +60,13 @@ keep using, my preferred choice as copyright holder was always BSD-3, which is a
 more conformable fit now that source code is more present in my written
 articles.
 
+Today, I dropped the MIT License in favor of the preferred BSD-3-Clause License
+for source code like code snippets or DSLs written inside articles, so that 
+content is still under the same CC-BY-4.0 License, but source code is now under
+the BSD-3-Clause License which matches better with the source-code-richer
+resources available now in the platform by being more consistent regarding 
+already established standards.
+
 ## Bibliography
 
 - [Licenses \| Open Source Initiative](https://opensource.org/license)
