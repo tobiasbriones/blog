@@ -45,3 +45,14 @@ an informative update.
 The preference for BSD-3-Clause is because *it's more academically friendly*
 regarding the **explicit** clauses about **attribution for both source code
 and binary forms, as well as the non-endorsement clause**.
+
+## Bibliography
+
+- [Licenses \| Open Source Initiative](https://opensource.org/license)
+- [The 3-Clause BSD License \| Open Source Initiative](https://opensource.org/license/bsd-3-clause)
+- [The MIT License \| Open Source Initiative](https://opensource.org/license/mit)
+- [Attribution 4.0 International (CC BY 4.0) \| Creative Commons](https://creativecommons.org/licenses/by/4.0)
+- [PR: Add LICENSE-BSD (2023/04/13) \| BLOG \| GitHub Repository](https://github.com/tobiasbriones/blog/pull/31)
+- [Commit: Add LICENSE-MIT (2022/01/01) \| BLOG \| GitHub Repository](https://github.com/tobiasbriones/blog/commit/81b2d2fb17493ea8ce7487f5c4f1132deb2c57d3)
+- [PR: Add LICENSE-BSD (2023/04/13) \| ENGINEER \| GitHub Repository](https://github.com/mathsoftware/engineer/pull/6)
+- [Commit: Initial commit (2021/12/29) \| ENGINEER \| GitHub Repository](https://github.com/mathsoftware/engineer/commit/6186cd2190cfd72937829be1d97585bacb6249f4)
