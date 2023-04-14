@@ -55,6 +55,11 @@ The preference for BSD-3-Clause is because *it's more academically friendly*
 regarding the **explicit** clauses about **attribution for both source code
 and binary forms, as well as the non-endorsement clause**.
 
+Although MIT and some other licenses are great licenses I also use and will
+keep using, my preferred choice as copyright holder was always BSD-3, which is a
+more conformable fit now that source code is more present in my written
+articles.
+
 ## Bibliography
 
 - [Licenses \| Open Source Initiative](https://opensource.org/license)
