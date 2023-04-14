@@ -4,6 +4,9 @@
 
 # License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)
 
+As of now, source code inside articles in MathSoftware.Engineer are licensed 
+under the BSD-3-Clause License, which supersedes the initial MIT License. 
+
 In the beginning, I provided the MIT License to the code snippets of the
 [Blog](/) and [mathsoftware.engineer](https://mathsoftware.engineer) as well.
 This was because I thought articles would contain a vast amount of content but a
