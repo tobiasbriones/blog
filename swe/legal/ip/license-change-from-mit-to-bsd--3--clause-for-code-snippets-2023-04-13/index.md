@@ -31,8 +31,8 @@ projects while leaving MIT for the most ordinary ones [^3].
 
 So, I *usually* provide relevant dev projects (non-articles) with the
 BSD-3-Clause License, and now that source code is getting relevant in article
-projects, I'm getting rid of the MIT License for code snippets in articles, so
-both dev and article projects use the same license for source code.
+projects, I'm getting rid of the MIT License for code snippets in articles, **so
+both dev and article projects use the same license for source code**.
 
 Notice that the existing CC-BY-4.0 License is not affected by any of this as it
 only applies to content. Hence, in addition to the "content license" (e.g., CC),
