@@ -38,6 +38,15 @@ Notice that the existing CC-BY-4.0 License is not affected by any of this as it
 only applies to content. Hence, in addition to the "content license" (e.g., CC),
 I also provide a "source code license" (e.g., BSD).
 
+**For example**, in
+[Drawing a Tree on Canvas with XY Coordinates \| mathsoftware.engineer](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates)
+there's a submodule with a complete web app source code, and also in binary
+form at its
+[web subdirectory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web),
+so that's what I mean about the DSLs. Articles are source code like any other
+app for me (and any modern software development), but the difference is that 
+they also contain content like text or images.
+
 Be aware that the user is always responsible for checking what license they're
 given and complying with it and that **this article is not legal advice** but
 an informative update.
