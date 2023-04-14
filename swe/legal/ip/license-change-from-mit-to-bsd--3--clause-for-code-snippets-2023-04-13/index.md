@@ -29,8 +29,9 @@ Both licenses —MIT and BSD-3-Clause— are pretty similar and permissive, but
 BSD-3-Clause is the license par excellence I've frequently used for relevant
 projects while leaving MIT for the most ordinary ones [^3].
 
-[^3]: My preferred licenses to choose from are among: BSD-3-Clause, MIT, 
-    Apache-2.0, and GPL-3.0-or-later for source code, and CC-BY-4.0 for content
+[^3]: As a copyright holder, when licensing my OSS/free-culture projects, I 
+    choose from my preferred licenses: BSD-3-Clause, MIT, Apache-2.0, and
+    GPL-3.0-or-later for source code, and CC-BY-4.0 for content
 
 So, I *usually* provide relevant dev projects (non-articles) with the
 BSD-3-Clause License, and now that source code is getting relevant in article
