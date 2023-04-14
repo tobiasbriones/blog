@@ -9,7 +9,7 @@
 Tools and project set up is given next, so you can build the basics for
 developing the underlying drawing in JavaFX.
 
-First, make sure to have Java 17+ installed on your development machine. If
+First, make sure to have Java 20+ installed on your development machine. If
 you're using Linux, I recommend using [SDKMAN](https://sdkman.io) for
 [installing Java](https://sdkman.io/usage#installdefault) and managing different
 versions. If you're using Windows, you can download the
