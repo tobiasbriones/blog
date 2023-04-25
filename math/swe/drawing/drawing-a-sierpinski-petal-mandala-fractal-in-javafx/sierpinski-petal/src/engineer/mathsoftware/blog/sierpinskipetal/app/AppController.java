@@ -5,5 +5,13 @@
 package engineer.mathsoftware.blog.sierpinskipetal.app;
 
 class AppController {
-    AppController() {}
+    private AppView view;
+
+    AppController() {
+        this.view = null;
+    }
+
+    void setView(AppView value) {
+        this.view = value;
+    }
 }
