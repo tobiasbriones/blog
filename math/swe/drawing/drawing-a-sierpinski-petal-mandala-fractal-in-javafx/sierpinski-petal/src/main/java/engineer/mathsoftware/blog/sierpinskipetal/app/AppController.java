@@ -14,4 +14,6 @@ class AppController {
     void setView(AppView value) {
         this.view = value;
     }
+
+    void init() {}
 }

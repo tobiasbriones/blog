@@ -6,7 +6,6 @@ package engineer.mathsoftware.blog.sierpinskipetal.app;
 
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 public class AppView {
@@ -19,11 +18,13 @@ public class AppView {
     }
 
     private final VBox view;
+    private final AppCanvasView canvasView;
     private final AppController controller;
 
     private AppView(AppController controller) {
         this.controller = controller;
         this.view = new VBox();
+        this.canvasView = new AppCanvasView(controller);
     }
 
     public Parent getRoot() {
@@ -31,13 +32,12 @@ public class AppView {
     }
 
     public void init() {
-        var btn = new Button();
-
-        btn.setText("Hello World");
-        btn.setOnAction(actionEvent -> System.out.println("Hello World"));
+        canvasView.init();
 
         view.setAlignment(Pos.CENTER);
         view.getChildren()
-            .add(btn);
+            .add(canvasView.getNode());
+
+        controller.init();
     }
 }
