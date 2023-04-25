@@ -94,10 +94,12 @@ public class Main extends Application {
 This package will implement the JavaFX GUI application.
 
 I applied an MVC architectural pattern to design the `app` `package` since the
-GUI part of the application is minimal. Otherwise, I'd use MVP to design JavaFX
-desktop apps. I thought about it, but the tradeoff was remarkable since applying
-MVP for a basic GUI would imply an extra overhead for this article, and I can't
-burn readers with one of my in-house MVP[^x] libs [^x].
+GUI part of the application is minimal. Otherwise, I'd use MVP[^x] to design
+JavaFX desktop apps. I thought about it, but the tradeoff was remarkable since
+applying MVP for a basic GUI would imply an extra overhead for this article, and
+I can't burn readers with one of my in-house MVP[^x] libs [^x].
+
+[^x]: Or MVVM if possible
 
 [^x]: Notice that MVC is a poor old-school design, e.g., it uses concrete
     classes, unlike MVP, which is a bit better and relies on "contract"
