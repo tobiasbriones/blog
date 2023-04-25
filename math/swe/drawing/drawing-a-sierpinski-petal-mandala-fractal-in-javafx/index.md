@@ -97,7 +97,11 @@ I applied an MVC architectural pattern to design the `app` `package` since the
 GUI part of the application is minimal. Otherwise, I'd use MVP to design JavaFX
 desktop apps. I thought about it, but the tradeoff was remarkable since applying
 MVP for a basic GUI would imply an extra overhead for this article, and I can't
-burn readers with one of my in-house MVP libs [^x].
+burn readers with one of my in-house MVP[^x] libs [^x].
+
+[^x]: Notice that MVC is a poor old-school design, e.g., it uses concrete
+    classes, unlike MVP, which is a bit better and relies on "contract"
+    interfaces that enrich our design with better abstractions
 
 [^x]: MVC is a horrible (and most popular out there) pattern I'd only use for
     Android apps I used to write 10 years ago in 2013, but it's good for basic
