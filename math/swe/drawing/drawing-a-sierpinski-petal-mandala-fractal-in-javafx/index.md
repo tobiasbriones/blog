@@ -201,3 +201,30 @@ class AppController {
 </figcaption>
 
 Then, any control logic will be placed there later.
+
+Finally, the `Main` class will look like this (I made the window's height 
+bigger too):
+
+```java
+public class Main extends Application {
+    private static final double WINDOW_WIDTH = 960.0;
+    private static final double WINDOW_HEIGHT = 960.0;
+
+    public static void main(String[] args) { launch(args); }
+
+    private final AppView view = AppView.newInstance();
+
+    @Override
+    public void start(Stage primaryStage) {
+        var scene = new Scene(view.getRoot(), WINDOW_WIDTH, WINDOW_HEIGHT);
+
+        view.init();
+        primaryStage.setTitle("Sierpinski Petal");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+```
+
+Which produces the same "Hello World" app [above](#hello-world) (but a little
+bigger).
