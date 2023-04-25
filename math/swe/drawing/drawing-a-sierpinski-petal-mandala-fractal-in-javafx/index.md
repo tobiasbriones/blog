@@ -208,8 +208,8 @@ class AppController {
 
 Then, any control logic will be placed there later.
 
-Finally, the `Main` class will look like this (I made the window's height 
-bigger too):
+Finally, the `Main` class will look like this (I made the window's height bigger
+too):
 
 ```java
 public class Main extends Application {
