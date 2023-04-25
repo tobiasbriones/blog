@@ -88,3 +88,116 @@ public class Main extends Application {
 <figcaption>
 <p align="center"><strong>Hello World Scene</strong></p>
 </figcaption>
+
+#### Package App
+
+This package will implement the JavaFX GUI application.
+
+I applied an MVC architectural pattern to design the `app` `package` since the
+GUI part of the application is minimal. Otherwise, I'd use MVP to design JavaFX
+desktop apps. I thought about it, but the tradeoff was remarkable since applying
+MVP for a basic GUI would imply an extra overhead for this article, and I can't
+burn readers with one of my in-house MVP libs [^x].
+
+[^x]: MVC is a horrible (and most popular out there) pattern I'd only use for
+    Android apps I used to write 10 years ago in 2013, but it's good for basic
+    GUIs if there's no better support from the GUI tooling
+
+So the complex part of this package will be the `Canvas` graphics instead.
+
+First, create the `package` from the base `sierpinskipetal` one:
+
+```java
+/**
+ * Implements the JavaFX application for drawing and animating the underlying
+ * proposed graphics (e.g., sierpinski petal fractals).
+ */
+package engineer.mathsoftware.blog.sierpinskipetal.app;
+```
+
+<figcaption>
+<p align="center"><strong>Definition of the "app" Package</strong></p>
+</figcaption>
+
+Two classes will be added next:
+
+- `AppView`: Visual component that renders our GUI and graphics.
+- `AppController`: Logic control of the view.
+
+The package will be accessed via the `AppView` class, so it keeps familiar to
+what we had before:
+
+```java
+public class AppView {
+    public static AppView newInstance() {
+        var controller = new AppController();
+        var view = new AppView(controller);
+
+        controller.setView(view);
+        return view;
+    }
+
+    private final VBox view;
+    private final AppController controller;
+
+    private AppView(AppController controller) {
+        this.controller = controller;
+        this.view = new VBox();
+    }
+
+    public Parent getRoot() {
+        return view;
+    }
+
+    public void init() {
+        var btn = new Button();
+
+        btn.setText("Hello World");
+        btn.setOnAction(actionEvent -> System.out.println("Hello World"));
+
+        view.setAlignment(Pos.CENTER);
+        view.getChildren()
+            .add(btn);
+        controller.init();
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Hello World Moved to the AppView Class</strong></p>
+</figcaption>
+
+`AppView` provides the `newInstance` static factory method that gets us a
+properly built view with its `AppController` created and set up.
+
+Now, the `getRoot` accessor will be used to add the `Parent` `Node` to the main
+`Scene`.
+
+The `init` method avoids abusing the view's constructor [^x].
+
+[^x]: Abusing the constructor to build the whole GUI is an antipattern I always
+    see in the Java culture
+
+Now add the controller:
+
+```java
+class AppController {
+    private AppView view;
+
+    AppController() {
+        this.view = null;
+    }
+
+    void setView(AppView value) {
+        this.view = value;
+    }
+
+    void init() {}
+}
+```
+
+<figcaption>
+<p align="center"><strong>Creation of AppController</strong></p>
+</figcaption>
+
+Then, any control logic will be placed there later.
