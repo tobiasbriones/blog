@@ -37,6 +37,10 @@ It's important to note the `module-info.java` in the module's source root
 Exporting your root package is also necessary, as JavaFX is a framework that
 uses reflection and needs to find your `Main` class.
 
+If you're using Java 20 or so, then "record patterns" and "pattern matching for
+switch" features are still not stable. If so, make sure to enable the "Preview"
+version in IntelliJ.
+
 With this, Java and JavaFX should be available on your machine as well as the
 dev tools, environment, and starting project, so we can start writing the JavaFX
 code.
@@ -66,7 +70,8 @@ public class Main extends Application {
         btn.setOnAction(actionEvent -> System.out.println("Hello World"));
 
         root.setAlignment(Pos.CENTER);
-        root.getChildren().add(btn);
+        root.getChildren()
+            .add(btn);
 
         primaryStage.setScene(scene);
         primaryStage.show();
