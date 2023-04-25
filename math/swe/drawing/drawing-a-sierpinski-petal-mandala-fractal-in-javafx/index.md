@@ -234,3 +234,70 @@ public class Main extends Application {
 
 Which produces the same "Hello World" app [above](#hello-world) (but a little
 bigger).
+
+#### Canvas View
+
+It's time to get create the canvas component to move our "Hello World" to
+`Canvas`.
+
+The view is `AppCanvasView` as follows:
+
+```java
+class AppCanvasView {
+    private static final double CANVAS_WIDTH = 900.0;
+    private static final double CANVAS_HEIGHT = 900.0;
+    private static final Color bgColor = Color.web("#fafafa");
+    private final Canvas canvas;
+
+    AppCanvasView(AppController controller) {
+        this.canvas = new Canvas();
+    }
+
+    Node getNode() {
+        return canvas;
+    }
+
+    void init() {
+        canvas.setWidth(CANVAS_WIDTH);
+        canvas.setHeight(CANVAS_HEIGHT);
+
+        draw();
+    }
+
+    void draw() {
+        var ctx = canvas.getGraphicsContext2D();
+
+        ctx.setFill(bgColor);
+        ctx.fillRect(0.0, 0.0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+        ctx.setFill(Color.web("#212121"));
+        ctx.setTextAlign(TextAlignment.CENTER);
+        ctx.setTextBaseline(VPos.CENTER);
+        ctx.fillText("Hello World", CANVAS_WIDTH / 2.0, CANVAS_HEIGHT / 2.0);
+    }
+}
+```
+
+It has definitions for the `Canvas` size (that can be scaled later for advanced
+high-resolution productions).
+
+It has the `Canvas` `Node` that refers to the JavaFX component we're using.
+
+The `init` method is available, so it can be initialized like the other objects
+we created in the `app` package.
+
+The method `draw` is clearing the `Canvas` with a white-gray color, and draws
+the "Hello World" text in the middle of the screen.
+
+Notice that I'm not using `interface`s or further abstractions in this package
+because of what I said above. For example, the methods `init`, and `draw`, etc.,
+should be part of a public API, and interfaces should be used to weaken the
+coupling among objects (MVP-like), but that's not this package design's scope.
+
+The result is the "Hello World" `Canvas` rendered in the middle of the window:
+
+![Canvas Hello World](canvas-hello-world.png)
+
+<figcaption>
+<p align="center"><strong>Canvas Hello World</strong></p>
+</figcaption>
