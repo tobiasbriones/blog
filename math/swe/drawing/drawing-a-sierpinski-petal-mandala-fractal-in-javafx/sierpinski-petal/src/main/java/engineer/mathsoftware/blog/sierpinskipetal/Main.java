@@ -7,6 +7,7 @@ package engineer.mathsoftware.blog.sierpinskipetal;
 import engineer.mathsoftware.blog.sierpinskipetal.app.AppView;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -30,8 +31,20 @@ public class Main extends Application {
 
         view.init();
 
+        loadIcons(primaryStage);
         primaryStage.setTitle("Sierpinski Petal");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private static void loadIcons(Stage stage) {
+        stage.getIcons()
+             .addAll(
+                 new Image("app-16x16.png"),
+                 new Image("app-32x32.png"),
+                 new Image("app-64x64.png"),
+                 new Image("app-256x256.png"),
+                 new Image("app-512x512.png")
+             );
     }
 }
