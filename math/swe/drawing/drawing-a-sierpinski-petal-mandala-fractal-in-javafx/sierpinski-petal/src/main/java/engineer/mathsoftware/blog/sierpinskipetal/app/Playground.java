@@ -162,6 +162,7 @@ class Playground {
         cat.anim8_Eye();
         cat.anim9_Mouth();
         cat.anim10_Effects();
+        cat.anim11_Effects(cycleTime);
         return true;
     }
 
@@ -966,6 +967,100 @@ class Playground {
 
             ctx.setFill(Color.web("#212121"));
             ctx.fill();
+        }
+
+        void anim11_Effects(double cyclePos) {
+            var headHeight = radius * 1.4;
+            var x1 = cx - ellipseA * 0.6;
+            var y1 = ellipse.evalX(x1).t2();
+            var x2 = cx + ellipseA * 0.2;
+            var y2 = ellipse.evalX(x2).t2() - headHeight;
+
+            // Second ear
+            ctx.beginPath();
+            ctx.moveTo(cx + ellipseA, y2 - 16 + headHeight * 0.7);
+
+            ctx.quadraticCurveTo(
+                cx + ellipseA * 1.2,
+                y2 + (y1 - y2) * 0.2 + headHeight * 1.5,
+                cx + ellipseA * 0.5,
+                y2 + (y1 - y2) * 0.4 + headHeight * 0.3
+            );
+
+            ctx.setFill(new LinearGradient(
+                0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
+                new Stop[]{
+                    new Stop(0, Color.web("#131313")),
+                    new Stop(0.5, Color.web("#161616")),
+                    new Stop(1, Color.web("#212121"))
+                }
+            ));
+
+            ctx.fill();
+
+            ctx.setStroke(Color.web("#212121"));
+            ctx.stroke();
+
+            if (cyclePos < 0.2) {
+                return;
+            }
+
+            // First ear effect
+            ctx.beginPath();
+            ctx.moveTo(cx + ellipseA, y2);
+
+            ctx.quadraticCurveTo(
+                cx + ellipseA * 2.0,
+                y2 + (y1 - y2) * 0.2,
+                cx + ellipseA * 1.2,
+                y2 + (y1 - y2) * 0.4 - 16
+            );
+            ctx.closePath();
+
+            ctx.fill();
+            ctx.stroke();
+
+            if (cyclePos < 0.4) {
+                return;
+            }
+
+            // Light shadow on the leg
+            ctx.save();
+            ctx.translate(cx, cy);
+            ctx.rotate(50);
+            fillCenteredArc(
+                ellipseA / 2.5,
+                ellipseB / 3,
+                -ellipseA * 0.3,
+                ellipseB * 0.2,
+                new LinearGradient(
+                    0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
+                    new Stop[]{
+                        new Stop(0, Color.web("#151515")),
+                        new Stop(0.5, Color.web("#161616")),
+                        new Stop(1, Color.web("#191919")),
+                    }
+                )
+            );
+            ctx.restore();
+
+            if (cyclePos < 0.8) {
+                return;
+            }
+
+            // Curve from leg to body
+            var left = cx - ellipseA * 0.6;
+
+            ctx.beginPath();
+            ctx.moveTo(left, ellipse.evalX(left).t2());
+            ctx.quadraticCurveTo(
+                cx - (cx - left) / 2,
+                ellipse.evalX(cx - (cx - left) / 2).t2() - 10,
+                cx + ellipseA * 0.2,
+                ellipse.evalX(cx + ellipseA * 0.2).t2() + 20
+            );
+            ctx.setStroke(Color.web("#212121"));
+            ctx.stroke();
         }
     }
 
