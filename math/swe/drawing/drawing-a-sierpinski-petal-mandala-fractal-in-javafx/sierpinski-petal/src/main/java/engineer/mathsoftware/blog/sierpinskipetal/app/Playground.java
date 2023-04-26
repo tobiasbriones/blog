@@ -567,4 +567,6 @@ class Playground {
             }
         }
     }
+
+    static class Recorder {}
 }
