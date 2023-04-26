@@ -5,6 +5,7 @@
 package engineer.mathsoftware.blog.sierpinskipetal.app;
 
 import javafx.animation.AnimationTimer;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -13,13 +14,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.TextAlignment;
 
+import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
+import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("ALL")
 class Playground {
@@ -577,6 +578,47 @@ class Playground {
     }
 
     static class Recorder {
+        static final String RECORDING_DIR = "recording";
+        final Canvas canvas;
+
+        Recorder(Canvas canvas) {
+            this.canvas = canvas;
+        }
+
+        void saveSnapshot(int i) throws IOException {
+            saveSnapshot(i, RECORDING_DIR);
+        }
+
+        void saveSnapshot(int i, String dir) throws IOException {
+            var shot = canvas.snapshot(null, null);
+            var file = Paths
+                .get("out", dir, "screenshot-" + i + ".png")
+                .toFile();
+            var par = file.getParentFile();
+
+            if (i <= 1) {
+                deleteDirRecursive(par);
+            }
+
+            if (!par.exists()) {
+                par.mkdirs();
+            }
+
+            Thread.startVirtualThread(() -> {
+                try {
+                    ImageIO.write(
+                        SwingFXUtils.fromFXImage(shot, null),
+                        "png",
+                        file
+                    );
+                    System.out.println("Screenshot saved to: " + file.getAbsolutePath());
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
         static void deleteDirRecursive(File dir) throws IOException {
             if (!dir.exists()) {
                 return;
