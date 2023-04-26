@@ -4,6 +4,7 @@
 
 package engineer.mathsoftware.blog.sierpinskipetal.app;
 
+import javafx.animation.AnimationTimer;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -17,6 +18,9 @@ class Playground {
     final Canvas canvas;
     final GraphicsContext ctx;
     final double scale;
+    final double cycleDuration;
+    final int targetFps;
+    final AnimationTimer loop;
     double opacity;
     String title;
 
@@ -32,17 +36,31 @@ class Playground {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
         this.scale = scale;
+        this.cycleDuration = 2.0;
+        this.targetFps = 60;
+        this.loop = new FadeAnimLoop(
+            this::draw,
+            targetFps,
+            cycleDuration,
+            FadeAnimLoop.TimeMode.Absolute
+        );
         this.opacity = 1.0;
         this.title = "Drawing a Flower";
     }
 
     void play() {
-        reset();
-
-        draw();
+        ctx.scale(scale, scale);
+        loop.start();
     }
 
-    void draw() {
+    void draw(
+        int numAnim,
+        double opacity,
+        Cycle.State state,
+        int tickCount,
+        double cycleTime
+    ) {
+        this.opacity = opacity;
         var radius = 100;
         var cx = cx();
         var cy = cy() - radius;
@@ -64,6 +82,10 @@ class Playground {
         anim.anim6_Center();
         anim.anim7_Center();
         anim.anim8_Stem();
+    }
+
+    void stop() {
+        loop.stop();
     }
 
     void reset() {
@@ -341,6 +363,155 @@ class Playground {
             fillCenteredCircle(radius, cx, cy - radius / 2, color);
             fillCenteredCircle(radius, cx + radius / 2, cy, color);
             fillCenteredCircle(radius, cx, cy + radius / 2, color);
+        }
+    }
+
+    static class FadeAnimLoop extends AnimationTimer {
+        enum TimeMode { Absolute, Relative }
+
+        interface Animable {
+            void draw(
+                int numAnim,
+                double opacity,
+                Cycle.State state,
+                int tickCount,
+                double cycleTime
+            );
+        }
+
+        final Animable animable;
+        final long targetFPS;
+        final TimeMode timeMode;
+        final long targetFrameTime;
+        final double fadeDuration;
+        final double fadeInStartTime;
+        final Cycle cycle;
+        long lastUpdate;
+        int count;
+        double opacity;
+
+        FadeAnimLoop(
+            Animable animable,
+            int targetFPS,
+            double cycleDuration,
+            TimeMode timeMode
+        ) {
+            this.animable = animable;
+            this.targetFPS = targetFPS;
+            this.targetFrameTime = 1_000_000_000 / targetFPS;
+            this.timeMode = timeMode;
+            this.fadeDuration = cycleDuration / 4.0;
+            this.fadeInStartTime = cycleDuration - fadeDuration;
+            this.cycle = new Cycle(cycleDuration, fadeDuration);
+            this.lastUpdate = 0;
+            this.count = 0;
+            this.opacity = 1;
+        }
+
+        double getOpacity() {
+            return switch (cycle.state) {
+                case FadingIn -> cycle.time / fadeDuration;
+                case Steady -> 1.0;
+                case FadingOut ->
+                    1.0 - (cycle.time - fadeInStartTime) / fadeDuration;
+            };
+        }
+
+        @Override
+        public void handle(long now) {
+            if (lastUpdate == 0) {
+                lastUpdate = now;
+                cycle.reset();
+                return;
+            }
+
+            var deltaTime = switch (timeMode) {
+                case Absolute -> now - lastUpdate;
+                case Relative -> targetFrameTime;
+            };
+
+            updateCanvas(deltaTime / 1_000_000_000.0D);
+            animable.draw(cycle.count, opacity, cycle.state, count, cycle.time);
+
+            sleep(deltaTime);
+
+            lastUpdate = now;
+        }
+
+        void updateCanvas(double deltaTime) {
+            cycle.update(deltaTime);
+            count++;
+            opacity = getOpacity();
+        }
+
+        void sleep(long deltaTime) {
+            var minimumRestTime = 20L;
+            var remainingFrameTime = targetFrameTime - deltaTime;
+            var sleepTime = switch (timeMode) {
+                case Absolute -> remainingFrameTime > 0 ?
+                                 remainingFrameTime / 1_000_000L :
+                                 minimumRestTime;
+                case Relative -> minimumRestTime;
+            };
+
+            // Case 1: It's game loop (absolute time) so it can have time left
+            // to sleep for the next tick or it ran out of time already.
+            // The animation has to run as synced as possible (e.g. 60FPS).
+
+            // Case 2: It's simulation (relative time), sleep a minimum value
+            // to let the CPU rest. The animation has to run as fast as
+            // possible.
+            try {
+                Thread.sleep(sleepTime);
+            }
+            catch (InterruptedException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    static class Cycle {
+        enum State { FadingIn, Steady, FadingOut }
+
+        final double cycleDuration;
+        final double fadeDuration;
+        State state = State.FadingIn;
+        double time = 0;
+        int count = 1;
+
+        Cycle(double cycleDuration, double fadeDuration) {
+            if (cycleDuration <= fadeDuration * 2) {
+                throw new RuntimeException("Invalid cycle duration");
+            }
+            this.cycleDuration = cycleDuration;
+            this.fadeDuration = fadeDuration;
+        }
+
+        void reset() {
+            state = State.FadingIn;
+            time = 0;
+            count = 1;
+        }
+
+        void update(double delta) {
+            var newTime = time + delta;
+            time = newTime;
+
+            if (newTime > cycleDuration) {
+                // TODO diff can be greater than cycleDuration
+                time = newTime - cycleDuration;
+                count++;
+            }
+
+            if (time < fadeDuration) {
+                state = State.FadingIn;
+            }
+            else if (time > cycleDuration - fadeDuration) {
+                state = State.FadingOut;
+            }
+            else {
+                state = State.Steady;
+            }
         }
     }
 }
