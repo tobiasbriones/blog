@@ -52,16 +52,16 @@ class Playground {
         this.ctx = canvas.getGraphicsContext2D();
         this.scale = scale;
         this.cycleDuration = 1.0;
-        this.targetFps = 15;
+        this.targetFps = 60;
         this.loop = new FadeAnimLoop(
             this::draw,
             targetFps,
             cycleDuration,
-            FadeAnimLoop.TimeMode.Relative
+            FadeAnimLoop.TimeMode.Absolute
         );
         this.recorder = new Recorder(canvas, targetFps);
         this.opacity = 1.0;
-        this.record = true;
+        this.record = false;
         this.title = "Drawing a Flower";
     }
 
