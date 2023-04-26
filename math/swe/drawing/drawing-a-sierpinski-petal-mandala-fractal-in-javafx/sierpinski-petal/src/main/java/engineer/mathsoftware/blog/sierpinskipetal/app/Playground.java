@@ -42,6 +42,10 @@ class Playground {
 
     void reset() {
         clean();
+
+        ctx.setGlobalAlpha(1);
+        drawRuler();
+        ctx.setGlobalAlpha(opacity);
     }
 
     void clean() {
@@ -70,6 +74,46 @@ class Playground {
 
         setDrawingText("extrabold", 36, VPos.BOTTOM);
         ctx.fillText(title, width() / 2, height() - 96);
+    }
+
+    void drawRuler() {
+        ctx.setStroke(Color.web("#757575"));
+
+        setDrawingText("medium", 16, VPos.TOP);
+
+        ctx.strokeLine(0, 16, width(), 16);
+        ctx.strokeLine(0, 24, width(), 24);
+
+        for (var x = 50; x < width(); x++) {
+            if (x % 50 == 0) {
+                ctx.strokeLine(x, 16, x, 36);
+                ctx.fillText(String.valueOf(x), x, 40);
+            }
+            else if (x % 25 == 0) {
+                ctx.strokeLine(x, 16, x, 28);
+            }
+        }
+
+        ctx.setTextAlign(TextAlignment.LEFT);
+        ctx.setTextBaseline(VPos.CENTER);
+        ctx.strokeLine(16, 0, 16, height());
+        ctx.strokeLine(24, 0, 24, height());
+
+        for (var y = 50; y < height(); y++) {
+            if (y % 50 == 0) {
+                ctx.strokeLine(16, y, 36, y);
+
+                // Don't draw the first one to avoid colliding with
+                // horizontal ruler
+                if (y == 50) {
+                    continue;
+                }
+                ctx.fillText(String.valueOf(y), 40, y);
+            }
+            else if (y % 25 == 0) {
+                ctx.strokeLine(16, y, 28, y);
+            }
+        }
     }
 
     void setDrawingText(
