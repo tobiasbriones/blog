@@ -15,8 +15,11 @@ import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.TextAlignment;
 
 import javax.imageio.ImageIO;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
@@ -580,10 +583,12 @@ class Playground {
     static class Recorder {
         static final String RECORDING_DIR = "recording";
         final Canvas canvas;
+        final int targetFps;
         final List<Thread> threads;
 
-        Recorder(Canvas canvas) {
+        Recorder(Canvas canvas, int targetFps) {
             this.canvas = canvas;
+            this.targetFps = targetFps;
             this.threads = new ArrayList<>();
         }
 
@@ -621,6 +626,47 @@ class Playground {
             });
 
             threads.add(t);
+        }
+
+        void compileVideo() throws IOException, InterruptedException {
+            var outputPath = Path.of("out/recording.mp4");
+
+            if (Files.exists(outputPath)) {
+                Files.delete(outputPath);
+            }
+            var builder = new ProcessBuilder(
+                "out/ffmpeg",
+                "-framerate",
+                String.valueOf(targetFps),
+                "-i",
+                "out/recording/screenshot-%d.png",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                outputPath
+                    .toAbsolutePath()
+                    .toString()
+               ).redirectErrorStream(true)
+                .start();
+
+            try (
+                var r = new BufferedReader(
+                    new InputStreamReader(
+                        builder.getInputStream(),
+                        Charset.defaultCharset()
+                    )
+                )
+            ) {
+                String line;
+
+                while ((line = r.readLine()) != null) {
+                    System.out.println(line);
+                }
+                var exitCode = builder.waitFor();
+
+                System.out.println("Command exited with code " + exitCode);
+            }
         }
 
         static void deleteDirRecursive(File dir) throws IOException {
