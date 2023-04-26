@@ -6,6 +6,7 @@ package engineer.mathsoftware.blog.sierpinskipetal.app;
 
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 class AppCanvasView {
@@ -17,8 +18,8 @@ class AppCanvasView {
     private final AppController controller;
 
     AppCanvasView(AppController controller) {
-        this.canvas = new Canvas();
         this.controller = controller;
+        this.canvas = new Canvas();
     }
 
     Node getNode() {
@@ -26,15 +27,26 @@ class AppCanvasView {
     }
 
     void init() {
+        var ctx = canvas.getGraphicsContext2D();
+
         canvas.setWidth(CANVAS_WIDTH);
         canvas.setHeight(CANVAS_HEIGHT);
 
-        draw();
+        draw(ctx);
     }
 
-    void draw() {
-        var ctx = canvas.getGraphicsContext2D();
+    private void draw(GraphicsContext ctx) {
+        clean(ctx);
 
+        runPlayground();
+    }
+
+    private void runPlayground() {
+        var playground = new Playground(canvas, CANVAS_SCALE);
+        playground.play();
+    }
+
+    private static void clean(GraphicsContext ctx) {
         ctx.setFill(bgColor);
         ctx.fillRect(0.0, 0.0, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
