@@ -164,9 +164,12 @@ class Playground {
     void fillCenteredCircle(
         double radius,
         double cx,
-        double cy
+        double cy,
+        Color color
     ) {
         var diameter = 2.0 * radius;
+
+        ctx.setFill(color);
         ctx.fillOval(cx - radius, cy - radius, diameter, diameter);
     }
 
@@ -174,10 +177,13 @@ class Playground {
         double radiusX,
         double radiusY,
         double cx,
-        double cy
+        double cy,
+        Color color
     ) {
         var diameterX = 2.0 * radiusX;
         var diameterY = 2.0 * radiusY;
+
+        ctx.setFill(color);
         ctx.fillOval(cx - radiusX, cy - radiusY, diameterX, diameterY);
     }
 
@@ -185,10 +191,13 @@ class Playground {
         double radiusX,
         double radiusY,
         double cx,
-        double cy
+        double cy,
+        Color color
     ) {
         var diameterX = 2.0 * radiusX;
         var diameterY = 2.0 * radiusY;
+
+        ctx.setStroke(color);
         ctx.strokeOval(cx - radiusX, cy - radiusY, diameterX, diameterY);
     }
 
@@ -211,9 +220,6 @@ class Playground {
         }
 
         void anim1_Diameter() {
-            reset();
-
-            ctx.setFill(color);
             encloseHRuler(radius, cx, cy - radius, "diameter");
             drawTitle("Centering");
         }
