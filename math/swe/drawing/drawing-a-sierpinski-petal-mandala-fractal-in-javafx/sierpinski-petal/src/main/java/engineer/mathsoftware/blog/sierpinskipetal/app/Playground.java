@@ -59,6 +59,7 @@ class Playground {
         anim.anim5_BottomPetal();
         anim.anim6_Center();
         anim.anim7_Center();
+        anim.anim8_Stem();
     }
 
     void reset() {
@@ -167,6 +168,21 @@ class Playground {
 
         setDrawingText("medium", 20, VPos.BOTTOM);
         ctx.fillText(txt, cx, cy - 2);
+    }
+
+    void encloseVRuler(
+        double radius,
+        double cx,
+        double cy,
+        String txt
+    ) {
+        ctx.setStroke(Color.web("#4CAF50"));
+        ctx.strokeLine(cx, cy - radius, cx, cy + radius);
+        ctx.strokeLine(0, cy - radius, cx + radius, cy - radius);
+        ctx.strokeLine(0, cy + radius, cx + radius, cy + radius);
+
+        setDrawingText("medium", 20, VPos.CENTER);
+        ctx.fillText(txt, cx, cy);
     }
 
     void fillCenteredCircle(
@@ -280,6 +296,40 @@ class Playground {
             fillCenteredCircle(radius / 2, cx, cy, centerColor);
             encloseHRuler(radius / 2, cx, cy, "radius");
             drawTitle("Flower: Center");
+        }
+
+        void anim8_Stem() {
+            reset();
+
+            // Petal
+            fillPetals();
+
+            // draw line to delimit the bottom of center and petals
+            ctx.strokeLine(0, cy + radius / 2, cx, cy + radius / 2);
+            ctx.strokeLine(0, cy + 3 * radius / 2, cx, cy + 3 * radius / 2);
+
+            fillCenteredCircle(radius / 2, cx, cy, centerColor);
+
+            // Flower Stem
+            var stemWidth = radius / 4;
+            var stemHeight = radius * 2.5;
+
+            ctx.setFill(Color.web("#81c784"));
+            ctx.fillRoundRect(cx - stemWidth / 2,
+                cy,
+                stemWidth,
+                stemHeight,
+                16,
+                16
+            );
+            encloseVRuler(
+                stemHeight / 2,
+                cx,
+                cy + stemHeight / 2,
+                "2.5*radius"
+            );
+
+            drawTitle("Flower: Stem");
         }
 
         void fillPetals() {
