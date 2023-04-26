@@ -93,8 +93,13 @@ class Playground {
     }
 
     void initCat() {
+        var radius = 100.0;
+        var ellipseA = 1.2 * radius;
+        var ellipseB = radius;
         var cx = cx();
-        cat = new BirdCat(cx);
+        var cy = cy() + radius / 4;
+        var color = Color.web("#131313");
+        cat = new BirdCat(ellipseA, ellipseB, cx, cy, color);
     }
 
     void draw(
@@ -108,7 +113,7 @@ class Playground {
 
         // Uncomment to Choose Animation //
 //        var didDraw = drawFlower(numAnim, state);
-        var didDraw = drawCat();
+        var didDraw = drawCat(cycleTime);
 
         if (didDraw) {
             drawCompleted(tickCount);
@@ -144,9 +149,10 @@ class Playground {
         return true;
     }
 
-    boolean drawCat() {
+    boolean drawCat(double cycleTime) {
         reset();
         cat.anim1_MemeTitle();
+        cat.anim2_PreBody(cycleTime);
         return true;
     }
 
@@ -494,10 +500,29 @@ class Playground {
     }
 
     class BirdCat {
+        final double ellipseA;
+        final double ellipseB;
         final double cx;
+        final double cy;
+        final Color color;
+        final Shape.Ellipse ellipse;
 
-        BirdCat(double cx) {
+        BirdCat(
+            double ellipseA,
+            double ellipseB,
+            double cx,
+            double cy,
+            Color color
+        ) {
+            this.ellipseA = ellipseA;
+            this.ellipseB = ellipseB;
             this.cx = cx;
+            this.cy = cy;
+            this.color = color;
+            this.ellipse = new Shape.Ellipse(
+                new Tuple<>(cx, cy),
+                new Tuple<>(ellipseA, ellipseB)
+            );
         }
 
         void anim1_MemeTitle() {
@@ -509,6 +534,22 @@ class Playground {
                 100
             );
             ctx.fillText("The Bird Cat:".toUpperCase(), cx, 130);
+        }
+
+        void anim2_PreBody(double cycleTime) {
+            ctx.setFill(color);
+
+            var xEnd = ellipseA * 2 * (cycleTime / cycleDuration) + cx - ellipseA;
+
+            for (var x = cx - ellipseA; x <= xEnd; x += 4) {
+                var y = ellipse.evalX(x);
+                var y1 = y.t1();
+                var y2 = y.t2();
+
+                ctx.fillRect(x, y1, 1, 1);
+                ctx.fillRect(x, y2, 1, 1);
+            }
+            ctx.setFill(color);
         }
     }
 
