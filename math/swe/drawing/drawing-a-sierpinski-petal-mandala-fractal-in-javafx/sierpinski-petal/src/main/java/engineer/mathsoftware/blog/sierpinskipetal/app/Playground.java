@@ -39,6 +39,10 @@ class Playground {
     void play() {
         reset();
 
+        draw();
+    }
+
+    void draw() {
         var radius = 100;
         var cx = cx();
         var cy = cy() - radius;
