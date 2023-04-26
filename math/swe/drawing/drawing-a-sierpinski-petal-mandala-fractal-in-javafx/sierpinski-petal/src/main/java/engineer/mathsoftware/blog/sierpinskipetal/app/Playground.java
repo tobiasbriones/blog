@@ -74,14 +74,7 @@ class Playground {
             cy
         );
 
-        anim.anim1_Diameter();
-        anim.anim2_LeftPetal();
-        anim.anim3_TopPetal();
-        anim.anim4_RightPetal();
-        anim.anim5_BottomPetal();
-        anim.anim6_Center();
-        anim.anim7_Center();
-        anim.anim8_Stem();
+        anim.draw(numAnim);
     }
 
     void stop() {
@@ -270,6 +263,19 @@ class Playground {
             this.centerColor = centerColor;
             this.cx = cx;
             this.cy = cy;
+        }
+
+        void draw(int numAnim) {
+            switch (numAnim) {
+                case 1 -> anim1_Diameter();
+                case 2 -> anim2_LeftPetal();
+                case 3 -> anim3_TopPetal();
+                case 4 -> anim4_RightPetal();
+                case 5 -> anim5_BottomPetal();
+                case 6 -> anim6_Center();
+                case 7 -> anim7_Center();
+                case 8 -> anim8_Stem();
+            }
         }
 
         void anim1_Diameter() {
