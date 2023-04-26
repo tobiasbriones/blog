@@ -158,6 +158,7 @@ class Playground {
         cat.anim4_Tail();
 //        cat.anim5_PreHead(cycleTime);
         cat.anim6_Head();
+        cat.anim7_PreEye(cycleTime);
         return true;
     }
 
@@ -732,6 +733,65 @@ class Playground {
 
             ctx.setFill(color);
             ctx.fill();
+        }
+
+        void anim7_PreEye(double cyclePos) {
+            var headHeight = radius * 1.4;
+            var x2 = cx + ellipseA * 0.2;
+            var y2 = ellipse.evalX(x2).t2() - headHeight;
+            var eyeX = cx + ellipseA * 0.8;
+            var eyeY = y2 + radius * 0.2;
+            var rotate = new Rotate(15, eyeX, eyeY);
+            var drawUntil = (int) (cyclePos * 4);
+
+            ctx.save();
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+
+            fillCenteredArc(
+                radius * 0.15,
+                radius * 0.10,
+                eyeX,
+                eyeY,
+                Color.web("#99b483")
+            );
+
+            if (drawUntil < 2) {
+                ctx.restore();
+                return;
+            }
+
+            ctx.setLineWidth(2);
+            strokeCenteredArc(
+                radius * 0.15,
+                radius * 0.10,
+                eyeX,
+                eyeY,
+                Color.web("#333333")
+            );
+            ctx.restore();
+
+            if (drawUntil < 3) {
+                return;
+            }
+
+            rotate = new Rotate(25, eyeX, eyeY);
+
+            ctx.save();
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+            fillCenteredArc(
+                radius * 0.06,
+                radius * 0.03,
+                eyeX,
+                eyeY,
+                color
+            );
+            ctx.restore();
         }
     }
 
