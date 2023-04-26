@@ -114,7 +114,7 @@ class Playground {
 
         // Uncomment to Choose Animation //
 //        var didDraw = drawFlower(numAnim, state);
-        var didDraw = drawCat(cycleTime);
+        var didDraw = drawCat(numAnim, cycleTime);
 
         if (didDraw) {
             drawCompleted(tickCount);
@@ -150,7 +150,11 @@ class Playground {
         return true;
     }
 
-    boolean drawCat(double cycleTime) {
+    boolean drawCat(int numAnim, double cycleTime) {
+        if (numAnim > BirdCat.NUM_ANIMS) {
+            return false;
+        }
+
         reset();
         cat.anim1_MemeTitle();
 //        cat.anim2_PreBody(cycleTime);
@@ -511,6 +515,7 @@ class Playground {
     }
 
     class BirdCat {
+        static final int NUM_ANIMS = 12;
         final double radius;
         final double ellipseA;
         final double ellipseB;
