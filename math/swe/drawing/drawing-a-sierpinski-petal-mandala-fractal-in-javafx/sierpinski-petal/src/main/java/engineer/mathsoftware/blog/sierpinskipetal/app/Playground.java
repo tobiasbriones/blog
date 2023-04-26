@@ -9,7 +9,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
+import javafx.scene.paint.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.TextAlignment;
@@ -158,7 +158,8 @@ class Playground {
         cat.anim4_Tail();
 //        cat.anim5_PreHead(cycleTime);
         cat.anim6_Head();
-        cat.anim7_PreEye(cycleTime);
+//        cat.anim7_PreEye(cycleTime);
+        cat.anim8_Eye();
         return true;
     }
 
@@ -320,7 +321,7 @@ class Playground {
         double radiusY,
         double cx,
         double cy,
-        Color color
+        Paint color
     ) {
         var diameterX = 2.0 * radiusX;
         var diameterY = 2.0 * radiusY;
@@ -790,6 +791,122 @@ class Playground {
                 eyeX,
                 eyeY,
                 color
+            );
+            ctx.restore();
+        }
+
+        void anim8_Eye() {
+            var headHeight = radius * 1.4;
+            var x2 = cx + ellipseA * 0.2;
+            var y2 = ellipse.evalX(x2).t2() - headHeight;
+            var eyeX = cx + ellipseA * 0.8;
+            var eyeY = y2 + radius * 0.2;
+            var rotate = new Rotate(140, eyeX, eyeY);
+
+            // first eye
+            ctx.save();
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+
+            fillCenteredArc(
+                radius * 0.13,
+                radius * 0.10,
+                eyeX,
+                eyeY,
+                Color.web("#99b483")
+            );
+
+            ctx.setLineWidth(2);
+            strokeCenteredArc(
+                radius * 0.13,
+                radius * 0.10,
+                eyeX,
+                eyeY,
+                Color.web("#333333")
+            );
+            ctx.restore();
+
+            rotate = new Rotate(25, eyeX, eyeY);
+
+            ctx.save();
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+            fillCenteredArc(
+                radius * 0.06,
+                radius * 0.03,
+                eyeX,
+                eyeY,
+                color
+            );
+            ctx.restore();
+
+            // second eye
+            var secondEyeX = eyeX - 10;
+            var secondEyeY = eyeY + 40;
+            rotate = new Rotate(80, secondEyeX, secondEyeY);
+
+            ctx.save();
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+
+            fillCenteredArc(
+                radius * 0.13,
+                radius * 0.10,
+                secondEyeX,
+                secondEyeY,
+                Color.web("#99b483")
+            );
+
+            ctx.setLineWidth(2);
+            strokeCenteredArc(
+                radius * 0.13,
+                radius * 0.10,
+                secondEyeX,
+                secondEyeY,
+                Color.web("#212121")
+            );
+            ctx.restore();
+
+            rotate = new Rotate(25, secondEyeX, secondEyeY);
+
+            ctx.save();
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+            fillCenteredArc(
+                radius * 0.06,
+                radius * 0.03,
+                secondEyeX,
+                secondEyeY,
+                color
+            );
+
+            rotate = new Rotate(80, secondEyeX, secondEyeY);
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+
+            fillCenteredArc(
+                radius * 0.13,
+                radius * 0.10,
+                secondEyeX,
+                secondEyeY,
+                new LinearGradient(
+                    0, 0, 1, 1, true, CycleMethod.NO_CYCLE,
+                    new Stop[]{
+                        new Stop(0, Color.web("#141414")),
+                        new Stop(0.5, Color.web("#181818", 0.9)),
+                        new Stop(1, Color.web("#565656", 0.6))
+                    }
+                )
             );
             ctx.restore();
         }
