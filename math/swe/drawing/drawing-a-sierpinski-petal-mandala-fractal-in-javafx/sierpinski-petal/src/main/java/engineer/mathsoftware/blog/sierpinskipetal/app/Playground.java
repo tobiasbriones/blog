@@ -33,7 +33,9 @@ class Playground {
     final double cycleDuration;
     final int targetFps;
     final AnimationTimer loop;
+    final Recorder recorder;
     double opacity;
+    boolean record;
     String title;
     Flower flower;
 
@@ -49,15 +51,17 @@ class Playground {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
         this.scale = scale;
-        this.cycleDuration = 2.0;
-        this.targetFps = 60;
+        this.cycleDuration = 1.0;
+        this.targetFps = 15;
         this.loop = new FadeAnimLoop(
             this::draw,
             targetFps,
             cycleDuration,
-            FadeAnimLoop.TimeMode.Absolute
+            FadeAnimLoop.TimeMode.Relative
         );
+        this.recorder = new Recorder(canvas, targetFps);
         this.opacity = 1.0;
+        this.record = true;
         this.title = "Drawing a Flower";
     }
 
@@ -100,10 +104,24 @@ class Playground {
         this.opacity = opacity;
 
         flower.draw(numAnim, state);
+        drawCompleted(tickCount);
+    }
+
+    void drawCompleted(int tickCount) {
+        if (record) {
+            recordSnapshot(tickCount);
+        }
     }
 
     void stop() {
         loop.stop();
+        stopped();
+    }
+
+    void stopped() {
+        if (record) {
+            buildRecording();
+        }
     }
 
     void reset() {
@@ -122,6 +140,24 @@ class Playground {
         ctx.fillRect(0.0, 0.0, width(), height());
         drawSource(title);
         ctx.setGlobalAlpha(opacity);
+    }
+
+    void recordSnapshot(int tickCount) {
+        try {
+            recorder.saveSnapshot(tickCount);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void buildRecording() {
+        try {
+            recorder.compileVideo();
+        }
+        catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     void drawTitle(String title) {
