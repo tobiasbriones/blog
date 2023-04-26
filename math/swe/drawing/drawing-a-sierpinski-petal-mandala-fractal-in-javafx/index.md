@@ -419,12 +419,11 @@ frame rate* without frame loss.
 [^x]: OOP should be used to implement FSMs with mutable state instead of idiotic
     "real world" analogies
 
-[^x]: Non-programmers who come from other fields are usually unable to figure it
-    out when it comes to non-trivial visualizations, so they tell me "I wasn't
-    able to figure it out," since writing working code logic is hard (not
-    to say well-engineered code), so here in these cases I decouple the state
-    from other systems to bound it —Unbounded mutable state is always a red flag
-    🚩
+[^x]: Non-programmers who come from other fields are usually like "I wasn't able
+    to figure it out", when it comes to non-trivial visualizations, since
+    writing working programming logic is hard (not to say well-engineered code),
+    so here, in these cases, I decouple the state from other systems to bound it
+    —Unbounded mutable state is always a red flag 🚩
 
 With this, you can play around before writing the final application code for 
 drawing and animating.
