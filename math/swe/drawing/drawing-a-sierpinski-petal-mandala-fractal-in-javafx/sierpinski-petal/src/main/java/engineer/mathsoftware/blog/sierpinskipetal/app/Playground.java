@@ -161,6 +161,7 @@ class Playground {
 //        cat.anim7_PreEye(cycleTime);
         cat.anim8_Eye();
         cat.anim9_Mouth();
+        cat.anim10_Effects();
         return true;
     }
 
@@ -944,6 +945,27 @@ class Playground {
             ctx.setStroke(Color.web("#333333"));
             ctx.stroke();
             ctx.restore();
+        }
+
+        void anim10_Effects() {
+            var headHeight = radius * 1.4;
+            var x1 = cx - ellipseA * 0.6;
+            var y1 = ellipse.evalX(x1).t2();
+            var x2 = cx + ellipseA * 0.2;
+            var y2 = ellipse.evalX(x2).t2() - headHeight;
+
+            ctx.beginPath();
+            ctx.moveTo(x2, y2);
+
+            ctx.quadraticCurveTo(
+                cx + ellipseA * 0.7,
+                y2 - 24,
+                cx + ellipseA,
+                y2 - 16
+            );
+
+            ctx.setFill(Color.web("#212121"));
+            ctx.fill();
         }
     }
 
