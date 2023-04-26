@@ -127,4 +127,6 @@ class Playground {
         ctx.setFontSmoothingType(FontSmoothingType.GRAY);
         ctx.setFont(Font.font("poppins " + weight, size));
     }
+
+    class Flower {}
 }
