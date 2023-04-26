@@ -23,6 +23,7 @@ class Playground {
     final AnimationTimer loop;
     double opacity;
     String title;
+    Flower flower;
 
     double width() { return canvas.getWidth() / scale; }
 
@@ -49,8 +50,28 @@ class Playground {
     }
 
     void play() {
+        initModels();
         ctx.scale(scale, scale);
         loop.start();
+    }
+
+    void initModels() {
+        initFlower();
+    }
+
+    void initFlower() {
+        var radius = 100;
+        var cx = cx();
+        var cy = cy() - radius;
+        var color = Color.web("#ffdab9");
+        var centerColor = Color.web("#f0f28d");
+        flower = new Flower(
+            radius,
+            color,
+            centerColor,
+            cx,
+            cy
+        );
     }
 
     void draw(
@@ -61,20 +82,8 @@ class Playground {
         double cycleTime
     ) {
         this.opacity = opacity;
-        var radius = 100;
-        var cx = cx();
-        var cy = cy() - radius;
-        var color = Color.web("#ffdab9");
-        var centerColor = Color.web("#f0f28d");
-        var anim = new Flower(
-            radius,
-            color,
-            centerColor,
-            cx,
-            cy
-        );
 
-        anim.draw(numAnim);
+        flower.draw(numAnim);
     }
 
     void stop() {
