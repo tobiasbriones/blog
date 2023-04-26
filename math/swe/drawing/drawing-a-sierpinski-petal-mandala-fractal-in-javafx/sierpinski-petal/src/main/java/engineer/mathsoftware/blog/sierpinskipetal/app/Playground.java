@@ -156,6 +156,7 @@ class Playground {
 //        cat.anim2_PreBody(cycleTime);
         cat.anim3_Body();
         cat.anim4_Tail();
+        cat.anim5_PreHead(cycleTime);
         return true;
     }
 
@@ -613,6 +614,75 @@ class Playground {
 
             ctx.closePath();
             ctx.fill();
+        }
+
+        void anim5_PreHead(double cyclePos) {
+            var headHeight = radius * 1.4;
+            var x1 = cx - ellipseA * 0.6;
+            var y1 = ellipse.evalX(x1).t2();
+            var x2 = cx + ellipseA * 0.2;
+            var y2 = ellipse.evalX(x2).t2() - headHeight;
+            var drawUntil = (int) (cyclePos * 6);
+
+            ctx.setStroke(color);
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.quadraticCurveTo(
+                x1 + radius * 0.2,
+                cy - ellipseB - headHeight * 0.8,
+                x2,
+                y2
+            );
+
+            if (drawUntil < 2) {
+                ctx.stroke();
+                return;
+            }
+
+            ctx.quadraticCurveTo(
+                cx + ellipseA * 0.7,
+                y2 - 24,
+                cx + ellipseA,
+                y2 - 16
+            );
+
+            if (drawUntil < 3) {
+                ctx.stroke();
+                return;
+            }
+
+            ctx.quadraticCurveTo(
+                cx + ellipseA * 2.2,
+                y2 + (y1 - y2) * 0.2,
+                cx + ellipseA * 1.2,
+                y2 + (y1 - y2) * 0.4
+            );
+
+            if (drawUntil < 4) {
+                ctx.stroke();
+                return;
+            }
+
+            ctx.quadraticCurveTo(
+                cx + ellipseA * 1.1,
+                y2 + (y1 - y2) * 0.4,
+                cx + ellipseA * 1.1,
+                y2 + (y1 - y2) * 0.5
+            );
+
+            if (drawUntil < 5) {
+                ctx.stroke();
+                return;
+            }
+
+            ctx.quadraticCurveTo(
+                cx + ellipseA * 1.3,
+                y1,
+                cx + ellipseA * 1.0,
+                cy
+            );
+            ctx.stroke();
         }
     }
 
