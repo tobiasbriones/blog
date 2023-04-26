@@ -83,7 +83,7 @@ class Playground {
     ) {
         this.opacity = opacity;
 
-        flower.draw(numAnim);
+        flower.draw(numAnim, state);
     }
 
     void stop() {
@@ -274,7 +274,7 @@ class Playground {
             this.cy = cy;
         }
 
-        void draw(int numAnim) {
+        void draw(int numAnim, Cycle.State state) {
             switch (numAnim) {
                 case 1 -> anim1_Diameter();
                 case 2 -> anim2_LeftPetal();
@@ -284,6 +284,7 @@ class Playground {
                 case 6 -> anim6_Center();
                 case 7 -> anim7_Center();
                 case 8 -> anim8_Stem();
+                case 9 -> anim9_Flower(state);
             }
         }
 
@@ -371,6 +372,38 @@ class Playground {
             );
 
             drawTitle("Flower: Stem");
+        }
+
+        void anim9_Flower(Cycle.State state) {
+            clean();
+
+            // Eliminate the effect as this is the last anim
+            if (state == Cycle.State.FadingOut) {
+                ctx.setGlobalAlpha(1);
+            }
+
+            drawFlower();
+        }
+
+        void drawFlower() {
+            var stemWidth = radius / 4;
+
+            // Flower Stem
+            ctx.setFill(Color.web("#81c784"));
+            ctx.fillRoundRect(
+                cx - stemWidth / 2,
+                cy,
+                stemWidth,
+                radius * 2.5,
+                16,
+                16
+            );
+
+            // Petal
+            ctx.setFill(color);
+            fillPetals();
+            ctx.setFill(centerColor);
+            fillCenteredCircle(radius / 2, cx, cy, centerColor);
         }
 
         void fillPetals() {
