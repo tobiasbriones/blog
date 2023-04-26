@@ -42,15 +42,18 @@ class Playground {
         var radius = 100;
         var cx = cx();
         var cy = cy()+radius / 4;
-        var color = Color.web("#131313");
+        var color = Color.web("#ffdab9");
+        var centerColor = Color.web("#f0f28d");
         var anim = new Flower(
             radius,
             color,
+            centerColor,
             cx,
             cy
         );
 
         anim.anim1_Diameter();
+        anim.anim2_LeftPetal();
     }
 
     void reset() {
@@ -204,17 +207,20 @@ class Playground {
     class Flower {
         final int radius;
         final Color color;
+        final Color centerColor;
         final double cx;
         final double cy;
 
         Flower(
             int radius,
             Color color,
+            Color centerColor,
             double cx,
             double cy
         ) {
             this.radius = radius;
             this.color = color;
+            this.centerColor = centerColor;
             this.cx = cx;
             this.cy = cy;
         }
@@ -223,6 +229,13 @@ class Playground {
             reset();
             encloseHRuler(radius, cx, cy - radius, "diameter");
             drawTitle("Centering");
+        }
+
+        void anim2_LeftPetal() {
+            reset();
+            fillCenteredCircle(radius, cx - radius / 2, cy, color);
+            encloseHRuler(radius, cx - radius / 2, cy, "diameter");
+            drawTitle("Petal: Left");
         }
     }
 }
