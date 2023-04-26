@@ -467,6 +467,8 @@ class Playground {
         }
     }
 
+    class BirdCat {}
+
     static class FadeAnimLoop extends AnimationTimer {
         enum TimeMode { Absolute, Relative }
 
