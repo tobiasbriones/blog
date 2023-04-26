@@ -128,5 +128,36 @@ class Playground {
         ctx.setFont(Font.font("poppins " + weight, size));
     }
 
+    void fillCenteredCircle(
+        double radius,
+        double cx,
+        double cy
+    ) {
+        var diameter = 2.0 * radius;
+        ctx.fillOval(cx - radius, cy - radius, diameter, diameter);
+    }
+
+    void fillCenteredArc(
+        double radiusX,
+        double radiusY,
+        double cx,
+        double cy
+    ) {
+        var diameterX = 2.0 * radiusX;
+        var diameterY = 2.0 * radiusY;
+        ctx.fillOval(cx - radiusX, cy - radiusY, diameterX, diameterY);
+    }
+
+    void strokeCenteredArc(
+        double radiusX,
+        double radiusY,
+        double cx,
+        double cy
+    ) {
+        var diameterX = 2.0 * radiusX;
+        var diameterY = 2.0 * radiusY;
+        ctx.strokeOval(cx - radiusX, cy - radiusY, diameterX, diameterY);
+    }
+
     class Flower {}
 }
