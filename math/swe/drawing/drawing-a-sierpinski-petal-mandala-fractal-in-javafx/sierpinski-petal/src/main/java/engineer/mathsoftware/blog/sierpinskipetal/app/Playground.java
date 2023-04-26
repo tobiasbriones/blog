@@ -526,6 +526,10 @@ class Playground {
 
         static boolean isLast(int numAnim) { return numAnim == BirdCat.NUM_ANIMS; }
 
+        static boolean isDynamic(int numAnim) {
+            return numAnim == 2 || numAnim == 5 || numAnim == 7 || numAnim == 11;
+        }
+
         BirdCat(
             double radius,
             double ellipseA,
