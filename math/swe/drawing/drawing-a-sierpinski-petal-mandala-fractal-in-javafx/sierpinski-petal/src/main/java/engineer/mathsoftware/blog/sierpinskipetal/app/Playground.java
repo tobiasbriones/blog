@@ -512,6 +512,8 @@ class Playground {
         }
     }
 
+    record Tuple<T>(T t1, T t2) {}
+
     static class FadeAnimLoop extends AnimationTimer {
         enum TimeMode { Absolute, Relative }
 
