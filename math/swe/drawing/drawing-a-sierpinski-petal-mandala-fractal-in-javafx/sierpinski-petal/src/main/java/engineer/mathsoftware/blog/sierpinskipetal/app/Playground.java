@@ -110,7 +110,7 @@ class Playground {
         int tickCount,
         double cycleTime
     ) {
-//        this.opacity = opacity;
+        this.opacity = opacity;
 
         // Uncomment to Choose Animation //
 //        var didDraw = drawFlower(numAnim, state);
@@ -155,19 +155,23 @@ class Playground {
             return false;
         }
 
-        reset();
-        cat.anim1_MemeTitle();
-//        cat.anim2_PreBody(cycleTime);
-        cat.anim3_Body();
-        cat.anim4_Tail();
-//        cat.anim5_PreHead(cycleTime);
-        cat.anim6_Head();
-//        cat.anim7_PreEye(cycleTime);
-        cat.anim8_Eye();
-        cat.anim9_Mouth();
-        cat.anim10_Effects();
-//        cat.anim11_Effects(cycleTime);
-        cat.anim12_Effects();
+        if (BirdCat.isLast(numAnim)) {
+            clean();
+        }
+        else {
+            reset();
+        }
+
+        ctx.setGlobalAlpha(1);
+        cat.draw(numAnim - 1);
+        ctx.setGlobalAlpha(opacity);
+
+        if (BirdCat.isDynamic(numAnim)) {
+            cat.playAnim(numAnim, cycleTime);
+        }
+        else {
+            cat.drawOnly(numAnim);
+        }
         return true;
     }
 
@@ -548,6 +552,53 @@ class Playground {
                 new Tuple<>(cx, cy),
                 new Tuple<>(ellipseA, ellipseB)
             );
+        }
+
+        void draw() {
+            draw(NUM_ANIMS, 1);
+        }
+
+        void draw(int to) {
+            draw(to, 1);
+        }
+
+        void drawOnly(int numAnim) {
+            draw(numAnim, numAnim);
+        }
+
+        void draw(int to, int from) {
+            if (to <= 0 || from <= 0 || from > to) {
+                return;
+            }
+            if (to > NUM_ANIMS) {
+                draw(NUM_ANIMS, from);
+                return;
+            }
+
+            if (from > to) {
+                return;
+            }
+
+            switch (from) {
+                case 1 -> anim1_MemeTitle();
+                case 2, 3 -> anim3_Body();
+                case 4 -> anim4_Tail();
+                case 5, 6 -> anim6_Head();
+                case 7, 8 -> anim8_Eye();
+                case 9 -> anim9_Mouth();
+                case 10 -> anim10_Effects();
+                case 11, 12 -> anim12_Effects();
+            }
+            draw(to, from + 1);
+        }
+
+        void playAnim(int numAnim, double cycleTime) {
+            switch (numAnim) {
+                case 2 -> anim2_PreBody(cycleTime);
+                case 5 -> anim5_PreHead(cycleTime);
+                case 7 -> anim7_PreEye(cycleTime);
+                case 11 -> anim11_Effects(cycleTime);
+            }
         }
 
         void anim1_MemeTitle() {
