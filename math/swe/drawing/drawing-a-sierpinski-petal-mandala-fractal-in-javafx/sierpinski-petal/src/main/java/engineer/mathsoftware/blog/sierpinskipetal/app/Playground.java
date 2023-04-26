@@ -38,6 +38,19 @@ class Playground {
 
     void play() {
         reset();
+
+        var radius = 100;
+        var cx = cx();
+        var cy = cy()+radius / 4;
+        var color = Color.web("#131313");
+        var anim = new Flower(
+            radius,
+            color,
+            cx,
+            cy
+        );
+
+        anim.anim1_Diameter();
     }
 
     void reset() {
@@ -128,6 +141,21 @@ class Playground {
         ctx.setFont(Font.font("poppins " + weight, size));
     }
 
+    void encloseHRuler(
+        double radius,
+        double cx,
+        double cy,
+        String txt
+    ) {
+        ctx.setStroke(Color.web("#4CAF50"));
+        ctx.strokeLine(cx - radius, cy, cx + radius, cy);
+        ctx.strokeLine(cx - radius, 0, cx - radius, cy + radius);
+        ctx.strokeLine(cx + radius, 0, cx + radius, cy + radius);
+
+        setDrawingText("medium", 20, VPos.BOTTOM);
+        ctx.fillText(txt, cx, cy - 2);
+    }
+
     void fillCenteredCircle(
         double radius,
         double cx,
@@ -159,5 +187,29 @@ class Playground {
         ctx.strokeOval(cx - radiusX, cy - radiusY, diameterX, diameterY);
     }
 
-    class Flower {}
+    class Flower {
+        final int radius;
+        final Color color;
+        final double cx;
+        final double cy;
+
+        Flower(
+            int radius,
+            Color color,
+            double cx,
+            double cy
+        ) {
+            this.radius = radius;
+            this.color = color;
+            this.cx = cx;
+            this.cy = cy;
+        }
+
+        void anim1_Diameter() {
+            reset();
+
+            ctx.setFill(color);
+            encloseHRuler(radius, cx, cy - radius, "diameter");
+        }
+    }
 }
