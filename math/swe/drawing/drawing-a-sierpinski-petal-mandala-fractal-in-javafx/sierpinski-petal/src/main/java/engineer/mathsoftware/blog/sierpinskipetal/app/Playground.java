@@ -160,6 +160,7 @@ class Playground {
         cat.anim6_Head();
 //        cat.anim7_PreEye(cycleTime);
         cat.anim8_Eye();
+        cat.anim9_Mouth();
         return true;
     }
 
@@ -908,6 +909,40 @@ class Playground {
                     }
                 )
             );
+            ctx.restore();
+        }
+
+        void anim9_Mouth() {
+            var headHeight = radius * 1.4;
+            var x1 = cx - ellipseA * 0.6;
+            var y1 = ellipse.evalX(x1).t2();
+            var x2 = cx + ellipseA * 0.2;
+            var y2 = ellipse.evalX(x2).t2() - headHeight;
+            var eyeX = cx + ellipseA * 0.8;
+            var eyeY = y2 + radius * 0.2;
+
+            var ccx = eyeX - 45;
+            var ccy = eyeY + 15;
+
+            ctx.save();
+            ctx.translate(ccx, ccy);
+
+            ctx.rotate(100);
+
+            ctx.setFill(Color.web("#909090"));
+            ctx.fillOval(0, 0, 3, 5);
+
+            ctx.beginPath();
+            ctx.translate(0, 16);
+            ctx.moveTo(0, 0);
+
+            ctx.quadraticCurveTo(-15, 8, -30, 0);
+
+            ctx.moveTo(0, 0);
+            ctx.quadraticCurveTo(15, 8, 30, -10);
+
+            ctx.setStroke(Color.web("#333333"));
+            ctx.stroke();
             ctx.restore();
         }
     }
