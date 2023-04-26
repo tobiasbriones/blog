@@ -13,6 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.TextAlignment;
+import javafx.scene.transform.Rotate;
 
 import javax.imageio.ImageIO;
 import java.io.BufferedReader;
@@ -99,7 +100,7 @@ class Playground {
         var cx = cx();
         var cy = cy() + radius / 4;
         var color = Color.web("#131313");
-        cat = new BirdCat(ellipseA, ellipseB, cx, cy, color);
+        cat = new BirdCat(radius, ellipseA, ellipseB, cx, cy, color);
     }
 
     void draw(
@@ -109,7 +110,7 @@ class Playground {
         int tickCount,
         double cycleTime
     ) {
-        this.opacity = opacity;
+//        this.opacity = opacity;
 
         // Uncomment to Choose Animation //
 //        var didDraw = drawFlower(numAnim, state);
@@ -152,8 +153,9 @@ class Playground {
     boolean drawCat(double cycleTime) {
         reset();
         cat.anim1_MemeTitle();
-        cat.anim2_PreBody(cycleTime);
+//        cat.anim2_PreBody(cycleTime);
         cat.anim3_Body();
+        cat.anim4_Tail();
         return true;
     }
 
@@ -501,6 +503,7 @@ class Playground {
     }
 
     class BirdCat {
+        final double radius;
         final double ellipseA;
         final double ellipseB;
         final double cx;
@@ -509,12 +512,14 @@ class Playground {
         final Shape.Ellipse ellipse;
 
         BirdCat(
+            double radius,
             double ellipseA,
             double ellipseB,
             double cx,
             double cy,
             Color color
         ) {
+            this.radius = radius;
             this.ellipseA = ellipseA;
             this.ellipseB = ellipseB;
             this.cx = cx;
@@ -555,6 +560,59 @@ class Playground {
 
         void anim3_Body() {
             fillCenteredArc(ellipseA, ellipseB, cx, cy, color);
+        }
+
+        void anim4_Tail() {
+            var tailWidth = radius / 2.5;
+            var tailLength = radius * 1.5;
+            var rotate = new Rotate(45, cx - tailWidth / 2, cy + radius);
+
+            ctx.save();
+            ctx.transform(
+                rotate.getMxx(), rotate.getMyx(), rotate.getMxy(),
+                rotate.getMyy(), rotate.getTx(), rotate.getTy()
+            );
+
+            ctx.fillRoundRect(
+                cx - tailWidth,
+                cy + radius * 1.2,
+                tailWidth,
+                tailLength,
+                48,
+                48
+            );
+
+            ctx.restore();
+
+            ctx.beginPath();
+
+            var x1 = cx - radius;
+            var y1 = ellipse.evalX(x1).t1();
+            var x2 = cx - tailWidth * 2;
+            var y2 = cy + radius * 1.2 + 12;
+
+            ctx.moveTo(x1, y1);
+            ctx.quadraticCurveTo(
+                cx - (cx - x2) / 2,
+                cy + (y2 - y1) * 0.8,
+                x2,
+                y2
+            );
+
+            ctx.lineTo(x2 + tailWidth + 4, y2 + 11);
+
+            var x3 = cx + radius;
+            var y3 = ellipse.evalX(x3).t1();
+
+            ctx.quadraticCurveTo(
+                cx + (cx - x2) / 2,
+                cy + (y2 - y1) * 1.1,
+                x3,
+                y3
+            );
+
+            ctx.closePath();
+            ctx.fill();
         }
     }
 
