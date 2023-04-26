@@ -97,14 +97,15 @@ class Playground {
         int tickCount,
         double cycleTime
     ) {
-        if (numAnim > Flower.NUM_ANIMS) {
-            stop();
-            return;
-        }
         this.opacity = opacity;
+        var didDraw = drawFlower(numAnim, state);
 
-        flower.draw(numAnim, state);
-        drawCompleted(tickCount);
+        if (didDraw) {
+            drawCompleted(tickCount);
+        }
+        else {
+            stop();
+        }
     }
 
     void drawCompleted(int tickCount) {
@@ -122,6 +123,15 @@ class Playground {
         if (record) {
             buildRecording();
         }
+    }
+
+    boolean drawFlower(int numAnim, Cycle.State state) {
+        if (numAnim > Flower.NUM_ANIMS) {
+            return false;
+        }
+
+        flower.draw(numAnim, state);
+        return true;
     }
 
     void reset() {
@@ -466,8 +476,6 @@ class Playground {
             fillCenteredCircle(radius, cx, cy + radius / 2, color);
         }
     }
-
-    class BirdCat {}
 
     static class FadeAnimLoop extends AnimationTimer {
         enum TimeMode { Absolute, Relative }
