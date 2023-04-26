@@ -220,6 +220,7 @@ class Playground {
         }
 
         void anim1_Diameter() {
+            reset();
             encloseHRuler(radius, cx, cy - radius, "diameter");
             drawTitle("Centering");
         }
