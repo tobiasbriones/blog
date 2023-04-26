@@ -580,9 +580,11 @@ class Playground {
     static class Recorder {
         static final String RECORDING_DIR = "recording";
         final Canvas canvas;
+        final List<Thread> threads;
 
         Recorder(Canvas canvas) {
             this.canvas = canvas;
+            this.threads = new ArrayList<>();
         }
 
         void saveSnapshot(int i) throws IOException {
@@ -604,7 +606,7 @@ class Playground {
                 par.mkdirs();
             }
 
-            Thread.startVirtualThread(() -> {
+            var t = Thread.startVirtualThread(() -> {
                 try {
                     ImageIO.write(
                         SwingFXUtils.fromFXImage(shot, null),
@@ -617,6 +619,8 @@ class Playground {
                     e.printStackTrace();
                 }
             });
+
+            threads.add(t);
         }
 
         static void deleteDirRecursive(File dir) throws IOException {
