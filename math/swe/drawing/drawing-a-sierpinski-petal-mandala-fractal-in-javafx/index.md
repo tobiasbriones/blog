@@ -301,3 +301,130 @@ The result is the "Hello World" `Canvas` rendered in the middle of the window:
 <figcaption>
 <p align="center"><strong>Canvas Hello World</strong></p>
 </figcaption>
+
+#### Getting Started with a Playground
+
+I created a `Playground` class to apply many concepts before going all the way
+ahead with this article. It requires having experience with `Canvas`[^x], and I
+encourage you to try it out to have a greater context (pun intended) on what
+you're doing or to check ideas.
+
+[^x]: The `Canvas` API is pretty similar for both JavaFX and HTML5, so the
+    experience is mostly interoperable
+
+The rules are simple, write any code you'd like to test in the `Playground` as
+if it was a *script*. I didn't leave convoluted code that's normally required,
+like access modifiers, explicit conversions, all kinds of hints, etc., **so
+I can focus on scripting inside `Playground` instead, as that's the purpose of
+this class** [^x].
+
+[^x]: Even if it's a playground, make sure to keep writing code that can be
+    refactored, as I said in my **EP: TCP File System:** *"Projects are never
+    perfect, and they evolve from prototypes or initial developments. I didn't
+    make a mistake in writing that code that way. We just need to write code
+    that can be refactorized."*
+
+This is an idea of what my `Playground` currently looks like:
+
+```java
+@SuppressWarnings("ALL")
+class Playground {
+    final Canvas canvas;
+    final GraphicsContext ctx;
+    final double scale;
+    final double cycleDuration;
+    final AnimationTimer loop;
+    final int targetFps;
+    final boolean record;
+    double opacity;
+    String title;
+
+    double width() { return canvas.getWidth() / scale; }
+
+    double height() { return canvas.getHeight() / scale; }
+
+    double cx() { return width() / 2; }
+
+    double cy() { return height() / 2; }
+    
+    Playground(Canvas canvas, double scale) {
+        this.canvas = canvas;
+        this.ctx = canvas.getGraphicsContext2D();
+        this.scale = scale;
+        this.cycleDuration = 2.0;
+        this.targetFps = 24;
+        this.record = true;
+        this.loop = new FadeAnimLoop(
+            this::draw,
+            targetFps,
+            cycleDuration,
+            FadeAnimLoop.TimeMode.Relative
+        );
+        this.opacity = 1.0;
+        this.title = "Drawing a Flower";
+    }
+    
+    void play() {
+        ctx.scale(scale, scale);
+        loop.start();
+    }
+
+    void draw(
+        int numAnim,
+        double opacity,
+        Cycle.State state,
+        int tickCount,
+        double cycleTime
+    ) {
+        this.opacity = opacity;
+        title = "Drawing the Bird Cat";
+        var cyclePos = cycleTime / cycleDuration;
+        var radius = 100.0;
+        var ellipseA = 1.2 * radius;
+        var ellipseB = radius;
+        var cx = cx();
+        var cy = cy() + radius / 4;
+        var color = Color.web("#131313");
+        var centerColor = Color.web("#f0f28d");
+        var anim = new BirdCat(
+            radius,
+            ellipseA,
+            ellipseB,
+            cx,
+            cy,
+            color,
+            centerColor
+        );
+        // ... //
+    }
+    // ... //
+}
+```
+
+Then you can call it from the `draw` method on `AppCanvasView`:
+
+```java
+var playground = new Playground(canvas, CANVAS_SCALE);
+playground.play();
+```
+
+You can pass a `CANVAS_SCALE` value to get build more professional productions.
+
+In nearly 2,000 LoC, I wrote two drawings with animations, the implementations
+for the `FadeAnimLoop` `AnimationTimer`, a `Cycle` FSM object[^x] that manages
+the state of the animation[^x]. In addition, I also implemented simulation
+recording, so for example, I can export the animations at *any resolution and
+frame rate* without frame loss.
+
+[^x]: OOP should be used to implement FSMs with mutable state instead of idiotic
+    "real world" analogies
+
+[^x]: Non-programmers who come from other fields are usually unable to figure it
+    out when it comes to non-trivial visualizations, so they tell me "I wasn't
+    able to figure it out," since writing working code logic is hard (not
+    to say well-engineered code), so here in these cases I decouple the state
+    from other systems to bound it —Unbounded mutable state is always a red flag
+    🚩
+
+With this, you can play around before writing the final application code for 
+drawing and animating.
