@@ -512,6 +512,21 @@ class Playground {
         }
     }
 
+    sealed interface Shape {
+        Tuple<Double> evalX(double x);
+
+        record Ellipse(Tuple<Double> center, Tuple<Double> size) implements Shape {
+            @Override
+            public Tuple<Double> evalX(double x) {
+                var a2 = StrictMath.pow(size.t1(), 2.0);
+                var b2 = StrictMath.pow(size.t2(), 2.0);
+                var rhs = (1.0 - StrictMath.pow(x - center.t1(), 2.0) / a2) * b2;
+                var root = StrictMath.sqrt(rhs);
+                return new Tuple<>(root + center.t2(), -root + center.t2());
+            }
+        }
+    }
+
     record Tuple<T>(T t1, T t2) {}
 
     static class FadeAnimLoop extends AnimationTimer {
