@@ -56,6 +56,7 @@ class Playground {
         anim.anim2_LeftPetal();
         anim.anim3_TopPetal();
         anim.anim4_RightPetal();
+        anim.anim5_BottomPetal();
     }
 
     void reset() {
@@ -255,6 +256,20 @@ class Playground {
             fillCenteredCircle(radius, cx + radius / 2, cy, color);
             encloseHRuler(radius, cx + radius / 2, cy, "diameter");
             drawTitle("Petal: Right");
+        }
+
+        void anim5_BottomPetal() {
+            reset();
+            fillPetals();
+            encloseHRuler(radius, cx, cy + radius / 2, "diameter");
+            drawTitle("Petal: Bottom");
+        }
+
+        void fillPetals() {
+            fillCenteredCircle(radius, cx - radius / 2, cy, color);
+            fillCenteredCircle(radius, cx, cy - radius / 2, color);
+            fillCenteredCircle(radius, cx + radius / 2, cy, color);
+            fillCenteredCircle(radius, cx, cy + radius / 2, color);
         }
     }
 }
