@@ -153,6 +153,7 @@ class Playground {
         reset();
         cat.anim1_MemeTitle();
         cat.anim2_PreBody(cycleTime);
+        cat.anim3_Body();
         return true;
     }
 
@@ -550,6 +551,10 @@ class Playground {
                 ctx.fillRect(x, y2, 1, 1);
             }
             ctx.setFill(color);
+        }
+
+        void anim3_Body() {
+            fillCenteredArc(ellipseA, ellipseB, cx, cy, color);
         }
     }
 
