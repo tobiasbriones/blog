@@ -71,6 +71,11 @@ class Playground {
         ctx.setGlobalAlpha(opacity);
     }
 
+    void drawTitle(String title) {
+        setDrawingText("extrabold", 36, VPos.BOTTOM);
+        ctx.fillText(title, width() / 2, height() - 140);
+    }
+
     void drawSource(String title) {
         setDrawingText("medium", 24, VPos.BOTTOM);
 
@@ -210,6 +215,7 @@ class Playground {
 
             ctx.setFill(color);
             encloseHRuler(radius, cx, cy - radius, "diameter");
+            drawTitle("Centering");
         }
     }
 }
