@@ -41,7 +41,7 @@ class Playground {
 
         var radius = 100;
         var cx = cx();
-        var cy = cy()+radius / 4;
+        var cy = cy() - radius;
         var color = Color.web("#ffdab9");
         var centerColor = Color.web("#f0f28d");
         var anim = new Flower(
