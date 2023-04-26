@@ -13,6 +13,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.TextAlignment;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+
 @SuppressWarnings("ALL")
 class Playground {
     final Canvas canvas;
@@ -568,5 +576,30 @@ class Playground {
         }
     }
 
-    static class Recorder {}
+    static class Recorder {
+        static void deleteDirRecursive(File dir) throws IOException {
+            if (!dir.exists()) {
+                return;
+            }
+            Files.walkFileTree(dir.toPath(), new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult postVisitDirectory(
+                    Path dir,
+                    IOException exc
+                ) throws IOException {
+                    Files.delete(dir);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult visitFile(
+                    Path file,
+                    BasicFileAttributes attrs
+                ) throws IOException {
+                    Files.delete(file);
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        }
+    }
 }
