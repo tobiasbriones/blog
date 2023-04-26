@@ -524,6 +524,8 @@ class Playground {
         final Color color;
         final Shape.Ellipse ellipse;
 
+        static boolean isLast(int numAnim) { return numAnim == BirdCat.NUM_ANIMS; }
+
         BirdCat(
             double radius,
             double ellipseA,
