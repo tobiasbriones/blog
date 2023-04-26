@@ -665,6 +665,10 @@ class Playground {
         }
 
         void compileVideo() throws IOException, InterruptedException {
+            for (var t : threads) {
+                t.join();
+            }
+
             var outputPath = Path.of("out/recording.mp4");
 
             if (Files.exists(outputPath)) {
