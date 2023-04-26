@@ -38,6 +38,7 @@ class Playground {
     boolean record;
     String title;
     Flower flower;
+    BirdCat cat;
 
     double width() { return canvas.getWidth() / scale; }
 
@@ -73,6 +74,7 @@ class Playground {
 
     void initModels() {
         initFlower();
+        initCat();
     }
 
     void initFlower() {
@@ -90,6 +92,11 @@ class Playground {
         );
     }
 
+    void initCat() {
+        var cx = cx();
+        cat = new BirdCat(cx);
+    }
+
     void draw(
         int numAnim,
         double opacity,
@@ -98,7 +105,10 @@ class Playground {
         double cycleTime
     ) {
         this.opacity = opacity;
-        var didDraw = drawFlower(numAnim, state);
+
+        // Uncomment to Choose Animation //
+//        var didDraw = drawFlower(numAnim, state);
+        var didDraw = drawCat();
 
         if (didDraw) {
             drawCompleted(tickCount);
@@ -131,6 +141,12 @@ class Playground {
         }
 
         flower.draw(numAnim, state);
+        return true;
+    }
+
+    boolean drawCat() {
+        reset();
+        cat.anim1_MemeTitle();
         return true;
     }
 
@@ -474,6 +490,25 @@ class Playground {
             fillCenteredCircle(radius, cx, cy - radius / 2, color);
             fillCenteredCircle(radius, cx + radius / 2, cy, color);
             fillCenteredCircle(radius, cx, cy + radius / 2, color);
+        }
+    }
+
+    class BirdCat {
+        final double cx;
+
+        BirdCat(double cx) {
+            this.cx = cx;
+        }
+
+        void anim1_MemeTitle() {
+            setDrawingText("extrabold", 24, VPos.CENTER);
+            ctx.setFill(Color.web("#5d4037"));
+            ctx.fillText(
+                "Scientists: The bird cat doesn't exist".toUpperCase(),
+                cx,
+                100
+            );
+            ctx.fillText("The Bird Cat:".toUpperCase(), cx, 130);
         }
     }
 
