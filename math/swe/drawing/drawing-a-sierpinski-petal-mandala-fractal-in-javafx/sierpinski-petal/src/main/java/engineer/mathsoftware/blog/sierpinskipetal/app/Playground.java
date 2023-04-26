@@ -81,6 +81,10 @@ class Playground {
         int tickCount,
         double cycleTime
     ) {
+        if (numAnim > Flower.NUM_ANIMS) {
+            stop();
+            return;
+        }
         this.opacity = opacity;
 
         flower.draw(numAnim, state);
@@ -254,6 +258,7 @@ class Playground {
     }
 
     class Flower {
+        final static int NUM_ANIMS = 9;
         final int radius;
         final Color color;
         final Color centerColor;
