@@ -4,5 +4,6 @@
 
 module engineer.mathsoftware.blog.sierpinskipetal {
     requires javafx.controls;
+    requires javafx.swing;
     exports engineer.mathsoftware.blog.sierpinskipetal;
 }
