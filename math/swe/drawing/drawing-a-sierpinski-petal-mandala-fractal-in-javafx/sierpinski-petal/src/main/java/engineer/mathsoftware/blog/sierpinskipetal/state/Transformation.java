@@ -5,5 +5,15 @@
 package engineer.mathsoftware.blog.sierpinskipetal.state;
 
 public final class Transformation {
+    public interface Stateful extends State, Eff {}
+
+    public interface State {
+        double getScale();
+    }
+
+    public interface Eff {
+        void setScale(double value);
+    }
+
     private Transformation() {}
 }
