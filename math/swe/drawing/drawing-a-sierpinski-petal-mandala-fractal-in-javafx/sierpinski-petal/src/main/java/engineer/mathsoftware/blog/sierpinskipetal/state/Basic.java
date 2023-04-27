@@ -5,5 +5,11 @@
 package engineer.mathsoftware.blog.sierpinskipetal.state;
 
 public final class Basic {
+    public interface Stateful extends State, Eff {}
+
+    public interface State extends Position.State, Transformation.State {}
+
+    public interface Eff extends Position.Eff, Transformation.Eff {}
+
     private Basic() {}
 }
