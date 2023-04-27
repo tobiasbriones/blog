@@ -5,6 +5,8 @@
 package engineer.mathsoftware.blog.sierpinskipetal.state;
 
 public final class Position {
+    public interface Stateful extends State, Eff {}
+
     public interface State {
         double getX();
         double getY();
