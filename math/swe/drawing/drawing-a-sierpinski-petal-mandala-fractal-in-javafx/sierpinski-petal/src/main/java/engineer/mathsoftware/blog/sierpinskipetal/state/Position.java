@@ -5,5 +5,10 @@
 package engineer.mathsoftware.blog.sierpinskipetal.state;
 
 public final class Position {
+    public interface State {
+        double getX();
+        double getY();
+    }
+
     private Position() {}
 }
