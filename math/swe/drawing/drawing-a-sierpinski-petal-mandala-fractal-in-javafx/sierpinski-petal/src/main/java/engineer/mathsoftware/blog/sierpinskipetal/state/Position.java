@@ -10,5 +10,17 @@ public final class Position {
         double getY();
     }
 
+    public interface Eff {
+        void setX(double value);
+        void setY(double value);
+        void translateX(double value);
+        void translateY(double value);
+
+        default void setPosition(double x, double y) {
+            setX(x);
+            setY(y);
+        }
+    }
+
     private Position() {}
 }
