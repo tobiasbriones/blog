@@ -7,9 +7,18 @@ package engineer.mathsoftware.blog.sierpinskipetal.state;
 public sealed interface State {
     record Petal(
         Basic.Stateful value
-    ) implements State {
+    ) implements State, Accessible<Basic.State, Basic.Stateful> {
         public static Petal newInstance() {
             return new Petal(new BasicStateful());
+        }
+    }
+
+    @FunctionalInterface
+    interface Accessible<R, S extends R> {
+        S value();
+
+        default S readonly() {
+            return value();
         }
     }
 }
