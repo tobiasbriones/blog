@@ -24,6 +24,7 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("ALL")
@@ -59,11 +60,11 @@ class Playground {
             this::draw,
             targetFps,
             cycleDuration,
-            FadeAnimLoop.TimeMode.Absolute
+            FadeAnimLoop.TimeMode.Relative
         );
         this.recorder = new Recorder(canvas, targetFps);
         this.opacity = 1.0;
-        this.record = false;
+        this.record = true;
         this.title = "Drawing a Flower";
     }
 
@@ -1385,7 +1386,7 @@ class Playground {
         Recorder(Canvas canvas, int targetFps) {
             this.canvas = canvas;
             this.targetFps = targetFps;
-            this.threads = new ArrayList<>();
+            this.threads = Collections.synchronizedList(new ArrayList<>());
         }
 
         void saveSnapshot(int i) throws IOException {
@@ -1419,15 +1420,16 @@ class Playground {
                 catch (IOException e) {
                     e.printStackTrace();
                 }
+                finally {
+                    threads.remove(Thread.currentThread());
+                }
             });
 
             threads.add(t);
         }
 
         void compileVideo() throws IOException, InterruptedException {
-            for (var t : threads) {
-                t.join();
-            }
+            waitForThreads();
 
             var outputPath = Path.of("out/recording.mp4");
 
@@ -1466,6 +1468,20 @@ class Playground {
                 var exitCode = builder.waitFor();
 
                 System.out.println("Command exited with code " + exitCode);
+            }
+        }
+
+        void waitForThreads() throws InterruptedException {
+            // Avoid dead lock by copying the current running threads and wait
+            // for them separately
+            List<Thread> threadsCopy;
+
+            synchronized (threads) {
+                threadsCopy = new ArrayList<>(threads);
+            }
+
+            for (var t : threadsCopy) {
+                t.join();
             }
         }
 
