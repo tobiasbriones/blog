@@ -17,44 +17,50 @@ ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/
 Today at this moment, I was thinking about fractals and mandalas. I'm always
 thinking about these concepts, but I just got excited about it and stayed
 playing with some drawings I figured out.
+<div id="id" class="carousel slide">
+    <div class="carousel-indicators">
+            <button type="button" data-bs-target="#id"
+                    data-bs-slide-to="0" class="active bg-dark-subtle"
+                    aria-current="true" aria-label="Slide 0"></button>
+        ,
+            <button type="button" data-bs-target="#id"
+                    data-bs-slide-to="0" class="active bg-dark-subtle"
+                    aria-current="true" aria-label="Slide 1"></button>
+        </div>
+    <div class="carousel-inner">
 
-<div id="carouselExampleCaptions" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" 
-data-bs-slide-to="0" class="active bg-dark-subtle" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" 
-data-bs-slide-to="1" aria-label="Slide 2" class="bg-dark-subtle"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/test/cover.png" class="d-block w-100" alt="..." style="padding-bottom: 128px;">
-      <div class="carousel-caption d-none d-md-block"
-          style="color: #212121;">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
+        <div class="carousel-item active">
+            <img src="/test/cover.png" class="d-block
+        w-100" alt="/test/cover.png" style="padding-bottom: 128px;">
+            <div class="carousel-caption d-none d-md-block"
+                 style="color: #212121;">
+                <h5>Cover</h5>
+                <p>This is a cover</p>
+            </div>
+        </div>
+        ,
+        <div class="carousel-item active">
+            <img src="/test/drawing.png" class="d-block
+        w-100" alt="/test/drawing.png" style="padding-bottom: 128px;">
+            <div class="carousel-caption d-none d-md-block"
+                 style="color: #212121;">
+                <h5>Drawing</h5>
+                <p>This is a drawing</p>
+            </div>
+        </div>
+
     </div>
-    <div class="carousel-item">
-      <img src="/test/drawing.png" class="d-block w-100" alt="..."
-        style="padding-bottom: 128px;">
-      <div class="carousel-caption d-none d-md-block" style="color: #212121;">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev bg-dark-subtle" type="button" 
-data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next bg-dark-subtle" type="button" 
-data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+    <button class="carousel-control-prev bg-dark-subtle" type="button"
+            data-bs-target="#id" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next bg-dark-subtle" type="button"
+            data-bs-target="#id" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-
 
 It's a way to feel better, that I'm doing what I love, I just had to do it even
 though I had no schedule for that.
