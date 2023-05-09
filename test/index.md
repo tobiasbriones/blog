@@ -17,6 +17,8 @@ ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/
 Today at this moment, I was thinking about fractals and mandalas. I'm always
 thinking about these concepts, but I just got excited about it and stayed
 playing with some drawings I figured out.
+
+
 <div id="id" class="carousel slide">
     <div class="carousel-indicators">
             <button type="button" data-bs-target="#id"
@@ -39,7 +41,7 @@ playing with some drawings I figured out.
             </div>
         </div>
         ,
-        <div class="carousel-item active">
+        <div class="carousel-item ">
             <img src="/test/drawing.png" class="d-block
         w-100" alt="/test/drawing.png" style="padding-bottom: 128px;">
             <div class="carousel-caption d-none d-md-block"
