@@ -20,20 +20,24 @@ playing with some drawings I figured out.
 
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" 
+data-bs-slide-to="0" class="active bg-dark-subtle" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" 
+data-bs-slide-to="1" aria-label="Slide 2" class="bg-dark-subtle"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/test/cover.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
+      <img src="/test/cover.png" class="d-block w-100" alt="..." style="padding-bottom: 128px;">
+      <div class="carousel-caption d-none d-md-block"
+          style="color: #212121;">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/test/drawing.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
+      <img src="/test/drawing.png" class="d-block w-100" alt="..."
+        style="padding-bottom: 128px;">
+      <div class="carousel-caption d-none d-md-block" style="color: #212121;">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
