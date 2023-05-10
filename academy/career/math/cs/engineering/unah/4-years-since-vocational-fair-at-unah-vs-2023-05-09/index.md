@@ -69,10 +69,10 @@ also enrolled in Geometry I[^4][^5] but canceled it.
     of the actual aircraft instruments. That is, I always choose abstractions
     (the fear of many)
 
-I was also attending an "English for Call Center" training at Altia Business
-Park, which lasted about 5 weeks, with 3 hours per day. It was an engaging
-activity where I learned about the call center industry and a few English
-insights [^6].
+I was also attending "Projoven" —an "English for Call Center" training at Altia
+Business Park—, which lasted 5 weeks until April, with 3 hours per day. It was
+an engaging activity where I learned about the call center industry and a few
+English insights [^6].
 
 [^6]: Additionally, I used to enjoy food at the mall. Despite not having
     substantial savings, I never viewed money as a significant factor in
