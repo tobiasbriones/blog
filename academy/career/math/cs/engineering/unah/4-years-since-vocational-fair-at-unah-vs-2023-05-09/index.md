@@ -8,6 +8,28 @@
 
 ---
 
+## Vocational Fair
+
+The vocational fair is usually performed once a year, where the community, like
+university stakeholders (students, academics, etc.), and other guests like
+high-school[^1] students.
+
+[^1]: High-school students are those who are near to entering superior education
+    like college or university
+
+> The Vocational Fair has as its main purpose the orientation, advice, and
+> socialization of the educational offer, as well as the academic services that
+> the most important university in the country offers to aspiring graduates of
+> secondary education, with the objective that future university students assume
+> a successful choice of their career, taking into account their interests,
+> aptitudes and vocational preferences.
+>
+> **Source:** *Feria Vocacional* \| UNAH [1] (under fair use, translated from
+> Spanish to English)
+
+Careers have the chance to show what potential new students can achieve or
+engage regarding professional paths.
+
 # References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
