@@ -264,6 +264,29 @@ That is, my endeavors always pay off the effort 🤗!
 These were the insights I had for the AI, computer vision, and software
 engineering with applied mathematics.
 
+## Diagrams
+
+I showed some informal diagrams to depict what I did.
+
+![Package Structure](package-structure.png)
+
+<figcaption>
+<p align="center"><strong>Package Structure [4]</strong></p>
+</figcaption>
+
+![Instance Object Hierarchy](instance-object-hierarchy.png)
+
+<figcaption>
+<p align="center"><strong>Instance Object Hierarchy [4]</strong></p>
+</figcaption>
+
+
+![KeyPool Algorithm](keypool-algorithm.png)
+
+<figcaption>
+<p align="center"><strong>KeyPool Algorithm [4]</strong></p>
+</figcaption>
+
 # References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
