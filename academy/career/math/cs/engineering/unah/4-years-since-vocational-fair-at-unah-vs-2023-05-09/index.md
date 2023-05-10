@@ -208,3 +208,6 @@ edits and applies transformations to pictures. Two objectives are targeted: 1)
 The use of native code to perform large demanding operations. 2) The application
 of applied math into image processing. GitHub. Retrieved May 9, 2023,
 from [PicRT Express Windows \| tobiasbriones \| GitHub](https://github.com/tobiasbriones/picrt-express-windows)
+
+[4] Yannakakis, G. N., & Togelius, J. (2018). Artificial Intelligence and Games.
+Springer.
