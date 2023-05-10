@@ -173,8 +173,8 @@ It was an undertaking where I took care of everything because I love harder
 challenges that make me grow.
 
 I made the presentations and diagrams printed on the bottom facade to explain
-the systems. I still have them on my open-source projects like Gencesk 2D[^16]
-and PicRT Express.
+the systems. I still have them on my open-source projects like Gencesk 2D[4]
+[^16]and PicRT Express.
 
 [^16]: Gencesk 2D was a prototype game framework I used to build Losnot in
     Paradise. I learned to build game logic when I was tackling Android dev and
