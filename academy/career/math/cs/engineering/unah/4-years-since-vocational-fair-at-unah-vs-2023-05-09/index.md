@@ -291,6 +291,19 @@ I showed some informal diagrams to depict what I did.
 
 These are the hardware projects I talked before.
 
+### Look at the Projects
+
+I took my projects out after 4 years, and here they are.
+
+![Look at the Projects](look-at-the-projects.jpg)
+
+<figcaption>
+<p align="center"><strong>Look at the Projects</strong></p>
+</figcaption>
+
+As you can see in the image, I designed the Pac-Man lights with simple materials
+and squared notebook paper.
+
 # References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
