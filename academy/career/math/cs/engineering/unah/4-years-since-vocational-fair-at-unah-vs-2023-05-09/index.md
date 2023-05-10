@@ -55,12 +55,13 @@ also enrolled in Geometry I[^4][^5] but canceled it.
 
 [^4]: The class was taught by an archaic professor who preferred teaching
     Euclidean geometry instead of the originally designated differential
-    geometry. His mentality was always on the assumption that studying math
-    meant pursuing a teaching career. Moreover, I hated Euclidean geometry, as
-    it resembles more of a civil engineering drawing class that heavily relies
-    on visuals to construct "proofs." On the other hand, I am into calculus or
-    differential geometry, which offer a more abstract and conceptually pure
-    approach to math
+    geometry. His mentality was always based on the idiotic assumption that
+    studying math meant pursuing a teaching career because Euclidean is the
+    geometry taught here to first-year students, so you have to learn it.
+    Moreover, I hated Euclidean geometry, as it resembles more of a civil
+    engineering drawing class that heavily relies on visuals to construct
+    "proofs." On the other hand, I'm into calculus or differential geometry,
+    which offer a more abstract and conceptually pure approach to math
 
 [^5]: This is like using Photoshop with the mouse to draw shapes, while I can
     get it with a Canvas DSL using actual source code. Another take, as an
@@ -69,14 +70,14 @@ also enrolled in Geometry I[^4][^5] but canceled it.
     (the fear of many)
 
 I was also attending an "English for Call Center" training at Altia Business
-Park, which lasted about 5 weeks for 3 hours per day. It was an engaging
-activity where I learned about the call center industry and a few useful English
-tricks [^6].
+Park, which lasted about 5 weeks, with 3 hours per day. It was an engaging
+activity where I learned about the call center industry and a few English
+insights [^6].
 
-[^6]: Additionally, I used to enjoy good food at the mall. Despite not having
-    substantial savings, unlike most people, I never viewed money as a
-    significant factor in happiness. Even to this day, I possess the ability to
-    find contentment without requiring a large amount of money.
+[^6]: Additionally, I used to enjoy food at the mall. Despite not having
+    substantial savings, I never viewed money as a significant factor in
+    happiness. Even to this day, I possess the ability to find contentment
+    without requiring a large amount of money.
 
 Furthermore, I participated in events at UNITEC located near the business and
 (Altara) mall area. Engaging in those activities during those months made me
