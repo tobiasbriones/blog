@@ -3,3 +3,7 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # 4 Years Since Vocational Fair at UNAH-VS (2023-05-09)
+
+![4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg)
+
+---
