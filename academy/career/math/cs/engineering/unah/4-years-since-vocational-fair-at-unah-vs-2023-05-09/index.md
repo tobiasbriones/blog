@@ -87,12 +87,23 @@ I was also engaging into the new chapters of Dragon Ball Heroes that were
 appearing in that time 😆.
 
 I worked with some projects or ideas I had already developed like **Losnot
-in Paradise**[7] —game with AI in Java I developed the previous year for the
+in Paradise**[2][^7] —game with AI in Java I developed the previous year for the
 "Programming II" course from the mathematics career.
 
-I developed new great ideas like **PicRT Express**[7] —UWP app that implements
-a bridge to call C++ from C# to use OpenCV for image processing on the
-high-level client app.
+[^7]: A video game in which our friend LOS is lost in a weird jungle of a weird
+    exoplanet and while you help him to face all kinds of obstacles I am
+    responsible for providing an AI algorithm to tell LOS how to play and get
+    out of there in his spacecraft!
+
+I developed new great ideas like **PicRT Express**[3][^8] —UWP app that
+implements a bridge to call C++ from C# to use OpenCV for image processing on
+the high-level client app.
+
+[^8]: UWP app for educational purposes in Software Engineering and Applied
+    Mathematics which edits and applies transformations to pictures. Two
+    objectives are targeted: 1) The use of native code to perform large
+    demanding operations, 2) The application of applied math into image
+    processing
 
 I also developed **hardware** challenges like an **LED-based Pac-Man** 
 consisting of LEDs I arranged so it looks like a Pac-Man and one potentiometer
@@ -100,13 +111,13 @@ to control with a 555 IC the speed at which they blink.
 
 Regarding failed experiments, I've failed to build an **FM Transmitter** since
 high-school. Issues like capacitance levels appear when working on protoboards,
-so I used to choose the PCB[^8] instead, but it never worked. Telecom is 
-not an easy field [^9].
+so I used to choose the PCB[^9] instead, but it never worked. Telecom is 
+not an easy field [^10].
 
-[^8]: I learned basis to design PCBs and electronic circuits at high-school
+[^9]: I learned basis to design PCBs and electronic circuits at high-school
     where I studied (industrial) electronics
 
-[^9]: Take into account that it might be illegal, even for educational
+[^10]: Take into account that it might be illegal, even for educational
     purposes, to run these transmitters if their signal gets too far away or
     collides with legal frequencies or channels, which adds another layer of
     complexity to telecommunications engineering
@@ -117,12 +128,12 @@ hardware is different from software.
 So, for the hardware projects, I had to spend some money, and go out get them,
 which added another significant layer of complexity for me.
 
-Another trouble I had was taking my personal desktop computer[^10][^11] and 
-monitor[^12] to the university since I was personally looking forward to 
+Another trouble I had was taking my personal desktop computer[^11][^12] and 
+monitor[^13] to the university since I was personally looking forward to 
 engaging *without expecting any reward* due to personal motivation, and that 
-was the only option I had [^13].
+was the only option I had [^14].
 
-[^10]: I've only had a desktop computer because I invested my savings in this PC
+[^11]: I've only had a desktop computer because I invested my savings in this PC
     since I was always pretty clever and knew a desktop PC is more powerful and
     cheaper than a laptop (what everyone has), and I was right. Now I've
     gotten internships or jobs at startups, I'm founding mathsoftware.engineer
@@ -130,14 +141,14 @@ was the only option I had [^13].
     workstation, but I haven't done it because I'm careful with relevant design
     decisions with heavy investment
 
-[^11]: Fun Fact 🐯: I'm still using the Optiplex 790 for writing this article
+[^12]: Fun Fact 🐯: I'm still using the Optiplex 790 for writing this article
 
-[^12]: The HP monitor got partially damaged about one and a half years ago,
+[^13]: The HP monitor got partially damaged about one and a half years ago,
     and I still use it as a second monitor, so same as the PC, I don't get 3 5K
     27" monitors because these decisions are not easy at all, even after growing
     a lot over the years: *the good decisions I take always make me successful*
 
-[^13]: Unfortunately, it's really hard to get support in a third-world country
+[^14]: Unfortunately, it's really hard to get support in a third-world country
     where people only want their egocentric affairs like getting their homework
     done for free, merely getting an approving grade on a course, mere service
     work credits with no added value, or getting rid of students like a
@@ -146,10 +157,10 @@ was the only option I had [^13].
     telling the story
 
 I developed PicRT Express in just 5 days, and I'd never worked with UWP before
-(and never will again 😂[^14]), so it was easier for me than working with
+(and never will again 😂[^15]), so it was easier for me than working with
 hardware.
 
-[^14]: I really was a fan of UWP, and I loved it, but now it's a completely 
+[^15]: I really was a fan of UWP, and I loved it, but now it's a completely 
     different story, as the project was just another Micro$oft charade
 
 ![4 Years Since](4-years-since.png)
@@ -162,11 +173,11 @@ It was an undertaking where I took care of everything because I love harder
 challenges that make me grow.
 
 I made the presentations and diagrams printed on the bottom facade to explain
-the systems. I still have them on my open-source projects like Gencesk 2D[^15]
+the systems. I still have them on my open-source projects like Gencesk 2D[^16]
 and PicRT Express.
 
-[^15]: Gencesk 2D was a prototype game framework I used to build Losnot in
-    Paradise. I learned to build game logic when I was tackling Android dev and 
+[^16]: Gencesk 2D was a prototype game framework I used to build Losnot in
+    Paradise. I learned to build game logic when I was tackling Android dev and
     Canvas in ~2014. I invented the name "Gencesk" out of "JDesk"
 
 I also had several software projects deployed into my computer to show, like
@@ -174,9 +185,9 @@ source code and ambient music for the pulsing LED board that blinks in sync
 with the music.
 
 That was a brief story of my challenges back in the day, and *I will certainly
-keep working on important projects as promised to someone special* [^16].
+keep working on important projects as promised to someone special* [^17].
 
-[^16]: I always meet persons who strongly believe in me
+[^17]: I always meet persons who strongly believe in me
 
 # References
 
