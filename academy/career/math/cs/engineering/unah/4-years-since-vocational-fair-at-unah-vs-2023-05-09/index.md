@@ -193,7 +193,7 @@ keep working on important projects as promised to someone special* [^17].
 
 As said, I had developed Losnot in Paradise a year before, where I leveraged the
 learning experience I had in a self-taught programming course where I chose
-to use *Artificial Intelligence and Games*[4] to learn theory about AI for
+to use *Artificial Intelligence and Games*[5] to learn theory about AI for
 games.
 
 Since then, I've been pretty enthusiastic about genetic algorithms as they
@@ -284,5 +284,9 @@ The use of native code to perform large demanding operations. 2) The application
 of applied math into image processing. GitHub. Retrieved May 9, 2023,
 from [PicRT Express Windows \| tobiasbriones \| GitHub](https://github.com/tobiasbriones/picrt-express-windows)
 
-[4] Yannakakis, G. N., & Togelius, J. (2018). Artificial Intelligence and Games.
+[4] Briones, TB. (2020). GitHub - tobiasbriones/gencesk-2d at prototype-2018.
+GitHub. Retrieved May 9, 2023,
+from [Gencesk 2D \| Prototype 2018 \| Tobias Briones \| GitHub](https://github.com/tobiasbriones/gencesk-2d/tree/prototype-2018)
+
+[5] Yannakakis, G. N., & Togelius, J. (2018). Artificial Intelligence and Games.
 Springer.
