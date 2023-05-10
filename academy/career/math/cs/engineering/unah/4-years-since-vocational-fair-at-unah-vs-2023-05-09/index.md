@@ -287,6 +287,10 @@ I showed some informal diagrams to depict what I did.
 <p align="center"><strong>KeyPool Algorithm [4]</strong></p>
 </figcaption>
 
+## Electronics
+
+These are the hardware projects I talked before.
+
 # References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
