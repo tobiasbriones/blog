@@ -12,10 +12,11 @@
 
 The vocational fair is usually performed once a year, where the community, like
 university stakeholders (students, academics, etc.), and other guests like
-high-school[^1] students.
+high-school[^1] students, assist in exploring or presenting projects related to
+career offers.
 
-[^1]: High-school students are those who are near to entering superior education
-    like college or university
+[^1]: High-school students are those who will soon reach higher education, like
+    college or university
 
 > The Vocational Fair has as its main purpose the orientation, advice, and
 > socialization of the educational offer, as well as the academic services that
@@ -28,7 +29,7 @@ high-school[^1] students.
 > Spanish to English)
 
 Careers have the chance to show what potential new students can achieve or
-engage regarding professional paths.
+engage in regarding professional paths.
 
 ## My Challenge
 
