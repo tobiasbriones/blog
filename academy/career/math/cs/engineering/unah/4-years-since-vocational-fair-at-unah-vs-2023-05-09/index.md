@@ -105,13 +105,13 @@ the high-level client app.
     demanding operations, 2) The application of applied math into image
     processing
 
-I also developed **hardware** challenges like an **LED-based Pac-Man** 
+I also developed **hardware** challenges like an **LED-based Pac-Man**
 consisting of LEDs I arranged so it looks like a Pac-Man and one potentiometer
 to control with a 555 IC the speed at which they blink.
 
 Regarding failed experiments, I've failed to build an **FM Transmitter** since
 high-school. Issues like capacitance levels appear when working on protoboards,
-so I used to choose the PCB[^9] instead, but it never worked. Telecom is 
+so I used to choose the PCB[^9] instead, but it never worked. Telecom is
 not an easy field [^10].
 
 [^9]: I learned basis to design PCBs and electronic circuits at high-school
@@ -128,9 +128,9 @@ hardware is different from software.
 So, for the hardware projects, I had to spend some money, and go out get them,
 which added another significant layer of complexity for me.
 
-Another trouble I had was taking my personal desktop computer[^11][^12] and 
-monitor[^13] to the university since I was personally looking forward to 
-engaging *without expecting any reward* due to personal motivation, and that 
+Another trouble I had was taking my personal desktop computer[^11][^12] and
+monitor[^13] to the university since I was personally looking forward to
+engaging *without expecting any reward* due to personal motivation, and that
 was the only option I had [^14].
 
 [^11]: I've only had a desktop computer because I invested my savings in this PC
@@ -188,6 +188,81 @@ That was a brief story of my challenges back in the day, and *I will certainly
 keep working on important projects as promised to someone special* [^17].
 
 [^17]: I always meet persons who strongly believe in me
+
+## AI for Games, Computer Vision, and SWE
+
+As said, I had developed Losnot in Paradise a year before, where I leveraged the
+learning experience I had in a self-taught programming course where I chose
+to use *Artificial Intelligence and Games*[4] to learn theory about AI for
+games.
+
+Since then, I've been pretty enthusiastic about genetic algorithms as they
+attempt to resemble a (naive) version of natural evolution.
+
+![Losnot in Paradise Sample 1](lostnot-in-paradise-sample-1.gif)
+
+<figcaption>
+<p align="center"><strong>Losnot in Paradise Sample 1 [2]</strong></p>
+</figcaption>
+
+
+![AI Screenshot 1](ai-screenshot-1.png)
+
+<figcaption>
+<p align="center"><strong>AI Screenshot 1 [2]</strong></p>
+</figcaption>
+
+Regarding computer vision, as mentioned, I had to develop PicRT Express in about
+5 days and had to learn new technologies during that time. Specifically, I was
+focused on implementing efficient native memory usage within a high-level UWP
+app[^18]. So I could show how to apply mathematics to image transformations!
+
+[^18]: I always tried to learn new tools and paradigms to have a solid
+experience on SWE, that's why I usually learn weird tech like UWP, Swing,
+etc., to understand the underlying concepts
+
+I even made the app responsive[^19], as I always strive for excellence in my
+work. That is, if I'm willing to do something, I always do it right. I don't
+accept mediocrity in my standard.
+
+[^19]: Understanding the concepts makes you a great software engineer, so as you
+    can see, I'm able to interoperate over diverse systems I've even never
+    worked before with
+
+![PicRT Express Info English](picrt-express-info-english.png)
+
+<figcaption>
+<p align="center"><strong>PicRT Express Info English [3]</strong></p>
+</figcaption>
+
+![PicRT Express 1](picrt-express-1.jpg)
+
+<figcaption>
+<p align="center"><strong>PicRT Express 1 [3]</strong></p>
+</figcaption>
+
+![PicRT Express 2](picrt-express-2.jpg)
+
+<figcaption>
+<p align="center"><strong>PicRT Express 2 [3]</strong></p>
+</figcaption>
+
+![PicRT Express 3](picrt-express-3.jpg)
+
+<figcaption>
+<p align="center"><strong>PicRT Express 3 [3]</strong></p>
+</figcaption>
+
+These open-source projects, along with others, played a crucial role in
+advancing my career in machine learning. Particularly during my time at Truora,
+I had the opportunity to work with deep learning models for fraud detection on
+ID documents. I already had a solid base and experience with many concepts, and
+then I continued scaling that experience in the deep learning area.
+
+That is, my endeavors always pay off the effort 🤗!
+
+These were the insights I had for the AI, computer vision, and software
+engineering with applied mathematics.
 
 # References
 
