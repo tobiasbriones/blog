@@ -4,11 +4,10 @@
 <div id="{{ id }}" class="carousel slide">
   
   Items: {{ items }}
-  Car: {{ page.carousels }}, {{ page.carousels[id] }}, {{ page.carousels[id]["srcs"] }}
   
   <div class="carousel-indicators">
     {% for item in items %}
-    src: {{ item.src }}
+    src: {{ item.src }}, {{ item }} {{ forloop.index }}
     <button type="button" data-bs-target="#{{ id }}"
                       data-bs-slide-to="{{ forloop.index }}" class="active bg-dark-subtle"
                       aria-current="true" aria-label="Slide {{ forloop.index }}"></button>  
