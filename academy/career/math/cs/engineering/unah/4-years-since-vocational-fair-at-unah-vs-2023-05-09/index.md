@@ -408,6 +408,28 @@ This is the failed radio FM transmitter:
 <p align="center"><strong>FM Transmitter: Testing</strong></p>
 </figcaption>
 
+## Vocational Fair
+
+So, the day of the event took place 😎:
+
+![Vocational Fair UNAH-VS 2019 1](vocational-fair-unah-vs-2019-1.jpg)
+
+<figcaption>
+<p align="center"><strong>Vocational Fair UNAH-VS 2019 1</strong></p>
+</figcaption>
+
+![Vocational Fair UNAH-VS 2019 2](vocational-fair-unah-vs-2019-2.jpg)
+
+<figcaption>
+<p align="center"><strong>Vocational Fair UNAH-VS 2019 2</strong></p>
+</figcaption>
+
+![Vocational Fair UNAH-VS 2019 3](vocational-fair-unah-vs-2019-3.jpg)
+
+<figcaption>
+<p align="center"><strong>Vocational Fair UNAH-VS 2019 3</strong></p>
+</figcaption>
+
 # References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
