@@ -18,8 +18,12 @@ Today at this moment, I was thinking about fractals and mandalas. I'm always
 thinking about these concepts, but I just got excited about it and stayed
 playing with some drawings I figured out.
 
-<iframe src="test/esp32-with-cpp-and-micropython.pdf" title="Proyecto Juego de Mazmorras | MST">
+<iframe src="test/esp32-with-cpp-and-micropython.pdf" title="Proyecto Juego de Mazmorras | MST" width="100%">
         </iframe>
+{% include iframe.html 
+  title = "Proyecto Juego de Mazmorras | MST"
+  src = "test/esp32-with-cpp-and-micropython.pdf"
+%}
 
 <div id="id" class="carousel slide">
     <div class="carousel-indicators">
