@@ -7,8 +7,8 @@
   Car: {{ page.carousels }}, {{ page.carousels[id] }}, {{ page.carousels[id]["srcs"] }}
   
   <div class="carousel-indicators">
-    {% for src in page.carousels[id][0] %}
-    src: {{ src }}
+    {% for item in items %}
+    src: {{ item.src }}
     <button type="button" data-bs-target="#{{ id }}"
                       data-bs-slide-to="{{ forloop.index }}" class="active bg-dark-subtle"
                       aria-current="true" aria-label="Slide {{ forloop.index }}"></button>  
@@ -22,9 +22,9 @@
   
     <div class="carousel-inner">
   
-      {% for src in page.carousels[{{ include.id }}][srcs] %}
+      {% for item in items %}
         <div class='carousel-item'>
-            <img src="{{ src }}" class='d-block w-100' alt="{{ item.alt }}" style='padding-bottom: 128px;'>
+            <img src="{{ item.src }}" class='d-block w-100' alt="{{ item.alt }}" style='padding-bottom: 128px;'>
             <div class='carousel-caption d-none d-md-block' style='color: #212121;'>
                 <h5>{{ item.label }}</h5>
                 <p>{{ item.desc }}</p>
