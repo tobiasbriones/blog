@@ -18,7 +18,7 @@
   
     <div class="carousel-inner">
   
-      {% for src in page.carousels[{{ include.id }}].srcs %}
+      {% for src in page.carousels[{{ include.id }}][srcs] %}
         <div class='carousel-item'>
             <img src="{{ src }}" class='d-block w-100' alt="{{ item.alt }}" style='padding-bottom: 128px;'>
             <div class='carousel-caption d-none d-md-block' style='color: #212121;'>
