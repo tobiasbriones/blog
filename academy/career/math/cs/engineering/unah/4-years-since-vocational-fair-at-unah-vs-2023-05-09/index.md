@@ -232,8 +232,8 @@ focused on implementing efficient native memory usage within a high-level UWP
 app[^18]. So I could show how to apply mathematics to image transformations!
 
 [^18]: I always tried to learn new tools and paradigms to have a solid
-experience on SWE, that's why I usually learn weird tech like UWP, Swing,
-etc., to understand the underlying concepts
+    experience on SWE, that's why I usually learn weird tech like UWP, Swing,
+    etc., to understand the underlying concepts
 
 I even made the app responsive[^19], as I always strive for excellence in my
 work. That is, if I'm willing to do something, I always do it right. I don't
