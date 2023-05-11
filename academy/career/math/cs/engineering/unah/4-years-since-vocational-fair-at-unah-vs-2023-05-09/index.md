@@ -363,7 +363,7 @@ This is the report:
 
 {% include iframe.html
 title = "LED's parpadeantes al ritmo de la música con efecto fade"
-src = "4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
+src = "/4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
 %}
 
 ### Pac-Man Blinking LEDs
