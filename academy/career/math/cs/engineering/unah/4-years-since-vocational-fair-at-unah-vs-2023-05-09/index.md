@@ -434,7 +434,7 @@ So, the day of the event took place 😎:
 <p align="center"><strong>Vocational Fair UNAH-VS 2019 3</strong></p>
 </figcaption>
 
-# References
+## References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
 Retrieved May 9, 2023, from
