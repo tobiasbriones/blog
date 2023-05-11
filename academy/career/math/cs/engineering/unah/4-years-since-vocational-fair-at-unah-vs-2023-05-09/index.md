@@ -127,7 +127,7 @@ not an easy field [^10].
     collides with legal frequencies or channels, which adds another layer of
     complexity to telecommunications engineering
 
-Designing the circuits, ideas, and PCBs was a bit more though as working with
+Designing the circuits, ideas, and PCBs was a bit more tough as working with
 hardware is different from software.
 
 For instance, I also implemented and explained the transistor as an amplifier
