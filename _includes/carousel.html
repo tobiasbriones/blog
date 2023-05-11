@@ -3,7 +3,7 @@
 <div id="{{ id }}" class="carousel slide">
   
   
-  Car: {{ page.carousels[{{ include.id }}] }}
+  Car: {{ page.carousels[id].srcs }}
   
   <div class="carousel-indicators">
     {% for src in page.carousels[id].srcs %}
