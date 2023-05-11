@@ -4,10 +4,10 @@ title: Test
 description: Test
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/drawing/an-excited-time-drawing-mandala-fractals-today-2023-04-06/cover.png
 carousels:
-  -car:
-    -srcs:
-      -/test/cover.png
-      -/test/drawing.png
+  - car:
+    - srcs:
+      - /test/cover.png
+      - /test/drawing.png
     
 ---
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
