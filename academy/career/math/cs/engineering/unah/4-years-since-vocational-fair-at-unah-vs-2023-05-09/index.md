@@ -125,6 +125,9 @@ not an easy field [^10].
 Designing the circuits, ideas, and PCBs was a bit more though as working with
 hardware is different from software.
 
+For instance, I also implemented and explained the transistor as an amplifier
+and how to polarize efficiently.
+
 So, for the hardware projects, I had to spend some money, and go out get them,
 which added another significant layer of complexity for me.
 
