@@ -4,7 +4,6 @@ title: 4 Years Since Vocational Fair at UNAH-VS (2023-05-09)
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/e12b58a4cbd10af60fa7620001a90ec13448f438/academy/career/math/cs/engineering/unah/4-years-since-vocational-fair-at-unah-vs-2023-05-09/4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg
 description: I was motivated to engage in the vocational fair at UNAH-VS 2019 to undertake self-lead SWE and electronics projects to show the applications of mathematics as a personal challenge which I tell and depict in this article.
 ---
-
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
@@ -90,9 +89,10 @@ English insights [^6].
     happiness. Even to this day, I possess the ability to find contentment
     without requiring a large amount of money.
 
-Furthermore, I participated in events at UNITEC located near the business and
-(Altara) mall area. Engaging in those activities during those months made me
-feel like an entrepreneur. Now, I have become one.
+Furthermore, I was attending to some events at UNITEC, located near the
+business and (Altara) mall area. Engaging in those activities during those
+months made me feel like an entrepreneur. Now, I have become one, or I can say
+I've always been an *innovative* entrepreneur.
 
 I was also engaging into the new chapters of Dragon Ball Heroes that were
 appearing in that time 😆.
