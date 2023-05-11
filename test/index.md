@@ -25,7 +25,7 @@ playing with some drawings I figured out.
 
 {% include carousel.html
    id = "car"
-   "items" = [
+   "items" = "[
     {
       "src": "/test/cover.png",
       "label": "Cover",
@@ -36,7 +36,7 @@ playing with some drawings I figured out.
       "label": "Drawing",
       "desc": "This is a drawing"
     }
-  ]
+  ]" | parse_json
 %}
 
 It's a way to feel better, that I'm doing what I love, I just had to do it even
