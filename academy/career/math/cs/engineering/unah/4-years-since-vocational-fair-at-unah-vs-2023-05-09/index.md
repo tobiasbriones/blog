@@ -83,9 +83,10 @@ English insights [^6].
     happiness. Even to this day, I possess the ability to find contentment
     without requiring a large amount of money.
 
-Furthermore, I participated in events at UNITEC located near the business and
-(Altara) mall area. Engaging in those activities during those months made me
-feel like an entrepreneur. Now, I have become one.
+Furthermore, I was attending to some events at UNITEC, located near the
+business and (Altara) mall area. Engaging in those activities during those
+months made me feel like an entrepreneur. Now, I have become one, or I can say
+I've always been an *innovative* entrepreneur.
 
 I was also engaging into the new chapters of Dragon Ball Heroes that were
 appearing in that time 😆.
