@@ -268,10 +268,11 @@ accept mediocrity in my standard.
 </figcaption>
 
 These open-source projects, along with others, played a crucial role in
-advancing my career in machine learning. Particularly during my time at Truora,
-I had the opportunity to work with deep learning models for fraud detection on
-ID documents. I already had a solid base and experience with many concepts, and
-then I continued scaling that experience in the deep learning area.
+advancing my career in machine learning. Particularly during my job at Truora
+later in 2022, I had the opportunity to work with deep learning models for fraud
+detection on ID documents. I already had a solid base and experience with many
+concepts, and then I just continued scaling that experience in the deep learning
+field.
 
 That is, my endeavors always pay off the effort 🤗!
 
@@ -363,7 +364,7 @@ This is the report:
 
 {% include iframe.html
 title = "LED's parpadeantes al ritmo de la música con efecto fade"
-src = "/4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
+src = "academy/career/math/cs/engineering/unah/4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
 %}
 
 ### Pac-Man Blinking LEDs
