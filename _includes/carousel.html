@@ -1,8 +1,9 @@
 {% assign id = include.id %}
+{% assign items = include.items | parse_json %}
 
 <div id="{{ id }}" class="carousel slide">
   
-  
+  Items: {{ items }}
   Car: {{ page.carousels }}, {{ page.carousels[id] }}, {{ page.carousels[id]["srcs"] }}
   
   <div class="carousel-indicators">
