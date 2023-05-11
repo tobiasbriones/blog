@@ -2,13 +2,7 @@
 permalink: /test
 title: Test 
 description: Test
-ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/drawing/an-excited-time-drawing-mandala-fractals-today-2023-04-06/cover.png
-carousels:
-  - car:
-    - srcs:
-      - /test/cover.png
-      - /test/drawing.png
-    
+ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/drawing/an-excited-time-drawing-mandala-fractals-today-2023-04-06/cover.png 
 ---
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
@@ -31,6 +25,7 @@ playing with some drawings I figured out.
 
 {% include carousel.html
    id = "car"
+   items = "[{"src":"/test/cover.png","label":"Cover","desc":"This is a cover"},{"src":"/test/drawing.png","label":"Drawing","desc":"This is a drawing"}]"
 %}
 
 It's a way to feel better, that I'm doing what I love, I just had to do it even
