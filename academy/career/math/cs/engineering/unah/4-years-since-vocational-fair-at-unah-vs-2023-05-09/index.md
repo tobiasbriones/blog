@@ -312,6 +312,12 @@ and squared notebook paper.
 Here's the circuit of the LEDs that blink at the rhythm of the music in the
 protoboard.
 
+![Pulsing LEDs](pulsing-leds.jpg)
+
+<figcaption>
+<p align="center"><strong>Pulsing LEDs</strong></p>
+</figcaption>
+
 ![Pulsing LEDs: Testing 1](pulsing-leds-.-testing-1.jpg)
 
 <figcaption>
@@ -354,6 +360,18 @@ src = "4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
 This is the circuit I designed, which resembles a Pac-Man and blinks at a given
 speed.
 
+![Pac-Man LEDs](pacman-leds.jpg)
+
+<figcaption>
+<p align="center"><strong>Pac-Man LEDs</strong></p>
+</figcaption>
+
+![Pac-Man LEDs: Circuit Rear](pacman-leds-.-circuit-rear.jpg)
+
+<figcaption>
+<p align="center"><strong>Pac-Man LEDs: Circuit Rear</strong></p>
+</figcaption>
+
 The next image dates when I was soldering and testing the components of the
 circuit:
 
@@ -377,6 +395,12 @@ The circuit still worked great when I powered it, and recorded a video of it:
 ### FM Transmitter
 
 This is the failed radio FM transmitter:
+
+![FM Transmitter](fm-transmitter.jpg)
+
+<figcaption>
+<p align="center"><strong>FM Transmitter</strong></p>
+</figcaption>
 
 ![FM Transmitter: Testing](fm-transmitter-.-testing.jpg)
 
