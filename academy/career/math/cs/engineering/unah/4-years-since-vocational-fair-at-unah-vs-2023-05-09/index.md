@@ -304,6 +304,48 @@ I took my projects out after 4 years, and here they are.
 As you can see in the image, I designed the Pac-Man lights with simple materials
 and squared notebook paper.
 
+### Pulsing LEDs
+
+Here's the circuit of the LEDs that blink at the rhythm of the music in the
+protoboard.
+
+![Pulsing LEDs: Testing 1](pulsing-leds-.-testing-1.jpg)
+
+<figcaption>
+<p align="center"><strong>Pulsing LEDs: Testing 1</strong></p>
+</figcaption>
+
+![Pulsing LEDs: Testing 2](pulsing-leds-.-testing-2.jpg)
+
+<figcaption>
+<p align="center"><strong>Pulsing LEDs: Testing 2</strong></p>
+</figcaption>
+
+![Pulsing LEDs: Testing 3](pulsing-leds-.-testing-3.jpg)
+
+<figcaption>
+<p align="center"><strong>Pulsing LEDs: Testing 3</strong></p>
+</figcaption>
+
+![Pulsing LEDs: Testing 4](pulsing-leds-.-testing-4.jpg)
+
+<figcaption>
+<p align="center"><strong>Pulsing LEDs: Testing 4</strong></p>
+</figcaption>
+
+![Pulsing LEDs: Testing 5](pulsing-leds-.-testing-5.jpg)
+
+<figcaption>
+<p align="center"><strong>Pulsing LEDs: Testing 5</strong></p>
+</figcaption>
+
+This is the report:
+
+{% include iframe.html
+title = "LED's parpadeantes al ritmo de la música con efecto fade"
+src = "4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
+%}
+
 # References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
