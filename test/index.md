@@ -25,7 +25,7 @@ playing with some drawings I figured out.
 
 {% include carousel.html
    id = "car"
-   "items": [
+   "items" = [
     {
       "src": "/test/cover.png",
       "label": "Cover",
