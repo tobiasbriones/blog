@@ -7,6 +7,7 @@
   
   <div class="carousel-indicators">
     {% for src in page.carousels[id].srcs %}
+    src: {{ src }}
     <button type="button" data-bs-target="#{{ id }}"
                       data-bs-slide-to="{{ forloop.index }}" class="active bg-dark-subtle"
                       aria-current="true" aria-label="Slide {{ forloop.index }}"></button>  
