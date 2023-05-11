@@ -18,6 +18,21 @@ I was motivated to engage in the vocational fair at UNAH-VS 2019 to undertake
 self-lead SWE and electronics projects to show the applications of mathematics
 as a personal challenge which I tell and depict in this article.
 
+## Contents
+
+- [4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](#4-years-since-vocational-fair-at-unah-vs--2023-05-09-)
+  * [Vocational Fair](#vocational-fair)
+  * [My Challenge](#my-challenge)
+  * [AI for Games, Computer Vision, and SWE](#ai-for-games--computer-vision--and-swe)
+  * [Diagrams](#diagrams)
+  * [Electronics](#electronics)
+    + [Look at the Projects](#look-at-the-projects)
+    + [Pulsing LEDs](#pulsing-leds)
+    + [Pac-Man Blinking LEDs](#pac-man-blinking-leds)
+    + [FM Transmitter](#fm-transmitter)
+  * [Vocational Fair](#vocational-fair-1)
+  * [References](#references)
+
 ## Vocational Fair
 
 The vocational fair is usually performed once a year, where the community, like
