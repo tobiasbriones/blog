@@ -346,6 +346,31 @@ title = "LED's parpadeantes al ritmo de la música con efecto fade"
 src = "4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
 %}
 
+### Pac-Man Blinking LEDs
+
+This is the circuit I designed, which resembles a Pac-Man and blinks at a given
+speed.
+
+The next image dates when I was soldering and testing the components of the
+circuit:
+
+![Pac-Man LEDs: Testing](pacman-leds-.-testing.jpg)
+
+<figcaption>
+<p align="center"><strong>Pac-Man LEDs: Testing</strong></p>
+</figcaption>
+
+The circuit still worked great when I powered it, and recorded a video of it:
+
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/JaW0Abg1qe8"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+
 # References
 
 [1] Universidad Nacional Autónoma de Honduras (UNAH). (2022). Feria Vocacional.
