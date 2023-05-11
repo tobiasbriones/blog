@@ -262,10 +262,11 @@ accept mediocrity in my standard.
 </figcaption>
 
 These open-source projects, along with others, played a crucial role in
-advancing my career in machine learning. Particularly during my time at Truora,
-I had the opportunity to work with deep learning models for fraud detection on
-ID documents. I already had a solid base and experience with many concepts, and
-then I continued scaling that experience in the deep learning area.
+advancing my career in machine learning. Particularly during my job at Truora
+later in 2022, I had the opportunity to work with deep learning models for fraud
+detection on ID documents. I already had a solid base and experience with many
+concepts, and then I just continued scaling that experience in the deep learning
+field.
 
 That is, my endeavors always pay off the effort 🤗!
 
