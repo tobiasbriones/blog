@@ -25,7 +25,7 @@ playing with some drawings I figured out.
 
 {% include carousel.html
    id = "car"
-   items = "[{"src":"/test/cover.png","label":"Cover","desc":"This is a cover"},{"src":"/test/drawing.png","label":"Drawing","desc":"This is a drawing"}]"
+   items = '[{"src":"/test/cover.png","label":"Cover","desc":"This is a cover"},{"src":"/test/drawing.png","label":"Drawing","desc":"This is a drawing"}]'
 %}
 
 It's a way to feel better, that I'm doing what I love, I just had to do it even
