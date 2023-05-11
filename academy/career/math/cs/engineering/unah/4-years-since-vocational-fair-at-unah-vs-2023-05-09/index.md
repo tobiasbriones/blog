@@ -8,6 +8,10 @@
 
 ---
 
+I was motivated to engage in the vocational fair at UNAH-VS 2019 to undertake
+self-lead SWE and electronics projects to show the applications of mathematics
+as a personal challenge which I tell and depict in this article.
+
 ## Vocational Fair
 
 The vocational fair is usually performed once a year, where the community, like
