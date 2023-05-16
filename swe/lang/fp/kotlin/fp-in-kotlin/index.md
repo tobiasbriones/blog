@@ -92,3 +92,19 @@ val title: (String) -> Title = { Title(it) }
 <figcaption>
 <p align="center"><strong>Definition of an "Article" DSL</strong></p>
 </figcaption>
+
+So, to test the code, I will add a user input title that is not cleaned, some
+content, and I'll also define more functions with **transformations**, so we can
+*pipe them*.
+
+`fun main | Main.kt`
+
+```kotlin
+val inputTitle = "FP in Kotlin: Defining a Pipe   Operator  "
+val inputContent = "Lorem ipsum dolor sit amet..."
+```
+
+<figcaption>
+<p align="center"><strong>Sample User Input for Example Snippet</strong></p>
+</figcaption>
+
