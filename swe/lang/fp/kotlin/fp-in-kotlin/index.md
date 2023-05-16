@@ -123,3 +123,29 @@ val formatTitle: (String) -> String =
 <figcaption>
 <p align="center"><strong>Transformations for Example Snippet</strong></p>
 </figcaption>
+
+Finally, we can create an `Article` with `title` and `content`:
+
+`fun main | Kotlin.kt`
+
+```kotlin
+print(
+    Article(
+        inputTitle `---` formatTitle `---` title,
+        inputContent
+    )
+)
+```
+
+<figcaption>
+<p align="center"><strong>Building an "Article" for the Example 
+Snippet</strong></p>
+</figcaption>
+
+With this, a title `String` can be transformed into a `Title` domain type by
+piping it to the transformations declared:
+
+- In `formatTitle`: `clean`, `uppercase`, `markdownTitle`.
+- Then (in a higher-level view), applying `formatTitle` to the raw `String`
+  input and transforming this value into a `Title` via the constructor `title`:
+  `inputTitle `---` formatTitle `---` title`.
