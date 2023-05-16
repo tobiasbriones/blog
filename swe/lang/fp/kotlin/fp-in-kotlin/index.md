@@ -33,8 +33,8 @@ operator name.
 So, I took my design from
 [How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
 where I designed the standards for (among others) the pipe operator on file
-names. Notice that file systems also require simple symbols to work with, so
-the standard from my previous article was what I was looking for.
+names. Notice that file systems also require simple symbols to work with, so the
+standard from my previous article was what I was looking for.
 
 Now that **the pipe operator symbol is established to `---`**, the
 implementation is next.
@@ -74,8 +74,8 @@ Where:
   **denotes the "pipe operator"** as described before.
 - Two generics `X` and `Y` are defined to **represent the LHS and RHS** of the
   operator.
-- The `infix` notation is used on the extension function `---` defined for
-  all $$x \in X$$. There are two parts here:
+- The `infix` notation is used on the extension function `---` defined for all
+  $$x \in X$$. There are two parts here:
     - The **extension function**.
     - The **infix which provides the syntax sugar**.
 - $$\forall x \in X, y \in Y$$, the lambda `f: (X) -> Y` is defined as the
@@ -169,7 +169,7 @@ piping it to the transformations declared:
 The program's output is `Article(title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
 content=Lorem ipsum dolor sit amet...)`.
 
-The example code is 
+The example code is
 [here](https://github.com/tobiasbriones/blog/tree/main/swe/lang/fp/kotlin/fp-in-kotlin/kotlin/Main.kt).
 
 #### Functional Language Design
@@ -204,8 +204,8 @@ some insights about functional languages as well.
 As developed before, we faced many constraints in Kotlin for getting a language
 design that enables us to use the pipe operator. So, we have open possibilities
 to add this feature to our codebase, and
-[I developed one ("---")](#defining-a-pipe-operator) that keeps consistent
-with the newest MathSwe standards I had defined before.
+[I developed one ("---")](#defining-a-pipe-operator) that keeps consistent with
+the newest MathSwe standards I had defined before.
 
 ## Designing Functional Languages in Kotlin
 
