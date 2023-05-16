@@ -10,3 +10,38 @@ There's no support for the pipe operator `|>` in Kotlin, so we have to come by
 with a custom and clean implementation for this function.
 
 ### Defining a Pipe Operator
+
+Next, one consistent and clean implementation is given for a pipe operator in
+Kotlin.
+
+First, I wanted to use the `|>` pipe symbol commonly used in functional
+languages, but `>` is not a supported character: `Name contains illegal
+characters: >`.
+
+Then, I tried to use the other common `|` pipe symbol with no full success:
+`Name contains characters which can cause problems on Windows: |`.
+
+To avoid issues, I either had to design a simple symbol or use a verbose `pipe`
+operator name.
+
+So, I took my design from
+[How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
+where I designed the standards for (among others) the pipe operator on file
+names. Notice that file systems also require simple symbols to work with, so
+the standard from my previous article was what I was looking for.
+
+Now that **the pipe operator symbol is established to `---`**, the
+implementation is next.
+
+It's required to employ:
+
+- [Infix Functions](https://kotlinlang.org/docs/functions.html#infix-notation).
+- [Lambdas](https://kotlinlang.org/docs/coding-conventions.html#lambdas).
+- [Basic Generics](https://kotlinlang.org/docs/generics.html).
+
+It's useful for the given example that shows the operator usage:
+
+- [Data Classes](https://kotlinlang.org/docs/data-classes.html)
+- [Value Classes](https://kotlinlang.org/docs/inline-classes.html)
+- [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation)
+- [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html)
