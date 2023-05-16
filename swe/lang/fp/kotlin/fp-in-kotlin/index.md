@@ -84,6 +84,8 @@ That was the definition of the pipe operator.
 Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
 
+`Main.kt`
+
 ```kotlin
 data class Article(val title: Title, val content: String)
 
