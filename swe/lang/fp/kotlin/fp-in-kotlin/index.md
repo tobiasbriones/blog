@@ -190,9 +190,9 @@ some insights about functional languages as well.
 
 As developed before, we faced many constraints in Kotlin for getting a language
 design that enables us to use the pipe operator. So, we have open possibilities
-to add this feature to our codebase, and I developed
-[one ("---")](#defining-a-pipe-operator) that keeps consistent with the newest
-MathSwe standards I had defined before.
+to add this feature to our codebase, and
+[I developed one ("---")](#defining-a-pipe-operator) that keeps consistent
+with the newest MathSwe standards I had defined before.
 
 ## Designing Functional Languages in Kotlin
 
