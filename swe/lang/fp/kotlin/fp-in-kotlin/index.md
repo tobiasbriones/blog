@@ -108,3 +108,18 @@ val inputContent = "Lorem ipsum dolor sit amet..."
 <p align="center"><strong>Sample User Input for Example Snippet</strong></p>
 </figcaption>
 
+Then, we'll have some useful example transformations:
+
+`fun main | Main.kt`
+
+```kotlin
+val clean: (String) -> String = { it.trim().replace("\\s+".toRegex(), " ") }
+val uppercase: (String) -> String = { it.uppercase() }
+val markdownTitle: (String) -> String = { "# $it" }
+val formatTitle: (String) -> String =
+    { it `---` clean `---` uppercase `---` markdownTitle }
+```
+
+<figcaption>
+<p align="center"><strong>Transformations for Example Snippet</strong></p>
+</figcaption>
