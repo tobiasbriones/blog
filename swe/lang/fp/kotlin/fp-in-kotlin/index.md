@@ -18,6 +18,7 @@ This article keeps open to more sections to sub-publish.
 - [FP in Kotlin](#fp-in-kotlin)
   * [Pipe Operator](#pipe-operator)
     + [Defining a Pipe Operator](#defining-a-pipe-operator)
+    + [Options for a Pipe Operator in Kotlin](#options-for-a-pipe-operator-in-kotlin)
   * [Designing Functional Languages in Kotlin](#designing-functional-languages-in-kotlin)
 
 ## Pipe Operator
@@ -57,12 +58,14 @@ It's required to employ:
 
 It's useful for the given example that shows the operator usage:
 
-- [Data Classes](https://kotlinlang.org/docs/data-classes.html)
-- [Value Classes](https://kotlinlang.org/docs/inline-classes.html)
-- [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation)
-- [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html)
+- [Data Classes](https://kotlinlang.org/docs/data-classes.html).
+- [Value Classes](https://kotlinlang.org/docs/inline-classes.html).
+- [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation).
+- [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html).
 
 First, the `---` operator is defined:
+
+`Main.kt`
 
 ```kotlin
 infix fun <X, Y> X.`---`(f: (X) -> Y): Y = f(this)
@@ -193,6 +196,14 @@ identifiers should be used, as said above.
 
 This was the design of a custom pipe operator that can be used in Kotlin, and
 some insights about functional languages as well.
+
+### Options for a Pipe Operator in Kotlin
+
+As developed before, we faced many constraints in Kotlin for getting a language
+design that enables us to use the pipe operator. So, we have open possibilities
+to add this feature to our codebase, and I developed
+[one ("---")](#defining-a-pipe-operator) that keeps consistent with the newest
+MathSwe standards I had defined before.
 
 ## Designing Functional Languages in Kotlin
 
