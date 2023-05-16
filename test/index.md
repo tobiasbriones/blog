@@ -14,8 +14,9 @@ ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/
 
 ---
 
+`dsfs.kt`
 
-```kotlin dsfs.kt
+```kotlin
 val inputTitle = "FP in Kotlin: Defining a Pipe   Operator  "
 val inputContent = "Lorem ipsum dolor sit amet..."
 ```
