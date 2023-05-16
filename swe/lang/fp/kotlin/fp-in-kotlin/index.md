@@ -62,20 +62,20 @@ Where:
   **denotes the "pipe operator"** as described before.
 - Two generics `X` and `Y` are defined to **represent the LHS and RHS** of the
   operator.
-- The `infix` notation is used on the extension function `---` defined for 
+- The `infix` notation is used on the extension function `---` defined for
   all $$x \in X$$. There are two parts here:
-  - The **extension function**.
-  - The **infix which provides the syntax sugar**.
-- $$\forall x \in X, y \in Y$$, the lambda `f: (X) -> Y` is defined as the 
+    - The **extension function**.
+    - The **infix which provides the syntax sugar**.
+- $$\forall x \in X, y \in Y$$, the lambda `f: (X) -> Y` is defined as the
   **operator argument**. So, we have:
-  - The constant (LHS) is given by $$X$$.
-  - The function (RHS) to be applied is given by $$f:X \to Y$$.
+    - The constant (LHS) is given by $$X$$.
+    - The function (RHS) to be applied is given by $$f:X \to Y$$.
 - `---` **returns** `Y` —result of applying $$f$$ to some $$x$$.
 - `---`'s **image is defined as `f(this)`** where `this` is an element of `X`.
 
 That was the definition of the pipe operator.
 
-Now, to address a concrete example to use this new feature, I implemented a 
+Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
 
 ```kotlin
