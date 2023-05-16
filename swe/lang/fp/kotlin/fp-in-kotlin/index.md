@@ -5,3 +5,6 @@
 # FP in Kotlin
 
 ## Pipe Operator
+
+There's no support for the pipe operator `|>` in Kotlin, so we have to come by
+with a custom and clean implementation for this function.
