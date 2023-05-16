@@ -52,6 +52,8 @@ It's useful for the given example that shows the operator usage:
 
 First, the `---` operator is defined:
 
+`Main.kt`
+
 ```kotlin
 infix fun <X, Y> X.`---`(f: (X) -> Y): Y = f(this)
 ```
