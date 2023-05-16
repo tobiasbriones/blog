@@ -14,6 +14,12 @@ ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/math/swe/
 
 ---
 
+
+```kotlin dsfs.kt
+val inputTitle = "FP in Kotlin: Defining a Pipe   Operator  "
+val inputContent = "Lorem ipsum dolor sit amet..."
+```
+
 Today at this moment, I was thinking about fractals and mandalas. I'm always
 thinking about these concepts, but I just got excited about it and stayed
 playing with some drawings I figured out.
