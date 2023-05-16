@@ -181,3 +181,10 @@ identifiers should be used, as said above.
 
 This was the design of a custom pipe operator that can be used in Kotlin, and
 some insights about functional languages as well.
+
+## Designing Functional Languages in Kotlin
+
+With Kotlin, DSLs can be designed via its functional language features that I
+keep updating in this article when I face them that build an engineering
+standard for this language so it can be employed for some of the development of
+mathematical software.
