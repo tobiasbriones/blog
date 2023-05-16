@@ -4,7 +4,6 @@ title: FP in Kotlin
 description: I'll document particular insights about Kotlin functional designs I figure out.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/lang/fp/kotlin/fp-in-kotlin/fp-in-kotlin.png
 ---
-
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
@@ -15,11 +14,15 @@ I'll document particular insights about Kotlin functional designs I figure out.
 
 This article keeps open to more sections to sub-publish.
 
+
+## Contents
+
 - [FP in Kotlin](#fp-in-kotlin)
   * [Pipe Operator](#pipe-operator)
     + [Defining a Pipe Operator](#defining-a-pipe-operator)
     + [Options for a Pipe Operator in Kotlin](#options-for-a-pipe-operator-in-kotlin)
   * [Designing Functional Languages in Kotlin](#designing-functional-languages-in-kotlin)
+
 
 ## Pipe Operator
 
@@ -96,6 +99,8 @@ That was the definition of the pipe operator.
 
 Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
+
+`Main.kt`
 
 ```kotlin
 data class Article(val title: Title, val content: String)
@@ -201,9 +206,9 @@ some insights about functional languages as well.
 
 As developed before, we faced many constraints in Kotlin for getting a language
 design that enables us to use the pipe operator. So, we have open possibilities
-to add this feature to our codebase, and I developed
-[one ("---")](#defining-a-pipe-operator) that keeps consistent with the newest
-MathSwe standards I had defined before.
+to add this feature to our codebase, and
+[I developed one ("---")](#defining-a-pipe-operator) that keeps consistent
+with the newest MathSwe standards I had defined before.
 
 ## Designing Functional Languages in Kotlin
 
