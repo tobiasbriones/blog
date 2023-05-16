@@ -161,7 +161,8 @@ piping it to the transformations declared:
 The program's output is `Article(title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
 content=Lorem ipsum dolor sit amet...)`.
 
-The example code is [here](kotlin).
+The example code is 
+[here](https://github.com/tobiasbriones/blog/tree/main/swe/lang/fp/kotlin/fp-in-kotlin/kotlin/Main.kt).
 
 Notice that we're using backticks "``" to define the `infix` operator like
 functional languages like Purescript do and
