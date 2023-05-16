@@ -18,6 +18,8 @@ with a custom and clean implementation for this function.
 Next, one consistent and clean implementation is given for a pipe operator in
 Kotlin.
 
+#### Finding a Suitable Symbol
+
 First, I wanted to use the `|>` pipe symbol commonly used in functional
 languages, but `>` is not a supported character: `Name contains illegal
 characters: >`.
@@ -37,6 +39,8 @@ the standard from my previous article was what I was looking for.
 Now that **the pipe operator symbol is established to `---`**, the
 implementation is next.
 
+#### Language Features
+
 It's required to employ:
 
 - [Infix Functions](https://kotlinlang.org/docs/functions.html#infix-notation).
@@ -49,6 +53,8 @@ It's useful for the given example that shows the operator usage:
 - [Value Classes](https://kotlinlang.org/docs/inline-classes.html).
 - [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation).
 - [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html).
+
+#### Operator Definition
 
 First, the `---` operator is defined:
 
@@ -80,6 +86,8 @@ Where:
 - `---`'s **image is defined as `f(this)`** where `this` is an element of `X`.
 
 That was the definition of the pipe operator.
+
+#### Usage Example
 
 Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
@@ -164,6 +172,8 @@ content=Lorem ipsum dolor sit amet...)`.
 The example code is 
 [here](https://github.com/tobiasbriones/blog/tree/main/swe/lang/fp/kotlin/fp-in-kotlin/kotlin/Main.kt).
 
+#### Functional Language Design
+
 Notice that we're using backticks "``" to define the `infix` operator like
 functional languages like Purescript do and
 [employ this feature](https://leanpub.com/purescript/read#leanpub-auto-infix-operators).
@@ -183,6 +193,8 @@ As said above, the pipe can be commonly denoted by `|` or `|>`. Since `pipe` is
 a universally abstract concept, it must be **terse**, so defining a
 **symbol** for it is a good design. For user-specific languages, alphabetic
 identifiers should be used, as said above.
+
+#### Custom Pipe in Kotlin
 
 This was the design of a custom pipe operator that can be used in Kotlin, and
 some insights about functional languages as well.
