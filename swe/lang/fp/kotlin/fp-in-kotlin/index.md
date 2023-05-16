@@ -154,3 +154,23 @@ The program's output is `Article(title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
 content=Lorem ipsum dolor sit amet...)`.
 
 The example code is [here](kotlin).
+
+Notice that we're using backticks "``" to define the `infix` operator like
+functional languages like Purescript do and
+[employ this feature](https://leanpub.com/purescript/read#leanpub-auto-infix-operators).
+It's also preferred to use normal identifier names (i.e., alphabetic) instead of
+predefined symbols (e.g., `+`) to avoid *abusing the syntax*[^1][^2][^3].
+
+[^1]: A fear of Java architects has been the potential abuse of operator
+    overloading 
+
+[^2]: Despite being a trivial feature to add (syntax sugar), Java will probably
+    never have operator overloading
+
+[^3]: It's, of course, tackled elegantly in purely functional languages which
+    build DSLs, as said before
+
+As said above, the pipe can be commonly denoted by `|` or `|>`. Since `pipe` is
+a universally abstract concept, it must be **terse**, so defining a
+**symbol** for it is a good design. For user-specific languages, alphabetic
+identifiers should be used, as said above.
