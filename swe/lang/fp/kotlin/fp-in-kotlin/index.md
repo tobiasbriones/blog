@@ -45,3 +45,30 @@ It's useful for the given example that shows the operator usage:
 - [Value Classes](https://kotlinlang.org/docs/inline-classes.html)
 - [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation)
 - [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html)
+
+First, the `---` operator is defined:
+
+```kotlin
+infix fun <X, Y> X.`---`(f: (X) -> Y): Y = f(this)
+```
+
+<figcaption>
+<p align="center"><strong>Definition of the Pipe ("---") Operator</strong></p>
+</figcaption>
+
+Where:
+
+- `---` is a special function name escaped within backticks "``" that
+  **denotes the "pipe operator"** as described before.
+- Two generics `X` and `Y` are defined to **represent the LHS and RHS** of the
+  operator.
+- The `infix` notation is used on the extension function `---` defined for 
+  all $$x \in X$$. There are two parts here:
+  - The **extension function**.
+  - The **infix which provides the syntax sugar**.
+- $$\forall x \in X, y \in Y$$, the lambda `f: (X) -> Y` is defined as the 
+  **operator argument**. So, we have:
+  - The constant (LHS) is given by $$X$$.
+  - The function (RHS) to be applied is given by $$f:X \to Y$$.
+- `---` **returns** `Y` —result of applying $$f$$ to some $$x$$.
+- `---`'s **image is defined as `f(this)`** where `this` is an element of `X`.
