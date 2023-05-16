@@ -186,13 +186,13 @@ piping it to the transformations declared:
   input and transforming this value into a `Title` via the constructor `title`:
   `inputTitle `---` formatTitle `---` title`.
 
-The program's output is
+The program's output is:
 
 ```
-Article
-    ( title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR
-    , content=Lorem ipsum dolor sit amet...
-    )
+Article(
+    title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
+    content=Lorem ipsum dolor sit amet...
+)
 ```
 
 <figcaption>
