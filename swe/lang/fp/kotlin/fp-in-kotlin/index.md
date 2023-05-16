@@ -182,6 +182,14 @@ identifiers should be used, as said above.
 This was the design of a custom pipe operator that can be used in Kotlin, and
 some insights about functional languages as well.
 
+### Options for a Pipe Operator in Kotlin
+
+As developed before, we faced many constraints in Kotlin for getting a language
+design that enables us to use the pipe operator. So, we have open possibilities
+to add this feature to our codebase, and I developed
+[one ("---")](#defining-a-pipe-operator) that keeps consistent with the newest
+MathSwe standards I had defined before.
+
 ## Designing Functional Languages in Kotlin
 
 With Kotlin, DSLs can be designed via its functional language features that I
