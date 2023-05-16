@@ -25,3 +25,6 @@ post_search: true
 
 twitter:
   card: summary_large_image
+
+exclude:
+  - Main.kt
