@@ -18,6 +18,8 @@ with a custom and clean implementation for this function.
 Next, one consistent and clean implementation is given for a pipe operator in
 Kotlin.
 
+#### Finding a Suitable Symbol
+
 First, I wanted to use the `|>` pipe symbol commonly used in functional
 languages, but `>` is not a supported character: `Name contains illegal
 characters: >`.
@@ -31,11 +33,13 @@ operator name.
 So, I took my design from
 [How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
 where I designed the standards for (among others) the pipe operator on file
-names. Notice that file systems also require simple symbols to work with, so
-the standard from my previous article was what I was looking for.
+names. Notice that file systems also require simple symbols to work with, so the
+standard from my previous article was what I was looking for.
 
 Now that **the pipe operator symbol is established to `---`**, the
 implementation is next.
+
+#### Language Features
 
 It's required to employ:
 
@@ -49,6 +53,8 @@ It's useful for the given example that shows the operator usage:
 - [Value Classes](https://kotlinlang.org/docs/inline-classes.html).
 - [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation).
 - [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html).
+
+#### Operator Definition
 
 First, the `---` operator is defined:
 
@@ -68,8 +74,8 @@ Where:
   **denotes the "pipe operator"** as described before.
 - Two generics `X` and `Y` are defined to **represent the LHS and RHS** of the
   operator.
-- The `infix` notation is used on the extension function `---` defined for
-  all $$x \in X$$. There are two parts here:
+- The `infix` notation is used on the extension function `---` defined for all
+  $$x \in X$$. There are two parts here:
     - The **extension function**.
     - The **infix which provides the syntax sugar**.
 - $$\forall x \in X, y \in Y$$, the lambda `f: (X) -> Y` is defined as the
@@ -80,6 +86,8 @@ Where:
 - `---`'s **image is defined as `f(this)`** where `this` is an element of `X`.
 
 That was the definition of the pipe operator.
+
+#### Usage Example
 
 Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
@@ -161,8 +169,9 @@ piping it to the transformations declared:
 The program's output is `Article(title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
 content=Lorem ipsum dolor sit amet...)`.
 
-The example code is 
-[here](https://github.com/tobiasbriones/blog/tree/main/swe/lang/fp/kotlin/fp-in-kotlin/kotlin/Main.kt).
+The example code is [here](kotlin/Pipe.kt).
+
+#### Functional Language Design
 
 Notice that we're using backticks "``" to define the `infix` operator like
 functional languages like Purescript do and
@@ -184,6 +193,8 @@ a universally abstract concept, it must be **terse**, so defining a
 **symbol** for it is a good design. For user-specific languages, alphabetic
 identifiers should be used, as said above.
 
+#### Custom Pipe in Kotlin
+
 This was the design of a custom pipe operator that can be used in Kotlin, and
 some insights about functional languages as well.
 
@@ -192,8 +203,8 @@ some insights about functional languages as well.
 As developed before, we faced many constraints in Kotlin for getting a language
 design that enables us to use the pipe operator. So, we have open possibilities
 to add this feature to our codebase, and
-[I developed one ("---")](#defining-a-pipe-operator) that keeps consistent
-with the newest MathSwe standards I had defined before.
+[I developed one ("---")](#defining-a-pipe-operator) that keeps consistent with
+the newest MathSwe standards I had defined before.
 
 ## Designing Functional Languages in Kotlin
 
