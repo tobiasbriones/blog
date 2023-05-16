@@ -174,3 +174,6 @@ As said above, the pipe can be commonly denoted by `|` or `|>`. Since `pipe` is
 a universally abstract concept, it must be **terse**, so defining a
 **symbol** for it is a good design. For user-specific languages, alphabetic
 identifiers should be used, as said above.
+
+This was the design of a custom pipe operator that can be used in Kotlin, and
+some insights about functional languages as well.
