@@ -149,3 +149,6 @@ piping it to the transformations declared:
 - Then (in a higher-level view), applying `formatTitle` to the raw `String`
   input and transforming this value into a `Title` via the constructor `title`:
   `inputTitle `---` formatTitle `---` title`.
+
+The program's output is `Article(title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
+content=Lorem ipsum dolor sit amet...)`.
