@@ -152,3 +152,5 @@ piping it to the transformations declared:
 
 The program's output is `Article(title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
 content=Lorem ipsum dolor sit amet...)`.
+
+The example code is [here](kotlin).
