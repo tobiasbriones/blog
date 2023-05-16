@@ -45,10 +45,10 @@ It's required to employ:
 
 It's useful for the given example that shows the operator usage:
 
-- [Data Classes](https://kotlinlang.org/docs/data-classes.html)
-- [Value Classes](https://kotlinlang.org/docs/inline-classes.html)
-- [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation)
-- [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html)
+- [Data Classes](https://kotlinlang.org/docs/data-classes.html).
+- [Value Classes](https://kotlinlang.org/docs/inline-classes.html).
+- [String Interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation).
+- [Basic Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html).
 
 First, the `---` operator is defined:
 
