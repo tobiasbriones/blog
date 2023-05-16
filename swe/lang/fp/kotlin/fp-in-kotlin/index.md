@@ -3,3 +3,5 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # FP in Kotlin
+
+## Pipe Operator
