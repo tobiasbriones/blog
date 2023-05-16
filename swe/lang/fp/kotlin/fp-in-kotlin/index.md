@@ -72,3 +72,23 @@ Where:
   - The function (RHS) to be applied is given by $$f:X \to Y$$.
 - `---` **returns** `Y` —result of applying $$f$$ to some $$x$$.
 - `---`'s **image is defined as `f(this)`** where `this` is an element of `X`.
+
+That was the definition of the pipe operator.
+
+Now, to address a concrete example to use this new feature, I implemented a 
+basic DSL for an `Article` domain type.
+
+```kotlin
+data class Article(val title: Title, val content: String)
+
+@JvmInline
+value class Title(val value: String) {
+    override fun toString(): String = value
+}
+
+val title: (String) -> Title = { Title(it) }
+```
+
+<figcaption>
+<p align="center"><strong>Definition of an "Article" DSL</strong></p>
+</figcaption>
