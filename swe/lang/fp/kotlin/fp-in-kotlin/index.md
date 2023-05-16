@@ -14,6 +14,20 @@ I'll document particular insights about Kotlin functional designs I figure out.
 
 This article keeps open to more sections to sub-publish.
 
+## Contents
+
+- [FP in Kotlin](#fp-in-kotlin)
+    * [Pipe Operator](#pipe-operator)
+        + [Defining a Pipe Operator](#defining-a-pipe-operator)
+            - [Finding a Suitable Symbol](#finding-a-suitable-symbol)
+            - [Language Features](#language-features)
+            - [Operator Definition](#operator-definition)
+            - [Usage Example](#usage-example)
+            - [Functional Language Design](#functional-language-design)
+            - [Custom Pipe in Kotlin](#custom-pipe-in-kotlin)
+        + [Options for a Pipe Operator in Kotlin](#options-for-a-pipe-operator-in-kotlin)
+    * [Designing Functional Languages in Kotlin](#designing-functional-languages-in-kotlin)
+
 ## Pipe Operator
 
 There's no support for the pipe operator `|>` in Kotlin, so we have to come by
