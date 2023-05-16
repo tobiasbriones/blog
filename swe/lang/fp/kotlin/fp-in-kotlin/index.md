@@ -4,6 +4,10 @@
 
 # FP in Kotlin
 
+I'll document particular insights about Kotlin functional designs I figure out.
+
+This article keeps open to more sections to sub-publish.
+
 ## Pipe Operator
 
 There's no support for the pipe operator `|>` in Kotlin, so we have to come by
