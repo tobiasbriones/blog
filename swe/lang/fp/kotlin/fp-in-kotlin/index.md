@@ -1,8 +1,24 @@
+---
+permalink: /fp-in-kotlin
+title: FP in Kotlin
+description: I'll document particular insights about Kotlin functional designs I figure out.
+ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/lang/fp/kotlin/fp-in-kotlin/fp-in-kotlin.png
+---
+
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # FP in Kotlin
+
+I'll document particular insights about Kotlin functional designs I figure out.
+
+This article keeps open to more sections to sub-publish.
+
+- [FP in Kotlin](#fp-in-kotlin)
+  * [Pipe Operator](#pipe-operator)
+    + [Defining a Pipe Operator](#defining-a-pipe-operator)
+  * [Designing Functional Languages in Kotlin](#designing-functional-languages-in-kotlin)
 
 ## Pipe Operator
 
@@ -177,3 +193,10 @@ identifiers should be used, as said above.
 
 This was the design of a custom pipe operator that can be used in Kotlin, and
 some insights about functional languages as well.
+
+## Designing Functional Languages in Kotlin
+
+With Kotlin, DSLs can be designed via its functional language features that I
+keep updating in this article when I face them that build an engineering
+standard for this language so it can be employed for some of the development of
+mathematical software.
