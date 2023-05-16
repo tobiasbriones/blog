@@ -1,5 +1,5 @@
 ---
-permalink: /fp-in-kotlin
+permalink: /fp-in-kotlin/
 title: FP in Kotlin
 description: I'll document particular insights about Kotlin functional designs I figure out.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/lang/fp/kotlin/fp-in-kotlin/fp-in-kotlin.png
@@ -189,7 +189,7 @@ piping it to the transformations declared:
 The program's output is `Article(title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
 content=Lorem ipsum dolor sit amet...)`.
 
-The example code is [here](kotlin/Pipe.kt).
+The example code is [here](kotlin/Pipe.kt/).
 
 #### Functional Language Design
 

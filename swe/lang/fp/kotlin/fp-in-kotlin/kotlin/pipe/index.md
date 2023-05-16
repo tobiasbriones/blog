@@ -1,3 +1,10 @@
+---
+permalink: /fp-in-kotlin/kotlin/Pipe.kt/
+---
+
+`Pipe.kt`
+
+```kotlin
 // Copyright (c) 2023 Tobias Briones. All rights reserved.
 // SPDX-License-Identifier: BSD-3-Clause
 // This file is part of https://github.com/tobiasbriones/blog
@@ -31,3 +38,4 @@ fun main() {
         )
     )
 }
+```
