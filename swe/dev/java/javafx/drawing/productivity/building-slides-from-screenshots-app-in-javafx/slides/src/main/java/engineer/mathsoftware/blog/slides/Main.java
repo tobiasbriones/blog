@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -32,10 +33,23 @@ public class Main extends Application {
         root.getChildren()
             .add(btn);
 
+        loadIcons(primaryStage);
+
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setTitle("Slides");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private static void loadIcons(Stage stage) {
+        stage.getIcons()
+             .addAll(
+                 new Image("app-16x16.png"),
+                 new Image("app-32x32.png"),
+                 new Image("app-64x64.png"),
+                 new Image("app-256x256.png"),
+                 new Image("app-512x512.png")
+             );
     }
 }
