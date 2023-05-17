@@ -78,7 +78,7 @@ It's useful for the given example that shows the operator usage:
 
 First, the `---` operator is defined:
 
-`Main.kt`
+`Pipe.kt`
 
 ```kotlin
 infix fun <X, Y> X.`---`(f: (X) -> Y): Y = f(this)
@@ -112,7 +112,7 @@ That was the definition of the pipe operator.
 Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
 
-`Main.kt`
+`Pipe.kt`
 
 ```kotlin
 data class Article(val title: Title, val content: String)
@@ -133,7 +133,7 @@ So, to test the code, I will add a user input title that is not cleaned, some
 content, and I'll also define more functions with **transformations**, so we can
 *pipe them*.
 
-`fun main | Main.kt`
+`fun main | Pipe.kt`
 
 ```kotlin
 val inputTitle = "FP in Kotlin: Defining a Pipe   Operator  "
@@ -146,7 +146,7 @@ val inputContent = "Lorem ipsum dolor sit amet..."
 
 Then, we'll have some useful example transformations:
 
-`fun main | Main.kt`
+`fun main | Pipe.kt`
 
 ```kotlin
 val clean: (String) -> String = { it.trim().replace("\\s+".toRegex(), " ") }
