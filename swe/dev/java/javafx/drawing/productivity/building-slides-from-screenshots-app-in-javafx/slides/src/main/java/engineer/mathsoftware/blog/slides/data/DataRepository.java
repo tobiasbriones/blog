@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 public interface DataRepository {
+    void createOrUpdateImage(Path imagePath) throws IOException;
+
     void createImage(Path imagePath) throws IOException;
 
     Image readImage(String imageName) throws IOException;
