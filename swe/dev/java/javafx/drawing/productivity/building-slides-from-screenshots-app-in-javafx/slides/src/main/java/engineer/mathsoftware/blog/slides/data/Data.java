@@ -4,6 +4,41 @@
 
 package engineer.mathsoftware.blog.slides.data;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
+
 public final class Data {
+    private static final String EXTENSION_DOT = ".";
+    private static final String[] supportedExtensions = {
+        "png"
+    };
+
+    public static boolean isFileSupported(Path path) {
+        var valid = List.of(supportedExtensions);
+        var filter = filterValidNames(Stream
+            .of(path)
+            .map(Path::getFileName)
+            .map(Path::toString)
+        );
+        return filter.size() == valid.size();
+    }
+
+    public static boolean areValidImageFiles(Collection<? extends File> files) {
+        var filter = filterValidNames(files.stream().map(File::getName));
+        return filter.size() == files.size();
+    }
+
+    private static List<String> filterValidNames(Stream<String> name) {
+        var valid = List.of(supportedExtensions);
+        return name
+            .filter(x -> x.contains(EXTENSION_DOT))
+            .map(x -> x.substring(x.lastIndexOf(EXTENSION_DOT) + 1))
+            .filter(valid::contains)
+            .toList();
+    }
+
     private Data() {}
 }
