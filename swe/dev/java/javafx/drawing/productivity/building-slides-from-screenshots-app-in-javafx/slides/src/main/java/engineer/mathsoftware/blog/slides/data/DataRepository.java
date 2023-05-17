@@ -4,4 +4,17 @@
 
 package engineer.mathsoftware.blog.slides.data;
 
-public interface DataRepository {}
+import javafx.scene.image.Image;
+
+import java.io.IOException;
+import java.nio.file.Path;
+
+public interface DataRepository {
+    void createImage(Path imagePath) throws IOException;
+
+    Image readImage() throws IOException;
+
+    void updateImage(Path imagePath) throws IOException;
+
+    void deleteImage(String imageName) throws IOException;
+}
