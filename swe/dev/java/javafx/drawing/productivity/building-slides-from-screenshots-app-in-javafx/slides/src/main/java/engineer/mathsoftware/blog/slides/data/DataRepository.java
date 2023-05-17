@@ -12,7 +12,7 @@ import java.nio.file.Path;
 public interface DataRepository {
     void createImage(Path imagePath) throws IOException;
 
-    Image readImage() throws IOException;
+    Image readImage(String imageName) throws IOException;
 
     void updateImage(Path imagePath) throws IOException;
 
