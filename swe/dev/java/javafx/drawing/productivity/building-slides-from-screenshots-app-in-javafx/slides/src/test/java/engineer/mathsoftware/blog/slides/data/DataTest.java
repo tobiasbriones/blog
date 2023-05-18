@@ -17,9 +17,11 @@ class DataTest {
     @Test
     void isFileSupported() {
         var pathPng = Path.of("data", "file.png");
+        var pathJpg = Path.of("data", "file.jpg");
         var pathMultExtPng = Path.of("data", "file.snapshot.png");
 
         requireSupportedFile(pathPng, "PNG");
+        requireSupportedFile(pathJpg, "JPG");
         requireSupportedFile(pathMultExtPng, "MULT_EXT_PNG");
 
         var pathPdf = Path.of("data", "file.pdf");
@@ -41,15 +43,22 @@ class DataTest {
             Path.of("data", "file2.png").toFile(),
             Path.of("data", "file3.png").toFile()
         );
-
-        requireSupportedFiles(filesEmpty, "EMPTY");
-        requireSupportedFiles(filesPng, "PNG");
-
+        var filesJpg = List.of(
+            Path.of("data", "file1.jpg").toFile(),
+            Path.of("data", "file2.jpg").toFile(),
+            Path.of("data", "file3.jpg").toFile()
+        );
         var filesPngJpg = List.of(
             Path.of("data", "file1.png").toFile(),
             Path.of("data", "file2.jpg").toFile(),
-            Path.of("data", "file3.png").toFile()
+            Path.of("data", "file3.jpg").toFile()
         );
+
+        requireSupportedFiles(filesEmpty, "EMPTY");
+        requireSupportedFiles(filesPng, "PNG");
+        requireSupportedFiles(filesJpg, "JPG");
+        requireSupportedFiles(filesPngJpg, "PNG_JPG");
+
         var filesPngHtml = List.of(
             Path.of("data", "file1.png").toFile(),
             Path.of("data", "file2.html").toFile(),
@@ -61,7 +70,6 @@ class DataTest {
             Path.of("data", "file3").toFile()
         );
 
-        requireUnSupportedFiles(filesPngJpg, "PNG_JPG");
         requireUnSupportedFiles(filesPngHtml, "PNG_HTML");
         requireUnSupportedFiles(filesMixed, "MIXED");
     }

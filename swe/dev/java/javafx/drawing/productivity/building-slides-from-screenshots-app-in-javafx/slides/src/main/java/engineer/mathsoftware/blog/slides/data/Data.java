@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 public final class Data {
     private static final String EXTENSION_DOT = ".";
     private static final String[] supportedExtensions = {
-        "png"
+        "png", "jpg"
     };
 
     public static boolean isFileSupported(Path path) {
