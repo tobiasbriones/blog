@@ -17,13 +17,12 @@ public final class Data {
     };
 
     public static boolean isFileSupported(Path path) {
-        var valid = List.of(supportedExtensions);
         var filter = filterValidNames(Stream
             .of(path)
             .map(Path::getFileName)
             .map(Path::toString)
         );
-        return filter.size() == valid.size();
+        return filter.size() == 1;
     }
 
     public static boolean areValidImageFiles(Collection<? extends File> files) {
