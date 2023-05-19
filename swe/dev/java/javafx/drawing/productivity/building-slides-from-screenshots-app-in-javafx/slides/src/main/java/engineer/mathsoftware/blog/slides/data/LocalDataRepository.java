@@ -4,11 +4,14 @@
 
 package engineer.mathsoftware.blog.slides.data;
 
+import engineer.mathsoftware.blog.slides.ImageItem;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LocalDataRepository implements DataRepository {
     private final String root;
@@ -38,6 +41,22 @@ public class LocalDataRepository implements DataRepository {
         var imageName = imagePath.getFileName().toString();
 
         Files.copy(imagePath, pathOf(imageName));
+    }
+
+    @Override
+    public List<ImageItem> readAllImages() throws IOException {
+        var images = new ArrayList<ImageItem>();
+        var files = Files
+            .walk(pathOf(""), 1)
+            .filter(Data::isFileSupported);
+
+        try (files) {
+            for (var file : files.toList()) {
+                var img = new Image(Files.newInputStream(file));
+                images.add(new ImageItem(file.getFileName().toString(), img));
+            }
+        }
+        return images;
     }
 
     @Override

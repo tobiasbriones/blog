@@ -4,15 +4,19 @@
 
 package engineer.mathsoftware.blog.slides.data;
 
+import engineer.mathsoftware.blog.slides.ImageItem;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.List;
 
 public interface DataRepository {
     void createOrUpdateImage(Path imagePath) throws IOException;
 
     void createImage(Path imagePath) throws IOException;
+
+    List<ImageItem> readAllImages() throws IOException;
 
     Image readImage(String imageName) throws IOException;
 
