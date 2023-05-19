@@ -90,6 +90,20 @@ public class LocalDataRepository implements DataRepository {
         Files.delete(path);
     }
 
+    @Override
+    public void deleteAllImages() throws IOException {
+        requireLocalStorage();
+        var walk = Files
+            .walk(pathOf(""), 1)
+            .filter(Files::isRegularFile);
+
+        try (walk) {
+            for (var path : walk.toList()) {
+                Files.delete(path);
+            }
+        }
+    }
+
     private void requireLocalStorage() throws IOException {
         var rootPath = pathOf("");
 

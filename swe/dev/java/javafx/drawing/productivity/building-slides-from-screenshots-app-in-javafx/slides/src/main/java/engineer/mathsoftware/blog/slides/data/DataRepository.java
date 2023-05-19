@@ -23,4 +23,6 @@ public interface DataRepository {
     void updateImage(Path imagePath) throws IOException;
 
     void deleteImage(String imageName) throws IOException;
+
+    void deleteAllImages() throws IOException;
 }
