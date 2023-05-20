@@ -217,6 +217,44 @@ public class AppController {
 The application will handle data related to image files that make up the
 presentation, which will be stored in a local directory.
 
+A basic image item needs to be loaded into the list of images.
+
+`ImageItem.java | engineer.mathsoftware.blog.slides`
+
+```java
+public record ImageItem(String filename, Image image) {
+    @Override
+    public int hashCode() {
+        return Objects.hash(filename);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return (obj instanceof ImageItem imageItem)
+            && Objects.equals(filename, imageItem.filename());
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Definition of an Application Image Item with Name
+and Image</strong></p>
+</figcaption>
+
+Notice, how the `hashCode` and `equals` methods had to be overwritten because of
+the `Image` object[^x][^x].
+
+[^x]: In this case, two `ImageItem`s are equal if their names are equal
+
+[^x]: The binary `Image` field made it impossible to update the same item from a
+    `List` with different object instances but the same name
+
+This item will model the images (screenshots) saved to the application data
+directory. Notice this will be a simple directory tree with a depth of 1 with no
+subdirectories.
+
+The items need to be stored and loaded from our local storage.
+
 For this, I defined the `DataRepository` API.
 
 `DataRepository.java | engineer.mathsoftware.blog.slides.data`
