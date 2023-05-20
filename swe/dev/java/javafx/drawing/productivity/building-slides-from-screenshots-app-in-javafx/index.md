@@ -86,8 +86,6 @@ public class Main extends Application {
         root.getChildren()
             .add(btn);
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
         primaryStage.setTitle("Slides");
         primaryStage.setScene(scene);
         primaryStage.show();

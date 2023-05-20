@@ -31,8 +31,6 @@ public class Main extends Application {
 
         loadIcons(primaryStage);
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
         primaryStage.setTitle("Slides");
         primaryStage.setScene(scene);
         primaryStage.show();
