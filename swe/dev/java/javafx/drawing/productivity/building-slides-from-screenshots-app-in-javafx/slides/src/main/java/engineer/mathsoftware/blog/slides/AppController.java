@@ -8,7 +8,6 @@ import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.LocalDataRepository;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -84,7 +83,23 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
-    private void onAddButtonAction(ActionEvent event) {}
+    private void onAddButtonAction() {
+        var chooser = new FileChooser();
+
+        chooser.setTitle("Open Files");
+        chooser.getExtensionFilters().addAll(
+            new FileChooser.ExtensionFilter(
+                "Image Files (*.png, *.jpg)",
+                "*.png",
+                "*.jpg"
+            )
+        );
+        var files = chooser.showOpenMultipleDialog(view.getScene().getWindow());
+
+        if (files != null) {
+            createOrUpdateImages(files);
+        }
+    }
 
     @FXML
     private void onClearButtonAction() {
