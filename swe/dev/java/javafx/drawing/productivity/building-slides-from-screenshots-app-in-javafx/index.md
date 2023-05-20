@@ -102,3 +102,112 @@ public class Main extends Application {
 <figcaption>
 <p align="center"><strong>Hello World</strong></p>
 </figcaption>
+
+### Initial Master-View-Detail Layout with Drag-and-Drop ListView
+
+I already developed the initial application layout (and logic) —which are
+relatively heavy—, so I'll add the FXML version here with a preview to see
+what's being developed.
+
+This is the
+[initial layout app.fxml file](https://github.com/tobiasbriones/blog/blob/main/swe/dev/java/javafx/drawing/productivity/building-slides-from-screenshots-app-in-javafx/slides/src/main/resources/app.fxml)
+that looks like:
+
+![Scene Builder: Initial app.fxml](scene-builder-.-initial-app.fxml.png)
+
+<figcaption>
+<p align="center"><strong>Scene Builder: Initial app.fxml</strong></p>
+</figcaption>
+
+The layout tree (briefly) consists of:
+
+- A split pane that defines the Master-View-Detail:
+    - A **master view** with a user input pane to manage the image files.
+    - A **view pane** that will show the slides rendered.
+    - A **detail pane** that will hold the properties for generating the slides.
+
+It requires events for the file drag-and-drop, and some buttons.
+
+It also has a menu bar that can be trivially implemented later.
+
+The current layout tree consists of:
+
+```
+├── VBox
+    ├── MenuBar
+        ├── Menu (File)
+            ├── MenuItem (New)
+            ├── MenuItem (Open Working Directory)
+            ├── SeparatorMenuItem
+            ├── MenuItem (Clear)
+            ├── SeparatorMenuItem
+            └── MenuItem (Quit)
+        └── Menu (Help)
+            └── MenuItem (About Slides EP)
+    ├── SplitPane
+        ├── VBox
+            ├── VBox
+                ├── Label (Screenshots)
+                └── HBox
+                    ├── Button (ADD)
+                    └── HBox
+                        └── Button (CLEAR)
+            └── ListView
+        ├── VBox
+            ├── Label (Slides)
+            └── ScrollPane
+                └── AnchorPane
+                    └── HBox
+                        └── ImageView
+        └── AnchorPane
+            └── Label (Details)
+    └── HBox
+        ├── HBox
+            └──Label (Slides App)
+        ├── HBox
+            └── Label (Build a presentation from screenshots)
+        └── HBox
+```
+
+For integrating this layout, the root view has to be loaded from the FXML
+resource `app.fxml` in the root of the `resources` project's directory.
+
+`start | Main`
+
+```java
+var root = FXMLLoader.<Parent>load(
+    Objects.requireNonNull(getClass().getResource("/app.fxml"))
+);
+```
+
+<figcaption>
+<p align="center"><strong>Loading the FXML Resource</strong></p>
+</figcaption>
+
+Then, `AppController` will handle the input events.
+
+```java
+public class AppController {
+    @FXML
+    public void initialize() {}
+
+    @FXML
+    private void onDragOver(DragEvent dragEvent) {}
+
+    @FXML
+    private void onDragDropped(DragEvent dragEvent) {}
+
+    @FXML
+    private void onDragExited(DragEvent dragEvent) {}
+
+    @FXML
+    private void onAddButtonAction(ActionEvent event) {}
+
+    @FXML
+    private void onClearButtonAction() {}
+}
+```
+
+<figcaption>
+<p align="center"><strong>Initial Application Controller</strong></p>
+</figcaption>
