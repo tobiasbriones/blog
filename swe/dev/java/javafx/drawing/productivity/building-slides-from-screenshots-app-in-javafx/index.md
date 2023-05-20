@@ -211,3 +211,76 @@ public class AppController {
 <figcaption>
 <p align="center"><strong>Initial Application Controller</strong></p>
 </figcaption>
+
+## Application Data
+
+The application will handle data related to image files that make up the
+presentation, which will be stored in a local directory.
+
+For this, I defined the `DataRepository` API.
+
+`DataRepository.java | engineer.mathsoftware.blog.slides.data`
+
+```java
+public interface DataRepository {
+    void createOrUpdateImage(Path imagePath) throws IOException;
+
+    void createImage(Path imagePath) throws IOException;
+
+    List<ImageItem> readAllImages() throws IOException;
+
+    Image readImage(String imageName) throws IOException;
+
+    void updateImage(Path imagePath) throws IOException;
+
+    void deleteImage(String imageName) throws IOException;
+
+    void deleteAllImages() throws IOException;
+}
+```
+
+<figcaption>
+<p align="center"><strong>Application Data API</strong></p>
+</figcaption>
+
+I also wrote a `Data` utility class to hold important functions.
+
+`Data.java | engineer.mathsoftware.blog.slides.data`
+
+```java
+public final class Data {
+    private static final String EXTENSION_DOT = ".";
+    private static final String[] supportedExtensions = { "png", "jpg" };
+
+    public static boolean isFileSupported(Path path) {
+        var filter = filterValidNames(Stream
+            .of(path)
+            .map(Path::getFileName)
+            .map(Path::toString)
+        );
+        return filter.size() == 1;
+    }
+
+    public static boolean areValidImageFiles(Collection<? extends File> files) {
+        var filter = filterValidNames(files.stream().map(File::getName));
+        return filter.size() == files.size();
+    }
+
+    private static List<String> filterValidNames(Stream<String> name) {
+        var valid = List.of(supportedExtensions);
+        return name
+            .filter(x -> x.contains(EXTENSION_DOT))
+            .map(x -> x.substring(x.lastIndexOf(EXTENSION_DOT) + 1))
+            .filter(valid::contains)
+            .toList();
+    }
+
+    private Data() {}
+}
+```
+
+That way, we'll know whether a given file list (that can be dropped into the
+`ListView`) has supported file extensions which will avoid polluting the data
+directory with random files and ensure more correctness in our logic.
+
+These definitions will allow us to perform data operations in our application.
