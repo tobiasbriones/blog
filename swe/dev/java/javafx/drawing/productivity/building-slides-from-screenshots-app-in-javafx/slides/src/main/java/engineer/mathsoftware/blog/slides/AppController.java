@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
+import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,6 +25,8 @@ import java.util.Objects;
 public class AppController implements ImageItemCell.Listener {
     private static final String DATA_ROOT = "data";
     private final DataRepository repository;
+    @FXML
+    private Parent view;
     @FXML
     private Button addButton;
     @FXML
@@ -84,7 +87,19 @@ public class AppController implements ImageItemCell.Listener {
     private void onAddButtonAction(ActionEvent event) {}
 
     @FXML
-    private void onClearButtonAction() {}
+    private void onClearButtonAction() {
+        var alert = new Alert(
+            Alert.AlertType.CONFIRMATION,
+            "Delete all the data?",
+            ButtonType.YES,
+            ButtonType.NO
+        );
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            deleteAllImages();
+        }
+    }
 
     @Override
     public void onDelete(ImageItem item) {
