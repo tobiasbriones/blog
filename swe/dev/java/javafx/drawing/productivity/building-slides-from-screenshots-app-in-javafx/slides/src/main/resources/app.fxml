@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<VBox fx:id="view" prefHeight="600.0" prefWidth="900.0"
+<VBox fx:id="view" prefHeight="600.0" prefWidth="1360.0"
       xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="engineer.mathsoftware.blog.slides.AppController">
     <children>
@@ -81,41 +81,49 @@
                                 top="16.0"/>
                     </padding>
                 </VBox>
-                <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
-                    <content>
-                        <AnchorPane id="Content" minHeight="-1.0"
-                                    minWidth="-1.0" prefHeight="545.0"
-                                    prefWidth="430.0">
-                            <children>
-                                <Label alignment="CENTER" font="$x1"
-                                       layoutX="14.0" layoutY="14.0"
-                                       style="&#10;" text="Slides"
-                                       textAlignment="CENTER" textFill="$x2"
-                                       wrapText="false"
-                                       AnchorPane.leftAnchor="0.0"
-                                       AnchorPane.rightAnchor="0.0"/>
-                                <HBox layoutX="16.0" layoutY="64.0"
-                                      AnchorPane.bottomAnchor="16.0"
-                                      AnchorPane.leftAnchor="16.0"
-                                      AnchorPane.rightAnchor="16.0"
-                                      AnchorPane.topAnchor="64.0">
+                <VBox alignment="TOP_CENTER" prefHeight="200.0"
+                      prefWidth="100.0">
+                    <children>
+                        <Label alignment="CENTER" font="$x1" style="&#10;"
+                               text="Slides" textAlignment="CENTER"
+                               textFill="$x2" wrapText="false"/>
+                        <ScrollPane prefHeight="-1.0" prefWidth="-1.0"
+                                    VBox.vgrow="ALWAYS">
+                            <content>
+                                <AnchorPane id="Content" minHeight="-1.0"
+                                            minWidth="-1.0">
                                     <children>
-                                        <ImageView fitHeight="150.0"
-                                                   fitWidth="200.0"
-                                                   pickOnBounds="true"
-                                                   preserveRatio="true"/>
+                                        <HBox layoutX="16.0" layoutY="64.0"
+                                              AnchorPane.bottomAnchor="16.0"
+                                              AnchorPane.leftAnchor="16.0"
+                                              AnchorPane.rightAnchor="16.0"
+                                              AnchorPane.topAnchor="64.0">
+                                            <children>
+                                                <ImageView fitHeight="150.0"
+                                                           fitWidth="200.0"
+                                                           pickOnBounds="true"
+                                                           preserveRatio="true"/>
+                                            </children>
+                                        </HBox>
                                     </children>
-                                </HBox>
-                            </children>
-                        </AnchorPane>
-                    </content>
-                </ScrollPane>
+                                </AnchorPane>
+                            </content>
+                            <VBox.margin>
+                                <Insets top="16.0"/>
+                            </VBox.margin>
+                        </ScrollPane>
+                    </children>
+                    <padding>
+                        <Insets bottom="16.0" top="16.0"/>
+                    </padding>
+                </VBox>
                 <AnchorPane>
                     <children>
                         <Label alignment="CENTER" font="$x1" layoutX="14.0"
                                layoutY="14.0" style="&#10;" text="Details"
                                textAlignment="CENTER" textFill="$x2"
-                               wrapText="false"/>
+                               wrapText="false" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0"/>
                     </children>
                 </AnchorPane>
             </items>
