@@ -5,12 +5,14 @@
 package engineer.mathsoftware.blog.slides;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class Main extends Application {
     private static final double WINDOW_WIDTH = 960.0;
@@ -21,17 +23,11 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        var root = new VBox();
+    public void start(Stage primaryStage) throws IOException {
+        var root = FXMLLoader.<Parent>load(
+            Objects.requireNonNull(getClass().getResource("/app.fxml"))
+        );
         var scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
-        var btn = new Button();
-
-        btn.setText("Hello World");
-        btn.setOnAction(actionEvent -> System.out.println("Hello World"));
-
-        root.setAlignment(Pos.CENTER);
-        root.getChildren()
-            .add(btn);
 
         loadIcons(primaryStage);
 
