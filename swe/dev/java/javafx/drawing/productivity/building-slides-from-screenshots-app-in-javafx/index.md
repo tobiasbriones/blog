@@ -279,6 +279,10 @@ public final class Data {
 }
 ```
 
+<figcaption>
+<p align="center"><strong>Application Data Filters</strong></p>
+</figcaption>
+
 That way, we'll know whether a given file list (that can be dropped into the
 `ListView`) has supported file extensions which will avoid polluting the data
 directory with random files and ensure more correctness in our logic.
