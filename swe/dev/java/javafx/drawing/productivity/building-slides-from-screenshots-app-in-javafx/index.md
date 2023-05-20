@@ -219,7 +219,7 @@ presentation, which will be stored in a local directory.
 
 A basic image item needs to be loaded into the list of images.
 
-`ImageItem.java | engineer.mathsoftware.blog.slides`
+`ImageItem.java`
 
 ```java
 public record ImageItem(String filename, Image image) {
@@ -257,7 +257,7 @@ The items need to be stored and loaded from our local storage.
 
 For this, I defined the `DataRepository` API.
 
-`DataRepository.java | engineer.mathsoftware.blog.slides.data`
+`DataRepository.java | ...slides.data`
 
 ```java
 public interface DataRepository {
@@ -283,7 +283,7 @@ public interface DataRepository {
 
 I also wrote a `Data` utility class to hold important functions.
 
-`Data.java | engineer.mathsoftware.blog.slides.data`
+`Data.java | ...slides.data`
 
 ```java
 public final class Data {
