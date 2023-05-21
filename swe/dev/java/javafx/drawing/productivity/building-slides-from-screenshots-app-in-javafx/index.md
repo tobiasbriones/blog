@@ -457,6 +457,50 @@ public class LocalDataRepository implements DataRepository {
 "LocalDataRepository"</strong></p>
 </figcaption>
 
+## Master Pane
+
+![Master Pane](master-pane.png)
+
+<figcaption>
+<p align="center"><strong>Master Pane</strong></p>
+</figcaption>
+
+![Dragging Files](dragging-files.png)
+
+<figcaption>
+<p align="center"><strong>Dragging Files</strong></p>
+</figcaption>
+
+![Files Updated](files-updated.png)
+
+<figcaption>
+<p align="center"><strong>Files Updated</strong></p>
+</figcaption>
+
+![Drag Canceled: Invalid Files](drag-canceled-.-invalid-files.png)
+
+<figcaption>
+<p align="center"><strong>Drag Canceled: Invalid Files</strong></p>
+</figcaption>
+
+![Drag Canceled](drag-canceled.png)
+
+<figcaption>
+<p align="center"><strong>Drag Canceled</strong></p>
+</figcaption>
+
+![Delete Item](delete-item.png)
+
+<figcaption>
+<p align="center"><strong>Delete Item</strong></p>
+</figcaption>
+
+![Clear All](clear-all.png)
+
+<figcaption>
+<p align="center"><strong>Clear All</strong></p>
+</figcaption>
+
 ## Why the Hash Code and Equals Methods Had to be Overwritten
 
 I already [explained this](#application-data), but I want to provide more
