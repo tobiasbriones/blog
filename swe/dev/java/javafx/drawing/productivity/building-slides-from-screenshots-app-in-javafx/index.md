@@ -456,3 +456,48 @@ public class LocalDataRepository implements DataRepository {
 <p align="center"><strong>Implementation of "DataRepository" on
 "LocalDataRepository"</strong></p>
 </figcaption>
+
+## Why the Hash Code and Equals Methods Had to be Overwritten
+
+I already [explained this](#application-data), but I want to provide more
+documentation.
+
+This snipped explains why, according to the use case I had with this app.
+
+![Why Override Hash Code and Equals Methods in a Record](why-override-hash-code-and-equals-methods-in-a-record.png)
+
+<figcaption>
+<p align="center"><strong>Why Override Hash Code and Equals Methods in a Record</strong></p>
+</figcaption>
+
+To depict this behavior:
+
+Let's say I want to update the bird image by drag-and-drop.
+
+![Updating an Existing Image](updating-an-existing-image.png)
+
+<figcaption>
+<p align="center"><strong>Updating an Existing Image</strong></p>
+</figcaption>
+
+If we don't explicitly override the `record` `hashCode`, and `equals` methods
+according to our model, the `Image` binary field will introduce the side effect:
+
+![Updating an Existing Image Bug](updating-an-existing-image-bug.png)
+
+<figcaption>
+<p align="center"><strong>Updating an Existing Image Bug</strong></p>
+</figcaption>
+
+Even though, the file system keeps correctness, that still leads to
+correctness (and performance since you don't want to compute an `Image` hash)
+issues on the front-end.
+
+Now, by fixing this detail, we get the correct behavior in the front-end as
+well:
+
+![Updating an Existing Image Expected](updating-an-existing-image-expected.png)
+
+<figcaption>
+<p align="center"><strong>Updating an Existing Image Expected</strong></p>
+</figcaption>
