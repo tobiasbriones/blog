@@ -28,3 +28,5 @@ The following images were used to compose some parts shown in the screenshots:
 
 - [Files Updated](files-updated.png): Includes
   [Images from Pixabay](#images-from-pixabay).
+
+- [Hello World](hello-world.png): Includes system icons.
