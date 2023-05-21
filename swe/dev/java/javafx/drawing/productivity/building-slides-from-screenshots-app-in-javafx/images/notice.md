@@ -33,3 +33,7 @@ The following images were used to compose some parts shown in the screenshots:
 
 - [Master Pane](master-pane.png): Includes
   [Images from Pixabay](#images-from-pixabay).
+
+- [Scene Builder: Initial app.fxml](scene-builder-.-initial-app.fxml.png):
+  Includes system icons, and the
+  [Scene Builder](https://gluonhq.com/products/scene-builder) logo.
