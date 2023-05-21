@@ -97,7 +97,7 @@ public class Main extends Application {
 <p align="center"><strong>Initial Hello World App</strong></p>
 </figcaption>
 
-![Hello World](hello-world.png)
+![Hello World](images/hello-world.png)
 
 <figcaption>
 <p align="center"><strong>Hello World</strong></p>
@@ -113,7 +113,7 @@ This is the
 [initial layout app.fxml file](https://github.com/tobiasbriones/blog/blob/main/swe/dev/java/javafx/drawing/productivity/building-slides-from-screenshots-app-in-javafx/slides/src/main/resources/app.fxml)
 that looks like:
 
-![Scene Builder: Initial app.fxml](scene-builder-.-initial-app.fxml.png)
+![Scene Builder: Initial app.fxml](images/scene-builder-.-initial-app.fxml.png)
 
 <figcaption>
 <p align="center"><strong>Scene Builder: Initial app.fxml</strong></p>
@@ -459,43 +459,43 @@ public class LocalDataRepository implements DataRepository {
 
 ## Master Pane
 
-![Master Pane](master-pane.png)
+![Master Pane](images/master-pane.png)
 
 <figcaption>
 <p align="center"><strong>Master Pane</strong></p>
 </figcaption>
 
-![Dragging Files](dragging-files.png)
+![Dragging Files](images/dragging-files.png)
 
 <figcaption>
 <p align="center"><strong>Dragging Files</strong></p>
 </figcaption>
 
-![Files Updated](files-updated.png)
+![Files Updated](images/files-updated.png)
 
 <figcaption>
 <p align="center"><strong>Files Updated</strong></p>
 </figcaption>
 
-![Drag Canceled: Invalid Files](drag-canceled-.-invalid-files.png)
+![Drag Canceled: Invalid Files](images/drag-canceled-.-invalid-files.png)
 
 <figcaption>
 <p align="center"><strong>Drag Canceled: Invalid Files</strong></p>
 </figcaption>
 
-![Drag Canceled](drag-canceled.png)
+![Drag Canceled](images/drag-canceled.png)
 
 <figcaption>
 <p align="center"><strong>Drag Canceled</strong></p>
 </figcaption>
 
-![Delete Item](delete-item.png)
+![Delete Item](images/delete-item.png)
 
 <figcaption>
 <p align="center"><strong>Delete Item</strong></p>
 </figcaption>
 
-![Clear All](clear-all.png)
+![Clear All](images/clear-all.png)
 
 <figcaption>
 <p align="center"><strong>Clear All</strong></p>
@@ -518,7 +518,7 @@ To depict this behavior:
 
 Let's say I want to update the bird image by drag-and-drop.
 
-![Updating an Existing Image](updating-an-existing-image.png)
+![Updating an Existing Image](images/updating-an-existing-image.png)
 
 <figcaption>
 <p align="center"><strong>Updating an Existing Image</strong></p>
@@ -527,7 +527,7 @@ Let's say I want to update the bird image by drag-and-drop.
 If we don't explicitly override the `record` `hashCode`, and `equals` methods
 according to our model, the `Image` binary field will introduce the side effect:
 
-![Updating an Existing Image Bug](updating-an-existing-image-bug.png)
+![Updating an Existing Image Bug](images/updating-an-existing-image-bug.png)
 
 <figcaption>
 <p align="center"><strong>Updating an Existing Image Bug</strong></p>
@@ -540,7 +540,7 @@ issues on the front-end.
 Now, by fixing this detail, we get the correct behavior in the front-end as
 well:
 
-![Updating an Existing Image Expected](updating-an-existing-image-expected.png)
+![Updating an Existing Image Expected](images/updating-an-existing-image-expected.png)
 
 <figcaption>
 <p align="center"><strong>Updating an Existing Image Expected</strong></p>
