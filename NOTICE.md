@@ -14,3 +14,4 @@ The following modules contain third party content:
 
 - [power-bi-overview](ds/ddo-and-power-bi-overview/images/notice.md)
 - [this-article-represents-a-milestone-for-me-2022-12-18](philosophy/experience/this-article-represents-a-milestone-for-me-2022-12-18/images/notice.md)
+- [building-slides-from-screenshots-app-in-javafx](swe/dev/java/javafx/drawing/productivity/building-slides-from-screenshots-app-in-javafx/images/notice.md)
