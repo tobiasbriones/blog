@@ -16,5 +16,5 @@ The following images were used to compose some parts shown in the screenshots:
 - [GUI Bug that Takes the Updated Image as Brand New](gui-bug-that-takes-the-updated-image-as-brand-new.png):
   Includes [Images from Pixabay](#images-from-pixabay).
 
-- [Expected: Updating an Existing Image](expected-.-updating-an-existing-image.png):
+- [Expected Update Behavior after Fixing the Bug](expected-update-behavior-after-fixing-the-bug.png):
   Includes [Images from Pixabay](#images-from-pixabay).

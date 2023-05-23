@@ -53,10 +53,10 @@ possible for the domain, and any professional software engineer also must.
 Now, by fixing this detail, we get the correct behavior in the front-end as
 well:
 
-![Expected: Updating an Existing Image](images/expected-.-updating-an-existing-image.png)
+![Expected Update Behavior after Fixing the Bug](images/expected-update-behavior-after-fixing-the-bug.png)
 
 <figcaption>
-<p align="center"><strong>Expected: Updating an Existing Image</strong></p>
+<p align="center"><strong>Expected Update Behavior after Fixing the Bug</strong></p>
 </figcaption>
 
 Binary files are always a red flag 🚩 as they're external systems that have to be
