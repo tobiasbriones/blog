@@ -73,3 +73,11 @@ effects go to the boundaries.
 This case shows one example of when to override the default implementation of a
 Java `record` that has large or binary fields and how a side effect can be
 mitigated in a system.
+
+## Setting a Correct Model Identity
+
+Large structures, binary files, memory addresses, and any kind of
+poorly-meaningful side effects have to be pushed to the system boundaries, and
+we have to avoid merging them into our domain boundaries like in this case where
+a Record should be defined via a meaningful key from our application domain
+instead of an in-memory image object.
