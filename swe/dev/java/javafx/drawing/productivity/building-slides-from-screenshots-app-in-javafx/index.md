@@ -462,11 +462,20 @@ application images.
 
 ## Master Pane
 
+The first part of the app is a master pane that lists the images.
+
 ![Master Pane](images/master-pane.png)
 
 <figcaption>
 <p align="center"><strong>Master Pane</strong></p>
 </figcaption>
+
+This pane will be able to list the images, add new image(s) via drag-and-drop
+and or a `Button` with `FileChooser`, delete an image, delete all images, and
+rearrange them in the order they will appear in the presentation.
+
+One engaging feature of this app is its file drag-and-drop, where you can create
+or update one or many images just as simple.
 
 ![Dragging Files](images/dragging-files.png)
 
@@ -474,11 +483,18 @@ application images.
 <p align="center"><strong>Dragging Files</strong></p>
 </figcaption>
 
+If the files are [accepted](#application-data) by our app then they will be
+added.
+
 ![Files Updated](images/files-updated.png)
 
 <figcaption>
 <p align="center"><strong>Files Updated</strong></p>
 </figcaption>
+
+They won't be added if rejected (e.g., a Photopea ".psd" file). Per
+[our rules](#application-data), one invalid file is enough to reject all of
+them.
 
 ![Drag Canceled: Invalid Files](images/drag-canceled-.-invalid-files.png)
 
@@ -486,17 +502,27 @@ application images.
 <p align="center"><strong>Drag Canceled: Invalid Files</strong></p>
 </figcaption>
 
+So the `DragEvent` is *consumed* and cancels further actions.
+
+Another way the `DragEvent` is consumed is when you just cancel the drop action
+with your mouse by leaving the files out.
+
 ![Drag Canceled](images/drag-canceled.png)
 
 <figcaption>
 <p align="center"><strong>Drag Canceled</strong></p>
 </figcaption>
 
+For deleting an item, you click on the delete button of the item, and a 
+confirmation `Alert` will finish this action.
+
 ![Delete Item](images/delete-item.png)
 
 <figcaption>
 <p align="center"><strong>Delete Item</strong></p>
 </figcaption>
+
+To delete all the items, the "clear" `Button` will "do the trick".
 
 ![Clear All](images/clear-all.png)
 
