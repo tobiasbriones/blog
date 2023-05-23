@@ -30,10 +30,11 @@ If we don't explicitly override the `record` `hashCode`, and `equals` methods
 according to our model, the `Image` **binary field** will introduce the **side
 effect**:
 
-![Bug: Updating an Existing Image](images/bug-.-updating-an-existing-image.png)
+![Updating an Existing Image: GUI Bug that Takes the Updated Image as Brand New](images/updating-an-existing-image-.-gui-bug-that-takes-the-updated-image-as-brand-new.png)
 
 <figcaption>
-<p align="center"><strong>Bug: Updating an Existing Image</strong></p>
+<p align="center"><strong>Updating an Existing Image: GUI Bug that Takes the
+Updated Image as Brand New</strong></p>
 </figcaption>
 
 That is, when we add an existing image to the app, the list of images in the GUI
