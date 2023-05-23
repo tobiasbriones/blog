@@ -13,7 +13,7 @@ The following images were used to compose some parts shown in the screenshots:
 - [Highlighting our Target](highlighting-our-target.png):
   Includes [Images from Pixabay](#images-from-pixabay).
 
-- [Updating an Existing Image: GUI Bug that Takes the Updated Image as Brand New](updating-an-existing-image-.-gui-bug-that-takes-the-updated-image-as-brand-new.png):
+- [GUI Bug that Takes the Updated Image as Brand New](gui-bug-that-takes-the-updated-image-as-brand-new.png):
   Includes [Images from Pixabay](#images-from-pixabay).
 
 - [Expected: Updating an Existing Image](expected-.-updating-an-existing-image.png):
