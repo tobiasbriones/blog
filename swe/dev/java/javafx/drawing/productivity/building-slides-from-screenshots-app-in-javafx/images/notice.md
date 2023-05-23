@@ -37,12 +37,3 @@ The following images were used to compose some parts shown in the screenshots:
 - [Scene Builder: Initial app.fxml](scene-builder-.-initial-app.fxml.png):
   Includes system icons, and the
   [Scene Builder](https://gluonhq.com/products/scene-builder) logo.
-
-- [Updating an Existing Image](updating-an-existing-image.png): Includes
-  [Images from Pixabay](#images-from-pixabay).
-
-- [Bug: Updating an Existing Image](bug-.-updating-an-existing-image.png): 
-  Includes [Images from Pixabay](#images-from-pixabay).
-
-- [Expected: Updating an Existing Image](expected-.-updating-an-existing-image.png): 
-  Includes [Images from Pixabay](#images-from-pixabay).
