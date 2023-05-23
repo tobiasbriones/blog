@@ -4,6 +4,8 @@
 
 # Overriding Hash Code and Equals in a Record with an Image Field
 
+## Example Case
+
 I already
 [explained this](/building-slides-from-screenshots-app-in-javafx#application-data),
 but I want to provide more documentation.
