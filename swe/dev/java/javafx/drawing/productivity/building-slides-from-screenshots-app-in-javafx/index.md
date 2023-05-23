@@ -553,10 +553,10 @@ as possible for the domain, and any professional software engineer also must.
 Now, by fixing this detail, we get the correct behavior in the front-end as
 well:
 
-![Updating an Existing Image Expected](images/updating-an-existing-image-expected.png)
+![Expected: Updating an Existing Image](images/expected-.-updating-an-existing-image.png)
 
 <figcaption>
-<p align="center"><strong>Updating an Existing Image Expected</strong></p>
+<p align="center"><strong>Expected: Updating an Existing Image</strong></p>
 </figcaption>
 
 Binary files are always a red flag 🚩 as they're external systems that have to

@@ -44,5 +44,5 @@ The following images were used to compose some parts shown in the screenshots:
 - [Bug: Updating an Existing Image](bug-.-updating-an-existing-image.png): 
   Includes [Images from Pixabay](#images-from-pixabay).
 
-- [Updating an Existing Image Expected](updating-an-existing-image-expected.png): 
+- [Expected: Updating an Existing Image](expected-.-updating-an-existing-image.png): 
   Includes [Images from Pixabay](#images-from-pixabay).
