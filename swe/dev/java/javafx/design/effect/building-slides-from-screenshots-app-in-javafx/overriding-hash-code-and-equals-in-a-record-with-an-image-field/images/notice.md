@@ -10,7 +10,7 @@ The following images were used to compose some parts shown in the screenshots:
 
 ## Screenshots
 
-- [Updating an Existing Image: Highlight](updating-an-existing-image-.-highlight.png):
+- [Highlighting our Target](highlighting-our-target.png):
   Includes [Images from Pixabay](#images-from-pixabay).
 
 - [Updating an Existing Image: GUI Bug that Takes the Updated Image as Brand New](updating-an-existing-image-.-gui-bug-that-takes-the-updated-image-as-brand-new.png):
