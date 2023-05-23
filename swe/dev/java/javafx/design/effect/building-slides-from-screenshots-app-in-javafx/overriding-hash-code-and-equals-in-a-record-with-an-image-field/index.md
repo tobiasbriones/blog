@@ -6,6 +6,9 @@
 
 ## Example Case
 
+This idea relates to when I was developing a JavaFX app that receives images via
+drag-and-drop, and had to override these methods to fix the bug in the GUI.
+
 I already
 [explained this](/building-slides-from-screenshots-app-in-javafx#application-data),
 but I want to provide more documentation.
