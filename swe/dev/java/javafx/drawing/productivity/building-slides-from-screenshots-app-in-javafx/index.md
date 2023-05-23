@@ -457,6 +457,9 @@ public class LocalDataRepository implements DataRepository {
 "LocalDataRepository"</strong></p>
 </figcaption>
 
+This realization of `DataRepository` allows us to access our `data` directory
+application images.
+
 ## Master Pane
 
 ![Master Pane](images/master-pane.png)
