@@ -4,6 +4,11 @@
 
 # Overriding Hash Code and Equals in a Record with an Image Field
 
+Java Records have several built-in implementations, so some ask when you should
+override that default behavior which is a situation I recently came across when
+dealing with GUI and binary image files, so I found an opportunity to write
+about this topic.
+
 ## Example Case
 
 This idea relates to when I was developing a JavaFX app that receives images via
