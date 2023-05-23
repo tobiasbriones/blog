@@ -20,10 +20,10 @@ To depict this behavior:
 
 Let's say I want to update the bird image by drag-and-drop.
 
-![Updating an Existing Image](images/updating-an-existing-image.png)
+![Updating an Existing Image: Highlight](images/updating-an-existing-image-.-highlight.png)
 
 <figcaption>
-<p align="center"><strong>Updating an Existing Image</strong></p>
+<p align="center"><strong>Updating an Existing Image: Highlight</strong></p>
 </figcaption>
 
 If we don't explicitly override the `record` `hashCode`, and `equals` methods
