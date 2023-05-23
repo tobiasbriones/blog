@@ -12,3 +12,6 @@ The following images were used to compose some parts shown in the screenshots:
 
 - [Updating an Existing Image](updating-an-existing-image.png): Includes
   [Images from Pixabay](#images-from-pixabay).
+
+- [Bug: Updating an Existing Image](bug-.-updating-an-existing-image.png):
+  Includes [Images from Pixabay](#images-from-pixabay).
