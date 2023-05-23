@@ -16,7 +16,9 @@ This snippet explains why, according to the use case I had with that app.
 <p align="center"><strong>Why Override Hash Code and Equals Methods in a Record</strong></p>
 </figcaption>
 
-To depict this behavior:
+## Updating an Existing Image
+
+This behavior can be depicted as follows.
 
 Let's say I want to update the bird image by drag-and-drop.
 
