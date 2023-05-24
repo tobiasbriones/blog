@@ -557,9 +557,9 @@ them.
 <p align="center"><strong>Drag Canceled: Invalid Files</strong></p>
 </figcaption>
 
-So the `DragEvent` is *consumed* and cancels further actions.
+So our `DragEvent` cancels further actions with the clipboard files.
 
-Another way the `DragEvent` is consumed is when you just cancel the drop action
+Another way the `DragEvent` can finish is when you just cancel the drop action
 with your mouse by leaving the files out.
 
 ![Drag Canceled](images/drag-canceled.png)
