@@ -568,6 +568,64 @@ with your mouse by leaving the files out.
 <p align="center"><strong>Drag Canceled</strong></p>
 </figcaption>
 
+The events are set from the `app.fxml` view already, so the controller 
+implementation is left.
+
+The three events that will be required for this app consist of:
+
+- **Drag Over:** Files are being dragged onto the `ListView`, so they will 
+  either be accepted or rejected.
+- **Drag Dropped:** Files were deposited into the app.
+- **Drag Exited:** Cancels the drag as files dragged with the mouse are out of 
+  scope.
+
+`class AppContoller`
+
+```java
+@FXML
+private void onDragOver(DragEvent dragEvent) {
+    if (
+        dragEvent.getDragboard().hasFiles()
+        && Data.areValidImageFiles(dragEvent.getDragboard().getFiles())
+    ) {
+        statusLabel.setText("Dragging files...");
+        dragEvent.acceptTransferModes(TransferMode.COPY);
+    }
+    else {
+        statusLabel.setText("Drag canceled (invalid files)");
+        dragEvent.consume();
+    }
+}
+
+@FXML
+private void onDragDropped(DragEvent dragEvent) {
+    var board = dragEvent.getDragboard();
+
+    if (board.hasFiles()) {
+        createOrUpdateImages(board.getFiles());
+        statusLabel.setText("Files updated");
+        dragEvent.setDropCompleted(true);
+    }
+    else {
+        statusLabel.setText("Drag canceled (empty)");
+        dragEvent.consume();
+    }
+}
+
+@FXML
+private void onDragExited(DragEvent dragEvent) {
+    if (!dragEvent.isDropCompleted()) {
+        statusLabel.setText("Drag canceled");
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Drag Event Implementations</strong></p>
+</figcaption>
+
+These implementations will allow the drag-and-drop feature in our application.
+
 ### Deleting Items
 
 For deleting an item, you click on the delete button of the item, and a 
