@@ -474,6 +474,59 @@ This pane will be able to list the images, add new image(s) via drag-and-drop
 and or a `Button` with `FileChooser`, delete an image, delete all images, and
 rearrange them in the order they will appear in the presentation.
 
+### Initializing the App Controller
+
+The `AppController` will need some fields.
+
+`class AppController`
+
+```java
+private static final String DATA_ROOT = "data";
+private final DataRepository repository;
+@FXML private Button addButton;
+@FXML private Label statusLabel;
+
+public AppController() {
+    this.repository = new LocalDataRepository(DATA_ROOT);
+}
+```
+
+<figcaption>
+<p align="center"><strong>Members of "AppController"</strong></p>
+</figcaption>
+
+A good initialization will be needed too.
+
+`class AppController`
+
+```java
+@FXML
+public void initialize() {
+    statusLabel.setText("Slides App");
+
+    initAddButton();
+}
+
+private void initAddButton() {
+    var icAdd = new Image(
+        Objects.requireNonNull(
+            getClass().getResourceAsStream("/ic_add.png")
+        )
+    );
+    var addImageView = new ImageView(icAdd);
+
+    addImageView.setFitWidth(18.0);
+    addImageView.setFitHeight(18.0);
+    addButton.setGraphic(addImageView);
+}
+```
+
+<figcaption>
+<p align="center"><strong>Initialization of "AppController"</strong></p>
+</figcaption>
+
+Now the controller set up to keep adding the other features.
+
 ### Drag and Drop
 
 One engaging feature of this app is its file drag-and-drop, where you can create
