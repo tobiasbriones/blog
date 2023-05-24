@@ -626,6 +626,241 @@ private void onDragExited(DragEvent dragEvent) {
 
 These implementations will allow the drag-and-drop feature in our application.
 
+### List View
+
+The list in the master pane is a key for completing this implementation.
+
+First, a custom cell renderer needs to be created, obviously.
+
+If you remember or are homesick for the Android old school like me, that would
+come in handy a lot.
+
+`class ImageItemCell`
+
+```java
+class ImageItemCell extends ListCell<ImageItem> {
+    interface Listener {
+        void onDelete(ImageItem item);
+    }
+
+    private final Listener l;
+    private final HBox view;
+    private final ImageView imageView;
+    private final Label nameLabel;
+    private final Button deleteButton;
+    private final Tooltip tip;
+
+    ImageItemCell(Listener l) {
+        super();
+        this.l = l;
+        this.view = new HBox();
+        this.imageView = new ImageView();
+        this.nameLabel = new Label();
+        this.deleteButton = new Button();
+        this.tip = new Tooltip();
+
+        init();
+    }
+
+    @Override
+    protected void updateItem(ImageItem item, boolean empty) {
+        super.updateItem(item, empty);
+        if (item == null || empty) {
+            setText(null);
+            setGraphic(null);
+        }
+        else {
+            updateItem(item);
+        }
+    }
+
+    private void init() {
+        var imageParent = new HBox();
+
+        imageView.setFitWidth(128.0);
+        imageView.setFitHeight(64.0);
+        imageView.setPreserveRatio(true);
+
+        imageParent.setPrefWidth(144.0);
+        imageParent.setPrefHeight(96.0);
+        imageParent.setAlignment(Pos.CENTER);
+        imageParent.getChildren().add(imageView);
+
+        var maxNameLength = 20;
+
+        nameLabel
+            .textProperty()
+            .addListener((observable, oldValue, newValue) -> {
+                if (newValue.length() > maxNameLength) {
+                    var txt = newValue.substring(0, maxNameLength) + "...";
+                    nameLabel.setText(txt);
+                }
+            });
+
+        var deleteParent = new HBox();
+
+        deleteButton.setText("X");
+        deleteButton.setStyle("-fx-text-fill: #b00020;");
+
+        HBox.setHgrow(deleteParent, Priority.ALWAYS);
+        deleteParent.setSpacing(16.0);
+        deleteParent.setAlignment(Pos.CENTER_RIGHT);
+        deleteParent.getChildren().add(deleteButton);
+
+        Tooltip.install(view, tip);
+
+        view.setPrefHeight(96.0);
+        view.setAlignment(Pos.CENTER_LEFT);
+        view.setSpacing(16.0);
+        view.getChildren().addAll(imageParent, nameLabel, deleteParent);
+    }
+
+    private void updateItem(ImageItem item) {
+        nameLabel.setText(item.filename());
+        imageView.setImage(item.image());
+        imageView.setSmooth(true);
+
+        var boundingBox = imageView.getLayoutBounds();
+        var clip = new Rectangle(
+            boundingBox.getWidth(), boundingBox.getHeight()
+        );
+
+        clip.setArcWidth(8.0);
+        clip.setArcHeight(8.0);
+        imageView.setClip(clip);
+
+        deleteButton.setOnAction(event -> onDeleteButtonAction(item));
+        tip.setText(item.filename());
+
+        setGraphic(view);
+    }
+
+    private void onDeleteButtonAction(ImageItem item) {
+        var alert = new Alert(
+            Alert.AlertType.CONFIRMATION,
+            "Delete " + item.filename() + "?",
+            ButtonType.YES,
+            ButtonType.NO
+        );
+        alert.showAndWait();
+
+        if(alert.getResult() == ButtonType.YES) {
+            l.onDelete(item);
+        }
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Implementation of the Cell Items for the 
+List View</strong></p>
+</figcaption>
+
+I also added a `Tooltip` so the full file name is shown when you hover the item
+and a maximum length for the text to be covered with an ellipsis if long.
+
+Moreover, I set a rounded corner of the image in the method `updateItem` via
+`imageView.setClip(clip);`, and set the confirmation `Alert` in the method
+`onDeleteButtonAction` that sends the event to delete the item to the
+`ImageItemCell.Listener` (the controller).
+
+So, that's the `ListView` item implementation you see in the screenshots.
+
+Then, this is integrated into the controller.
+
+First, the cell callback that was defined can be realized by the controller,
+i.e., `implements ImageItemCell.Listener` which is followed by:
+
+`class AppController`
+
+```java
+@FXML private ListView<ImageItem> imageList;
+
+@FXML
+public void initialize() {
+    // ... //
+    imageList.setCellFactory(param -> new ImageItemCell(this));
+
+    loadImageList();
+}
+
+@Override
+public void onDelete(ImageItem item) {
+    try {
+        repository.deleteImage(item.filename());
+        imageList.getItems().remove(item);
+    }
+    catch (IOException e) {
+        handleError(e);
+    }
+}
+
+@Override
+public void onDelete(ImageItem item) {
+    try {
+        repository.deleteImage(item.filename());
+        imageList.getItems().remove(item);
+    }
+    catch (IOException e) {
+        handleError(e);
+    }
+}
+
+private void loadImageList() {
+    try {
+        var images = repository.readAllImages();
+        imageList.setItems(FXCollections.observableList(images));
+    }
+    catch (IOException e) {
+        handleError(e);
+    }
+}
+
+private void createOrUpdateImages(Iterable<? extends File> files) {
+    for (var file : files) {
+        var path = file.toPath();
+    
+        try {
+            repository.createOrUpdateImage(path);
+        
+            var imageName = path.getFileName().toString();
+            var newImage = repository.readImage(imageName);
+            var newImageItem = new ImageItem(imageName, newImage);
+            var listItems = imageList.getItems();
+        
+            listItems.remove(newImageItem);
+            listItems.add(new ImageItem(imageName, newImage));
+        }
+        catch (IOException e) {
+            handleError(e);
+        }
+    }
+}
+
+private void deleteAllImages() {
+    try {
+        repository.deleteAllImages();
+        imageList.getItems().clear();
+    }
+    catch (IOException e) {
+        handleError(e);
+    }
+}
+
+private void handleError(IOException e) {
+    statusLabel.setText(e.getMessage());
+    e.printStackTrace();
+}
+```
+
+<figcaption>
+<p align="center"><strong>Integration of the List View and Data 
+Repository into the App Controller</strong></p>
+</figcaption>
+
+At this point, the list with drag-and-drop was built which is a big part of
+this master pane.
+
 ### Deleting Items
 
 For deleting an item, you click on the delete button of the item, and a 
