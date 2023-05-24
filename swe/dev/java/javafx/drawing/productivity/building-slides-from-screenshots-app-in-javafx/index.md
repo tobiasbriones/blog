@@ -474,6 +474,8 @@ This pane will be able to list the images, add new image(s) via drag-and-drop
 and or a `Button` with `FileChooser`, delete an image, delete all images, and
 rearrange them in the order they will appear in the presentation.
 
+### Drag and Drop
+
 One engaging feature of this app is its file drag-and-drop, where you can create
 or update one or many images just as simple.
 
@@ -512,6 +514,8 @@ with your mouse by leaving the files out.
 <figcaption>
 <p align="center"><strong>Drag Canceled</strong></p>
 </figcaption>
+
+### Deleting Items
 
 For deleting an item, you click on the delete button of the item, and a 
 confirmation `Alert` will finish this action.
