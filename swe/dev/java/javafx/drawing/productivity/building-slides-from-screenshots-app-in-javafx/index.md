@@ -863,7 +863,7 @@ this master pane.
 
 ### Deleting Items
 
-For deleting an item, you click on the delete button of the item, and a 
+For deleting an item, you click on the delete button of the item, and a
 confirmation `Alert` will finish this action.
 
 ![Delete Item](images/delete-item.png)
@@ -879,3 +879,52 @@ To delete all the items, the "clear" `Button` will "do the trick".
 <figcaption>
 <p align="center"><strong>Clear All</strong></p>
 </figcaption>
+
+Therefore, here we go with our controller again.
+
+`class AppController`
+
+```java
+@FXML private Parent view;
+
+@FXML
+private void onAddButtonAction() {
+    var chooser = new FileChooser();
+
+    chooser.setTitle("Open Files");
+    chooser.getExtensionFilters().addAll(
+        new FileChooser.ExtensionFilter(
+            "Image Files (*.png, *.jpg)",
+            "*.png",
+            "*.jpg"
+        )
+    );
+    var files = chooser.showOpenMultipleDialog(view.getScene().getWindow());
+
+    if (files != null) {
+        createOrUpdateImages(files);
+    }
+}
+
+@FXML
+private void onClearButtonAction() {
+    var alert = new Alert(
+    Alert.AlertType.CONFIRMATION,
+        "Delete all the data?",
+        ButtonType.YES,
+        ButtonType.NO
+    );
+    alert.showAndWait();
+
+    if (alert.getResult() == ButtonType.YES) {
+        deleteAllImages();
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Implementation of Deleting Actions (the "Danger 
+Zone")</strong></p>
+</figcaption>
+
+This provides a safe delete mechanism for our application images.
