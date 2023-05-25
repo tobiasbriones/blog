@@ -91,21 +91,7 @@ public class AppController implements ImageItemCell.Listener {
 
     @FXML
     private void onAddButtonAction() {
-        var chooser = new FileChooser();
-
-        chooser.setTitle("Open Files");
-        chooser.getExtensionFilters().addAll(
-            new FileChooser.ExtensionFilter(
-                "Image Files (*.png, *.jpg)",
-                "*.png",
-                "*.jpg"
-            )
-        );
-        var files = chooser.showOpenMultipleDialog(view.getScene().getWindow());
-
-        if (files != null) {
-            createOrUpdateImages(files);
-        }
+        openFileViaFileChooser();
     }
 
     @FXML
@@ -166,6 +152,24 @@ public class AppController implements ImageItemCell.Listener {
         }
         catch (IOException e) {
             handleError(e);
+        }
+    }
+
+    private void openFileViaFileChooser() {
+        var chooser = new FileChooser();
+
+        chooser.setTitle("Open Files");
+        chooser.getExtensionFilters().addAll(
+            new FileChooser.ExtensionFilter(
+                "Image Files (*.png, *.jpg)",
+                "*.png",
+                "*.jpg"
+            )
+        );
+        var files = chooser.showOpenMultipleDialog(view.getScene().getWindow());
+
+        if (files != null) {
+            createOrUpdateImages(files);
         }
     }
 
