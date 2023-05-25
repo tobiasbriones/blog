@@ -525,6 +525,21 @@ private void initAddButton() {
 <p align="center"><strong>Initialization of "AppController"</strong></p>
 </figcaption>
 
+Including other methods will be helpful as well.
+
+`class AppControler`
+
+```java
+private void handleError(IOException e) {
+    setStatus(e.getMessage());
+    e.printStackTrace();
+}
+
+private void setStatus(String msg) {
+    statusLabel.setText(msg);
+}
+```
+
 Now the controller set up to keep adding the other features.
 
 ### Drag and Drop
@@ -584,17 +599,26 @@ The three events that will be required for this app consist of:
 ```java
 @FXML
 private void onDragOver(DragEvent dragEvent) {
-    if (
-        dragEvent.getDragboard().hasFiles()
-        && Data.areValidImageFiles(dragEvent.getDragboard().getFiles())
-    ) {
-        statusLabel.setText("Dragging files...");
-        dragEvent.acceptTransferModes(TransferMode.COPY);
-    }
-    else {
-        statusLabel.setText("Drag canceled (invalid files)");
+    var dragboard = dragEvent.getDragboard();
+
+    if (dragboard.hasFiles()) {
+        if (Data.areValidImageFiles(dragboard.getFiles())) {
+            setStatus("Dragging files...");
+            dragEvent.acceptTransferModes(TransferMode.COPY);
+        }
+        else {
+            setStatus("Drag canceled (invalid files)");
+        }
         dragEvent.consume();
     }
+}
+
+@FXML
+private void onDragExited(DragEvent dragEvent) {
+    if (!dragEvent.isDropCompleted()) {
+        setStatus("Drag canceled");
+    }
+    dragEvent.consume();
 }
 
 @FXML
@@ -603,19 +627,12 @@ private void onDragDropped(DragEvent dragEvent) {
 
     if (board.hasFiles()) {
         createOrUpdateImages(board.getFiles());
-        statusLabel.setText("Files updated");
+        setStatus("Files updated");
         dragEvent.setDropCompleted(true);
-    }
-    else {
-        statusLabel.setText("Drag canceled (empty)");
         dragEvent.consume();
     }
-}
-
-@FXML
-private void onDragExited(DragEvent dragEvent) {
-    if (!dragEvent.isDropCompleted()) {
-        statusLabel.setText("Drag canceled");
+    else {
+        setStatus("Drag canceled (empty)");
     }
 }
 ```
@@ -789,6 +806,7 @@ public void onDelete(ImageItem item) {
     try {
         repository.deleteImage(item.filename());
         imageList.getItems().remove(item);
+        setStatus("Item deleted");
     }
     catch (IOException e) {
         handleError(e);
@@ -841,6 +859,7 @@ private void deleteAllImages() {
     try {
         repository.deleteAllImages();
         imageList.getItems().clear();
+        setStatus("All items deleted");
     }
     catch (IOException e) {
         handleError(e);
