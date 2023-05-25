@@ -954,3 +954,130 @@ Our presentation order will be the one shown in the images `ListView` that
 already supports a drag-and-drop event for adding or updating files to the app,
 and now it needs one more implementation for arranging its items via this fancy
 mechanism.
+
+#### Cell Drag and Drop Implementation
+
+First, a new event will need to be defined in the `ImageItemCell` `Listener`,
+namely, `void onArrange(int draggedIdx, int destIdx);`. So, our abstract list of
+images (the data structure) gets sorted when this happens (then updates the
+view).
+
+`init | class ImageItemCell`
+
+```java
+setDragAndDropItemSort();
+
+getStyleClass().add("cell");
+```
+
+<figcaption>
+<p align="center"><strong>Updating the Init Method of
+"ImageItemCell"</strong></p>
+</figcaption>
+
+`class ImageItemCell`
+
+```java
+private void setDragAndDropItemSort() {
+    setOnDragDetected(this::onDragDetected);
+    setOnDragOver(this::onDragOver);
+    setOnDragEntered(this::onDragEntered);
+    setOnDragExited(this::onDragExited);
+    setOnDragDropped(this::onDragDropped);
+    setOnDragDone(DragEvent::consume);
+}
+```
+
+<figcaption>
+<p align="center"><strong>Drag and Drop Events Needed</strong></p>
+</figcaption>
+
+`class ImageItemCell`
+
+```java
+private void onDragDetected(MouseEvent event) {
+    var item = getItem();
+
+    if (item == null) {
+        return;
+    }
+
+    var idx = getListView().getItems().indexOf(item);
+    var dragboard = startDragAndDrop(TransferMode.MOVE);
+    var content = new ClipboardContent();
+
+    content.putString(String.valueOf(idx));
+    dragboard.setDragView(view.snapshot(null, null));
+    dragboard.setContent(content);
+
+    event.consume();
+}
+
+private void onDragOver(DragEvent event) {
+    if (event.getGestureSource() != this && event.getDragboard().hasString()) {
+        event.acceptTransferModes(TransferMode.MOVE);
+        event.consume();
+    }
+}
+
+private void onDragEntered(DragEvent event) {
+    if (event.getGestureSource() != this && event.getDragboard().hasString()) {
+        getStyleClass().add("entered");
+        event.consume();
+    }
+}
+
+private void onDragExited(DragEvent event) {
+    if (event.getGestureSource() != this && event.getDragboard().hasString()) {
+        getStyleClass().remove("entered");
+        event.consume();
+    }
+}
+
+private void onDragDropped(DragEvent event) {
+    var item = getItem();
+
+    if (item == null) {
+        return;
+    }
+
+    var dragboard = event.getDragboard();
+
+    if (dragboard.hasString()) {
+        var items = getListView().getItems();
+        int draggedIdx = Integer.parseInt(dragboard.getString());
+        int destIdx = items.indexOf(item);
+
+        l.onArrange(draggedIdx, destIdx);
+
+        event.setDropCompleted(true);
+        event.consume();
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Drag Event Implementations to Rearrange a List Cell</strong></p>
+</figcaption>
+
+First, notice that if you're not careful, you'll introduce side effects to
+these kinds of events, as we can have many event implementations. In this case,
+the drag events fall into the `ListView` (the "bigger") and are also listened
+from each of its cells, that is, each `ImageItemCell`.
+
+What controls this crazy state sharing, if you notice, are the calls to the
+`consume` method of the `DragEvent`s. Setting `setDropCompleted` to `true` also
+helps with this.
+
+So, I carefully **tested the app so both drag-and-drop events for files and for
+arranging cells work properly**.
+
+The drag view is set to a *snapshot* of the cell being dragged. This is the
+graphic you see on the tip of your mouse when dragging something on the screen.
+
+There are some CSS classes to apply a visual effect on the cells when dragging
+one cell onto another. These classes have to be added to the app from a CSS
+file.
+
+That was with respect to the `ImageItemCell`. Now this feature has to be added
+to the `AppController` part.
