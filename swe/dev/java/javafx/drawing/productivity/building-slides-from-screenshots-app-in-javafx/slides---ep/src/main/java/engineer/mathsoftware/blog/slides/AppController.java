@@ -8,6 +8,7 @@ import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.LocalDataRepository;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -24,6 +25,7 @@ import java.util.Objects;
 public class AppController implements ImageItemCell.Listener {
     private static final String DATA_ROOT = "data";
     private final DataRepository repository;
+    private final ObservableList<ImageItem> images;
     @FXML
     private Parent view;
     @FXML
@@ -35,12 +37,14 @@ public class AppController implements ImageItemCell.Listener {
 
     public AppController() {
         this.repository = new LocalDataRepository(DATA_ROOT);
+        this.images = FXCollections.observableArrayList();
     }
 
     @FXML
     public void initialize() {
         setStatus("Slides App");
         imageList.setCellFactory(param -> new ImageItemCell(this));
+        imageList.setItems(images);
 
         initAddButton();
         loadImageList();
@@ -131,10 +135,23 @@ public class AppController implements ImageItemCell.Listener {
         }
     }
 
+    @Override
+    public void onArrange(int draggedIdx, int destIdx) {
+        var dragged = images.get(draggedIdx);
+        var dest = images.get(destIdx);
+
+        images.set(draggedIdx, dest);
+        images.set(destIdx, dragged);
+        setStatus("Item arranged");
+    }
+
     private void loadImageList() {
         try {
-            var images = repository.readAllImages();
-            imageList.setItems(FXCollections.observableList(images));
+            var loadedImages = repository.readAllImages();
+
+            images.clear();
+            images.addAll(loadedImages);
+            setStatus("Images loaded");
         }
         catch (IOException e) {
             handleError(e);

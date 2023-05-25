@@ -7,6 +7,7 @@ package engineer.mathsoftware.blog.slides;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.shape.Rectangle;
@@ -14,6 +15,8 @@ import javafx.scene.shape.Rectangle;
 class ImageItemCell extends ListCell<ImageItem> {
     interface Listener {
         void onDelete(ImageItem item);
+
+        void onArrange(int draggedIdx, int destIdx);
     }
 
     private final Listener l;
@@ -82,6 +85,10 @@ class ImageItemCell extends ListCell<ImageItem> {
 
         Tooltip.install(view, tip);
 
+        setDragAndDropItemSort();
+
+        getStyleClass().add("cell");
+
         view.setPrefHeight(96.0);
         view.setAlignment(Pos.CENTER_LEFT);
         view.setSpacing(16.0);
@@ -119,6 +126,75 @@ class ImageItemCell extends ListCell<ImageItem> {
 
         if(alert.getResult() == ButtonType.YES) {
             l.onDelete(item);
+        }
+    }
+
+    private void setDragAndDropItemSort() {
+        setOnDragDetected(this::onDragDetected);
+        setOnDragOver(this::onDragOver);
+        setOnDragEntered(this::onDragEntered);
+        setOnDragExited(this::onDragExited);
+        setOnDragDropped(this::onDragDropped);
+        setOnDragDone(DragEvent::consume);
+    }
+
+    private void onDragDetected(MouseEvent event) {
+        var item = getItem();
+
+        if (item == null) {
+            return;
+        }
+
+        var idx = getListView().getItems().indexOf(item);
+        var dragboard = startDragAndDrop(TransferMode.MOVE);
+        var content = new ClipboardContent();
+
+        content.putString(String.valueOf(idx));
+        dragboard.setDragView(view.snapshot(null, null));
+        dragboard.setContent(content);
+
+        event.consume();
+    }
+
+    private void onDragOver(DragEvent event) {
+        if (event.getGestureSource() != this && event.getDragboard().hasString()) {
+            event.acceptTransferModes(TransferMode.MOVE);
+            event.consume();
+        }
+    }
+
+    private void onDragEntered(DragEvent event) {
+        if (event.getGestureSource() != this && event.getDragboard().hasString()) {
+            getStyleClass().add("entered");
+            event.consume();
+        }
+    }
+
+    private void onDragExited(DragEvent event) {
+        if (event.getGestureSource() != this && event.getDragboard().hasString()) {
+            getStyleClass().remove("entered");
+            event.consume();
+        }
+    }
+
+    private void onDragDropped(DragEvent event) {
+        var item = getItem();
+
+        if (item == null) {
+            return;
+        }
+
+        var dragboard = event.getDragboard();
+
+        if (dragboard.hasString()) {
+            var items = getListView().getItems();
+            int draggedIdx = Integer.parseInt(dragboard.getString());
+            int destIdx = items.indexOf(item);
+
+            l.onArrange(draggedIdx, destIdx);
+
+            event.setDropCompleted(true);
+            event.consume();
         }
     }
 }
