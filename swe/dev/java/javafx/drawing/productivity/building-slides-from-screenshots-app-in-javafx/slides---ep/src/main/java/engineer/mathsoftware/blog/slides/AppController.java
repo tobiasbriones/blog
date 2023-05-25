@@ -196,6 +196,7 @@ public class AppController implements ImageItemCell.Listener {
         try {
             repository.deleteAllImages();
             imageList.getItems().clear();
+            setStatus("All items deleted");
         }
         catch (IOException e) {
             handleError(e);
