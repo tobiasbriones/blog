@@ -1081,3 +1081,64 @@ file.
 
 That was with respect to the `ImageItemCell`. Now this feature has to be added
 to the `AppController` part.
+
+#### Controller Update
+
+The previous changes have to be implemented in the app controller.
+
+I lately made the app less coupled, so we'll work with a `images` `List`
+stored in the controller as the "source of truth" for the image data. Then, this
+list will behave **reactively** to update the GUI.
+
+`class AppController`
+
+```java
+private final ObservableList<ImageItem> images;
+
+public AppController() {
+    // ... //
+    this.images = FXCollections.observableArrayList();
+}
+
+@FXML
+public void initialize() {
+    // ... //
+    imageList.setItems(images);
+    // ... //
+}
+
+@Override
+public void onArrange(int draggedIdx, int destIdx) {
+    var dragged = images.get(draggedIdx);
+    var dest = images.get(destIdx);
+
+    images.set(draggedIdx, dest);
+    images.set(destIdx, dragged);
+    setStatus("Item arranged");
+}
+
+private void loadImageList() {
+    try {
+        var loadedImages = repository.readAllImages();
+
+        images.clear();
+        images.addAll(loadedImages);
+        setStatus("Images loaded");
+    }
+    catch (IOException e) {
+        handleError(e);
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Setting up the App Controller for the 
+"onArrange" Event</strong></p>
+</figcaption>
+
+What's mostly new here, is the `onArrange` event that was defined before in the
+`ImageItemCell` `Listener`. This method updates the data, and this data is
+reactive, so it automatically updates the `ListView` which was bound to the
+`images` list via `imageList.setItems(images)`.
+
+Now both the cell and controller implementations are in sync.
