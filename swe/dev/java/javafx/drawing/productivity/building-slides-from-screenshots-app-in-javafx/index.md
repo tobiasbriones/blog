@@ -1197,3 +1197,8 @@ File Name</strong></p>
 </figcaption>
 
 Now, the CSS classes defined above can be used to style the `ListView` cells.
+
+#### Order of the Presentation Slides
+
+With all this, we now have the arrangement of the images done as well as the
+master pane complete.
