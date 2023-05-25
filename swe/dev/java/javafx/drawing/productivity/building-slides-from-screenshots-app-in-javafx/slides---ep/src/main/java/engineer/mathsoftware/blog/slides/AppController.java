@@ -67,6 +67,14 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
+    private void onDragExited(DragEvent dragEvent) {
+        if (!dragEvent.isDropCompleted()) {
+            setStatus("Drag canceled");
+        }
+        dragEvent.consume();
+    }
+
+    @FXML
     private void onDragDropped(DragEvent dragEvent) {
         var board = dragEvent.getDragboard();
 
@@ -79,14 +87,6 @@ public class AppController implements ImageItemCell.Listener {
         else {
             setStatus("Drag canceled (empty)");
         }
-    }
-
-    @FXML
-    private void onDragExited(DragEvent dragEvent) {
-        if (!dragEvent.isDropCompleted()) {
-            setStatus("Drag canceled");
-        }
-        dragEvent.consume();
     }
 
     @FXML
