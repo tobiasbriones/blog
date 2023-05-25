@@ -947,3 +947,10 @@ Zone")</strong></p>
 </figcaption>
 
 This provides a safe delete mechanism for our application images.
+
+### Arranging Image Items via More Drag and Drop
+
+Our presentation order will be the one shown in the images `ListView` that
+already supports a drag-and-drop event for adding or updating files to the app,
+and now it needs one more implementation for arranging its items via this fancy
+mechanism.
