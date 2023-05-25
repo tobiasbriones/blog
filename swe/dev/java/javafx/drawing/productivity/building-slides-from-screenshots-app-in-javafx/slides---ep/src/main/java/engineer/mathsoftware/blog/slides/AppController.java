@@ -39,7 +39,7 @@ public class AppController implements ImageItemCell.Listener {
 
     @FXML
     public void initialize() {
-        statusLabel.setText("Slides App");
+        setStatus("Slides App");
         imageList.setCellFactory(param -> new ImageItemCell(this));
 
         initAddButton();
@@ -66,11 +66,11 @@ public class AppController implements ImageItemCell.Listener {
 
         if (board.hasFiles()) {
             createOrUpdateImages(board.getFiles());
-            statusLabel.setText("Files updated");
+            setStatus("Files updated");
             dragEvent.setDropCompleted(true);
         }
         else {
-            statusLabel.setText("Drag canceled (empty)");
+            setStatus("Drag canceled (empty)");
             dragEvent.consume();
         }
     }
@@ -78,7 +78,7 @@ public class AppController implements ImageItemCell.Listener {
     @FXML
     private void onDragExited(DragEvent dragEvent) {
         if (!dragEvent.isDropCompleted()) {
-            statusLabel.setText("Drag canceled");
+            setStatus("Drag canceled");
         }
     }
 
@@ -121,6 +121,7 @@ public class AppController implements ImageItemCell.Listener {
         try {
             repository.deleteImage(item.filename());
             imageList.getItems().remove(item);
+            setStatus("Item deleted");
         }
         catch (IOException e) {
             handleError(e);
@@ -182,7 +183,11 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     private void handleError(IOException e) {
-        statusLabel.setText(e.getMessage());
+        setStatus(e.getMessage());
         e.printStackTrace();
+    }
+
+    private void setStatus(String msg) {
+        statusLabel.setText(msg);
     }
 }
