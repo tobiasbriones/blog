@@ -151,7 +151,6 @@ public class AppController implements ImageItemCell.Listener {
 
             images.clear();
             images.addAll(loadedImages);
-            setStatus("Images loaded");
         }
         catch (IOException e) {
             handleError(e);
