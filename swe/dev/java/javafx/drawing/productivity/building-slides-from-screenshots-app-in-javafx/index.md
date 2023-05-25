@@ -1140,6 +1140,10 @@ What's mostly new here, is the `onArrange` event that was defined before in the
 reactive, so it automatically updates the `ListView` which was bound to the
 `images` list via `imageList.setItems(images)`.
 
+Cells are swapped and automatic scroll is missing which are limitations to this
+implementation. The wanted behaviour may probably be more advanced but that's
+out of the scope of this EP.
+
 Now both the cell and controller implementations are in sync.
 
 #### App CSS Styles
