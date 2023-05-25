@@ -123,6 +123,18 @@ public class AppController implements ImageItemCell.Listener {
         }
     }
 
+    @FXML
+    private void onNewMenuItemAction() {}
+
+    @FXML
+    private void onOpenWDMenuItemAction() {}
+
+    @FXML
+    private void onClearMenuItemAction() {}
+
+    @FXML
+    private void onQuitMenuItemAction() {}
+
     @Override
     public void onDelete(ImageItem item) {
         try {
