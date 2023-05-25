@@ -48,14 +48,16 @@ public class AppController implements ImageItemCell.Listener {
 
     @FXML
     private void onDragOver(DragEvent dragEvent) {
-        if (dragEvent.getDragboard().hasFiles()
-            && Data.areValidImageFiles(dragEvent.getDragboard().getFiles())
-        ) {
-            statusLabel.setText("Dragging files...");
-            dragEvent.acceptTransferModes(TransferMode.COPY);
-        }
-        else {
-            statusLabel.setText("Drag canceled (invalid files)");
+        var dragboard = dragEvent.getDragboard();
+
+        if (dragboard.hasFiles()) {
+            if (Data.areValidImageFiles(dragboard.getFiles())) {
+                setStatus("Dragging files...");
+                dragEvent.acceptTransferModes(TransferMode.COPY);
+            }
+            else {
+                setStatus("Drag canceled (invalid files)");
+            }
             dragEvent.consume();
         }
     }
@@ -68,10 +70,10 @@ public class AppController implements ImageItemCell.Listener {
             createOrUpdateImages(board.getFiles());
             setStatus("Files updated");
             dragEvent.setDropCompleted(true);
+            dragEvent.consume();
         }
         else {
             setStatus("Drag canceled (empty)");
-            dragEvent.consume();
         }
     }
 
@@ -80,6 +82,7 @@ public class AppController implements ImageItemCell.Listener {
         if (!dragEvent.isDropCompleted()) {
             setStatus("Drag canceled");
         }
+        dragEvent.consume();
     }
 
     @FXML
