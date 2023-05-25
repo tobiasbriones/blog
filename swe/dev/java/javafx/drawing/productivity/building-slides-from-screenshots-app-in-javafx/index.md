@@ -1142,3 +1142,58 @@ reactive, so it automatically updates the `ListView` which was bound to the
 `images` list via `imageList.setItems(images)`.
 
 Now both the cell and controller implementations are in sync.
+
+#### App CSS Styles
+
+It was time to introduce some CSS here to add a class to the list cell when
+another item is being dragged to it.
+
+`app.css`
+
+```css
+.cell {
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-border-color: transparent;
+}
+
+.entered {
+    -fx-border-color: #4FC3F7;
+}
+```
+
+<figcaption>
+<p align="center"><strong>CSS Styles for Dragging a List Cell into
+Another Cell</strong></p>
+</figcaption>
+
+I also added a new method in `Main.java` to help load these resources.
+
+`start | class Main`
+
+```java
+scene.getStylesheets().add(
+    loadResource("app.css").toExternalForm()
+);
+```
+
+<figcaption>
+<p align="center"><strong>Loading CSS Styles into the App</strong></p>
+</figcaption>
+
+`class Main`
+
+```java
+private URL loadResource(String name) {
+    return Objects.requireNonNull(
+        getClass().getClassLoader().getResource(name)
+    );
+}
+```
+
+<figcaption>
+<p align="center"><strong>Method that Loads an App Resource by
+File Name</strong></p>
+</figcaption>
+
+Now, the CSS classes defined above can be used to style the `ListView` cells.
