@@ -955,6 +955,12 @@ already supports a drag-and-drop event for adding or updating files to the app,
 and now it needs one more implementation for arranging its items via this fancy
 mechanism.
 
+![ListView Drag and Drop Animation](images/listview-drag-and-drop-animation.gif)
+
+<figcaption>
+<p align="center"><strong>ListView Drag and Drop Animation</strong></p>
+</figcaption>
+
 #### Cell Drag and Drop Implementation
 
 First, a new event will need to be defined in the `ImageItemCell` `Listener`,
