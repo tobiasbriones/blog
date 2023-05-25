@@ -11,7 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
 
 public class Main extends Application {
@@ -24,16 +26,23 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        var root = FXMLLoader.<Parent>load(
-            Objects.requireNonNull(getClass().getResource("/app.fxml"))
-        );
+        var root = FXMLLoader.<Parent>load(loadResource("app.fxml"));
         var scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
 
+        scene.getStylesheets().add(
+            loadResource("app.css").toExternalForm()
+        );
         loadIcons(primaryStage);
 
         primaryStage.setTitle("Slides");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private URL loadResource(String name) {
+        return Objects.requireNonNull(
+            getClass().getClassLoader().getResource(name)
+        );
     }
 
     private static void loadIcons(Stage stage) {
