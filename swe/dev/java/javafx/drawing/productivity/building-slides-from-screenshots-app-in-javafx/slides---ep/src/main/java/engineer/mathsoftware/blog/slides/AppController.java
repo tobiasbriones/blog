@@ -7,6 +7,7 @@ package engineer.mathsoftware.blog.slides;
 import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.LocalDataRepository;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -127,7 +128,9 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
-    private void onQuitMenuItemAction() {}
+    private void onQuitMenuItemAction() {
+        Platform.exit();
+    }
 
     @Override
     public void onDelete(ImageItem item) {
