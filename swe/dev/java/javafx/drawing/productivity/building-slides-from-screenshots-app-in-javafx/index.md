@@ -1211,3 +1211,131 @@ Now, the CSS classes defined above can be used to style the `ListView` cells.
 
 With all this, we now have the arrangement of the images done as well as the
 master pane complete.
+
+## Menu Bar
+
+This menu is trivial to write now.
+
+First, we add the events to the FXML, and the controller.
+
+`class AppController`
+
+```java
+@FXML private void onAddMenuItemAction() {}
+
+@FXML private void onOpenWDMenuItemAction() {}
+
+@FXML private void onClearMenuItemAction() {}
+
+@FXML private void onQuitMenuItemAction() {}
+
+@FXML private void onAboutMenuItemAction() {}
+```
+
+<figcaption>
+<p align="center"><strong>Events for Handing the Menu Bar Items</strong></p>
+</figcaption>
+
+I made minor modifications, like changing the name of a `MenuItem` from "New" to
+"Add" for more clarity of action.
+
+They do the following:
+
+- **Add:** Opens the `FileChooser` just like pressing the existing "Add"
+  `Button` to *add* (or update) an image.
+- **OpenWD:** Opens the app data directory (*working directory*) into the system
+  file explorer so you can browse over the original application images.
+- **Clear:** Same as the *"Clear" `Button`*.
+- **Quit:** *Closes* the app.
+- **About:** Shows a basic `Alert` with info *about* the application.
+
+So first I extracted a method to reuse it:
+
+`class AppController`
+
+```java
+@FXML
+private void onAddButtonAction() {
+    openFileViaFileChooser();
+}
+
+@FXML
+private void onClearButtonAction() {
+    showDeleteAllAlert();
+}
+
+private void openFileViaFileChooser() { /* Impl. */ }
+
+private void showDeleteAllAlert() { /* Impl. */ }
+```
+
+<figcaption>
+<p align="center"><strong>Extraction of Methods in "AppController" for Code Reuse</strong></p>
+</figcaption>
+
+The Swing JavaFX module has to be added to the application modules
+(`module-info.java`) via `requires javafx.swing;` as it's required to call to
+the `awt` `Desktop` API to open the system file explorer.
+
+Finally, the implementations are left to finish this menu.
+
+`class AppController`
+
+```java
+@FXML
+private void onAddButtonAction() {
+    openFileViaFileChooser();
+}
+
+@FXML
+private void onClearButtonAction() {
+    showDeleteAllAlert();
+}
+
+@FXML
+private void onAddMenuItemAction() {
+    openFileViaFileChooser();
+}
+
+@FXML
+private void onOpenWDMenuItemAction() {
+    if (Desktop.isDesktopSupported()) {
+        try {
+            Desktop.getDesktop().open(new File(DATA_ROOT));
+        }
+        catch (IOException | UnsupportedOperationException e) {
+            setStatus(e.getMessage());
+        }
+    }
+    else {
+        setStatus("Desktop is not supported");
+    }
+}
+
+@FXML
+private void onClearMenuItemAction() {
+    showDeleteAllAlert();
+}
+
+@FXML
+private void onQuitMenuItemAction() {
+    Platform.exit();
+}
+
+@FXML
+private void onAboutMenuItemAction() {
+    var alert = new Alert(
+        Alert.AlertType.INFORMATION,
+        "Slides App | blog | mathsoftware.engineer",
+        ButtonType.CLOSE
+    );
+
+    alert.showAndWait();
+}
+```
+
+<figcaption>
+<p align="center"><strong>Implementation of Menu Events</strong></p>
+</figcaption>
+
+This was the application now has a functioning menu bar.
