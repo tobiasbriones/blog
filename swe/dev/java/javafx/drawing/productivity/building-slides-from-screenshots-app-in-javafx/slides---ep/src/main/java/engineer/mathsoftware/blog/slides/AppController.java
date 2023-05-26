@@ -110,7 +110,7 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
-    private void onNewMenuItemAction() {}
+    private void onAddMenuItemAction() {}
 
     @FXML
     private void onOpenWDMenuItemAction() {}
