@@ -1216,6 +1216,12 @@ master pane complete.
 
 This menu is trivial to write now.
 
+![File Menu Items](file-menu-items.png)
+
+<figcaption>
+<p align="center"><strong>File Menu Items</strong></p>
+</figcaption>
+
 First, we add the events to the FXML, and the controller.
 
 `class AppController`
