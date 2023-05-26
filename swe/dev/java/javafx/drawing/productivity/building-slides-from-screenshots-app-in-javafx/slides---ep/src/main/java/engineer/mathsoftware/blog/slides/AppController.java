@@ -98,17 +98,7 @@ public class AppController implements ImageItemCell.Listener {
 
     @FXML
     private void onClearButtonAction() {
-        var alert = new Alert(
-            Alert.AlertType.CONFIRMATION,
-            "Delete all the data?",
-            ButtonType.YES,
-            ButtonType.NO
-        );
-        alert.showAndWait();
-
-        if (alert.getResult() == ButtonType.YES) {
-            deleteAllImages();
-        }
+        showDeleteAllAlert();
     }
 
     @FXML
@@ -132,7 +122,9 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
-    private void onClearMenuItemAction() {}
+    private void onClearMenuItemAction() {
+
+    }
 
     @FXML
     private void onQuitMenuItemAction() {}
@@ -222,6 +214,20 @@ public class AppController implements ImageItemCell.Listener {
         addImageView.setFitWidth(18.0);
         addImageView.setFitHeight(18.0);
         addButton.setGraphic(addImageView);
+    }
+
+    private void showDeleteAllAlert() {
+        var alert = new Alert(
+            Alert.AlertType.CONFIRMATION,
+            "Delete all the data?",
+            ButtonType.YES,
+            ButtonType.NO
+        );
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            deleteAllImages();
+        }
     }
 
     private void deleteAllImages() {
