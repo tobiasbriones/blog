@@ -133,7 +133,15 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
-    private void onAboutMenuItemAction() {}
+    private void onAboutMenuItemAction() {
+        var alert = new Alert(
+            Alert.AlertType.INFORMATION,
+            "Slides App | blog | mathsoftware.engineer",
+            ButtonType.CLOSE
+        );
+
+        alert.showAndWait();
+    }
 
     @Override
     public void onDelete(ImageItem item) {
