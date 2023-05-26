@@ -12,6 +12,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
@@ -80,7 +82,6 @@ public class AppController implements ImageItemCell.Listener {
 
         if (board.hasFiles()) {
             createOrUpdateImages(board.getFiles());
-            setStatus("Files updated");
             dragEvent.setDropCompleted(true);
             dragEvent.consume();
         }
@@ -110,7 +111,9 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
-    private void onAddMenuItemAction() {}
+    private void onAddMenuItemAction() {
+        openFileViaFileChooser();
+    }
 
     @FXML
     private void onOpenWDMenuItemAction() {}
@@ -187,6 +190,7 @@ public class AppController implements ImageItemCell.Listener {
 
                 listItems.remove(newImageItem);
                 listItems.add(new ImageItem(imageName, newImage));
+                setStatus("Files updated");
             }
             catch (IOException e) {
                 handleError(e);
