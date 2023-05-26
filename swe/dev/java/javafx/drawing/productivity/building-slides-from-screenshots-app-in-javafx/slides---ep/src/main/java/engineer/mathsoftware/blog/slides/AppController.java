@@ -132,6 +132,9 @@ public class AppController implements ImageItemCell.Listener {
         Platform.exit();
     }
 
+    @FXML
+    private void onAboutMenuItemAction() {}
+
     @Override
     public void onDelete(ImageItem item) {
         try {
