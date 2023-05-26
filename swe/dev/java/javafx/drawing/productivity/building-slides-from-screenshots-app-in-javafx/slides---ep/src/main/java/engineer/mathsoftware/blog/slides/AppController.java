@@ -123,7 +123,7 @@ public class AppController implements ImageItemCell.Listener {
 
     @FXML
     private void onClearMenuItemAction() {
-
+        showDeleteAllAlert();
     }
 
     @FXML
