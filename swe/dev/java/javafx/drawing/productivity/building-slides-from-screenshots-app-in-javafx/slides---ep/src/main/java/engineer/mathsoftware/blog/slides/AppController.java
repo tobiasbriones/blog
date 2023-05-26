@@ -20,6 +20,7 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
 import javafx.stage.FileChooser;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
@@ -116,7 +117,19 @@ public class AppController implements ImageItemCell.Listener {
     }
 
     @FXML
-    private void onOpenWDMenuItemAction() {}
+    private void onOpenWDMenuItemAction() {
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().open(new File(DATA_ROOT));
+            }
+            catch (IOException | UnsupportedOperationException e) {
+                setStatus(e.getMessage());
+            }
+        }
+        else {
+            setStatus("Desktop is not supported");
+        }
+    }
 
     @FXML
     private void onClearMenuItemAction() {}
