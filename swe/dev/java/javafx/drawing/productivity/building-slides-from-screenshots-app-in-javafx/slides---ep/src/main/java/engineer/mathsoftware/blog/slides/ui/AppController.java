@@ -6,6 +6,7 @@ package engineer.mathsoftware.blog.slides.ui;
 
 import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
+import engineer.mathsoftware.blog.slides.data.ImageItem;
 import engineer.mathsoftware.blog.slides.data.LocalDataRepository;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;

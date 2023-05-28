@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // This file is part of https://github.com/tobiasbriones/blog
 
-package engineer.mathsoftware.blog.slides.ui;
+package engineer.mathsoftware.blog.slides.data;
 
 import javafx.scene.image.Image;
 

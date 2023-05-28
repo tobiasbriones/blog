@@ -4,6 +4,7 @@
 
 package engineer.mathsoftware.blog.slides.ui;
 
+import engineer.mathsoftware.blog.slides.data.ImageItem;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
