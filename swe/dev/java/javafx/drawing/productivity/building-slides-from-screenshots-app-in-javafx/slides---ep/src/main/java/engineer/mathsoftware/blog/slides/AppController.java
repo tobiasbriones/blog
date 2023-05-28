@@ -162,6 +162,7 @@ public class AppController implements ImageItemCell.Listener {
 
         images.set(draggedIdx, dest);
         images.set(destIdx, dragged);
+        imageList.getSelectionModel().clearAndSelect(destIdx);
         setStatus("Item arranged");
     }
 
