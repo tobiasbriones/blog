@@ -8,6 +8,7 @@ import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.LocalDataRepository;
 import javafx.application.Platform;
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
@@ -38,6 +40,12 @@ public class AppController implements ImageItemCell.Listener {
     private Label statusLabel;
     @FXML
     private ListView<ImageItem> imageList;
+    @FXML
+    private Pagination pagination;
+    @FXML
+    private ImageView slideView;
+    @FXML
+    private VBox viewPaneBox;
 
     public AppController() {
         this.repository = new LocalDataRepository(DATA_ROOT);
@@ -52,6 +60,8 @@ public class AppController implements ImageItemCell.Listener {
 
         initAddButton();
         loadImageList();
+
+        initMasterView();
     }
 
     @FXML
@@ -231,6 +241,39 @@ public class AppController implements ImageItemCell.Listener {
         addButton.setGraphic(addImageView);
     }
 
+    private void initMasterView() {
+        updatePaginationCount();
+
+        images.addListener((InvalidationListener) l -> updatePaginationCount());
+
+        imageList
+            .getSelectionModel()
+            .selectedIndexProperty()
+            .map(Integer.class::cast)
+            .addListener((observable, oldValue, newValue) -> pagination.setCurrentPageIndex(newValue));
+
+        imageList.getSelectionModel().select(0);
+
+        pagination
+            .currentPageIndexProperty()
+            .map(Integer.class::cast)
+            .addListener((observable, oldValue, newValue) -> imageList.getSelectionModel().select(newValue));
+
+        slideView
+            .imageProperty()
+            .bind(imageList
+                .getSelectionModel()
+                .selectedItemProperty()
+                .map(ImageItem::image)
+            );
+        slideView
+            .fitWidthProperty()
+            .bind(viewPaneBox
+                .widthProperty()
+                .subtract(32)
+            );
+    }
+
     private void showDeleteAllAlert() {
         var alert = new Alert(
             Alert.AlertType.CONFIRMATION,
@@ -253,6 +296,19 @@ public class AppController implements ImageItemCell.Listener {
         }
         catch (IOException e) {
             handleError(e);
+        }
+    }
+
+    private void updatePaginationCount() {
+        var size = images.size();
+
+        if (size > 0) {
+            pagination.setVisible(true);
+            pagination.setPageCount(images.size());
+        }
+        else {
+            pagination.setVisible(false);
+            pagination.setPageCount(1);
         }
     }
 
