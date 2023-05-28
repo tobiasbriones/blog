@@ -1120,6 +1120,7 @@ public void onArrange(int draggedIdx, int destIdx) {
 
     images.set(draggedIdx, dest);
     images.set(destIdx, dragged);
+    imageList.getSelectionModel().clearAndSelect(destIdx);
     setStatus("Item arranged");
 }
 
@@ -1145,6 +1146,9 @@ What's mostly new here, is the `onArrange` event that was defined before in the
 `ImageItemCell` `Listener`. This method updates the data, and this data is
 reactive, so it automatically updates the `ListView` which was bound to the
 `images` list via `imageList.setItems(images)`.
+
+The dragged cell is also selected when dropping it into its new position via
+`imageList.getSelectionModel().clearAndSelect(destIdx)`.
 
 Cells are swapped and automatic scroll is missing which are limitations to this
 implementation. The wanted behaviour may probably be more advanced but that's
