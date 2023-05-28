@@ -6,6 +6,6 @@ module engineer.mathsoftware.blog.slides {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.swing;
-    exports engineer.mathsoftware.blog.slides;
+    exports engineer.mathsoftware.blog.slides.ui;
     opens engineer.mathsoftware.blog.slides.ui to javafx.fxml;
 }
