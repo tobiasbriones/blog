@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -46,13 +45,14 @@ public class Main extends Application {
     }
 
     private static void loadIcons(Stage stage) {
-        stage.getIcons()
-             .addAll(
-                 new Image("app-16x16.png"),
-                 new Image("app-32x32.png"),
-                 new Image("app-64x64.png"),
-                 new Image("app-256x256.png"),
-                 new Image("app-512x512.png")
-             );
+        stage
+            .getIcons()
+            .addAll(
+                new Image("app-16x16.png"),
+                new Image("app-32x32.png"),
+                new Image("app-64x64.png"),
+                new Image("app-256x256.png"),
+                new Image("app-512x512.png")
+            );
     }
 }
