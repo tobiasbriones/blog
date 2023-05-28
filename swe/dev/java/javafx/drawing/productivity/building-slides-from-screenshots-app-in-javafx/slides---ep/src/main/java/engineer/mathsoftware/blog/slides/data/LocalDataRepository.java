@@ -4,7 +4,7 @@
 
 package engineer.mathsoftware.blog.slides.data;
 
-import engineer.mathsoftware.blog.slides.ImageItem;
+import engineer.mathsoftware.blog.slides.ui.ImageItem;
 import javafx.scene.image.Image;
 
 import java.io.IOException;

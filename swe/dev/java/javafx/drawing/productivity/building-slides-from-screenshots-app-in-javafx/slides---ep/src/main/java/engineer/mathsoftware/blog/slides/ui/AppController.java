@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // This file is part of https://github.com/tobiasbriones/blog
 
-package engineer.mathsoftware.blog.slides;
+package engineer.mathsoftware.blog.slides.ui;
 
 import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;

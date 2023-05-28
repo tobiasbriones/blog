@@ -8,4 +8,6 @@ module engineer.mathsoftware.blog.slides {
     requires javafx.swing;
     opens engineer.mathsoftware.blog.slides to javafx.fxml;
     exports engineer.mathsoftware.blog.slides;
+    exports engineer.mathsoftware.blog.slides.ui;
+    opens engineer.mathsoftware.blog.slides.ui to javafx.fxml;
 }

@@ -18,7 +18,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="view" prefHeight="600.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="engineer.mathsoftware.blog.slides.AppController">
+<VBox fx:id="view" prefHeight="600.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="engineer.mathsoftware.blog.slides.ui.AppController">
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <menus>
