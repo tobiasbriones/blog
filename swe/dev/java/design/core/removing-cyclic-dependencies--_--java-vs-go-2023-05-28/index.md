@@ -85,8 +85,9 @@ Many concepts in CS, like "modules," are vague. In this case, Java/Go `package`s
 are considered a kind of module, so they shouldn't have circular dependencies.
 
 If the circular dependencies come from more homogeneous sources like normal
-source files, that's not a problem, as *they're actually the same*. So, here we
-wouldn't have the "sink" concept I mentioned earlier:
+source files, that shouldn't be a problem, as *they're actually the same*. So,
+here we wouldn't have the "sink" concept I mentioned earlier if you operate on
+the *same* package:
 
 ```
 .
@@ -104,16 +105,25 @@ wouldn't have the "sink" concept I mentioned earlier:
 </figcaption>
 
 In Go, source files under the `package` `data` (or any `package`) belong to the
-same package `data`. So, circular requirements among files in the **same**
-`package` or "module" are valid. Circular dependencies among **different**
+same package `data`. So, circular requirements among **files** in the **same**
+`package` or "module" should be valid. Circular dependencies among **different**
 `package`s are generally discouraged and disallowed by Go.
 
 As I said before, *everything is connected to everything* in the end. You have
 to see the *level of abstraction* to avoid falling out of relativism into
 absolutism or "sinks," as said above.
 
-You can see this idea I'm talking about like, recursion is natural and good in
-FP and mathematics, but it's seen as dangerous in imperative setups.
+Identifying the *homogeneous* and *heterogeneous* elements within a system is
+necessary to apply these universally abstract principles. I mean, everything is
+relative, so this depends on the level of abstraction.
+
+For example, if your dependencies are *packages*, and you have different
+packages, then it's heterogeneous, so don't be recursive as your **context is
+imperative**. If both abstractions are the same, then you can apply math
+techniques like FP or recursion as your **context is declarative**.
+
+You can see this idea I'm talking about, like recursion, which is natural and
+good in FP and mathematics, but seen as dangerous in imperative setups.
 
 I know recursion can become a "sink" (infinite loop) used imperatively
 (absolutist), but that *won't happen* when used in pure math or (declarative)
