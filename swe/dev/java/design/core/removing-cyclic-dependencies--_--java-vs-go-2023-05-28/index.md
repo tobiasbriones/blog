@@ -192,6 +192,12 @@ imperative or OO.
 In this case, you can see how graphs are ubiquitous, making them an essential
 component of your abstract memory to visualize such phenomena.
 
+This also happens in mathematics. If you're proving a statement $$p$$, the proof
+can be really tough and reviewed by many experts. In the middle of the "proof,"
+you unconsciously may *assume* $$p$$, so your "proof" is invalid because the
+situation was too hard to see (like big software can be), and you committed a 
+**circular reasoning fallacy**.
+
 Finally, I was reading
 [Cyclic Dependency - an overview | ScienceDirect Topics](https://www.sciencedirect.com/topics/computer-science/cyclic-dependency)
 which provides great insights as well related to these designs.
