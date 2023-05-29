@@ -57,7 +57,11 @@ package test
 ```
 
 <figcaption>
-<p align="center"><strong>Go does not Compile Cyclic Dependencies</strong></p>
+<p align="center">
+<strong>
+Go does not Compile Cyclic Package Dependencies
+</strong>
+</p>
 </figcaption>
 
 I have used Go in my job experiences, and for other projects as well.
