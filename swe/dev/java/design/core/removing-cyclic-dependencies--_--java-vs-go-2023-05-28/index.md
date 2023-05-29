@@ -20,7 +20,7 @@ Addressing cyclic dependencies is an important design concern as it increases
 the complexity of our software, and the job of a software engineer is to reduce
 that complexity to build simple systems.
 
-This is an interesting effect, there's a lot to talk about graph cycles.
+This is an interesting effect, and there's a lot to talk about in graph cycles.
 
 Today, I was refactoring a Java project a bit and found that a `package` was a
 bit **coupled**.
@@ -64,10 +64,10 @@ Go does not Compile Cyclic Package Dependencies
 </p>
 </figcaption>
 
-I have used Go in my job experiences, and for other projects as well.
+I've used Go in my job experiences and for other projects as well.
 
 Go is a more modern language, and its opinionated system makes it a decent
-choice, unlike legacy languages like Java with many flaws.
+choice, unlike legacy languages like Java, with many flaws out of the box.
 
 You can write good Java, but you need to *know what you're doing*, or even
 worse, you have to hire expensive practitioners increasing the technical
@@ -77,13 +77,12 @@ That's why Go is usually used at large organizations where developers come in,
 and out: if compiles then it shouldn't be that crazy.
 
 Circular dependencies require complex algorithms to resolve. Routers disallow
-cycles for example. I implemented a minimum-spanning-tree algorithm for my game
-"Dungeon MST" written in Go when I took the "Computer Networks" course from the
-mathematics career.
+cycles, for example. I implemented a minimum-spanning-tree algorithm for my game
+"Dungeon MST" written in Go when I took the "Computer Networks" course for my
+math major.
 
-The concept of "modules" is vague in CS as many other things. In this case, a
-Java `package` or Go `package` is considered a kind of module, so they shouldn't
-have circular dependencies.
+Many concepts in CS, like "modules," are vague. In this case, Java/Go `package`s
+are considered a kind of module, so they shouldn't have circular dependencies.
 
 If the circular dependencies come from more homogeneous sources like normal
 source files, that's not a problem, as *they're actually the same*. So, here we
@@ -107,11 +106,11 @@ wouldn't have the "sink" concept I mentioned earlier:
 In Go, source files under the `package` `data` (or any `package`) belong to the
 same package `data`. So, circular requirements among files in the **same**
 `package` or "module" are valid. Circular dependencies among **different**
-`package`s are generally discourage, and disallowed by Go.
+`package`s are generally discouraged and disallowed by Go.
 
-In the end, *everything is connected to everything* as I said before, you have
-to see the *level of abstraction* to avoid falling out of relativity into
-absolutism or "sinks" as said above.
+As I said before, *everything is connected to everything* in the end. You have
+to see the *level of abstraction* to avoid falling out of relativism into
+absolutism or "sinks," as said above.
 
 You can see this idea I'm talking about like, recursion is natural and good in
 FP and mathematics, but it's seen as dangerous in imperative setups.
@@ -123,4 +122,4 @@ FP as it belongs to the correct level of abstraction.
 This shows one more time how fundamental principles like homogeneity will tell
 you whether you're doing well. Also recall that top practitioners employ
 fundamental or universal principles while bad ones only use generic marketable
-tricks like OOP "principles".
+tricks like OOP "principles."
