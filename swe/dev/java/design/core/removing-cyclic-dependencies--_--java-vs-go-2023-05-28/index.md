@@ -132,3 +132,66 @@ This shows one more time how fundamental principles like homogeneity will tell
 you whether you're doing well. Also recall that top practitioners employ
 fundamental or universal principles while bad ones only use generic marketable
 tricks like OOP "principles."
+
+Another way you can create "sinks," or "infinite loops" by design, is through
+Java inheritance. Inheritance is, by design, *inherently coupled* (pun
+intended). So, if a supertype **depends** on a subtype, and vice-versa, you got
+it 💥.
+
+I encounter various instances where one can identify this problem.
+
+For example, when calling a method implemented[^2] above. In imperative
+settings, I follow the rule to call methods arranged below the caller. That is,
+only call methods below the current one, or you can build a mess otherwise. For
+example, you can fall into an infinite recursive loop of **imperative nature**.
+
+[^2]: Again, the heterogeneity of imperative is here, so I use the word
+    *"implement"* instead of *"define"* as definitions are **pure** while
+    methods are "actions" or "verbs"
+
+Another example is the usage of `this` in the constructor anti-pattern: you pass
+a reference of an object (i.e., `this`) that is not in a consistent state yet,
+because it hasn't been *constructed*.
+
+Another example is the old-fashioned MVC "architectures" for GUI apps. The
+"model" updates the "view," then the "view" updates the "model," and so on. This
+leads to **complicated** solutions, but recall that your goal as a software
+engineer is to build **simple** ones.
+
+Nowadays, languages try to pose problems in a simpler approach, and Go has
+showed how it's possible.
+
+Contrary to what common sense would say, being simple is quite hard.
+
+A good engineer will not usually apply "clever" designs but **simple** ones that
+adhere to computer **science** and **domain** facts.
+
+Regarding what I said above when the context can either be declarative or
+imperative what you have to do is to **simplify those imperative designs into
+homogeneous ones**.
+
+So, you can see that FP is like math: it must satisfy the principle of
+closure. You have to go fully functional to get the benefits of a closed
+system like math or FP.
+
+In a practical "enterprise" setup, you better be mediocre to settle down to use
+mundane paradigm approaches instead of simplifying a lot. That is, you'll have
+to face stupidly complicated systems, including cyclic dependencies of several
+kinds. Someone like me doesn't want to work in such an environment 😁.
+
+Thus, systems have to be simplified[^3], but some won't want to be simplified.
+
+[^3]: Simplifying systems or code is like the mathematical simplification of
+    **expressions** like polynomials you learned in basic courses
+
+Neither Java nor (even worse) Go are functional. But, you have **to
+become a better engineer from the math principles since you'll find math
+everywhere**, even in mediocre heterogeneous and fragmented systems like
+imperative or OO.
+
+In this case, you can see how graphs are ubiquitous, making them an essential
+component of your abstract memory to visualize such phenomena.
+
+Finally, I was reading
+[Cyclic Dependency - an overview | ScienceDirect Topics](https://www.sciencedirect.com/topics/computer-science/cyclic-dependency)
+which provides great insights as well related to these designs.
