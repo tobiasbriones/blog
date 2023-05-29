@@ -70,8 +70,7 @@ Go is a more modern language, and its opinionated system makes it a decent
 choice, unlike legacy languages like Java, with many flaws out of the box.
 
 You can write good Java, but you need to *know what you're doing*, or even
-worse, you have to hire expensive practitioners increasing the technical
-debt.
+worse, you have to hire expensive practitioners increasing the technical debt.
 
 That's why Go is usually used at large organizations where developers come in,
 and out: if compiles then it shouldn't be that crazy.
