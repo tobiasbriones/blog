@@ -23,7 +23,7 @@ that complexity to build simple systems.
 This is an interesting effect, there's a lot to talk about graph cycles.
 
 Today, I was refactoring a Java project a bit and found that a `package` was a
-bit coupled.
+bit **coupled**.
 
 The `data` package requires the `ui` package when the dependency would normally
 consist of a "client" package (i.e., `ui`) that requires a more-universal or
