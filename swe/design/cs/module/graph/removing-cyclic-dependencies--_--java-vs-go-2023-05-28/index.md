@@ -175,9 +175,9 @@ Regarding what I said above when the context can either be declarative or
 imperative what you have to do is to **simplify those imperative designs into
 homogeneous ones**.
 
-So, you can see that FP is like math: it must satisfy the principle of
-closure. You have to go fully functional to get the benefits of a closed
-system like math or FP.
+So, you can see that FP is like math: it must satisfy the principle of closure.
+You have to go fully functional to get the benefits of a closed system like math
+or FP.
 
 In a practical "enterprise" setup, you better be mediocre to settle down to use
 mundane paradigm approaches instead of simplifying a lot. That is, you'll have
@@ -189,10 +189,9 @@ Thus, systems have to be simplified[^3], but some won't want to be simplified.
 [^3]: Simplifying systems or code is like the mathematical simplification of
     **expressions** like polynomials you learned in basic courses
 
-Neither Java nor (even worse) Go are functional. But, you have **to
-become a better engineer from the math principles since you'll find math
-everywhere**, even in mediocre heterogeneous and fragmented systems like
-imperative or OO.
+Neither Java nor (even worse) Go are functional. But, you have **to become a
+better engineer from the math principles since you'll find math everywhere**,
+even in mediocre heterogeneous and fragmented systems like imperative or OO.
 
 In this case, you can see how graphs are ubiquitous, making them an essential
 component of your abstract memory to visualize such phenomena.
@@ -200,7 +199,7 @@ component of your abstract memory to visualize such phenomena.
 This also happens in mathematics. If you're proving a statement $$p$$, the proof
 can be really tough and reviewed by many experts. In the middle of the "proof,"
 you unconsciously may *assume* $$p$$, so your "proof" is invalid because the
-situation was too hard to see (like big software can be), and you committed a 
+situation was too hard to see (like big software can be), and you committed a
 **circular reasoning fallacy**.
 
 Finally, I was reading
