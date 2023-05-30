@@ -201,3 +201,11 @@ situation was too hard to see (like big software can be), and you committed a
 Finally, I was reading
 [Cyclic Dependency - an overview | ScienceDirect Topics](https://www.sciencedirect.com/topics/computer-science/cyclic-dependency)
 which provides great insights as well related to these designs.
+
+To avoid complicated designs or flaws like cyclic module dependencies, one has
+to keep simplicity in the systems and visualize the abstract concepts to
+understand what you're doing. Regarding Go and Java, we can see how the
+opinionated design of Go makes it easier to write simpler systems with bounded
+complexity, while Java is a legacy language that won't help with this unless
+you're well-versed in the language and enforce it manually, which turns in more
+technical debt.
