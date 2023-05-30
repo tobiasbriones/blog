@@ -15,6 +15,11 @@
 
 ---
 
+I just came across a cyclic package dependency case in Java. It's important to
+address the role of graphs in visualizing abstract concepts like cyclic
+dependencies in software design to reduce complexity and build simple systems.
+The benefits of using Go as a more modern and opinionated language are also
+emphasized.
 
 Addressing cyclic dependencies is an important design concern as it increases
 the complexity of our software, and the job of a software engineer is to reduce
