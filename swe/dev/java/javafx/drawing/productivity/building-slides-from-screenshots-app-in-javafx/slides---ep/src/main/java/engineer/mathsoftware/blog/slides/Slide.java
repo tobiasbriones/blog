@@ -12,10 +12,4 @@ public sealed interface Slide {
     record CodeShot(Image image) implements Slide {}
 
     record Screenshot(Image image) implements Slide {}
-
-    enum Values {
-        CodeSnippet,
-        CodeShot,
-        Screenshot
-    }
 }
