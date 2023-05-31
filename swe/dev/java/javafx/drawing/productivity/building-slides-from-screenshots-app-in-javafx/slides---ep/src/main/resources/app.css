@@ -11,3 +11,7 @@
 .entered {
     -fx-border-color: #4FC3F7;
 }
+
+.title {
+    -fx-font-weight: bold;
+}
