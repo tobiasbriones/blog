@@ -9,15 +9,15 @@ import java.util.List;
 import java.util.Optional;
 
 public final class Enums {
-    public static <T extends Enum<?>> Optional<T> from(T[] values, String str) {
+    public static <T extends Enum<?>> Optional<T> from(Class<T> e, String str) {
         return Arrays
-            .stream(values)
+            .stream(e.getEnumConstants())
             .filter(x -> x.name().equals(str))
             .findFirst();
     }
 
-    public static <T extends Enum<?>> List<String> strings(T[] values) {
-        return Arrays.stream(values).map(Enum::name).toList();
+    public static <T extends Enum<?>> List<String> strings(Class<T> e) {
+        return Arrays.stream(e.getEnumConstants()).map(Enum::name).toList();
     }
 
     private Enums() {}
