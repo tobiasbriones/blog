@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -81,7 +82,11 @@
                             </VBox.margin>
                             <HBox alignment="CENTER">
                                 <children>
-                                    <ImageView fx:id="slideView" pickOnBounds="true" preserveRatio="true" />
+                           <Group fx:id="slideGroup">
+                              <children>
+                                          <ImageView fx:id="slideView" pickOnBounds="true" preserveRatio="true" />
+                              </children>
+                           </Group>
                                 </children>
                         <opaqueInsets>
                            <Insets />
