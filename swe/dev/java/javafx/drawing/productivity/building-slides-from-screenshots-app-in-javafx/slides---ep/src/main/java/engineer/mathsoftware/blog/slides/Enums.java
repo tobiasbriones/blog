@@ -4,20 +4,44 @@
 
 package engineer.mathsoftware.blog.slides;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import javafx.util.StringConverter;
+
+import java.util.regex.MatchResult;
+import java.util.regex.Pattern;
 
 public final class Enums {
-    public static <T extends Enum<?>> Optional<T> from(Class<T> e, String str) {
-        return Arrays
-            .stream(e.getEnumConstants())
-            .filter(x -> x.name().equals(str))
-            .findFirst();
-    }
+    public static final class EnglishConverter<T extends Enum<T>> extends StringConverter<T> {
+        private static final Pattern PATTERN = Pattern
+            .compile("([A-Z]+[a-z]*)");
+        private static final Pattern SPACED_PATTERN = Pattern.compile(" ");
+        private final Class<T> type;
 
-    public static <T extends Enum<?>> List<String> strings(Class<T> e) {
-        return Arrays.stream(e.getEnumConstants()).map(Enum::name).toList();
+        public EnglishConverter(Class<T> type) {
+            super();
+            this.type = type;
+        }
+
+        @Override
+        public String toString(T object) {
+            return PATTERN
+                .matcher(object.name())
+                .results()
+                .map(MatchResult::group)
+                .reduce((word1, word2) -> word1 + " " + word2)
+                .orElse("");
+        }
+
+        @Override
+        public T fromString(String string) {
+            var name = SPACED_PATTERN.matcher(string).replaceAll("");
+            try {
+                return Enum.valueOf(type, name);
+            }
+            catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 
     private Enums() {}
