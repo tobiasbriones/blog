@@ -4,10 +4,10 @@
 
 package engineer.mathsoftware.blog.slides;
 
-public record SlideSize(int width, int height) {
+public record SlideSize(double width, double height) {
     public enum Predefined {
-        HD(new SlideSize(1_280, 720)),
-        FHD(new SlideSize(1_920, 1_080));
+        HD(new SlideSize(1_280.0, 720.0)),
+        FHD(new SlideSize(1_920.0, 1_080.0));
 
         private final SlideSize value;
 
