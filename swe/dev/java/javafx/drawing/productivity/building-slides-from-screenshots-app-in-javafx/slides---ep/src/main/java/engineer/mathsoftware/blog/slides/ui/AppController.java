@@ -4,6 +4,9 @@
 
 package engineer.mathsoftware.blog.slides.ui;
 
+import engineer.mathsoftware.blog.slides.Enums;
+import engineer.mathsoftware.blog.slides.Language;
+import engineer.mathsoftware.blog.slides.SlideItem;
 import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.ImageItem;
@@ -51,9 +54,9 @@ public class AppController implements ImageItemCell.Listener {
     @FXML
     private VBox codeSnippetBox;
     @FXML
-    private ComboBox<String> slideComboBox;
+    private ComboBox<SlideItem> slideComboBox;
     @FXML
-    private ComboBox<String> languageComboBox;
+    private ComboBox<Language> languageComboBox;
     @FXML
     private VBox viewPaneBox;
 
@@ -72,6 +75,7 @@ public class AppController implements ImageItemCell.Listener {
         loadImageList();
 
         initMasterView();
+        initDetail();
     }
 
     @FXML
@@ -282,6 +286,36 @@ public class AppController implements ImageItemCell.Listener {
                 .widthProperty()
                 .subtract(32)
             );
+    }
+
+    private void initDetail() {
+        var slideProperty = slideComboBox.valueProperty();
+
+        slideComboBox.getItems().addAll(SlideItem.values());
+        slideComboBox.setConverter(new Enums.EnglishConverter<>(SlideItem.class));
+        slideComboBox.setValue(SlideItem.CodeSnippet);
+        slideComboBox.setOnAction(event -> updateSlide());
+
+        languageComboBox.getItems().addAll(Language.values());
+        languageComboBox.setConverter(new Enums.EnglishConverter<>(Language.class));
+        languageComboBox.setValue(Language.Java);
+        languageComboBox.setOnAction(event -> updateSlide());
+        languageComboBox
+            .visibleProperty()
+                .bind(slideProperty
+                    .isEqualTo(SlideItem.CodeSnippet)
+                    .or(slideProperty.isEqualTo(SlideItem.CodeShot))
+                );
+
+        codeSnippetBox
+            .visibleProperty()
+            .bind(slideProperty
+                .isEqualTo(SlideItem.CodeSnippet)
+            );
+    }
+
+    private void updateSlide() {
+        // TODO
     }
 
     private void showDeleteAllAlert() {
