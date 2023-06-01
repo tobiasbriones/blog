@@ -16,15 +16,16 @@ import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
@@ -48,9 +49,7 @@ public class AppController implements ImageItemCell.Listener {
     @FXML
     private Pagination pagination;
     @FXML
-    private Group slideGroup;
-    @FXML
-    private ImageView slideView;
+    private HBox slideBox;
     @FXML
     private VBox codeSnippetBox;
     @FXML
@@ -58,7 +57,7 @@ public class AppController implements ImageItemCell.Listener {
     @FXML
     private ComboBox<Language> languageComboBox;
     @FXML
-    private VBox viewPaneBox;
+    private TextArea codeTextArea;
 
     public AppController() {
         this.repository = new LocalDataRepository(DATA_ROOT);
@@ -278,20 +277,6 @@ public class AppController implements ImageItemCell.Listener {
             .addListener((observable, oldValue, newValue) -> imageList
                 .getSelectionModel()
                 .select(newValue)
-            );
-
-        slideView
-            .imageProperty()
-            .bind(imageList
-                .getSelectionModel()
-                .selectedItemProperty()
-                .map(ImageItem::image)
-            );
-        slideView
-            .fitWidthProperty()
-            .bind(viewPaneBox
-                .widthProperty()
-                .subtract(32)
             );
     }
 
