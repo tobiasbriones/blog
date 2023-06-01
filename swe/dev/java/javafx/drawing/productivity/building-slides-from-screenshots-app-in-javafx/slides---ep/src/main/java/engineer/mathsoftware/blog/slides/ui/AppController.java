@@ -264,14 +264,21 @@ public class AppController implements ImageItemCell.Listener {
             .getSelectionModel()
             .selectedIndexProperty()
             .map(Integer.class::cast)
-            .addListener((observable, oldValue, newValue) -> pagination.setCurrentPageIndex(newValue));
+            .addListener((observable, oldValue, newValue) -> pagination
+                .setCurrentPageIndex(newValue)
+            );
 
-        imageList.getSelectionModel().select(0);
+        imageList
+            .getSelectionModel()
+            .select(0);
 
         pagination
             .currentPageIndexProperty()
             .map(Integer.class::cast)
-            .addListener((observable, oldValue, newValue) -> imageList.getSelectionModel().select(newValue));
+            .addListener((observable, oldValue, newValue) -> imageList
+                .getSelectionModel()
+                .select(newValue)
+            );
 
         slideView
             .imageProperty()
@@ -302,10 +309,10 @@ public class AppController implements ImageItemCell.Listener {
         languageComboBox.setOnAction(event -> updateSlide());
         languageComboBox
             .visibleProperty()
-                .bind(slideProperty
-                    .isEqualTo(SlideItem.CodeSnippet)
-                    .or(slideProperty.isEqualTo(SlideItem.CodeShot))
-                );
+            .bind(slideProperty
+                .isEqualTo(SlideItem.CodeSnippet)
+                .or(slideProperty.isEqualTo(SlideItem.CodeShot))
+            );
 
         codeSnippetBox
             .visibleProperty()
