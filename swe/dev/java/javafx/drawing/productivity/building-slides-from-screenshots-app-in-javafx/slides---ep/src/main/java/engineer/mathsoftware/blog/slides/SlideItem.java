@@ -4,8 +4,8 @@
 
 package engineer.mathsoftware.blog.slides;
 
-public enum Slides {
-    CODE_SNIPPET,
-    CODE_SHOT,
-    SCREENSHOT
+public enum SlideItem {
+    CodeSnippet,
+    CodeShot,
+    Screenshot
 }
