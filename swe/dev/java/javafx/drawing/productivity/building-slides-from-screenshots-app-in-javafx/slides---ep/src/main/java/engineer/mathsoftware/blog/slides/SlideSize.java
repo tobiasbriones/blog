@@ -5,6 +5,18 @@
 package engineer.mathsoftware.blog.slides;
 
 public record SlideSize(int width, int height) {
-    public static final SlideSize HD = new SlideSize(720, 1_280);
-    public static final SlideSize FHD = new SlideSize(1_080, 1_920);
+    public enum Predefined {
+        HD(new SlideSize(1_280, 720)),
+        FHD(new SlideSize(1_920, 1_080));
+
+        private final SlideSize value;
+
+        public SlideSize value() {
+            return value;
+        }
+
+        Predefined(SlideSize value) {
+            this.value = value;
+        }
+    }
 }
