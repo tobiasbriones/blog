@@ -40,3 +40,6 @@ The following images were used to compose some parts shown in the screenshots:
 - [Scene Builder: Initial app.fxml](scene-builder-.-initial-app.fxml.png):
   Includes system icons, and the
   [Scene Builder](https://gluonhq.com/products/scene-builder) logo.
+
+- [View Pagination in Sync with List View](view-pagination-in-sync-with-list-view.png):
+  Includes [Images from Pixabay](#images-from-pixabay).
