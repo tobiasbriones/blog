@@ -58,11 +58,7 @@ public class GroupSlideDrawing implements SlideDrawing {
         var group = new Group();
         var backgroundView = new Rectangle();
         var screenshotView = new ImageView();
-        var width = size.width();
-        var height = size.height();
         var image = screenshot.image();
-        var imageLeft = (width - image.getWidth()) / 2.0;
-        var imageRight = (height - image.getHeight()) / 2.0;
 
         backgroundView.setWidth(size.width());
         backgroundView.setHeight(size.height());
@@ -72,14 +68,21 @@ public class GroupSlideDrawing implements SlideDrawing {
         group.setScaleX(0.5);
         group.setScaleY(0.5);
 
-        drawImage(image, screenshotView);
-
         screenshotView.setSmooth(true);
-        screenshotView.setX(imageLeft);
-        screenshotView.setY(imageRight);
+        screenshotView.setPreserveRatio(true);
+        fitImageView(screenshotView, image);
+        drawImage(image, screenshotView);
+        centerImageView(screenshotView);
 
         group.getChildren().addAll(backgroundView, screenshotView);
         return group;
+    }
+
+    private void centerImageView(ImageView iv) {
+        var imageLeft = (size.width() - iv.getFitWidth()) / 2.0;
+        var imageTop = (size.height() - iv.getFitHeight()) / 2.0;
+        iv.setX(imageLeft);
+        iv.setY(imageTop);
     }
 
     private static void drawImage(Image image, ImageView iv) {
@@ -93,6 +96,30 @@ public class GroupSlideDrawing implements SlideDrawing {
 
         iv.setEffect(shadow);
         iv.setImage(roundedImage);
+    }
+
+    private void fitImageView(ImageView iv, Image originalImage) {
+        var w = originalImage.getWidth();
+        var h = originalImage.getHeight();
+
+        iv.setFitWidth(w);
+        iv.setFitHeight(h);
+
+        // If the original image is bigger (out of bound) resize the ImageView
+        if (size.width() < w || size.height() < h) {
+            if (size.width() < w) {
+                var hRatio = iv.getFitHeight() / iv.getFitWidth();
+
+                iv.setFitWidth(size.width());
+                iv.setFitHeight(size.width() * hRatio);
+            }
+            if (size.height() < h) {
+                var wRatio = iv.getFitWidth() / iv.getFitHeight();
+
+                iv.setFitWidth(size.height() * wRatio);
+                iv.setFitHeight(size.height());
+            }
+        }
     }
 
     private static double getImageCornerRadius(Image image) {
@@ -109,8 +136,8 @@ public class GroupSlideDrawing implements SlideDrawing {
 
         params.setFill(Color.TRANSPARENT);
 
-        clip.setWidth(image.getWidth());
-        clip.setHeight(image.getHeight());
+        clip.setWidth(iv.getFitWidth());
+        clip.setHeight(iv.getFitHeight());
         clip.setArcWidth(arc);
         clip.setArcHeight(arc);
 
