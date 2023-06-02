@@ -35,12 +35,18 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
-public class AppController implements ImageItemCell.Listener {
+public class AppController implements
+    ImageItemCell.Listener,
+    SlideDrawingView.ChangeListener {
+
     private static final String DATA_ROOT = "data";
     private final DataRepository repository;
     private final ObservableList<ImageItem> images;
+    private final Map<ImageItem, SlideDrawingView.SlideState> changes;
     private SlideDrawingView slideDrawingView;
     @FXML
     private Parent view;
@@ -70,6 +76,7 @@ public class AppController implements ImageItemCell.Listener {
     public AppController() {
         this.repository = new LocalDataRepository(DATA_ROOT);
         this.images = FXCollections.observableArrayList();
+        this.changes = new HashMap<>();
     }
 
     @FXML
@@ -83,6 +90,7 @@ public class AppController implements ImageItemCell.Listener {
 
         initMasterView();
         initDetail();
+        initSlideDrawingView();
     }
 
     @FXML
@@ -195,6 +203,24 @@ public class AppController implements ImageItemCell.Listener {
         images.set(destIdx, dragged);
         imageList.getSelectionModel().clearAndSelect(destIdx);
         setStatus("Item arranged");
+    }
+
+    @Override
+    public void onSlideChange(SlideDrawingView.SlideState state) {
+        changes.put(state.imageItem(), state);
+    }
+
+    @Override
+    public void setState(ImageItem item) {
+        if (!changes.containsKey(item)) {
+            return;
+        }
+        var state = changes.get(item);
+
+        slideComboBox.setValue(state.slideItem());
+        languageComboBox.setValue(state.language());
+        codeTextArea.setText(state.code());
+        sizeComboBox.setValue(SlideSize.Predefined.from(state.size()));
     }
 
     private void loadImageList() {
@@ -326,6 +352,41 @@ public class AppController implements ImageItemCell.Listener {
             .bind(slideProperty
                 .isEqualTo(SlideItem.CodeSnippet)
             );
+    }
+
+    private void initSlideDrawingView() {
+        slideDrawingView = new SlideDrawingView(slideBox);
+
+        slideDrawingView.init();
+        slideDrawingView
+            .slideProperty()
+            .bind(slideComboBox
+                .valueProperty()
+            );
+        slideDrawingView
+            .imageProperty()
+            .bind(imageList
+                .getSelectionModel()
+                .selectedItemProperty()
+            );
+        slideDrawingView
+            .languageProperty()
+            .bind(languageComboBox
+                .valueProperty()
+            );
+        slideDrawingView
+            .codeProperty()
+            .bind(codeTextArea
+                .textProperty()
+            );
+        slideDrawingView
+            .sizeProperty()
+            .bind(sizeComboBox
+                .valueProperty()
+                .map(SlideSize.Predefined::value)
+            );
+
+        slideDrawingView.setOnChangeListener(this);
     }
 
     private void showDeleteAllAlert() {
