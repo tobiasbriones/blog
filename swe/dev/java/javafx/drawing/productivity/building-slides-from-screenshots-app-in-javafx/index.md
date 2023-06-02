@@ -1351,3 +1351,52 @@ private void onAboutMenuItemAction() {
 This was the application now has a functioning menu bar.
 
 ## View Detail and App Domain
+
+### Refactorizations on Data and UI
+
+First, some refactorizations I did at this stage.
+
+```
+.
+├── data
+│   ├── Data.java
+│   ├── DataRepository.java
+│   ├── ImageItem.java
+│   ├── LocalDataRepository.java
+│   └── pacakge-info.java
+└── ui
+    ├── AppController.java
+    ├── ImageItemCell.java
+    ├── Main.java
+    └── pacakge-info.java
+```
+
+<figcaption>
+<p align="center"><strong>Project Package Refactorization</strong></p>
+</figcaption>
+
+Leading to a project module like:
+
+`module-info.java`
+
+```java
+module engineer.mathsoftware.blog.slides {
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires javafx.swing;
+    exports engineer.mathsoftware.blog.slides.data;
+    exports engineer.mathsoftware.blog.slides.ui;
+    opens engineer.mathsoftware.blog.slides.ui to javafx.fxml;
+}
+```
+
+<figcaption>
+<p align="center"><strong>Project Module After Refactorization</strong></p>
+</figcaption>
+
+Notice I moved `ImageItem` from `ui` to `data` as it makes more sense as I said
+in
+[Removing Cyclic Dependencies, Java vs Go (2023-05-28)](https://blog.mathsoftware.engineer/removing-cyclic-dependencies--_--java-vs-go-2023-05-28).
+
+Now the project has more support to accept the next changes for the view and 
+detail panes as well as the application logic.
