@@ -257,7 +257,7 @@ The items need to be stored and loaded from our local storage.
 
 For this, I defined the `DataRepository` API.
 
-`DataRepository.java | ...slides.data`
+`DataRepository.java | package data`
 
 ```java
 public interface DataRepository {
@@ -283,7 +283,7 @@ public interface DataRepository {
 
 I also wrote a `Data` utility class to hold important functions.
 
-`Data.java | ...slides.data`
+`Data.java | package data`
 
 ```java
 public final class Data {
@@ -334,7 +334,7 @@ The implementation of the `DataRepository` is straightforward.
 It uses the `java.nio.file` API to access the file system, and the code written
 before.
 
-`Data.java | ...slides.data`
+`Data.java | package data`
 
 ```java
 public class LocalDataRepository implements DataRepository {
