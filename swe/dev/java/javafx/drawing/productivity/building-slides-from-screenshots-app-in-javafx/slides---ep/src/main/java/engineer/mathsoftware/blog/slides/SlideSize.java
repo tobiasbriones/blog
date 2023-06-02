@@ -9,6 +9,13 @@ public record SlideSize(double width, double height) {
         HD(new SlideSize(1_280.0, 720.0)),
         FHD(new SlideSize(1_920.0, 1_080.0));
 
+        public static Predefined from(SlideSize size) {
+            if (size.equals(FHD.value())) {
+                return FHD;
+            }
+            return HD;
+        }
+
         private final SlideSize value;
 
         public SlideSize value() {
