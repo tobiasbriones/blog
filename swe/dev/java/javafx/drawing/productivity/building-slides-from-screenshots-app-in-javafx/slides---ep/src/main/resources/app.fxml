@@ -13,6 +13,7 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -99,6 +100,9 @@
                         <Label styleClass="title" text="Slide" />
                         <ComboBox fx:id="slideComboBox" prefWidth="150.0" promptText="Slide" />
                         <ComboBox fx:id="languageComboBox" prefWidth="150.0" promptText="Language" />
+                        <Label styleClass="title" text="Config" />
+                        <ComboBox fx:id="sizeComboBox" prefWidth="150.0" />
+                        <TextField fx:id="saveField" editable="false" />
                         <VBox fx:id="codeSnippetBox" alignment="TOP_CENTER" spacing="8.0">
                            <children>
                               <Label styleClass="title" text="Code" />

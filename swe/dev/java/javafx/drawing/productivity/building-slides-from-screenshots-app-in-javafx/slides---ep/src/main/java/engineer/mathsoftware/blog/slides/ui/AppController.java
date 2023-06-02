@@ -7,6 +7,7 @@ package engineer.mathsoftware.blog.slides.ui;
 import engineer.mathsoftware.blog.slides.Enums;
 import engineer.mathsoftware.blog.slides.Language;
 import engineer.mathsoftware.blog.slides.SlideItem;
+import engineer.mathsoftware.blog.slides.SlideSize;
 import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.ImageItem;
@@ -21,6 +22,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
@@ -32,12 +34,14 @@ import javafx.stage.FileChooser;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Objects;
 
 public class AppController implements ImageItemCell.Listener {
     private static final String DATA_ROOT = "data";
     private final DataRepository repository;
     private final ObservableList<ImageItem> images;
+    private SlideDrawingView slideDrawingView;
     @FXML
     private Parent view;
     @FXML
@@ -56,6 +60,10 @@ public class AppController implements ImageItemCell.Listener {
     private ComboBox<SlideItem> slideComboBox;
     @FXML
     private ComboBox<Language> languageComboBox;
+    @FXML
+    private ComboBox<SlideSize.Predefined> sizeComboBox;
+    @FXML
+    private TextField saveField;
     @FXML
     private TextArea codeTextArea;
 
@@ -286,12 +294,10 @@ public class AppController implements ImageItemCell.Listener {
         slideComboBox.getItems().addAll(SlideItem.values());
         slideComboBox.setConverter(new Enums.EnglishConverter<>(SlideItem.class));
         slideComboBox.setValue(SlideItem.CodeSnippet);
-        slideComboBox.setOnAction(event -> updateSlide());
 
         languageComboBox.getItems().addAll(Language.values());
         languageComboBox.setConverter(new Enums.EnglishConverter<>(Language.class));
         languageComboBox.setValue(Language.Java);
-        languageComboBox.setOnAction(event -> updateSlide());
         languageComboBox
             .visibleProperty()
             .bind(slideProperty
@@ -299,15 +305,27 @@ public class AppController implements ImageItemCell.Listener {
                 .or(slideProperty.isEqualTo(SlideItem.CodeShot))
             );
 
+        sizeComboBox
+            .getItems()
+            .addAll(SlideSize
+                .Predefined.values()
+            );
+        sizeComboBox
+            .getSelectionModel()
+            .select(0);
+
+        saveField
+            .setText(Path
+                .of(DATA_ROOT, "out")
+                .toAbsolutePath()
+                .toString()
+            );
+
         codeSnippetBox
             .visibleProperty()
             .bind(slideProperty
                 .isEqualTo(SlideItem.CodeSnippet)
             );
-    }
-
-    private void updateSlide() {
-        // TODO
     }
 
     private void showDeleteAllAlert() {
