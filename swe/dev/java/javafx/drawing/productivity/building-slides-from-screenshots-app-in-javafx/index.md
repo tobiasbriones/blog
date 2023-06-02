@@ -1349,3 +1349,5 @@ private void onAboutMenuItemAction() {
 </figcaption>
 
 This was the application now has a functioning menu bar.
+
+## View Detail and App Domain
