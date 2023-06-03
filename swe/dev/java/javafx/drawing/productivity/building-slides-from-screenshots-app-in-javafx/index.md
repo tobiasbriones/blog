@@ -1509,3 +1509,147 @@ to be able to perform the drawings.
 
 The image list and pagination will be in sync, so the app becomes more usable
 with this new control.
+
+### Slides
+
+It's time to start creating the models for this application.
+
+`interface Slide`
+
+```java
+public sealed interface Slide {
+    record CodeSnippet(String code) implements Slide {}
+
+    record CodeShot(Image image) implements Slide {}
+
+    record Screenshot(Image image) implements Slide {}
+}
+```
+
+<figcaption>
+<p align="center"><strong>Application "Slide" Sum Type</strong></p>
+</figcaption>
+
+A `Slide` consists of:
+
+- `CodeSnippet`: A slide containing source code (from a given PL) styled as a
+  pretty image.
+- `CodeShot`: A screenshot image of source code (e.g., screenshot of the IDE
+  editor).
+- `Screenshot`: A random screenshot.
+
+I also defined a basic enum to define the slides as simple iterable items.
+
+`enum SlideItem`
+
+```java
+public enum SlideItem {
+    CodeSnippet,
+    CodeShot,
+    Screenshot
+}
+```
+
+<figcaption>
+<p align="center"><strong>Application "SlideItem" Sum Type</strong></p>
+</figcaption>
+
+The (programming[^x]) language is required to style the slides, so it can be
+associated to a slide content.
+
+[^x]: It doesn't have to be a GP PL, like HTML or CSS which are niche languages
+
+`enum Language`
+
+```java
+public enum Language {
+    CSharp,
+    CSS,
+    Golang,
+    Haskell,
+    HTML,
+    Java,
+    JavaScript,
+    Kotlin,
+    Lean,
+    PureScript,
+    Python,
+    Rust,
+    TypeScript
+}
+```
+
+<figcaption>
+<p align="center"><strong>Application Language Support</strong></p>
+</figcaption>
+
+Defining some colors will be useful for the possible drawings that can appear
+on the slides.
+
+`enum Palette`
+
+```java
+public enum Palette {
+    Good("#4caf50"),
+    Error("#b00020");
+
+    private final String colorCode;
+
+    Palette(String color) {
+        this.colorCode = color;
+    }
+
+    public String colorCode() {
+        return colorCode;
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Application Basic Color Palette</strong></p>
+</figcaption>
+
+So, we can define some relations for these types. A took the language color used
+by GitHub and set them to the languages that were added before.
+
+`class Colors`
+
+```java
+public final class Colors {
+    public static Color color(Palette palette) {
+        return Color.web(palette.colorCode());
+    }
+
+    public static Color color(Language language) {
+        var code = switch (language) {
+            case CSharp -> "#178600";
+            case CSS -> "#563d7c";
+            case Golang -> "#00ADD8";
+            case Haskell -> "#5e5086";
+            case HTML -> "#e34c26";
+            case Java -> "#b07219";
+            case JavaScript -> "#f1e05a";
+            case Kotlin -> "#A97BFF";
+            case Lean -> "#83579A";
+            case PureScript -> "#1D222D";
+            case Python -> "#3572A5";
+            case Rust -> "#dea584";
+            case TypeScript -> "#2b7489";
+        };
+        return Color.web(code);
+    }
+
+    private Colors() {}
+}
+```
+
+<figcaption>
+<p align="center"><strong>Utility Class "Colors"</strong></p>
+</figcaption>
+
+This way the app can be extended by mapping color values to the domain types.
+
+This is for now, the application domain that establishes the main logic to build
+the rest of GUI details.
+
+
