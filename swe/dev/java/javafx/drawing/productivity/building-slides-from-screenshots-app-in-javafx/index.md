@@ -1649,6 +1649,44 @@ public final class Colors {
 
 This way the app can be extended by mapping color values to the domain types.
 
+Regarding configurations, we can add some important settings like the target 
+size for the slides.
+
+`record SlideSize`
+
+```java
+public record SlideSize(double width, double height) {
+    public enum Predefined {
+        HD(new SlideSize(1_280.0, 720.0)),
+        FHD(new SlideSize(1_920.0, 1_080.0));
+
+        public static Predefined from(SlideSize size) {
+            if (size.equals(FHD.value())) {
+                return FHD;
+            }
+            return HD;
+        }
+
+        private final SlideSize value;
+
+        public SlideSize value() {
+            return value;
+        }
+
+        Predefined(SlideSize value) {
+            this.value = value;
+        }
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Establishing Slide Resolutions</strong></p>
+</figcaption>
+
+Since screenshots will not likely be greater than FHD, these predefined
+resolutions will come in handy.
+
 This is for now, the application domain that establishes the main logic to build
 the rest of GUI details.
 
