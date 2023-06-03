@@ -1751,3 +1751,105 @@ This `EnglishConverter` implementation will allow to use `enum`s more directly
 as English values to the views without losing the identity between a `enum`
 domain type, and a primitive `String` (i.e., the `enum` is set as the view value
 but *displayed* as a `String`).
+
+### Detail Pane
+
+Eventually, we come across the detail pane on the right of the GUI that allows
+to program what information will be taken to render what's shown in the view
+pane in the middle.
+
+![Detail Pane](detail-pane.png)
+
+<figcaption>
+<p align="center"><strong>Detail Pane</strong></p>
+</figcaption>
+
+I added a CSS class to style the title `Label`s for example.
+
+`app.css`
+
+```css
+.title {
+    -fx-font-weight: bold;
+}
+```
+
+<figcaption>
+<p align="center"><strong>Class "title" for Bold Text</strong></p>
+</figcaption>
+
+These styles can be added as a class to the (`Label`) nodes via SceneBuilder.
+
+First, declare the new fields in the controller, and add logic for what should
+be done. Of course, I figured all this out before.
+
+`class AppController`
+
+```java
+@FXML private ComboBox<SlideItem> slideComboBox;
+@FXML private ComboBox<Language> languageComboBox;
+
+@FXML
+public void initialize() {
+    /* ... */
+    initDetail();
+}
+
+private void initDetail() {
+    var slideProperty = slideComboBox.valueProperty();
+
+    slideComboBox.getItems().addAll(SlideItem.values());
+    slideComboBox.setConverter(new Enums.EnglishConverter<>(SlideItem.class));
+    slideComboBox.setValue(SlideItem.CodeSnippet);
+
+    languageComboBox.getItems().addAll(Language.values());
+    languageComboBox.setConverter(new Enums.EnglishConverter<>(Language.class));
+    languageComboBox.setValue(Language.Java);
+    languageComboBox
+        .visibleProperty()
+        .bind(slideProperty
+            .isEqualTo(SlideItem.CodeSnippet)
+            .or(slideProperty.isEqualTo(SlideItem.CodeShot))
+        );
+
+    sizeComboBox
+        .getItems()
+        .addAll(SlideSize
+            .Predefined.values()
+        );
+    sizeComboBox
+        .getSelectionModel()
+        .select(0);
+
+    saveField
+        .setText(Path
+            .of(DATA_ROOT, "out")
+            .toAbsolutePath()
+            .toString()
+        );
+
+    codeSnippetBox
+        .visibleProperty()
+        .bind(slideProperty
+            .isEqualTo(SlideItem.CodeSnippet)
+        );
+}
+```
+
+<figcaption>
+<p align="center"><strong>Initialization of the Detail Pane</strong></p>
+</figcaption>
+
+Here, some views have to be hidden if they're not applicable according to the
+setup of the other values. For example, `codeSnippetBox` is only showed when
+the `Slide` type is set to `CodeSnippet`.
+
+The main `ComboBox` is `slideComboBox` that defines what kind of `Slide` is the
+current selected item, so it'll be rendered according to that model.
+
+As you can see, we use the `EnglishConverter` written before, and set the
+default value of `slideComboBox` to `SlideItem.CodeSnippet` although I might
+change those settings later.
+
+In the detail pane, many settings can be added and adapted to define the
+rendering of the slides.
