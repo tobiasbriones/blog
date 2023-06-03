@@ -1887,3 +1887,15 @@ change those settings later.
 
 In the detail pane, many settings can be added and adapted to define the
 rendering of the slides.
+
+## View Pane and Drawing
+
+The view pane displays the result of applying the information from the detail
+pane on the right side to the input images from the master pane on the left
+side. This view shows the drawings applied to build the presentation.
+
+![Screenshot Slide View Drawing](images/screenshot-slide-view-drawing.png)
+
+<figcaption>
+<p align="center"><strong>Screenshot Slide View Drawing</strong></p>
+</figcaption>
