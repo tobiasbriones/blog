@@ -1804,6 +1804,8 @@ be done. Of course, I figured all this out before.
 ```java
 @FXML private ComboBox<SlideItem> slideComboBox;
 @FXML private ComboBox<Language> languageComboBox;
+@FXML private ComboBox<SlideSize.Predefined> sizeComboBox;
+@FXML private TextField saveField;
 
 @FXML
 public void initialize() {
