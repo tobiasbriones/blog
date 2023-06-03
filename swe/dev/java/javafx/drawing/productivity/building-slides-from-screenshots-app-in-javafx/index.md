@@ -1352,6 +1352,22 @@ This was the application now has a functioning menu bar.
 
 ## View Detail and App Domain
 
+The detail pane is the one to the right that allows the user to set up the
+information to apply to the slides, and the application domain has been defined
+via several types to power all these concepts.
+
+The view pane is the middle one showing the result of rendering the slide, and
+this will require much more work before we start drawing something on this view.
+
+Some refactorizations are needed to keep the project maintainable.
+
+Then the master pane developed before has to be related to the view pane via
+a  `Pagination`.
+
+Once the initial application domain is defined, the detail pane can be worked
+out to enable the configurations that will be applied to the drawing in the view
+pane.
+
 ### Refactorizations on Data and UI
 
 First, some refactorizations I did at this stage.
