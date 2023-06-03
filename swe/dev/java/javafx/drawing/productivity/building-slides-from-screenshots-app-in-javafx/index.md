@@ -1652,4 +1652,64 @@ This way the app can be extended by mapping color values to the domain types.
 This is for now, the application domain that establishes the main logic to build
 the rest of GUI details.
 
+### Reusing Enums by Converting Them into English Strings
 
+Enums can straightforwardly be used as an iterable sum type to define, among
+others, the values for the `ComboBox`es. What stops us is the ability to turn
+them into readable English values.
+
+JavaFX's utilities provide a `StringConverter` abstract class to turn `Object`s
+into `String`s and vice-versa.
+
+I'll leave my implementation here, and let the reader figure it out.
+
+`class Enums`
+
+```java
+public final class Enums {
+    public static final class EnglishConverter<T extends Enum<T>> extends StringConverter<T> {
+        private static final Pattern PATTERN = Pattern
+            .compile("([A-Z]+[a-z]*)");
+        private static final Pattern SPACED_PATTERN = Pattern.compile(" ");
+        private final Class<T> type;
+
+        public EnglishConverter(Class<T> type) {
+            super();
+            this.type = type;
+        }
+
+        @Override
+        public String toString(T object) {
+            return PATTERN
+                .matcher(object.name())
+                .results()
+                .map(MatchResult::group)
+                .reduce((word1, word2) -> word1 + " " + word2)
+                .orElse("");
+        }
+
+        @Override
+        public T fromString(String string) {
+            var name = SPACED_PATTERN.matcher(string).replaceAll("");
+            try {
+                return Enum.valueOf(type, name);
+            }
+            catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    private Enums() {}
+}
+```
+
+<figcaption>
+<p align="center"><strong>Utility Class "Enums"</strong></p>
+</figcaption>
+
+This `EnglishConverter` implementation will allow to use `enum`s more directly
+as English values to the views without losing the identity between a `enum`
+domain type, and a primitive `String` (i.e., the `enum` is set as the view value
+but *displayed* as a `String`).
