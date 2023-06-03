@@ -1899,3 +1899,305 @@ side. This view shows the drawings applied to build the presentation.
 <figcaption>
 <p align="center"><strong>Screenshot Slide View Drawing</strong></p>
 </figcaption>
+
+### Drawing Package
+
+The drawing logic will go to the `drawing` `package` of the application.
+
+First, I defined a `SlideDrawing` type to represent the editing applied to a
+`Slide`.
+
+`interface SlideDrawing | package drawing`
+
+```java
+public interface SlideDrawing {
+    void setup(SlideSize slideSize);
+
+    void draw(Slide slide);
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Definition of "SlideDrawing"
+</strong>
+</p>
+</figcaption>
+
+Then, I added a realization of this interface via a `class` based on a `Group`
+node.
+
+Using a `Group` in JavaFX is normal to draw basic shapes available in the
+platform.
+
+The performance of this implementation is not great yet. Since this is an
+example project I won't go into pre-optimizations a lot.
+
+I've experienced a few side effects while working with drag events and
+imperative code for editing and composing images, and I'm not delving into more
+lower-level optimizations for now 😑.
+
+Now, the first drawing implementation will build a `Slide` of type
+`Screenshot`.
+
+`class GroupSlideDrawing | package drawing`
+
+```java
+public class GroupSlideDrawing implements SlideDrawing {
+    private final HBox view;
+    private SlideSize size;
+
+    public GroupSlideDrawing(HBox view) {
+        this.view = view;
+        this.size = SlideSize.Predefined.HD.value();
+    }
+
+    @Override
+    public void setup(SlideSize slideSize) {
+        if (slideSize == null) {
+            return;
+        }
+        size = slideSize;
+    }
+
+    @Override
+    public void draw(Slide slide) {
+        var drawing = switch (slide) {
+            case Slide.CodeShot codeShot -> drawCodeShot(codeShot);
+            case Slide.CodeSnippet codeSnippet -> drawCodeSnippet(codeSnippet);
+            case Slide.Screenshot screenshot -> drawScreenshot(screenshot);
+        };
+
+        view.getChildren().clear();
+        view.getChildren().add(drawing);
+    }
+
+    private Group drawCodeShot(Slide.CodeShot codeShot) {
+        // TODO
+        return new Group();
+    }
+
+    private Group drawCodeSnippet(Slide.CodeSnippet codeSnippet) {
+        // TODO
+        return new Group();
+    }
+
+    private Group drawScreenshot(Slide.Screenshot screenshot) {
+        // TODO
+        return new Group();
+    }
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Initial Implementation of "SlideDrawing" Based on a "Group" Parent
+</strong>
+</p>
+</figcaption>
+
+Then here we draw a `Screenshot` `Slide`.
+
+`class GroupSlideDrawing | package drawing`
+
+```java
+private Group drawScreenshot(Slide.Screenshot screenshot) {
+    var group = new Group();
+    var backgroundView = new Rectangle();
+    var screenshotView = new ImageView();
+    var width = size.width();
+    var height = size.height();
+    var image = screenshot.image();
+    var imageLeft = (width - image.getWidth()) / 2.0;
+    var imageRight = (height - image.getHeight()) / 2.0;
+
+    backgroundView.setWidth(size.width());
+    backgroundView.setHeight(size.height());
+    backgroundView.setFill(Color.WHITE);
+
+    // Scale so it fits the ScrollPane better
+    group.setScaleX(0.5);
+    group.setScaleY(0.5);
+
+    drawImage(image, screenshotView);
+
+    screenshotView.setSmooth(true);
+    screenshotView.setX(imageLeft);
+    screenshotView.setY(imageRight);
+
+    group.getChildren().addAll(backgroundView, screenshotView);
+    return group;
+}
+
+private static void drawImage(Image image, ImageView iv) {
+    var shadow = new DropShadow();
+    var arc = getImageCornerRadius(image);
+
+    var roundedImage = getRoundedImage(image, iv, arc);
+
+    shadow.setColor(Color.web("#212121"));
+    shadow.setRadius(48.0);
+
+    iv.setEffect(shadow);
+    iv.setImage(roundedImage);
+}
+
+private static double getImageCornerRadius(Image image) {
+    var minDim = Math.min(image.getWidth(), image.getHeight());
+    var unitDim = 48.0;
+    var unitArc = 16.0 / 4.0;
+    var proportion = minDim / unitDim;
+    return proportion >= 1.0 ? proportion * unitArc : unitArc * 4.0;
+}
+
+private static Image getRoundedImage(Image image, ImageView iv, double arc) {
+    var clip = new Rectangle();
+    var params = new SnapshotParameters();
+
+    params.setFill(Color.TRANSPARENT);
+
+    clip.setWidth(image.getWidth());
+    clip.setHeight(image.getHeight());
+    clip.setArcWidth(arc);
+    clip.setArcHeight(arc);
+
+    iv.setImage(image);
+    iv.setClip(clip);
+
+    var roundedImage = iv.snapshot(params, null);
+
+    iv.setClip(null);
+    return roundedImage;
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Drawing of a Screenshot Slide
+</strong>
+</p>
+</figcaption>
+
+First, I take a `Group` as the parent of the drawing which is a basic "layout"
+to manually add the child positions. This basically resembles the
+`FrameLayout` from Android.
+
+We can add nodes and shapes as children to the group, and they'll **blend**,
+allowing us to build up our `Scene`.
+
+We can add the background straightforwardly with a `Rectangle` `Shape` and the
+image —which is more complex— via a good old `ImageView` `Node`.
+
+I added a temporal scale to the (`group`) parent, so the drawing fits the
+screen, as I'm not implementing zooming features any time soon.
+
+I implemented the method `getImageCornerRadius` to set relative rounded corner
+values to the images so they keep the proportion. I based my measure as it was a
+round icon, then played with the proportions to settle down.
+
+Since `Group` is a lower-level layout, we have the flexibility to position the
+children, like the image I put in the center of the parent, via its methods
+`setX` and `setY`.
+
+I implemented the method `getRoundedImage` to build a rounded image from an
+`Image` and its `ImageView` with a given `arc` value (computed by
+`getImageCornerRadius`).
+
+As you can see, **the code here is much more imperative and temporal coupled**.
+
+To get the rounded image, you have to create a clip `Shape` consisting of a
+rounded `Rectangle` resembling the dimensions of the image. Now you set the
+image, and clip to the `ImageView`, and build a screenshot of the `ImageView`.
+Then, remove the clip from the image view to release any side effect.
+
+The shadow effect can be achieved by setting a `DropShadow` `Effect` to the
+`ImageView`.
+
+As I said, these steps depend on the order in which they're called due to the
+imperativeness of the code.
+
+But that's not it 😂, more imperative code is waiting. The images have to be
+resized as per the configuration of the slide we put.
+
+If the given image is too big —either in width or height— it has to be resized
+to fit the parent.
+
+`class GroupSlideDrawing | package drawing`
+
+```java
+private Group drawScreenshot(Slide.Screenshot screenshot) {
+    /* ... */
+    var image = screenshot.image();
+
+    /* ... */
+
+    screenshotView.setPreserveRatio(true);
+    fitImageView(screenshotView, image);
+    drawImage(image, screenshotView);
+    centerImageView(screenshotView);
+
+    /* ... */
+}
+
+private void centerImageView(ImageView iv) {
+    var imageLeft = (size.width() - iv.getFitWidth()) / 2.0;
+    var imageTop = (size.height() - iv.getFitHeight()) / 2.0;
+    iv.setX(imageLeft);
+    iv.setY(imageTop);
+}
+
+private void fitImageView(ImageView iv, Image originalImage) {
+    var w = originalImage.getWidth();
+    var h = originalImage.getHeight();
+
+    iv.setFitWidth(w);
+    iv.setFitHeight(h);
+
+    // If the original image is bigger (out of bound) resize the ImageView
+    if (size.width() < w || size.height() < h) {
+        if (size.width() < w) {
+            var hRatio = iv.getFitHeight() / iv.getFitWidth();
+
+            iv.setFitWidth(size.width());
+            iv.setFitHeight(size.width() * hRatio);
+        }
+        if (size.height() < h) {
+            var wRatio = iv.getFitWidth() / iv.getFitHeight();
+
+            iv.setFitWidth(size.height() * wRatio);
+            iv.setFitHeight(size.height());
+        }
+    }
+}
+
+private static Image getRoundedImage(Image image, ImageView iv, double arc) {
+    /* ... */
+    // Use the size of the ImageView instead of the original Image now
+    clip.setWidth(iv.getFitWidth());
+    clip.setHeight(iv.getFitHeight());
+    /* ... */
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Fitting the Image Size into the Drawing Group
+</strong>
+</p>
+</figcaption>
+
+Now we fit the size of the `ImageView`, draw the image, and set its position to
+center it.
+
+To fit the `ImageView`, first, the size of the original `Image` is set. If these
+are out of bounds, the `ImageView` is resized keeping the proportions.
+
+Now, when we want to know the dimensions of the image, the "source of truth"
+becomes the `ImageView` instead of the original `Image`.
+
+This is the initial implementation of the drawing package that now enables us to
+draw a screenshot slide into the view pane of the application.
