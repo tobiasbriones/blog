@@ -1400,3 +1400,112 @@ in
 
 Now the project has more support to accept the next changes for the view and 
 detail panes as well as the application logic.
+
+### Pagination
+
+This component is a page indicator that will keep in sync with the list of
+images loaded into the master pane.
+
+![View Pagination in Sync with List View](images/view-pagination-in-sync-with-list-view.png)
+
+<figcaption>
+<p align="center"><strong>View Pagination in Sync with List View</strong></p>
+</figcaption>
+
+After updating the `app.fxml` file, the logic is next.
+
+`class AppController`
+
+```java
+@FXML
+private Pagination pagination;
+@FXML
+private ImageView slideView;
+
+@FXML
+public void initialize() {
+    /* ... */
+    initMasterView();
+}
+
+private void initMasterView() {
+    updatePaginationCount();
+
+    images.addListener((InvalidationListener) l -> updatePaginationCount());
+
+    imageList
+        .getSelectionModel()
+        .selectedIndexProperty()
+        .map(Integer.class::cast)
+        .addListener((observable, oldValue, newValue) ->
+            pagination.setCurrentPageIndex(newValue)
+        );
+
+    imageList
+        .getSelectionModel()
+        .select(0);
+
+    pagination
+        .currentPageIndexProperty()
+        .map(Integer.class::cast)
+        .addListener((observable, oldValue, newValue) ->
+            imageList.getSelectionModel().select(newValue)
+        );
+
+    slideView
+        .imageProperty()
+        .bind(imageList
+            .getSelectionModel()
+            .selectedItemProperty()
+            .map(ImageItem::image)
+        );
+    slideView
+        .fitWidthProperty()
+        .bind(viewPaneBox
+            .widthProperty()
+            .subtract(32)
+        );
+}
+
+private void updatePaginationCount() {
+    var size = images.size();
+
+    if (size > 0) {
+        pagination.setVisible(true);
+        pagination.setPageCount(images.size());
+    }
+    else {
+        pagination.setVisible(false);
+        pagination.setPageCount(1);
+    }
+}
+```
+
+<figcaption>
+<p align="center"><strong>Pagination Implementation</strong></p>
+</figcaption>
+
+The pagination has a page count that is set to the size of the images loaded
+into the app via `pagination.setPageCount(images.size())`, and set to `1`
+(default) if there are no items, besides setting it invisible. This is because
+the minimum page count of a `Pagination` can only be `1`, so we have to hide it
+when there are no pages.
+
+Then, this count is updated when the list of images changes.
+
+By default, the first list item is selected, so the app is not empty as long as
+there are images.
+
+When an item of the `ListView` is selected, the property is listened, so it
+updates the `Pagination` index via `pagination.setCurrentPageIndex(newValue)`.
+
+On the other hand, when the `Pagination` changes its index, the selected item in
+the `ListView` is updated via `imageList.getSelectionModel().select
+(newValue)`.
+
+Then, I put a `ImageView` in the view pane to show the selected image in the app
+as a PoC for this feature, but this view will be replaced with a `Group` later,
+to be able to perform the drawings.
+
+The image list and pagination will be in sync, so the app becomes more usable
+with this new control.
