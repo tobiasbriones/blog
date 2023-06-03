@@ -41,5 +41,8 @@ The following images were used to compose some parts shown in the screenshots:
   Includes system icons, and the
   [Scene Builder](https://gluonhq.com/products/scene-builder) logo.
 
+- [Screenshot Slide View Drawing](screenshot-slide-view-drawing.png):
+  Includes [Images from Pixabay](#images-from-pixabay).
+
 - [View Pagination in Sync with List View](view-pagination-in-sync-with-list-view.png):
   Includes [Images from Pixabay](#images-from-pixabay).
