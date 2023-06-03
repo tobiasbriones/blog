@@ -1687,8 +1687,24 @@ public record SlideSize(double width, double height) {
 Since screenshots will not likely be greater than FHD, these predefined
 resolutions will come in handy.
 
-This is for now, the application domain that establishes the main logic to build
-the rest of GUI details.
+In the long run, we'll also need to compile and save the whole presentation, so
+here's a basic configuration that will provide this insight.
+
+`record PresentaionConfig`
+
+```java
+public record PresentationConfig(SlideSize size, Path savePath) {}
+```
+
+<figcaption>
+<p align="center"><strong>Presentation Configuration</strong></p>
+</figcaption>
+
+So, it can be editable from the detail pane. A field for the size (HD, FHD), and
+the path to store the compilations.
+
+All this is for now, the application domain that establishes the main logic to
+build the rest of GUI details.
 
 ### Reusing Enums by Converting Them into English Strings
 
