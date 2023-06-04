@@ -2371,3 +2371,109 @@ controller will be able to persist these changes.
 This view will enable us to add changes to the GUI part of the drawing without
 overwhelming the controller and integrating other logic from the drawing
 package.
+
+#### Updating the Controller with the Drawing View
+
+The controller will handle the recently created view that draws the slides.
+
+This view has a listener, that will be realized into the controller class, that
+is, we add the interface `SlideDrawingView.ChangeListener` to the `class`
+signature, and implement it next.
+
+`class AppController | package ui`
+
+```java
+private final Map<ImageItem, SlideDrawingView.SlideState> changes;
+
+public AppController() {
+    /* ... */
+    this.changes = new HashMap<>();
+}
+
+@FXML
+public void initialize() {
+    /* ... */
+    initSlideDrawingView();
+}
+
+@Override
+public void onSlideChange(SlideDrawingView.SlideState state) {
+    changes.put(state.imageItem(), state);
+}
+
+@Override
+public void setState(ImageItem item) {
+    if (!changes.containsKey(item)) {
+        return;
+    }
+    var state = changes.get(item);
+
+    slideComboBox.setValue(state.slideItem());
+    languageComboBox.setValue(state.language());
+    codeTextArea.setText(state.code());
+    sizeComboBox.setValue(SlideSize.Predefined.from(state.size()));
+}
+
+private void initSlideDrawingView() {
+    slideDrawingView = new SlideDrawingView(slideBox);
+
+    slideDrawingView.init();
+    slideDrawingView
+        .slideProperty()
+        .bind(slideComboBox
+            .valueProperty()
+        );
+    slideDrawingView
+        .imageProperty()
+        .bind(imageList
+            .getSelectionModel()
+            .selectedItemProperty()
+        );
+    slideDrawingView
+        .languageProperty()
+        .bind(languageComboBox
+            .valueProperty()
+        );
+    slideDrawingView
+        .codeProperty()
+        .bind(codeTextArea
+            .textProperty()
+        );
+    slideDrawingView
+        .sizeProperty()
+        .bind(sizeComboBox
+            .valueProperty()
+            .map(SlideSize.Predefined::value)
+        );
+
+    slideDrawingView.setOnChangeListener(this);
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Integration of the Drawing View into the Controller
+</strong>
+</p>
+</figcaption>
+
+As I explained before, we can now see the `Map` that will store the in-memory
+state. This maps a `ImageItem` to a `SlideState`.
+
+When a slide changes, the event is received by `onSlideChange` from
+`SlideDrawingView.ChangeListener`, and the change is trivially stored. From this
+same listener, we receive the `setState` event, which loads the state associated
+with that item, if any.
+
+Then, the initialization of this view is straightforward, like the other
+initializations we've done. Notice that we must call the `init` method from our
+custom
+`SlideDrawingView`
+here, as I said. Then we only have to bind the properties and the change
+listener.
+
+With all this, we now have a full minimal implementation that allows us to draw
+a slide of type screenshot on the view pane, and from now on, we only need to
+extend this framework to add many other functionalities to the app, like the
+others kinds of slides remaining, or more visuals as well.
