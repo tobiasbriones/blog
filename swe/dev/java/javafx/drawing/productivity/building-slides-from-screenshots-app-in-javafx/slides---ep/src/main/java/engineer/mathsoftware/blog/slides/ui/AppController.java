@@ -322,7 +322,6 @@ public class AppController implements
         slideComboBox.setValue(SlideItem.CodeSnippet);
 
         languageComboBox.getItems().addAll(Language.values());
-        languageComboBox.setConverter(new Enums.EnglishConverter<>(Language.class));
         languageComboBox.setValue(Language.Java);
         languageComboBox
             .visibleProperty()
