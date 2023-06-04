@@ -91,12 +91,12 @@ class SlideDrawingView {
         ImageItem oldValue,
         ImageItem newValue
     ) {
-        isStateLoading = true;
-
-        // Avoids rendering while all properties are being set
-        if (l != null) {
-            l.setState(newValue);
+        if (l == null) {
+            return;
         }
+        // Avoids rendering while all properties are being set
+        isStateLoading = true;
+        l.setState(newValue);
         isStateLoading = false;
 
         // Update manually
