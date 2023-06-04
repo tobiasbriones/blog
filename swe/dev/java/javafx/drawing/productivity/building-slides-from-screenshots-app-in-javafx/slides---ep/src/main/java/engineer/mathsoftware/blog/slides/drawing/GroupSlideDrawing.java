@@ -4,6 +4,7 @@
 
 package engineer.mathsoftware.blog.slides.drawing;
 
+import engineer.mathsoftware.blog.slides.Colors;
 import engineer.mathsoftware.blog.slides.Slide;
 import engineer.mathsoftware.blog.slides.SlideSize;
 import javafx.scene.Group;
@@ -35,7 +36,7 @@ public class GroupSlideDrawing implements SlideDrawing {
     @Override
     public void draw(Slide slide) {
         var drawing = switch (slide) {
-            case Slide.CodeShot codeShot -> new Group();
+            case Slide.CodeShot codeShot -> drawCodeShot(codeShot);
             case Slide.CodeSnippet codeSnippet -> new Group();
             case Slide.Screenshot screenshot -> drawScreenshot(screenshot);
         };
@@ -45,8 +46,25 @@ public class GroupSlideDrawing implements SlideDrawing {
     }
 
     private Group drawCodeShot(Slide.CodeShot codeShot) {
-        // TODO
-        return new Group();
+        var group = new Group();
+        var screenshotView = new ImageView();
+        var image = codeShot.image();
+        var lang = codeShot.language();
+        var langColor = Colors.color(lang);
+
+        // Scale so it fits the ScrollPane better
+        group.setScaleX(0.5);
+        group.setScaleY(0.5);
+
+        screenshotView.setSmooth(true);
+        screenshotView.setPreserveRatio(true);
+        fitImageView(screenshotView, image);
+        drawImage(image, screenshotView);
+        centerImageView(screenshotView);
+
+        clear(group, langColor);
+        group.getChildren().add(screenshotView);
+        return group;
     }
 
     private Group drawCodeSnippet(Slide.CodeSnippet codeSnippet) {
