@@ -56,13 +56,8 @@ public class GroupSlideDrawing implements SlideDrawing {
 
     private Group drawScreenshot(Slide.Screenshot screenshot) {
         var group = new Group();
-        var backgroundView = new Rectangle();
         var screenshotView = new ImageView();
         var image = screenshot.image();
-
-        backgroundView.setWidth(size.width());
-        backgroundView.setHeight(size.height());
-        backgroundView.setFill(Color.WHITE);
 
         // Scale so it fits the ScrollPane better
         group.setScaleX(0.5);
@@ -74,8 +69,18 @@ public class GroupSlideDrawing implements SlideDrawing {
         drawImage(image, screenshotView);
         centerImageView(screenshotView);
 
-        group.getChildren().addAll(backgroundView, screenshotView);
+        clear(group, Color.WHITE);
+        group.getChildren().add(screenshotView);
         return group;
+    }
+
+    private void clear(Group group, Color color) {
+        var background = new Rectangle();
+
+        background.setWidth(size.width());
+        background.setHeight(size.height());
+        background.setFill(color);
+        group.getChildren().add(background);
     }
 
     private void centerImageView(ImageView iv) {
