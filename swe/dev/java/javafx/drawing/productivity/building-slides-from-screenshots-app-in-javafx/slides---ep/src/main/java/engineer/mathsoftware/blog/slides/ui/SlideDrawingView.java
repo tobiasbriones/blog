@@ -113,8 +113,14 @@ class SlideDrawingView {
 
         var item = slideProperty.get();
         var slide = switch (item) {
-            case CodeSnippet -> new Slide.CodeSnippet(codeProperty.get());
-            case CodeShot -> new Slide.CodeShot(imageProperty.get().image());
+            case CodeSnippet -> new Slide.CodeSnippet(
+                codeProperty.get(),
+                languageProperty.get()
+            );
+            case CodeShot -> new Slide.CodeShot(
+                imageProperty.get().image(),
+                languageProperty.get()
+            );
             case Screenshot ->
                 new Slide.Screenshot(imageProperty.get().image());
         };
