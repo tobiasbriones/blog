@@ -2201,3 +2201,173 @@ becomes the `ImageView` instead of the original `Image`.
 
 This is the initial implementation of the drawing package that now enables us to
 draw a screenshot slide into the view pane of the application.
+
+### Drawing View
+
+To separate the responsibilities and avoid making the controller a bigger
+coupled object, other classes can take the functions of some views. This will
+allow to integrate the drawing package to the app GUI.
+
+With the current development, I added a class in the `ui` `package` to manage
+the GUI logic for the view pane.
+
+This `class` can be extracted as an abstraction by using an `interface`, but
+it's unnecessary to over-engineer there.
+
+`class SlideDrawingView | package ui`
+
+```java
+class SlideDrawingView {
+    public record SlideState(
+        SlideItem slideItem,
+        ImageItem imageItem,
+        Language language,
+        String code,
+        SlideSize size
+    ) {}
+
+    interface ChangeListener {
+        void onSlideChange(SlideState state);
+
+        void setState(ImageItem item);
+    }
+
+    private final SlideDrawing drawing;
+    private final ObjectProperty<SlideItem> slideProperty;
+    private final ObjectProperty<ImageItem> imageProperty;
+    private final ObjectProperty<Language> languageProperty;
+    private final ObjectProperty<String> codeProperty;
+    private final ObjectProperty<SlideSize> sizeProperty;
+    private ChangeListener l;
+    private boolean isStateLoading;
+
+    SlideDrawingView(HBox view) {
+        this.drawing = new GroupSlideDrawing(view);
+        this.slideProperty = new SimpleObjectProperty<>();
+        this.imageProperty = new SimpleObjectProperty<>();
+        this.languageProperty = new SimpleObjectProperty<>();
+        this.codeProperty = new SimpleObjectProperty<>();
+        this.sizeProperty = new SimpleObjectProperty<>();
+        this.l = null;
+        this.isStateLoading = false;
+    }
+
+    void setOnChangeListener(ChangeListener value) { l = value; }
+
+    ObjectProperty<SlideItem> slideProperty() { return slideProperty; }
+
+    ObjectProperty<ImageItem> imageProperty() { return imageProperty; }
+
+    ObjectProperty<Language> languageProperty() { return languageProperty; }
+
+    ObjectProperty<String> codeProperty() { return codeProperty; }
+
+    ObjectProperty<SlideSize> sizeProperty() { return sizeProperty; }
+
+    void init() {
+        InvalidationListener updateAll = ignore -> updateSlide();
+
+        slideProperty.addListener(updateAll);
+        languageProperty.addListener(updateAll);
+        codeProperty.addListener(updateAll);
+        sizeProperty.addListener(updateAll);
+        imageProperty.addListener(this::onImageChange);
+    }
+
+    private void onImageChange(
+        ObservableValue<? extends ImageItem> observable,
+        ImageItem oldValue,
+        ImageItem newValue
+    ) {
+        isStateLoading = true;
+
+        // Avoids rendering while all properties are being set
+        if (l != null) {
+            l.setState(newValue);
+        }
+        isStateLoading = false;
+
+        // Update manually
+        updateSlide();
+    }
+
+    private void updateSlide() {
+        if (isStateLoading) {
+            return;
+        }
+        if (imageProperty.isNull().get()) {
+            return;
+        }
+
+        var item = slideProperty.get();
+        var slide = switch (item) {
+            case CodeSnippet -> new Slide.CodeSnippet(codeProperty.get());
+            case CodeShot -> new Slide.CodeShot(imageProperty.get().image());
+            case Screenshot ->
+                new Slide.Screenshot(imageProperty.get().image());
+        };
+
+        drawing.setup(sizeProperty.get());
+        drawing.draw(slide);
+
+        if (l != null) {
+            l.onSlideChange(new SlideState(
+                slideProperty.get(),
+                imageProperty.get(),
+                languageProperty.get(),
+                codeProperty.get(),
+                sizeProperty.get()
+            ));
+        }
+    }
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Implementation of "SlideDrawingView"
+</strong>
+</p>
+</figcaption>
+
+I've defined the `SlideState` `record` so **we can save the slide state**.
+Persistence is another feature that will be needed, at least at the memory
+level.
+
+The `ChangeListener` notifies when a slide changes and when the state has to be
+set for a given `ImageItem`. The state of an item (slide) includes all params
+shown in the detail pane, for example.
+
+Next, the GUI properties of this object are defined so we can communicate more
+efficiently between objects.
+
+Most of the time, I add a mandatory `init` method to my custom views to avoid
+*abusing the constructor*.
+
+In `init`, we set the properties to call `updateSlide` whenever they change.
+This is a faster-to-develop approach that is not optimized which is not part of
+my scope now, as I said before.
+
+As a special case, when the image changes, `onImageChange` is called to perform
+a state loading through the `ChangeListener` since the change of an image means
+our slide also changed, so we have to update the state of the new slide visible
+on screen.
+
+I just added a flag `isStateLoading`, to avoid rendering when the state is being
+loaded, to avoid multiple updates in vain when all the properties are being set
+at once.
+
+Finally, to update the slide, we build the `Slide` from its property value and
+use the `SlideDrawing` implementation (`GroupSlideDrawing`) we did before to
+render what has to be rendered.
+
+Recall that `GroupSlideDrawing` has the reference of our `Group` view, so it
+will draw on that node.
+
+Then, `onSlideChange` is triggered through the `ChangeListener`, so the
+controller will be able to persist these changes.
+
+This view will enable us to add changes to the GUI part of the drawing without
+overwhelming the controller and integrating other logic from the drawing
+package.
