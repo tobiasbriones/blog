@@ -37,7 +37,7 @@ public class GroupSlideDrawing implements SlideDrawing {
     public void draw(Slide slide) {
         var drawing = switch (slide) {
             case Slide.CodeShot codeShot -> drawCodeShot(codeShot);
-            case Slide.CodeSnippet codeSnippet -> new Group();
+            case Slide.CodeSnippet codeSnippet -> drawCodeSnippet(codeSnippet);
             case Slide.Screenshot screenshot -> drawScreenshot(screenshot);
         };
 
@@ -97,8 +97,7 @@ public class GroupSlideDrawing implements SlideDrawing {
 
         background.setWidth(size.width());
         background.setHeight(size.height());
-        background.setFill(color);
-        group.getChildren().add(background);
+        clearRect(group, color, background);
     }
 
     private void centerImageView(ImageView iv) {
@@ -143,6 +142,15 @@ public class GroupSlideDrawing implements SlideDrawing {
                 iv.setFitHeight(size.height());
             }
         }
+    }
+
+    private static void clearRect(
+        Group group,
+        Color color,
+        Rectangle background
+    ) {
+        background.setFill(color);
+        group.getChildren().add(background);
     }
 
     private static double getImageCornerRadius(Image image) {
