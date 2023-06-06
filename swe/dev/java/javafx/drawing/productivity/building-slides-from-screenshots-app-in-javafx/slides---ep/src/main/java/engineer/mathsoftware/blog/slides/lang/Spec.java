@@ -87,6 +87,61 @@ public final class Spec {
         }
     }
 
+    public static final class Golang {
+        public enum Keyword {
+            Break,
+            Default,
+            Func,
+            Interface,
+            Select,
+            Case,
+            Defer,
+            Go,
+            Map,
+            Struct,
+            Chan,
+            Else,
+            Goto,
+            Package,
+            Switch,
+            Const,
+            Fallthrough,
+            If,
+            Range,
+            Type,
+            Continue,
+            For,
+            Import,
+            Return,
+            Var
+        }
+    }
+
+    public static final class Haskell {
+        public enum Keyword {
+            Module,
+            Import,
+            Where,
+            If,
+            Then,
+            Else,
+            Case,
+            Data,
+            Type,
+            Deriving,
+            Do,
+            Of,
+            Infix,
+            Infixl,
+            Infixr,
+            Let,
+            Foreign,
+            Export,
+            Qualified,
+            Hiding
+        }
+    }
+
     public static final class Java {
         public enum Keyword {
             Abstract,
