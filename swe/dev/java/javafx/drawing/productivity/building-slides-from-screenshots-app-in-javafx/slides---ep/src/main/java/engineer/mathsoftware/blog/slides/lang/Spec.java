@@ -270,7 +270,8 @@ public final class Spec {
             This,
             Data,
             Inline,
-            Value
+            Value,
+            Fun
         }
     }
 
