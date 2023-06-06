@@ -198,7 +198,8 @@ public final class Spec {
             Try,
             Void,
             Volatile,
-            While
+            While,
+            Var
         }
     }
 
