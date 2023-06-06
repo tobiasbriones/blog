@@ -8,17 +8,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Parser<K extends Enum<?>> {
     public static List<String> tokens(String code) {
-        var delimiters = List.of("\n", " ");
+        var delimiters = List.of("\n", " ", ";", "=", "+", "-", "*", "/");
         var delimiterPattern = delimiters
             .stream()
             .map(delimiter -> "\\" + delimiter)
-            .reduce((a, b) ->
-                "(?<=" + a + ")" + "|" + "(?<=" + b + ")"
-            )
-            .orElse("");
+            .collect(Collectors.joining("|", "(?=", ")"));
         return List.of(code.split(delimiterPattern));
     }
 
