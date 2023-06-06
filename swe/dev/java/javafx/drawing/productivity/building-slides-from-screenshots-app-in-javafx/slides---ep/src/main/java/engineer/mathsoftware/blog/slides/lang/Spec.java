@@ -270,5 +270,31 @@ public final class Spec {
         }
     }
 
+    public static final class Purescript {
+        public enum Keyword {
+            Case,
+            Class,
+            Data,
+            Deriving,
+            Do,
+            Else,
+            False,
+            For,
+            If,
+            Import,
+            In,
+            Instance,
+            Let,
+            Module,
+            Newtype,
+            Of,
+            Then,
+            True,
+            Type,
+            Where,
+            Wildcard
+        }
+    }
+
     private Spec() {}
 }
