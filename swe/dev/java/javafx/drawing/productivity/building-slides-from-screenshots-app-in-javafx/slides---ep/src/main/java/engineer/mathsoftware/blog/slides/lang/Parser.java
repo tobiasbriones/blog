@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class Parser {
+public class Parser<K extends Enum<?>> {
     public static List<String> tokens(String code) {
         var delimiters = List.of("\n", " ");
         var delimiterPattern = delimiters
@@ -22,10 +22,10 @@ public class Parser {
         return List.of(code.split(delimiterPattern));
     }
 
-    private final Map<String, Spec.Keyword> keywordMap;
+    private final Map<String, K> keywordMap;
 
-    {
-        var keywords = Spec.Keyword.values();
+    public Parser(Class<K> keywordType){
+        var keywords = keywordType.getEnumConstants();
         keywordMap = new HashMap<>(keywords.length);
 
         for (var keyword : keywords) {
