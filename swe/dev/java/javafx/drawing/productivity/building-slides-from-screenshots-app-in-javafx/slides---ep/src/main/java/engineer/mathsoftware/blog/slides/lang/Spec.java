@@ -296,5 +296,40 @@ public final class Spec {
         }
     }
 
+    public static final class Python {
+        public enum Keyword {
+            And,
+            As,
+            Assert,
+            Break,
+            Class,
+            Continue,
+            Def,
+            Del,
+            Elif,
+            Else,
+            Except,
+            Finally,
+            For,
+            From,
+            Global,
+            If,
+            Import,
+            In,
+            Is,
+            Lambda,
+            None,
+            Nonlocal,
+            Not,
+            Or,
+            Pass,
+            Raise,
+            Return,
+            Try,
+            While,
+            With,
+            Yield
+        }
+    }
     private Spec() {}
 }
