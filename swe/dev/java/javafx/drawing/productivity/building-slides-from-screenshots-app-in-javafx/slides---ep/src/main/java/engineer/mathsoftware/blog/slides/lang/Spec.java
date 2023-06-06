@@ -271,7 +271,8 @@ public final class Spec {
             Data,
             Inline,
             Value,
-            Fun
+            Fun,
+            Infix
         }
     }
 
