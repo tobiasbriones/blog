@@ -331,5 +331,47 @@ public final class Spec {
             Yield
         }
     }
+
+    public static final class Rust {
+        public enum Keyword {
+            As,
+            Async,
+            Await,
+            Break,
+            Const,
+            Continue,
+            Crate,
+            Dyn,
+            Else,
+            Enum,
+            Extern,
+            False,
+            Fn,
+            For,
+            If,
+            Impl,
+            In,
+            Let,
+            Loop,
+            Match,
+            Mod,
+            Move,
+            Mut,
+            Pub,
+            Return,
+            Self,
+            Static,
+            Struct,
+            Super,
+            Trait,
+            True,
+            Type,
+            Unsafe,
+            Use,
+            Where,
+            While
+        }
+    }
+
     private Spec() {}
 }
