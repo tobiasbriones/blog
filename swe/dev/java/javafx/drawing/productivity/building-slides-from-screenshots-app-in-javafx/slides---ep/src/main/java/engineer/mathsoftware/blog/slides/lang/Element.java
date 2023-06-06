@@ -11,6 +11,8 @@ public sealed interface Element {
 
     record Number(String value) implements Element {}
 
+    record StringLiteral(String value) implements Element {}
+
     record Other(String value) implements Element {}
 
     record TokenParsing(Element element) {}
