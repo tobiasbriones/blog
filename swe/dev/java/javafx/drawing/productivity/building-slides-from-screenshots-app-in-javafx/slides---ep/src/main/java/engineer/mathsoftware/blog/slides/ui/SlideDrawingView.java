@@ -84,6 +84,7 @@ class SlideDrawingView {
         codeProperty.addListener(updateAll);
         sizeProperty.addListener(updateAll);
         imageProperty.addListener(this::onImageChange);
+        updateSlide();
     }
 
     private void onImageChange(
