@@ -8,13 +8,14 @@ import engineer.mathsoftware.blog.slides.Colors;
 import engineer.mathsoftware.blog.slides.Slide;
 import engineer.mathsoftware.blog.slides.SlideSize;
 import javafx.scene.Group;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+
+import static engineer.mathsoftware.blog.slides.drawing.Drawings.*;
 
 public class GroupSlideDrawing implements SlideDrawing {
     private final HBox view;
@@ -142,42 +143,5 @@ public class GroupSlideDrawing implements SlideDrawing {
                 iv.setFitHeight(size.height());
             }
         }
-    }
-
-    private static void clearRect(
-        Group group,
-        Color color,
-        Rectangle background
-    ) {
-        background.setFill(color);
-        group.getChildren().add(background);
-    }
-
-    private static double getImageCornerRadius(Image image) {
-        var minDim = Math.min(image.getWidth(), image.getHeight());
-        var unitDim = 48.0;
-        var unitArc = 16.0 / 4.0;
-        var proportion = minDim / unitDim;
-        return proportion >= 1.0 ? proportion * unitArc : unitArc * 4.0;
-    }
-
-    private static Image getRoundedImage(Image image, ImageView iv, double arc) {
-        var clip = new Rectangle();
-        var params = new SnapshotParameters();
-
-        params.setFill(Color.TRANSPARENT);
-
-        clip.setWidth(iv.getFitWidth());
-        clip.setHeight(iv.getFitHeight());
-        clip.setArcWidth(arc);
-        clip.setArcHeight(arc);
-
-        iv.setImage(image);
-        iv.setClip(clip);
-
-        var roundedImage = iv.snapshot(params, null);
-
-        iv.setClip(null);
-        return roundedImage;
     }
 }
