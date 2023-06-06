@@ -4,6 +4,8 @@
 
 package engineer.mathsoftware.blog.slides.lang;
 
+import engineer.mathsoftware.blog.slides.Language;
+
 public final class Spec {
 
     public static final class CSharp {
@@ -486,6 +488,24 @@ public final class Spec {
             With,
             Yield
         }
+    }
+
+    public static Class<? extends Enum<?>> keywordTypeOf(Language language) {
+        return switch (language) {
+            case CSharp -> CSharp.Keyword.class;
+            case CSS -> null;
+            case Golang -> Golang.Keyword.class;
+            case Haskell -> Haskell.Keyword.class;
+            case HTML -> null;
+            case Java -> Java.Keyword.class;
+            case JavaScript -> JavaScript.Keyword.class;
+            case Kotlin -> Kotlin.Keyword.class;
+            case Lean -> Lean.Keyword.class;
+            case PureScript -> Purescript.Keyword.class;
+            case Python -> Python.Keyword.class;
+            case Rust -> Rust.Keyword.class;
+            case TypeScript -> TypeScript.Keyword.class;
+        };
     }
 
     private Spec() {}
