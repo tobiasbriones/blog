@@ -142,6 +142,77 @@ public final class Spec {
         }
     }
 
+    public static final class JavaScript {
+        public enum Keyword {
+            Var,
+            Let,
+            Const,
+            If,
+            Else,
+            Switch,
+            Case,
+            Default,
+            Function,
+            Class,
+            Enum,
+            Import,
+            Export,
+            Extends,
+            Try,
+            Catch,
+            Finally,
+            Throw,
+            New,
+            Return,
+            This,
+            Typeof,
+            Instanceof,
+            Delete,
+            Void,
+            While,
+            Do,
+            For,
+            Break,
+            Continue,
+            Debugger
+        }
+    }
+
+    public static final class Kotlin {
+        public enum Keyword {
+            Package,
+            Import,
+            Class,
+            Interface,
+            Enum,
+            If,
+            Else,
+            When,
+            Try,
+            Catch,
+            Finally,
+            For,
+            While,
+            Do,
+            Break,
+            Continue,
+            Return,
+            As,
+            Is,
+            Throw,
+            In,
+            Out,
+            Var,
+            Val,
+            By,
+            Super,
+            This,
+            Data,
+            Inline,
+            Value
+        }
+    }
+
     public static final class Java {
         public enum Keyword {
             Abstract,
