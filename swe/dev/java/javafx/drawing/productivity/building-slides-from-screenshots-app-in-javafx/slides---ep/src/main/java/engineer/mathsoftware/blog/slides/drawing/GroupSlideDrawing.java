@@ -69,8 +69,13 @@ public class GroupSlideDrawing implements SlideDrawing {
     }
 
     private Group drawCodeSnippet(Slide.CodeSnippet codeSnippet) {
-        // TODO
-        return new Group();
+        var drawing = new CodeSnippetDrawing(size);
+        var group = drawing.draw(codeSnippet);
+
+        // Scale so it fits the ScrollPane better
+        group.setScaleX(0.5);
+        group.setScaleY(0.5);
+        return group;
     }
 
     private Group drawScreenshot(Slide.Screenshot screenshot) {
