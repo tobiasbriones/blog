@@ -10,6 +10,14 @@ import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 
 public final class Enums {
+    public interface ToEnum<T extends Enum<T>> {
+        Class<T> enumType();
+
+        default T toEnum() {
+            return Enum.valueOf(enumType(), getClass().getSimpleName());
+        }
+    }
+
     public static final class EnglishConverter<T extends Enum<T>> extends StringConverter<T> {
         private static final Pattern PATTERN = Pattern
             .compile("([A-Z]+[a-z]*)");
