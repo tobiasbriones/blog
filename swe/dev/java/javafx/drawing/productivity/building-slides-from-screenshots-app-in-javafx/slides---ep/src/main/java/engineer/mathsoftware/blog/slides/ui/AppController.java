@@ -356,7 +356,6 @@ public class AppController implements
     private void initSlideDrawingView() {
         slideDrawingView = new SlideDrawingView(slideBox);
 
-        slideDrawingView.init();
         slideDrawingView
             .slideProperty()
             .bind(slideComboBox
@@ -386,6 +385,7 @@ public class AppController implements
             );
 
         slideDrawingView.setOnChangeListener(this);
+        slideDrawingView.init();
     }
 
     private void showDeleteAllAlert() {
