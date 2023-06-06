@@ -5,6 +5,7 @@
 package engineer.mathsoftware.blog.slides.lang;
 
 public final class Spec {
+
     public static final class CSharp {
         public enum Keyword {
             Abstract,
@@ -267,6 +268,43 @@ public final class Spec {
             Data,
             Inline,
             Value
+        }
+    }
+
+    public static final class Lean {
+        public enum Keyword {
+            Definition,
+            Import,
+            Variable,
+            In,
+            Let,
+            From,
+            Show,
+            Assume,
+            By,
+            Fun,
+            Pi,
+            Sigma,
+            Type,
+            And,
+            Or,
+            Not,
+            Impl,
+            Eq,
+            Forall,
+            Exists,
+            Match,
+            Where,
+            Attributes,
+            Instance,
+            Private,
+            Protected,
+            Intro,
+            Refl,
+            Symm,
+            Congr,
+            Simp,
+            Conv
         }
     }
 
