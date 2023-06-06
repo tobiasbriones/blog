@@ -4,7 +4,9 @@
 
 package engineer.mathsoftware.blog.slides.lang;
 
-public sealed interface Element {
+import engineer.mathsoftware.blog.slides.Enums;
+
+public sealed interface Element extends Enums.ToEnum<ElementItem> {
     record Keyword(String value) implements Element {}
 
     record Symbol(String value) implements Element {}
@@ -18,4 +20,9 @@ public sealed interface Element {
     record TokenParsing(Element element) {}
 
     String value();
+
+    @Override
+    default Class<ElementItem> enumType() {
+        return ElementItem.class;
+    }
 }
