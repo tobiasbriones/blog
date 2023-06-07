@@ -7,6 +7,7 @@ package engineer.mathsoftware.blog.slides.lang;
 public enum ElementItem {
     Keyword,
     Symbol,
+    Type,
     Number,
     StringLiteral,
     Comment,

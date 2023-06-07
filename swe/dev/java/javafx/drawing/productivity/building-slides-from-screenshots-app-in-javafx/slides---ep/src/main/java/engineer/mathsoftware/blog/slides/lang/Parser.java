@@ -13,6 +13,13 @@ public class Parser<K extends Enum<?>> {
         .compile("(['\"])([^'\"]*)(['\"])");
     private static final Pattern SINGLE_LINE_COMMENT_PATTERN = Pattern
         .compile("(//)(.*)(\\r\\n|\\r|\\n)");
+    private static final String PASCAL_CASE_GROUP_REGEX
+        = "([A-Z]+[a-z0-9]*)+";
+    private static final Pattern PASCAL_CASE_TYPE_PATTERN = Pattern
+        .compile("([ (.,:]{1}|:{2}|::)"
+            + PASCAL_CASE_GROUP_REGEX
+            + "([ (.,:\\[]{1}|:{2}|::)"
+        );
 
     public static List<String> tokens(String code) {
         var delimiters = List.of(
@@ -30,7 +37,9 @@ public class Parser<K extends Enum<?>> {
             "(",
             ")",
             "<",
-            ">"
+            ">",
+            "[",
+            "]"
         );
         var afterStrings = tokensEnclosedBy(STRING_PATTERN, code);
         var delimiterPatterns = delimiters
@@ -46,15 +55,33 @@ public class Parser<K extends Enum<?>> {
                 afterComments.add(token);
                 continue;
             }
-            afterComments.addAll(tokensEnclosedBy(SINGLE_LINE_COMMENT_PATTERN, token));
+            afterComments.addAll(tokensEnclosedBy(SINGLE_LINE_COMMENT_PATTERN,
+                token
+            ));
         }
 
-        var result = new ArrayList<String>();
+        var afterTypes = new ArrayList<String>();
 
         for (var token : afterComments) {
             if (
                 STRING_PATTERN.matcher(token).find()
                     || SINGLE_LINE_COMMENT_PATTERN.matcher(token).find()
+            ) {
+                afterTypes.add(token);
+                continue;
+            }
+            afterTypes.addAll(tokensSurroundedBy(PASCAL_CASE_TYPE_PATTERN,
+                token
+            ));
+        }
+
+        var result = new ArrayList<String>();
+
+        for (var token : afterTypes) {
+            if (
+                STRING_PATTERN.matcher(token).find()
+                    || SINGLE_LINE_COMMENT_PATTERN.matcher(token).find()
+                    || token.matches(PASCAL_CASE_GROUP_REGEX)
             ) {
                 result.add(token);
                 continue;
@@ -85,6 +112,9 @@ public class Parser<K extends Enum<?>> {
         if (token.startsWith("//")) {
             return new Element.TokenParsing(new Element.Comment(value));
         }
+        if (token.matches(PASCAL_CASE_GROUP_REGEX)) {
+            return new Element.TokenParsing(new Element.Type(value));
+        }
         if (keywordMap.containsKey(token)) {
             return new Element.TokenParsing(new Element.Keyword(value));
         }
@@ -114,6 +144,32 @@ public class Parser<K extends Enum<?>> {
 
             result.add(code.substring(lastIndex, startIndex));
             result.add(delimiter1 + matchedString + delimiter2);
+
+            lastIndex = endIndex;
+        }
+        result.add(code.substring(lastIndex));
+        return result;
+    }
+
+    private static ArrayList<String> tokensSurroundedBy(
+        Pattern pattern,
+        String code
+    ) {
+        var matcher = pattern.matcher(code);
+        var result = new ArrayList<String>();
+        int lastIndex = 0;
+
+        while (matcher.find()) {
+            var startIndex = matcher.start();
+            var endIndex = matcher.end();
+
+            result.add(code.substring(lastIndex, startIndex));
+
+            for (int i = 1; i <= matcher.groupCount(); i++) {
+                var matched = matcher.group(i);
+
+                result.add(matched);
+            }
 
             lastIndex = endIndex;
         }

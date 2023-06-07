@@ -14,7 +14,7 @@ public final class SchemeColors {
             case Number -> Color.web("#0288d1");
             case StringLiteral -> Color.web("#558b2f");
             case Comment -> Color.web("#757575");
-            case Other -> Color.WHITE;
+            case Type, Other -> Color.web("#e0e0e0");
         };
     }
 

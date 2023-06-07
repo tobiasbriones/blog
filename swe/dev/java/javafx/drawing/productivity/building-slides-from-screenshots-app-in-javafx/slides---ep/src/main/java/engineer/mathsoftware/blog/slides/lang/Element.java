@@ -11,6 +11,8 @@ public sealed interface Element extends Enums.ToEnum<ElementItem> {
 
     record Symbol(String value) implements Element {}
 
+    record Type(String value) implements Element {}
+
     record Number(String value) implements Element {}
 
     record StringLiteral(String value) implements Element {}

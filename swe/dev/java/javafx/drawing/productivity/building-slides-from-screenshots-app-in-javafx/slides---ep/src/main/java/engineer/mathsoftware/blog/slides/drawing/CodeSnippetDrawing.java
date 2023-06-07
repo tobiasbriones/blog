@@ -8,6 +8,7 @@ import engineer.mathsoftware.blog.slides.Colors;
 import engineer.mathsoftware.blog.slides.Language;
 import engineer.mathsoftware.blog.slides.Slide;
 import engineer.mathsoftware.blog.slides.SlideSize;
+import engineer.mathsoftware.blog.slides.lang.ElementItem;
 import engineer.mathsoftware.blog.slides.lang.Parser;
 import engineer.mathsoftware.blog.slides.lang.SchemeColors;
 import engineer.mathsoftware.blog.slides.lang.Spec;
@@ -16,6 +17,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -103,6 +105,7 @@ class CodeSnippetDrawing {
     private void renderCodeSnippetFlow(String code, Language lang) {
         var parser = new Parser<>(Spec.keywordTypeOf(lang));
         var font = Font.font("JetBrains Mono", textSize);
+        var boldFont = Font.font(font.getFamily(), FontWeight.BOLD, font.getSize());
 
         Parser
             .tokens(code)
@@ -112,9 +115,10 @@ class CodeSnippetDrawing {
                 var text = new Text();
                 var el = parsing.element();
 
-                text.setFont(font);
                 text.setText(el.value());
                 text.setFill(SchemeColors.color(el));
+                text.setFont(el.toEnum() == ElementItem.Type ? boldFont : font);
+
                 flow.getChildren().add(text);
             });
 
