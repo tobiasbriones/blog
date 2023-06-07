@@ -26,7 +26,9 @@ public class Parser<K extends Enum<?>> {
             "/",
             ",",
             ":",
-            "?"
+            "?",
+            "(",
+            ")"
         );
         var afterStrings = tokensEnclosedBy(STRING_PATTERN, code);
         var delimiterPattern = delimiters
