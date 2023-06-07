@@ -4,8 +4,10 @@
 
 package engineer.mathsoftware.blog.slides.data;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 
+import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,6 +19,15 @@ public class LocalDataRepository implements DataRepository {
 
     public LocalDataRepository(String root) {
         this.root = root;
+    }
+
+    @Override
+    public void createOrUpdateImage(ImageItem item) throws IOException {
+        requireLocalStorage();
+
+        var path = pathOf(item.filename());
+        var renderedImage = SwingFXUtils.fromFXImage(item.image(), null);
+        ImageIO.write(renderedImage, "png", path.toFile());
     }
 
     @Override

@@ -11,6 +11,8 @@ import java.nio.file.Path;
 import java.util.List;
 
 public interface DataRepository {
+    void createOrUpdateImage(ImageItem item) throws IOException;
+
     void createOrUpdateImage(Path imagePath) throws IOException;
 
     void createImage(Path imagePath) throws IOException;
