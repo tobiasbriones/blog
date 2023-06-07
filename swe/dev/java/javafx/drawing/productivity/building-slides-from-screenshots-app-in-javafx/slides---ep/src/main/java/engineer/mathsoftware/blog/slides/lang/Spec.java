@@ -199,7 +199,8 @@ public final class Spec {
             Void,
             Volatile,
             While,
-            Var
+            Var,
+            Null
         }
     }
 
