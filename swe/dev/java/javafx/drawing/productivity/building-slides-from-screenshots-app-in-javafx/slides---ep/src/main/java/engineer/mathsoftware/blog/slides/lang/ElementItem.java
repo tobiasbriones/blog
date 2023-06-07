@@ -9,5 +9,6 @@ public enum ElementItem {
     Symbol,
     Number,
     StringLiteral,
+    Comment,
     Other
 }

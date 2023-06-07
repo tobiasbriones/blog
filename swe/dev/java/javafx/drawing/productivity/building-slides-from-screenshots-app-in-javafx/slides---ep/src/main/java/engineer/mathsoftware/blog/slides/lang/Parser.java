@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 public class Parser<K extends Enum<?>> {
     private static final Pattern STRING_PATTERN = Pattern
         .compile("(?s)(['\"])([^'\"]*)(['\"])");
+    private static final Pattern SINGLE_LINE_COMMENT_PATTERN = Pattern
+        .compile("(//)(.*)(\\r\\n|\\r|\\n)");
 
     public static List<String> tokens(String code) {
         var delimiters = List.of(
@@ -26,15 +28,28 @@ public class Parser<K extends Enum<?>> {
             ":",
             "?"
         );
-        var afterStrings = tokensByStrings(code);
+        var afterStrings = tokensEnclosedBy(STRING_PATTERN, code);
         var delimiterPattern = delimiters
             .stream()
             .map(delimiter -> "\\" + delimiter)
             .collect(Collectors.joining("|", "(?=", ")"));
-        var result = new ArrayList<String>();
+        var afterComments = new ArrayList<String>();
 
         for (var token : afterStrings) {
             if (STRING_PATTERN.matcher(token).find()) {
+                afterComments.add(token);
+                continue;
+            }
+            afterComments.addAll(tokensEnclosedBy(SINGLE_LINE_COMMENT_PATTERN, token));
+        }
+
+        var result = new ArrayList<String>();
+
+        for (var token : afterComments) {
+            if (
+                STRING_PATTERN.matcher(token).find()
+                    || SINGLE_LINE_COMMENT_PATTERN.matcher(token).find()
+            ) {
                 result.add(token);
                 continue;
             }
@@ -61,6 +76,9 @@ public class Parser<K extends Enum<?>> {
         if (STRING_PATTERN.matcher(token).find()) {
             return new Element.TokenParsing(new Element.StringLiteral(value));
         }
+        if (token.startsWith("//")) {
+            return new Element.TokenParsing(new Element.Comment(value));
+        }
         if (keywordMap.containsKey(token)) {
             return new Element.TokenParsing(new Element.Keyword(value));
         }
@@ -73,8 +91,11 @@ public class Parser<K extends Enum<?>> {
         return new Element.TokenParsing(new Element.Other(value));
     }
 
-    private static ArrayList<String> tokensByStrings(String code) {
-        var matcher = STRING_PATTERN.matcher(code);
+    private static ArrayList<String> tokensEnclosedBy(
+        Pattern pattern,
+        String code
+    ) {
+        var matcher = pattern.matcher(code);
         var result = new ArrayList<String>();
         int lastIndex = 0;
 

@@ -15,6 +15,8 @@ public sealed interface Element extends Enums.ToEnum<ElementItem> {
 
     record StringLiteral(String value) implements Element {}
 
+    record Comment(String value) implements Element {}
+
     record Other(String value) implements Element {}
 
     record TokenParsing(Element element) {}
