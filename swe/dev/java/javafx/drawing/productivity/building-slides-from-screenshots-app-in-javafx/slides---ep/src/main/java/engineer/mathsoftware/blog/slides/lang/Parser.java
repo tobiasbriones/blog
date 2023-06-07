@@ -31,10 +31,12 @@ public class Parser<K extends Enum<?>> {
             ")"
         );
         var afterStrings = tokensEnclosedBy(STRING_PATTERN, code);
-        var delimiterPattern = delimiters
+        var delimiterPatterns = delimiters
             .stream()
             .map(delimiter -> "\\" + delimiter)
-            .collect(Collectors.joining("|", "(?=", ")"));
+            .collect(Collectors.joining("|"));
+        var delimiterPattern
+            = "(?<=" + delimiterPatterns + ")|(?=" + delimiterPatterns + ")";
         var afterComments = new ArrayList<String>();
 
         for (var token : afterStrings) {
