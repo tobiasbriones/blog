@@ -53,6 +53,8 @@ public class AppController implements
     @FXML
     private Button addButton;
     @FXML
+    private Button newButton;
+    @FXML
     private Label statusLabel;
     @FXML
     private ListView<ImageItem> imageList;
@@ -86,6 +88,7 @@ public class AppController implements
         imageList.setItems(images);
 
         initAddButton();
+        initNewButton();
         loadImageList();
 
         initMasterView();
@@ -134,6 +137,20 @@ public class AppController implements
     @FXML
     private void onAddButtonAction() {
         openFileViaFileChooser();
+    }
+
+    @FXML
+    private void onNewButtonAction() {
+        var dialog = new TextInputDialog();
+
+        dialog.setTitle("Slide Name");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Enter the slide name:");
+
+        dialog
+            .showAndWait()
+            .filter(x -> !x.isBlank())
+            .ifPresent(this::createNewSlide);
     }
 
     @FXML
@@ -235,6 +252,23 @@ public class AppController implements
         }
     }
 
+    private void createNewSlide(String name) {
+        var newImage = new Image(Objects.requireNonNull(
+            getClass().getClassLoader().getResourceAsStream("app-512x512.png")
+        ));
+        var newItem = new ImageItem(name + ".png", newImage);
+
+        try {
+            repository.createOrUpdateImage(newItem);
+            images.remove(newItem);
+            images.add(newItem);
+            setStatus("New slide created");
+        }
+        catch (IOException e) {
+            handleError(e);
+        }
+    }
+
     private void openFileViaFileChooser() {
         var chooser = new FileChooser();
 
@@ -286,6 +320,19 @@ public class AppController implements
         addImageView.setFitWidth(18.0);
         addImageView.setFitHeight(18.0);
         addButton.setGraphic(addImageView);
+    }
+
+    private void initNewButton() {
+        var icNew = new Image(
+            Objects.requireNonNull(
+                getClass().getResourceAsStream("/ic_new.png")
+            )
+        );
+        var newImageView = new ImageView(icNew);
+
+        newImageView.setFitWidth(18.0);
+        newImageView.setFitHeight(18.0);
+        newButton.setGraphic(newImageView);
     }
 
     private void initMasterView() {

@@ -55,9 +55,10 @@
                                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
                                     </textFill>
                                 </Label>
-                                <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="190.0">
+                                <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="190.0" spacing="16.0">
                                     <children>
                                         <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAddButtonAction" text="ADD" />
+                              <Button fx:id="newButton" mnemonicParsing="false" onAction="#onNewButtonAction" text="NEW" />
                                         <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                                             <children>
                                                 <Button mnemonicParsing="false" onAction="#onClearButtonAction" text="CLEAR" textFill="#b00020" />
