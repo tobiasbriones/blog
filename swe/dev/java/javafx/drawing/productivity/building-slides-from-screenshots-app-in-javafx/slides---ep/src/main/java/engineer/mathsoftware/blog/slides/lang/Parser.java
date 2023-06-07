@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class Parser<K extends Enum<?>> {
     private static final Pattern STRING_PATTERN = Pattern
-        .compile("(?s)(['\"])([^'\"]*)(['\"])");
+        .compile("(['\"])([^'\"]*)(['\"])");
     private static final Pattern SINGLE_LINE_COMMENT_PATTERN = Pattern
         .compile("(//)(.*)(\\r\\n|\\r|\\n)");
 
