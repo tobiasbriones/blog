@@ -28,7 +28,9 @@ public class Parser<K extends Enum<?>> {
             ":",
             "?",
             "(",
-            ")"
+            ")",
+            "<",
+            ">"
         );
         var afterStrings = tokensEnclosedBy(STRING_PATTERN, code);
         var delimiterPatterns = delimiters
@@ -86,7 +88,7 @@ public class Parser<K extends Enum<?>> {
         if (keywordMap.containsKey(token)) {
             return new Element.TokenParsing(new Element.Keyword(value));
         }
-        if (token.matches("[,=+\\-*/;&|?:!]+")) {
+        if (token.matches("[,=+\\-*/;&|?:!<>]+")) {
             return new Element.TokenParsing(new Element.Symbol(value));
         }
         if (token.matches("-?\\d+(\\.\\d+)?")) {
