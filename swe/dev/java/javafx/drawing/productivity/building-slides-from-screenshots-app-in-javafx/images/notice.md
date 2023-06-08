@@ -46,6 +46,9 @@ The following images were used to compose some parts shown in the screenshots:
 - [New Button for Empty Slides](new-button-for-empty-slides.png): Includes
   [Images from Pixabay](#images-from-pixabay).
 
+- [New Slide Created](new-slide-created.png): Includes
+  [Images from Pixabay](#images-from-pixabay).
+
 - [ListView Drag and Drop Animation](listview-drag-and-drop-animation.gif):
   Includes [Images from Pixabay](#images-from-pixabay).
 
