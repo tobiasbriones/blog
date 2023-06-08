@@ -97,30 +97,37 @@
                 <AnchorPane>
                     <children>
                         <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <VBox alignment="TOP_CENTER" spacing="8.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="56.0">
-                     <children>
-                        <Label styleClass="title" text="Slide" />
-                        <ComboBox fx:id="slideComboBox" prefWidth="150.0" promptText="Slide" />
-                        <ComboBox fx:id="languageComboBox" prefWidth="150.0" promptText="Language" />
-                        <Label styleClass="title" text="Config" />
-                        <ComboBox fx:id="sizeComboBox" prefWidth="150.0" />
-                        <TextField fx:id="saveField" editable="false" />
-                        <VBox fx:id="codeSnippetBox" alignment="TOP_CENTER" spacing="8.0">
+                  <ScrollPane fitToWidth="true" layoutX="16.0" layoutY="56.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="56.0">
+                     <content>
+                        <VBox alignment="TOP_CENTER" spacing="8.0">
                            <children>
-                              <Label styleClass="title" text="Code" />
-                              <TextArea fx:id="codeTextArea" VBox.vgrow="ALWAYS" />
+                              <Label styleClass="title" text="Slide" />
+                              <ComboBox fx:id="slideComboBox" prefWidth="150.0" promptText="Slide" />
+                              <ComboBox fx:id="languageComboBox" prefWidth="150.0" promptText="Language" />
+                              <Label styleClass="title" text="Config" />
+                              <ComboBox fx:id="sizeComboBox" prefWidth="150.0" />
+                              <TextField fx:id="saveField" editable="false" />
+                              <VBox fx:id="codeSnippetBox" alignment="TOP_CENTER" spacing="8.0">
+                                 <children>
+                                    <Label styleClass="title" text="Code" />
+                                    <TextArea fx:id="codeTextArea" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                              <Label styleClass="title" text="Caption" />
+                              <CheckBox fx:id="captionCheckBox" mnemonicParsing="false" text="Caption" />
+                              <VBox fx:id="captionBox" spacing="16.0">
+                                 <children>
+                                    <TextArea fx:id="captionTitleArea" prefHeight="64.0" promptText="Title" />
+                                    <TextArea fx:id="captionSubTitleArea" prefHeight="64.0" promptText="SubTitle/Description" />
+                                 </children>
+                              </VBox>
                            </children>
                         </VBox>
-                        <Label styleClass="title" text="Caption" />
-                        <CheckBox fx:id="captionCheckBox" mnemonicParsing="false" text="Caption" />
-                        <VBox fx:id="captionBox" spacing="16.0">
-                           <children>
-                              <TextArea fx:id="captionTitleArea" prefHeight="64.0" promptText="Title" />
-                              <TextArea fx:id="captionSubTitleArea" prefHeight="64.0" promptText="SubTitle/Description" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </VBox>
+                     </content>
+                     <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" />
+                     </padding>
+                  </ScrollPane>
                     </children>
                 </AnchorPane>
             </items>
