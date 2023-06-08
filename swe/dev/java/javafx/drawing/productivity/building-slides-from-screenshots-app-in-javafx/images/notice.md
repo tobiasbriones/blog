@@ -13,6 +13,9 @@ The following images were used to compose some parts shown in the screenshots:
 - [Clear All](clear-all.png): Includes
   [Images from Pixabay](#images-from-pixabay), and system icons.
 
+- [Code Snippet Slide](code-snippet-slide.png): Includes
+  [Images from Pixabay](#images-from-pixabay), and system icons.
+
 - [Delete Item](delete-item.png): Includes
   [Images from Pixabay](#images-from-pixabay), and system icons.
 
