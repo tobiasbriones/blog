@@ -16,6 +16,9 @@ The following images were used to compose some parts shown in the screenshots:
 - [Code Snippet Slide](code-snippet-slide.png): Includes
   [Images from Pixabay](#images-from-pixabay), and system icons.
 
+- [Code Snippet Slide for Many Languages](code-snippet-slide-for-many-languages.png):
+  Includes [Images from Pixabay](#images-from-pixabay), and system icons.
+
 - [Delete Item](delete-item.png): Includes
   [Images from Pixabay](#images-from-pixabay), and system icons.
 
