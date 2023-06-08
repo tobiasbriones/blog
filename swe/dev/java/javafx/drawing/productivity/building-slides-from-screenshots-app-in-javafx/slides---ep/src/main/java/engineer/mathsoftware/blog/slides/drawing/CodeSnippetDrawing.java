@@ -22,10 +22,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
+import javafx.scene.text.*;
 
 import static engineer.mathsoftware.blog.slides.drawing.Drawings.clearRect;
 
@@ -64,10 +61,7 @@ class CodeSnippetDrawing {
             case HD -> 1.0;
             case FHD -> 1.5;
         };
-        this.arc = 48.0 * switch (sizeItem) {
-            case HD -> 1.0;
-            case FHD -> 2.0;
-        };
+        this.arc = 48.0;
     }
 
     Group draw(Slide.CodeSnippet codeSnippet) {
@@ -152,11 +146,12 @@ class CodeSnippetDrawing {
         var titleLabel = new Label();
         var subTitleLabel = new Label();
         var shadow = newShadow();
-        var font = Font.font("Poppins", textSize);
+        var font = Font.font("Poppins", 24.0);
+        var captionArc = arc * 2.0;
         var boldFont = Font.font(
             font.getFamily(),
-            FontWeight.BOLD,
-            font.getSize()
+            FontWeight.EXTRA_BOLD,
+            36.0
         );
 
         captionBox.setAlignment(Pos.CENTER);
@@ -180,13 +175,16 @@ class CodeSnippetDrawing {
         titleLabel.setText(caption.title());
         titleLabel.setTextFill(Color.web("#e0e0e0"));
         titleLabel.setFont(boldFont);
+        titleLabel.setTextAlignment(TextAlignment.CENTER);
         captionBox.getChildren().add(titleLabel);
 
         if (!caption.subtitle().isBlank()) {
             subTitleLabel.setText(caption.subtitle());
             subTitleLabel.setTextFill(Color.web("#e0e0e0"));
             subTitleLabel.setFont(font);
+            subTitleLabel.setTextAlignment(TextAlignment.CENTER);
             captionBox.getChildren().add(subTitleLabel);
+            captionArc *= 2.0;
         }
 
         captionHeightSpaceProperty
@@ -216,8 +214,8 @@ class CodeSnippetDrawing {
             .bind(captionBox
                 .layoutYProperty()
             );
-        captionFrame.setArcWidth(arc * 2.0);
-        captionFrame.setArcHeight(arc * 2.0);
+        captionFrame.setArcWidth(captionArc);
+        captionFrame.setArcHeight(captionArc);
 
         shadow.setRadius(shadow.getRadius() / 2.0);
         captionFrame.setEffect(shadow);
