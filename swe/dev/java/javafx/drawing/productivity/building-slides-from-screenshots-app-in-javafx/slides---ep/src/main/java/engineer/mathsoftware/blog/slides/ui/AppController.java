@@ -384,6 +384,11 @@ public class AppController implements
                 .isEqualTo(SlideItem.CodeSnippet)
                 .or(slideProperty.isEqualTo(SlideItem.CodeShot))
             );
+        languageComboBox
+            .managedProperty()
+            .bind(languageComboBox
+                .visibleProperty()
+            );
 
         sizeComboBox
             .getItems()
@@ -406,11 +411,21 @@ public class AppController implements
             .bind(slideProperty
                 .isEqualTo(SlideItem.CodeSnippet)
             );
+        codeSnippetBox
+            .managedProperty()
+            .bind(codeSnippetBox
+                .visibleProperty()
+            );
 
         captionBox
             .visibleProperty()
             .bind(captionCheckBox
                 .selectedProperty()
+            );
+        captionBox
+            .managedProperty()
+            .bind(captionBox
+                .visibleProperty()
             );
     }
 
