@@ -2519,7 +2519,19 @@ specific PL syntax style to this EP.
 
 With this, I can automate my workflow, eliminate the need for *many*
 general-purpose bloated/monolithic/manual tools like Photoshop, build an API,
-and do plenty of more work.
+and do plenty of more work. Of course, among many others, for example, LaTeX 🦍
+is an archaic tool I've always wanted to eradicate, so there we go...
+
+Another insight I got about how to increase the productivity of these
+domain-specific systems is to pre-parse their input via AI.
+
+Notice **AI can be a bridge between the general-purpose input and the
+domain-specific one, but the underlying domain will always exist**[^x].
+
+[^x]: I mention this because many idiots believe the marketing idea that "AI is
+    everything" (same for other marketing-hyped concepts like capitalism or
+    OOP), while in fact, **we always need good ol' math and engineering**, so AI
+    (capitalism, OOP, etc.) is just one small part of a system
 
 This way, the code snippet type of slide was left implemented as a beautiful
 page of custom-styled code with captions which is another big step for me to get
