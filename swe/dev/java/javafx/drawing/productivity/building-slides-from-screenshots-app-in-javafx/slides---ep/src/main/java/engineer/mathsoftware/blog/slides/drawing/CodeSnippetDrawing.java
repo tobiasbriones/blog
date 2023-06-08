@@ -171,11 +171,11 @@ class CodeSnippetDrawing {
                 .add(padding * 2.0)
             );
 
-
         titleLabel.setText(caption.title());
         titleLabel.setTextFill(Color.web("#e0e0e0"));
         titleLabel.setFont(boldFont);
         titleLabel.setTextAlignment(TextAlignment.CENTER);
+        titleLabel.getStyleClass().add("text");
         captionBox.getChildren().add(titleLabel);
 
         if (!caption.subtitle().isBlank()) {
@@ -183,6 +183,7 @@ class CodeSnippetDrawing {
             subTitleLabel.setTextFill(Color.web("#e0e0e0"));
             subTitleLabel.setFont(font);
             subTitleLabel.setTextAlignment(TextAlignment.CENTER);
+            subTitleLabel.getStyleClass().add("text");
             captionBox.getChildren().add(subTitleLabel);
             captionArc *= 2.0;
         }
