@@ -2468,10 +2468,8 @@ with that item, if any.
 
 Then, the initialization of this view is straightforward, like the other
 initializations we've done. Notice that we must call the `init` method from our
-custom
-`SlideDrawingView`
-here, as I said. Then we only have to bind the properties and the change
-listener.
+custom `SlideDrawingView` here, as I said. Then we only have to bind the
+properties and the change listener.
 
 With all this, we now have a full minimal implementation that allows us to draw
 a slide of type screenshot on the view pane, and from now on, we only need to
