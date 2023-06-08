@@ -74,6 +74,14 @@ public class AppController implements
     private TextField saveField;
     @FXML
     private TextArea codeTextArea;
+    @FXML
+    private CheckBox captionCheckBox;
+    @FXML
+    private VBox captionBox;
+    @FXML
+    private TextArea captionTitleArea;
+    @FXML
+    private TextArea captionSubTitleArea;
 
     public AppController() {
         this.repository = new LocalDataRepository(DATA_ROOT);
@@ -398,6 +406,12 @@ public class AppController implements
             .bind(slideProperty
                 .isEqualTo(SlideItem.CodeSnippet)
             );
+
+        captionBox
+            .visibleProperty()
+            .bind(captionCheckBox
+                .selectedProperty()
+            );
     }
 
     private void initSlideDrawingView() {
@@ -429,6 +443,24 @@ public class AppController implements
             .bind(sizeComboBox
                 .valueProperty()
                 .map(SlideSize.Predefined::value)
+            );
+
+        slideDrawingView
+            .captionEnableProperty()
+            .bind(captionCheckBox
+                .selectedProperty()
+            );
+
+        slideDrawingView
+            .captionTitleProperty()
+            .bind(captionTitleArea
+                .textProperty()
+            );
+
+        slideDrawingView
+            .captionSubTitleProperty()
+            .bind(captionSubTitleArea
+                .textProperty()
             );
 
         slideDrawingView.setOnChangeListener(this);

@@ -12,10 +12,11 @@ import engineer.mathsoftware.blog.slides.data.ImageItem;
 import engineer.mathsoftware.blog.slides.drawing.GroupSlideDrawing;
 import engineer.mathsoftware.blog.slides.drawing.SlideDrawing;
 import javafx.beans.InvalidationListener;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.layout.HBox;
+
+import java.util.Optional;
 
 class SlideDrawingView {
     public record SlideState(
@@ -38,6 +39,9 @@ class SlideDrawingView {
     private final ObjectProperty<Language> languageProperty;
     private final ObjectProperty<String> codeProperty;
     private final ObjectProperty<SlideSize> sizeProperty;
+    private final BooleanProperty captionEnableProperty;
+    private final StringProperty captionTitleProperty;
+    private final StringProperty captionSubTitleProperty;
     private ChangeListener l;
     private boolean isStateLoading;
 
@@ -48,6 +52,9 @@ class SlideDrawingView {
         this.languageProperty = new SimpleObjectProperty<>();
         this.codeProperty = new SimpleObjectProperty<>();
         this.sizeProperty = new SimpleObjectProperty<>();
+        this.captionEnableProperty = new SimpleBooleanProperty();
+        this.captionTitleProperty = new SimpleStringProperty();
+        this.captionSubTitleProperty = new SimpleStringProperty();
         this.l = null;
         this.isStateLoading = false;
     }
@@ -76,6 +83,18 @@ class SlideDrawingView {
         return sizeProperty;
     }
 
+    BooleanProperty captionEnableProperty() {
+        return captionEnableProperty;
+    }
+
+    StringProperty captionTitleProperty() {
+        return captionTitleProperty;
+    }
+
+    StringProperty captionSubTitleProperty() {
+        return captionSubTitleProperty;
+    }
+
     void init() {
         InvalidationListener updateAll = ignore -> updateSlide();
 
@@ -83,6 +102,9 @@ class SlideDrawingView {
         languageProperty.addListener(updateAll);
         codeProperty.addListener(updateAll);
         sizeProperty.addListener(updateAll);
+        captionEnableProperty.addListener(updateAll);
+        captionTitleProperty.addListener(updateAll);
+        captionSubTitleProperty.addListener(updateAll);
         imageProperty.addListener(this::onImageChange);
         updateSlide();
     }
@@ -116,14 +138,16 @@ class SlideDrawingView {
         var slide = switch (item) {
             case CodeSnippet -> new Slide.CodeSnippet(
                 codeProperty.get(),
-                languageProperty.get()
+                languageProperty.get(),
+                getCaption()
             );
             case CodeShot -> new Slide.CodeShot(
                 imageProperty.get().image(),
-                languageProperty.get()
+                languageProperty.get(),
+                getCaption()
             );
             case Screenshot ->
-                new Slide.Screenshot(imageProperty.get().image());
+                new Slide.Screenshot(imageProperty.get().image(), getCaption());
         };
 
         drawing.setup(sizeProperty.get());
@@ -138,5 +162,15 @@ class SlideDrawingView {
                 sizeProperty.get()
             ));
         }
+    }
+
+    private Optional<Slide.Caption> getCaption() {
+        return captionEnableProperty.get()
+            ? Optional
+            .of(new Slide.Caption(
+                captionTitleProperty.get(),
+                captionSubTitleProperty.get()
+            ))
+            : Optional.empty();
     }
 }

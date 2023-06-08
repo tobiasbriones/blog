@@ -12,8 +12,14 @@ import engineer.mathsoftware.blog.slides.lang.ElementItem;
 import engineer.mathsoftware.blog.slides.lang.Parser;
 import engineer.mathsoftware.blog.slides.lang.SchemeColors;
 import engineer.mathsoftware.blog.slides.lang.Spec;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -21,23 +27,30 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
-import static engineer.mathsoftware.blog.slides.drawing.Drawings.*;
+import static engineer.mathsoftware.blog.slides.drawing.Drawings.clearRect;
 
 class CodeSnippetDrawing {
     private final SlideSize size;
     private final Group group;
     private final Rectangle frame;
     private final TextFlow flow;
+    private final Rectangle captionFrame;
+    private final VBox captionBox;
+    private final DoubleProperty captionHeightSpaceProperty;
     private final SlideSize.Predefined sizeItem;
     private final double padding;
     private final double flowPadding;
     private final double textSize;
+    private final double arc;
 
     CodeSnippetDrawing(SlideSize size) {
         this.size = size;
         this.group = new Group();
         this.frame = new Rectangle();
         this.flow = new TextFlow();
+        this.captionFrame = new Rectangle();
+        this.captionBox = new VBox();
+        this.captionHeightSpaceProperty = new SimpleDoubleProperty();
         this.sizeItem = SlideSize.Predefined.from(size);
         this.padding = 96.0 * switch (sizeItem) {
             case HD -> 1.0;
@@ -51,6 +64,10 @@ class CodeSnippetDrawing {
             case HD -> 1.0;
             case FHD -> 1.5;
         };
+        this.arc = 48.0 * switch (sizeItem) {
+            case HD -> 1.0;
+            case FHD -> 2.0;
+        };
     }
 
     Group draw(Slide.CodeSnippet codeSnippet) {
@@ -59,6 +76,7 @@ class CodeSnippetDrawing {
         var langColor = Colors.color(lang);
 
         renderCodeSnippetFrame(code, lang);
+        codeSnippet.caption().ifPresent(this::renderCaption);
 
         var background = new Rectangle();
 
@@ -69,21 +87,19 @@ class CodeSnippetDrawing {
                 .heightProperty()
                 .add(flowPadding * 2.0)
                 .add(padding * 2.0)
+                .add(captionHeightSpaceProperty)
             );
         clearRect(group, langColor, background);
         group.getChildren().addAll(frame, flow);
+
+        codeSnippet.caption().ifPresent(caption ->
+            group.getChildren().addAll(captionFrame, captionBox)
+        );
         return group;
     }
 
     private void renderCodeSnippetFrame(String code, Language lang) {
-        var shadow = new DropShadow();
-        var arc = 48.0 * switch (sizeItem) {
-            case HD -> 1.0;
-            case FHD -> 2.0;
-        };
-
-        shadow.setColor(Color.web("#212121"));
-        shadow.setRadius(48.0);
+        var shadow = newShadow();
 
         frame.setFill(Color.web("#212121"));
         frame.setWidth(size.width() - padding * 2.0);
@@ -105,7 +121,11 @@ class CodeSnippetDrawing {
     private void renderCodeSnippetFlow(String code, Language lang) {
         var parser = new Parser<>(Spec.keywordTypeOf(lang));
         var font = Font.font("JetBrains Mono", textSize);
-        var boldFont = Font.font(font.getFamily(), FontWeight.BOLD, font.getSize());
+        var boldFont = Font.font(
+            font.getFamily(),
+            FontWeight.BOLD,
+            font.getSize()
+        );
 
         Parser
             .tokens(code)
@@ -126,5 +146,88 @@ class CodeSnippetDrawing {
         flow.setPrefWidth(size.width() - padding * 2.0 - flowPadding * 2.0);
         flow.setLayoutX(padding + flowPadding);
         flow.setLayoutY(padding + flowPadding);
+    }
+
+    private void renderCaption(Slide.Caption caption) {
+        var titleLabel = new Label();
+        var subTitleLabel = new Label();
+        var shadow = newShadow();
+        var font = Font.font("Poppins", textSize);
+        var boldFont = Font.font(
+            font.getFamily(),
+            FontWeight.BOLD,
+            font.getSize()
+        );
+
+        captionBox.setAlignment(Pos.CENTER);
+        captionBox.setSpacing(16.0);
+        captionBox.setPadding(new Insets(32.0, 64.0, 32.0, 64.0));
+        captionBox
+            .prefWidthProperty()
+            .bind(flow
+                .widthProperty()
+            );
+        captionBox.setLayoutX(padding + flowPadding);
+        captionBox
+            .layoutYProperty()
+            .bind(flow.
+                heightProperty()
+                .add(flowPadding * 2.0)
+                .add(padding * 2.0)
+            );
+
+
+        titleLabel.setText(caption.title());
+        titleLabel.setTextFill(Color.web("#e0e0e0"));
+        titleLabel.setFont(boldFont);
+        captionBox.getChildren().add(titleLabel);
+
+        if (!caption.subtitle().isBlank()) {
+            subTitleLabel.setText(caption.subtitle());
+            subTitleLabel.setTextFill(Color.web("#e0e0e0"));
+            subTitleLabel.setFont(font);
+            captionBox.getChildren().add(subTitleLabel);
+        }
+
+        captionHeightSpaceProperty
+            .bind(captionBox
+                .heightProperty()
+                .add(padding)
+            );
+
+        captionFrame.setFill(Color.web("#212121"));
+        captionFrame
+            .widthProperty()
+            .bind(captionBox
+                .widthProperty()
+            );
+        captionFrame
+            .heightProperty()
+            .bind(captionBox
+                .heightProperty()
+            );
+        captionFrame
+            .xProperty()
+            .bind(captionBox
+                .layoutXProperty()
+            );
+        captionFrame.
+            yProperty()
+            .bind(captionBox
+                .layoutYProperty()
+            );
+        captionFrame.setArcWidth(arc * 2.0);
+        captionFrame.setArcHeight(arc * 2.0);
+
+        shadow.setRadius(shadow.getRadius() / 2.0);
+        captionFrame.setEffect(shadow);
+    }
+
+    private static DropShadow newShadow() {
+        var shadow = new DropShadow();
+
+        shadow.setColor(Color.web("#212121"));
+        shadow.setRadius(48.0);
+        return shadow;
     }
 }

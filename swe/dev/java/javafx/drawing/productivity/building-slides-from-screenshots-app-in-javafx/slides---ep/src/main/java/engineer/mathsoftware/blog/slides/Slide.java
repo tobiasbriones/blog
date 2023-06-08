@@ -6,10 +6,25 @@ package engineer.mathsoftware.blog.slides;
 
 import javafx.scene.image.Image;
 
+import java.util.Optional;
+
 public sealed interface Slide {
-    record CodeSnippet(String code, Language language) implements Slide {}
+    record CodeSnippet(
+        String code,
+        Language language,
+        Optional<Caption> caption
+    ) implements Slide {}
 
-    record CodeShot(Image image, Language language) implements Slide {}
+    record CodeShot(
+        Image image,
+        Language language,
+        Optional<Caption> caption
+    ) implements Slide {}
 
-    record Screenshot(Image image) implements Slide {}
+    record Screenshot(
+        Image image,
+        Optional<Caption> caption
+    ) implements Slide {}
+
+    record Caption(String title, String subtitle) {}
 }
