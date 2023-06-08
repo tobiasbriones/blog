@@ -2475,3 +2475,52 @@ With all this, we now have a full minimal implementation that allows us to draw
 a slide of type screenshot on the view pane, and from now on, we only need to
 extend this framework to add many other functionalities to the app, like the
 others kinds of slides remaining, or more visuals as well.
+
+## Code Snippet Slide
+
+Rendering code snippets as a pretty image with styled code for any programming
+language is a gorgeous challenge with powerful results that resembles us a
+process when developing an IDE.
+
+![Code Snippet Slide](images/code-snippet-slide.png)
+
+<figcaption>
+<p align="center">
+<strong>
+Code Snippet Slide
+</strong>
+</p>
+</figcaption>
+
+I pulled the PL colors assigned on GitHub to style the background to give
+context to the slide. The frames have shadows and rounded corners, and the code
+is styled the same as my IntelliJ settings, except for specific language tokens.
+
+The slides work for as many languages as needed.
+
+I also added caption support to end up automating my job further.
+
+Regarding automation, I'll keep writing my DSLs and systems with my latest
+MathSwe standards.
+
+![Code Snippet Slide for Many Languages](images/code-snippet-slide-for-many-languages.png)
+
+<figcaption>
+<p align="center">
+<strong>
+Code Snippet Slide for Many Languages
+</strong>
+</p>
+</figcaption>
+
+I quickly wrote a parser with various regexes and data types to give semantics
+to the code. Recall that it has to work for any PL for this EP. I'm not adding a
+specific PL syntax style to this EP.
+
+With this, I can automate my workflow, eliminate the need for *many*
+general-purpose bloated/monolithic/manual tools like Photoshop, build an API,
+and do plenty of more work.
+
+This way, the code snippet type of slide was left implemented as a beautiful
+page of custom-styled code with captions which is another big step for me to get
+more automation of content.
