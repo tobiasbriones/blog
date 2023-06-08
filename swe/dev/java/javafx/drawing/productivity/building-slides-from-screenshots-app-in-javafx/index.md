@@ -2536,3 +2536,157 @@ domain-specific one, but the underlying domain will always exist**[^x].
 This way, the code snippet type of slide was left implemented as a beautiful
 page of custom-styled code with captions which is another big step for me to get
 more automation of content.
+
+### Adding a New Empty Slide
+
+Since code snippets make sense to go in a brand-new slide only, I created a
+"new" button to add empty slides.
+
+![New Button for Empty Slides](images/new-button-for-empty-slides.png)
+
+<figcaption>
+<p align="center">
+<strong>
+New Button for Empty Slides
+</strong>
+</p>
+</figcaption>
+
+![Creating a New Slide](images/creating-a-new-slide.png)
+
+<figcaption>
+<p align="center">
+<strong>
+Creating a New Slide
+</strong>
+</p>
+</figcaption>
+
+Then, a new `ImageItem` is created with the logo of an EP app by default. Recall
+these are intended to build the slide from source code instead of images, and it
+doesn't have to be perfect as this is an example project.
+
+![New Slide Created](images/new-slide-created.png)
+
+<figcaption>
+<p align="center">
+<strong>
+New Slide Created
+</strong>
+</p>
+</figcaption>
+
+This will require some minor features like saving `Image`s via the
+`DataRepository` (because it only supported *copying the file images* from your
+directory, so far).
+
+`interface DataRepository | package data`
+
+```java
+void createOrUpdateImage(ImageItem item) throws IOException;
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Definition of Method to Add an Image Object to the Data Repository
+</strong>
+</p>
+</figcaption>
+
+`class LocalDataRepository | package data`
+
+```java
+@Override
+public void createOrUpdateImage(ImageItem item) throws IOException {
+    requireLocalStorage();
+
+    var path = pathOf(item.filename());
+    var renderedImage = SwingFXUtils.fromFXImage(item.image(), null);
+    ImageIO.write(renderedImage, "png", path.toFile());
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Implementation of "createOrUpdateImage" into "LocalDataRepository"
+</strong>
+</p>
+</figcaption>
+
+The GUI change is also straightforward in the controller after updating the FXML
+view.
+
+`class AppController | package ui`
+
+```java
+@FXML
+private Button newButton;
+
+@FXML
+public void initialize() {
+    /* ... */
+    initNewButton();
+    /* ... */
+}
+
+@FXML
+private void onNewButtonAction() {
+    var dialog = new TextInputDialog();
+
+    dialog.setTitle("Slide Name");
+    dialog.setHeaderText(null);
+    dialog.setContentText("Enter the slide name:");
+    dialog
+        .showAndWait()
+        .filter(x -> !x.isBlank())
+        .ifPresent(this::createNewSlide);
+}
+
+private void createNewSlide(String name) {
+    var newImage = new Image(Objects.requireNonNull(
+        getClass().getClassLoader().getResourceAsStream("app-512x512.png")
+    ));
+    var newItem = new ImageItem(name + ".png", newImage);
+
+    try {
+        repository.createOrUpdateImage(newItem);
+        images.remove(newItem);
+        images.add(newItem);
+        setStatus("New slide created");
+    }
+    catch (IOException e) {
+        handleError(e);
+    }
+}
+
+private void initNewButton() {
+    var icNew = new Image(
+        Objects.requireNonNull(
+            getClass().getResourceAsStream("/ic_new.png")
+        )
+    );
+    var newImageView = new ImageView(icNew);
+
+    newImageView.setFitWidth(18.0);
+    newImageView.setFitHeight(18.0);
+    newButton.setGraphic(newImageView);
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Implementation of Button to Create New Slides
+</strong>
+</p>
+</figcaption>
+
+Notice how we make use of the freshly implemented `createOrUpdateImage` of
+`DataRepository` in the method `createNewSlide`. As said, I pass my EP icon as a
+default slide image, and then it's stored in the data directory of the app.
+
+By adding brand-new slides to the app, we're able to work with code snippet
+slides more consistently, as these don't require image files to be generated but
+source code instead.
