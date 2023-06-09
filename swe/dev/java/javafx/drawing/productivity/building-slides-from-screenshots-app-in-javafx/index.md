@@ -2533,6 +2533,14 @@ domain-specific one, but the underlying domain will always exist**[^x].
     OOP), while in fact, **we always need good ol' math and engineering**, so AI
     (capitalism, OOP, etc.) is just one small part of a system
 
+Among the graphic rendering of the slide, they're all about JavaFX `Node`s like
+`Shape`s and normal GUI views. For backgrounds, a `Rectangle` shape is good. For
+the code chunks they're `Text` nodes in a `TextFlow` parent.
+
+We can get to build an IDE with these APIs. I didn't need to use a lower-level
+`Canvas`. It was enough with JavaFX nodes, which shows how JavaFX is a powerful
+platform for engineering applications.
+
 This way, the code snippet type of slide was left implemented as a beautiful
 page of custom-styled code with captions which is another big step for me to get
 more automation of content.
