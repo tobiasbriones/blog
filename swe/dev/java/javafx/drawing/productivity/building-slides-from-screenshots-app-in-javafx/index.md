@@ -2698,3 +2698,35 @@ default slide image, and then it's stored in the data directory of the app.
 By adding brand-new slides to the app, we're able to work with code snippet
 slides more consistently, as these don't require image files to be generated but
 source code instead.
+
+### Updating the Model with the Slide Language and Caption
+
+To update the model, I added `Language` as a `record` component, so one slide
+can be rendered as per its language if applicable.
+
+`interface Slide`
+
+```java
+public sealed interface Slide {
+    record CodeSnippet(String code, Language language) implements Slide {}
+
+    record CodeShot(Image image, Language language) implements Slide {}
+
+    record Screenshot(Image image) implements Slide {}
+
+    record Caption(String title, String subtitle) {}
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Adding the Language to a Slide and the Caption Record
+</strong>
+</p>
+</figcaption>
+
+Notice the `Caption` product type is not part of the `Slide` sum type, but a
+standalone `record` in that interface.
+
+Now, the slides have more complete data to work on further implementations.
