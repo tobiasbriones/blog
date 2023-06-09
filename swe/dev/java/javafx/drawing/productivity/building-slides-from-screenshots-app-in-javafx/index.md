@@ -3041,3 +3041,256 @@ abstract connects.
 This allowed me to build the general-purpose heavy logic behind the front-end
 that styles the code snippets to produce beautiful slides for pretty much any
 source language.
+
+### Code Snippet Drawing
+
+Finally, the front-end implementation in the drawing package will put the lang
+package together, so it can be added to the GUI app.
+
+Recall that the `package` `drawing` contains the implementations to render the
+slides into JavaFX nodes.
+
+I leave the full implementation next.
+
+`class CodeSnippetDrawing | pacakage drawing`
+
+```java
+class CodeSnippetDrawing {
+    private final SlideSize size;
+    private final Group group;
+    private final Rectangle frame;
+    private final TextFlow flow;
+    private final Rectangle captionFrame;
+    private final VBox captionBox;
+    private final DoubleProperty captionHeightSpaceProperty;
+    private final SlideSize.Predefined sizeItem;
+    private final double padding;
+    private final double flowPadding;
+    private final double textSize;
+    private final double arc;
+
+    CodeSnippetDrawing(SlideSize size) {
+        this.size = size;
+        this.group = new Group();
+        this.frame = new Rectangle();
+        this.flow = new TextFlow();
+        this.captionFrame = new Rectangle();
+        this.captionBox = new VBox();
+        this.captionHeightSpaceProperty = new SimpleDoubleProperty();
+        this.sizeItem = SlideSize.Predefined.from(size);
+        this.padding = 96.0 * switch (sizeItem) {
+            case HD -> 1.0;
+            case FHD -> 1.25;
+        };
+        this.flowPadding = 64 * switch (sizeItem) {
+            case HD -> 1.0;
+            case FHD -> 1.25;
+        };
+        this.textSize = 20.0 * switch (sizeItem) {
+            case HD -> 1.0;
+            case FHD -> 1.5;
+        };
+        this.arc = 48.0;
+    }
+
+    Group draw(Slide.CodeSnippet codeSnippet) {
+        var code = codeSnippet.code();
+        var lang = codeSnippet.language();
+        var langColor = Colors.color(lang);
+
+        renderCodeSnippetFrame(code, lang);
+        codeSnippet.caption().ifPresent(this::renderCaption);
+
+        var background = new Rectangle();
+
+        background.setWidth(size.width());
+        background
+            .heightProperty()
+            .bind(flow
+                .heightProperty()
+                .add(flowPadding * 2.0)
+                .add(padding * 2.0)
+                .add(captionHeightSpaceProperty)
+            );
+        clearRect(group, langColor, background);
+        group.getChildren().addAll(frame, flow);
+
+        codeSnippet.caption().ifPresent(caption ->
+            group.getChildren().addAll(captionFrame, captionBox)
+        );
+        return group;
+    }
+
+    private void renderCodeSnippetFrame(String code, Language lang) {
+        var shadow = newShadow();
+
+        frame.setFill(Color.web("#212121"));
+        frame.setWidth(size.width() - padding * 2.0);
+        frame
+            .heightProperty()
+            .bind(flow.
+                heightProperty()
+                .add(flowPadding * 2.0)
+            );
+        frame.setX(padding);
+        frame.setY(padding);
+        frame.setArcWidth(arc);
+        frame.setArcHeight(arc);
+        frame.setEffect(shadow);
+
+        renderCodeSnippetFlow(code, lang);
+    }
+
+    private void renderCodeSnippetFlow(String code, Language lang) {
+        var parser = new Parser<>(Spec.keywordTypeOf(lang));
+        var font = Font.font("JetBrains Mono", textSize);
+        var boldFont = Font.font(
+            font.getFamily(),
+            FontWeight.BOLD,
+            font.getSize()
+        );
+
+        Parser
+            .tokens(code)
+            .stream()
+            .map(parser::parseToken)
+            .forEach(parsing -> {
+                var text = new Text();
+                var el = parsing.element();
+
+                text.setText(el.value());
+                text.setFill(SchemeColors.color(el));
+                text.setFont(el.toEnum() == ElementItem.Type ? boldFont : font);
+
+                flow.getChildren().add(text);
+            });
+
+        flow.setMaxWidth(size.width() - padding * 2.0 - flowPadding * 2.0);
+        flow.setPrefWidth(size.width() - padding * 2.0 - flowPadding * 2.0);
+        flow.setLayoutX(padding + flowPadding);
+        flow.setLayoutY(padding + flowPadding);
+    }
+
+    private void renderCaption(Slide.Caption caption) {
+        var titleLabel = new Label();
+        var subTitleLabel = new Label();
+        var shadow = newShadow();
+        var font = Font.font("Poppins", 24.0);
+        var captionArc = arc * 2.0;
+        var boldFont = Font.font(
+            font.getFamily(),
+            FontWeight.EXTRA_BOLD,
+            36.0
+        );
+
+        captionBox.setAlignment(Pos.CENTER);
+        captionBox.setSpacing(16.0);
+        captionBox.setPadding(new Insets(32.0, 64.0, 32.0, 64.0));
+        captionBox
+            .prefWidthProperty()
+            .bind(flow
+                .widthProperty()
+            );
+        captionBox.setLayoutX(padding + flowPadding);
+        captionBox
+            .layoutYProperty()
+            .bind(flow.
+                heightProperty()
+                .add(flowPadding * 2.0)
+                .add(padding * 2.0)
+            );
+
+        titleLabel.setText(caption.title());
+        titleLabel.setTextFill(Color.web("#e0e0e0"));
+        titleLabel.setFont(boldFont);
+        titleLabel.setTextAlignment(TextAlignment.CENTER);
+        titleLabel.getStyleClass().add("text");
+        captionBox.getChildren().add(titleLabel);
+
+        if (!caption.subtitle().isBlank()) {
+            subTitleLabel.setText(caption.subtitle());
+            subTitleLabel.setTextFill(Color.web("#e0e0e0"));
+            subTitleLabel.setFont(font);
+            subTitleLabel.setTextAlignment(TextAlignment.CENTER);
+            subTitleLabel.getStyleClass().add("text");
+            captionBox.getChildren().add(subTitleLabel);
+            captionArc *= 2.0;
+        }
+
+        captionHeightSpaceProperty
+            .bind(captionBox
+                .heightProperty()
+                .add(padding)
+            );
+
+        captionFrame.setFill(Color.web("#212121"));
+        captionFrame
+            .widthProperty()
+            .bind(captionBox
+                .widthProperty()
+            );
+        captionFrame
+            .heightProperty()
+            .bind(captionBox
+                .heightProperty()
+            );
+        captionFrame
+            .xProperty()
+            .bind(captionBox
+                .layoutXProperty()
+            );
+        captionFrame.
+            yProperty()
+            .bind(captionBox
+                .layoutYProperty()
+            );
+        captionFrame.setArcWidth(captionArc);
+        captionFrame.setArcHeight(captionArc);
+
+        shadow.setRadius(shadow.getRadius() / 2.0);
+        captionFrame.setEffect(shadow);
+    }
+
+    private static DropShadow newShadow() {
+        var shadow = new DropShadow();
+
+        shadow.setColor(Color.web("#212121"));
+        shadow.setRadius(48.0);
+        return shadow;
+    }
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Implementation of the Code Snippet Drawing
+</strong>
+</p>
+</figcaption>
+
+I defined some polite sizes in the constructor, so it looks good.
+
+The method `draw` will return the `Group` with the slide drawn on it, similar to
+what's been done before.
+
+To render the code nicely, the method `renderCodeSnippetFlow` employs the
+`Parser` developed previously and parses the tokens from the raw `code`
+`String` variable that comes with the underlying `Slide`.
+
+Then, for each token, a `Text` `Node` is created with the token value (it can be
+a keyword, symbol, etc.). The styles are gathered from what I defined as per my
+IDE custom settings. For example, the text color is set from that dictated by
+the `SchemeColors` ~~utility class~~ module via
+`text.setFill(SchemeColors.color(el))`.
+
+Regarding captions, if they're present, they'll be added to the `Group` as a
+normal `VBox` with `Label`s and another `Rectangle` for its background.
+
+All measures and bindings are set up correctly to build up the whole slide.
+
+I added sent some methods to a utility class `Drawings`, like `clearRect`,
+`getImageCornerRadius`, and `getRoundedImage`.
+
+This drawing provides the group node with the code snippet rendered so that we
+can add it to the app view pane.
