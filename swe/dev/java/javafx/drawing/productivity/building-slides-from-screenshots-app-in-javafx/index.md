@@ -105,8 +105,8 @@ public class Main extends Application {
 
 ### Initial Master-View-Detail Layout with Drag-and-Drop ListView
 
-I already developed the initial application layout (and logic) —which are
-relatively heavy—, so I'll add the FXML version here with a preview to see
+I already developed the initial application layout (and logic) — which are
+relatively heavy —, so I'll add the FXML version here with a preview to see
 what's being developed.
 
 This is the
@@ -2089,7 +2089,7 @@ We can add nodes and shapes as children to the group, and they'll **blend**,
 allowing us to build up our `Scene`.
 
 We can add the background straightforwardly with a `Rectangle` `Shape` and the
-image —which is more complex— via a good old `ImageView` `Node`.
+image — which is more complex — via a good old `ImageView` `Node`.
 
 I added a temporal scale to the (`group`) parent, so the drawing fits the
 screen, as I'm not implementing zooming features any time soon.
@@ -2122,7 +2122,7 @@ imperativeness of the code.
 But that's not it 😂, more imperative code is waiting. The images have to be
 resized as per the configuration of the slide we put.
 
-If the given image is too big —either in width or height— it has to be resized
+If the given image is too big — either in width or height — it has to be resized
 to fit the parent.
 
 `class GroupSlideDrawing | package drawing`
@@ -2786,7 +2786,7 @@ Code Shot Slide Implementation
 </p>
 </figcaption>
 
-We get the color by `Language` via `Colors.color(lang)` —colors that were added
+We get the color by `Language` via `Colors.color(lang)` — colors that were added
 above.
 
 Other elements like captions can be added the same way they will be showed
