@@ -9,13 +9,16 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Parser<K extends Enum<?>> {
-    private static final Pattern STRING_PATTERN = Pattern
+    private static final Pattern STRING_PATTERN
+        = Pattern
         .compile("(['\"])([^'\"]*)(['\"])");
-    private static final Pattern SINGLE_LINE_COMMENT_PATTERN = Pattern
+    private static final Pattern SINGLE_LINE_COMMENT_PATTERN
+        = Pattern
         .compile("(//)(.*)(\\r\\n|\\r|\\n)");
     private static final String PASCAL_CASE_GROUP_REGEX
         = "([A-Z]+[a-z0-9]*)+";
-    private static final Pattern PASCAL_CASE_TYPE_PATTERN = Pattern
+    private static final Pattern PASCAL_CASE_TYPE_PATTERN
+        = Pattern
         .compile("([ (.,:]{1}|:{2}|::)"
             + PASCAL_CASE_GROUP_REGEX
             + "([ (.,:\\[]{1}|:{2}|::)"
