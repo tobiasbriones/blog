@@ -7,7 +7,6 @@ package engineer.mathsoftware.blog.slides.lang;
 import engineer.mathsoftware.blog.slides.Language;
 
 public final class Spec {
-
     public static final class CSharp {
         public enum Keyword {
             Abstract,
