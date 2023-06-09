@@ -45,13 +45,13 @@ public class Parser<K extends Enum<?>> {
             "]",
             "."
         );
-        var afterStrings = tokensEnclosedBy(STRING_PATTERN, code);
         var delimiterPatterns = delimiters
             .stream()
             .map(delimiter -> "\\" + delimiter)
             .collect(Collectors.joining("|"));
         var delimiterPattern
             = "(?<=" + delimiterPatterns + ")|(?=" + delimiterPatterns + ")";
+        var afterStrings = tokensEnclosedBy(STRING_PATTERN, code);
         var afterComments = new ArrayList<String>();
 
         for (var token : afterStrings) {
