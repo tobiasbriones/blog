@@ -3309,3 +3309,25 @@ delegate this implementation. The `CodeSnippetDrawing` decouples the classes by
 taking that responsibility out of `GroupSlideDrawing`.
 
 This way, the code snippet slides are fully available in the application.
+
+## Automation of Screenshots and Code Snippets Content
+
+I foresaw an opportunity to develop a gorgeous example project to start my
+automation journey for content like screenshot stories and code snippet slides.
+
+This is my first EP-with-blog, and it was extremely extensive. I blogged the
+development process with high granularity and left insights, as always.
+
+The implementation was feasible with JavaFX as expected, which shows how
+**JavaFX is a powerful platform for well-defined engineering applications**.
+
+There were good exercises for putting into practice tools such as JavaFX, the
+newest Java 20+ features, and regular expressions.
+
+The development of this EP was the next step to take — from theory to practice —
+many design concepts and standards I had devised before.
+
+The application consists of a master-view-detail pane with advanced features
+like drag-and-drop, rendering of shapes, and source code. These features also
+include others like exporting the production or adding AI support. **This system
+allows us to optimize and build automated domain-specific presentations**.
