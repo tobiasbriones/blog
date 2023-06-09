@@ -2730,3 +2730,64 @@ Notice the `Caption` product type is not part of the `Slide` sum type, but a
 standalone `record` in that interface.
 
 Now, the slides have more complete data to work on further implementations.
+
+### Code Shot Slide
+
+This is the another kind of slide supported by the application, and it's
+trivially implemented by just drawing the frame background with the color of the
+slide language.
+
+This is almost the same as the screenshot slide that was done in the beginning.
+
+This kind of slide consists of a screenshot of code (not actual code), so e.g.,
+you can capture you're IDE and explain what's in the screenshot.
+
+![Code Shot Slide](images/code-shot-slide.png)
+
+<figcaption>
+<p align="center">
+<strong>
+Code Shot Slide
+</strong>
+</p>
+</figcaption>
+
+`class GroupSlideDrawing | package drawing`
+
+```java
+private Group drawCodeShot(Slide.CodeShot codeShot) {
+    var group = new Group();
+    var screenshotView = new ImageView();
+    var image = codeShot.image();
+    var lang = codeShot.language();
+    var langColor = Colors.color(lang);
+
+    screenshotView.setSmooth(true);
+    screenshotView.setPreserveRatio(true);
+    fitImageView(screenshotView, image);
+    drawImage(image, screenshotView);
+    centerImageView(screenshotView);
+
+    clear(group, langColor);
+    group.getChildren().add(screenshotView);
+    return group;
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Code Shot Slide Implementation
+</strong>
+</p>
+</figcaption>
+
+We get the color by `Language` via `Colors.color(lang)` —colors that were added
+above.
+
+Other elements like captions can be added the same way they will be showed
+later.
+
+This concludes the simple implementation for this kind of slide, so we already
+have a minimum implementation for "screenshot", and "code shot" slides.
+Finishing the "code snippet" slide is left to complete this EP.
