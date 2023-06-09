@@ -2795,3 +2795,249 @@ later.
 This concludes the simple implementation for this kind of slide, so we already
 have a minimum implementation for "screenshot", and "code shot" slides.
 Finishing the "code snippet" slide is left to complete this EP.
+
+### Package Lang
+
+To define the language elements, I added a package for this domain that provides
+the logic for definitions and parsings.
+
+I defined `Element`s to partition the possibilities we have in a set of language
+semantics that can be generally found.
+
+This implementation is general-purpose, so it works on any language, but it's
+not specific to each language. That would be a ton of more work for me 🤪.
+
+`interface Element | package lang`
+
+```java
+public sealed interface Element extends Enums.ToEnum<ElementItem> {
+    record Keyword(String value) implements Element {}
+
+    record Symbol(String value) implements Element {}
+
+    record Type(String value) implements Element {}
+
+    record Number(String value) implements Element {}
+
+    record StringLiteral(String value) implements Element {}
+
+    record Comment(String value) implements Element {}
+
+    record Other(String value) implements Element {}
+
+    record TokenParsing(Element element) {}
+
+    String value();
+
+    @Override
+    default Class<ElementItem> enumType() {
+      return ElementItem.class;
+    }
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Definition of Language Elements
+</strong>
+</p>
+</figcaption>
+
+The sum type consists of `Keyword | Symbol | Type | Number | StringLiteral | Comment | Other`.
+They all have a `String` value to hold their token.
+
+The `TokenParsing` type allows to return (wrap) a `Element` value when parsing
+the raw `String`.
+
+The details about enums is just an implementation I made to transform  $$1:1$$
+`interface` sum types into basic `enum` sum types.
+
+`class Enums`
+
+```java
+public interface ToEnum<T extends Enum<T>> {
+    Class<T> enumType();
+
+    default T toEnum() {
+        return Enum.valueOf(enumType(), getClass().getSimpleName());
+    }
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Type "ToEnum" that Allows to Convert an Object to a Enum Type
+</strong>
+</p>
+</figcaption>
+
+So, I can add `ElementItem` paired with the previous `Element` `interface` type.
+
+`enum ElementItem | package lang`
+
+```java
+public enum ElementItem {
+    Keyword,
+    Symbol,
+    Type,
+    Number,
+    StringLiteral,
+    Comment,
+    Other
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Enum Sum Type "ElementItem" to Complement the "Element" Interface Sum Type
+</strong>
+</p>
+</figcaption>
+
+This can be trivially done in Haskell from *homogeneity*, but Java like any
+other mundane mixed-paradigm language, is *heterogeneous*, so an `enum` is a
+**different structure** than an `interface`. Not to say, OOP brings the whole
+jungle: interfaces are used as an all-in-one for many other affairs, too.
+
+I defined the keywords in a utility class[^x].
+
+[^x]: I used ChatGPT to generate the keywords, and GitHub language colors, i.e.,
+    the mechanical job
+
+`class Spec | package lang`
+
+```java
+public static Class<? extends Enum<?>> keywordTypeOf(Language language) {
+    return switch (language) {
+        case CSharp -> CSharp.Keyword.class;
+        case CSS -> null;
+        case Golang -> Golang.Keyword.class;
+        case Haskell -> Haskell.Keyword.class;
+        case HTML -> null;
+        case Java -> Java.Keyword.class;
+        case JavaScript -> JavaScript.Keyword.class;
+        case Kotlin -> Kotlin.Keyword.class;
+        case Lean -> Lean.Keyword.class;
+        case PureScript -> Purescript.Keyword.class;
+        case Python -> Python.Keyword.class;
+        case Rust -> Rust.Keyword.class;
+        case TypeScript -> TypeScript.Keyword.class;
+    };
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Definitions of Language Keywords
+</strong>
+</p>
+</figcaption>
+
+I obviously skipped the 500 LoC for the mechanical definition of each keyword in
+this class. So, here you can see how to get the keywords.
+
+I also skipped markup or DSLs like CSS, HTML since they're quite different 😐.
+
+Now, another utility class (missing Kotlin and functional languages so much 🤔)
+to define the colors 🎨 for the language elements.
+
+`class SchemeColors | package lang`
+
+```java
+public final class SchemeColors {
+    public static Color color(Element element) {
+        return switch (element.toEnum()) {
+            case Keyword -> Color.web("#7986cb");
+            case Symbol -> Color.web("#cc7832");
+            case Number -> Color.web("#0288d1");
+            case StringLiteral -> Color.web("#558b2f");
+            case Other -> Color.WHITE;
+        };
+    }
+
+    private SchemeColors() {}
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Definitions of Language Element Colors
+</strong>
+</p>
+</figcaption>
+
+Finally, I implemented a parser to get the tokens by language from the raw
+strings. This has many details I won't show. I'll just show the declarative
+part of it: the regex.
+
+`class Parser | package lang`
+
+```java
+private static final Pattern STRING_PATTERN
+    = Pattern
+    .compile("(['\"])([^'\"]*)(['\"])");
+private static final Pattern SINGLE_LINE_COMMENT_PATTERN
+    = Pattern
+    .compile("(//)(.*)(\\r\\n|\\r|\\n)");
+private static final String PASCAL_CASE_GROUP_REGEX
+    = "([A-Z]+[a-z0-9]*)+";
+private static final Pattern PASCAL_CASE_TYPE_PATTERN
+    = Pattern
+    .compile
+        ( "([ (.,:]{1}|:{2}|::)"
+        + PASCAL_CASE_GROUP_REGEX
+        + "([ (.,:\\[]{1}|:{2}|::)"
+        );
+
+public static List<String> tokens(String code){
+    var delimiters = List.of(
+        "\n",
+        " ",
+        ";",
+        "=",
+        "+",
+        "-",
+        "*",
+        "/",
+        ",",
+        ":",
+        "?",
+        "(",
+        ")",
+        "<",
+        ">",
+        "[",
+        "]",
+        "."
+    );
+    var delimiterPatterns
+        = delimiters
+        .stream()
+        .map(delimiter -> "\\" + delimiter)
+        .collect(Collectors.joining("|"));
+    var delimiterPattern
+        = "(?<=" + delimiterPatterns + ")|(?=" + delimiterPatterns + ")";
+    /* ... */
+}
+```
+
+<figcaption>
+<p align="center">
+<strong>
+Regex Used to Parse Language Elements
+</strong>
+</p>
+</figcaption>
+
+The underlying details are a long story I won't mention as it's out of scope,
+but it was a good exercise to rehearse regular expressions, and work out some
+abstract connects.
+
+This allowed me to build the general-purpose heavy logic behind the front-end
+that styles the code snippets to produce beautiful slides for pretty much any
+source language.
