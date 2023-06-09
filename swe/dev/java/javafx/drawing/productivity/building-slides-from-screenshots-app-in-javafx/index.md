@@ -3294,3 +3294,18 @@ I added sent some methods to a utility class `Drawings`, like `clearRect`,
 
 This drawing provides the group node with the code snippet rendered so that we
 can add it to the app view pane.
+
+#### Putting the Drawing Together
+
+It's about time to complete the code snippet slide development.
+
+By putting the `lang` and `drawing` packages together as was done before, we got
+the drawing `Group` that relies on the logic defined in `lang` to render the
+composition.
+
+Adding the `CodeSnippetDrawing` to the `GroupSlideDrawing` (method
+`drawCodeSnippet`) concrete implementation of `SlideDrawing` is all we need to
+delegate this implementation. The `CodeSnippetDrawing` decouples the classes by
+taking that responsibility out of `GroupSlideDrawing`.
+
+This way, the code snippet slides are fully available in the application.
