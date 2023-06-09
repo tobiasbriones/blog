@@ -2513,7 +2513,7 @@ Code Snippet Slide for Many Languages
 </p>
 </figcaption>
 
-I quickly wrote a parser with various regexes and data types to give semantics
+I quickly wrote a parser with various regex and data types to give semantics
 to the code. Recall that it has to work for any PL for this EP. I'm not adding a
 specific PL syntax style to this EP.
 
