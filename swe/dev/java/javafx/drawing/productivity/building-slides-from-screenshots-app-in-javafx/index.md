@@ -2541,6 +2541,10 @@ We can get to build an IDE with these APIs. I didn't need to use a lower-level
 `Canvas`. It was enough with JavaFX nodes, which shows how JavaFX is a powerful
 platform for engineering applications.
 
+I had to do various refactorizations, and specific implementations of details,
+of course, so I'll just show an overview of the development from now on and
+skip the details.
+
 This way, the code snippet type of slide was left implemented as a beautiful
 page of custom-styled code with captions which is another big step for me to get
 more automation of content.
