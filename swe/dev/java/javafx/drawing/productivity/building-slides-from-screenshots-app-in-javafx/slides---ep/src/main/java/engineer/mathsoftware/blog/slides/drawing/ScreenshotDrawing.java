@@ -19,16 +19,34 @@ import static engineer.mathsoftware.blog.slides.drawing.Drawings.*;
 class ScreenshotDrawing {
     private final SlideSize size;
     private final Group group;
+    private final Rectangle background;
+    private final CaptionRenderer captionRenderer;
+    private final double padding;
 
     ScreenshotDrawing(SlideSize size) {
         this.size = size;
         this.group = new Group();
+        this.background = new Rectangle();
+        this.captionRenderer = new CaptionRenderer();
+        this.padding = size.width() * 0.1;
+
+        captionRenderer.setContentArc(48.0);
+        captionRenderer
+            .widthProperty()
+            .set(size.width() - padding * 2.0);
+        captionRenderer
+            .xProperty()
+            .set(padding);
+        captionRenderer
+            .yProperty()
+            .set(size.height());
     }
 
     Group draw(Slide.Screenshot screenshot) {
         var image = screenshot.image();
 
         drawImage(image, Color.WHITE);
+        drawCaption(screenshot);
         return group;
     }
 
@@ -38,6 +56,7 @@ class ScreenshotDrawing {
         var langColor = Colors.color(lang);
 
         drawImage(image, langColor);
+        drawCaption(codeShot);
         return group;
     }
 
@@ -54,9 +73,21 @@ class ScreenshotDrawing {
         group.getChildren().add(iv);
     }
 
-    private void clear(Color color) {
-        var background = new Rectangle();
+    private void drawCaption(Slide slide) {
+        slide.caption().ifPresent(caption -> {
+            captionRenderer.renderCaption(caption);
+            captionRenderer.draw(group);
+            background
+                .heightProperty()
+                .bind(captionRenderer
+                    .heightProperty()
+                    .add(size.height())
+                    .add(padding)
+                );
+        });
+    }
 
+    private void clear(Color color) {
         background.setWidth(size.width());
         background.setHeight(size.height());
         clearRect(group, color, background);
