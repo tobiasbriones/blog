@@ -3361,4 +3361,6 @@ many design concepts and standards I had devised before.
 The application consists of a master-view-detail pane with advanced features
 like drag-and-drop, rendering of shapes, and source code. These features also
 include others like exporting the production or adding AI support. **This system
-allows us to optimize and build automated domain-specific presentations**.
+allows us to optimize and build automated domain-specific presentations**. As a
+math software engineer, such achievement boosts my automation tools one step
+further in these graphical domains leading to fastening future undertakings.
