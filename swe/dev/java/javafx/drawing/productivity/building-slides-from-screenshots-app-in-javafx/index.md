@@ -2814,6 +2814,9 @@ above.
 Other elements like captions can be added the same way they will be showed
 later.
 
+Later, I added a class `ScreenshotDrawing` to the `drawing` `package` to reuse
+this code between `Screenshot` and `CodeShot` `Slide` implementations.
+
 This concludes the simple implementation for this kind of slide, so we already
 have a minimum implementation for "screenshot", and "code shot" slides.
 Finishing the "code snippet" slide is left to complete this EP.
