@@ -2791,21 +2791,12 @@ Code Shot Slide
 
 ```java
 private Group drawCodeShot(Slide.CodeShot codeShot) {
-    var group = new Group();
-    var screenshotView = new ImageView();
+    /* ... */
     var image = codeShot.image();
     var lang = codeShot.language();
     var langColor = Colors.color(lang);
 
-    screenshotView.setSmooth(true);
-    screenshotView.setPreserveRatio(true);
-    fitImageView(screenshotView, image);
-    drawImage(image, screenshotView);
-    centerImageView(screenshotView);
-
-    clear(group, langColor);
-    group.getChildren().add(screenshotView);
-    return group;
+    /* ... */
 }
 ```
 
