@@ -4,6 +4,37 @@
 
 # Building Slides from Screenshots App in JavaFX
 
+## Sharing a Story from Screenshots
+
+I wanted to build a little presentation from my daily work, so I took the
+screenshots to work them out in Photopea[^x].
+
+[^x]: Photopea is a free web app that resembles Photoshop and has been my
+    choice for many years
+
+The idea was to build a carousel presentation like
+[this one](static/carousel.pdf), which I was editing in
+[this PSD file](static/carousel.psd). It still didn't include captions, so
+besides the editing, that puts *more off-topic work* for me.
+
+![Photopea: Editing the Presentation](images/photopea-_-editing-the-presentation.png)
+
+<figcaption>
+<p align="center"><strong>Photopea: Editing the Presentation</strong></p>
+</figcaption>
+
+Needless to say, those apps like Photoshop, Google Docs, Office, etc., are
+general-purpose (i.e., mediocre) and manual. Plus, you even have to pay a
+subscription or watch ads for a monolith you will barely use much.
+
+I need composition in functional programming terms, **I just engineer my
+domain-specific systems**.
+
+I lately took this experience as the final motivation to start materializing the
+automation of these systems without requiring the monolithic products mentioned.
+I'm working this materialization out via my new — and first $$Blog + EP$$ —
+**EP: Slides**, here in this article.
+
 ## Getting Started
 
 First, make sure to have Java 20+ installed on your development machine. You
