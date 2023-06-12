@@ -6,6 +6,7 @@ package engineer.mathsoftware.blog.slides.drawing;
 
 import javafx.scene.Group;
 import javafx.scene.SnapshotParameters;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -47,6 +48,14 @@ final class Drawings {
 
         iv.setClip(null);
         return roundedImage;
+    }
+
+    static DropShadow newShadow() {
+        var shadow = new DropShadow();
+
+        shadow.setColor(Color.web("#212121"));
+        shadow.setRadius(48.0);
+        return shadow;
     }
 
     private Drawings() {}
