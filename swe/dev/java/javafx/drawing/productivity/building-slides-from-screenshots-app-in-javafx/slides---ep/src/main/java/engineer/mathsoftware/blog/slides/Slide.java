@@ -26,5 +26,7 @@ public sealed interface Slide {
         Optional<Caption> caption
     ) implements Slide {}
 
+    Optional<Caption> caption();
+
     record Caption(String title, String subtitle) {}
 }
