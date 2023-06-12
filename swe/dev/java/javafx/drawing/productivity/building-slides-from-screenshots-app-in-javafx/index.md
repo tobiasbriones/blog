@@ -2743,11 +2743,24 @@ can be rendered as per its language if applicable.
 
 ```java
 public sealed interface Slide {
-    record CodeSnippet(String code, Language language) implements Slide {}
+    record CodeSnippet(
+        String code,
+        Language language,
+        Optional<Caption> caption
+    ) implements Slide {}
 
-    record CodeShot(Image image, Language language) implements Slide {}
+    record CodeShot(
+        Image image,
+        Language language,
+        Optional<Caption> caption
+    ) implements Slide {}
 
-    record Screenshot(Image image) implements Slide {}
+    record Screenshot(
+        Image image,
+        Optional<Caption> caption
+    ) implements Slide {}
+
+    Optional<Caption> caption();
 
     record Caption(String title, String subtitle) {}
 }
@@ -3085,9 +3098,7 @@ class CodeSnippetDrawing {
     private final Group group;
     private final Rectangle frame;
     private final TextFlow flow;
-    private final Rectangle captionFrame;
-    private final VBox captionBox;
-    private final DoubleProperty captionHeightSpaceProperty;
+    private final CaptionRenderer captionRenderer;
     private final SlideSize.Predefined sizeItem;
     private final double padding;
     private final double flowPadding;
@@ -3099,9 +3110,7 @@ class CodeSnippetDrawing {
         this.group = new Group();
         this.frame = new Rectangle();
         this.flow = new TextFlow();
-        this.captionFrame = new Rectangle();
-        this.captionBox = new VBox();
-        this.captionHeightSpaceProperty = new SimpleDoubleProperty();
+        this.captionRenderer = new CaptionRenderer();
         this.sizeItem = SlideSize.Predefined.from(size);
         this.padding = 96.0 * switch (sizeItem) {
             case HD -> 1.0;
@@ -3116,6 +3125,22 @@ class CodeSnippetDrawing {
             case FHD -> 1.5;
         };
         this.arc = 48.0;
+
+        captionRenderer.setContentArc(arc);
+        captionRenderer
+            .widthProperty()
+            .bind(flow
+                .widthProperty()
+            );
+        captionRenderer
+            .xProperty()
+            .set(padding + flowPadding);
+        captionRenderer
+            .yProperty()
+            .bind(frame.
+                heightProperty()
+                .add(padding * 2.0)
+            );
     }
 
     Group draw(Slide.CodeSnippet codeSnippet) {
@@ -3124,25 +3149,23 @@ class CodeSnippetDrawing {
         var langColor = Colors.color(lang);
 
         renderCodeSnippetFrame(code, lang);
-        codeSnippet.caption().ifPresent(this::renderCaption);
+        codeSnippet.caption().ifPresent(captionRenderer::renderCaption);
 
         var background = new Rectangle();
 
         background.setWidth(size.width());
         background
             .heightProperty()
-            .bind(flow
+            .bind(frame
                 .heightProperty()
-                .add(flowPadding * 2.0)
                 .add(padding * 2.0)
-                .add(captionHeightSpaceProperty)
+                .add(captionRenderer.heightProperty())
+                .add(padding * CaptionRenderer.zeroIfNoCaption(codeSnippet))
             );
         clearRect(group, langColor, background);
         group.getChildren().addAll(frame, flow);
 
-        codeSnippet.caption().ifPresent(caption ->
-            group.getChildren().addAll(captionFrame, captionBox)
-        );
+        codeSnippet.caption().ifPresent(caption -> captionRenderer.draw(group));
         return group;
     }
 
@@ -3153,8 +3176,8 @@ class CodeSnippetDrawing {
         frame.setWidth(size.width() - padding * 2.0);
         frame
             .heightProperty()
-            .bind(flow.
-                heightProperty()
+            .bind(flow
+                .heightProperty()
                 .add(flowPadding * 2.0)
             );
         frame.setX(padding);
@@ -3195,13 +3218,111 @@ class CodeSnippetDrawing {
         flow.setLayoutX(padding + flowPadding);
         flow.setLayoutY(padding + flowPadding);
     }
+}
+```
 
-    private void renderCaption(Slide.Caption caption) {
+<figcaption>
+<p align="center">
+<strong>
+Implementation of the Code Snippet Drawing
+</strong>
+</p>
+</figcaption>
+
+I defined some polite sizes in the constructor, so it looks good.
+
+The method `draw` will return the `Group` with the slide drawn on it, similar to
+what's been done before.
+
+To render the code nicely, the method `renderCodeSnippetFlow` employs the
+`Parser` developed previously and parses the tokens from the raw `code`
+`String` variable that comes with the underlying `Slide`.
+
+Then, for each token, a `Text` `Node` is created with the token value (it can be
+a keyword, symbol, etc.). The styles are gathered from what I defined as per my
+IDE custom settings. For example, the text color is set from that dictated by
+the `SchemeColors` ~~utility class~~ module via
+`text.setFill(SchemeColors.color(el))`.
+
+Regarding captions, if they're present, they'll be added to the `Group` as a
+normal `VBox` with `Label`s and another `Rectangle` for its background. This
+implementation is given by the class `CaptionRenderer` I added to the package
+`drawing` as well, so it can be **reused to draw captions on any kind of
+slide**.
+
+All measures and bindings are set up correctly to build up the whole slide.
+
+I added sent some methods to a utility class `Drawings`, like `clearRect`,
+`getImageCornerRadius`, and `getRoundedImage`.
+
+This drawing provides the group node with the code snippet rendered so that we
+can add it to the app view pane.
+
+#### Rendering Captions
+
+This caption drawing implementation is reused by other kinds of slides as
+mentioned before.
+
+It consists of the class `CaptionRenderer` that was used in the
+[Code Snippet Drawing](#code-snippet-drawing) snippet.
+
+`CaptionRenderer | pacakage drawing`
+
+```java
+class CaptionRenderer {
+    private final Rectangle captionFrame;
+    private final VBox captionBox;
+    private final DoubleProperty heightProperty;
+    private final DoubleProperty widthProperty;
+    private final DoubleProperty xProperty;
+    private final DoubleProperty yProperty;
+    private double contentArc;
+
+    CaptionRenderer() {
+        this.captionFrame = new Rectangle();
+        this.captionBox = new VBox();
+        this.widthProperty = new SimpleDoubleProperty();
+        this.heightProperty = new SimpleDoubleProperty();
+        this.xProperty = new SimpleDoubleProperty();
+        this.yProperty = new SimpleDoubleProperty();
+        this.contentArc = 0.0;
+
+        heightProperty
+            .bind(captionBox
+                .heightProperty()
+            );
+    }
+
+    void setContentArc(double value) {
+        contentArc = value;
+    }
+
+    DoubleProperty widthProperty() {
+        return widthProperty;
+    }
+
+    DoubleProperty heightProperty() {
+        return heightProperty;
+    }
+
+    DoubleProperty xProperty() {
+        return xProperty;
+    }
+
+    DoubleProperty yProperty() {
+        return yProperty;
+    }
+
+    void draw(Group drawing) {
+        drawing.getChildren().addAll(captionFrame, captionBox);
+    }
+
+    void renderCaption(Slide.Caption caption) {
         var titleLabel = new Label();
         var subTitleLabel = new Label();
         var shadow = newShadow();
         var font = Font.font("Poppins", 24.0);
-        var captionArc = arc * 2.0;
+        var captionArc = contentArc * 2.0;
         var boldFont = Font.font(
             font.getFamily(),
             FontWeight.EXTRA_BOLD,
@@ -3213,17 +3334,13 @@ class CodeSnippetDrawing {
         captionBox.setPadding(new Insets(32.0, 64.0, 32.0, 64.0));
         captionBox
             .prefWidthProperty()
-            .bind(flow
-                .widthProperty()
-            );
-        captionBox.setLayoutX(padding + flowPadding);
+            .bind(widthProperty);
+        captionBox
+            .layoutXProperty()
+            .bind(xProperty);
         captionBox
             .layoutYProperty()
-            .bind(flow.
-                heightProperty()
-                .add(flowPadding * 2.0)
-                .add(padding * 2.0)
-            );
+            .bind(yProperty);
 
         titleLabel.setText(caption.title());
         titleLabel.setTextFill(Color.web("#e0e0e0"));
@@ -3241,12 +3358,6 @@ class CodeSnippetDrawing {
             captionBox.getChildren().add(subTitleLabel);
             captionArc *= 2.0;
         }
-
-        captionHeightSpaceProperty
-            .bind(captionBox
-                .heightProperty()
-                .add(padding)
-            );
 
         captionFrame.setFill(Color.web("#212121"));
         captionFrame
@@ -3276,12 +3387,8 @@ class CodeSnippetDrawing {
         captionFrame.setEffect(shadow);
     }
 
-    private static DropShadow newShadow() {
-        var shadow = new DropShadow();
-
-        shadow.setColor(Color.web("#212121"));
-        shadow.setRadius(48.0);
-        return shadow;
+    static double zeroIfNoCaption(Slide slide) {
+        return slide.caption().isPresent() ? 1.0 : 0.0;
     }
 }
 ```
@@ -3289,36 +3396,13 @@ class CodeSnippetDrawing {
 <figcaption>
 <p align="center">
 <strong>
-Implementation of the Code Snippet Drawing
+Implementation of the Caption Drawing
 </strong>
 </p>
 </figcaption>
 
-I defined some polite sizes in the constructor, so it looks good.
-
-The method `draw` will return the `Group` with the slide drawn on it, similar to
-what's been done before.
-
-To render the code nicely, the method `renderCodeSnippetFlow` employs the
-`Parser` developed previously and parses the tokens from the raw `code`
-`String` variable that comes with the underlying `Slide`.
-
-Then, for each token, a `Text` `Node` is created with the token value (it can be
-a keyword, symbol, etc.). The styles are gathered from what I defined as per my
-IDE custom settings. For example, the text color is set from that dictated by
-the `SchemeColors` ~~utility class~~ module via
-`text.setFill(SchemeColors.color(el))`.
-
-Regarding captions, if they're present, they'll be added to the `Group` as a
-normal `VBox` with `Label`s and another `Rectangle` for its background.
-
-All measures and bindings are set up correctly to build up the whole slide.
-
-I added sent some methods to a utility class `Drawings`, like `clearRect`,
-`getImageCornerRadius`, and `getRoundedImage`.
-
-This drawing provides the group node with the code snippet rendered so that we
-can add it to the app view pane.
+By decoupling this responsibility, as shown above, I was able to draw same-style
+captions for the other kinds of slides too.
 
 #### Putting the Drawing Together
 
