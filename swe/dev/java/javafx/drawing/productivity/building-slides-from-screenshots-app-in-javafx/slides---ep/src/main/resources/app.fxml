@@ -79,7 +79,7 @@
                     <children>
                         <Label alignment="CENTER" font="$x1" style="&#10;" text="Slides" textAlignment="CENTER" textFill="$x2" wrapText="false" />
 
-                        <ScrollPane fitToHeight="true" fitToWidth="true" pannable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+                        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" pannable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
                             <VBox.margin>
                                 <Insets top="16.0" />
                             </VBox.margin>

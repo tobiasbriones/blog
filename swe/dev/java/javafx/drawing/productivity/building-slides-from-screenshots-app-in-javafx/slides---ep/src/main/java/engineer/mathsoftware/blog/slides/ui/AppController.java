@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.*;
 import javafx.scene.control.TextField;
@@ -60,6 +61,8 @@ public class AppController implements
     private ListView<ImageItem> imageList;
     @FXML
     private Pagination pagination;
+    @FXML
+    private ScrollPane scrollPane;
     @FXML
     private HBox slideBox;
     @FXML
@@ -478,6 +481,7 @@ public class AppController implements
                 .textProperty()
             );
 
+        slideDrawingView.setScrollPane(scrollPane);
         slideDrawingView.setOnChangeListener(this);
         slideDrawingView.init();
     }
