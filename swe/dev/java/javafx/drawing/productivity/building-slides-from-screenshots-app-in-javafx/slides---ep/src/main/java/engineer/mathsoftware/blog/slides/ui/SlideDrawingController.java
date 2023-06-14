@@ -119,6 +119,9 @@ class SlideDrawingController {
         group.setOnMouseReleased(event -> scrollPane.setPannable(true));
 
         group.sceneProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null) {
+                return;
+            }
             newValue.setOnKeyPressed(event -> {
                 if (event.getCode() == KeyCode.SHIFT) {
                     shiftPressed = true;
