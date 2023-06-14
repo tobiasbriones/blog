@@ -5,6 +5,7 @@
 package engineer.mathsoftware.blog.slides;
 
 public enum ShapeItem {
+    Line,
     Rectangle,
     Circle
 }

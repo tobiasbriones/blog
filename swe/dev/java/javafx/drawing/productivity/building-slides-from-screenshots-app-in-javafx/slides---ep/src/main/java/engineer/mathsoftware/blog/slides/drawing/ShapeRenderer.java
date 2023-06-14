@@ -9,6 +9,7 @@ import engineer.mathsoftware.blog.slides.Palette;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
@@ -22,6 +23,7 @@ public class ShapeRenderer {
     private double startY;
     private double endX;
     private double endY;
+    private boolean keepProportions;
 
     public ShapeRenderer() {
         this.group = null;
@@ -31,6 +33,7 @@ public class ShapeRenderer {
         this.startY = 0.0;
         this.endX = 0.0;
         this.endY = 0.0;
+        this.keepProportions = false;
     }
 
     public void setGroup(Group value) {
@@ -55,6 +58,10 @@ public class ShapeRenderer {
         palette = value;
     }
 
+    public void keepProportions(boolean value) {
+        keepProportions = value;
+    }
+
     public void start(double x, double y) {
         startX = x;
         startY = y;
@@ -70,10 +77,40 @@ public class ShapeRenderer {
             return;
         }
         switch (shape) {
+            case Line line -> renderLine(line);
             case Rectangle rectangle -> renderRectangle(rectangle);
             case Circle circle -> renderCircle(circle);
             default ->
                 throw new IllegalStateException("Unexpected value: " + shape);
+        }
+    }
+
+    private void renderLine(Line line) {
+        var color = Colors.color(palette);
+
+        line.setStartX(startX);
+        line.setStartY(startY);
+        line.setStrokeWidth(2.0);
+        line.setStroke(color);
+        line.setFill(color);
+
+        if (keepProportions) {
+            var xDiff = Math.abs(startX - endX);
+            var yDiff = Math.abs(startY - endY);
+            var horizontal = xDiff >= yDiff;
+
+            if (horizontal) {
+                line.setEndX(endX);
+                line.setEndY(startY);
+            }
+            else {
+                line.setEndX(startX);
+                line.setEndY(endY);
+            }
+        }
+        else {
+            line.setEndX(endX);
+            line.setEndY(endY);
         }
     }
 

@@ -16,8 +16,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
 import java.util.Deque;
@@ -30,6 +32,7 @@ class SlideDrawingController {
     private final ObjectProperty<Palette> paletteProperty;
     private Group group;
     private ScrollPane scrollPane;
+    private boolean shiftPressed;
 
     SlideDrawingController() {
         shapes = new LinkedList<>();
@@ -37,6 +40,7 @@ class SlideDrawingController {
         shapeProperty = new SimpleObjectProperty<>();
         group = null;
         scrollPane = null;
+        shiftPressed = false;
     }
 
     void setDrawing(Group value) {
@@ -98,20 +102,35 @@ class SlideDrawingController {
             if (event.getButton() != MouseButton.SECONDARY) {
                 return;
             }
+            if (shapes.peek() == null) {
+                return;
+            }
+            var shape = shapes.peek();
             var currentX = event.getX();
             var currentY = event.getY();
+            var normX = normalizeX(currentX);
+            var normY = normalizeY(currentY);
 
-            if (shapes.peek() != null) {
-                var shape = shapes.peek();
-                var normX = normalizeX(currentX);
-                var normY = normalizeY(currentY);
-
-                shape.end(normX, normY);
-                shape.render();
-            }
+            shape.keepProportions(shiftPressed);
+            shape.end(normX, normY);
+            shape.render();
         });
 
         group.setOnMouseReleased(event -> scrollPane.setPannable(true));
+
+        group.sceneProperty().addListener((observable, oldValue, newValue) -> {
+            newValue.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.SHIFT) {
+                    shiftPressed = true;
+                }
+            });
+
+            newValue.setOnKeyReleased(event -> {
+                if (event.getCode() == KeyCode.SHIFT) {
+                    shiftPressed = false;
+                }
+            });
+        });
     }
 
     private void unbindEvents() {
@@ -125,6 +144,7 @@ class SlideDrawingController {
     private ShapeRenderer pushShape() {
         var renderer = new ShapeRenderer();
         var shape = switch (shapeProperty.get()) {
+            case Line -> new Line();
             case Rectangle -> new Rectangle();
             case Circle -> new Circle();
         };
