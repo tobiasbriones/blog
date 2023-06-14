@@ -142,17 +142,14 @@ class SlideDrawingController {
     }
 
     private ShapeRenderer pushShape() {
-        var renderer = new ShapeRenderer();
         var shape = switch (shapeProperty.get()) {
             case Line -> new Line();
             case Rectangle -> new Rectangle();
             case Circle -> new Circle();
         };
+        var renderer = new ShapeRenderer(shape, paletteProperty.get());
 
         renderer.setGroup(group);
-        renderer.setShape(shape);
-        renderer.setPalette(paletteProperty.get());
-
         shapes.push(renderer);
         return renderer;
     }

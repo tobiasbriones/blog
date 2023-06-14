@@ -16,19 +16,19 @@ import javafx.scene.shape.Shape;
 import static engineer.mathsoftware.blog.slides.drawing.Drawings.*;
 
 public class ShapeRenderer {
+    private final Shape shape;
+    private final Palette palette;
     private Group group;
-    private Shape shape;
-    private Palette palette;
     private double startX;
     private double startY;
     private double endX;
     private double endY;
     private boolean keepProportions;
 
-    public ShapeRenderer() {
+    public ShapeRenderer(Shape shape, Palette palette) {
+        this.shape = shape;
+        this.palette = palette;
         this.group = null;
-        this.shape = null;
-        this.palette = Palette.Good;
         this.startX = 0.0;
         this.startY = 0.0;
         this.endX = 0.0;
@@ -39,23 +39,11 @@ public class ShapeRenderer {
     public void setGroup(Group value) {
         group = value;
 
-        if (shape != null) {
-            group.getChildren().add(shape);
-        }
-    }
-
-    public void setShape(Shape value) {
-        shape = value;
-
         group.getChildren().add(shape);
     }
 
     public void remove() {
         group.getChildren().remove(shape);
-    }
-
-    public void setPalette(Palette value) {
-        palette = value;
     }
 
     public void keepProportions(boolean value) {
@@ -73,15 +61,12 @@ public class ShapeRenderer {
     }
 
     public void render() {
-        if (shape == null) {
-            return;
-        }
         switch (shape) {
             case Line line -> renderLine(line);
             case Rectangle rectangle -> renderRectangle(rectangle);
             case Circle circle -> renderCircle(circle);
             default ->
-                throw new IllegalStateException("Unexpected value: " + shape);
+                throw new IllegalStateException("Unexpected shape: " + shape);
         }
     }
 
