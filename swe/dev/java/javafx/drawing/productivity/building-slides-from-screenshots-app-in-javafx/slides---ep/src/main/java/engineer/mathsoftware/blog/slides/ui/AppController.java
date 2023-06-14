@@ -4,10 +4,7 @@
 
 package engineer.mathsoftware.blog.slides.ui;
 
-import engineer.mathsoftware.blog.slides.Enums;
-import engineer.mathsoftware.blog.slides.Language;
-import engineer.mathsoftware.blog.slides.SlideItem;
-import engineer.mathsoftware.blog.slides.SlideSize;
+import engineer.mathsoftware.blog.slides.*;
 import engineer.mathsoftware.blog.slides.data.Data;
 import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.ImageItem;
@@ -85,6 +82,12 @@ public class AppController implements
     private TextArea captionTitleArea;
     @FXML
     private TextArea captionSubTitleArea;
+    @FXML
+    private ComboBox<ShapeItem> shapeComboBox;
+    @FXML
+    private ComboBox<Palette> shapePaletteComboBox;
+    @FXML
+    private Button shapeBackButton;
 
     public AppController() {
         this.repository = new LocalDataRepository(DATA_ROOT);
@@ -478,7 +481,13 @@ public class AppController implements
                 .textProperty()
             );
 
-        slideDrawingView.setScrollPane(scrollPane);
+        slideDrawingView
+            .setViews(
+                scrollPane,
+                shapeComboBox,
+                shapePaletteComboBox,
+                shapeBackButton
+            );
         slideDrawingView.setOnChangeListener(this);
         slideDrawingView.init();
     }

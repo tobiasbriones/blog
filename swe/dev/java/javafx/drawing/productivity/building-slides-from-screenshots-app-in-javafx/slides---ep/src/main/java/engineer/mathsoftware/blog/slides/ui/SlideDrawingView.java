@@ -4,16 +4,16 @@
 
 package engineer.mathsoftware.blog.slides.ui;
 
-import engineer.mathsoftware.blog.slides.Language;
-import engineer.mathsoftware.blog.slides.Slide;
-import engineer.mathsoftware.blog.slides.SlideItem;
-import engineer.mathsoftware.blog.slides.SlideSize;
+import engineer.mathsoftware.blog.slides.*;
 import engineer.mathsoftware.blog.slides.data.ImageItem;
 import engineer.mathsoftware.blog.slides.drawing.GroupSlideDrawing;
 import engineer.mathsoftware.blog.slides.drawing.SlideDrawing;
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 
 import java.util.Optional;
@@ -33,6 +33,7 @@ class SlideDrawingView {
         void setState(ImageItem item);
     }
 
+    private final SlideDrawingController controller;
     private final SlideDrawing drawing;
     private final ObjectProperty<SlideItem> slideProperty;
     private final ObjectProperty<ImageItem> imageProperty;
@@ -46,6 +47,7 @@ class SlideDrawingView {
     private boolean isStateLoading;
 
     SlideDrawingView(HBox view) {
+        this.controller = new SlideDrawingController();
         this.drawing = new GroupSlideDrawing(view);
         this.slideProperty = new SimpleObjectProperty<>();
         this.imageProperty = new SimpleObjectProperty<>();
@@ -109,6 +111,18 @@ class SlideDrawingView {
         updateSlide();
     }
 
+    void setViews(
+        ScrollPane scrollPane,
+        ComboBox<ShapeItem> shapeComboBox,
+        ComboBox<Palette> shapePaletteComboBox,
+        Button shapeBackButton
+    ) {
+        controller.setScrollPane(scrollPane);
+        controller.setShapeComboBox(shapeComboBox);
+        controller.setShapePaletteComboBox(shapePaletteComboBox);
+        controller.setShapeBackButton(shapeBackButton);
+    }
+
     private void onImageChange(
         ObservableValue<? extends ImageItem> observable,
         ImageItem oldValue,
@@ -151,7 +165,9 @@ class SlideDrawingView {
         };
 
         drawing.setup(sizeProperty.get());
-        drawing.draw(slide);
+        var group = drawing.draw(slide);
+
+        controller.setDrawing(group);
 
         if (l != null) {
             l.onSlideChange(new SlideState(

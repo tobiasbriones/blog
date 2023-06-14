@@ -121,6 +121,18 @@
                                     <TextArea fx:id="captionSubTitleArea" prefHeight="64.0" promptText="SubTitle/Description" />
                                  </children>
                               </VBox>
+                              <Label styleClass="title" text="Shapes" />
+                              <HBox alignment="CENTER_LEFT" spacing="16.0">
+                                 <children>
+                                    <ComboBox fx:id="shapeComboBox" />
+                                    <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="shapeBackButton" mnemonicParsing="false" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <ComboBox fx:id="shapePaletteComboBox" prefWidth="150.0" />
                            </children>
                         </VBox>
                      </content>
