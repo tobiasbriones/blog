@@ -23,7 +23,11 @@ final class Drawings {
     }
 
     static double getImageCornerRadius(Image image) {
-        var minDim = Math.min(image.getWidth(), image.getHeight());
+        return getCornerRadius(image.getWidth(), image.getHeight());
+    }
+
+    static double getCornerRadius(double width, double height) {
+        var minDim = Math.min(width, height);
         var unitDim = 48.0;
         var unitArc = 16.0 / 4.0;
         var proportion = minDim / unitDim;
