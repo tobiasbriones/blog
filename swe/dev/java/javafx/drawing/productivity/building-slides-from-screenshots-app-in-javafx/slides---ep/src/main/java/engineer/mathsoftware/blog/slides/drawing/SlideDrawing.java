@@ -6,9 +6,10 @@ package engineer.mathsoftware.blog.slides.drawing;
 
 import engineer.mathsoftware.blog.slides.Slide;
 import engineer.mathsoftware.blog.slides.SlideSize;
+import javafx.scene.Group;
 
 public interface SlideDrawing {
     void setup(SlideSize slideSize);
 
-    void draw(Slide slide);
+    Group draw(Slide slide);
 }

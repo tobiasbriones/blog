@@ -27,7 +27,7 @@ public class GroupSlideDrawing implements SlideDrawing {
     }
 
     @Override
-    public void draw(Slide slide) {
+    public Group draw(Slide slide) {
         var drawing = switch (slide) {
             case Slide.CodeShot codeShot -> drawCodeShot(codeShot);
             case Slide.CodeSnippet codeSnippet -> drawCodeSnippet(codeSnippet);
@@ -36,6 +36,7 @@ public class GroupSlideDrawing implements SlideDrawing {
 
         view.getChildren().clear();
         view.getChildren().add(drawing);
+        return drawing;
     }
 
     private Group drawCodeShot(Slide.CodeShot codeShot) {
