@@ -103,8 +103,8 @@ class CodeSnippetDrawing {
         frame.setWidth(size.width() - padding * 2.0);
         frame
             .heightProperty()
-            .bind(flow.
-                heightProperty()
+            .bind(flow
+                .heightProperty()
                 .add(flowPadding * 2.0)
             );
         frame.setX(padding);
