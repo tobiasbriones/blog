@@ -163,7 +163,17 @@
                         <Label text="Build a presentation from screenshots and source code" />
                     </children>
                 </HBox>
-                <HBox prefWidth="200.0" />
+                <HBox prefWidth="200.0">
+               <children>
+                  <Label fx:id="secondaryStatusLabel" maxHeight="1.7976931348623157E308" maxWidth="-1.0">
+                     <font>
+                        <Font size="11.0" fx:id="x31" />
+                     </font>
+                     <textFill>
+                        <Color red="0.625" green="0.625" blue="0.625" fx:id="x41" />
+                     </textFill>
+                  </Label>
+               </children></HBox>
             </children>
             <padding>
                 <Insets bottom="4.0" left="16.0" right="16.0" top="4.0" />

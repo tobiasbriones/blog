@@ -55,6 +55,8 @@ public class AppController implements
     @FXML
     private Label statusLabel;
     @FXML
+    private Label secondaryStatusLabel;
+    @FXML
     private ListView<ImageItem> imageList;
     @FXML
     private Pagination pagination;
@@ -489,6 +491,7 @@ public class AppController implements
                 shapeBackButton
             );
         slideDrawingView.setOnChangeListener(this);
+        slideDrawingView.setStatus(this::setSecondaryStatus);
         slideDrawingView.init();
     }
 
@@ -537,5 +540,9 @@ public class AppController implements
 
     private void setStatus(String msg) {
         statusLabel.setText(msg);
+    }
+
+    private void setSecondaryStatus(String msg) {
+        secondaryStatusLabel.setText(msg);
     }
 }
