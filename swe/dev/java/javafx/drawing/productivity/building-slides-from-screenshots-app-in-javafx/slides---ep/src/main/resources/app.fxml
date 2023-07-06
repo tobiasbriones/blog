@@ -160,7 +160,7 @@
                 </HBox>
                 <HBox alignment="CENTER" prefWidth="200.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label text="Build a presentation from screenshots" />
+                        <Label text="Build a presentation from screenshots and source code" />
                     </children>
                 </HBox>
                 <HBox prefWidth="200.0" />
