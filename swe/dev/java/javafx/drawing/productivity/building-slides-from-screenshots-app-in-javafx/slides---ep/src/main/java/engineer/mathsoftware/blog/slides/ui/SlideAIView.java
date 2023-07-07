@@ -9,28 +9,29 @@ import engineer.mathsoftware.blog.slides.drawing.ai.AIShape;
 import engineer.mathsoftware.blog.slides.drawing.ai.GroupAIDrawing;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.geometry.BoundingBox;
 import javafx.scene.Group;
 
-import static engineer.mathsoftware.blog.slides.ai.SlideAI.OcrWordDetection;
+import static engineer.mathsoftware.blog.slides.drawing.ai.AIShape.*;
 
 class SlideAIView {
     private final Group group;
     private final AIDrawing aiDrawing;
-    private final ObjectProperty<OcrWordDetection> ocrWordDetectionProperty;
+    private final ObjectProperty<WordSelection> wordSelectionProperty;
 
     SlideAIView() {
         group = new Group();
         aiDrawing = new GroupAIDrawing(group);
-        ocrWordDetectionProperty = new SimpleObjectProperty<>();
+        wordSelectionProperty = new SimpleObjectProperty<>();
     }
 
-    ObjectProperty<OcrWordDetection> ocrWordDetectionProperty() {
-        return ocrWordDetectionProperty;
+    ObjectProperty<WordSelection> wordSelectionProperty() {
+        return wordSelectionProperty;
     }
 
     void init(Group parent) {
         parent.getChildren().add(group);
-        ocrWordDetectionProperty.addListener((observable, oldValue, newValue) -> {
+        wordSelectionProperty.addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 updateTextBoxes(newValue);
             }
@@ -38,6 +39,10 @@ class SlideAIView {
                 clear();
             }
         });
+    }
+
+    boolean isShowing() {
+        return group.isVisible();
     }
 
     void show() {
@@ -48,10 +53,15 @@ class SlideAIView {
         group.setVisible(false);
     }
 
-    private void updateTextBoxes(OcrWordDetection det) {
-        var slideAIDrawing = AIShape.WordSelection.of(det);
+    void setWordSelectionFocus(BoundingBox box, State state) {
+        var sel = wordSelectionProperty.get();
 
-        aiDrawing.setup(slideAIDrawing);
+        sel.wordFocus().set(box, state);
+        updateTextBoxes(sel);
+    }
+
+    private void updateTextBoxes(AIShape det) {
+        aiDrawing.setup(det);
         aiDrawing.clear();
         aiDrawing.draw(group);
     }

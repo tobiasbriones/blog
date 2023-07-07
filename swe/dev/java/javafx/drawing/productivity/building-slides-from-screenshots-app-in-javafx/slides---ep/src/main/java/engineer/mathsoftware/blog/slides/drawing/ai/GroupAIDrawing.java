@@ -6,7 +6,6 @@ package engineer.mathsoftware.blog.slides.drawing.ai;
 
 import javafx.geometry.BoundingBox;
 import javafx.scene.Group;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import static engineer.mathsoftware.blog.slides.drawing.ai.AIShape.*;
@@ -68,7 +67,7 @@ public class GroupAIDrawing implements AIDrawing {
         rect.setHeight(boundingBox.getHeight());
         rect.setStroke(color(state));
         rect.setStrokeWidth(2.0);
-        rect.setFill(Color.TRANSPARENT);
+        rect.setFill(fill(state));
         rect.setArcWidth(16.0);
         rect.setArcHeight(16.0);
         group.getChildren().add(rect);

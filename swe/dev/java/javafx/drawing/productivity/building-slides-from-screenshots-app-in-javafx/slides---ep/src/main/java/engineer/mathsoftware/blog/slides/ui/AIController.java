@@ -13,16 +13,17 @@ import javafx.scene.image.Image;
 import javafx.scene.transform.Scale;
 
 import static engineer.mathsoftware.blog.slides.ai.SlideAI.OcrWordDetection;
+import static engineer.mathsoftware.blog.slides.drawing.ai.AIShape.*;
 
 class AIController {
-    private final ObjectProperty<OcrWordDetection> wordDetectionProperty;
+    private final ObjectProperty<WordSelection> wordSelectionProperty;
     private Group group;
     private SlideAIView aiView;
     private Image slideDrawingSnapshot;
     private BackgroundStatus status;
 
     AIController() {
-        wordDetectionProperty = new SimpleObjectProperty<>();
+        wordSelectionProperty = new SimpleObjectProperty<>();
         group = null;
         aiView = null;
         slideDrawingSnapshot = null;
@@ -40,7 +41,7 @@ class AIController {
 
         aiView.init(slideDrawing);
         aiView.hide();
-        aiView.ocrWordDetectionProperty().bind(wordDetectionProperty);
+        aiView.wordSelectionProperty().bind(wordSelectionProperty);
         loadSlideDrawingSnapshot();
         loadOcr();
     }
@@ -51,6 +52,38 @@ class AIController {
 
     void onHideTextBoxes() {
         aiView.hide();
+    }
+
+    void onMouseMoved(double x, double y) {
+        if (aiView == null) {
+            return;
+        }
+        if (!aiView.isShowing()) {
+            return;
+        }
+        if (wordSelectionProperty.isNull().get()) {
+            return;
+        }
+        var match = wordSelectionProperty
+            .get()
+            .wordBoxes()
+            .stream()
+            .filter(box -> box.contains(x, y))
+            // Avoid selecting the whole slide box
+            .filter(box -> box.getHeight() < 100.0)
+            .findFirst();
+
+        match.ifPresentOrElse(
+            box -> aiView.setWordSelectionFocus(box, State.Hovered),
+            () -> aiView.setWordSelectionFocus(null, null)
+        );
+    }
+
+    void onMouseExited() {
+        if (aiView == null) {
+            return;
+        }
+        aiView.setWordSelectionFocus(null, null);
     }
 
     private void loadSlideDrawingSnapshot() {
@@ -86,11 +119,12 @@ class AIController {
     }
 
     private void loadOcr(OcrWordDetection det) {
-        wordDetectionProperty.set(det);
+        var slideAIDrawing = WordSelection.of(det);
+        wordSelectionProperty.set(slideAIDrawing);
     }
 
     private void clearOcr() {
-        wordDetectionProperty.set(null);
+        wordSelectionProperty.set(null);
     }
 
     private void setStatusMsg(String msg) {

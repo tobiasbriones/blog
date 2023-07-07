@@ -94,6 +94,10 @@ class SlideDrawingController {
     }
 
     private void bindEvents() {
+        group.setOnMouseMoved(
+            event -> aiController.onMouseMoved(event.getX(), event.getY())
+        );
+        group.setOnMouseExited(event -> aiController.onMouseExited());
         group.setOnMousePressed(event -> {
             if (event.getButton() != MouseButton.SECONDARY) {
                 return;
