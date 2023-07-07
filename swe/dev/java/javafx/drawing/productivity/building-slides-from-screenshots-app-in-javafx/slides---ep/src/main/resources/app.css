@@ -19,3 +19,7 @@
 .text {
     -fx-font-smoothing-type: gray;
 }
+
+.opaque-text {
+    -fx-text-fill: #757575;
+}
