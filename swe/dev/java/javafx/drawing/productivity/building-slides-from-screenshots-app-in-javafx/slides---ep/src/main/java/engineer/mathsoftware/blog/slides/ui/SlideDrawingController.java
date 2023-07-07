@@ -30,6 +30,7 @@ class SlideDrawingController {
     private final ObjectProperty<ShapeItem> shapeProperty;
     private final ObjectProperty<Palette> paletteProperty;
     private final AIController aiController;
+    private final AIInvalidation aiInvalidation;
     private Group group;
     private ScrollPane scrollPane;
     private boolean shiftPressed;
@@ -39,6 +40,7 @@ class SlideDrawingController {
         paletteProperty = new SimpleObjectProperty<>();
         shapeProperty = new SimpleObjectProperty<>();
         aiController = new AIController();
+        aiInvalidation = new AIInvalidation(this::loadAI);
         group = null;
         scrollPane = null;
         shiftPressed = false;
@@ -54,7 +56,7 @@ class SlideDrawingController {
         }
         group = value;
 
-        aiController.init(group);
+        aiInvalidation.slideChanged();
         bindEvents();
         addShapes();
     }
@@ -131,7 +133,7 @@ class SlideDrawingController {
             newValue.setOnKeyPressed(event -> {
                 switch (event.getCode()) {
                     case SHIFT -> shiftPressed = true;
-                    case CONTROL -> aiController.onShowTextBoxes();
+                    case CONTROL -> onCtrlPressed();
                 }
             });
 
@@ -174,6 +176,15 @@ class SlideDrawingController {
         shape.remove();
     }
 
+    private void onCtrlPressed() {
+        aiInvalidation.validate();
+        aiController.onShowTextBoxes();
+    }
+
+    private void loadAI() {
+        aiController.init(group);
+    }
+
     private double normalizeX(double x) {
         var bounds = group.getBoundsInLocal();
         return Math.max(0.0, Math.min(bounds.getWidth() - 1.0, x));
@@ -182,5 +193,26 @@ class SlideDrawingController {
     private double normalizeY(double y) {
         var bounds = group.getBoundsInLocal();
         return Math.max(0.0, Math.min(bounds.getHeight() - 1.0, y));
+    }
+
+    private static final class AIInvalidation {
+        private final Runnable validator;
+        private boolean isInvalid;
+
+        AIInvalidation(Runnable validator) {
+            this.validator = validator;
+            this.isInvalid = true;
+        }
+
+        void validate() {
+            if (isInvalid) {
+                validator.run();
+            }
+            isInvalid = false;
+        }
+
+        void slideChanged() {
+            isInvalid = true;
+        }
     }
 }
