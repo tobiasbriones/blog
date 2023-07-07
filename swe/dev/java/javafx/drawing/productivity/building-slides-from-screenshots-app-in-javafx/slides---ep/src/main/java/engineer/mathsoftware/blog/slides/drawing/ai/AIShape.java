@@ -30,10 +30,17 @@ public sealed interface AIShape {
 
     static Color color(State state) {
         return Color.web(switch (state) {
-            case Normal -> "#4FC3F7";
-            case Hovered -> "#607d8b";
-            case Selected -> "#455a64";
+            case Normal -> "#388e3c";
+            case Hovered, Selected -> "#1b5e20";
         });
+    }
+
+    static Color fill(State state) {
+        return switch (state) {
+            case Normal -> Color.TRANSPARENT;
+            case Hovered -> Color.web("#1b5e20", 0.4);
+            case Selected -> Color.web("#1b5e20", 0.6);
+        };
     }
 }
 
