@@ -16,7 +16,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -30,6 +29,7 @@ class SlideDrawingController {
     private final Deque<ShapeRenderer> shapes;
     private final ObjectProperty<ShapeItem> shapeProperty;
     private final ObjectProperty<Palette> paletteProperty;
+    private final AIController aiController;
     private Group group;
     private ScrollPane scrollPane;
     private boolean shiftPressed;
@@ -38,9 +38,14 @@ class SlideDrawingController {
         shapes = new LinkedList<>();
         paletteProperty = new SimpleObjectProperty<>();
         shapeProperty = new SimpleObjectProperty<>();
+        aiController = new AIController();
         group = null;
         scrollPane = null;
         shiftPressed = false;
+    }
+
+    void setStatus(BackgroundStatus value) {
+        aiController.setStatus(value);
     }
 
     void setDrawing(Group value) {
@@ -49,6 +54,7 @@ class SlideDrawingController {
         }
         group = value;
 
+        aiController.init(group);
         bindEvents();
         addShapes();
     }
@@ -123,14 +129,16 @@ class SlideDrawingController {
                 return;
             }
             newValue.setOnKeyPressed(event -> {
-                if (event.getCode() == KeyCode.SHIFT) {
-                    shiftPressed = true;
+                switch (event.getCode()) {
+                    case SHIFT -> shiftPressed = true;
+                    case CONTROL -> aiController.onShowTextBoxes();
                 }
             });
 
             newValue.setOnKeyReleased(event -> {
-                if (event.getCode() == KeyCode.SHIFT) {
-                    shiftPressed = false;
+                switch (event.getCode()) {
+                    case SHIFT -> shiftPressed = false;
+                    case CONTROL -> aiController.onHideTextBoxes();
                 }
             });
         });
