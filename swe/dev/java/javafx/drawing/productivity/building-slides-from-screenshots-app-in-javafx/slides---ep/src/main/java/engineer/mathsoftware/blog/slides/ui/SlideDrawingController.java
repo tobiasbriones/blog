@@ -99,16 +99,18 @@ class SlideDrawingController {
         );
         group.setOnMouseExited(event -> aiController.onMouseExited());
         group.setOnMousePressed(event -> {
-            if (event.getButton() != MouseButton.SECONDARY) {
-                return;
+            if (event.getButton() == MouseButton.SECONDARY) {
+                var startX = event.getX();
+                var startY = event.getY();
+                var shape = pushShape();
+
+                shape.start(startX, startY);
+
+                scrollPane.setPannable(false);
             }
-            var startX = event.getX();
-            var startY = event.getY();
-            var shape = pushShape();
-
-            shape.start(startX, startY);
-
-            scrollPane.setPannable(false);
+            else {
+                aiController.onMouseClicked();
+            }
         });
         group.setOnMouseDragged(event -> {
             if (event.getButton() != MouseButton.SECONDARY) {

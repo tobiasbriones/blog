@@ -79,6 +79,27 @@ class AIController {
         );
     }
 
+    void onMouseClicked() {
+        if (aiView == null) {
+            return;
+        }
+        if (!aiView.isShowing()) {
+            return;
+        }
+        if (wordSelectionProperty.isNull().get()) {
+            return;
+        }
+        var sel = wordSelectionProperty.get();
+        var focus = sel.wordFocus();
+
+        focus.get().ifPresent(
+            stateFocus -> aiView.setWordSelectionFocus(
+                stateFocus.object(),
+                State.Selected
+            )
+        );
+    }
+
     void onMouseExited() {
         if (aiView == null) {
             return;
