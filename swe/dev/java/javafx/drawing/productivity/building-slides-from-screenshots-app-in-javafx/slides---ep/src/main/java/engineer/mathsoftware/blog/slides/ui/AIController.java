@@ -4,13 +4,17 @@
 
 package engineer.mathsoftware.blog.slides.ui;
 
+import engineer.mathsoftware.blog.slides.drawing.ai.Stateful;
 import javafx.application.Platform;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.Group;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
+import javafx.scene.shape.Line;
 import javafx.scene.transform.Scale;
+
+import java.util.Optional;
 
 import static engineer.mathsoftware.blog.slides.ai.SlideAI.OcrWordDetection;
 import static engineer.mathsoftware.blog.slides.drawing.ai.AIShape.*;
@@ -79,15 +83,15 @@ class AIController {
         );
     }
 
-    void onMouseClicked() {
+    Optional<Line> onMouseClicked() {
         if (aiView == null) {
-            return;
+            return Optional.empty();
         }
         if (!aiView.isShowing()) {
-            return;
+            return Optional.empty();
         }
         if (wordSelectionProperty.isNull().get()) {
-            return;
+            return Optional.empty();
         }
         var sel = wordSelectionProperty.get();
         var focus = sel.wordFocus();
@@ -98,6 +102,16 @@ class AIController {
                 State.Selected
             )
         );
+        return focus
+            .get()
+            .map(Stateful.Focus::object)
+            .map(rect -> new Line(
+                    rect.getMinX(),
+                    rect.getMaxY(),
+                    rect.getMaxX(),
+                    rect.getMaxY()
+                )
+            );
     }
 
     void onMouseExited() {

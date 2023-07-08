@@ -109,7 +109,15 @@ class SlideDrawingController {
                 scrollPane.setPannable(false);
             }
             else {
-                aiController.onMouseClicked();
+                aiController
+                    .onMouseClicked()
+                    .ifPresent(line -> {
+                        var shape = pushShape();
+
+                        shape.start(line.getStartX(), line.getStartY());
+                        shape.end(line.getEndX(), line.getEndY());
+                        shape.render();
+                    });
             }
         });
         group.setOnMouseDragged(event -> {
