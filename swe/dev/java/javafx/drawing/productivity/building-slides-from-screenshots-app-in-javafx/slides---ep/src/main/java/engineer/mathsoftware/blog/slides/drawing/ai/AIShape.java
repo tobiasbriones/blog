@@ -39,7 +39,7 @@ public sealed interface AIShape {
         return switch (state) {
             case Normal -> Color.TRANSPARENT;
             case Hovered -> Color.web("#1b5e20", 0.4);
-            case Selected -> Color.web("#1b5e20", 0.6);
+            case Selected -> Color.web("#0D47A1", 0.6);
         };
     }
 }
