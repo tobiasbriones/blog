@@ -171,8 +171,6 @@ class SlideDrawingView {
         drawing.setup(sizeProperty.get());
         var group = drawing.draw(slide);
 
-        controller.setDrawing(group);
-
         if (l != null) {
             l.onSlideChange(new SlideState(
                 slideProperty.get(),
@@ -182,6 +180,9 @@ class SlideDrawingView {
                 sizeProperty.get()
             ));
         }
+
+        controller.setDrawing(group);
+        controller.onImageChange(imageProperty.get());
     }
 
     private Optional<Slide.Caption> getCaption() {

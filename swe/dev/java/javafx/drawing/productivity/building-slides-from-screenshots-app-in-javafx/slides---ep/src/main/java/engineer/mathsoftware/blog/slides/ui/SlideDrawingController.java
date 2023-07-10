@@ -7,6 +7,7 @@ package engineer.mathsoftware.blog.slides.ui;
 import engineer.mathsoftware.blog.slides.Enums;
 import engineer.mathsoftware.blog.slides.Palette;
 import engineer.mathsoftware.blog.slides.ShapeItem;
+import engineer.mathsoftware.blog.slides.data.ImageItem;
 import engineer.mathsoftware.blog.slides.drawing.ShapeRenderer;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -21,12 +22,11 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Objects;
+import java.util.*;
 
 class SlideDrawingController {
     private final Deque<ShapeRenderer> shapes;
+    private final ChangeState changes;
     private final ObjectProperty<ShapeItem> shapeProperty;
     private final ObjectProperty<Palette> paletteProperty;
     private final AIController aiController;
@@ -37,6 +37,7 @@ class SlideDrawingController {
 
     SlideDrawingController() {
         shapes = new LinkedList<>();
+        changes = new ChangeState();
         paletteProperty = new SimpleObjectProperty<>();
         shapeProperty = new SimpleObjectProperty<>();
         aiController = new AIController();
@@ -57,8 +58,13 @@ class SlideDrawingController {
         group = value;
 
         aiInvalidation.slideChanged();
+        clearState();
         bindEvents();
-        addShapes();
+    }
+
+    void onImageChange(ImageItem newItem) {
+        changes.setCurrentItem(newItem);
+        loadState();
     }
 
     void setScrollPane(ScrollPane value) {
@@ -117,6 +123,7 @@ class SlideDrawingController {
                         shape.start(line.getStartX(), line.getStartY());
                         shape.end(line.getEndX(), line.getEndY());
                         shape.render();
+                        saveState();
                     });
             }
         });
@@ -138,7 +145,10 @@ class SlideDrawingController {
             shape.render();
         });
 
-        group.setOnMouseReleased(event -> scrollPane.setPannable(true));
+        group.setOnMouseReleased(event -> {
+            saveState();
+            scrollPane.setPannable(true);
+        });
 
         group.sceneProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue == null) {
@@ -164,8 +174,29 @@ class SlideDrawingController {
         group.setOnMousePressed(null);
     }
 
-    private void addShapes() {
-        shapes.forEach(shape -> shape.setGroup(group));
+    private void saveState() {
+        changes.saveCopy(shapes);
+    }
+
+    private void loadState() {
+        clearState();
+        changes
+            .get()
+            .ifPresent(state ->
+                state
+                    .shapes()
+                    .forEach(this::restoreShape)
+            );
+    }
+
+    private void restoreShape(ShapeRenderer shape) {
+        shape.setGroup(group);
+        shape.render();
+        shapes.addLast(shape);
+    }
+
+    private void clearState() {
+        shapes.clear();
     }
 
     private ShapeRenderer pushShape() {
@@ -188,6 +219,7 @@ class SlideDrawingController {
         var shape = shapes.pop();
 
         shape.remove();
+        saveState();
     }
 
     private void onCtrlPressed() {
@@ -207,6 +239,40 @@ class SlideDrawingController {
     private double normalizeY(double y) {
         var bounds = group.getBoundsInLocal();
         return Math.max(0.0, Math.min(bounds.getHeight() - 1.0, y));
+    }
+
+    private static class ChangeState {
+        record SlideDrawingState(
+            Collection<ShapeRenderer> shapes
+        ) {}
+
+        final Map<ImageItem, SlideDrawingState> changes;
+        ImageItem currentItem;
+
+        ChangeState() {
+            changes = new HashMap<>();
+            currentItem = null;
+        }
+
+        void setCurrentItem(ImageItem newCurrentItem) {
+            currentItem = newCurrentItem;
+        }
+
+        Optional<SlideDrawingState> get() {
+            return Optional.ofNullable(changes.get(currentItem));
+        }
+
+        void saveCopy(
+            Deque<ShapeRenderer> shapes
+        ) {
+            if (currentItem == null) {
+                return;
+            }
+            var shapesCopy = new ArrayList<>(shapes);
+            var state = new SlideDrawingState(shapesCopy);
+
+            changes.put(currentItem, state);
+        }
     }
 
     private static final class AIInvalidation {
