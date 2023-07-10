@@ -47,15 +47,15 @@ class SlideDrawingController {
         shiftPressed = false;
     }
 
-    void setStatus(BackgroundStatus value) {
-        aiController.setStatus(value);
+    void setStatus(BackgroundStatus newStatus) {
+        aiController.setStatus(newStatus);
     }
 
-    void setDrawing(Group value) {
+    void setDrawing(Group newDrawing) {
         if (group != null) {
             unbindEvents();
         }
-        group = value;
+        group = newDrawing;
 
         aiInvalidation.slideChanged();
         clearState();
@@ -67,25 +67,25 @@ class SlideDrawingController {
         loadState();
     }
 
-    void setScrollPane(ScrollPane value) {
-        scrollPane = value;
+    void setScrollPane(ScrollPane newScrollPane) {
+        scrollPane = newScrollPane;
     }
 
-    void setShapeComboBox(ComboBox<ShapeItem> value) {
-        value.getItems().addAll(ShapeItem.values());
-        value.setConverter(new Enums.EnglishConverter<>(ShapeItem.class));
-        value.getSelectionModel().select(0);
-        shapeProperty.bind(value.valueProperty());
+    void setShapeComboBox(ComboBox<ShapeItem> shapeComboBox) {
+        shapeComboBox.getItems().addAll(ShapeItem.values());
+        shapeComboBox.setConverter(new Enums.EnglishConverter<>(ShapeItem.class));
+        shapeComboBox.getSelectionModel().select(0);
+        shapeProperty.bind(shapeComboBox.valueProperty());
     }
 
-    void setShapePaletteComboBox(ComboBox<Palette> value) {
-        value.getItems().addAll(Palette.values());
-        value.setConverter(new Enums.EnglishConverter<>(Palette.class));
-        value.getSelectionModel().select(0);
-        paletteProperty.bind(value.valueProperty());
+    void setShapePaletteComboBox(ComboBox<Palette> shapePaletteComboBox) {
+        shapePaletteComboBox.getItems().addAll(Palette.values());
+        shapePaletteComboBox.setConverter(new Enums.EnglishConverter<>(Palette.class));
+        shapePaletteComboBox.getSelectionModel().select(0);
+        paletteProperty.bind(shapePaletteComboBox.valueProperty());
     }
 
-    void setShapeBackButton(Button value) {
+    void setShapeBackButton(Button shapeBackButton) {
         var icBack = new Image(
             Objects.requireNonNull(
                 getClass().getResourceAsStream("/ic_back.png")
@@ -95,8 +95,8 @@ class SlideDrawingController {
 
         iv.setFitWidth(18.0);
         iv.setFitHeight(18.0);
-        value.setGraphic(iv);
-        value.setOnAction(event -> popShape());
+        shapeBackButton.setGraphic(iv);
+        shapeBackButton.setOnAction(event -> popShape());
     }
 
     private void bindEvents() {

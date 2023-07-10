@@ -36,8 +36,8 @@ public class ShapeRenderer {
         this.keepProportions = false;
     }
 
-    public void setGroup(Group value) {
-        group = value;
+    public void setGroup(Group newGroup) {
+        group = newGroup;
 
         group.getChildren().add(shape);
     }
@@ -46,8 +46,8 @@ public class ShapeRenderer {
         group.getChildren().remove(shape);
     }
 
-    public void keepProportions(boolean value) {
-        keepProportions = value;
+    public void keepProportions(boolean proportions) {
+        keepProportions = proportions;
     }
 
     public void start(double x, double y) {

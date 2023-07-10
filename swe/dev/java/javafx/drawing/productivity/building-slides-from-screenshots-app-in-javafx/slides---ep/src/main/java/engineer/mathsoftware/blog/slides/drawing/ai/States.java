@@ -14,13 +14,13 @@ final class States {
         private AIShape.State state;
 
         @Override
-        public void set(BoundingBox shapeValue, AIShape.State stateValue) {
-            if (stateValue == AIShape.State.Normal) {
+        public void set(BoundingBox newShape, AIShape.State newState) {
+            if (newState == AIShape.State.Normal) {
                 unset();
                 return;
             }
-            shape = shapeValue;
-            state = stateValue;
+            shape = newShape;
+            state = newState;
         }
 
         private void unset() {

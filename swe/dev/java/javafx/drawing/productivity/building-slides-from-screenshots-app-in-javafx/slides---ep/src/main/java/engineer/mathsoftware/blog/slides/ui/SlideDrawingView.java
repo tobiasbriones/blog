@@ -61,12 +61,12 @@ class SlideDrawingView {
         isStateLoading = false;
     }
 
-    void setStatus(BackgroundStatus value) {
-        controller.setStatus(value);
+    void setStatus(BackgroundStatus newStatus) {
+        controller.setStatus(newStatus);
     }
 
-    void setOnChangeListener(ChangeListener value) {
-        l = value;
+    void setOnChangeListener(ChangeListener newListener) {
+        l = newListener;
     }
 
     ObjectProperty<SlideItem> slideProperty() {

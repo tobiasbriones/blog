@@ -44,8 +44,8 @@ class CaptionRenderer {
             );
     }
 
-    void setContentArc(double value) {
-        contentArc = value;
+    void setContentArc(double newArc) {
+        contentArc = newArc;
     }
 
     DoubleProperty widthProperty() {
