@@ -47,18 +47,18 @@ class SlideDrawingView {
     private boolean isStateLoading;
 
     SlideDrawingView(HBox view) {
-        this.controller = new SlideDrawingController();
-        this.drawing = new GroupSlideDrawing(view);
-        this.slideProperty = new SimpleObjectProperty<>();
-        this.imageProperty = new SimpleObjectProperty<>();
-        this.languageProperty = new SimpleObjectProperty<>();
-        this.codeProperty = new SimpleObjectProperty<>();
-        this.sizeProperty = new SimpleObjectProperty<>();
-        this.captionEnableProperty = new SimpleBooleanProperty();
-        this.captionTitleProperty = new SimpleStringProperty();
-        this.captionSubTitleProperty = new SimpleStringProperty();
-        this.l = null;
-        this.isStateLoading = false;
+        controller = new SlideDrawingController();
+        drawing = new GroupSlideDrawing(view);
+        slideProperty = new SimpleObjectProperty<>();
+        imageProperty = new SimpleObjectProperty<>();
+        languageProperty = new SimpleObjectProperty<>();
+        codeProperty = new SimpleObjectProperty<>();
+        sizeProperty = new SimpleObjectProperty<>();
+        captionEnableProperty = new SimpleBooleanProperty();
+        captionTitleProperty = new SimpleStringProperty();
+        captionSubTitleProperty = new SimpleStringProperty();
+        l = null;
+        isStateLoading = false;
     }
 
     void setStatus(BackgroundStatus value) {
