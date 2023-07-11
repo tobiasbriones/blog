@@ -42,6 +42,22 @@ public class ShapeRenderer {
         group.getChildren().add(shape);
     }
 
+    public double getStartX() {
+        return startX;
+    }
+
+    public double getStartY() {
+        return startY;
+    }
+
+    public double getEndX() {
+        return endX;
+    }
+
+    public double getEndY() {
+        return endY;
+    }
+
     public void remove() {
         group.getChildren().remove(shape);
     }

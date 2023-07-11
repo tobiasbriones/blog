@@ -121,6 +121,7 @@ class SlideDrawingController {
                     .ifPresent(line -> {
                         var shape = pushShape();
 
+                        clearAiLineRow();
                         shape.start(line.getStartX(), line.getStartY());
                         shape.end(line.getEndX(), line.getEndY());
                         shape.render();
@@ -180,6 +181,24 @@ class SlideDrawingController {
                 }
             });
         });
+    }
+
+    private void clearAiLineRow() {
+        aiController
+            .getFocusLinesInRow()
+            .forEach(line -> shapes
+                .stream()
+                .filter(shape ->
+                    shape.getStartX() == line.getStartX()
+                        && shape.getEndX() == line.getEndX()
+                        && shape.getStartY() == line.getStartY()
+                        && shape.getEndY() == line.getEndY()
+                )
+                .findFirst()
+                .ifPresent(shape -> {
+                    shape.remove();
+                    shapes.remove(shape);
+                }));
     }
 
     private void unbindEvents() {

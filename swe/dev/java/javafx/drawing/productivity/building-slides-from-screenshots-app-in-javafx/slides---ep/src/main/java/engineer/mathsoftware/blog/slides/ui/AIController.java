@@ -113,6 +113,29 @@ class AIController {
             .map(this::sumLine);
     }
 
+    List<Line> getFocusLinesInRow() {
+        var rect = wordSelectionProperty
+            .get()
+            .wordFocus()
+            .get()
+            .map(Stateful.Focus::object)
+            .orElse(null);
+
+        if (rect == null) {
+            return List.of();
+        }
+        return aiBoxes
+            .stream()
+            .filter(box -> isInSameRow(rect, box))
+            .map(box -> new Line(
+                box.getMinX(),
+                box.getMaxY(),
+                box.getMaxX(),
+                box.getMaxY()
+            ))
+            .toList();
+    }
+
     private Line sumLine(BoundingBox rect) {
         aiBoxes.add(rect);
 
