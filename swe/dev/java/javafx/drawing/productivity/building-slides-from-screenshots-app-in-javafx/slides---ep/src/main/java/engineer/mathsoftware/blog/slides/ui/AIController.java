@@ -8,19 +8,22 @@ import engineer.mathsoftware.blog.slides.drawing.ai.Stateful;
 import javafx.application.Platform;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.geometry.BoundingBox;
 import javafx.scene.Group;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Scale;
 
-import java.util.Optional;
+import java.util.*;
 
 import static engineer.mathsoftware.blog.slides.ai.SlideAI.OcrWordDetection;
-import static engineer.mathsoftware.blog.slides.drawing.ai.AIShape.*;
+import static engineer.mathsoftware.blog.slides.drawing.ai.AIShape.State;
+import static engineer.mathsoftware.blog.slides.drawing.ai.AIShape.WordSelection;
 
 class AIController {
     private final ObjectProperty<WordSelection> wordSelectionProperty;
+    private final List<BoundingBox> aiBoxes;
     private Group group;
     private SlideAIView aiView;
     private Image slideDrawingSnapshot;
@@ -28,6 +31,7 @@ class AIController {
 
     AIController() {
         wordSelectionProperty = new SimpleObjectProperty<>();
+        aiBoxes = new ArrayList<>();
         group = null;
         aiView = null;
         slideDrawingSnapshot = null;
@@ -43,6 +47,7 @@ class AIController {
         aiView = new SlideAIView();
         slideDrawingSnapshot = null;
 
+        aiBoxes.clear();
         aiView.init(slideDrawing);
         aiView.hide();
         aiView.wordSelectionProperty().bind(wordSelectionProperty);
@@ -105,13 +110,35 @@ class AIController {
         return focus
             .get()
             .map(Stateful.Focus::object)
-            .map(rect -> new Line(
-                    rect.getMinX(),
-                    rect.getMaxY(),
-                    rect.getMaxX(),
-                    rect.getMaxY()
-                )
-            );
+            .map(this::sumLine);
+    }
+
+    private Line sumLine(BoundingBox rect) {
+        aiBoxes.add(rect);
+
+        var selection = aiBoxes
+            .stream()
+            .filter(box -> isInSameRow(rect, box))
+            .reduce((b1, b2) -> {
+                    var x1 = Math.min(b1.getMinX(), b2.getMinX());
+                    var x2 = Math.max(b1.getMaxX(), b2.getMaxX());
+                    var y1 = Math.min(b1.getMinY(), b2.getMinY());
+                    var y2 = Math.max(b1.getMaxY(), b2.getMaxY());
+                    return new BoundingBox(x1, y1, x2 - x1, y2 - y1);
+                }
+            )
+            .orElse(rect);
+
+        if (!selection.equals(rect)) {
+            aiBoxes.remove(rect);
+            aiBoxes.add(selection);
+        }
+        return new Line(
+            selection.getMinX(),
+            selection.getMaxY(),
+            selection.getMaxX(),
+            selection.getMaxY()
+        );
     }
 
     void onMouseExited() {
@@ -166,5 +193,9 @@ class AIController {
         if (status != null) {
             status.setStatus(msg);
         }
+    }
+
+    private static boolean isInSameRow(BoundingBox rect, BoundingBox box) {
+        return box.getMinY() <= rect.getMaxY() && box.getMaxY() >= rect.getMinY();
     }
 }
