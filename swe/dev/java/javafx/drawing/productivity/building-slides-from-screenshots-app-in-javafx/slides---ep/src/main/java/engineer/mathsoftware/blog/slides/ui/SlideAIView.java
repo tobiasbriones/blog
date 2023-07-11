@@ -54,6 +54,9 @@ class SlideAIView {
     }
 
     void setWordSelectionFocus(BoundingBox box, State state) {
+        if (wordSelectionProperty.isNull().get()) {
+            return;
+        }
         var sel = wordSelectionProperty.get();
 
         sel.wordFocus().set(box, state);
