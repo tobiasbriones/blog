@@ -18,6 +18,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
@@ -148,6 +149,17 @@ class SlideDrawingController {
         group.setOnMouseReleased(event -> {
             saveState();
             scrollPane.setPannable(true);
+        });
+
+        group.setOnScroll((ScrollEvent event) -> {
+            var zoomFactor = 1.05;
+            var deltaY = event.getDeltaY();
+
+            if (deltaY < 0.0) {
+                zoomFactor = 2.0 - zoomFactor;
+            }
+            group.setScaleX(group.getScaleX() * zoomFactor);
+            group.setScaleY(group.getScaleY() * zoomFactor);
         });
 
         group.sceneProperty().addListener((observable, oldValue, newValue) -> {
