@@ -287,9 +287,9 @@ class SlideDrawingController {
         }
     }
 
-    private static final class AIInvalidation {
-        private final Runnable validator;
-        private boolean isInvalid;
+    private static class AIInvalidation {
+        final Runnable validator;
+        boolean isInvalid;
 
         AIInvalidation(Runnable validator) {
             this.validator = validator;
