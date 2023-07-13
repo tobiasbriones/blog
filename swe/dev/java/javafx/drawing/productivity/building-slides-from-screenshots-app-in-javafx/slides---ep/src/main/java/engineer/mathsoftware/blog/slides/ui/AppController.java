@@ -5,10 +5,7 @@
 package engineer.mathsoftware.blog.slides.ui;
 
 import engineer.mathsoftware.blog.slides.*;
-import engineer.mathsoftware.blog.slides.data.Data;
-import engineer.mathsoftware.blog.slides.data.DataRepository;
-import engineer.mathsoftware.blog.slides.data.ImageItem;
-import engineer.mathsoftware.blog.slides.data.LocalDataRepository;
+import engineer.mathsoftware.blog.slides.data.*;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
@@ -42,7 +39,6 @@ public class AppController implements
     ImageItemCell.Listener,
     SlideDrawingView.ChangeListener {
 
-    private static final String DATA_ROOT = "data";
     private final DataRepository repository;
     private final ObservableList<ImageItem> images;
     private final Map<ImageItem, SlideDrawingView.SlideState> changes;
@@ -97,7 +93,7 @@ public class AppController implements
     private Button shapeBackButton;
 
     public AppController() {
-        this.repository = new LocalDataRepository(DATA_ROOT);
+        this.repository = new LocalDataRepository(Env.DATA_ROOT);
         this.images = FXCollections.observableArrayList();
         this.changes = new HashMap<>();
     }
@@ -188,7 +184,7 @@ public class AppController implements
     private void onOpenWDMenuItemAction() {
         if (Desktop.isDesktopSupported()) {
             try {
-                Desktop.getDesktop().open(new File(DATA_ROOT));
+                Desktop.getDesktop().open(new File(Env.DATA_ROOT));
             }
             catch (IOException | UnsupportedOperationException e) {
                 setStatus(e.getMessage());
@@ -428,7 +424,7 @@ public class AppController implements
 
         saveField
             .setText(Path
-                .of(DATA_ROOT, "out")
+                .of(Env.DATA_ROOT, "out")
                 .toAbsolutePath()
                 .toString()
             );
