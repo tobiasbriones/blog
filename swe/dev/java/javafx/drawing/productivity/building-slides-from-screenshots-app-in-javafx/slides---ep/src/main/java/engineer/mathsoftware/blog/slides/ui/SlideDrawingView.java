@@ -26,7 +26,9 @@ class SlideDrawingView {
         Language language,
         Color background,
         String code,
-        SlideSize size
+        SlideSize size,
+        boolean captionEnable,
+        Optional<Slide.Caption> caption
     ) {}
 
     interface ChangeListener {
@@ -191,7 +193,9 @@ class SlideDrawingView {
                 languageProperty.get(),
                 backgroundProperty.get(),
                 codeProperty.get(),
-                sizeProperty.get()
+                sizeProperty.get(),
+                captionEnableProperty.get(),
+                getCaption()
             ));
         }
 

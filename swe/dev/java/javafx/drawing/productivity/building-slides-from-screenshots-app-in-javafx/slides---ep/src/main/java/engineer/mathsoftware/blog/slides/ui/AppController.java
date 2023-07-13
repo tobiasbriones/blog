@@ -255,6 +255,9 @@ public class AppController implements
             languageComboBox.setValue(Language.Java);
             backgroundPicker.setValue(Color.WHITE);
             codeTextArea.setText("");
+            captionCheckBox.setSelected(false);
+            captionTitleArea.setText("");
+            captionSubTitleArea.setText("");
             sizeComboBox.setValue(SlideSize.Predefined.HD);
             return;
         }
@@ -264,6 +267,11 @@ public class AppController implements
         languageComboBox.setValue(state.language());
         backgroundPicker.setValue(state.background());
         codeTextArea.setText(state.code());
+        captionCheckBox.setSelected(state.captionEnable());
+        state.caption().ifPresent(caption -> {
+            captionTitleArea.setText(caption.title());
+            captionSubTitleArea.setText(caption.subtitle());
+        });
         sizeComboBox.setValue(SlideSize.Predefined.from(state.size()));
     }
 
