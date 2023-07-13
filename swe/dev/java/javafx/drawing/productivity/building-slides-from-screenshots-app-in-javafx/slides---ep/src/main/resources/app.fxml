@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -107,6 +108,12 @@
                               <Label styleClass="title" text="Config" />
                               <ComboBox fx:id="sizeComboBox" prefWidth="150.0" />
                               <TextField fx:id="saveField" editable="false" />
+                              <VBox fx:id="screenshotBox" alignment="TOP_CENTER" spacing="8.0">
+                                 <children>
+                                    <Label styleClass="title" text="Background" />
+                                    <ColorPicker fx:id="backgroundPicker" />
+                                 </children>
+                              </VBox>
                               <VBox fx:id="codeSnippetBox" alignment="TOP_CENTER" spacing="8.0">
                                  <children>
                                     <Label styleClass="title" text="Code" />

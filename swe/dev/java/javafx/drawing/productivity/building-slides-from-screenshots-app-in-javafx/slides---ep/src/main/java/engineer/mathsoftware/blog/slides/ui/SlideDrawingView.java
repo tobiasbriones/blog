@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 
 import java.util.Optional;
 
@@ -23,6 +24,7 @@ class SlideDrawingView {
         SlideItem slideItem,
         ImageItem imageItem,
         Language language,
+        Color background,
         String code,
         SlideSize size
     ) {}
@@ -38,6 +40,7 @@ class SlideDrawingView {
     private final ObjectProperty<SlideItem> slideProperty;
     private final ObjectProperty<ImageItem> imageProperty;
     private final ObjectProperty<Language> languageProperty;
+    private final ObjectProperty<Color> backgroundProperty;
     private final ObjectProperty<String> codeProperty;
     private final ObjectProperty<SlideSize> sizeProperty;
     private final BooleanProperty captionEnableProperty;
@@ -52,6 +55,7 @@ class SlideDrawingView {
         slideProperty = new SimpleObjectProperty<>();
         imageProperty = new SimpleObjectProperty<>();
         languageProperty = new SimpleObjectProperty<>();
+        backgroundProperty = new SimpleObjectProperty<>();
         codeProperty = new SimpleObjectProperty<>();
         sizeProperty = new SimpleObjectProperty<>();
         captionEnableProperty = new SimpleBooleanProperty();
@@ -81,6 +85,10 @@ class SlideDrawingView {
         return languageProperty;
     }
 
+    ObjectProperty<Color> backgroundProperty() {
+        return backgroundProperty;
+    }
+
     ObjectProperty<String> codeProperty() {
         return codeProperty;
     }
@@ -106,6 +114,7 @@ class SlideDrawingView {
 
         slideProperty.addListener(updateAll);
         languageProperty.addListener(updateAll);
+        backgroundProperty.addListener(updateAll);
         codeProperty.addListener(updateAll);
         sizeProperty.addListener(updateAll);
         captionEnableProperty.addListener(updateAll);
@@ -165,7 +174,11 @@ class SlideDrawingView {
                 getCaption()
             );
             case Screenshot ->
-                new Slide.Screenshot(imageProperty.get().image(), getCaption());
+                new Slide.Screenshot(
+                    imageProperty.get().image(),
+                    backgroundProperty.get(),
+                    getCaption()
+                );
         };
 
         drawing.setup(sizeProperty.get());
@@ -176,6 +189,7 @@ class SlideDrawingView {
                 slideProperty.get(),
                 imageProperty.get(),
                 languageProperty.get(),
+                backgroundProperty.get(),
                 codeProperty.get(),
                 sizeProperty.get()
             ));

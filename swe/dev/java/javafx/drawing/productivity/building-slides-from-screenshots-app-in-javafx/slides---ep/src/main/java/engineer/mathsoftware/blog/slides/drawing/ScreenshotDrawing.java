@@ -45,7 +45,7 @@ class ScreenshotDrawing {
     Group draw(Slide.Screenshot screenshot) {
         var image = screenshot.image();
 
-        drawImage(image, Color.WHITE);
+        drawImage(image, screenshot.background());
         drawCaption(screenshot);
         return group;
     }

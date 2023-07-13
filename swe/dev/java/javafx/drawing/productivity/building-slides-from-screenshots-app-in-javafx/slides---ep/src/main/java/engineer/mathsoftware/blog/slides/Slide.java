@@ -5,6 +5,7 @@
 package engineer.mathsoftware.blog.slides;
 
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 
 import java.util.Optional;
 
@@ -23,6 +24,7 @@ public sealed interface Slide {
 
     record Screenshot(
         Image image,
+        Color background,
         Optional<Caption> caption
     ) implements Slide {}
 

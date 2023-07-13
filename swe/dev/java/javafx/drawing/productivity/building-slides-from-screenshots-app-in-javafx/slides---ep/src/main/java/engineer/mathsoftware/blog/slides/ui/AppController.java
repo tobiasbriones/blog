@@ -65,6 +65,8 @@ public class AppController implements
     @FXML
     private HBox slideBox;
     @FXML
+    private VBox screenshotBox;
+    @FXML
     private VBox codeSnippetBox;
     @FXML
     private ComboBox<SlideItem> slideComboBox;
@@ -74,6 +76,8 @@ public class AppController implements
     private ComboBox<SlideSize.Predefined> sizeComboBox;
     @FXML
     private TextField saveField;
+    @FXML
+    private ColorPicker backgroundPicker;
     @FXML
     private TextArea codeTextArea;
     @FXML
@@ -252,6 +256,7 @@ public class AppController implements
 
         slideComboBox.setValue(state.slideItem());
         languageComboBox.setValue(state.language());
+        backgroundPicker.setValue(state.background());
         codeTextArea.setText(state.code());
         sizeComboBox.setValue(SlideSize.Predefined.from(state.size()));
     }
@@ -414,6 +419,17 @@ public class AppController implements
                 .toString()
             );
 
+        screenshotBox
+            .visibleProperty()
+            .bind(slideProperty
+                .isEqualTo(SlideItem.Screenshot)
+            );
+        screenshotBox
+            .managedProperty()
+            .bind(screenshotBox
+                .visibleProperty()
+            );
+
         codeSnippetBox
             .visibleProperty()
             .bind(slideProperty
@@ -454,6 +470,11 @@ public class AppController implements
         slideDrawingView
             .languageProperty()
             .bind(languageComboBox
+                .valueProperty()
+            );
+        slideDrawingView
+            .backgroundProperty()
+            .bind(backgroundPicker
                 .valueProperty()
             );
         slideDrawingView
