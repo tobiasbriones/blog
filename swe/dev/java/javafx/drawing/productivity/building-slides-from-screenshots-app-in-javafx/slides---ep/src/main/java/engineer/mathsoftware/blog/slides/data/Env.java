@@ -4,8 +4,14 @@
 
 package engineer.mathsoftware.blog.slides.data;
 
+import java.nio.file.Path;
+
 public final class Env {
     public static final String DATA_ROOT = "data";
+
+    public static final String SAVE_DIR = Path
+        .of(DATA_ROOT, "presentation")
+        .toString();
 
     private Env() {}
 }
