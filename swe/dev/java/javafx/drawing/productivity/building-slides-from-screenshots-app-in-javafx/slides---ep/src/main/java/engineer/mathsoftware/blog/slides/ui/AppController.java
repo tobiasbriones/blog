@@ -27,6 +27,7 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
@@ -250,6 +251,11 @@ public class AppController implements
     @Override
     public void setState(ImageItem item) {
         if (!changes.containsKey(item)) {
+            slideComboBox.setValue(SlideItem.Screenshot);
+            languageComboBox.setValue(Language.Java);
+            backgroundPicker.setValue(Color.WHITE);
+            codeTextArea.setText("");
+            sizeComboBox.setValue(SlideSize.Predefined.HD);
             return;
         }
         var state = changes.get(item);
@@ -387,7 +393,7 @@ public class AppController implements
 
         slideComboBox.getItems().addAll(SlideItem.values());
         slideComboBox.setConverter(new Enums.EnglishConverter<>(SlideItem.class));
-        slideComboBox.setValue(SlideItem.CodeSnippet);
+        slideComboBox.setValue(SlideItem.Screenshot);
 
         languageComboBox.getItems().addAll(Language.values());
         languageComboBox.setValue(Language.Java);
