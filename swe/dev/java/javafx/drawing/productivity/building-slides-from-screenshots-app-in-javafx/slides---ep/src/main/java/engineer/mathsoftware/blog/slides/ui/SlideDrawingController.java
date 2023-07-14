@@ -192,14 +192,14 @@ class SlideDrawingController {
             newValue.setOnKeyPressed(event -> {
                 switch (event.getCode()) {
                     case SHIFT -> shiftPressed = true;
-                    case CONTROL -> onCtrlPressed();
+                    case F1 -> onF1Pressed();
                 }
             });
 
             newValue.setOnKeyReleased(event -> {
                 switch (event.getCode()) {
                     case SHIFT -> shiftPressed = false;
-                    case CONTROL -> aiController.onHideTextBoxes();
+                    case F1 -> aiController.onHideTextBoxes();
                 }
             });
         });
@@ -279,7 +279,7 @@ class SlideDrawingController {
         saveState();
     }
 
-    private void onCtrlPressed() {
+    private void onF1Pressed() {
         aiInvalidation.validate();
         aiController.onShowTextBoxes();
     }

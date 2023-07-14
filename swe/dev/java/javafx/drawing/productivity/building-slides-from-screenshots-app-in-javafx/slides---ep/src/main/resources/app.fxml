@@ -157,7 +157,7 @@
                               </HBox>
                               <ComboBox fx:id="shapePaletteComboBox" prefWidth="150.0" />
                               <Label styleClass="title" text="AI" />
-                              <Label styleClass="opaque-text" text="Hold CTRL for OCR detection." wrapText="true" />
+                              <Label styleClass="opaque-text" text="Hold F1 for OCR detection." wrapText="true" />
                            </children>
                         </VBox>
                      </content>
