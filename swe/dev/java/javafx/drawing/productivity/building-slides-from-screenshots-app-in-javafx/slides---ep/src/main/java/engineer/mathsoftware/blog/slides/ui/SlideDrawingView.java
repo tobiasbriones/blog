@@ -177,12 +177,11 @@ class SlideDrawingView {
                 languageProperty.get(),
                 getCaption()
             );
-            case Screenshot ->
-                new Slide.Screenshot(
-                    imageProperty.get().image(),
-                    backgroundProperty.get(),
-                    getCaption()
-                );
+            case Screenshot -> new Slide.Screenshot(
+                imageProperty.get().image(),
+                backgroundProperty.get(),
+                getCaption()
+            );
         };
 
         drawing.setup(sizeProperty.get());
