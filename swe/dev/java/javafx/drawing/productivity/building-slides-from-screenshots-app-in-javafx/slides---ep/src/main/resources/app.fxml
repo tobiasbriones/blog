@@ -31,7 +31,7 @@
                 <Menu mnemonicParsing="false" text="File">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onAddMenuItemAction" text="Add" />
-                  <CheckMenuItem fx:id="autoSaveCheckMenuItem" mnemonicParsing="false" text="AutoSave (experimental)" />
+                  <CheckMenuItem fx:id="autoSaveCheckMenuItem" mnemonicParsing="false" selected="true" text="AutoSave (experimental)" />
                   <MenuItem mnemonicParsing="false" onAction="#onSaveCurrentSlideItemAction" text="Save Current Slide">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
