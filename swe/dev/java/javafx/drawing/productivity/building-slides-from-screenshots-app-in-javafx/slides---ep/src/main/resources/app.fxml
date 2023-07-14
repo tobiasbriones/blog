@@ -37,7 +37,10 @@
                         <KeyCodeCombination alt="UP" code="S" control="ANY" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                        <MenuItem mnemonicParsing="false" onAction="#onOpenWDMenuItemAction" text="Open Working Directory" />
+                        <MenuItem mnemonicParsing="false" onAction="#onOpenWDMenuItemAction" text="Open Working Directory">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="E" control="ANY" meta="UP" shift="ANY" shortcut="UP" />
+                     </accelerator></MenuItem>
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#onClearMenuItemAction" text="Clear" />
                         <SeparatorMenuItem mnemonicParsing="false" />
