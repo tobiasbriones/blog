@@ -3429,6 +3429,8 @@ development process with high granularity and left insights, as always.
 
 The implementation was feasible with JavaFX as expected, which shows how
 **JavaFX is a powerful platform for well-defined engineering applications**.
+Also remember that we can use Kotlin to further enrich the platform's
+robustness.
 
 There were good exercises for putting into practice tools such as JavaFX, the
 newest Java 20+ features, and regular expressions.
