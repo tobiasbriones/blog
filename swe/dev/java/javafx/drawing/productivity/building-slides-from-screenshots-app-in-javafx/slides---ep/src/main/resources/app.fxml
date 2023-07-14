@@ -34,13 +34,18 @@
                   <CheckMenuItem fx:id="autoSaveCheckMenuItem" mnemonicParsing="false" text="AutoSave (experimental)" />
                   <MenuItem mnemonicParsing="false" onAction="#onSaveCurrentSlideItemAction" text="Save Current Slide">
                      <accelerator>
-                        <KeyCodeCombination alt="UP" code="S" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                         <MenuItem mnemonicParsing="false" onAction="#onOpenWDMenuItemAction" text="Open Working Directory">
                      <accelerator>
-                        <KeyCodeCombination alt="UP" code="E" control="ANY" meta="UP" shift="ANY" shortcut="UP" />
+                        <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
                      </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onOpenPDMenuItemAction" text="Open Presentation Directory">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="E" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#onClearMenuItemAction" text="Clear" />
                         <SeparatorMenuItem mnemonicParsing="false" />

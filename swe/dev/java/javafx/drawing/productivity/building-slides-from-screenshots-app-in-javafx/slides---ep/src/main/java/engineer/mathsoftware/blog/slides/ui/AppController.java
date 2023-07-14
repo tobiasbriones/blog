@@ -190,17 +190,12 @@ public class AppController implements
 
     @FXML
     private void onOpenWDMenuItemAction() {
-        if (Desktop.isDesktopSupported()) {
-            try {
-                Desktop.getDesktop().open(new File(Env.DATA_ROOT));
-            }
-            catch (IOException | UnsupportedOperationException e) {
-                setStatus(e.getMessage());
-            }
-        }
-        else {
-            setStatus("Desktop is not supported");
-        }
+        openInExplorer(Env.DATA_ROOT);
+    }
+
+    @FXML
+    private void onOpenPDMenuItemAction() {
+        openInExplorer(Env.SAVE_DIR);
     }
 
     @FXML
@@ -591,5 +586,19 @@ public class AppController implements
 
     private void setSecondaryStatus(String msg) {
         secondaryStatusLabel.setText(msg);
+    }
+
+    private void openInExplorer(String dir) {
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().open(new File(dir));
+            }
+            catch (IOException | UnsupportedOperationException e) {
+                setStatus(e.getMessage());
+            }
+        }
+        else {
+            setStatus("Desktop is not supported");
+        }
     }
 }
