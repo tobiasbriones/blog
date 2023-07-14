@@ -4,6 +4,7 @@
 
 package engineer.mathsoftware.blog.slides.ui;
 
+import engineer.mathsoftware.blog.slides.data.DataRepository;
 import engineer.mathsoftware.blog.slides.data.Env;
 import engineer.mathsoftware.blog.slides.data.ImageItem;
 import engineer.mathsoftware.blog.slides.data.LocalDataRepository;
@@ -15,12 +16,14 @@ import javafx.scene.transform.Scale;
 import java.io.IOException;
 
 class AutoSave {
+    private final DataRepository repository;
     private final SaveInvalidation saveInvalidation;
     private Group group;
     private ImageItem currentSlide;
     private BackgroundStatus status;
 
     AutoSave() {
+        repository = new LocalDataRepository(Env.SAVE_DIR);
         saveInvalidation = new SaveInvalidation(this::saveSlide);
         group = null;
         currentSlide = null;
@@ -59,7 +62,6 @@ class AutoSave {
         if (group == null) {
             return;
         }
-        var repo = new LocalDataRepository(Env.SAVE_DIR);
         var params = new SnapshotParameters();
         var invScaleX = 1.0 / group.getScaleX();
         var invScaleY = 1.0 / group.getScaleY();
@@ -72,9 +74,11 @@ class AutoSave {
 
         Thread.startVirtualThread(() -> {
             try {
-                repo.createOrUpdateImage(slide);
-                Platform.runLater(() -> status.setStatus(slideFilename + " "
-                    + "saved"));
+                repository.createOrUpdateImage(slide);
+
+                Platform.runLater(() ->
+                    status.setStatus(slideFilename + " " + "saved")
+                );
             }
             catch (IOException e) {
                 Platform.runLater(() -> status.setStatus(e.getMessage()));
