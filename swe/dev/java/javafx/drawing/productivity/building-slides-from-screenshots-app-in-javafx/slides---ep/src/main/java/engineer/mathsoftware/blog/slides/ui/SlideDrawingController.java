@@ -32,6 +32,7 @@ class SlideDrawingController {
     private final ObjectProperty<Palette> paletteProperty;
     private final AIController aiController;
     private final AIInvalidation aiInvalidation;
+    private final AutoSave autoSave;
     private Group group;
     private ScrollPane scrollPane;
     private boolean shiftPressed;
@@ -43,6 +44,7 @@ class SlideDrawingController {
         shapeProperty = new SimpleObjectProperty<>();
         aiController = new AIController();
         aiInvalidation = new AIInvalidation(this::loadAI);
+        autoSave = new AutoSave();
         group = null;
         scrollPane = null;
         shiftPressed = false;
@@ -50,6 +52,7 @@ class SlideDrawingController {
 
     void setStatus(BackgroundStatus newStatus) {
         aiController.setStatus(newStatus);
+        autoSave.setStatus(newStatus);
     }
 
     void setDrawing(Group newDrawing) {
@@ -58,14 +61,21 @@ class SlideDrawingController {
         }
         group = newDrawing;
 
+        autoSave.setDrawing(group);
         aiInvalidation.slideChanged();
         clearState();
         bindEvents();
     }
 
-    void onImageChange(ImageItem newItem) {
-        changes.setCurrentItem(newItem);
+    void onSlideChanged(ImageItem newItem) {
+        autoSave.onSlideChanged(newItem);
+    }
+
+    void onDrawingChanged(ImageItem item) {
+        changes.setCurrentItem(item);
         loadState();
+
+        autoSave.onDrawingChanged(item);
     }
 
     void setScrollPane(ScrollPane newScrollPane) {

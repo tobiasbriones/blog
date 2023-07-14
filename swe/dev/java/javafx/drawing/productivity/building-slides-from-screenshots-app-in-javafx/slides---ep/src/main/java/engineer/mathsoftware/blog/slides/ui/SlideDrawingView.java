@@ -151,6 +151,8 @@ class SlideDrawingView {
         l.setState(newValue);
         isStateLoading = false;
 
+        controller.onSlideChanged(newValue);
+
         // Update manually
         updateSlide();
     }
@@ -200,7 +202,7 @@ class SlideDrawingView {
         }
 
         controller.setDrawing(group);
-        controller.onImageChange(imageProperty.get());
+        controller.onDrawingChanged(imageProperty.get());
     }
 
     private Optional<Slide.Caption> getCaption() {
