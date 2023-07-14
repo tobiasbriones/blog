@@ -55,7 +55,7 @@ class AutoSave {
         saveInvalidation.validateLater();
     }
 
-    private void saveSlide() {
+    void saveSlide() {
         if (group == null) {
             return;
         }

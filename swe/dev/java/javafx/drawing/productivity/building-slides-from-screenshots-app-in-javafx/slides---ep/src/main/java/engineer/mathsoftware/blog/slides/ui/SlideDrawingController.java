@@ -118,6 +118,10 @@ class SlideDrawingController {
         shapeBackButton.setOnAction(event -> popShape());
     }
 
+    void saveCurrentSlide() {
+        autoSave.saveSlide();
+    }
+
     private void bindEvents() {
         group.setOnMouseMoved(
             event -> aiController.onMouseMoved(event.getX(), event.getY())

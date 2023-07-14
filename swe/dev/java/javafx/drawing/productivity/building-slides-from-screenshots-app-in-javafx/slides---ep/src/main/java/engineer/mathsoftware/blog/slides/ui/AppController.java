@@ -185,6 +185,7 @@ public class AppController implements
 
     @FXML
     private void onSaveCurrentSlideItemAction() {
+        slideDrawingView.saveCurrentSlide();
     }
 
     @FXML

@@ -17,6 +17,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -31,6 +32,11 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onAddMenuItemAction" text="Add" />
                   <CheckMenuItem fx:id="autoSaveCheckMenuItem" mnemonicParsing="false" text="AutoSave (experimental)" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveCurrentSlideItemAction" text="Save Current Slide">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
                         <MenuItem mnemonicParsing="false" onAction="#onOpenWDMenuItemAction" text="Open Working Directory" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#onClearMenuItemAction" text="Clear" />

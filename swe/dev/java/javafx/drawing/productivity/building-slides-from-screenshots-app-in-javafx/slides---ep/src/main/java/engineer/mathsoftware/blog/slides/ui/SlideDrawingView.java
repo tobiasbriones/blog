@@ -142,6 +142,10 @@ class SlideDrawingView {
         controller.setShapeBackButton(shapeBackButton);
     }
 
+    void saveCurrentSlide() {
+        controller.saveCurrentSlide();
+    }
+
     private void onImageChange(
         ObservableValue<? extends ImageItem> observable,
         ImageItem oldValue,
