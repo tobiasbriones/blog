@@ -111,6 +111,10 @@ class SlideDrawingView {
         return captionSubTitleProperty;
     }
 
+    BooleanProperty autoSaveProperty() {
+        return controller.autoSaveProperty();
+    }
+
     void init() {
         InvalidationListener updateAll = ignore -> updateSlide();
 

@@ -16,8 +16,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.*;
 import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
@@ -66,6 +66,8 @@ public class AppController implements
     @FXML
     private VBox codeSnippetBox;
     @FXML
+    private CheckMenuItem autoSaveCheckMenuItem;
+    @FXML
     private ComboBox<SlideItem> slideComboBox;
     @FXML
     private ComboBox<Language> languageComboBox;
@@ -111,6 +113,7 @@ public class AppController implements
         initMasterView();
         initDetail();
         initSlideDrawingView();
+        initMenu();
     }
 
     @FXML
@@ -178,6 +181,10 @@ public class AppController implements
     @FXML
     private void onAddMenuItemAction() {
         openFileViaFileChooser();
+    }
+
+    @FXML
+    private void onSaveCurrentSlideItemAction() {
     }
 
     @FXML
@@ -364,6 +371,14 @@ public class AppController implements
         newImageView.setFitWidth(18.0);
         newImageView.setFitHeight(18.0);
         newButton.setGraphic(newImageView);
+    }
+
+    private void initMenu() {
+        slideDrawingView
+            .autoSaveProperty()
+            .bind(autoSaveCheckMenuItem
+                .selectedProperty()
+            );
     }
 
     private void initMasterView() {

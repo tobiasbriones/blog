@@ -27,6 +27,10 @@ class AutoSave {
         status = null;
     }
 
+    void enable(boolean enable) {
+        saveInvalidation.enable(enable);
+    }
+
     void setDrawing(Group newGroup) {
         group = newGroup;
     }
@@ -82,16 +86,23 @@ class AutoSave {
         static final long WAIT_TIME_MS = 2_000L;
         final Runnable validator;
         boolean isInvalid;
+        boolean isEnabled;
         volatile long lastTime;
 
         SaveInvalidation(Runnable validator) {
             this.validator = validator;
             this.isInvalid = true;
+            this.isEnabled = true;
             this.lastTime = 0L;
         }
 
+        void enable(boolean enable) {
+            isEnabled = enable;
+            isInvalid = false;
+        }
+
         void validateLater() {
-            if (!isInvalid) {
+            if (!isInvalid || !isEnabled) {
                 return;
             }
 
@@ -112,7 +123,7 @@ class AutoSave {
         }
 
         void validateNow() {
-            if (!isInvalid) {
+            if (!isInvalid || !isEnabled) {
                 return;
             }
             validator.run();

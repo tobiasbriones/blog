@@ -9,7 +9,9 @@ import engineer.mathsoftware.blog.slides.Palette;
 import engineer.mathsoftware.blog.slides.ShapeItem;
 import engineer.mathsoftware.blog.slides.data.ImageItem;
 import engineer.mathsoftware.blog.slides.drawing.ShapeRenderer;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
@@ -33,6 +35,7 @@ class SlideDrawingController {
     private final AIController aiController;
     private final AIInvalidation aiInvalidation;
     private final AutoSave autoSave;
+    private final BooleanProperty autoSaveProperty;
     private Group group;
     private ScrollPane scrollPane;
     private boolean shiftPressed;
@@ -45,6 +48,7 @@ class SlideDrawingController {
         aiController = new AIController();
         aiInvalidation = new AIInvalidation(this::loadAI);
         autoSave = new AutoSave();
+        autoSaveProperty = new SimpleBooleanProperty();
         group = null;
         scrollPane = null;
         shiftPressed = false;
@@ -65,6 +69,10 @@ class SlideDrawingController {
         aiInvalidation.slideChanged();
         clearState();
         bindEvents();
+    }
+
+    BooleanProperty autoSaveProperty() {
+        return autoSaveProperty;
     }
 
     void onSlideChanged(ImageItem newItem) {
@@ -191,6 +199,10 @@ class SlideDrawingController {
                 }
             });
         });
+
+        autoSaveProperty.addListener((observable, oldValue, newValue) ->
+            autoSave.enable(newValue)
+        );
     }
 
     private void clearAiLineRow() {

@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -29,6 +30,7 @@
                 <Menu mnemonicParsing="false" text="File">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onAddMenuItemAction" text="Add" />
+                  <CheckMenuItem fx:id="autoSaveCheckMenuItem" mnemonicParsing="false" text="AutoSave (experimental)" />
                         <MenuItem mnemonicParsing="false" onAction="#onOpenWDMenuItemAction" text="Open Working Directory" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#onClearMenuItemAction" text="Clear" />
