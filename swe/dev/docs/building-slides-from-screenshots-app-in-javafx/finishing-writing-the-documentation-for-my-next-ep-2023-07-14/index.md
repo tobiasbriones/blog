@@ -30,7 +30,7 @@ soon with an extensive experience in all kinds of features I ventured into.
 For now, I still have to blog some sections for the last features I developed
 and then finish other minor details.
 
-![IntelliJ: Finishing Writing with the Blog and Project Side-to-Side](_static/intellij-_-finishing-writing-with-the-blog-and-project-side--to--side.png)
+![IntelliJ: Finishing Writing with the Blog and Project Side-to-Side](static/intellij-_-finishing-writing-with-the-blog-and-project-side--to--side.png)
 
 <figcaption>
 <p align="center"><strong>
