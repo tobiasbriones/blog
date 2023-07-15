@@ -87,5 +87,21 @@ a text.
 
 [^4]: Grammar checking goes here as well
 
+The following is an example of the artifacts that can be produced with the
+application:
+
+![Screenshot-Slide Sample](screenshot--slide-sample.png)
+
+<figcaption>
+<p align="center"><strong>
+Screenshot-Slide Sample
+</strong></p>
+</figcaption>
+
+It's a `Screenshot` `Slide`, that is, a `Slide` created from a screenshot.
+
+I applied background, an FHD resolution, underlining assisted via AI OCR, a
+vertical `Line` `Shape`, and a `Caption` with a title and subtitle.
+
 I will finish writing soon, and with this, I'll get one more great reference for
 my blog.
