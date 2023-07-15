@@ -53,27 +53,72 @@
 <style>
     * {
         font-family: 'Poppins', sans-serif;
+        background-color: #fff;
+        color: #424242;
+    }
+
+    body {
+        padding: 5%;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-weight: bold;
+        color: #212121;
+    }
+
+    .footnotes p {
+        color: #616161;
+    }
+
+    blockquote {
+        padding: 0 16px;
+        border-left: 1px solid #e0e0e0;
+    }
+
+    blockquote p:not(:last-child) {
         color: #757575;
     }
-     
-    h1, h2, h3, h4, h5 {
-          font-weight: bold;
-          color: #212121;
+
+    p img {
+        display: block;
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    pre {
+        background-color: white !important;
+        border-radius: 8px;
+    }
+
+    p code {
+        border: 1px solid #E0E0E0;
+        border-radius: 4px;
+        padding: 0 4px;
+        color: inherit;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    code > span {
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    figcaption strong {
+        color: #212121;
+    }
+
+    strong {
+        color: #424242;
+    }
+
+  @media screen and (min-width: 720px) {
+      body {
+          padding: 5% 15%;
       }
-      
-      p > img {
-            display: block;
-            margin: auto;
-          border-radius: 16px;
-        }
-      
-      code {
-            font-family: 'JetBrains Mono', monospace;
-            color: #333;
+  }
+
+  @media screen and (min-width: 1080px) {
+      body {
+          padding: 5% 30%;
       }
-      
-      
-      code > span {
-            font-family: 'JetBrains Mono', monospace;
-      }
+  }
 </style>
