@@ -79,8 +79,10 @@ I'm also working on developing other languages for generating Table of Contents
 [^3]: I managed prototypes for all this, for example, in Photoshop, so I can
     design the DSLs in the future
 
+
 Proving **ideas for automation** is one of the purposes of this blog: it's so
-much I can't standardize right now, but have to move forwards in the meantime.
+much I can't standardize right now, but I have to move forward in the meantime.
+
 
 This time we're talking about a huge article with over 3k lines of markdown, and
 the IDE gets slow when I edit it on my machine.
