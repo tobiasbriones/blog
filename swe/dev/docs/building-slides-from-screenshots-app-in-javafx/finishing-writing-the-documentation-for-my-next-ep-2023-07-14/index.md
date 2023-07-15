@@ -4,6 +4,17 @@
 
 # Finishing Writing the Documentation for my Next EP (2023-07-14)
 
+![Finishing Writing the Documentation for my Next EP (2023-07-14)](static/finishing-writing-the-documentation-for-my-next-ep-2023-07-14.png)
+
+<figcaption>
+<p align="center">Background by
+<a href="https://pixabay.com/users/stocksnap-894430">StockSnap</a> via
+<a href="https://pixabay.com/photos/tiles-shapes-texture-pattern-art-2617112">Pixabay</a>
+</p>
+</figcaption>
+
+---
+
 I'm about to publish my first and next Blog with EP "Building Slides from
 Screenshots App in JavaFX," now that I finished all the code I wanted to add to
 the project yesterday, so I just have to blog it to its (extensive) article,
