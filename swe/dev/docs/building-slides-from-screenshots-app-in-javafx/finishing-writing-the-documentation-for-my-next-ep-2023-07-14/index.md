@@ -76,7 +76,7 @@ deploying articles from source [^2].
 I'm also working on developing other languages for generating Table of Contents
 (ToC) and Open Graph (OG) cover images for articles[^3].
 
-[^3]: I managed prototypes for all this, for example, in Photoshop, so I can
+[^3]: I manage prototypes for all this, for example, in Photoshop, so I can
     design the DSLs in the future
 
 
