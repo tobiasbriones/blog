@@ -3419,6 +3419,8 @@ taking that responsibility out of `GroupSlideDrawing`.
 
 This way, the code snippet slides are fully available in the application.
 
+## Drawing Shapes
+
 ## Automation of Screenshots and Code Snippets Content
 
 I foresaw an opportunity to develop a gorgeous example project to start my
