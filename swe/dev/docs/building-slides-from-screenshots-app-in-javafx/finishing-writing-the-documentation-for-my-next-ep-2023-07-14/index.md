@@ -4,7 +4,6 @@ title: Finishing Writing the Documentation for my Next EP (2023-07-14)
 description: I'm about to publish my first and next Blog with EP "Building Slides from Screenshots App in JavaFX," now that I finished all the code I wanted to add to the project yesterday, so I just have to blog it to its (extensive) article, tackle a few details more, and add the abstract.
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/dev/docs/building-slides-from-screenshots-app-in-javafx/finishing-writing-the-documentation-for-my-next-ep-2023-07-14/static/finishing-writing-the-documentation-for-my-next-ep-2023-07-14.png
 ---
-
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->

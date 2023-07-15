@@ -53,12 +53,12 @@
 <style>
     * {
         font-family: 'Poppins', sans-serif;
-        background-color: #fff;
         color: #424242;
     }
 
     body {
         padding: 5%;
+        background-color: #fff;
     }
 
     h1, h2, h3, h4, h5 {
@@ -83,19 +83,38 @@
         display: block;
         max-width: 100%;
         border-radius: 16px;
+        margin: auto;
     }
 
     pre {
-        background-color: white !important;
+        background-color: #fafafa !important;
         border-radius: 8px;
+        padding: 16px;
     }
 
-    p code {
+    code {
+        background-color: #fafafa;
         border: 1px solid #E0E0E0;
         border-radius: 4px;
         padding: 0 4px;
         color: inherit;
         font-family: 'JetBrains Mono', monospace;
+    }
+
+    pre {
+        margin: 0;
+    }
+
+    pre code {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    div > div.highlight {
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        margin-bottom: 16px;
     }
 
     code > span {
