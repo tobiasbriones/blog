@@ -3430,6 +3430,29 @@ This way, the code snippet slides are fully available in the application.
 
 ## Drawing Shapes
 
+Shapes line lines, rectangles and circles are not part of the Slide per se, but
+they can be drawn on top of them to provide more useful editing options to the
+app.
+
+
+<video width="320" height="240" align="center" controls>
+  <source src="static/drawing-shapes-on-slides.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+
+## Integrating AI via OCR
+
+![IntelliJ: Adding the Tesseract for Java Lib](images/intellij-_-adding-the-tesseract-for-java-lib.png)
+
+<figcaption>
+<p align="center">
+<strong>
+IntelliJ: Adding the Tesseract for Java Lib
+</strong>
+</p>
+</figcaption>
+
 ## Integrating AI via OCR
 
 ## Designing an Auto Save Mechanism
