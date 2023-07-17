@@ -42,6 +42,8 @@ The following images were used to compose some parts shown in the screenshots:
 
 - [Hello World](hello-world.png): Includes system icons.
 
+- [IntelliJ: Adding the Tesseract for Java Lib](intellij-_-adding-the-tesseract-for-java-lib.png): Includes system icons.
+
 - [Master Pane](master-pane.png): Includes
   [Images from Pixabay](#images-from-pixabay).
 
