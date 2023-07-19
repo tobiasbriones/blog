@@ -52,6 +52,14 @@ entire whole (the **Stream**).
 
 ✔ Some bloated parenthesis with the application operator.
 
+![Slide: Pipe and Application Operators](slide-_-pipe-and-application-operators.png)
+
+<figcaption>
+<p align="center"><strong>
+Slide: Pipe and Application Operators
+</strong></p>
+</figcaption>
+
 Notice, `exec_build` returns `Unit` and naturally has side effects, but removing
 the variable statement also would've allowed turning that imperative function
 block into an `expression` (i.e., not a code block `{}` but an expression via
