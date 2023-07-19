@@ -17,6 +17,10 @@ software engineer with proposed solutions I used to fix them.
 
 This section lists troubleshooting I faced during dev projects.
 
+### Sections Manager
+
+Troubleshooting from my university enrollment sections app are listed next.
+
 ### Course Project
 
 Troubleshooting from course projects are listed next.
