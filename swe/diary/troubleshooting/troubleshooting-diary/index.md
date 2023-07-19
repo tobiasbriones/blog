@@ -29,12 +29,12 @@ Documentation:
 Addressed issues:
 
 - **Binary Incompatibility Issues:** When refactoring app package name from
-  `io.github.tobiasbriones` to `com.github.tobiasbriones`, and loading
-  older serialized objects from FS.
+  `io.github.tobiasbriones` to `com.github.tobiasbriones`, and loading older
+  serialized objects from FS.
 - **Storage:** When the linux container running a Java app runs out of space,
   what gives `java.io.IOException: No space left on device`.
-- **Fix IntelliJ Gradle JVM:** I needed to change the Gradle JVM version
-  used by IntellJ IDEA build tools to the correct version.
+- **Fix IntelliJ Gradle JVM:** I needed to change the Gradle JVM version used by
+  IntellJ IDEA build tools to the correct version.
 
 ## Miscellaneous
 
@@ -42,7 +42,7 @@ I list random troubleshooting experiences I face next.
 
 ### Dev
 
-This covers day-to-day annoying issues I have solved before in software 
+This covers day-to-day annoying issues I have solved before in software
 development.
 
 ### Machine Learning
