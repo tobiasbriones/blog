@@ -45,6 +45,65 @@ I list random troubleshooting experiences I face next.
 This covers day-to-day annoying issues I have solved before in software
 development.
 
+#### Kotlin toList Method not Found
+
+The problem complains
+that `Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: `
+since the version Kotlin is running doesn't have the method `toList` from
+the `Stream` API that was introduced in Java 16.
+
+```
+e: file:///P:/deployment/blog/ops/src/main/kotlin/Main.kt:282:10 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public inline fun <T> Enumeration<TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.collections
+public fun <T> Array<out TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.collections
+public fun BooleanArray.toList(): List<Boolean> defined in kotlin.collections
+public fun ByteArray.toList(): List<Byte> defined in kotlin.collections
+public fun CharArray.toList(): List<Char> defined in kotlin.collections
+public fun CharSequence.toList(): List<Char> defined in kotlin.text
+public fun DoubleArray.toList(): List<Double> defined in kotlin.collections
+public fun FloatArray.toList(): List<Float> defined in kotlin.collections
+public fun IntArray.toList(): List<Int> defined in kotlin.collections
+public fun LongArray.toList(): List<Long> defined in kotlin.collections
+public fun <T> Pair<TypeVariable(T), TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin
+public fun ShortArray.toList(): List<Short> defined in kotlin.collections
+public fun <T> Triple<TypeVariable(T), TypeVariable(T), TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin
+public fun <T> Iterable<TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.collections
+public fun <K, V> Map<out TypeVariable(K), TypeVariable(V)>.toList(): List<Pair<TypeVariable(K), TypeVariable(V)>> defined in kotlin.collections
+public fun <T> Sequence<TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.sequences
+```
+
+<figcaption>
+<p align="center"><strong>
+The Method "toList" is not Found when Compiling
+</strong></p>
+</figcaption>
+
+A solution was to add `import kotlin.streams.toList` to import the method
+`toList` so it's found. The problem is that is unnecessary, and the IDE deletes
+it because it said it was not used.
+
+There's always a conflict in JVM setups of what you're using: the dependency of
+the IDE for Java and JVM projects is evil.
+
+I checked all possible configurations in the IDE, and everything was set up to
+JDK 19 (this code used to work before without setting up anything 😣 but it
+stopped compiling some day).
+
+In the end, I was able to set up the actual version of the JDK to use by Gradle
+editing from the project's `build.gradle.kts` from `11` to `19`:
+
+```kotlin
+kotlin {
+    jvmToolchain(19)
+}
+```
+
+<figcaption>
+<p align="center"><strong>
+Solution to Set the Correct Version of the JDK to Run the Kotlin App
+</strong></p>
+</figcaption>
+
 ### Machine Learning
 
 The next issues are related to machine learning issues like numerical
