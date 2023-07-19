@@ -3,3 +3,7 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Applying my Pipe and Application Operators in Kotlin (2023-07-19)
+
+![Applying my Pipe and Application Operators in Kotlin (2023-07-19)](applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png)
+
+---
