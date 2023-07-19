@@ -1,11 +1,14 @@
-import arrow.core.*
+import arrow.core.Either
+import arrow.core.Either.Left
+import arrow.core.Either.Right
+import arrow.core.None
+import arrow.core.firstOrNone
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
-import kotlin.OptionalExpectation
+import java.nio.file.StandardCopyOption
 import kotlin.io.path.name
 import kotlin.io.path.pathString
-import kotlin.streams.toList
 
 
 //fun <T> and(p1: Predicate<T>, p2: Predicate<T>): Predicate<T> = { value ->
@@ -124,22 +127,105 @@ import kotlin.streams.toList
 //
 //}
 
-fun main() {
-    val root = Entry(Path.of(".."))
-    entries(root)
-        .map { Entry(Path.of(it.path.toString(), "index.md"))}
-        .map { toTitle(it) }
-        .map {toMarkdown(it)}
+fun main(args: Array<String>) {
+    if (args.isNotEmpty()) {
+        val fn = args.getOrElse(0) { "" }
+        val arg1 = args.getOrElse(1) { "" }
+        val arg2 = args.getOrElse(2) { "" }
+
+        newFn(fn)
+            .fold(
+                { println("Invalid function: $fn") },
+                { execute(it, arg1, arg2) }
+            )
+    }
+}
+
+fun execute(fn: Fn, arg1: String, arg2: String) = when (fn) {
+    Fn.Entries -> exec_entries(arg1)
+    Fn.Build -> exec_build(arg1, arg2)
+}
+
+fun exec_entries(root: String) {
+    val rootPath = Path.of(root)
+
+    if (!Files.exists(rootPath)) {
+        println("Root path doesn't exist $rootPath")
+        return
+    }
+    entries(Entry(rootPath))
+        .map { it.path.fileName }
         .forEach { println(it) }
+}
+
+fun exec_build(root: String, entryName: String) {
+    // More expressive //
+    entries(root `---` Path::of `---` ::Entry)
+        .firstOrNone { it.name() == entryName }
+        .onSome { build(it, ::BuildConfig `$` Path.of(root, "_out")) }
+
+    // More conservative //
+    val entry = Entry(Path.of(root))
+    entries(entry)
+        .firstOrNone { it.name() == entryName }
+        .onSome { build(it, BuildConfig(Path.of(root, "_out"))) }
+}
+
+fun build(entry: Entry, config: BuildConfig) {
+    val (outDir) = config
+    val entryDir = Path.of(outDir.toString(), entry.name())
+
+    fun prepare() {
+        if (!Files.exists(outDir)) {
+            Files.createDirectory(outDir)
+        }
+        if (Files.exists(entryDir)) {
+            deleteDirectory(entryDir)
+        }
+        Files.createDirectory(entryDir)
+
+        copyDirectory(entry.path, entryDir)
+    }
+
+    prepare()
+    val index = loadIndex(entry).getOrNull() ?: ""
+    val title = toTitle(index, entry.path.fileName.toString())
+    val abstract = toAbstract(index)
+
+    val frontmatter = """
+        ---
+        
+        ---
+    """.trimIndent()
+    println(abstract)
+}
+
+data class BuildConfig(
+    val outDir: Path
+)
+
+//        .map { Entry(Path.of(it.path.toString(), "index.md")) }
+//        .map { toTitle(it) }
+//        .map { toMarkdown(it) }
+//        .forEach { println(it) }
+enum class Fn {
+    Entries,
+    Build,
+}
+
+fun newFn(value: String): Either<None, Fn> = when (value.lowercase()) {
+    "entries" -> Right(Fn.Entries)
+    "build" -> Right(Fn.Build)
+    else -> Left(None)
 }
 
 fun toMarkdown(it: TitleLink): String {
     return "[${it.title}](${it.link})"
 }
 
-data class TitleLink (val title: String, val link: String)
+data class TitleLink(val title: String, val link: String)
 
-fun toTitle(entry: Entry): TitleLink {
+fun toTitle(index: String, link: String): TitleLink {
     fun extractTitle(input: String): String {
         val lines = input.lines()
         return lines.find { it.startsWith("#") }.orEmpty()
@@ -150,21 +236,39 @@ fun toTitle(entry: Entry): TitleLink {
         return titleLine.replace("# ", "")
     }
 
-    return load(entry)
-        .fold(
-            {
-                println(it)
-                return TitleLink("", "")
-            },
-            { TitleLink(read(it), entry.path.parent.fileName.toString()) }
-        )
+    return TitleLink(read(index), link)
+}
+
+fun toAbstract(index: String): String {
+    var text = ""
+    var found = false
+
+    for (line in index.lines()) {
+        if (line.startsWith("#")) {
+            found = true
+            continue
+        }
+        if (!found) {
+            continue
+        }
+        if (line.isBlank() || line.startsWith("#")) {
+            if (line.startsWith("#")) {
+                break
+            }
+            if (text.isNotBlank()) {
+                break
+            }
+        }
+        text += line
+    }
+    return text
 }
 
 fun handle(msg: String): None {
     return None
 }
 
-fun entries(root: Entry) =
+fun entries(root: Entry): List<Entry> =
     Files
         .walk(root.path)
         .filter(::filterPath)
@@ -204,7 +308,7 @@ sealed interface Title {
 
 val title: (String) -> Title.Title = { Title.Title(it) }
 
-//fun Entry.name(): String = getName
+fun Entry.name(): String = name(this)
 //fun Entry.cover(): Path = Path.of(path.toString(), "${name()}.png")
 
 //fun name(entry: Entry): String = entry.getName
@@ -216,9 +320,45 @@ val name: (Entry) -> String = { (path) -> path.name }
 
 val load: (Entry) -> Either<String, String> = {
     try {
-        Either.Right(Files.readString(it.path))
+        Right(Files.readString(it.path))
     } catch (e: IOException) {
         e.printStackTrace()
-        Either.Left(e.message.orEmpty())
+        Left(e.message.orEmpty())
+    }
+}
+
+val loadIndex: (Entry) -> Either<String, String> = {
+    try {
+        Right(Files.readString(Path.of(it.path.toString(), "index.md")))
+    } catch (e: IOException) {
+        e.printStackTrace()
+        Left(e.message.orEmpty())
+    }
+}
+
+fun deleteDirectory(directory: Path) {
+    if (Files.isDirectory(directory)) {
+        Files.walk(directory)
+            .sorted(Comparator.reverseOrder())
+            .forEach(Files::delete)
+    } else {
+        throw IllegalArgumentException("Provided path is not a directory.")
+    }
+}
+
+fun copyDirectory(sourceDir: Path, targetDir: Path) {
+    Files.walk(sourceDir).forEach { sourcePath ->
+        val relativePath = sourceDir.relativize(sourcePath)
+        val targetPath = targetDir.resolve(relativePath)
+
+        if (Files.isDirectory(sourcePath)) {
+            Files.createDirectories(targetPath)
+        } else {
+            Files.copy(
+                sourcePath,
+                targetPath,
+                StandardCopyOption.REPLACE_EXISTING
+            )
+        }
     }
 }
