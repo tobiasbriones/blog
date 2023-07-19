@@ -16,7 +16,7 @@ public class Parser<K extends Enum<?>> {
         = Pattern
         .compile("(//)(.*)(\\r\\n|\\r|\\n)");
     private static final String PASCAL_CASE_GROUP_REGEX
-        = "([A-Z]+[a-z0-9]*)+";
+        = "([A-Z][a-zA-Z0-9]*)";
     private static final Pattern PASCAL_CASE_TYPE_PATTERN
         = Pattern
         .compile("([ (.,:]{1}|:{2}|::)"
