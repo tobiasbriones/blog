@@ -21,6 +21,30 @@ This section lists troubleshooting I faced during dev projects.
 
 Troubleshooting from my university enrollment sections app are listed next.
 
+#### An Illegal Reflective Access Operation has Occurred in Apache POI
+
+This was when Java 9 came out, and reflection operations were affected.
+
+```
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.poi.util.DocumentHelper (file:/T:/Workspace/Java/Sections%20Manager/libs/poi/poi-ooxml-3.17.jar) to method com.sun.org.apache.xerces.internal.util.SecurityManager.setEntityExpansionLimit(int)
+WARNING: Please consider reporting this to the maintainers of org.apache.poi.util.DocumentHelper
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+```
+
+<figcaption>
+<p align="center"><strong>
+Illegal Reflective Access Warning in Old Version of Apache POI and Java 9
+</strong></p>
+</figcaption>
+
+Apache POI 3.x is quite old, while 4.x came later.
+
+The solution was to update Apache POI to a new version to get rid of the
+warning, as per my
+[StackOverflow Question](https://stackoverflow.com/questions/50071996/an-illegal-reflective-access-operation-has-occurred-apache-poi).
+
 ### Course Project
 
 Troubleshooting from course projects are listed next.
