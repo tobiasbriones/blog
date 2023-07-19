@@ -40,6 +40,11 @@ Addressed issues:
 
 I list random troubleshooting experiences I face next.
 
+### Dev
+
+This covers day-to-day annoying issues I have solved before in software 
+development.
+
 ### Machine Learning
 
 The next issues are related to machine learning issues like numerical
