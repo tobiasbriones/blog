@@ -117,5 +117,11 @@ more, with assignments [^2], temporal coupling, etc. That only increases the
 
 [^2]: It's not the same "assigment" than "matching"/"definition"
 
+Even though some things might not be "idiomatic Kotlin," they're still useful
+for a more-correct functional approach [^3].
+
+[^3]: I need to use Kotlin as an "industry-grade PureScript," i.e., the
+    advantages of Java with a close approach to FP
+
 As you can see, more expressive code inducing a greater degree of functional
 purity leads to more cohesive expressions.
