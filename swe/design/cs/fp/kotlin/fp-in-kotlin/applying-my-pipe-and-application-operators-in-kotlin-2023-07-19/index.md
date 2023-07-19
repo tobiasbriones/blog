@@ -1,3 +1,10 @@
+---
+permalink: applying-my-pipe-and-application-operators-in-kotlin-2023-07-19
+title: Applying my Pipe and Application Operators in Kotlin (2023-07-19)
+ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/design/cs/fp/kotlin/fp-in-kotlin/applying-my-pipe-and-application-operators-in-kotlin-2023-07-19/applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png
+description: I've been applying the operators I designed a couple of days ago to make Kotlin's FP more expressive.
+---
+
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
