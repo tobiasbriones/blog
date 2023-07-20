@@ -156,3 +156,37 @@ Solution to Set the Correct Version of the JDK to Run the Kotlin App
 
 The next issues are related to machine learning issues like numerical
 computations, datasets, etc.
+
+#### TensorFlow Model not Learning due to Unshuffled Training Dataset
+
+When I was training a TensorFlow binary classification CNN model I had to
+change/tune some code for training and measuring.
+
+The peculiarity of this problem is that training data has to be shuffled so the
+training doesn't get biased due to the way data is sorted in the file system.
+**If training takes place with default-sorted disk data then the model won't
+learn**, and that was the problem I had.
+
+The API is the following:
+
+`tf.data.Dataset.list_files(split_list, shuffle=False)`
+
+[list_files | tf.data.Dataset | TensorFlow v2.12.0](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#list_files)
+
+I was explicitly passing `shuffle=False` since this was necessary for getting
+metrics correctly (after training). That is, the same order of files was
+required to map them for computing the model metrics on the datasets.
+
+Then, I put a model to train with this new in-house API I was developing, but it
+wasn't learning 😬 (something you can check in the training history logs/plots).
+
+After checking everything, I realized the only meaningful change I had done was
+that argument when loading the dataset. So, I proceeded to set it to `True`
+(which is the default), and the training behavior was fixed.
+
+This might possible since the dataset will provide a default pattern according
+to how it's stored, and this will probably introduce bias, and the model might
+get locked in a local minimum as per what I was reading about how the Stochastic
+Gradient Descent (SGD) works.
+
+Always make sure to shuffle data before training to avoid biases.
