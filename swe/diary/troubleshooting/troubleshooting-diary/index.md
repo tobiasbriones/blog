@@ -80,6 +80,26 @@ that `Unresolved reference. None of the following candidates is applicable becau
 since the version Kotlin is running doesn't have the method `toList` from
 the `Stream` API that was introduced in Java 16.
 
+**The IDE was all right with the code, but it didn't compile in the end.**
+
+```kotlin
+fun entries(root: Entry): List<Entry> =
+    Files
+        .walk(root.path)
+        .filter(::filterPath)
+        .filter(Files::isRegularFile)
+        .filter { it.name == "index.md" }
+        .filter { it.parent != null }
+        .map { Entry(it.parent) }
+        .toList() // <- here
+```
+
+<figcaption>
+<p align="center"><strong>
+Method "toList" Unresolved by the Compiler
+</strong></p>
+</figcaption>
+
 ```
 e: file:///P:/deployment/blog/ops/src/main/kotlin/Main.kt:282:10 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
 public inline fun <T> Enumeration<TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.collections
@@ -107,8 +127,8 @@ The Method "toList" is not Found when Compiling
 </figcaption>
 
 A solution was to add `import kotlin.streams.toList` to import the method
-`toList` so it's found. The problem is that is unnecessary, and the IDE deletes
-it because it said it was not used.
+`toList` so it's found. The problem is that is unnecessary, and **the IDE
+deleted it because it said it was an unused import.**
 
 There's always a conflict in JVM setups of what you're using: the dependency of
 the IDE for Java and JVM projects is evil.
@@ -117,8 +137,8 @@ I checked all possible configurations in the IDE, and everything was set up to
 JDK 19 (this code used to work before without setting up anything 😣 but it
 stopped compiling some day).
 
-In the end, I was able to set up the actual version of the JDK to use by Gradle
-editing from the project's `build.gradle.kts` from `11` to `19`:
+In the end, I was able to set the actual version of the JDK to use by Gradle by
+editing the project's `build.gradle.kts` from `11` to `19`:
 
 ```kotlin
 kotlin {
