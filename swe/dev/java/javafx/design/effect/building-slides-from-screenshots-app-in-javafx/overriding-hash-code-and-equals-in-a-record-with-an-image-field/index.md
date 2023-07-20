@@ -83,6 +83,32 @@ This case shows one example of when to override the default implementation of a
 Java `record` that has large or binary fields and how a side effect can be
 mitigated in a system.
 
+## Update on the Application Development
+
+As a bonus, I leave a pretty slide I created with the underlying application I
+was talking about in this article.
+
+Regarding development, I finished the EP and will publish the complete
+development documentation as notified in
+[Finishing Writing the Documentation for my Next EP (2023-07-14)](/finishing-writing-the-documentation-for-my-next-ep-2023-07-14).
+
+I actually took this article from the app dev article to separate the content,
+and I will publish this article that has been ready since long ago right after I
+publish the dev one.
+
+![Slides EP: Code Snippet](slides-ep-_-code-snippet.png)
+
+<figcaption>
+<p align="center"><strong>
+Slides EP: Code Snippet
+</strong></p>
+</figcaption>
+
+Notice the difference in quality this experimental version provides me compared
+to the generic code snippet images I generated above via other third-party
+generic tools that are always bugged or never work well. This opens a new era
+for my technical content creation.
+
 ## Setting a Correct Model Identity
 
 Large structures, binary files, memory addresses, and any kind of
