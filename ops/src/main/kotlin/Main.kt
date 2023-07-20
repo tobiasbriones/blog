@@ -159,16 +159,9 @@ fun exec_entries(root: String) {
 }
 
 fun exec_build(root: String, entryName: String) {
-    // More expressive //
     entries(root `---` Path::of `---` ::Entry)
         .firstOrNone { it.name() == entryName }
         .onSome { build(it, ::BuildConfig `$` Path.of(root, "_out")) }
-
-    // More conservative //
-    val entry = Entry(Path.of(root))
-    entries(entry)
-        .firstOrNone { it.name() == entryName }
-        .onSome { build(it, BuildConfig(Path.of(root, "_out"))) }
 }
 
 fun build(entry: Entry, config: BuildConfig) {
@@ -192,12 +185,29 @@ fun build(entry: Entry, config: BuildConfig) {
     val title = toTitle(index, entry.path.fileName.toString())
     val abstract = toAbstract(index)
 
-    val frontmatter = """
+    val frontMatter = """
         ---
+        permlink: /${title.link}
+        title: ${title.title}
+        description: $abstract
         
         ---
+        
     """.trimIndent()
-    println(abstract)
+
+    val withFrontMatter = frontMatter + index
+    save(entryDir, withFrontMatter)
+}
+
+fun save(entryDir: Path, index: String) {
+    Files.writeString(Path.of(entryDir.toString(), "index.md"), index)
+}
+
+fun tocHtml (){
+
+}
+fun toc (){
+
 }
 
 data class BuildConfig(
