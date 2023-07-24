@@ -5,18 +5,6 @@ description: I'll document particular insights about Kotlin functional designs I
 ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/lang/fp/kotlin/fp-in-kotlin/fp-in-kotlin.png
 ---
 
-<!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
-<!-- SPDX-License-Identifier: CC-BY-4.0 -->
-<!-- This file is part of https://github.com/tobiasbriones/blog -->
-
-# FP in Kotlin
-
-I'll document particular insights about Kotlin functional designs I figure out.
-
-This article keeps open to more sections to sub-publish.
-
-## Contents
-
 <nav>
 <a href="/" class="home">
 <span class="material-symbols-rounded">
@@ -50,6 +38,19 @@ Blog
         </ul>
 </div>
 </nav>
+<!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+<!-- This file is part of https://github.com/tobiasbriones/blog -->
+
+# FP in Kotlin
+
+I'll document particular insights about Kotlin functional designs I figure out.
+
+This article keeps open to more sections to sub-publish.
+
+## Contents
+
+
 
 - [FP in Kotlin](#fp-in-kotlin)
     * [Pipe Operator](#pipe-operator)
