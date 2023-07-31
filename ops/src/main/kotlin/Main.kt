@@ -1,13 +1,20 @@
-import arrow.core.Either
+import arrow.core.*
 import arrow.core.Either.Left
 import arrow.core.Either.Right
-import arrow.core.None
-import arrow.core.firstOrNone
-import arrow.core.getOrElse
+import fs.*
+import jekyll.FileResource
+import jekyll.FrontMatter
+import jekyll.ResourceExtension
+import jekyll.codeSnippetBlockHtml
+import md.Index
+import md.Markdown
+import md.extractAbstract
+import md.navHtml
+import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import java.util.*
-import kotlin.io.path.name
+import kotlin.io.path.*
 
 
 fun main(args: Array<String>) {
@@ -72,25 +79,144 @@ fun build(entry: Entry, config: BuildConfig) {
     }
 
     prepare()
-    val index = loadIndex(entry).getOrNull() ?: ""
+    val index = entry.loadIndex().getOrNull() ?: Index(Markdown(""))
     val title = toTitle(index, entry.path.fileName.toString())
-    val abstract = toAbstract(index)
+    val abstract = index.extractAbstract()
     val coverUrl = coverUrl(entry)
 
-    val frontMatter = """
-        ---
-        permlink: /${title.link}
-        title: ${title.title}
-        description: $abstract
-        ogimage: $coverUrl
-        ---
-        
-        
-    """.trimIndent()
-    val toc = tocHtml(entry, index)
+    val frontMatter = FrontMatter(
+        title.link,
+        title.title,
+        Some(abstract),
+        Some(coverUrl)
+    )
+    val toc = navHtml(index)
 
-    val prod = frontMatter + toc + index
+    val prod = frontMatter.toString() + toc + index
     saveIndex(entryDir, prod)
+
+    buildSubdirectories(config.outDir, entry)
+}
+
+fun buildSubdirectories(outDir: Path, entry: Entry) {
+    val filter: (Path) -> Boolean = { it.name != "images" }
+
+    entry
+        .subdirectories()
+        .fold(
+            { print(it) },
+            {
+                it.filter(filter)
+                    .forEach {
+                        buildSubdirectory(
+                            outDir,
+                            entry.name(),
+                            it
+                        )
+                    }
+            }
+        )
+}
+
+fun buildSubdirectory(outDir: Path, entryName: String, relPath: Path) {
+    val subPath = Path.of(entryName, relPath.toString())
+    val path = Path.of(outDir.toString(), subPath.toString())
+
+    if (path.isDirectory()) {
+        Files
+            .list(path)
+            .forEach {
+                buildSubdirectory(
+                    outDir,
+                    entryName,
+                    Path.of(relPath.toString(), it.name)
+                )
+            }
+        addDirectoryIndex(outDir, entryName, relPath)
+    } else {
+        addContentIndex(outDir, entryName, relPath)
+    }
+}
+
+fun addDirectoryIndex(outDir: Path, entryName: String, relPath: Path) {
+    val subPath = Path.of(entryName, relPath.toString())
+    val path = Path.of(outDir.toString(), subPath.toString())
+    val name = relPath.fileName.toString()
+    // front matter is being useless
+//    val frontMatter = FrontMatter(
+//        subPath.toString().replace("\\", "/"),
+//        name,
+//        "Files on $name"
+//    )
+//    val frontMatterMd = frontMatter.toMarkdown()
+    val navigationTreeHtml = createNavigationTreeHtml(path.toFile())
+    val sb = StringBuilder()
+
+//    sb.append(frontMatterMd)
+//    sb.append("\n")
+    sb.append("# $name")
+    sb.append("\n")
+    sb.append(navigationTreeHtml)
+    val index = sb.toString()
+
+    saveIndex(path, index)
+}
+
+fun addContentIndex(outDir: Path, entryName: String, relPath: Path) {
+    val subPath = Path.of(entryName, relPath.toString())
+    val path = Path.of(outDir.toString(), subPath.toString())
+    val name = relPath.fileName.toString()
+    val fileContentHtml = createContentHtml(path)
+    val sb = StringBuilder()
+
+    sb.append("# $name")
+    sb.append("\n")
+    sb.append(fileContentHtml)
+    val index = sb.toString()
+
+    val fileDir = Path.of(path.parent.toString(), name)
+
+    path.deleteIfExists()
+    fileDir.createDirectory()
+
+    saveIndex(fileDir, index)
+}
+
+fun createContentHtml(path: Path): String {
+    return when (val ext = getFileExtension(path)) {
+        "png", "jpg", "gif" -> createImageHtml(path)
+        else -> codeSnippetBlockHtml(
+            FileResource(
+                Files.readString(path), ResourceExtension(ext)
+            )
+        )
+    }
+}
+
+
+fun createImageHtml(path: Path): String {
+    val name = path.name
+    return """
+        <img src=${path} alt="$name" />
+    """".trimIndent()
+}
+
+
+fun createNavigationTreeHtml(rootPath: File): String {
+    fun createHTMLTree(file: File): String {
+        val children = file.listFiles()
+        return if (file.isDirectory && children != null) {
+            "<li>${file.name}<ul>${children.joinToString("") { createHTMLTree(it) }}</ul></li>"
+        } else {
+            "<li>${file.name}</li>"
+        }
+    }
+
+    return """
+        <ul>
+            ${createHTMLTree(rootPath)}
+        </ul>
+    """.trimIndent()
 }
 
 fun exec_deploy(root: String, entryName: String) {
@@ -100,17 +226,17 @@ fun exec_deploy(root: String, entryName: String) {
         Path.of("P:\\deployment\\tmp\\blog")
     )
 
-    listOf(
-        "git checkout gh-pages",
-        "git pull origin gh-pages gh-pages",
-    )
-        .forEach { cmd ->
-            runCommand(cmd, config.deployDir)
-                .fold(
-                    { println(it) },
-                    { println(it) },
-                )
-        }
+//    listOf(
+//        "git checkout gh-pages",
+//        "git pull origin gh-pages gh-pages",
+//    )
+//        .forEach { cmd ->
+//            runCommand(cmd, config.deployDir)
+//                .fold(
+//                    { println(it) },
+//                    { println(it) },
+//                )
+//        }
 
     if (entryName == ".") {
         entries
@@ -119,13 +245,14 @@ fun exec_deploy(root: String, entryName: String) {
         entries
             .firstOrNone { it.name() == entryName }
             .onSome { deploy(it, config) }
+            .onNone { println("Entry not found: $entryName") }
     }
 
-    runCommand("git push origin gh-pages", config.deployDir)
-        .fold(
-            { println(it) },
-            { println(it) },
-        )
+//    runCommand("git push origin gh-pages", config.deployDir)
+//        .fold(
+//            { println(it) },
+//            { println(it) },
+//        )
 }
 
 fun deploy(entry: Entry, config: DeployConfig) {
@@ -164,20 +291,20 @@ fun deploy(entry: Entry, config: DeployConfig) {
 
     println("Files copied")
 
-    println("Committing...")
-
-    listOf(
-        "git add ${entry.name()}",
-        "git commit -m \"Deploy ${entry.name()}\" --no-gpg-sign",
-    )
-        .forEach { cmd ->
-            println(cmd)
-            runCommand(cmd, config.deployDir)
-                .fold(
-                    { println(it) },
-                    { println(it) },
-                )
-        }
+//    println("Committing...")
+//
+//    listOf(
+//        "git add ${entry.name()}",
+//        "git commit -m \"Deploy ${entry.name()}\" --no-gpg-sign",
+//    )
+//        .forEach { cmd ->
+//            println(cmd)
+//            runCommand(cmd, config.deployDir)
+//                .fold(
+//                    { println(it) },
+//                    { println(it) },
+//                )
+//        }
 }
 
 fun coverUrl(entry: Entry): String =
@@ -186,67 +313,6 @@ fun coverUrl(entry: Entry): String =
         .map { entry.coverGitHubUrl("tobiasbriones", "blog", it.name + "/") }
         .getOrElse { "" }
 
-fun tocHtml(entry: Entry, index: String) = """
-    <nav>
-        <a href="/" class="home">
-            <span class="material-symbols-rounded">
-            home
-            </span>
-            <span>
-            Blog
-            </span>
-        </a>
-        
-        <div class="article">
-            <a href="#" class="title">${entry.name()}</a>
-
-            ${tocListHtml(index)}
-        </div>
-    </nav>
-    
-    
-""".trimIndent()
-
-fun tocListHtml(markdown: String): String {
-    val headingRegex =
-        Regex("""^##\s*(.+)$""") // Regex to match h2 or ## headings
-    val lines = markdown.lines()
-    val htmlBuilder = StringBuilder("<ul>")
-
-    var currentIndent = 0
-
-    for (line in lines) {
-        val matchResult = headingRegex.find(line)
-        if (matchResult != null) {
-            val headingText =
-                matchResult.groupValues[1].replaceFirst("^#+\\s*".toRegex(), "")
-                    .trim()
-            val indent = line.takeWhile { it == ' ' }.length / 2
-
-            if (indent > currentIndent) {
-                htmlBuilder.append("<ul>")
-                htmlBuilder.append("\n")
-            } else if (indent < currentIndent) {
-                repeat(currentIndent - indent) { htmlBuilder.append("</ul>") }
-            }
-
-            htmlBuilder.append(
-                """
-                <li><a href="#${
-                    headingText.lowercase(Locale.getDefault()).replace(' ', '-')
-                }">
-                $headingText</a>
-                """
-            )
-            currentIndent = indent
-        }
-    }
-
-    repeat(currentIndent) { htmlBuilder.append("</ul>") }
-    htmlBuilder.append("</ul>")
-
-    return htmlBuilder.toString()
-}
 
 data class BuildConfig(
     val outDir: Path

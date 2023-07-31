@@ -1,7 +1,8 @@
-import arrow.core.Either
-import arrow.core.None
-import arrow.core.Option
-import arrow.core.Some
+import arrow.core.*
+import arrow.core.Either.*
+import md.Index
+import md.Markdown
+import md.extractTitle
 import java.io.File
 import java.io.IOException
 import java.nio.file.Files
@@ -27,77 +28,34 @@ fun Entry.coverGitHubUrl(username: String, repo: String, path: String = "") =
     """"https://raw.githubusercontent.com/$username/$repo/gh-pages/${name()}/$path${name()}.png
     """.trimIndent()
 
-val load: (Entry) -> Either<String, String> = {
-    try {
-        Either.Right(Files.readString(it.path))
-    } catch (e: IOException) {
-        e.printStackTrace()
-        Either.Left(e.message.orEmpty())
-    }
+fun Entry.subdirectories(): Either<String, List<Path>> = try {
+    Files.list(path)
+        .filter { Files.isDirectory(it) }
+        .map { it.fileName }
+        .toList()
+        .right()
+} catch (e: IOException) {
+    e.printStackTrace()
+    Left("Fail to list entry subdirectories: ${e.message}")
 }
 
-val loadIndex: (Entry) -> Either<String, String> = {
-    try {
-        Either.Right(Files.readString(Path.of(it.path.toString(), "index.md")))
-    } catch (e: IOException) {
-        e.printStackTrace()
-        Either.Left(e.message.orEmpty())
-    }
+fun Entry.loadIndex(): Either<String, Index> = try {
+    Index(
+        Markdown(
+            Files.readString(Path.of(path.toString(), "index.md"))
+        )
+    ).right()
+} catch (e: IOException) {
+    e.printStackTrace()
+    Left(e.message.orEmpty())
 }
 
 fun toMarkdown(it: TitleLink): String {
     return "[${it.title}](${it.link})"
 }
 
-
-fun toTitle(index: String, link: String): TitleLink {
-    fun extractTitle(input: String): String {
-        val lines = input.lines()
-        return lines.find { it.startsWith("#") }.orEmpty()
-    }
-
-    fun read(contents: String): String {
-        val titleLine = extractTitle(contents)
-        return titleLine.replace("# ", "")
-    }
-
-    return TitleLink(read(index), link)
-}
-
-fun toAbstract(index: String): String {
-    var text = ""
-    var abstractHashFound = false
-
-    for (line in index.lines()) {
-        if (line.startsWith("#")) {
-            abstractHashFound = true
-            continue
-        }
-        if (!abstractHashFound) {
-            continue
-        }
-
-        // If it has any cover image
-        if (line.startsWith("!") ||
-            line.startsWith("<") ||
-            line.startsWith("-")
-        ) {
-            continue
-        }
-
-        // Abstract paragraph ended
-        if (line.isBlank() || line.startsWith("#")) {
-            if (line.startsWith("#")) {
-                break
-            }
-            if (text.isNotBlank()) {
-                break
-            }
-        }
-        text += line
-    }
-    return text
-}
+fun toTitle(index: Index, link: String): TitleLink =
+    TitleLink(index.extractTitle(), link)
 
 fun entries(root: Entry): List<Entry> = Files
     .walk(root.path)

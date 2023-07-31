@@ -1,3 +1,5 @@
+package fs
+
 import arrow.core.Either
 import arrow.core.Either.*
 import arrow.core.None
@@ -6,6 +8,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
 import java.util.stream.Stream
+import kotlin.io.path.name
 
 fun deleteDirectory(directory: Path): Either<String, None> {
     val deleteFilesFromWalk: (Stream<Path>) -> Right<None> = { stream ->
@@ -50,5 +53,15 @@ fun copyDirectory(sourceDir: Path, targetDir: Path): Either<String, None> {
     } catch (e: IOException) {
         e.printStackTrace()
         Left("Fail to copy directory $sourceDir into $targetDir: ${e.message}")
+    }
+}
+
+fun getFileExtension(path: Path): String {
+    val fileName = path.name
+    val dotIndex = fileName.lastIndexOf('.')
+    return if (dotIndex > 0 && dotIndex < fileName.length - 1) {
+        fileName.substring(dotIndex + 1)
+    } else {
+        ""
     }
 }
