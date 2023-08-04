@@ -9,7 +9,7 @@ import jekyll.codeSnippetBlockHtml
 import md.Index
 import md.Markdown
 import md.extractAbstract
-import md.navHtml
+import md.generateNavHtml
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
@@ -90,7 +90,7 @@ fun build(entry: Entry, config: BuildConfig) {
         Some(abstract),
         Some(coverUrl)
     )
-    val toc = navHtml(index)
+    val toc = index.generateNavHtml()
 
     val prod = frontMatter.toString() + toc + index
     saveIndex(entryDir, prod)
