@@ -1,13 +1,11 @@
 package md
 
-import arrow.core.None
-import arrow.core.Option
-import arrow.core.Some
-import arrow.core.getOrElse
+import arrow.core.*
+import md.Attribute.*
 import java.util.*
 import kotlin.collections.ArrayDeque
 
-sealed interface Tag : ClassList {
+sealed interface Tag : AttributeList {
     val name: String get() = javaClass.simpleName.lowercase()
     val children: List<Tag>
     val content: Option<String>
@@ -15,107 +13,126 @@ sealed interface Tag : ClassList {
 
 data class Div(
     override val children: List<Tag>,
-    override val classList: List<String> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
     override val content: Option<String> = None,
 ) : Tag
 
 data class Nav(
     override val children: List<Tag>,
-    override val classList: List<String> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
     override val content: Option<String> = None,
 ) : Tag
 
 data class A(
     override val children: List<Tag> = listOf(),
-    override val classList: List<String> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
     override val content: Option<String> = None,
-    val href: String
 ) : Tag
 
 data class Span(
     override val children: List<Tag> = listOf(),
-    override val classList: List<String> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
     override val content: Option<String>,
 ) : Tag
 
 data class Ul(
     override val children: List<Tag>,
-    override val classList: List<String> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
     override val content: Option<String> = None,
 ) : Tag
 
 data class Li(
     override val children: List<Tag> = listOf(),
-    override val classList: List<String> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
     override val content: Option<String> = None,
 ) : Tag
 
 fun Tag.toHtmlString(indentNumber: Int = 0): String {
     val indent = " ".repeat(indentNumber * 2)
+    val attributesString = with(attributes) {
+        if (isEmpty()) ""
+        else map { it.key.toHtmlString(it.value) }
+            .joinToString(" ")
+            .let { " $it" }
+    }
+
     val contentString = content.getOrElse { "" }
-    val classesString = classList.joinToString(" ")
-    val attributesString = if (classList.isEmpty()) "" else
-        " class=\"$classesString\""
+
+    if (children.isEmpty()) {
+        return """
+            |$indent<$name$attributesString>
+            |$indent  $contentString
+            |$indent</$name>
+        """.trimMargin("|")
+    }
+
     val childrenString =
         children
             .joinToString("\n") {
                 it.toHtmlString(indentNumber + 1)
             }
+    val contentLine =
+        if (contentString.isEmpty()) "" else indent + contentString
+
     return """
-        
         |$indent<$name$attributesString>
-        |$indent  $contentString$childrenString
+        |$contentLine$childrenString
         |$indent</$name>
-    """.trimMargin("|").trimStart()
+    """.trimMargin("|")
 }
 
-interface ClassList {
-    val classList: List<String>
+enum class Attribute {
+    Class,
+    Href,
+}
+
+val Attribute.htmlName: String get() = name.lowercase()
+
+fun Attribute.toHtmlString(values: List<String>) =
+    if (values.isEmpty()) ""
+    else "$htmlName=\"${values.joinToString(" ")}\""
+
+interface AttributeList {
+    val attributes: Map<Attribute, List<String>>
 }
 
 fun Index.generateNavHtml(): String =
     Nav(
         listOf(
             A(
-                listOf(
+                attributes = mapOf(
+                    Class to listOf("home"),
+                    Href to listOf("/"),
+                ),
+                children = listOf(
                     Span(
-                        classList = listOf("material-symbols-rounded"),
+                        attributes = mapOf(
+                            Class to listOf("material-symbols-rounded"),
+                        ),
                         content = Some("home"),
                     ),
                     Span(
                         content = Some("Blog"),
                     ),
-                ),
-                listOf("home"),
-                None,
-                "/",
-            ),
-            A(
-                content = Some(extractTitle()),
-                classList = listOf("title"),
-                href = "#",
+                )
             ),
             Div(
-                classList = listOf("article"),
-                children = listOf(tocList(content))
-            )
+                attributes = mapOf(
+                    Class to listOf("article"),
+                ),
+                children = listOf(
+                    A(
+                        attributes = mapOf(
+                            Class to listOf("title"),
+                            Href to listOf("#"),
+                        ),
+                        content = Some(extractTitle()),
+                    ),
+                    tocList(content),
+                )
+            ),
         )
     ).toHtmlString()
-//
-//"""
-//    <nav>
-//        <a href="/" class="home">
-//            <span class="material-symbols-rounded">home</span>
-//            <span>Blog</span>
-//        </a>
-//
-//            <a href="#" class="title">${extractTitle()}</a>
-//
-//        <div class="article">
-//            ${tocListHtml(content)}
-//        </div>
-//    </nav>
-//""".trimIndent()
 
 private fun tocList(markdown: Markdown): Ul {
     data class Holder(
@@ -176,7 +193,9 @@ private fun tocList(markdown: Markdown): Ul {
         val li = Li(
             children = mutableListOf(
                 A(
-                    href = "#$href",
+                    attributes = mapOf(
+                        Href to listOf("#$href")
+                    ),
                     content = Some(headingText),
                 ),
             )
