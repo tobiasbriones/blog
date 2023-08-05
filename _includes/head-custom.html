@@ -580,12 +580,12 @@
         color: white !important;
     }
 
-    .social a:hover {
-        text-decoration: none;
+    .social .btn:active {
+        border: 1px solid #fafafa;
     }
 
-    .social .btn:hover {
-        background-color: rgba(0, 0, 0, 0.3);
+    .social a:hover {
+        text-decoration: none;
     }
 
     /* Customize Twitter button color */
@@ -594,15 +594,67 @@
         border-radius: 16px;
     }
 
+    .btn-twitter:hover,
+    .btn-twitter:active {
+        background-color: #0e81ce !important; /* Slightly darker color when hovered */
+    }
+
     /* Customize GitHub button color */
     .btn-github {
         background-color: #333;
         border-radius: 16px;
     }
 
+    .btn-github:hover,
+    .btn-github:active {
+        background-color: #222 !important; /* Slightly darker color when hovered */
+    }
+
     /* Customize LinkedIn button color */
     .btn-linkedin {
         background-color: #0077B5;
         border-radius: 16px;
+    }
+
+    .btn-linkedin:hover,
+    .btn-linkedin:active {
+        background-color: #005d8c !important; /* Slightly darker color when hovered */
+    }
+
+    .open-gh-btn .btn {
+        padding: 0.5rem 1.5rem;
+        margin: 0.25rem;
+    }
+
+    .open-gh-btn i,
+    .open-gh-btn strong {
+        font-size: 1.25rem;
+    }
+
+    .open-gh-btn strong {
+        margin-left: 1rem;
+    }
+
+    .subdir-btn .btn {
+        padding: 0.5rem 1.5rem;
+        background-color: #eeeeee;
+    }
+
+    .subdir-btn .btn:hover,
+    .subdir-btn .btn:active {
+        background-color: #e0e0e0;
+    }
+
+    .subdir-btn a:hover {
+        text-decoration: none;
+    }
+
+    .subdir-btn strong {
+        font-size: 1.25rem;
+        margin-left: 1rem;
+    }
+
+    .subdir-btn .btn:active {
+        border: 1px solid #fafafa;
     }
 </style>
