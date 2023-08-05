@@ -2,18 +2,12 @@ import arrow.core.*
 import arrow.core.Either.Left
 import arrow.core.Either.Right
 import fs.*
-import jekyll.FileResource
-import jekyll.FrontMatter
-import jekyll.ResourceExtension
-import jekyll.codeSnippetBlockHtml
-import md.Index
-import md.Markdown
-import md.extractAbstract
-import md.generateNavHtml
+import jekyll.*
+import md.*
+import md.Attribute.*
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
-import java.util.*
 import kotlin.io.path.*
 
 
@@ -91,11 +85,33 @@ fun build(entry: Entry, config: BuildConfig) {
         Some(coverUrl)
     )
     val toc = index.generateNavHtml()
+    val bottomLinks = generateLinksToSubdirectories(entry)
 
-    val prod = frontMatter.toString() + toc + index
+    val prod = frontMatter.toMarkdownString() + toc + index + bottomLinks
     saveIndex(entryDir, prod)
 
     buildSubdirectories(config.outDir, entry)
+}
+
+fun generateLinksToSubdirectories(entry: Entry): String {
+    val filter: (Path) -> Boolean = { it.name != "images" }
+
+    return entry
+        .subdirectories()
+        .fold(
+            {
+                println(it)
+                ""
+            },
+            {
+                it
+                    .filter(filter)
+                    .map(Path::name)
+                    .toList()
+                    .subDirectoriesNav()
+                    .toHtmlString()
+            }
+        )
 }
 
 fun buildSubdirectories(outDir: Path, entry: Entry) {
@@ -110,6 +126,7 @@ fun buildSubdirectories(outDir: Path, entry: Entry) {
                     .forEach {
                         buildSubdirectory(
                             outDir,
+                            entry.relPath,
                             entry.name(),
                             it
                         )
@@ -118,7 +135,12 @@ fun buildSubdirectories(outDir: Path, entry: Entry) {
         )
 }
 
-fun buildSubdirectory(outDir: Path, entryName: String, relPath: Path) {
+fun buildSubdirectory(
+    outDir: Path,
+    entryRelPath: Path,
+    entryName: String,
+    relPath: Path
+) {
     val subPath = Path.of(entryName, relPath.toString())
     val path = Path.of(outDir.toString(), subPath.toString())
 
@@ -128,50 +150,80 @@ fun buildSubdirectory(outDir: Path, entryName: String, relPath: Path) {
             .forEach {
                 buildSubdirectory(
                     outDir,
+                    entryRelPath,
                     entryName,
                     Path.of(relPath.toString(), it.name)
                 )
             }
-        addDirectoryIndex(outDir, entryName, relPath)
+        addDirectoryIndex(outDir, entryName, entryRelPath, relPath)
     } else {
-        addContentIndex(outDir, entryName, relPath)
+        addContentIndex(outDir, entryName, entryRelPath, relPath)
     }
 }
 
-fun addDirectoryIndex(outDir: Path, entryName: String, relPath: Path) {
+fun addDirectoryIndex(
+    outDir: Path,
+    entryName: String,
+    entryRelPath: Path, // src entry path, i.e. tags. e.g. /swe/dev/.../article
+    relPath: Path
+) {
     val subPath = Path.of(entryName, relPath.toString())
     val path = Path.of(outDir.toString(), subPath.toString())
+    val githubPath = entryRelPath
+        .parent
+        .toString()
+        .replace("\\", "/")
+        .let { "$it/${subPath.toString().replace("\\", "/")}" }
+        .let { "tree/main$it" }
     val name = relPath.fileName.toString()
-    // front matter is being useless
-//    val frontMatter = FrontMatter(
-//        subPath.toString().replace("\\", "/"),
-//        name,
-//        "Files on $name"
-//    )
-//    val frontMatterMd = frontMatter.toMarkdown()
     val navigationTreeHtml = createNavigationTreeHtml(path.toFile())
+    val frontMatter = FrontMatter(
+        subPath.toString().replace("\\", "/"),
+        subPath.toString().replace("\\", "/"),
+    )
     val sb = StringBuilder()
 
-//    sb.append(frontMatterMd)
-//    sb.append("\n")
+    sb.append(frontMatter.toMarkdownString())
+    sb.append("\n")
     sb.append("# $name")
     sb.append("\n")
     sb.append(navigationTreeHtml)
+    sb.append("\n")
+    sb.append(openInGitHubButton(githubPath).toHtmlString())
     val index = sb.toString()
 
     saveIndex(path, index)
 }
 
-fun addContentIndex(outDir: Path, entryName: String, relPath: Path) {
+fun addContentIndex(
+    outDir: Path,
+    entryName: String,
+    entryRelPath: Path,
+    relPath: Path
+) {
     val subPath = Path.of(entryName, relPath.toString())
     val path = Path.of(outDir.toString(), subPath.toString())
+    val githubPath = entryRelPath
+        .parent
+        .toString()
+        .replace("\\", "/")
+        .let { "$it/${subPath.toString().replace("\\", "/")}" }
+        .let { "tree/main$it" }
     val name = relPath.fileName.toString()
     val fileContentHtml = createContentHtml(path)
+    val frontMatter = FrontMatter(
+        subPath.toString().replace("\\", "/"),
+        subPath.toString().replace("\\", "/"),
+    )
     val sb = StringBuilder()
 
+    sb.append(frontMatter.toMarkdownString())
+    sb.append("\n")
     sb.append("# $name")
     sb.append("\n")
     sb.append(fileContentHtml)
+    sb.append("\n")
+    sb.append(openInGitHubButton(githubPath).toHtmlString())
     val index = sb.toString()
 
     val fileDir = Path.of(path.parent.toString(), name)
@@ -193,7 +245,6 @@ fun createContentHtml(path: Path): String {
     }
 }
 
-
 fun createImageHtml(path: Path): String {
     val name = path.name
     return """
@@ -201,29 +252,30 @@ fun createImageHtml(path: Path): String {
     """".trimIndent()
 }
 
-
 fun createNavigationTreeHtml(rootPath: File): String {
-    fun createHTMLTree(file: File): String {
-        val children = file.listFiles()
-        return if (file.isDirectory && children != null) {
-            "<li>${file.name}<ul>${children.joinToString("") { createHTMLTree(it) }}</ul></li>"
-        } else {
-            "<li>${file.name}</li>"
-        }
-    }
-
-    return """
-        <ul>
-            ${createHTMLTree(rootPath)}
-        </ul>
-    """.trimIndent()
+    return Ul(
+        children = rootPath
+            .listFiles()
+            .mapNotNull { child ->
+                Li(
+                    children = listOf(
+                        A(
+                            attributes = mapOf(
+                                Href to listOf(child.name)
+                            ),
+                            content = Some(child.name),
+                        )
+                    )
+                )
+            }
+    ).toHtmlString()
 }
 
 fun exec_deploy(root: String, entryName: String) {
     val entries = entries(root `---` Path::of `---` ::Entry)
     val config = DeployConfig(
         ::BuildConfig `$` Path.of(root, "_out"),
-        Path.of("P:\\deployment\\tmp\\blog")
+        Path.of("P:\\deployment\\tmp\\staging\\blog")
     )
 
 //    listOf(
@@ -248,6 +300,36 @@ fun exec_deploy(root: String, entryName: String) {
             .onNone { println("Entry not found: $entryName") }
     }
 
+
+    fun deployIndex() {
+        fun name(entry: Entry) = entry
+            .loadIndex()
+            .fold(
+                {
+                    println(it)
+                    entry.name()
+                },
+                {
+                    it.extractTitle()
+                }
+            )
+
+        val index = """
+            |# Blog | Math Software Engineer
+            |
+            |${
+            entries.joinToString("\n") {
+                "- [${name(it)}](${it.name()})"
+            }
+        }
+        """.trimMargin("|")
+
+        Path.of(config.deployDir.toString(), "index.md")
+            .writeText(index)
+    }
+
+    deployIndex()
+
 //    runCommand("git push origin gh-pages", config.deployDir)
 //        .fold(
 //            { println(it) },
@@ -256,6 +338,11 @@ fun exec_deploy(root: String, entryName: String) {
 }
 
 fun deploy(entry: Entry, config: DeployConfig) {
+    val rootDeployPath = Path.of(
+        config.deployDir.toString(),
+        "blog",
+    )
+
     fun deleteIfExists() {
         val path = Path.of(
             config.deployDir.toString(),
@@ -273,10 +360,13 @@ fun deploy(entry: Entry, config: DeployConfig) {
             entry.name(),
         )
         val dst = Path.of(
-            config.deployDir.toString(),
+            rootDeployPath.toString(),
             entry.name(),
         )
 
+        if (!rootDeployPath.exists()) {
+            rootDeployPath.createDirectory()
+        }
         copyDirectory(src, dst)
     }
 

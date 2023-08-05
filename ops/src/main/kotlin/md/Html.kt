@@ -1,5 +1,6 @@
 package md
 
+import `---`
 import arrow.core.*
 import md.Attribute.*
 import java.util.*
@@ -47,6 +48,24 @@ data class Li(
     override val content: Option<String> = None,
 ) : Tag
 
+data class I(
+    override val children: List<Tag> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
+    override val content: Option<String> = None,
+) : Tag
+
+data class Strong(
+    override val children: List<Tag> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
+    override val content: Option<String> = None,
+) : Tag
+
+data class Img(
+    override val children: List<Tag> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
+    override val content: Option<String> = None,
+) : Tag
+
 fun Tag.toHtmlString(indentNumber: Int = 0): String {
     val indent = " ".repeat(indentNumber * 2)
     val attributesString = with(attributes) {
@@ -59,6 +78,9 @@ fun Tag.toHtmlString(indentNumber: Int = 0): String {
     val contentString = content.getOrElse { "" }
 
     if (children.isEmpty()) {
+        if (isSingle()) {
+            return "$indent<$name$attributesString />"
+        }
         return """
             |$indent<$name$attributesString>
             |$indent  $contentString
@@ -81,9 +103,17 @@ fun Tag.toHtmlString(indentNumber: Int = 0): String {
     """.trimMargin("|")
 }
 
+fun Tag.isSingle() = when (this) {
+    is Img -> true
+    else -> false
+}
+
 enum class Attribute {
     Class,
     Href,
+    Target,
+    Src,
+    Alt,
 }
 
 val Attribute.htmlName: String get() = name.lowercase()
@@ -133,6 +163,76 @@ fun Index.generateNavHtml(): String =
             ),
         )
     ).toHtmlString()
+
+fun List<String>.subDirectoriesNav(): Div {
+    val dirName: (String) -> String = { it.removeSuffix("---ep") }
+    val iconName: (String) -> String =
+        { if (it.endsWith("---ep")) "Example Project" else "Subdirectory" }
+    val iconSrc: (String) -> String =
+        { if (it.endsWith("---ep")) IC_EP else IC_FOLDER }
+
+    return Div(
+        attributes = mapOf(
+            Class to listOf("my-4")
+        ),
+        children = map { subdir ->
+            Div(
+                attributes = mapOf(
+                    Class to listOf("subdir-btn", "my-4")
+                ),
+                children = listOf(
+                    A(
+                        attributes = mapOf(
+                            Class to listOf("btn"),
+                            Href to listOf(subdir),
+                        ),
+                        children = listOf(
+                            Img(
+                                attributes = mapOf(
+                                    Src to listOf(subdir `---` iconSrc),
+                                    Alt to listOf(subdir `---` iconName)
+                                )
+                            ),
+                            Strong(
+                                content = Some(subdir `---` dirName)
+                            )
+                        ),
+                    )
+                )
+            )
+        }
+    )
+}
+
+fun openInGitHubButton(githubPath: String): Div = Div(
+    attributes = mapOf(
+        Class to listOf("social open-gh-btn", "my-4"),
+    ),
+    children = listOf(
+        A(
+            attributes = mapOf(
+                Class to listOf(
+                    "btn",
+                    "btn-github",
+                ),
+                Href to listOf(
+                    "https://github.com/tobiasbriones/blog/$githubPath"
+                ),
+                Target to listOf("_blank")
+            ),
+            children = listOf(
+                I(
+                    attributes = mapOf(
+                        Class to listOf("fab", "fa-github")
+                    )
+                ),
+                Strong(
+                    content = Some("Open in GitHub")
+                )
+            ),
+        )
+    )
+)
 
 private fun tocList(markdown: Markdown): Ul {
     data class Holder(

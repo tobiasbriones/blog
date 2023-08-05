@@ -2,8 +2,6 @@ package jekyll
 
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.*
-
 class JekyllKtTest {
     val frontMatter = FrontMatter(
         "/article",
@@ -13,7 +11,7 @@ class JekyllKtTest {
     @Test
     fun toMarkdown() {
         assert(
-            frontMatter.toMarkdown() == """
+            frontMatter.toMarkdownString() == """
                 ---
                 permlink: /article
                 title: title
@@ -25,7 +23,7 @@ class JekyllKtTest {
     @Test
     fun extractTitle() {
         assert(
-            frontMatter.toMarkdown() == "FP in Kotlin"
+            frontMatter.toMarkdownString() == "FP in Kotlin"
         )
     }
 }

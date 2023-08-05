@@ -25,7 +25,7 @@ fun Entry.coverPath(): Option<Path> {
 }
 
 fun Entry.coverGitHubUrl(username: String, repo: String, path: String = "") =
-    """"https://raw.githubusercontent.com/$username/$repo/gh-pages/${name()}/$path${name()}.png
+    """https://raw.githubusercontent.com/$username/$repo/gh-pages/${name()}/$path${name()}.png
     """.trimIndent()
 
 fun Entry.subdirectories(): Either<String, List<Path>> = try {
@@ -50,6 +50,10 @@ fun Entry.loadIndex(): Either<String, Index> = try {
     Left(e.message.orEmpty())
 }
 
+fun Entry.tags(): List<String> = relPath
+    .toString()
+    .split("/")
+
 fun toMarkdown(it: TitleLink): String {
     return "[${it.title}](${it.link})"
 }
@@ -65,7 +69,7 @@ fun entries(root: Entry): List<Entry> = Files
             .filter(::filterPath)
             .filter(::isEntryDir)
             .filter(::filterParents)
-            .map(::Entry)
+            .map { newEntryFromAbsPath(root.path, it) }
             .toList()
     }
 

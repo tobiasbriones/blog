@@ -5,7 +5,9 @@ import jekyll.langCode
 
 data class Markdown(val value: String)
 
-data class Index(val content: Markdown)
+data class Index(val content: Markdown) {
+    override fun toString(): String = content.value
+}
 
 fun Index.extractTitle(): String = content
     .value
