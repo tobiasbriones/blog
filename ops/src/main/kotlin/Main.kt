@@ -1,50 +1,58 @@
+import Op.*
 import arrow.core.*
-import arrow.core.Either.Left
-import arrow.core.Either.Right
 import fs.*
+import html.*
 import jekyll.*
 import md.*
-import md.Attribute.*
-import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.*
 
 
 fun main(args: Array<String>) {
-    if (args.isNotEmpty()) {
-        val fn = args.getOrElse(0) { "" }
-        val arg1 = args.getOrElse(1) { "" }
-        val arg2 = args.getOrElse(2) { "" }
-
-        newFn(fn)
-            .fold(
-                { println("Invalid function: $fn") },
-                { execute(it, arg1, arg2) }
-            )
-    }
-}
-
-fun execute(fn: Fn, arg1: String, arg2: String) = when (fn) {
-    Fn.Entries -> exec_entries(arg1)
-    Fn.Build -> exec_build(arg1, arg2)
-    Fn.Deploy -> exec_deploy(arg1, arg2)
-}
-
-fun exec_entries(root: String) {
-    val rootPath = Path.of(root)
-
-    if (!Files.exists(rootPath)) {
-        println("Root path doesn't exist $rootPath")
+    if (args.isEmpty()) {
+        println("Provide arguments")
         return
     }
-    entries(Entry(rootPath))
-        .map { it.path.fileName }
-        .forEach { println(it) }
+    val arg: (Int) -> String = { args.getOrElse(it) { "" } }
+    val op = arg(0)
+
+    newOp(op)
+        .fold(
+            { println("Invalid operation: $op. Valid ops are: ${Op.values()}") },
+            { execute(it, arg(1), arg(2)) }
+        )
 }
 
-fun exec_build(root: String, entryName: String) {
-    val entries = entries(root `---` Path::of `---` ::Entry)
+fun execute(op: Op, arg1: String, arg2: String): Unit = when (op) {
+    Entries -> execEntries(arg1)
+    Build -> execBuild(arg1, arg2)
+    Deploy -> execDeploy(arg1, arg2)
+}
+
+fun execEntries(root: String): Unit = with(Path.of(root)) {
+    if (notExists()) {
+        println("Root path doesn't exist $this")
+        return
+    }
+    Entry(this)
+        .loadEntries()
+        .map { paths -> paths.map { it.path.fileName } }
+        .fold(::println) { paths ->
+            paths.forEach(::println)
+        }
+}
+
+fun execBuild(root: String, entryName: String) {
+    val entries: List<Entry> = (root `---` Path::of `---` ::Entry)
+        .loadEntries()
+        .fold(
+            {
+                println("Failed to load entries for root $root: $it")
+                listOf()
+            },
+            { it }
+        )
 
     if (entryName == ".") {
         entries
@@ -61,64 +69,76 @@ fun build(entry: Entry, config: BuildConfig) {
     val entryDir = Path.of(outDir.toString(), entry.name())
 
     fun prepare() {
-        if (!Files.exists(outDir)) {
-            Files.createDirectory(outDir)
+        if (outDir.notExists()) {
+            outDir.createDirectory()
         }
-        if (Files.exists(entryDir)) {
+        if (entryDir.exists()) {
             deleteDirectory(entryDir)
         }
-        Files.createDirectory(entryDir)
+        entryDir.createDirectory()
 
         copyDirectory(entry.path, entryDir)
     }
 
     prepare()
-    val index = entry.loadIndex().getOrNull() ?: Index(Markdown(""))
-    val title = toTitle(index, entry.path.fileName.toString())
+    val index = entry
+        .loadIndex()
+        .mapLeft { "Failed to load entry index for entry $entry: $it" }
+        .onLeft(::println)
+        .getOrNull() ?: return
+
+    val subdirNav = entry
+        .generateSubdirectoriesNav()
+        .mapLeft {
+            """
+            Failed to generate navigation of article subdirectories for entry
+             $entry: $it
+        """.trimIndent()
+        }
+        .onLeft(::println)
+        .getOrNull() ?: return
+
+    val permalink = entry.path.name
+    val title = index.extractTitle()
     val abstract = index.extractAbstract()
     val coverUrl = coverUrl(entry)
-
-    val frontMatter = FrontMatter(
-        title.link,
-        title.title,
-        Some(abstract),
-        Some(coverUrl)
+    val jekyll = JekyllIndex(
+        FrontMatter(
+            permalink,
+            title,
+            Some(abstract),
+            Some(coverUrl)
+        ),
+        index.generateNav(),
+        index,
+        subdirNav,
     )
-    val toc = index.generateNavHtml()
-    val bottomLinks = generateLinksToSubdirectories(entry)
 
-    val prod = frontMatter.toMarkdownString() + toc + index + bottomLinks
-    saveIndex(entryDir, prod)
+    saveIndex(entryDir, jekyll.toMarkdownString())
 
     buildSubdirectories(config.outDir, entry)
 }
 
-fun generateLinksToSubdirectories(entry: Entry): String {
+fun Entry.generateSubdirectoriesNav(): Either<String, Option<Div>> {
     val filter: (Path) -> Boolean = { it.name != "images" }
 
-    return entry
-        .subdirectories()
-        .fold(
-            {
-                println(it)
-                ""
-            },
-            {
-                it
-                    .filter(filter)
-                    .map(Path::name)
-                    .toList()
-                    .subDirectoriesNav()
-                    .toHtmlString()
-            }
-        )
+    return loadSubdirectories()
+        .map { paths ->
+            paths
+                .filter(filter)
+                .map(Path::name)
+                .toList()
+                .toOption()
+                .flatMap { if (it.isEmpty()) None else Some(it) }
+                .map { it.subDirectoriesNav() }
+        }
 }
 
 fun buildSubdirectories(outDir: Path, entry: Entry) {
     val filter: (Path) -> Boolean = { it.name != "images" }
 
     entry
-        .subdirectories()
+        .loadSubdirectories()
         .fold(
             { print(it) },
             {
@@ -176,7 +196,8 @@ fun addDirectoryIndex(
         .let { "$it/${subPath.toString().replace("\\", "/")}" }
         .let { "tree/main$it" }
     val name = relPath.fileName.toString()
-    val navigationTreeHtml = createNavigationTreeHtml(path.toFile())
+    val navigationTreeHtml =
+        path `---` Files::list `---` ::createNavigationTreeHtml
     val frontMatter = FrontMatter(
         subPath.toString().replace("\\", "/"),
         subPath.toString().replace("\\", "/"),
@@ -252,30 +273,16 @@ fun createImageHtml(path: Path): String {
     """".trimIndent()
 }
 
-fun createNavigationTreeHtml(rootPath: File): String {
-    return Ul(
-        children = rootPath
-            .listFiles()
-            .mapNotNull { child ->
-                Li(
-                    children = listOf(
-                        A(
-                            attributes = mapOf(
-                                Href to listOf(child.name)
-                            ),
-                            content = Some(child.name),
-                        )
-                    )
-                )
-            }
-    ).toHtmlString()
-}
+fun execDeploy(root: String, entryName: String) {
+    val entries = (root `---` Path::of `---` ::Entry)
+        .loadEntries()
+        .mapLeft { "Failed to load entries for root $root: $it" }
+        .onLeft(::println)
+        .getOrNull() ?: return
 
-fun exec_deploy(root: String, entryName: String) {
-    val entries = entries(root `---` Path::of `---` ::Entry)
     val config = DeployConfig(
         ::BuildConfig `$` Path.of(root, "_out"),
-        Path.of("P:\\deployment\\tmp\\staging\\blog")
+        Path.of("P:\\deployment\\tmp\\blog")
     )
 
 //    listOf(
@@ -340,7 +347,7 @@ fun exec_deploy(root: String, entryName: String) {
 fun deploy(entry: Entry, config: DeployConfig) {
     val rootDeployPath = Path.of(
         config.deployDir.toString(),
-        "blog",
+//        "blog",
     )
 
     fun deleteIfExists() {
@@ -364,9 +371,9 @@ fun deploy(entry: Entry, config: DeployConfig) {
             entry.name(),
         )
 
-        if (!rootDeployPath.exists()) {
-            rootDeployPath.createDirectory()
-        }
+//        if (!rootDeployPath.exists()) {
+//            rootDeployPath.createDirectory()
+//        }
         copyDirectory(src, dst)
     }
 
@@ -402,26 +409,3 @@ fun coverUrl(entry: Entry): String =
         .coverPath()
         .map { entry.coverGitHubUrl("tobiasbriones", "blog", it.name + "/") }
         .getOrElse { "" }
-
-
-data class BuildConfig(
-    val outDir: Path
-)
-
-data class DeployConfig(
-    val buildConfig: BuildConfig,
-    val deployDir: Path,
-)
-
-enum class Fn {
-    Entries,
-    Build,
-    Deploy,
-}
-
-fun newFn(value: String): Either<None, Fn> = when (value.lowercase()) {
-    "entries" -> Right(Fn.Entries)
-    "build" -> Right(Fn.Build)
-    "deploy" -> Right(Fn.Deploy)
-    else -> Left(None)
-}

@@ -12,6 +12,3 @@ val Entry.path: Path
     get() = Path.of(rootPath.toString(), relPath.toString())
 
 fun Entry.name(): String = path.name
-
-data class TitleLink(val title: String, val link: String)
-
