@@ -53,14 +53,19 @@ fun execBuild(root: String, entryName: String) {
             },
             { it }
         )
+    val config = ::BuildConfig `$` Path.of(
+        root,
+        "out",
+        Path.of(root).name
+    )
 
     if (entryName == ".") {
         entries
-            .forEach { build(it, ::BuildConfig `$` Path.of(root, "_out")) }
+            .forEach { build(it, config) }
     } else {
         entries
             .firstOrNone { it.name() == entryName }
-            .onSome { build(it, ::BuildConfig `$` Path.of(root, "_out")) }
+            .onSome { build(it, config) }
     }
 }
 
@@ -70,7 +75,7 @@ fun build(entry: Entry, config: BuildConfig) {
 
     fun prepare() {
         if (outDir.notExists()) {
-            outDir.createDirectory()
+            outDir.createDirectories()
         }
         if (entryDir.exists()) {
             deleteDirectory(entryDir)
