@@ -1,43 +1,57 @@
 ---
-permalink: /fp-in-kotlin/
+permlink: /fp-in-kotlin
 title: FP in Kotlin
 description: I'll document particular insights about Kotlin functional designs I figure out.
-ogimage: https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/swe/lang/fp/kotlin/fp-in-kotlin/fp-in-kotlin.png
+ogimage: 
 ---
 
 <nav>
-<a href="/" class="home">
-<span class="material-symbols-rounded">
-home
-</span>
-<span>
-Blog
-</span>
-</a>
-
-<div class="article">
-        <a href="#" class="title">FP in Kotlin</a>
+    <a href="/" class="home">
+        <span class="material-symbols-rounded">
+        home
+        </span>
+        <span>
+        Blog
+        </span>
+    </a>
+    
+    <div class="article">
+        <a href="#" class="title">fp-in-kotlin</a>
 
         <ul>
-            <li><a href="#pipe-operator">Pipe Operator</a>
-                <ul>
-                    <li><a href="#defining-a-pipe-operator">Defining a Pipe Operator</a>
-                        <ul>
-                            <li><a href="#finding-a-suitable-symbol">Finding a Suitable Symbol</a></li>
-                            <li><a href="#language-features">Language Features</a></li>
-                            <li><a href="#operator-definition">Operator Definition</a></li>
-                            <li><a href="#usage-example">Usage Example</a></li>
-                            <li><a href="#functional-language-design">Functional Language Design</a></li>
-                            <li><a href="#custom-pipe-in-kotlin">Custom Pipe in Kotlin</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#options-for-a-pipe-operator-in-kotlin">Options for a Pipe Operator in Kotlin</a></li>
-                </ul>
-            </li>
-            <li><a href="#designing-functional-languages-in-kotlin">Designing Functional Languages in Kotlin</a></li>
-        </ul>
-</div>
+            <li><a href="#pipe-operator">
+            Pipe Operator</a>
+            
+            <li><a href="#defining-a-pipe-operator">
+            Defining a Pipe Operator</a>
+            
+            <li><a href="#finding-a-suitable-symbol">
+            Finding a Suitable Symbol</a>
+            
+            <li><a href="#language-features">
+            Language Features</a>
+            
+            <li><a href="#operator-definition">
+            Operator Definition</a>
+            
+            <li><a href="#usage-example">
+            Usage Example</a>
+            
+            <li><a href="#functional-language-design">
+            Functional Language Design</a>
+            
+            <li><a href="#custom-pipe-in-kotlin">
+            Custom Pipe in Kotlin</a>
+            
+            <li><a href="#options-for-a-pipe-operator-in-kotlin">
+            Options for a Pipe Operator in Kotlin</a>
+            
+            <li><a href="#designing-functional-languages-in-kotlin">
+            Designing Functional Languages in Kotlin</a>
+            </ul>
+    </div>
 </nav>
+
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
@@ -47,22 +61,6 @@ Blog
 I'll document particular insights about Kotlin functional designs I figure out.
 
 This article keeps open to more sections to sub-publish.
-
-## Contents
-
-
-
-- [FP in Kotlin](#fp-in-kotlin)
-    * [Pipe Operator](#pipe-operator)
-        + [Defining a Pipe Operator](#defining-a-pipe-operator)
-            - [Finding a Suitable Symbol](#finding-a-suitable-symbol)
-            - [Language Features](#language-features)
-            - [Operator Definition](#operator-definition)
-            - [Usage Example](#usage-example)
-            - [Functional Language Design](#functional-language-design)
-            - [Custom Pipe in Kotlin](#custom-pipe-in-kotlin)
-        + [Options for a Pipe Operator in Kotlin](#options-for-a-pipe-operator-in-kotlin)
-    * [Designing Functional Languages in Kotlin](#designing-functional-languages-in-kotlin)
 
 ## Pipe Operator
 
@@ -77,8 +75,8 @@ Kotlin.
 #### Finding a Suitable Symbol
 
 First, I wanted to use the `|>` pipe symbol commonly used in functional
-languages, but `>` is not a supported
-character: `Name contains illegal characters: >`.
+languages, but `>` is not a supported character: `Name contains illegal
+characters: >`.
 
 Then, I tried to use the other common `|` pipe symbol with no full success:
 `Name contains characters which can cause problems on Windows: |`.
@@ -235,7 +233,7 @@ Article(
 <p align="center"><strong>Program's Output (Formatted)</strong></p>
 </figcaption>
 
-The example code is [here](kotlin/Pipe.kt/).
+The example code is [here](kotlin/Pipe.kt).
 
 #### Functional Language Design
 
@@ -246,13 +244,13 @@ It's also preferred to use normal identifier names (i.e., alphabetic) instead of
 predefined symbols (e.g., `+`) to avoid *abusing the syntax*[^1][^2][^3].
 
 [^1]: A fear of Java architects has been the potential abuse of operator
-overloading
+    overloading 
 
 [^2]: Despite being a trivial feature to add (syntax sugar), Java will probably
-never have operator overloading
+    never have operator overloading
 
 [^3]: It's, of course, tackled elegantly in purely functional languages which
-build DSLs, as said before
+    build DSLs, as said before
 
 As said above, the pipe can be commonly denoted by `|` or `|>`. Since `pipe` is
 a universally abstract concept, it must be **terse**, so defining a
