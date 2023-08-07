@@ -76,5 +76,7 @@ private fun filterDirName(dirName: String): Boolean = with(dirName) {
 }
 
 private fun filterParents(path: Path): Boolean = with(path.toString()) {
-    !contains("out${File.separator}") && !contains("${File.separator}_")
+    !contains("out${File.separator}") && !contains("${File.separator}_") &&
+            !contains("${File.separator}ops")
+// TODO remove "ops" dir name from filter
 }
