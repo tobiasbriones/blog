@@ -4,9 +4,7 @@
 
 [![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/tobiasbriones/blog)
 
-Math Software Engineer's Blog.
-
-NOTE: Structural and low-level changes are being implemented to the platform so several things are not stable yet.
+Build from Math Software Engineer's Blog source.
 
 ## Contact
 
@@ -21,7 +19,7 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 Math Software Engineer's Blog.
 
-Copyright © 2021-2022 Tobias Briones. All rights reserved.
+Copyright © 2021-present Tobias Briones. All rights reserved.
 
 ### License
 
