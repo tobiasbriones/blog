@@ -2,7 +2,7 @@ package fs
 
 import Entry
 import arrow.core.Either
-import arrow.core.Either.*
+import arrow.core.Either.Left
 import arrow.core.right
 import md.Index
 import md.Markdown
@@ -76,5 +76,5 @@ private fun filterDirName(dirName: String): Boolean = with(dirName) {
 }
 
 private fun filterParents(path: Path): Boolean = with(path.toString()) {
-    !contains("_out${File.separator}")
+    !contains("out${File.separator}") && !contains("${File.separator}_")
 }

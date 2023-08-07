@@ -11,15 +11,15 @@ data class DeployConfig(
     val deployDir: Path,
 )
 
-enum class Op {
+enum class Cmd {
     Entries,
     Build,
     Deploy,
 }
 
-fun newOp(value: String): Either<None, Op> = when (value.lowercase()) {
-    "entries" -> Either.Right(Op.Entries)
-    "build" -> Either.Right(Op.Build)
-    "deploy" -> Either.Right(Op.Deploy)
+fun newOp(value: String): Either<None, Cmd> = when (value.lowercase()) {
+    "entries" -> Either.Right(Cmd.Entries)
+    "build" -> Either.Right(Cmd.Build)
+    "deploy" -> Either.Right(Cmd.Deploy)
     else -> Either.Left(None)
 }

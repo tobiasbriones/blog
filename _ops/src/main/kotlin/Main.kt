@@ -1,4 +1,4 @@
-import Op.*
+import Cmd.*
 import arrow.core.*
 import fs.*
 import html.*
@@ -15,36 +15,37 @@ fun main(args: Array<String>) {
         return
     }
     val arg: (Int) -> String = { args.getOrElse(it) { "" } }
-    val op = arg(0)
+    val cmd = arg(0)
+    val root = getRootPath()
+        .mapLeft { "Failed to load project root path: $it" }
+        .onLeft(::println)
+        .getOrNull() ?: return
 
-    newOp(op)
+    newOp(cmd)
         .fold(
-            { println("Invalid operation: $op. Valid ops are: ${Op.values()}") },
-            { execute(it, arg(1), arg(2)) }
+            { println("Invalid operation: $cmd. Valid ops are: ${Cmd.values()}") },
+            { execute(it, root, arg(1)) }
         )
 }
 
-fun execute(op: Op, arg1: String, arg2: String): Unit = when (op) {
-    Entries -> execEntries(arg1)
-    Build -> execBuild(arg1, arg2)
-    Deploy -> execDeploy(arg1, arg2)
+fun execute(cmd: Cmd, root: Path, arg1: String): Unit = when (cmd) {
+    Entries -> execEntries(root)
+    Build -> execBuild(root, arg1)
+    Deploy -> execDeploy(root, arg1)
 }
 
-fun execEntries(root: String): Unit = with(Path.of(root)) {
-    if (notExists()) {
-        println("Root path doesn't exist $this")
-        return
-    }
-    Entry(this)
+fun execEntries(root: Path) {
+    Entry(root)
         .loadEntries()
         .map { paths -> paths.map { it.path.fileName } }
+        .mapLeft { "Failed to load entries at root $root: $it" }
         .fold(::println) { paths ->
             paths.forEach(::println)
         }
 }
 
-fun execBuild(root: String, entryName: String) {
-    val entries: List<Entry> = (root `---` Path::of `---` ::Entry)
+fun execBuild(root: Path, entryName: String) {
+    val entries: List<Entry> = Entry(root)
         .loadEntries()
         .fold(
             {
@@ -54,18 +55,20 @@ fun execBuild(root: String, entryName: String) {
             { it }
         )
     val config = ::BuildConfig `$` Path.of(
-        root,
+        root.toString(),
         "out",
-        Path.of(root).name
+        "build",
+        root.name,
     )
 
     if (entryName == ".") {
-        entries
-            .forEach { build(it, config) }
+        println("Building ${entries.size} articles...")
+        entries.forEach { build(it, config) }
     } else {
         entries
             .firstOrNone { it.name() == entryName }
             .onSome { build(it, config) }
+            .onNone { println("Failed to build, entry not found: $entryName") }
     }
 }
 
@@ -76,6 +79,7 @@ fun build(entry: Entry, config: BuildConfig) {
     fun prepare() {
         if (outDir.notExists()) {
             outDir.createDirectories()
+            copyJekyllRootFiles(outDir)
         }
         if (entryDir.exists()) {
             deleteDirectory(entryDir)
@@ -278,16 +282,18 @@ fun createImageHtml(path: Path): String {
     """".trimIndent()
 }
 
-fun execDeploy(root: String, entryName: String) {
-    val entries = (root `---` Path::of `---` ::Entry)
+fun execDeploy(root: Path, entryName: String) {
+    val entries = Entry(root)
         .loadEntries()
         .mapLeft { "Failed to load entries for root $root: $it" }
         .onLeft(::println)
         .getOrNull() ?: return
 
-    val config = DeployConfig(
-        ::BuildConfig `$` Path.of(root, "_out"),
-        Path.of("P:\\deployment\\tmp\\blog")
+    val config = ::BuildConfig `$` Path.of(
+        root.toString(),
+        "out",
+        root.name,
+        "staging",
     )
 
 //    listOf(
@@ -336,7 +342,7 @@ fun execDeploy(root: String, entryName: String) {
         }
         """.trimMargin("|")
 
-        Path.of(config.deployDir.toString(), "index.md")
+        Path.of(config.outDir.toString(), "index.md")
             .writeText(index)
     }
 
@@ -349,49 +355,16 @@ fun execDeploy(root: String, entryName: String) {
 //        )
 }
 
-fun deploy(entry: Entry, config: DeployConfig) {
+fun deploy(entry: Entry, config: BuildConfig) {
     val rootDeployPath = Path.of(
-        config.deployDir.toString(),
-//        "blog",
+        config.outDir.toString(),
     )
-
-    fun deleteIfExists() {
-        val path = Path.of(
-            config.deployDir.toString(),
-            entry.name(),
-        )
-
-        if (Files.isDirectory(path)) {
-            deleteDirectory(path)
-        }
-    }
-
-    fun copyFromBuild() {
-        val src = Path.of(
-            config.buildConfig.outDir.toString(),
-            entry.name(),
-        )
-        val dst = Path.of(
-            rootDeployPath.toString(),
-            entry.name(),
-        )
-
-//        if (!rootDeployPath.exists()) {
-//            rootDeployPath.createDirectory()
-//        }
-        copyDirectory(src, dst)
-    }
 
     println("Deploying ${entry.name()}...")
 
-    build(entry, config.buildConfig)
+    build(entry, config)
 
     println("Built")
-
-    deleteIfExists()
-    copyFromBuild()
-
-    println("Files copied")
 
 //    println("Committing...")
 //

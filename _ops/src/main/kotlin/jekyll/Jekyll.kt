@@ -1,14 +1,16 @@
 package jekyll
 
-import arrow.core.Either
-import arrow.core.None
-import arrow.core.Option
-import arrow.core.getOrElse
+import arrow.core.*
+import arrow.core.Either.*
+import fs.AppResources
+import fs.copyDirectory
 import html.Div
 import html.Nav
 import html.toHtmlString
 import md.Index
 import md.codeSnippetBlock
+import java.io.IOException
+import java.nio.file.Path
 
 data class JekyllIndex(
     val frontMatter: FrontMatter,
@@ -59,3 +61,14 @@ fun codeSnippetBlockHtml(res: FileResource): String = codeSnippetBlock(
     res.extension.langCode(),
     res.content,
 )
+
+fun copyJekyllRootFiles(dst: Path): Either<String, Unit> = try {
+    println(AppResources.pathOf(Path.of("jekyll")) + dst)
+    copyDirectory(
+        AppResources.pathOf(Path.of("jekyll")),
+        dst
+    )
+} catch (e: IOException) {
+    e.printStackTrace()
+    e.message.orEmpty().left()
+}
