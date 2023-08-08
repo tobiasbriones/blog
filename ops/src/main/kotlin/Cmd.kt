@@ -3,7 +3,8 @@ import arrow.core.None
 import java.nio.file.Path
 
 data class BuildConfig(
-    val outDir: Path
+    val srcDir: Path,
+    val outDir: Path,
 )
 
 data class DeployConfig(

@@ -1,7 +1,8 @@
 import Cmd.*
 import arrow.core.*
 import fs.*
-import html.*
+import html.Div
+import html.toHtmlString
 import jekyll.*
 import md.*
 import java.nio.file.Files
@@ -45,35 +46,42 @@ fun execEntries(root: Path) {
 }
 
 fun execBuild(root: Path, entryName: String) {
-    val entries: List<Entry> = Entry(root)
-        .loadEntries()
-        .fold(
-            {
-                println("Failed to load entries for root $root: $it")
-                listOf()
-            },
-            { it }
-        )
-    val config = ::BuildConfig `$` Path.of(
-        root.toString(),
-        "out",
-        "build",
-        root.name,
+    val config = BuildConfig(
+        root,
+        Path.of(
+            root.toString(),
+            "out",
+            "build",
+            root.name,
+        ),
     )
 
-    if (entryName == ".") {
+    val buildAll: (List<Entry>) -> Unit = { entries ->
         println("Building ${entries.size} articles...")
         entries.forEach { build(it, config) }
-    } else {
+    }
+
+    val buildEntry: (List<Entry>) -> Unit = { entries ->
         entries
             .firstOrNone { it.name() == entryName }
             .onSome { build(it, config) }
             .onNone { println("Failed to build, entry not found: $entryName") }
     }
+
+    val route: (List<Entry>) -> Unit = { entries ->
+        if (entryName == ".") buildAll(entries) else buildEntry(entries)
+    }
+
+    Entry(root)
+        .loadEntries()
+        .fold(
+            handleError("Failed to load entries for root $root"),
+            route
+        )
 }
 
 fun build(entry: Entry, config: BuildConfig) {
-    val (outDir) = config
+    val (srcDir, outDir) = config
     val entryDir = Path.of(outDir.toString(), entry.name())
 
     fun prepare() {
@@ -92,19 +100,17 @@ fun build(entry: Entry, config: BuildConfig) {
     prepare()
     val index = entry
         .loadIndex()
-        .mapLeft { "Failed to load entry index for entry $entry: $it" }
-        .onLeft(::println)
+        .mapLeft(handleError("Failed to load entry index for entry $entry"))
         .getOrNull() ?: return
 
     val subdirNav = entry
         .generateSubdirectoriesNav()
-        .mapLeft {
-            """
-            Failed to generate navigation of article subdirectories for entry
-             $entry: $it
-        """.trimIndent()
-        }
-        .onLeft(::println)
+        .mapLeft(
+            handleError(
+                """Failed to generate navigation of article subdirectories for 
+                   entry $entry""".trimIndent()
+            )
+        )
         .getOrNull() ?: return
 
     val permalink = entry.path.name
@@ -124,8 +130,37 @@ fun build(entry: Entry, config: BuildConfig) {
     )
 
     saveIndex(entryDir, jekyll.toMarkdownString())
+    buildIndex(srcDir, outDir)
+    buildSubdirectories(outDir, entry)
+}
 
-    buildSubdirectories(config.outDir, entry)
+fun buildIndex(srcDir: Path, outDir: Path) {
+    val title: (Entry) -> Either<Unit, String> = { entry ->
+        entry
+            .loadIndex()
+            .mapLeft(handleError("Failed to load index for entry $entry"))
+            .map(Index::extractTitle)
+    }
+
+    Entry(srcDir)
+        .loadEntries()
+        .mapLeft(handleError("Failed to load entries for root $srcDir"))
+        .map { entries ->
+            """
+            |# Blog | Math Software Engineer
+            |
+            |${
+                entries.joinToString("\n") {
+                    "- [${title(it).getOrElse { "" }}](${it.name()})"
+                }
+            }
+        """.trimMargin("|")
+        }
+        .map { index ->
+            Path
+                .of(outDir.toString(), "index.md")
+                .writeText(index)
+        }
 }
 
 fun Entry.generateSubdirectoriesNav(): Either<String, Option<Div>> {
@@ -289,11 +324,14 @@ fun execDeploy(root: Path, entryName: String) {
         .onLeft(::println)
         .getOrNull() ?: return
 
-    val config = ::BuildConfig `$` Path.of(
-        root.toString(),
-        "out",
-        root.name,
-        "staging",
+    val config = BuildConfig(
+        root,
+        Path.of(
+            root.toString(),
+            "out",
+            root.name,
+            "staging",
+        )
     )
 
 //    listOf(
@@ -317,36 +355,6 @@ fun execDeploy(root: Path, entryName: String) {
             .onSome { deploy(it, config) }
             .onNone { println("Entry not found: $entryName") }
     }
-
-
-    fun deployIndex() {
-        fun name(entry: Entry) = entry
-            .loadIndex()
-            .fold(
-                {
-                    println(it)
-                    entry.name()
-                },
-                {
-                    it.extractTitle()
-                }
-            )
-
-        val index = """
-            |# Blog | Math Software Engineer
-            |
-            |${
-            entries.joinToString("\n") {
-                "- [${name(it)}](${it.name()})"
-            }
-        }
-        """.trimMargin("|")
-
-        Path.of(config.outDir.toString(), "index.md")
-            .writeText(index)
-    }
-
-    deployIndex()
 
 //    runCommand("git push origin gh-pages", config.deployDir)
 //        .fold(
@@ -382,8 +390,18 @@ fun deploy(entry: Entry, config: BuildConfig) {
 //        }
 }
 
+fun handleError(errorMsg: String): (String) -> Unit = { cause ->
+    println("$errorMsg: $cause")
+}
+
 fun coverUrl(entry: Entry): String =
     entry
         .coverPath()
-        .map { entry.coverGitHubUrl("tobiasbriones", "blog", it.name + "/") }
+        .map {
+            entry.coverGitHubUrl(
+                "tobiasbriones",
+                "blog",
+                it.name + "/"
+            )
+        }
         .getOrElse { "" }
