@@ -1,7 +1,9 @@
 import Cmd.*
 import arrow.core.*
 import fs.*
+import html.Attribute
 import html.Div
+import html.Img
 import html.toHtmlString
 import jekyll.*
 import md.*
@@ -132,6 +134,7 @@ fun build(entry: Entry, config: BuildConfig) {
     saveIndex(entryDir, jekyll.toMarkdownString())
     buildIndex(srcDir, outDir)
     buildSubdirectories(outDir, entry)
+    println("Entry ${entry.name()} built")
 }
 
 fun buildIndex(srcDir: Path, outDir: Path) {
@@ -275,11 +278,12 @@ fun addContentIndex(
         .let { "$it/${subPath.toString().replace("\\", "/")}" }
         .let { "tree/main$it" }
     val name = relPath.fileName.toString()
-    val fileContentHtml = createContentHtml(path)
+    val fileContentHtml = createContentMarkdownString(path)
     val frontMatter = FrontMatter(
         subPath.toString().replace("\\", "/"),
         subPath.toString().replace("\\", "/"),
     )
+
     val sb = StringBuilder()
 
     sb.append(frontMatter.toMarkdownString())
@@ -291,15 +295,16 @@ fun addContentIndex(
     sb.append(openInGitHubButton(githubPath).toHtmlString())
     val index = sb.toString()
 
-    val fileDir = Path.of(path.parent.toString(), name)
+    val fileDir = Path.of("${path}_")
 
-    path.deleteIfExists()
     fileDir.createDirectory()
+    path.moveTo(fileDir.resolve(name))
+    fileDir.moveTo(path)
 
-    saveIndex(fileDir, index)
+    saveIndex(path, index)
 }
 
-fun createContentHtml(path: Path): String {
+fun createContentMarkdownString(path: Path): String {
     return when (val ext = getFileExtension(path)) {
         "png", "jpg", "gif" -> createImageHtml(path)
         else -> codeSnippetBlockHtml(
@@ -310,12 +315,12 @@ fun createContentHtml(path: Path): String {
     }
 }
 
-fun createImageHtml(path: Path): String {
-    val name = path.name
-    return """
-        <img src=${path} alt="$name" />
-    """".trimIndent()
-}
+fun createImageHtml(path: Path): String = Img(
+    attributes = mapOf(
+        Attribute.Src to listOf(path.name),
+        Attribute.Alt to listOf(path.name),
+    )
+).toHtmlString()
 
 fun execDeploy(root: Path, entryName: String) {
     val entries = Entry(root)
