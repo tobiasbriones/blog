@@ -461,6 +461,16 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
         )
         .getOrNull() ?: return
 
+    val gitClean = runCommand("git status --porcelain")
+        .onLeft(handleError `$` "Failed to check Git status")
+        .map { it `---` String::trim `---` String::isEmpty }
+        .getOrNull() ?: return
+
+    if (gitClean) {
+        println("No changes for entry ${entry.name()}, cancelling deployment")
+        return
+    }
+
     runCommand("git add ${entry.name()} index.md", srcDir)
         .onLeft(handleError `$` "Failed to add files to Git")
         .onRight { println("✔ Add files to Git") }
