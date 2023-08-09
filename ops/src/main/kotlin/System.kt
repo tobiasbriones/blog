@@ -42,7 +42,7 @@ fun runCommand(
         if (exitCode == 0) {
             output.toString().right()
         } else {
-            "Command failed with exit code $exitCode.\n$stdErr"
+            "Command failed with exit code $exitCode, and error message $stdErr"
                 .left()
         }
     } catch (e: Exception) {

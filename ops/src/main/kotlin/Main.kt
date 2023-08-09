@@ -459,7 +459,7 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
         )
         .getOrNull() ?: return
 
-    runCommand("git add ${entry.name()} index.md")
+    runCommand("git add ${entry.name()} index.md", srcDir)
         .onLeft(handleError `$` "Failed to add files to Git")
         .onRight { println("✔ Add files to Git") }
         .getOrNull() ?: return
