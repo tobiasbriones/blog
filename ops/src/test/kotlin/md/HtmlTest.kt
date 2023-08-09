@@ -1,26 +1,23 @@
 package md
 
-import arrow.core.None
-import arrow.core.Some
+import TestResources
+import html.toHtmlString
 import org.junit.jupiter.api.Test
-
-import java.io.File
-import java.nio.file.Files
+import java.nio.file.Path
+import kotlin.io.path.readText
 
 class HtmlTest {
     private val index: Index = Index(
         Markdown(
-            Files.readString(
-                File(
-                    javaClass.classLoader.getResource("fp-in-kotlin.md").file
-                ).toPath()
-            )
+            TestResources
+                .pathOf(Path.of("fp-in-kotlin", "index.md"))
+                .readText()
         )
     )
 
     @Test
     fun navHtml() {
-        val navHtml = index.generateNavHtml()
+        val navHtml = index.generateNav().toHtmlString()
         val expected = """
             <nav>
               <a class="home" href="/">
@@ -95,8 +92,6 @@ class HtmlTest {
             </nav>
         """.trimIndent()
 
-        println(navHtml)
-        println(expected)
         assert(navHtml == expected)
     }
 }

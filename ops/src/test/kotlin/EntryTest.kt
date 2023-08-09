@@ -1,12 +1,10 @@
-import java.io.File
+import fs.loadIndex
 import java.nio.file.Path
 import kotlin.test.Test
 
 class EntryTest {
-    val entry = Entry(
-        File(
-            javaClass.classLoader.getResource("fp-in-kotlin.md").file
-        ).toPath()
+    private val entry: Entry = Entry(
+        TestResources.pathOf(Path.of("fp-in-kotlin"))
     )
 
     @Test

@@ -1,11 +1,9 @@
-package fs
-
 import java.nio.file.Path
 
-class AppResources {
+class TestResources {
     companion object {
         fun pathOf(resourcePath: Path): Path = Path
-            .of("", "src", "main", "resources", resourcePath.toString())
+            .of("", "src", "test", "resources", resourcePath.toString())
             .toAbsolutePath()
     }
 }

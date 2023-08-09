@@ -48,15 +48,7 @@ fun execEntries(root: Path) {
 }
 
 fun execBuild(root: Path, entryName: String) {
-    val config = BuildConfig(
-        root,
-        Path.of(
-            root.toString(),
-            "out",
-            "build",
-            root.name,
-        ),
-    )
+    val config = buildConfigOf(root)
 
     val buildAll: (List<Entry>) -> Unit = { entries ->
         println("Building ${entries.size} articles...")
@@ -81,6 +73,17 @@ fun execBuild(root: Path, entryName: String) {
             route
         )
 }
+
+fun buildConfigOf(root: Path): BuildConfig =
+    BuildConfig(
+        root,
+        Path.of(
+            root.toString(),
+            "out",
+            "build",
+            root.name,
+        ),
+    )
 
 fun build(entry: Entry, config: BuildConfig) {
     val (srcDir, outDir) = config
@@ -134,7 +137,7 @@ fun build(entry: Entry, config: BuildConfig) {
     saveIndex(entryDir, jekyll.toMarkdownString())
     buildIndex(srcDir, outDir)
     buildSubdirectories(outDir, entry)
-    println("Entry ${entry.name()} built")
+    println("✔ Built article: ${entry.name()}")
 }
 
 fun buildIndex(srcDir: Path, outDir: Path) {
@@ -323,76 +326,113 @@ fun createImageHtml(path: Path): String = Img(
 ).toHtmlString()
 
 fun execDeploy(root: Path, entryName: String) {
-    val entries = Entry(root)
-        .loadEntries()
-        .mapLeft { "Failed to load entries for root $root: $it" }
-        .onLeft(::println)
+    val gitClean = runCommand("git status --porcelain")
+        .onLeft(::handleError `$` "Failed to check Git status")
+        .map { it `---` String::trim `---` String::isEmpty }
         .getOrNull() ?: return
 
-    val config = BuildConfig(
-        root,
-        Path.of(
-            root.toString(),
-            "out",
-            root.name,
-            "staging",
-        )
-    )
+    if (!gitClean) {
+        println("Git repository has uncommitted changes")
+        return
+    }
 
-//    listOf(
-//        "git checkout gh-pages",
-//        "git pull origin gh-pages gh-pages",
-//    )
-//        .forEach { cmd ->
-//            runCommand(cmd, config.deployDir)
-//                .fold(
-//                    { println(it) },
-//                    { println(it) },
-//                )
-//        }
+    println("Deploying ${entryName}...")
+
+    runCommand("git checkout main")
+        .onLeft(::handleError `$` "Failed to checkout to branch main")
+        .onRight { println("✔ Checkout to branch main") }
+        .getOrNull() ?: return
+
+    runCommand("git pull")
+        .onLeft(::handleError `$` "Failed to pull to branch main")
+        .onRight { println("✔ Update branch main") }
+        .getOrNull() ?: return
+
+    execBuild(root, entryName)
+
+    runCommand("git checkout gh-pages")
+        .onLeft(::handleError `$` "Failed to checkout to branch gh-pages")
+        .onRight { println("✔ Checkout to branch gh-pages") }
+        .getOrNull() ?: return
+
+    runCommand("git pull")
+        .onLeft(::handleError `$` "Failed to pull to branch gh-pages")
+        .onRight { println("✔ Update branch gh-pages") }
+        .getOrNull() ?: return
+
+    val entries = Entry(root)
+        .loadEntries()
+        .onLeft(::handleError `$` "Failed to load entries for root $root")
+        .getOrNull() ?: return
+
+    val config = buildConfigOf(root)
 
     if (entryName == ".") {
-        entries
-            .forEach { deploy(it, config) }
+        entries.forEach { commitFromBuild(it, config) }
     } else {
         entries
             .firstOrNone { it.name() == entryName }
-            .onSome { deploy(it, config) }
+            .onSome { commitFromBuild(it, config) }
             .onNone { println("Entry not found: $entryName") }
     }
 
-//    runCommand("git push origin gh-pages", config.deployDir)
-//        .fold(
-//            { println(it) },
-//            { println(it) },
-//        )
+    runCommand("git push origin gh-pages")
+        .onLeft(::handleError `$` "Failed to push branch gh-pages")
+        .onRight { println("✔ Push branch gh-pages to origin") }
+        .getOrNull() ?: return
+
+    runCommand("git checkout main")
+        .onLeft(::handleError `$` "Failed to checkout to branch main")
+        .onRight { println("✔ Checkout to branch main") }
+        .getOrNull() ?: return
+
+    println("✔ Deploy $entryName")
 }
 
-fun deploy(entry: Entry, config: BuildConfig) {
-    val rootDeployPath = Path.of(
-        config.outDir.toString(),
-    )
+fun commitFromBuild(entry: Entry, config: BuildConfig) {
+    val (srcDir, outDir) = config
+    val articleProdPath = srcDir.resolve(entry.name())
+    val articleBuildPath = outDir.resolve(entry.name())
+    val indexBuildPath = outDir.resolve("index.md")
+    val indexProdPath = srcDir.resolve("index.md")
 
-    println("Deploying ${entry.name()}...")
+    if (articleProdPath.notExists()) {
+        println("❌ Article production directory does not exist")
+        return
+    }
+    if (articleBuildPath.notExists()) {
+        println("❌ Article build directory does not exist")
+        return
+    }
+    if (indexBuildPath.notExists()) {
+        println("❌ Index build file does not exist")
+        return
+    }
 
-    build(entry, config)
+    indexProdPath.deleteIfExists()
+    indexBuildPath.copyTo(indexProdPath)
 
-    println("Built")
+    deleteDirectory(articleProdPath)
+        .onLeft(
+            ::handleError `$` "Failed to delete (clean) production directory"
+        )
+        .getOrNull() ?: return
 
-//    println("Committing...")
-//
-//    listOf(
-//        "git add ${entry.name()}",
-//        "git commit -m \"Deploy ${entry.name()}\" --no-gpg-sign",
-//    )
-//        .forEach { cmd ->
-//            println(cmd)
-//            runCommand(cmd, config.deployDir)
-//                .fold(
-//                    { println(it) },
-//                    { println(it) },
-//                )
-//        }
+    copyDirectory(articleBuildPath, articleProdPath)
+        .onLeft(
+            ::handleError `$` "Failed to copy build to production directory"
+        )
+        .getOrNull() ?: return
+
+    runCommand("git add ${entry.name()} index.md")
+        .onLeft(::handleError `$` "Failed to add files to Git")
+        .onRight { println("✔ Add files") }
+        .getOrNull() ?: return
+
+    runCommand("""git commit -m "Deploy ${entry.name()}" --no-gpg-sign""")
+        .onLeft(::handleError `$` "Failed to commit files to Git")
+        .onRight { println("✔ Commit files") }
+        .getOrNull() ?: return
 }
 
 fun handleError(errorMsg: String): (String) -> Unit = { cause ->

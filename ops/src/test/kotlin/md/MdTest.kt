@@ -1,19 +1,16 @@
 package md
 
+import TestResources
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
-import java.io.File
-import java.nio.file.Files
+import java.nio.file.Path
+import kotlin.io.path.readText
 
 class MdTest {
     private val index: Index = Index(
         Markdown(
-            Files.readString(
-                File(
-                    javaClass.classLoader.getResource("fp-in-kotlin.md").file
-                ).toPath()
-            )
+            TestResources
+                .pathOf(Path.of("fp-in-kotlin", "index.md"))
+                .readText()
         )
     )
 

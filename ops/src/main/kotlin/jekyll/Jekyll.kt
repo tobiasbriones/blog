@@ -1,7 +1,6 @@
 package jekyll
 
 import arrow.core.*
-import arrow.core.Either.*
 import fs.AppResources
 import fs.copyDirectory
 import html.Div
