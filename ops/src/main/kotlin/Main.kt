@@ -396,10 +396,6 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
     val indexBuildPath = outDir.resolve("index.md")
     val indexProdPath = srcDir.resolve("index.md")
 
-    if (articleProdPath.notExists()) {
-        println("❌ Article production directory does not exist")
-        return
-    }
     if (articleBuildPath.notExists()) {
         println("❌ Article build directory does not exist")
         return
