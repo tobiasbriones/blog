@@ -88,6 +88,11 @@ fun execBuild(root: Path, entryName: String) {
         if (entryName == ".") buildAll(entries) else buildEntry(entries)
     }
 
+    if (entryName.isBlank()) {
+        printError `$` "Enter the entry name argument"
+        return
+    }
+
     Entry(root)
         .loadEntries()
         .onLeft(handleError `$` "Failed to load entries for root $root")
@@ -351,7 +356,12 @@ fun execDeploy(root: Path, entryName: String) {
         .getOrNull() ?: return
 
     if (!gitClean) {
-        printError `$` "Git repository has uncommitted changes"
+        printError `$` "Git repository ${root.name} has uncommitted changes"
+        return
+    }
+
+    if (entryName.isBlank()) {
+        printError `$` "Enter the entry name argument"
         return
     }
 
