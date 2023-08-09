@@ -11,22 +11,42 @@ import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.*
 
+object Error {
+    var failed: Boolean = false
+        private set
+
+    fun handle(errorMsg: String): (String) -> Unit = { cause ->
+        print("$errorMsg: $cause")
+    }
+
+    fun print(errorMsg: String) {
+        failed = true
+        println("❌ $errorMsg")
+    }
+}
+
+val handleError: (String) -> (String) -> Unit = { Error::handle `$` it }
+val printError: (String) -> Unit = { Error::print `$` it }
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) {
-        println("Provide arguments")
+        printError `$` "Provide arguments"
         return
     }
     val arg: (Int) -> String = { args.getOrElse(it) { "" } }
     val cmd = arg(0)
     val root = getRootPath()
-        .mapLeft { "Failed to load project root path: $it" }
-        .onLeft(::println)
+        .onLeft { printError `$` "Failed to load project root path: $it" }
         .getOrNull() ?: return
 
     newOp(cmd)
         .fold(
-            { println("Invalid operation: $cmd. Valid ops are: ${Cmd.values()}") },
+            {
+                printError `$` """
+                    Invalid operation: $cmd.
+                    Valid ops are: ${Cmd.values()}
+                """.trimIndent()
+            },
             { execute(it, root, arg(1)) }
         )
 }
@@ -42,7 +62,7 @@ fun execEntries(root: Path) {
         .loadEntries()
         .map { paths -> paths.map { it.path.fileName } }
         .mapLeft { "Failed to load entries at root $root: $it" }
-        .fold(::println) { paths ->
+        .fold(printError) { paths ->
             paths.forEach(::println)
         }
 }
@@ -59,7 +79,9 @@ fun execBuild(root: Path, entryName: String) {
         entries
             .firstOrNone { it.name() == entryName }
             .onSome { build(it, config) }
-            .onNone { println("Failed to build, entry not found: $entryName") }
+            .onNone {
+                printError `$` "Failed to build, entry not found: $entryName"
+            }
     }
 
     val route: (List<Entry>) -> Unit = { entries ->
@@ -68,10 +90,8 @@ fun execBuild(root: Path, entryName: String) {
 
     Entry(root)
         .loadEntries()
-        .fold(
-            handleError("Failed to load entries for root $root"),
-            route
-        )
+        .onLeft(handleError `$` "Failed to load entries for root $root")
+        .map { route }
 }
 
 fun buildConfigOf(root: Path): BuildConfig =
@@ -105,16 +125,16 @@ fun build(entry: Entry, config: BuildConfig) {
     prepare()
     val index = entry
         .loadIndex()
-        .mapLeft(handleError("Failed to load entry index for entry $entry"))
+        .mapLeft { handleError `$` "Failed to load entry index for entry $entry" }
         .getOrNull() ?: return
 
     val subdirNav = entry
         .generateSubdirectoriesNav()
-        .mapLeft(
-            handleError(
-                """Failed to generate navigation of article subdirectories for 
-                   entry $entry""".trimIndent()
-            )
+        .onLeft(
+            handleError `$` """
+                Failed to generate navigation of article subdirectories for entry $entry
+                """.trimIndent()
+
         )
         .getOrNull() ?: return
 
@@ -144,13 +164,15 @@ fun buildIndex(srcDir: Path, outDir: Path) {
     val title: (Entry) -> Either<Unit, String> = { entry ->
         entry
             .loadIndex()
-            .mapLeft(handleError("Failed to load index for entry $entry"))
+            .mapLeft {
+                handleError `$` "Failed to load index for entry $entry" `$` it
+            }
             .map(Index::extractTitle)
     }
 
     Entry(srcDir)
         .loadEntries()
-        .mapLeft(handleError("Failed to load entries for root $srcDir"))
+        .mapLeft(handleError `$` "Failed to load entries for root $srcDir")
         .map { entries ->
             """
             |# Blog | Math Software Engineer
@@ -189,20 +211,17 @@ fun buildSubdirectories(outDir: Path, entry: Entry) {
 
     entry
         .loadSubdirectories()
-        .fold(
-            { print(it) },
-            {
-                it.filter(filter)
-                    .forEach {
-                        buildSubdirectory(
-                            outDir,
-                            entry.relPath,
-                            entry.name(),
-                            it
-                        )
-                    }
-            }
-        )
+        .fold(printError) { paths ->
+            paths.filter(filter)
+                .forEach {
+                    buildSubdirectory(
+                        outDir,
+                        entry.relPath,
+                        entry.name(),
+                        it
+                    )
+                }
+        }
 }
 
 fun buildSubdirectory(
@@ -327,42 +346,46 @@ fun createImageHtml(path: Path): String = Img(
 
 fun execDeploy(root: Path, entryName: String) {
     val gitClean = runCommand("git status --porcelain")
-        .onLeft(::handleError `$` "Failed to check Git status")
+        .onLeft(handleError `$` "Failed to check Git status")
         .map { it `---` String::trim `---` String::isEmpty }
         .getOrNull() ?: return
 
     if (!gitClean) {
-        println("Git repository has uncommitted changes")
+        printError `$` "Git repository has uncommitted changes"
         return
     }
 
     println("Deploying ${entryName}...")
 
     runCommand("git checkout main")
-        .onLeft(::handleError `$` "Failed to checkout to branch main")
+        .onLeft(handleError `$` "Failed to checkout to branch main")
         .onRight { println("✔ Checkout to branch main") }
         .getOrNull() ?: return
 
     runCommand("git pull")
-        .onLeft(::handleError `$` "Failed to pull to branch main")
+        .onLeft(handleError `$` "Failed to pull to branch main")
         .onRight { println("✔ Update branch main") }
         .getOrNull() ?: return
 
     execBuild(root, entryName)
 
+    if (Error.failed) {
+        return
+    }
+
     runCommand("git checkout gh-pages")
-        .onLeft(::handleError `$` "Failed to checkout to branch gh-pages")
+        .onLeft(handleError `$` "Failed to checkout to branch gh-pages")
         .onRight { println("✔ Checkout to branch gh-pages") }
         .getOrNull() ?: return
 
     runCommand("git pull")
-        .onLeft(::handleError `$` "Failed to pull to branch gh-pages")
+        .onLeft(handleError `$` "Failed to pull to branch gh-pages")
         .onRight { println("✔ Update branch gh-pages") }
         .getOrNull() ?: return
 
     val entries = Entry(root)
         .loadEntries()
-        .onLeft(::handleError `$` "Failed to load entries for root $root")
+        .onLeft(handleError `$` "Failed to load entries for root $root")
         .getOrNull() ?: return
 
     val config = buildConfigOf(root)
@@ -373,16 +396,16 @@ fun execDeploy(root: Path, entryName: String) {
         entries
             .firstOrNone { it.name() == entryName }
             .onSome { commitFromBuild(it, config) }
-            .onNone { println("Entry not found: $entryName") }
+            .onNone { printError `$` "Entry not found: $entryName" }
     }
 
     runCommand("git push origin gh-pages")
-        .onLeft(::handleError `$` "Failed to push branch gh-pages")
+        .onLeft(handleError `$` "Failed to push branch gh-pages")
         .onRight { println("✔ Push branch gh-pages to origin") }
         .getOrNull() ?: return
 
     runCommand("git checkout main")
-        .onLeft(::handleError `$` "Failed to checkout to branch main")
+        .onLeft(handleError `$` "Failed to checkout to branch main")
         .onRight { println("✔ Checkout to branch main") }
         .getOrNull() ?: return
 
@@ -397,11 +420,11 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
     val indexProdPath = srcDir.resolve("index.md")
 
     if (articleBuildPath.notExists()) {
-        println("❌ Article build directory does not exist")
+        printError `$` "Article build directory does not exist"
         return
     }
     if (indexBuildPath.notExists()) {
-        println("❌ Index build file does not exist")
+        printError `$` "Index build file does not exist"
         return
     }
 
@@ -410,29 +433,25 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
 
     deleteDirectory(articleProdPath)
         .onLeft(
-            ::handleError `$` "Failed to delete (clean) production directory"
+            handleError `$` "Failed to delete (clean) production directory"
         )
         .getOrNull() ?: return
 
     copyDirectory(articleBuildPath, articleProdPath)
         .onLeft(
-            ::handleError `$` "Failed to copy build to production directory"
+            handleError `$` "Failed to copy build to production directory"
         )
         .getOrNull() ?: return
 
     runCommand("git add ${entry.name()} index.md")
-        .onLeft(::handleError `$` "Failed to add files to Git")
+        .onLeft(handleError `$` "Failed to add files to Git")
         .onRight { println("✔ Add files") }
         .getOrNull() ?: return
 
     runCommand("""git commit -m "Deploy ${entry.name()}" --no-gpg-sign""")
-        .onLeft(::handleError `$` "Failed to commit files to Git")
+        .onLeft(handleError `$` "Failed to commit files to Git")
         .onRight { println("✔ Commit files") }
         .getOrNull() ?: return
-}
-
-fun handleError(errorMsg: String): (String) -> Unit = { cause ->
-    println("$errorMsg: $cause")
 }
 
 fun coverUrl(entry: Entry): String =
