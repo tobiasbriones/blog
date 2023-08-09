@@ -212,7 +212,9 @@ fun Entry.generateSubdirectoriesNav(): Either<String, Option<Div>> {
 }
 
 fun buildSubdirectories(outDir: Path, entry: Entry) {
-    val filter: (Path) -> Boolean = { it.name != "images" }
+    val filter: (Path) -> Boolean = {
+        it.name != "images" && it.name != "static"
+    }
 
     entry
         .loadSubdirectories()
