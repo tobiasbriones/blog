@@ -162,7 +162,7 @@ fun build(entry: Entry, config: BuildConfig) {
     saveIndex(entryDir, jekyll.toMarkdownString())
     buildIndex(srcDir, outDir)
     buildSubdirectories(outDir, entry)
-    println("✔ Built article: ${entry.name()}")
+    println("✔ Build article ${entry.name()}")
 }
 
 fun buildIndex(srcDir: Path, outDir: Path) {
@@ -461,12 +461,12 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
 
     runCommand("git add ${entry.name()} index.md")
         .onLeft(handleError `$` "Failed to add files to Git")
-        .onRight { println("✔ Add files") }
+        .onRight { println("✔ Add files to Git") }
         .getOrNull() ?: return
 
     runCommand("""git commit -m "Deploy ${entry.name()}" --no-gpg-sign""")
         .onLeft(handleError `$` "Failed to commit files to Git")
-        .onRight { println("✔ Commit files") }
+        .onRight { println("✔ Commit files to Git") }
         .getOrNull() ?: return
 }
 

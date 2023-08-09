@@ -6,12 +6,16 @@ import java.io.InputStreamReader
 import java.nio.file.Path
 
 fun runCommand(
-    command: String, workingDir: Path? = null
+    command: String,
+    workingDir: Path? = null
 ): Either<String, String> {
-    val processBuilder =
-        ProcessBuilder(*command.split("\\s+".toRegex()).toTypedArray())
+    val processBuilder = ProcessBuilder(
+        *command
+            .split("\\s+".toRegex())
+            .toTypedArray()
+    )
 
-    processBuilder.redirectErrorStream(true)
+    processBuilder.redirectErrorStream(false)
 
     if (workingDir != null) {
         processBuilder.directory(workingDir.toFile())
@@ -20,19 +24,29 @@ fun runCommand(
     return try {
         val process = processBuilder.start()
         val reader = BufferedReader(InputStreamReader(process.inputStream))
+        val stdErrReader = BufferedReader(InputStreamReader(process.errorStream))
         val output = StringBuilder()
+        val stdErr = StringBuilder()
         var line: String?
+
+        // Capture standard output
         while (reader.readLine().also { line = it } != null) {
             output.append(line).append("\n")
         }
 
+        // Capture standard error
+        while (stdErrReader.readLine().also { line = it } != null) {
+            stdErr.append(line).append("\n")
+        }
         val exitCode = process.waitFor()
         if (exitCode == 0) {
             output.toString().right()
         } else {
-            "Error: Command failed with exit code $exitCode".left()
+            "Command failed with exit code $exitCode.\n$stdErr"
+                .left()
         }
     } catch (e: Exception) {
-        "Error: ${e.message}".left()
+        e.printStackTrace()
+        e.message.orEmpty().left()
     }
 }
