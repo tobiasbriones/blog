@@ -399,6 +399,10 @@ fun execDeploy(root: Path, entryName: String) {
             .onNone { printError `$` "Entry not found: $entryName" }
     }
 
+    if (Error.failed) {
+        return
+    }
+
     runCommand("git push origin gh-pages")
         .onLeft(handleError `$` "Failed to push branch gh-pages")
         .onRight { println("✔ Push branch gh-pages to origin") }
