@@ -445,11 +445,13 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
     indexProdPath.deleteIfExists()
     indexBuildPath.copyTo(indexProdPath)
 
-    deleteDirectory(articleProdPath)
-        .onLeft(
-            handleError `$` "Failed to delete (clean) production directory"
-        )
-        .getOrNull() ?: return
+    if (articleProdPath.exists()) {
+        deleteDirectory(articleProdPath)
+            .onLeft(
+                handleError `$` "Failed to delete (clean) production directory"
+            )
+            .getOrNull() ?: return
+    }
 
     copyDirectory(articleBuildPath, articleProdPath)
         .onLeft(
