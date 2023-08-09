@@ -1,6 +1,5 @@
 # Blog | Math Software Engineer
 
-- [Blog | Math Software Engineer](blog)
 - [4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](4-years-since-vocational-fair-at-unah-vs-2023-05-09)
 - [Data-Driven Organizations and Power BI Overview](ddo-and-power-bi-overview)
 - [Pi Day (2022/03/14)](pi-day-2022-03-14)
