@@ -91,7 +91,7 @@ fun execBuild(root: Path, entryName: String) {
     Entry(root)
         .loadEntries()
         .onLeft(handleError `$` "Failed to load entries for root $root")
-        .map { route }
+        .map(route)
 }
 
 fun buildConfigOf(root: Path): BuildConfig =
@@ -355,7 +355,7 @@ fun execDeploy(root: Path, entryName: String) {
         return
     }
 
-    println("Deploying ${entryName}...")
+    println("Deploying ${if (entryName == ".") "all" else entryName}...")
 
     runCommand("git checkout main")
         .onLeft(handleError `$` "Failed to checkout to branch main")
