@@ -13,12 +13,14 @@ import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
 import java.util.stream.Stream
+import kotlin.io.path.name
 
 fun Entry.loadEntries(): Either<String, List<Entry>> = walk { stream ->
     stream
         .filter(Files::isDirectory)
         .filter(::filterPath)
         .filter(::isEntryDir)
+        .filter { it != path } // Not root
         .filter(::filterParents)
         .map { newEntryFromAbsPath(path, it) }
         .toList()
@@ -59,20 +61,19 @@ fun <V> Entry.walk(block: (Stream<Path>) -> V): Either<String, V> = try {
 
 
 private fun isEntryDir(dir: Path): Boolean = with(
-    Path.of(
-        dir.toString(), "index" +
-                ".md"
-    )
+    dir.resolve("index.md")
 ) {
     Files.exists(this) && Files.isRegularFile(this)
 }
 
 private fun filterPath(path: Path): Boolean =
-    filterDirName(path.fileName.toString())
+    filterDirName(path.name)
 
 
 private fun filterDirName(dirName: String): Boolean = with(dirName) {
-    !startsWith("_") && !startsWith("out") && !startsWith(".")
+    !startsWith("_") &&
+            !startsWith("out") &&
+            !startsWith(".")
 }
 
 private fun filterParents(path: Path): Boolean = with(path.toString()) {
