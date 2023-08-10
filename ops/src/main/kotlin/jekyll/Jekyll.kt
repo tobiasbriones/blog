@@ -62,7 +62,6 @@ fun codeSnippetBlockHtml(res: FileResource): String = codeSnippetBlock(
 )
 
 fun copyJekyllRootFiles(dst: Path): Either<String, Unit> = try {
-    println(AppResources.pathOf(Path.of("jekyll")) + dst)
     copyDirectory(
         AppResources.pathOf(Path.of("jekyll")),
         dst

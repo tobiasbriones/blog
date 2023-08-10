@@ -61,8 +61,9 @@ fun execEntries(root: Path) {
     Entry(root)
         .loadEntries()
         .map { paths -> paths.map { it.path.fileName } }
-        .mapLeft { "Failed to load entries at root $root: $it" }
-        .fold(printError) { paths ->
+        .onLeft(handleError `$` "Failed to load entries at $root")
+        .onRight { paths ->
+            println("✔ ${paths.size} entries at $root")
             paths.forEach(::println)
         }
 }
@@ -71,11 +72,12 @@ fun execBuild(root: Path, entryName: String) {
     val config = buildConfigOf(root)
 
     val buildAll: (List<Entry>) -> Unit = { entries ->
-        println("Building ${entries.size} articles...")
+        println("⚙ Building ${entries.size} articles at $root...")
         entries.forEach { build(it, config) }
     }
 
     val buildEntry: (List<Entry>) -> Unit = { entries ->
+        println("⚙ Building $entryName at $root...")
         entries
             .firstOrNone { it.name() == entryName }
             .onSome { build(it, config) }
@@ -240,6 +242,11 @@ fun buildSubdirectory(
     val subPath = Path.of(entryName, relPath.toString())
     val path = Path.of(outDir.toString(), subPath.toString())
 
+    // Skip IntelliJ or programs out directory
+    if (path.name == "out") {
+        return
+    }
+
     if (path.isDirectory()) {
         Files
             .list(path)
@@ -338,7 +345,8 @@ fun createContentMarkdownString(path: Path): String {
         "png", "jpg", "gif" -> createImageHtml(path)
         else -> codeSnippetBlockHtml(
             FileResource(
-                Files.readString(path), ResourceExtension(ext)
+                Files.readString(path),
+                ResourceExtension(ext),
             )
         )
     }
@@ -367,7 +375,7 @@ fun execDeploy(root: Path, entryName: String) {
         return
     }
 
-    println("Deploying ${if (entryName == ".") "all" else entryName}...")
+    println("⚙ Deploying ${if (entryName == ".") "all" else entryName} at $root...")
 
     runCommand("git checkout main")
         .onLeft(handleError `$` "Failed to checkout to branch main")
@@ -385,6 +393,11 @@ fun execDeploy(root: Path, entryName: String) {
         return
     }
 
+    val entries = Entry(root)
+        .loadEntries()
+        .onLeft(handleError `$` "Failed to load entries for root $root")
+        .getOrNull() ?: return
+
     runCommand("git checkout gh-pages")
         .onLeft(handleError `$` "Failed to checkout to branch gh-pages")
         .onRight { println("✔ Checkout to branch gh-pages") }
@@ -395,15 +408,13 @@ fun execDeploy(root: Path, entryName: String) {
         .onRight { println("✔ Update branch gh-pages") }
         .getOrNull() ?: return
 
-    val entries = Entry(root)
-        .loadEntries()
-        .onLeft(handleError `$` "Failed to load entries for root $root")
-        .getOrNull() ?: return
-
     val config = buildConfigOf(root)
 
     if (entryName == ".") {
-        entries.forEach { commitFromBuild(it, config) }
+        entries.takeWhile {
+            commitFromBuild(it, config)
+            !Error.failed
+        }
     } else {
         entries
             .firstOrNone { it.name() == entryName }
@@ -435,6 +446,7 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
     val indexBuildPath = outDir.resolve("index.md")
     val indexProdPath = srcDir.resolve("index.md")
 
+    println("Committing build of ${entry.name()}")
     if (articleBuildPath.notExists()) {
         printError `$` "Article build directory does not exist"
         return
