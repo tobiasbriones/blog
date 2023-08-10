@@ -45,7 +45,7 @@ fun FrontMatter.toMarkdownString(): String {
     return StringBuilder()
         .append("---")
         .append("\n")
-        .append("permalink: $permalink/")
+        .append("permalink: $permalink")
         .append("\n")
         .append("title: $title")
         .append(strOf("description", description))

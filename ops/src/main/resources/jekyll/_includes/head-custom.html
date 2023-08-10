@@ -1,3 +1,7 @@
+{% if page.permalink %}
+<base href="/{{ page.permalink }}/" />
+{% endif %}
+
 <meta
   name="robots"
   content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"

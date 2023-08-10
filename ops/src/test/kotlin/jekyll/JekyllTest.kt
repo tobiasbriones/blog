@@ -14,7 +14,7 @@ class JekyllTest {
         assertEquals(
             """
                 ---
-                permalink: article/
+                permalink: article
                 title: Article Title
                 ---
                 
