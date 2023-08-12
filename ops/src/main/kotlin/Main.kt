@@ -362,13 +362,21 @@ fun addContentIndex(
     sb.append(openInGitHubButton(githubPath).toHtmlString())
     val index = sb.toString()
 
-    val fileDir = Path.of("${path}_")
+
+    // If the file is like .gitignore, then its directory /.gitignore/ will
+    // be hidden and unable to access by Git, so it should be /_.gitignore
+    // this doesn't matter as the permalink is the same as the original
+    val clearedPath = if (path.name.startsWith("."))
+        Path.of(path.parent.toString(), "-${path.name}")
+    else path
+
+    val fileDir = Path.of("${clearedPath}_")
 
     fileDir.createDirectory()
     path.moveTo(fileDir.resolve(name))
-    fileDir.moveTo(path)
+    fileDir.moveTo(clearedPath)
 
-    saveIndex(path, index)
+    saveIndex(clearedPath, index)
 }
 
 fun createContentMarkdownString(path: Path): String {

@@ -1,10 +1,10 @@
 package md
 
 import `---`
-import arrow.core.*
+import arrow.core.Some
 import html.*
 import html.Attribute.*
-import java.io.File
+import html.Attribute.Target
 import java.nio.file.Path
 import java.util.*
 import java.util.stream.Stream
@@ -120,6 +120,14 @@ fun openInGitHubButton(githubPath: String): Div = Div(
 )
 
 fun createNavigationTreeHtml(files: Stream<Path>): String {
+    // If the filename is like .gitignore its directory was renamed to
+    // _.gitignore/.gitignore.html to avoid hidden directories
+    val name: (Path) -> String = {
+        if (it.name.startsWith("-."))
+            it.name.removePrefix("-")
+        else it.name
+    }
+
     return Ul(
         children = files
             .map { child ->
@@ -127,9 +135,9 @@ fun createNavigationTreeHtml(files: Stream<Path>): String {
                     children = listOf(
                         A(
                             attributes = mapOf(
-                                Href to listOf(child.name)
+                                Href to listOf(name(child))
                             ),
-                            content = Some(child.name),
+                            content = Some(name(child)),
                         )
                     )
                 )

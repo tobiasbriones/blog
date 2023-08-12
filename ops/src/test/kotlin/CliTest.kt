@@ -6,11 +6,11 @@ fun main() {
 //    buildOne()
 //    buildOneJekyll()
 //    buildAll()
-//    buildAllJekyll()
+    buildAllJekyll()
 //    deployOne()
-    deployAll()
+//    deployAll()
 
-//    serve()
+    serve()
 }
 
 fun entries() {
