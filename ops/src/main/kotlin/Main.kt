@@ -5,6 +5,11 @@ import html.Attribute
 import html.Div
 import html.Img
 import html.toHtmlString
+import io.ktor.server.application.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 import jekyll.*
 import md.*
 import java.nio.file.Files
@@ -44,17 +49,25 @@ fun main(args: Array<String>) {
             {
                 printError `$` """
                     Invalid operation: $cmd.
-                    Valid ops are: ${Cmd.values()}
+                    Valid ops are: ${
+                    Cmd.values().toList().map { it.name.lowercase() }
+                }
                 """.trimIndent()
             },
-            { execute(it, root, arg(1)) }
+            { execute(it, root, arg(1), arg(2)) }
         )
 }
 
-fun execute(cmd: Cmd, root: Path, arg1: String): Unit = when (cmd) {
+fun execute(
+    cmd: Cmd,
+    root: Path,
+    arg1: String,
+    arg2: String,
+): Unit = when (cmd) {
     Entries -> execEntries(root)
-    Build -> execBuild(root, arg1)
+    Build -> execBuild(root, arg1, arg2 == "jekyll")
     Deploy -> execDeploy(root, arg1)
+    Serve -> execServe()
 }
 
 fun execEntries(root: Path) {
@@ -68,7 +81,7 @@ fun execEntries(root: Path) {
         }
 }
 
-fun execBuild(root: Path, entryName: String) {
+fun execBuild(root: Path, entryName: String, jekyll: Boolean = false) {
     val config = buildConfigOf(root)
 
     val buildAll: (List<Entry>) -> Unit = { entries ->
@@ -99,6 +112,30 @@ fun execBuild(root: Path, entryName: String) {
         .loadEntries()
         .onLeft(handleError `$` "Failed to load entries for root $root")
         .map(route)
+
+    if (jekyll) {
+        buildJekyll(config.outDir)
+    }
+}
+
+fun buildJekyll(outDir: Path) {
+    println("Building Jekyll site...")
+
+    runCommand(
+        "wsl bundle exec jekyll clean",
+        outDir
+    )
+        .onLeft(handleError `$` "Failed to build Jekyll site")
+        .onRight(::println)
+
+    runCommand(
+        "wsl bundle exec jekyll build",
+        outDir
+    )
+        .onLeft(handleError `$` "Failed to build Jekyll site")
+        .onRight(::println)
+
+    println("✔ Build Jekyll site")
 }
 
 fun buildConfigOf(root: Path): BuildConfig =
@@ -114,19 +151,19 @@ fun buildConfigOf(root: Path): BuildConfig =
 
 fun build(entry: Entry, config: BuildConfig) {
     val (srcDir, outDir) = config
-    val entryDir = Path.of(outDir.toString(), entry.name())
+    val outEntryDir = Path.of(outDir.toString(), entry.name())
 
     fun prepare() {
         if (outDir.notExists()) {
             outDir.createDirectories()
-            copyJekyllRootFiles(outDir)
         }
-        if (entryDir.exists()) {
-            deleteDirectory(entryDir)
+        if (outEntryDir.exists()) {
+            deleteDirectory(outEntryDir)
         }
-        entryDir.createDirectory()
+        outEntryDir.createDirectory()
 
-        copyDirectory(entry.path, entryDir)
+        copyJekyllRootFiles(outDir)
+        copyDirectory(entry.path, outEntryDir) { it.shouldBeCopied() }
     }
 
     prepare()
@@ -161,7 +198,7 @@ fun build(entry: Entry, config: BuildConfig) {
         subdirNav,
     )
 
-    saveIndex(entryDir, jekyll.toMarkdownString())
+    saveIndex(outEntryDir, jekyll.toMarkdownString())
     buildIndex(srcDir, outDir)
     buildSubdirectories(outDir, entry)
     println("✔ Build article ${entry.name()}")
@@ -199,12 +236,10 @@ fun buildIndex(srcDir: Path, outDir: Path) {
 }
 
 fun Entry.generateSubdirectoriesNav(): Either<String, Option<Div>> {
-    val filter: (Path) -> Boolean = { it.name != "images" }
-
     return loadSubdirectories()
         .map { paths ->
             paths
-                .filter(filter)
+                .filter(Path::isBrowsable)
                 .map(Path::name)
                 .toList()
                 .toOption()
@@ -214,14 +249,10 @@ fun Entry.generateSubdirectoriesNav(): Either<String, Option<Div>> {
 }
 
 fun buildSubdirectories(outDir: Path, entry: Entry) {
-    val filter: (Path) -> Boolean = {
-        it.name != "images" && it.name != "static"
-    }
-
     entry
         .loadSubdirectories()
         .fold(printError) { paths ->
-            paths.filter(filter)
+            paths.filter(Path::isBrowsable)
                 .forEach {
                     buildSubdirectory(
                         outDir,
@@ -241,11 +272,6 @@ fun buildSubdirectory(
 ) {
     val subPath = Path.of(entryName, relPath.toString())
     val path = Path.of(outDir.toString(), subPath.toString())
-
-    // Skip IntelliJ or programs out directory
-    if (path.name == "out") {
-        return
-    }
 
     if (path.isDirectory()) {
         Files
@@ -307,6 +333,11 @@ fun addContentIndex(
 ) {
     val subPath = Path.of(entryName, relPath.toString())
     val path = Path.of(outDir.toString(), subPath.toString())
+
+    if (!path.isBrowsable()) {
+        return
+    }
+
     val githubPath = entryRelPath
         .parent
         .toString()
@@ -316,7 +347,7 @@ fun addContentIndex(
     val name = relPath.fileName.toString()
     val fileContentHtml = createContentMarkdownString(path)
     val frontMatter = FrontMatter(
-        subPath.toString().replace("\\", "/"),
+        subPath.toString().replace("\\", "/") + ".html",
         subPath.toString().replace("\\", "/"),
     )
 
@@ -343,6 +374,7 @@ fun addContentIndex(
 fun createContentMarkdownString(path: Path): String {
     return when (val ext = getFileExtension(path)) {
         "png", "jpg", "gif" -> createImageHtml(path)
+        "md" -> Files.readString(path)
         else -> codeSnippetBlockHtml(
             FileResource(
                 Files.readString(path),
@@ -410,6 +442,8 @@ fun execDeploy(root: Path, entryName: String) {
 
     val config = buildConfigOf(root)
 
+    commitRootFiles(config.srcDir)
+
     if (entryName == ".") {
         entries.takeWhile {
             commitFromBuild(it, config)
@@ -437,6 +471,29 @@ fun execDeploy(root: Path, entryName: String) {
         .getOrNull() ?: return
 
     println("✔ Deploy $entryName")
+}
+
+fun commitRootFiles(srcDir: Path) {
+    copyJekyllRootFiles(srcDir)
+
+    val gitClean = runCommand("git status --porcelain")
+        .onLeft(handleError `$` "Failed to check Git status")
+        .map { it `---` String::trim `---` String::isEmpty }
+        .getOrNull() ?: return
+
+    if (gitClean) {
+        return
+    }
+
+    runCommand("git add .", srcDir)
+        .onLeft(handleError `$` "Failed to add root files to Git")
+        .onRight { println("✔ Add root files to Git") }
+        .getOrNull() ?: return
+
+    runCommand("""git commit -m "Add root files" --no-gpg-sign""")
+        .onLeft(handleError `$` "Failed to commit root files to Git")
+        .onRight { println("✔ Commit root files to Git") }
+        .getOrNull() ?: return
 }
 
 fun commitFromBuild(entry: Entry, config: BuildConfig) {
@@ -479,7 +536,9 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
         .getOrNull() ?: return
 
     if (gitClean) {
-        println("No changes for entry ${entry.name()}, cancelling deployment")
+        println(
+            "No changes for entry ${entry.name()}, cancelling its deployment"
+        )
         return
     }
 
@@ -505,3 +564,46 @@ fun coverUrl(entry: Entry): String =
             )
         }
         .getOrElse { "" }
+
+fun execServe() {
+    embeddedServer(
+        Netty,
+        port = 8080,
+        module = Application::serve
+    ).start(wait = true)
+}
+
+fun Application.serve() {
+    val root = Path.of(
+        "", "out", "build", "test-blog-deploy", "_site"
+    )
+
+    routing {
+        get("/") {
+            call.respondFile(
+                root.resolve("index.html").toFile()
+            )
+        }
+
+        get("/{path...}") {
+            val pathSegments = call.parameters.getAll("path") ?: emptyList()
+            val resPath = pathSegments.joinToString("/")
+                .replace(
+                    Regex("\\.html+"),
+                    ""
+                ) // ->
+            // Fix of bug, it leads fp-in-kotlin to fp-in-kotlin.html.html
+            // .html...
+
+            println(resPath)
+
+            val file = root.resolve(resPath)
+
+            if (file.isRegularFile()) {
+                call.respondFile(file.toFile())
+            } else {
+                call.respondFile(root.resolve("$resPath.html").toFile())
+            }
+        }
+    }
+}

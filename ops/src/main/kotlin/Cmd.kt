@@ -1,6 +1,9 @@
 import arrow.core.Either
+import arrow.core.Either.Left
 import arrow.core.None
+import arrow.core.right
 import java.nio.file.Path
+import java.util.*
 
 data class BuildConfig(
     val srcDir: Path,
@@ -16,11 +19,17 @@ enum class Cmd {
     Entries,
     Build,
     Deploy,
+    Serve,
 }
 
-fun newOp(value: String): Either<None, Cmd> = when (value.lowercase()) {
-    "entries" -> Either.Right(Cmd.Entries)
-    "build" -> Either.Right(Cmd.Build)
-    "deploy" -> Either.Right(Cmd.Deploy)
-    else -> Either.Left(None)
+fun newOp(value: String): Either<None, Cmd> = try {
+    Cmd
+        .valueOf(value.replaceFirstChar {
+            if (it.isLowerCase())
+                it.titlecase(Locale.getDefault())
+            else it.toString()
+        })
+        .right()
+} catch (e: IllegalArgumentException) {
+    Left(None)
 }

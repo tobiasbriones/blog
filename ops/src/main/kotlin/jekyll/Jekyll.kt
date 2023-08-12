@@ -63,8 +63,8 @@ fun codeSnippetBlockHtml(res: FileResource): String = codeSnippetBlock(
 
 fun copyJekyllRootFiles(dst: Path): Either<String, Unit> = try {
     copyDirectory(
-        AppResources.pathOf(Path.of("jekyll")),
-        dst
+        AppResources.pathOf(Path.of("jekyll", "Gemfile")).parent,
+        dst,
     )
 } catch (e: IOException) {
     e.printStackTrace()

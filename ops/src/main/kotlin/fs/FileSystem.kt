@@ -1,15 +1,17 @@
 package fs
 
-import `---`
-import arrow.core.*
-import arrow.core.Either.*
+import arrow.core.Either
+import arrow.core.Either.Left
+import arrow.core.Either.Right
+import arrow.core.None
+import arrow.core.left
+import arrow.core.right
 import java.io.IOError
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
 import java.util.stream.Stream
-import kotlin.io.path.exists
 import kotlin.io.path.isDirectory
 import kotlin.io.path.name
 
@@ -44,22 +46,28 @@ fun deleteDirectory(directory: Path): Either<String, None> {
     }
 }
 
-fun copyDirectory(sourceDir: Path, targetDir: Path): Either<String, Unit> {
+fun copyDirectory(
+    sourceDir: Path,
+    targetDir: Path,
+    predicate: (Path) -> Boolean = { true },
+): Either<String, Unit> {
     val copyFileFromWalk: (Stream<Path>) -> Right<Unit> = { stream ->
-        stream.forEach { sourcePath ->
-            val relativePath = sourceDir.relativize(sourcePath)
-            val targetPath = targetDir.resolve(relativePath)
+        stream
+            .filter(predicate)
+            .forEach { sourcePath ->
+                val relativePath = sourceDir.relativize(sourcePath)
+                val targetPath = targetDir.resolve(relativePath)
 
-            if (Files.isDirectory(sourcePath)) {
-                Files.createDirectories(targetPath)
-            } else {
-                Files.copy(
-                    sourcePath,
-                    targetPath,
-                    StandardCopyOption.REPLACE_EXISTING
-                )
+                if (Files.isDirectory(sourcePath)) {
+                    Files.createDirectories(targetPath)
+                } else {
+                    Files.copy(
+                        sourcePath,
+                        targetPath,
+                        StandardCopyOption.REPLACE_EXISTING
+                    )
+                }
             }
-        }
         Right(Unit)
     }
 

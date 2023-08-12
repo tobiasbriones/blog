@@ -4,9 +4,13 @@
 fun main() {
 //    entries()
 //    buildOne()
+//    buildOneJekyll()
 //    buildAll()
-    deployOne()
-//    deployAll()
+//    buildAllJekyll()
+//    deployOne()
+    deployAll()
+
+//    serve()
 }
 
 fun entries() {
@@ -17,8 +21,16 @@ fun buildOne() {
     runCmd("build fp-in-kotlin")
 }
 
+fun buildOneJekyll() {
+    runCmd("build fp-in-kotlin jekyll")
+}
+
 fun buildAll() {
     runCmd("build .")
+}
+
+fun buildAllJekyll() {
+    runCmd("build . jekyll")
 }
 
 fun deployOne() {
@@ -27,6 +39,10 @@ fun deployOne() {
 
 fun deployAll() {
     runCmd("deploy .")
+}
+
+fun serve() {
+    runCmd("serve")
 }
 
 fun runCmd(cmd: String) {
