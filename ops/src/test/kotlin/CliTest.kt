@@ -7,9 +7,9 @@ fun main() {
 //    buildOneJekyll()
 //    buildAll()
 //    buildAllJekyll()
-    deployOne()
+//    deployOne()
 //    deployAll()
-
+    create()
 //    serve()
 }
 
@@ -43,6 +43,10 @@ fun deployAll() {
 
 fun serve() {
     runCmd("serve")
+}
+
+fun create() {
+    runCmd("create test-article swe,test,cli,example")
 }
 
 fun runCmd(cmd: String) {

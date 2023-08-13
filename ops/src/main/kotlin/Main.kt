@@ -12,6 +12,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import jekyll.*
 import md.*
+import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.*
@@ -68,6 +69,33 @@ fun execute(
     Build -> execBuild(root, arg1, arg2 == "jekyll")
     Deploy -> execDeploy(root, arg1)
     Serve -> execServe()
+    Create -> execCreate(root, arg1, arg2)
+}
+
+fun execCreate(root: Path, entryName: String, tags: String) {
+    val entries = Entry(root)
+        .loadEntries()
+        .map { paths -> paths.map { it.path.name } }
+        .onLeft(handleError `$` "Failed to load entries at $root")
+        .getOrNull() ?: return
+
+    if (!Regex("^(?!.*[\\sA-Z])[a-z0-9_-]+\$").matches(entryName)) {
+        printError `$` "Value $entryName is an invalid entry name"
+        return
+    }
+    if (entries.contains(entryName)) {
+        printError `$` "Entry $entryName already exists"
+        return
+    }
+
+    val relPath = tags
+        .split(",")
+        .joinToString(File.separator)
+        .plus("${File.separator}$entryName")
+
+    val path = root.resolve(relPath)
+
+    println(path)
 }
 
 fun execEntries(root: Path) {
@@ -108,6 +136,12 @@ fun execBuild(root: Path, entryName: String, jekyll: Boolean = false) {
         return
     }
 
+    checkCurrentBranchIsNotGhPages()
+
+    if (Error.failed) {
+        return
+    }
+
     Entry(root)
         .loadEntries()
         .onLeft(handleError `$` "Failed to load entries for root $root")
@@ -136,6 +170,17 @@ fun buildJekyll(outDir: Path) {
         .onRight(::println)
 
     println("✔ Build Jekyll site")
+}
+
+fun checkCurrentBranchIsNotGhPages() {
+    val branch = runCommand("git branch --show-current")
+        .onLeft(handleError `$` "Failed to check current branch")
+        .getOrNull()
+        ?.trim()
+
+    if (branch == "gh-pages") {
+        printError `$` "Current branch is gh-pages, move to another branch"
+    }
 }
 
 fun buildConfigOf(root: Path): BuildConfig =
@@ -306,7 +351,7 @@ fun addDirectoryIndex(
         .let { "tree/main$it" }
     val name = relPath.fileName.toString()
     val navigationTreeHtml =
-        path `---` Files::list `---` ::createNavigationTreeHtml
+        createNavigationTreeHtml(path `---` Files::list, githubPath)
     val frontMatter = FrontMatter(
         subPath.toString().replace("\\", "/"),
         subPath.toString().replace("\\", "/"),

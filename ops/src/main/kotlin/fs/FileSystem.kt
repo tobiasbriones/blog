@@ -51,6 +51,12 @@ fun copyDirectory(
     targetDir: Path,
     predicate: (Path) -> Boolean = { true },
 ): Either<String, Unit> {
+    val renameIfHiddenFile: (Path) -> Path = {
+        if (it.name.startsWith("-."))
+            it.parent.resolve(it.name.removePrefix("-"))
+        else it
+    }
+
     val copyFileFromWalk: (Stream<Path>) -> Right<Unit> = { stream ->
         stream
             .filter(predicate)
@@ -61,9 +67,11 @@ fun copyDirectory(
                 if (Files.isDirectory(sourcePath)) {
                     Files.createDirectories(targetPath)
                 } else {
+                    val targetFilePath = renameIfHiddenFile(targetPath)
+
                     Files.copy(
                         sourcePath,
-                        targetPath,
+                        targetFilePath,
                         StandardCopyOption.REPLACE_EXISTING
                     )
                 }

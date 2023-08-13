@@ -119,11 +119,17 @@ fun openInGitHubButton(githubPath: String): Div = Div(
     )
 )
 
-fun createNavigationTreeHtml(files: Stream<Path>): String {
+fun createNavigationTreeHtml(
+    files: Stream<Path>,
+    githubPath: String,
+): String {
     // If the filename is like .gitignore its directory was renamed to
     // _.gitignore/.gitignore.html to avoid hidden directories
+    val isHidden: (Path) -> Boolean = {
+        it.name.startsWith("-.")
+    }
     val name: (Path) -> String = {
-        if (it.name.startsWith("-."))
+        if (isHidden(it))
             it.name.removePrefix("-")
         else it.name
     }
@@ -131,13 +137,29 @@ fun createNavigationTreeHtml(files: Stream<Path>): String {
     return Ul(
         children = files
             .map { child ->
-                Li(
+                // Send hidden files like .gitignore to GitHub since they're
+                // not supported in Netlify
+                if (isHidden(child)) Li(
                     children = listOf(
                         A(
                             attributes = mapOf(
-                                Href to listOf(name(child))
+                                Href to listOf(
+                                    "https://github.com/tobiasbriones/blog/$githubPath/${name(child)}"
+                                ),
+                                Target to listOf("_blank")
                             ),
                             content = Some(name(child)),
+                        )
+                    )
+                )
+                // For normal files
+                else Li(
+                    children = listOf(
+                        A(
+                            attributes = mapOf(
+                                Href to listOf(child.name)
+                            ),
+                            content = Some(child.name),
                         )
                     )
                 )
