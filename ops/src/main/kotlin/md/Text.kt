@@ -34,6 +34,7 @@ fun Dictionary.split(input: String): List<String> {
     val matches = "\\b(${custom.keys.joinToString("|")})\\b"
         .toRegex()
         .findAll(input)
+        .filter { it.value.isNotEmpty() }
         .map { it.range }
 
     val tokens = mutableListOf<String>()

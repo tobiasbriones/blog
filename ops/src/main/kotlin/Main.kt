@@ -95,21 +95,46 @@ fun execCreate(root: Path, entryName: String, tags: String) {
 
     val path = root.resolve(relPath)
     val entry = Entry(path)
-    val title = entry.toTitleCase()
+    val title = entry.toTitleCase(dic)
 
-    println(title)
+    runCommand("git checkout main")
+        .onLeft(handleError `$` "Failed to checkout to branch main")
+        .onRight { println("✔ Checkout to branch main") }
+        .getOrNull() ?: return
 
-//    path.createDirectories()
-//
-//    saveIndex(path, """
-//        <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
-//        <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-//        <!-- This file is part of https://github.com/tobiasbriones/blog -->
-//
-//        # $title
-//
-//    """.trimIndent()
-//    )
+    runCommand("git pull")
+        .onLeft(handleError `$` "Failed to pull to branch main")
+        .onRight { println("✔ Update branch main") }
+        .getOrNull() ?: return
+
+    runCommand("git checkout -b ${entry.name()}")
+        .onLeft(handleError `$` "Failed to checkout to branch ${entry.name()}")
+        .onRight { println("✔ Checkout to branch ${entry.name()}") }
+        .getOrNull() ?: return
+
+    path.createDirectories()
+
+    saveIndex(path, """
+        <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
+        <!-- SPDX-License-Identifier: CC-BY-4.0 -->
+        <!-- This file is part of https://github.com/tobiasbriones/blog -->
+
+        # $title
+
+    """.trimIndent()
+    )
+
+    runCommand("git add ${path.resolve("index.md")}", root)
+        .onLeft(handleError `$` "Failed to add files to Git")
+        .onRight { println("✔ Add files to Git") }
+        .getOrNull() ?: return
+
+    runCommand("""git commit -m "Create entry ${entry.name()}"""")
+        .onLeft(handleError `$` "Failed to commit files to Git")
+        .onRight { println("✔ Commit files to Git") }
+        .getOrNull() ?: return
+
+    println("""✔ Create entry "$title" at $path""")
 }
 
 fun execEntries(root: Path) {
@@ -557,7 +582,7 @@ fun commitRootFiles(srcDir: Path) {
         .onRight { println("✔ Add root files to Git") }
         .getOrNull() ?: return
 
-    runCommand("""git commit -m "Add root files" --no-gpg-sign""")
+    runCommand("""git commit -m "Add root files"""")
         .onLeft(handleError `$` "Failed to commit root files to Git")
         .onRight { println("✔ Commit root files to Git") }
         .getOrNull() ?: return
@@ -614,7 +639,7 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
         .onRight { println("✔ Add files to Git") }
         .getOrNull() ?: return
 
-    runCommand("""git commit -m "Deploy ${entry.name()}" --no-gpg-sign""")
+    runCommand("""git commit -m "Deploy ${entry.name()}"""")
         .onLeft(handleError `$` "Failed to commit files to Git")
         .onRight { println("✔ Commit files to Git") }
         .getOrNull() ?: return

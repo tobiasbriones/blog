@@ -86,6 +86,22 @@ class TextTest {
     }
 
     @Test
+    fun toTitleCaseNoDictionary() {
+        val entry: (String) -> Entry = { Entry(Path.of("/swe/xyz/$it")) }
+        val cases = mapOf(
+            entry(
+                "basic-title"
+            ) to "Basic Title",
+
+            entry(
+                "temporal-coupled-article-2023-08-13"
+            ) to "Temporal Coupled Article (2023/08/13)",
+        )
+
+        cases.forEach { assertEquals(it.value, it.key.toTitleCase()) }
+    }
+
+    @Test
     fun split() {
         val str = "how i work in intellij idea with kotlin"
 
