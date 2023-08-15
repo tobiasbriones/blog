@@ -3,6 +3,7 @@ package md
 import Entry
 import java.nio.file.Path
 import kotlin.test.Test
+import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 
 class TextTest {
@@ -23,6 +24,9 @@ class TextTest {
         acronym = mapOf(
             "ddo" to "Data-Driven Organizations",
         ),
+        custom = mapOf(
+            "intellij idea" to "IntelliJ IDEA"
+        )
     )
 
     @Test
@@ -74,10 +78,20 @@ class TextTest {
             ) to "How I Use IntelliJ IDEA",
 
             entry(
-                "this-is-a-state--of--the--art-model"
-            ) to "This is a State-of-the-Art Model",
+                "this-is-a-state--of--the--art-ai-model"
+            ) to "This is a State-of-the-Art AI Model",
         )
 
         cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }
+    }
+
+    @Test
+    fun split() {
+        val str = "how i work in intellij idea with kotlin"
+
+        assertContentEquals(
+            listOf("how", "i", "work", "in", "intellij idea", "with", "kotlin"),
+            dic.split(str),
+        )
     }
 }

@@ -11,6 +11,7 @@ data class Dictionary(
     val uppercase: Set<String> = setOf(),
     val composed: Map<String, List<String>> = mapOf(),
     val acronym: Map<String, String> = mapOf(),
+    val custom: Map<String, String> = mapOf(),
 )
 
 fun Dictionary.isUppercaseWord(word: String): Boolean = uppercase.contains(word.lowercase())
@@ -26,10 +27,45 @@ fun Dictionary.isAcronym(word: String): Boolean =
 fun Dictionary.acronymOf(word: String): String =
     acronym[word.lowercase()] ?: word.uppercase()
 
+fun Dictionary.isCustom(word: String): Boolean =
+    custom.contains(word.lowercase())
+
+fun Dictionary.split(input: String): List<String> {
+    val matches = "\\b(${custom.keys.joinToString("|")})\\b"
+        .toRegex()
+        .findAll(input)
+        .map { it.range }
+
+    val tokens = mutableListOf<String>()
+    var currentIndex = 0
+
+    for (matchRange in matches) {
+        if (matchRange.first > currentIndex) {
+            tokens.addAll(input
+                .substring(currentIndex, matchRange.first)
+                .trim()
+                .split(" ")
+            )
+        }
+        tokens.add(input.substring(matchRange))
+        currentIndex = matchRange.last + 1
+    }
+
+    if (currentIndex < input.length) {
+        tokens.addAll(input.substring(currentIndex)
+            .trim()
+            .split(" ")
+        )
+    }
+
+    return tokens
+}
+
 fun Dictionary.match(word: String): Option<DictionaryMatch> = when {
     isUppercaseWord(word) -> Uppercase(word).some()
     isComposedWord(word) -> Composed(compositionOf(word)).some()
     isAcronym(word) -> Acronym(acronymOf(word)).some()
+    isCustom(word) -> custom[word].toOption().map(::Custom)
     else -> None
 }
 
@@ -43,6 +79,7 @@ fun DictionaryMatch.toTitleWord(): TitleWord = when (this) {
         ::TitleWord
 
     is Acronym -> TitleWord(acronym)
+    is Custom -> TitleWord(custom)
 }
 
 @JvmInline
@@ -53,6 +90,9 @@ value class Composed(val composition: List<String>) : DictionaryMatch
 
 @JvmInline
 value class Acronym(val acronym: String) : DictionaryMatch
+
+@JvmInline
+value class Custom(val custom: String) : DictionaryMatch
 
 sealed interface Word {
     val word: String
@@ -105,13 +145,8 @@ fun majorWordOf(word: StringWord): MajorWord =
 fun MajorWord.toTitleWord(dic: Dictionary): Left<TitleWord> = when (this) {
     is HyphenedWord -> TitleWord(
         separate()
-            .split(" ")
-            .map(::StringWord)
-            .map { it.toTitleWord(dic) }
-            .map { it.merge() }
-            .joinToString(
-                "-",
-            ) { it.word }
+            .fromLowercaseToTitleCase(dic) // Recursive call
+            .replace(" ", "-")
     )
 
     is NormalWord -> toTitleWord()
@@ -141,7 +176,8 @@ fun Entry.toTitleCase(dic: Dictionary = Dictionary()): String =
 
 fun String.fromLowercaseToTitleCase(
     dic: Dictionary = Dictionary()
-): String = split(" ")
+): String = dic
+    .split(this)
     .asSequence()
     .mapIndexed(::IndexedStringWord)
     .map { word ->
