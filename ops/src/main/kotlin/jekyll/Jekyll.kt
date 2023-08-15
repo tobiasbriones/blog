@@ -1,7 +1,7 @@
 package jekyll
 
 import arrow.core.*
-import fs.AppResources
+import fs.AppFiles
 import fs.copyDirectory
 import html.Div
 import html.Nav
@@ -63,7 +63,7 @@ fun codeSnippetBlockHtml(res: FileResource): String = codeSnippetBlock(
 
 fun copyJekyllRootFiles(dst: Path): Either<String, Unit> = try {
     copyDirectory(
-        AppResources.pathOf(Path.of("jekyll", "Gemfile")).parent,
+        AppFiles.pathOf(Path.of("jekyll", "Gemfile")).parent,
         dst,
     )
 } catch (e: IOException) {
