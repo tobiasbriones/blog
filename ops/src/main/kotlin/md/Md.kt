@@ -1,8 +1,5 @@
 package md
 
-import jekyll.FileResource
-import jekyll.langCode
-
 data class Markdown(val value: String)
 
 data class Index(val content: Markdown) {

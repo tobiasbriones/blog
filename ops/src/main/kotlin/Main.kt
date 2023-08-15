@@ -94,8 +94,22 @@ fun execCreate(root: Path, entryName: String, tags: String) {
         .plus("${File.separator}$entryName")
 
     val path = root.resolve(relPath)
+    val entry = Entry(path)
+    val title = entry.toTitleCase()
 
-    println(path)
+    println(title)
+
+//    path.createDirectories()
+//
+//    saveIndex(path, """
+//        <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
+//        <!-- SPDX-License-Identifier: CC-BY-4.0 -->
+//        <!-- This file is part of https://github.com/tobiasbriones/blog -->
+//
+//        # $title
+//
+//    """.trimIndent()
+//    )
 }
 
 fun execEntries(root: Path) {
