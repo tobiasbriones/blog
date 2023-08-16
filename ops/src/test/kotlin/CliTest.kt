@@ -5,12 +5,12 @@ fun main() {
 //    entries()
 //    buildOne()
 //    buildOneJekyll()
-    buildAll()
+//    buildAll()
 //    buildAllJekyll()
 //    deployOne()
 //    deployAll()
 //    create()
-//    serve()
+    serve()
 }
 
 fun entries() {

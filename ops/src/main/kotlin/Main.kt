@@ -68,7 +68,7 @@ fun execute(
     Entries -> execEntries(root)
     Build -> execBuild(root, arg1, arg2 == "jekyll")
     Deploy -> execDeploy(root, arg1)
-    Serve -> execServe()
+    Serve -> execServe(root)
     Create -> execCreate(root, arg1, arg2)
 }
 
@@ -657,23 +657,25 @@ fun coverUrl(entry: Entry): String =
         }
         .getOrElse { "" }
 
-fun execServe() {
+fun execServe(root: Path) {
     embeddedServer(
         Netty,
         port = 8080,
-        module = Application::serve
+        module = { serve(root) }
     ).start(wait = true)
 }
 
-fun Application.serve() {
-    val root = Path.of(
-        "", "out", "build", "test-blog-deploy", "_site"
+fun Application.serve(root: Path) {
+    val web = root.resolve(
+        Path.of("out", "build", root.name, "_site")
     )
+
+    environment.log.info("Serving $web")
 
     routing {
         get("/") {
             call.respondFile(
-                root.resolve("index.html").toFile()
+                web.resolve("index.html").toFile()
             )
         }
 
@@ -689,12 +691,12 @@ fun Application.serve() {
 
             println(resPath)
 
-            val file = root.resolve(resPath)
+            val file = web.resolve(resPath)
 
             if (file.isRegularFile()) {
                 call.respondFile(file.toFile())
             } else {
-                call.respondFile(root.resolve("$resPath.html").toFile())
+                call.respondFile(web.resolve("$resPath.html").toFile())
             }
         }
     }
