@@ -18,8 +18,8 @@ dependencies {
     implementation("io.arrow-kt:arrow-fx-coroutines:1.2.0")
     implementation("io.ktor:ktor-server-core:2.3.3")
     implementation("io.ktor:ktor-server-netty:2.3.3")
+    implementation("org.slf4j:slf4j-simple:2.0.7")
     testImplementation(kotlin("test"))
-    testImplementation("org.slf4j:slf4j-simple:2.0.7")
 }
 
 tasks.test {
