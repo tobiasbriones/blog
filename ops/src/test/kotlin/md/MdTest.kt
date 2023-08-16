@@ -4,27 +4,44 @@ import TestResources
 import org.junit.jupiter.api.Test
 import java.nio.file.Path
 import kotlin.io.path.readText
+import kotlin.test.assertEquals
 
 class MdTest {
-    private val index: Index = Index(
+    private val fpInKotlin: Index = Index(
         Markdown(
             TestResources
                 .pathOf(Path.of("fp-in-kotlin", "index.md"))
                 .readText()
         )
     )
+    private val piDay: Index = Index(
+        Markdown(
+            TestResources
+                .pathOf(Path.of("pi-day", "index.md"))
+                .readText()
+        )
+    )
 
     @Test
     fun extractTitle() {
-        assert(index.extractTitle() == "FP in Kotlin")
+        assertEquals("FP in Kotlin", fpInKotlin.extractTitle())
     }
 
     @Test
     fun extractAbstract() {
-        assert(
-            index.extractAbstract() == """
+        assertEquals(
+            """
             I'll document particular insights about Kotlin functional designs I figure out.
-        """.trimIndent()
+        """.trimIndent(),
+            fpInKotlin.extractAbstract()
+        )
+
+        assertEquals(
+            """
+            Pi is my official and favorite constant and today is 3/14 day when the Pi
+            constant is celebrated.
+        """.trimIndent(),
+            piDay.extractAbstract()
         )
     }
 
@@ -56,6 +73,6 @@ class MdTest {
             ```
         """.trimIndent()
 
-        assert(codeBlock == expected)
+        assertEquals(expected, codeBlock)
     }
 }

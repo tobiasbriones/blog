@@ -15,7 +15,7 @@ class JekyllTest {
             """
                 ---
                 permalink: article
-                title: Article Title
+                title: 'Article Title'
                 ---
                 
             """.trimIndent(),

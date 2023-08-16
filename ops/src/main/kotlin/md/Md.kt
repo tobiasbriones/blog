@@ -16,6 +16,7 @@ fun Index.extractTitle(): String = content
 fun Index.extractAbstract(): String {
     var text = ""
     var abstractHashFound = false
+    var coverFound = false
 
     for (line in content.value.lines()) {
         if (line.startsWith("#")) {
@@ -27,10 +28,14 @@ fun Index.extractAbstract(): String {
         }
 
         // If it has any cover image
-        if (line.startsWith("!") ||
-            line.startsWith("<") ||
-            line.startsWith("-")
-        ) {
+        if (line.startsWith("!") || line.startsWith("<")) {
+            coverFound = true
+        } else if (line.startsWith("-")) {
+            coverFound = false
+            continue
+        }
+
+        if (coverFound) {
             continue
         }
 
@@ -42,6 +47,10 @@ fun Index.extractAbstract(): String {
             if (text.isNotBlank()) {
                 break
             }
+        }
+
+        if (text.isNotBlank()) {
+            text += "\n"
         }
         text += line
     }

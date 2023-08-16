@@ -38,7 +38,13 @@ data class FrontMatter(
 fun FrontMatter.toMarkdownString(): String {
     val strOf: (String, Option<String>) -> String = { attr, value ->
         value
-            .map { "\n$attr: $it" }
+            .map { it.replace("\n", " ") }
+            .map {
+                """
+                
+                $attr: "${it.replace("\"", "\\\"")}"
+                """.trimIndent()
+            }
             .getOrElse { "" }
     }
 
@@ -47,7 +53,7 @@ fun FrontMatter.toMarkdownString(): String {
         .append("\n")
         .append("permalink: $permalink")
         .append("\n")
-        .append("title: $title")
+        .append("""title: "$title"""")
         .append(strOf("description", description))
         .append(strOf("ogimage", ogimage))
         .append("\n")
