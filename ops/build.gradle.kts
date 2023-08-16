@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.8.21"
     application
+    distribution
 }
 
 group = "engineer.mathsoftware"
@@ -40,4 +41,14 @@ kotlin {
 
 application {
     mainClass.set("MainKt")
+}
+
+distributions {
+    main {
+        contents {
+            from(rootDir.resolve("src/main")) {
+                include("files/**")
+            }
+        }
+    }
 }
