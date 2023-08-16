@@ -389,14 +389,7 @@ circuit:
 
 The circuit still worked great when I powered it, and recorded a video of it:
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/JaW0Abg1qe8"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-</iframe>
+[Pac-Man Blinking LEDs \| YouTube](https://youtu.be/JaW0Abg1qe8)
 
 ### FM Transmitter
 
