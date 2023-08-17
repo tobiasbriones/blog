@@ -2,7 +2,7 @@ import md.Dictionary
 
 val dic: Dictionary = Dictionary(
     uppercase = setOf(
-        "bsd", "mit", "ep", "bi", "unah-vs", "ai", "ml"
+        "bsd", "mit", "ep", "bi", "unah-vs", "ai", "ml", "swe"
     ),
     composed = mapOf(
         "mathswe" to listOf("math", "swe"),

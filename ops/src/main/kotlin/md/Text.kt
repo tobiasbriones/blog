@@ -236,4 +236,8 @@ private fun minorWords(): List<String> = listOf(
     "around",
     "through",
     "about",
+    "that",
+    "this",
+    "those",
+    "these",
 )
