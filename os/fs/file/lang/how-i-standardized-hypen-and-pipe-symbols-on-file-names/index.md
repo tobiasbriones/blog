@@ -72,7 +72,7 @@ The simplest and most naturally-extensible design is to add a second hyphen
 - A second hyphen is mapped to an actual hyphen: from
   `state--of--the--art-word-separator` to `State-of-the-Art Word Separator`.
 
-### Analysis
+### Hyphen Design Analysis
 
 Adding a second hyphen to denote an actual hyphen is cohesive as both styles
 keep words together and is also progressive as one hyphen is naturally a word
@@ -84,14 +84,14 @@ separators and the former is more frequent than the latter (hence the
 preferences in the number of hyphens to add) so this design decision is 
 cohesive and progressive.
 
-### Example
+### Hyphen Example
 
 This was when I came out with this design:
 
 From `triangle-for-tangent-point-at-node--to--node-line.svg` to
 `Triangle for Tangent Point at Node-to-Node Line`.
 
-## Encode a Pipe
+## Encoding a Pipe
 
 As per the global standard, pipes (|) are not allowed into file names so a
 simple extension is to be designed to add pipe symbols to file names.
@@ -105,7 +105,7 @@ So, adding this to the design listed in [Encode a Hyphen](#encode-a-hyphen):
 - A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word
   Separator | Blog`.
 
-### Analysis
+### Pipe Design Analysis
 
 Adding a third hyphen to denote a pipe is cohesive and progressive for what
 was said about word separators [above](#encode-a-pipe) so this is a correct
@@ -115,7 +115,7 @@ The pipe operator is a fundamental element of functional programming (and so
 MathSwe) so I considered it as a high-priority to add it as the third hyphen
 in file names.
 
-### Example
+### Pipe Example
 
 This was also when I came out with this design:
 
