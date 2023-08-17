@@ -407,7 +407,7 @@ This is the failed radio FM transmitter:
 <p align="center"><strong>FM Transmitter: Testing</strong></p>
 </figcaption>
 
-## Vocational Fair
+## Vocational Fair Day
 
 So, the day of the event took place 😎:
 
