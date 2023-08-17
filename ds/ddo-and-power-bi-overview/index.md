@@ -151,7 +151,12 @@ following comparison:
 | Within IT              | Everywhere                   |
 | IT-risk-focused        | Business-risk-focused        |
 
-Source: *CIO Agenda 2018* \| Gartner [4]
+<figcaption>
+<p align="center">
+<strong>
+Source: <it>CIO Agenda 2018</it> | Gartner [4]
+</strong></p>
+</figcaption>
 
 ### Watch Out Fake Friends
 
