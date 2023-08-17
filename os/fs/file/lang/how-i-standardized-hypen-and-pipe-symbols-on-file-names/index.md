@@ -58,7 +58,7 @@ Standard file names use to contain lowercase symbols from the below:
 Some exceptions can have capital or uppercase styles like camel/pascal case
 and root files like `README.md` or `LICENSE` which are uppercase.
 
-## Encode a Hyphen
+## Encoding a Hyphen
 
 As per the global standard, hyphens (-) are used to separate words in file
 names so a simple extension is to be designed to add actual hyphens into
