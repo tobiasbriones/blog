@@ -31,7 +31,7 @@ To avoid issues, I either had to design a simple symbol or use a verbose `pipe`
 operator name.
 
 So, I took my design from
-[How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
+[How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
 where I designed the standards for (among others) the pipe operator on file
 names. Notice that file systems also require simple symbols to work with, so the
 standard from my previous article was what I was looking for.
