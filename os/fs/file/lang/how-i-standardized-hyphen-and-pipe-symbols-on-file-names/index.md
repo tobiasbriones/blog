@@ -100,7 +100,7 @@ Since pipes (|) are (more meaningful) word separators just like whitespaces
 (default and most used) and hyphens (second most used), then a proper design
 is to add a third hyphen (---) to denote a pipe (|).
 
-So, adding this to the design listed in [Encode a Hyphen](#encoding-a-hyphen):
+So, adding this to the design listed in [Encoding a Hyphen](#encoding-a-hyphen):
 
 - A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word
   Separator | Blog`.
