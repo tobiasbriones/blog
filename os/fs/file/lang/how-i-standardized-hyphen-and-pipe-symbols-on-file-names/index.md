@@ -122,7 +122,7 @@ This was also when I came out with this design:
 From `solutions-tree-with-html-and-css---ep-mrm.png` to `Solutions Tree
 with HTML and CSS | EP: MRM` when styled as the (high-level) image name.
 
-## Standardize Hyphens and Pipes on File Names
+## Standardizing Hyphens and Pipes on File Names
 
 Hyphens (-) and pipes (|) can have relevant semantics to empower cleverer 
 domain-specific file systems, but it's not trivial to denote such symbols as 
