@@ -1,5 +1,5 @@
 {% if page.permalink %}
-<base href="/{{ page.permalink | replace: '.html', ''}}/" />
+<base href="/{{ page.permalink | replace: '.html', ''}}/"/>
 {% endif %}
 
 <meta
@@ -61,6 +61,7 @@
       processEscapes: true
     }
   });
+
 
 
 
@@ -330,7 +331,14 @@
         }
     }
 
-    @media screen and (min-width: 1080px) {
+
+    @media screen and (min-width: 960px) {
+        section {
+            width: 70%;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
         :root {
             --content-padding: 2vw;
         }
@@ -350,7 +358,11 @@
         }
 
         nav {
-            width: 30%;
+            width: 25%;
+        }
+
+        nav a {
+            padding: 0.5rem 1rem;
         }
 
         nav .article > ul {
@@ -366,6 +378,13 @@
         .menu-item {
             width: 50%;
             padding: 0.5rem 4%;
+        }
+    }
+
+
+    @media screen and (min-width: 1920px) {
+        nav a {
+            padding: 0.5rem 2rem;
         }
     }
 
@@ -498,7 +517,7 @@
         }
 
         function isMobile() {
-            return window.innerWidth < 1080;
+            return window.innerWidth < 1280;
         }
     }
 
@@ -689,5 +708,42 @@
         width: 1.75rem;
         height: 1.75rem;
         margin: 0.125rem 0;
+    }
+</style>
+
+<style>
+    /* Minimalist Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 1rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.5rem;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    table th {
+        font-weight: bold;
+    }
+
+    table tbody tr {
+        transition: 200ms all;
+    }
+
+    /* Alternating Row Background */
+    table tbody tr:nth-child(even) {
+        background-color: #f5f5f5;
+    }
+
+    /* Hover Effect */
+    table tbody tr:hover {
+        background-color: #e0e0e0;
+        cursor: pointer;
     }
 </style>

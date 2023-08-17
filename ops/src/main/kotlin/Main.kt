@@ -114,7 +114,8 @@ fun execCreate(root: Path, entryName: String, tags: String) {
 
     path.createDirectories()
 
-    saveIndex(path, """
+    saveIndex(
+        path, """
         <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
         <!-- SPDX-License-Identifier: CC-BY-4.0 -->
         <!-- This file is part of https://github.com/tobiasbriones/blog -->
@@ -148,7 +149,7 @@ fun execEntries(root: Path) {
         }
 }
 
-fun execBuild(root: Path, entryName: String, jekyll: Boolean = false) {
+fun execBuild(root: Path, target: String, jekyll: Boolean = false) {
     val config = buildConfigOf(root)
 
     val buildAll: (List<Entry>) -> Unit = { entries ->
@@ -156,7 +157,7 @@ fun execBuild(root: Path, entryName: String, jekyll: Boolean = false) {
         entries.forEach { build(it, config) }
     }
 
-    val buildEntry: (List<Entry>) -> Unit = { entries ->
+    val buildEntry: (List<Entry>, String) -> Unit = { entries, entryName ->
         println("⚙ Building $entryName at $root...")
         entries
             .firstOrNone { it.name() == entryName }
@@ -166,12 +167,24 @@ fun execBuild(root: Path, entryName: String, jekyll: Boolean = false) {
             }
     }
 
-    val route: (List<Entry>) -> Unit = { entries ->
-        if (entryName == ".") buildAll(entries) else buildEntry(entries)
+    val buildDefault: (List<Entry>) -> Unit = { entries ->
+        runCommand("git branch --show-current")
+            .onLeft(handleError `$` "Failed to check current branch")
+            .getOrNull()
+            ?.trim()
+            ?.run {
+                if (this == "main") buildAll(entries)
+                else buildEntry(entries, this)
+            }
     }
 
-    if (entryName.isBlank()) {
-        printError `$` "Enter the entry name argument"
+    val route: (List<Entry>) -> Unit = { entries ->
+        if (target == ".") buildDefault(entries)
+        else buildEntry(entries, target)
+    }
+
+    if (target.isBlank()) {
+        printError `$` "Enter the target argument"
         return
     }
 
