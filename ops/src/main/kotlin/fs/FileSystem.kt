@@ -87,6 +87,14 @@ fun copyDirectory(
     }
 }
 
+fun deleteEmptyDirectories(rootDir: Path) {
+    Files.walk(rootDir)
+        .sorted(Comparator.reverseOrder())
+        .filter { Files.isDirectory(it) }
+        .filter { Files.list(it).use { stream -> stream.count() == 0L } }
+        .forEach { Files.deleteIfExists(it) }
+}
+
 fun getFileExtension(path: Path): String {
     val fileName = path.name
     val dotIndex = fileName.lastIndexOf('.')

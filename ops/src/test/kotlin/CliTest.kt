@@ -10,7 +10,9 @@ fun main() {
 //    deployOne()
 //    deployAll()
 //    create()
-    serve()
+//    serve()
+
+    runCmd("build building-slides-from-screenshots-app-in-javafx")
 }
 
 fun entries() {

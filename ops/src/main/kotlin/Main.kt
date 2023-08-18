@@ -13,6 +13,7 @@ import io.ktor.server.routing.*
 import jekyll.*
 import md.*
 import java.io.File
+import java.nio.charset.MalformedInputException
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.*
@@ -33,6 +34,8 @@ object Error {
 
 val handleError: (String) -> (String) -> Unit = { Error::handle `$` it }
 val printError: (String) -> Unit = { Error::print `$` it }
+
+val ignoredPaths: Set<String> = getIgnoredRelPaths()
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) {
@@ -250,6 +253,15 @@ fun build(entry: Entry, config: BuildConfig) {
     val (srcDir, outDir) = config
     val outEntryDir = Path.of(outDir.toString(), entry.name())
 
+    fun isIgnoredPath(path: Path): Boolean =
+        ignoredPaths // if it's a directly ignored directory
+            .contains(
+                path
+                    .relativeTo(srcDir)
+                    .toString()
+                    .replace("\\", "/")
+            )
+
     fun prepare() {
         if (outDir.notExists()) {
             outDir.createDirectories()
@@ -260,7 +272,13 @@ fun build(entry: Entry, config: BuildConfig) {
         outEntryDir.createDirectory()
 
         copyJekyllRootFiles(outDir)
-        copyDirectory(entry.path, outEntryDir) { it.shouldBeCopied() }
+        copyDirectory(entry.path, outEntryDir) {
+            it.shouldBeCopied() && !isIgnoredPath(it)
+        }
+
+        // workaround to remove ignored subdirectories not listed from Git
+        // ignore
+        deleteEmptyDirectories(outEntryDir)
     }
 
     prepare()
@@ -476,18 +494,21 @@ fun addContentIndex(
     saveIndex(clearedPath, index)
 }
 
-fun createContentMarkdownString(path: Path): String {
-    return when (val ext = getFileExtension(path)) {
+fun createContentMarkdownString(path: Path): String =
+    when (val ext = getFileExtension(path)) {
         "png", "jpg", "gif" -> createImageHtml(path)
         "md" -> Files.readString(path)
         else -> codeSnippetBlockHtml(
             FileResource(
-                Files.readString(path),
+                try {
+                    Files.readString(path)
+                } catch (e: MalformedInputException) {
+                    path.name
+                },
                 ResourceExtension(ext),
             )
         )
     }
-}
 
 fun createImageHtml(path: Path): String = Img(
     attributes = mapOf(
@@ -669,6 +690,33 @@ fun coverUrl(entry: Entry): String =
             )
         }
         .getOrElse { "" }
+
+
+fun getIgnoredRelPaths(): Set<String> {
+    val ignoredFiles =
+        runCommand("git ls-files --ignored -o --exclude-standard")
+            .onLeft(
+                handleError `$` "Failed to get ignored Git files to exclude from building"
+            )
+            .map { it.lines().toSet() }
+            .getOrNull() ?: setOf()
+
+    val ignoredDirs =
+        runCommand("git status --porcelain --ignored")
+            .onLeft(
+                handleError `$` "Failed to get ignored Git files to exclude from building"
+            )
+            .map { dir ->
+                dir
+                    .lines()
+                    .map { it.removePrefix("!! ") }
+                    .map { it.removeSuffix("/") }
+                    .toSet()
+            }
+            .getOrNull() ?: setOf()
+
+    return ignoredFiles + ignoredDirs
+}
 
 fun execServe(root: Path) {
     embeddedServer(
