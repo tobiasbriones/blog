@@ -140,9 +140,8 @@ I already developed the initial application layout (and logic) — which are
 relatively heavy —, so I'll add the FXML version here with a preview to see
 what's being developed.
 
-This is the
-[initial layout app.fxml file](https://github.com/tobiasbriones/blog/blob/main/swe/dev/java/javafx/drawing/productivity/building-slides-from-screenshots-app-in-javafx/slides/src/main/resources/app.fxml)
-that looks like:
+This is the initial layout [app.fxml](slides---ep/src/main/resources/app.fxml)
+file that looks like:
 
 ![Scene Builder: Initial app.fxml](images/scene-builder-.-initial-app.fxml.png)
 
