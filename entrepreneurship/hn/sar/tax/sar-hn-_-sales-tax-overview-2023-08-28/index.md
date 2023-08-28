@@ -133,3 +133,8 @@ process.
 You will have to fill several fields, and others will get autofilled, and once
 sent, you can't change it. I'd advise you to have an accountant for this or have
 deep knowledge of this accounting domain if you have to do it.
+
+### Time of the Quiz
+
+To complete the course, I answered an online quiz with 20 timed questions, just
+like the university (UNAH) tests are.
