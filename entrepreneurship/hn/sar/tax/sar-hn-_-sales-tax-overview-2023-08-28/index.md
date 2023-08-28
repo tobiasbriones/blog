@@ -82,8 +82,8 @@ stage. For example, 18% is applied to each:
 For air transport, you pay 18% for most classes, and 15% for economic class,
 except disabled persons who pay 15%.
 
-So overall, this is how the sales tax is originated and applied when sales
-take place.
+So overall, this is how the sales tax is originated and applied when sales take
+place.
 
 ### Exempt Cases
 
@@ -117,5 +117,19 @@ There's a big list of things exempt from paying sales taxes. They can be:
     - Agricultural raw material and tooling.
     - Veterinarian pharmaceutics.
 
-There are more advanced items and constraints, but those give you an idea of what
-is exempt from sales taxes.
+There are more advanced items and constraints, but those give you an idea of
+what is exempt from sales taxes.
+
+### Presenting a Declaration
+
+Finally, if you're responsible for the sale tax, you have to declare the
+corresponding data to the SAR platform via its **virtual office** and
+**"DETlive"** desktop (Windows) application.
+
+You can get trained on how to use these systems by taking this course or
+following up on SAR social media to get resources to get more familiar with this
+process.
+
+You will have to fill several fields, and others will get autofilled, and once
+sent, you can't change it. I'd advise you to have an accountant for this or have
+deep knowledge of this accounting domain if you have to do it.
