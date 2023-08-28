@@ -14,3 +14,8 @@
 </figcaption>
 
 ---
+
+## Course Takeaways
+
+This is my resume for the course, and take into account that it's informational
+only and may not be too accurate since it only covers generalities.
