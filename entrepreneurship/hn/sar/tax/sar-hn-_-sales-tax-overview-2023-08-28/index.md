@@ -3,3 +3,14 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # SAR HN: Sales Tax Overview (2023/08/28)
+
+![SAR HN: Sales Tax Overview (2023/08/28)](images/sar-hn-_-sales-tax-overview-2023-08-28.jpg)
+
+<figcaption>
+<p align="center">Image by
+<a href="https://pixabay.com/users/photomix-company-1546875">PhotoMIX-Company</a> via
+<a href="https://pixabay.com/photos/cash-register-printer-receipt-store-5610295">Pixabay</a>
+</p>
+</figcaption>
+
+---
