@@ -138,3 +138,16 @@ deep knowledge of this accounting domain if you have to do it.
 
 To complete the course, I answered an online quiz with 20 timed questions, just
 like the university (UNAH) tests are.
+
+## References
+
+[1] Curso: Impuesto Sobre Ventas. (2023). Escuela Virtual Tributaria. Retrieved
+August 28, 2023,
+from [Impuesto Sobre Ventas \| Escuela Virtual Tributaria \| SAR \| gob.hn](https://escuelavirtualtributaria.sar.gob.hn/course/view.php?id=14).
+
+[2] Ley del Impuesto Sobre Ventas Texto Consolidado. (2016, June 10). SEFIN.
+Retrieved August 28, 2023,
+from [Ley del Impuesto Sobre Ventas Texto Consolidado \| SEFIN \| gob.hn](http://www.sefin.gob.hn/wp-content/uploads/2016/06/TEXTO_CONSOLIDADO_LEY_IMPUESTO_SOBRE_VENTAS_10JUNIO2016.pdf).
+
+[3] Declaración Jurada Impuesto Sobre Ventas | DET Live. (n.d.).
+[DETlive \| SAR \| gob.hn](http://detlive.sar.gob.hn/?q=Ayuda-ISV).
