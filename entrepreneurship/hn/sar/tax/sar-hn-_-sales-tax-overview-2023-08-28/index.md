@@ -151,9 +151,6 @@ deep knowledge of this accounting domain if you have to do it.
 To complete the course, I answered an online quiz with 20 timed questions, just
 like the university (UNAH) tests are.
 
-terms: sales, sales tax, cif (cost insurance and freight), tax base, taxable
-event, affidavit, SAR(Rent Administration Service)
-
 ## References
 
 [1] Curso: Impuesto Sobre Ventas. (2023). Escuela Virtual Tributaria. Retrieved
