@@ -84,3 +84,38 @@ except disabled persons who pay 15%.
 
 So overall, this is how the sales tax is originated and applied when sales
 take place.
+
+### Exempt Cases
+
+There's a big list of things exempt from paying sales taxes. They can be:
+
+- Popular essential products (with exceptions):
+    - Meats.
+    - Dairy.
+    - Eggs.
+    - Vegetables.
+    - Fruits.
+    - Grains.
+    - Bakery.
+    - Coffee (up to 1 pound).
+    - Other aliment products.
+    - Pharmacist products for human use.
+
+- Popular services and products (with exceptions):
+    - Equipment for electrical energy generation, and their spare parts.
+    - Books, scientific magazines, etc.
+    - Minor artisanal sectors.
+    - Electric energy for residential fee users
+    - Drinking water and sewerage.
+    - Professional fees obtained from natural persons.
+    - Construction services.
+    - Hospitalization services.
+    - Clinical laboratories for humans.
+    - Other medical services except aesthetic treatments.
+    - Ground transportation of passengers.
+    - Banking services.
+    - Agricultural raw material and tooling.
+    - Veterinarian pharmaceutics.
+
+There are more advanced items and constraints, but those give you an idea of what
+is exempt from sales taxes.
