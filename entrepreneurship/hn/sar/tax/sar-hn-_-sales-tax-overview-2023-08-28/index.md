@@ -15,6 +15,18 @@
 
 ---
 
+## Sales Tax Resources
+
+I enrolled in a course that was available at the SAR learning platform and
+closed the past Sunday, August 27.
+
+I'll develop a quick overview of the course contents[1] here, which can also be
+stated in other resources like the "Law of Sales Tax"[2] in a complete (and
+formal) form.
+
+This way, I can provide a good record overview of the sales tax mechanism in
+Honduras.
+
 ## Course Takeaways
 
 This is my resume for the course, and take into account that it's informational
@@ -138,6 +150,9 @@ deep knowledge of this accounting domain if you have to do it.
 
 To complete the course, I answered an online quiz with 20 timed questions, just
 like the university (UNAH) tests are.
+
+terms: sales, sales tax, cif (cost insurance and freight), tax base, taxable
+event, affidavit, SAR(Rent Administration Service)
 
 ## References
 
