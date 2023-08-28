@@ -142,6 +142,20 @@ You can get trained on how to use these systems by taking this course or
 following up on SAR social media to get resources to get more familiar with this
 process.
 
+![DET Live: ISV Form](images/det-live-_-isv-form.jpg)
+
+<figcaption>
+<p align="center">
+<strong>
+DET Live: ISV Form
+</strong>
+</p>
+<p>
+Source: <it>Declaración Jurada Impuesto Sobre Ventas | DET Live [3] (under fair
+use)</it>
+</p>
+</figcaption>
+
 You will have to fill several fields, and others will get autofilled, and once
 sent, you can't change it. I'd advise you to have an accountant for this or have
 deep knowledge of this accounting domain if you have to do it.
