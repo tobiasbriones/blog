@@ -12,7 +12,8 @@ fun main() {
 //    create()
 //    serve()
 
-    runCmd("build building-slides-from-screenshots-app-in-javafx")
+//    runCmd("build building-slides-from-screenshots-app-in-javafx jekyll")
+//    runCmd("build 4-years-since-vocational-fair-at-unah-vs-2023-05-09")
 }
 
 fun entries() {

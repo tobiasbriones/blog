@@ -11,7 +11,10 @@ class TextTest {
     // others are specific to the underlying article only
     private val dic: Dictionary = Dictionary(
         uppercase = setOf(
-            "bsd", "mit", "ep", "bi", "unah-vs", "ai", "ml"
+            "bsd", "mit", "ep", "bi", "unah-vs", "ai", "ml",
+            "sar",
+            "hn:", // edge case, I have to add ":" so it's recognized, see
+            // test case
         ),
         composed = mapOf(
             "mathswe" to listOf("math", "swe"),
@@ -80,6 +83,10 @@ class TextTest {
             entry(
                 "this-is-a-state--of--the--art-ai-model"
             ) to "This is a State-of-the-Art AI Model",
+
+            entry(
+                "sar-hn-_-sales-tax"
+            ) to "SAR HN: Sales Tax",
         )
 
         cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }

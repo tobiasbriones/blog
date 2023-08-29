@@ -698,7 +698,14 @@ fun getIgnoredRelPaths(): Set<String> {
             .onLeft(
                 handleError `$` "Failed to get ignored Git files to exclude from building"
             )
-            .map { it.lines().toSet() }
+            .map { ignored ->
+                ignored
+                    .lines()
+
+                    // Allow article's static files to be copied in the build process
+                    .filter { !it.contains("/static/") }
+                    .toSet()
+            }
             .getOrNull() ?: setOf()
 
     val ignoredDirs =
@@ -711,6 +718,9 @@ fun getIgnoredRelPaths(): Set<String> {
                     .lines()
                     .map { it.removePrefix("!! ") }
                     .map { it.removeSuffix("/") }
+
+                    // Allow article's static files to be copied in the build process
+                    .filter { !it.endsWith("/static") }
                     .toSet()
             }
             .getOrNull() ?: setOf()
