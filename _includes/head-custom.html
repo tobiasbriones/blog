@@ -1,3 +1,7 @@
+{% if page.permalink %}
+<base href="/{{ page.permalink | replace: '.html', ''}}/"/>
+{% endif %}
+
 <meta
   name="robots"
   content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -57,6 +61,10 @@
       processEscapes: true
     }
   });
+
+
+
+
 
 
 
@@ -326,7 +334,14 @@
         }
     }
 
-    @media screen and (min-width: 1080px) {
+
+    @media screen and (min-width: 960px) {
+        section {
+            width: 70%;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
         :root {
             --content-padding: 2vw;
         }
@@ -346,7 +361,11 @@
         }
 
         nav {
-            width: 30%;
+            width: 25%;
+        }
+
+        nav a {
+            padding: 0.5rem 1rem;
         }
 
         nav .article > ul {
@@ -365,6 +384,13 @@
         }
     }
 
+
+    @media screen and (min-width: 1920px) {
+        nav a {
+            padding: 0.5rem 2rem;
+        }
+    }
+
     @media screen and (min-width: 2160px) {
         nav .article > ul {
             width: 60%;
@@ -379,8 +405,30 @@
     function initApp() {
         const nav = document.querySelector('nav');
 
+        updateFilePath();
+        initHashNav();
         initMenu();
         initNav();
+
+        function initHashNav() {
+            document
+                .querySelectorAll('a')
+                .forEach(anchor => {
+                    const href = anchor.getAttribute('href');
+
+                    if (href.startsWith("#")) {
+                        anchor.addEventListener('click', e => {
+                            e.preventDefault();
+
+                            if (href === '#') {
+                                history.replaceState({}, document.title, window.location.pathname + window.location.search);
+                            } else {
+                                window.location.hash = href;
+                            }
+                        })
+                    }
+                });
+        }
 
         function initMenu() {
             const navButton = document.getElementById('nav-item');
@@ -493,7 +541,7 @@
         }
 
         function isMobile() {
-            return window.innerWidth < 1080;
+            return window.innerWidth < 1280;
         }
     }
 
@@ -501,11 +549,10 @@
         if (!anchor.href) {
             return;
         }
-        const targetId = anchor.attributes.href.value;
+        const href = anchor.attributes.href.value;
+        const targetId = href.substring(href.indexOf('#'));
 
         if (targetId === '#') {
-            history.pushState({}, document.title, window.location.pathname + window.location.search);
-
             document.body.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start',
@@ -516,15 +563,12 @@
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
-            history.pushState({}, document.title, targetId);
-
             targetSection.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start',
             });
         }
     }
-
 
     function getFocusedHeading() {
         const headings = selectHeadings();
@@ -568,6 +612,22 @@
             }
         }
         return invisibleHeadingClosestToTop;
+    }
+
+    function updateFilePath() {
+        const pageTitle = document.querySelector('h1').textContent;
+
+        // It's a file like DataTest.java
+        // This path update is necessary since Netlify lowercase the path
+        if (pageTitle.includes('.')) {
+            const currentPath = window.location.pathname;
+            const pathSegments = currentPath.split('/');
+
+            pathSegments[pathSegments.length - 1] = pageTitle;
+            const newPath = pathSegments.join('/');
+
+            history.replaceState(null, null, newPath);
+        }
     }
 
     function selectHeadings() {
@@ -669,5 +729,44 @@
         width: 1.75rem;
         height: 1.75rem;
         margin: 0.125rem 0;
+    }
+</style>
+
+<style>
+    /* Minimalist Table Styles */
+    table {
+        width: auto;
+        margin: auto;
+        border-collapse: separate;
+        font-size: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.5rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    table th {
+        font-weight: bold;
+    }
+
+    table tbody tr {
+        transition: 200ms all;
+    }
+
+    /* Alternating Row Background */
+    table tbody tr:nth-child(even) {
+        background-color: #f5f5f5;
+    }
+
+    /* Hover Effect */
+    table tbody tr:hover {
+        background-color: #e0e0e0;
+        cursor: pointer;
     }
 </style>
