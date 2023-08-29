@@ -165,6 +165,13 @@ deep knowledge of this accounting domain if you have to do it.
 To complete the course, I answered an online quiz with 20 timed questions, just
 like the university (UNAH) tests are.
 
+{% include iframe.html
+title = "Sales Tax Diploma"
+src = "static/sales-tax-diploma.pdf"
+%}
+
+This way I finished this learning activity.
+
 ## References
 
 [1] Curso: Impuesto Sobre Ventas. (2023). Escuela Virtual Tributaria. Retrieved
