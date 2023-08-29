@@ -164,6 +164,26 @@ You will have to fill several fields, and others will get autofilled, and once
 sent, you can't change it. I'd advise you to have an accountant for this or have
 deep knowledge of this accounting domain if you have to do it.
 
+### Relevant Concepts
+
+If you're learning about this, you'll find the following terms I gathered
+useful:
+
+- Sales.
+- Sales Tax.
+- CIF (Cost Insurance and Freight).
+- Tax Base.
+- Taxable Event.
+- Affidavit.
+- SAR (Rent Administration Service)
+
+I already quickly defined/introduced them. As you can see, they have a meaning.
+For example, a "sale" takes place when you emit a billing of the product you're
+selling, and so on.
+
+To leave it clear, SAR is the organization in Honduras responsible for 
+tax matters. Then, you can go on with these terms from here on.
+
 ### Time of the Quiz
 
 To complete the course, I answered an online quiz with 20 timed questions, just
