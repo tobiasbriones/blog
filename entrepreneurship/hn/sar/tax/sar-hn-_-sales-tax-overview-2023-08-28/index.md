@@ -172,6 +172,12 @@ src = "static/sales-tax-diploma.pdf"
 
 This way I finished this learning activity.
 
+## Generalities Learned about Sales Tax in Honduras
+
+I took the SAR course about the sales tax (ISV) in Honduras and shared the
+overall information and resources that I found insightful so we can keep getting
+informed on these entrepreneurial affairs.
+
 ## References
 
 [1] Curso: Impuesto Sobre Ventas. (2023). Escuela Virtual Tributaria. Retrieved
