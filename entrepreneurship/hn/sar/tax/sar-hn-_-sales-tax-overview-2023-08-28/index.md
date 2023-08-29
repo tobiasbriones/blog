@@ -15,6 +15,10 @@
 
 ---
 
+I took the SAR course on sales tax (ISV) in Honduras. I'll cover the insights
+and information I gathered as an introductory record of what I experienced in
+this activity.
+
 ## Sales Tax Resources
 
 I enrolled in a course that was available at the SAR learning platform and
