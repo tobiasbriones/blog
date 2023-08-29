@@ -190,8 +190,16 @@ To complete the course, I answered an online quiz with 20 timed questions, just
 like the university (UNAH) tests are.
 
 {% include iframe.html title = "Sales Tax Diploma"
-src = "static/sales-tax-diploma.pdf"
+src = "static/my-sales-tax-diploma.pdf"
 %}
+
+<figcaption>
+<p align="center">
+<strong>
+My Sales Tax Diploma
+</strong>
+</p>
+</figcaption>
 
 This way I finished this learning activity.
 
