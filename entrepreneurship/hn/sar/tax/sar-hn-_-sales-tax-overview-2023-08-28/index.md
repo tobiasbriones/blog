@@ -86,9 +86,9 @@ selling of goods and services.
 For beers and sodas, the tax is applied to the selling price at the distribution
 stage.
 
-It's also interesting that (for alcoholic beverages), the sales tax is applied (
-according to the law, and non-accumulative) to the import stage and each selling
-stage. For example, 18% is applied to each:
+It's also interesting that (for alcoholic beverages), the sales tax is applied
+(according to the law, and non-accumulative) to the import stage and each
+selling stage. For example, 18% is applied to each:
 
 - Production or import,
 - Distribution,
@@ -181,16 +181,15 @@ I already quickly defined/introduced them. As you can see, they have a meaning.
 For example, a "sale" takes place when you emit a billing of the product you're
 selling, and so on.
 
-To leave it clear, SAR is the organization in Honduras responsible for 
-tax matters. Then, you can go on with these terms from here on.
+To leave it clear, SAR is the organization in Honduras responsible for tax
+matters. Then, you can go on with these terms from here on.
 
 ### Time of the Quiz
 
 To complete the course, I answered an online quiz with 20 timed questions, just
 like the university (UNAH) tests are.
 
-{% include iframe.html
-title = "Sales Tax Diploma"
+{% include iframe.html title = "Sales Tax Diploma"
 src = "static/sales-tax-diploma.pdf"
 %}
 
