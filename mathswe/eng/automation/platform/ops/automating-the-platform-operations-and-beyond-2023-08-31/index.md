@@ -111,3 +111,34 @@ It lists all the article entries found in the repository.
 Command: Entries List
 </strong></p>
 </figcaption>
+
+#### Create
+
+It creates a new entry given its ID and classes[^4] separated by commas.
+
+[^4]: I came up with this design from a lot of experience where source code is
+    naturally organized in (subsets) subdirectories by hierarchies —from 
+    abstract to concrete— of domain-specific (mathematical) **classes**, forming
+    a logically structured tree that scales horizontally
+
+*Syntax:* `ops create { entry-id } { class_1,class_2,...,class_n }`
+
+Where classes from $$1 \to n$$ go from coarse to finer subdirectories.
+
+*Example:*
+
+![Command: Create Entry](command-_-create-entry.png)
+
+<figcaption>
+<p align="center"><strong>
+Command: Create Entry
+</strong></p>
+</figcaption>
+
+Entry names must be correct values; they must not exist already, and the classes
+are passed as a value separated by commas.
+
+Articles are developed in the Git branch named as their ID.
+
+So, the command leaves you in the article's branch, where a new empty entry with
+the given information is created and committed to Git by the system.
