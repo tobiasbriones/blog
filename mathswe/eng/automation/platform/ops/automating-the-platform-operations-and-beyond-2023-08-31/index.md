@@ -4,6 +4,11 @@
 
 # Automating the Platform Operations and Beyond (2023/08/31)
 
+Transitioning from a default environment to a richer and more standardized
+platform to publish articles in a faster cadence has been tackled as a CLI tool
+in Kotlin (Arrow) as part of an ongoing process that's also left new features
+and powerful visions.
+
 ## Previous Article Operations
 
 I started using GitHub pages with Jekyll[^1] and the minimal theme at the
