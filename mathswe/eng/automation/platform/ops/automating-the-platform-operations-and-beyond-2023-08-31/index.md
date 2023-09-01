@@ -95,3 +95,19 @@ using `git` or a similar standard tool.
 For now, I called the CLI program **"ops"** after distributing its binary to run
 on my machine. Recall that this will be part of something big later on, and I
 haven't published anything formal.
+
+#### Entries
+
+It lists all the article entries found in the repository.
+
+*Syntax:* `ops entries`.
+
+*Example:*
+
+![Command: Entries List](command-_-entries-list.png)
+
+<figcaption>
+<p align="center"><strong>
+Command: Entries List
+</strong></p>
+</figcaption>
