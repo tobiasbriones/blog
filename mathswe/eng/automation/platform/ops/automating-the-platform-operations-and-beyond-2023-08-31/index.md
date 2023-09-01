@@ -47,3 +47,9 @@ all of them are barely starting to take shape.
 
 Eventually, after validating many processes, I'm ready to start automating some
 parts of the system.
+
+## Development of a CLI Tool
+
+In order to automate my common workflow on mathsoftware.engineer I needed to
+develop a CLI tool to write some commands to operate on the article's source
+code all the way to production.
