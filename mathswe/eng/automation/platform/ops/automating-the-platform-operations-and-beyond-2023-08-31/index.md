@@ -146,6 +146,34 @@ Articles are developed in the Git branch named as their ID.
 So, the command leaves you in the article's branch, where a new empty entry with
 the given information is created and committed to Git by the system.
 
+#### Build
+
+It builds the article(s) passed.
+
+*Syntax:* `ops build { target } (jekyll)`.
+
+Where:
+
+- `target` can either be the ID of the article or `.`. If a dot `.` is passed,
+  the article corresponding to the current branch (if some) will be built,
+  otherwise (when in branch `main`) all articles will be built.
+- `jekyll` is an optional argument to run `bundle exec jekyll clean` and
+  `bundle exec jekyll build` (so it can be *served* later).
+
+*Example:*
+
+![Command: Build Working Article](command-_-build-working-article.png)
+
+<figcaption>
+<p align="center"><strong>
+Command: Build Working Article
+</strong></p>
+</figcaption>
+
+There are two steps in the building process. One is the **intermediate source
+generation** (i.e. the `ops` tool) that's still readable and targeted for
+Jekyll. Then Jekyll is applied to these intermediate files.
+
 #### Serve
 
 It runs a configured (Ktor) web server for testing the site in localhost.
