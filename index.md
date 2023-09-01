@@ -6,6 +6,7 @@
 - [Pi Day (2022/03/14)](pi-day-2022-03-14)
 - [Pi Day (2023/03/14)](pi-day-2023-03-14)
 - [An Excited Time Drawing Mandala Fractals Today (2023-04-06)](an-excited-time-drawing-mandala-fractals-today-2023-04-06)
+- [Automating the Platform Operations and Beyond (2023/08/31)](automating-the-platform-operations-and-beyond-2023-08-31)
 - [How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
 - [Everything is Relative](everything-is-relative)
 - [I Just Turned the Lights Off, Put My Headphones On, and Read This Crazy Paper About SWE Commandments (2022/10/15)](i-just-turned-the-lights-off--_--put-my-headphones-on--_--and-read-this-crazy-paper-about-swe-commandments-2022-10-15)
