@@ -2,7 +2,7 @@
 // For example: P:\tobiasbriones\test-blog-deploy
 // to run the program in that project
 fun main() {
-//    entries()
+    entries()
 //    buildOne()
 //    buildOneJekyll()
 //    buildAll()
@@ -14,6 +14,7 @@ fun main() {
 
 //    runCmd("build building-slides-from-screenshots-app-in-javafx jekyll")
 //    runCmd("build 4-years-since-vocational-fair-at-unah-vs-2023-05-09")
+//    runCmd("create automating-the-platform-operations-and-beyond-2023-08-31 mathswe,eng,automation,platform,ops")
 }
 
 fun entries() {
