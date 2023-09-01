@@ -340,3 +340,13 @@ It's super exciting that, —after innovating in previous original tech concepts
 that are evolving like Repsymo, MathSwe, and premium (first-class) like
 mathsoftware.engineer and math.software— we'll have one more original technology
 to rely on.
+
+## Beginning of the Standard Platform Automation
+
+The experiences obtained from writing mathsoftware.engineer articles in an
+incipient GitHub pages environment and on-the-progress challenges have lead to
+the creation of new tools and important concepts now that many standards are
+well-defined, although many other system parts are still temporal.
+
+The latest developments represent a chapter in automating essential tasks,
+allowing me to create more content with significantly reduced overhead.
