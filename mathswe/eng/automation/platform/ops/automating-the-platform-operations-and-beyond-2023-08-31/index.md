@@ -31,13 +31,13 @@ of Jekyll and many other mundane tools[^2] (temporal parts), but now, I still
 have to support them, so I have to check whether the tooling to develop and
 test[^3] will return the investment.
 
-[2]: Jekyll has given me a lot of trouble regarding side effects
+[^2]: Jekyll has given me a lot of trouble regarding side effects
     (some articles ending with "x" don't build, etc.), watch mode doesn't work,
     Ruby dependencies, customization, etc., and I don't need mere static sites
     anymore, so I better move on and off Jekyll soon
 
-[3]: When developing software, repetitive manual testing or automated testing of
-    something you will get rid of later introduces a lot of overhead, so you 
+[^3]: When developing software, repetitive manual testing or automated testing
+    of something you will get rid of later introduces a lot of overhead, so you
     have to avoid both under-engineering and over-engineering
 
 Many details are still unclear in this early stage, so I still haven't formally
