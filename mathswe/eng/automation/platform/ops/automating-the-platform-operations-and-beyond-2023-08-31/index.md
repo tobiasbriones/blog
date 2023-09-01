@@ -223,6 +223,12 @@ Command: Deploy Article
 Articles have to be already published, that is, integrated into the `main`
 branch, so the process is applied from source to production.
 
+### Migration from GitHub Pages to Netlify
+
+GitHub pages serve only as a basic static site platform for mere repository
+documentation, so the next step was to move to something appropriate like
+Netlify, which I'm also experienced with.
+
 ### New Features
 
 Relevant new features have been developed in the meantime.
