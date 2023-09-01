@@ -199,3 +199,26 @@ Command: Serve Project Out
 
 Applications can be locally served with this command after running the build
 plus Jekyll command that puts the output to the `out` building directory.
+
+#### Deploy
+
+It deploys to GitHub the passed article(s) from branch main.
+
+*Syntax:* `ops deploy { target }`.
+
+Where:
+
+- `target` is the article ID to deploy or a dot `.` to deploy everything.
+
+*Example:*
+
+![Command: Deploy Article](command-_-deploy-article.png)
+
+<figcaption>
+<p align="center"><strong>
+Command: Deploy Article
+</strong></p>
+</figcaption>
+
+Articles have to be already published, that is, integrated into the `main`
+branch, so the process is applied from source to production.
