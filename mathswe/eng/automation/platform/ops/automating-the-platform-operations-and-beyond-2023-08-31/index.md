@@ -124,7 +124,7 @@ It creates a new entry given its ID and classes[^4] separated by commas.
     abstract to concrete— of domain-specific (mathematical) **classes**, forming
     a logically structured tree that scales horizontally
 
-*Syntax:* `ops create { entry-id } { class_1,class_2,...,class_n }`
+*Syntax:* `ops create { entry-id } { class_1,class_2,...,class_n }`.
 
 Where classes from $$1 \to n$$ go from coarse to finer subdirectories.
 
@@ -145,3 +145,29 @@ Articles are developed in the Git branch named as their ID.
 
 So, the command leaves you in the article's branch, where a new empty entry with
 the given information is created and committed to Git by the system.
+
+#### Serve
+
+It runs a configured (Ktor) web server for testing the site in localhost.
+
+The server listens to the `{ project }/out/build/{ project }/_site` directory 
+where Jekyll generated the site in the last building step.
+
+*Syntax:* `ops serve`.
+
+The response will be similar to this:
+
+```
+[main] INFO ktor.application - Serving P:\tobiasbriones\test-blog-deploy\out\build\test-blog-deploy\_site
+[main] INFO ktor.application - Application started in 0.13 seconds.
+[DefaultDispatcher-worker-1] INFO ktor.application - Responding at http://127.0.0.1:8080
+```
+
+<figcaption>
+<p align="center"><strong>
+Command: Serve Project Out
+</strong></p>
+</figcaption>
+
+Applications can be locally served with this command after running the build
++ Jekyll command that puts the output to the `out` building directory.
