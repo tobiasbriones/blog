@@ -82,3 +82,16 @@ As said, I'd use Rust which is appropriate, but I ended up choosing Kotlin
 (JDK 19) because it's a great balance among all the constraints. Furthermore, I
 can use the Arrow library to use a decent approach to FP, that is, my code and
 ideas can still be future-proof this way.
+
+### Commands
+
+I developed some useful and required commands to move forward in the automation
+processes.
+
+You can run the tool via terminal in any Git repository subdirectory containing
+articles. The root of the project is detected by the program. So, it's like
+using `git` or a similar standard tool.
+
+For now, I called the CLI program **"ops"** after distributing its binary to run
+on my machine. Recall that this will be part of something big later on, and I
+haven't published anything formal.
