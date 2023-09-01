@@ -112,6 +112,9 @@ Command: Entries List
 </strong></p>
 </figcaption>
 
+The command will show the number of articles and list them all in their ID form
+as found in the working repository.
+
 #### Create
 
 It creates a new entry given its ID and classes[^4] separated by commas.
