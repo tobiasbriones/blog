@@ -198,4 +198,4 @@ Command: Serve Project Out
 </figcaption>
 
 Applications can be locally served with this command after running the build
-+ Jekyll command that puts the output to the `out` building directory.
+plus Jekyll command that puts the output to the `out` building directory.
