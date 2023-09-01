@@ -122,9 +122,9 @@ as found in the working repository.
 
 #### Create
 
-It creates a new entry given its ID and classes[^4] separated by commas.
+It creates a new entry given its ID and classes[^5] separated by commas.
 
-[^4]: I came up with this design from a lot of experience where source code is
+[^5]: I came up with this design from a lot of experience where source code is
     naturally organized in (subsets) subdirectories by hierarchies —from 
     abstract to concrete— of domain-specific (mathematical) **classes**, forming
     a logically structured tree that scales horizontally
