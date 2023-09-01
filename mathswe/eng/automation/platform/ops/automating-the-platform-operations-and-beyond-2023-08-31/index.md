@@ -222,3 +222,96 @@ Command: Deploy Article
 
 Articles have to be already published, that is, integrated into the `main`
 branch, so the process is applied from source to production.
+
+### New Features
+
+Relevant new features have been developed in the meantime.
+
+This includes functional requirements I'll address soon in the next blog, like
+**ToC article navigation and source code tree navigation**.
+
+Among non-functional requirements, I developed a dictionary system to
+convert entry names to title cases. This way, article titles, images captions,
+etc., will be rendered automatically from source. The source is the file name
+itself (simple 👍🏻), similar to how I encoded
+[hyphens and pipes on file names](/how-i-standardized-hyphen-and-pipe-symbols-on-file-names).
+
+You can see how this smart dictionary works from the current spec:
+
+```kotlin
+@Test
+fun toTitleCase() {
+    val entry: (String) -> Entry = { Entry(Path.of("/swe/abc/$it")) }
+    val cases = mapOf(
+        entry(
+            "basic-title"
+        ) to "Basic Title",
+
+        entry(
+            "temporal-coupled-article-2023-08-13"
+        ) to "Temporal Coupled Article (2023/08/13)",
+
+        entry(
+            "example-title-_-everything-is-relative"
+        ) to "Example Title: Everything is Relative",
+
+        entry(
+            "example-project---blog"
+        ) to "Example Project | Blog",
+
+        entry(
+            "title-with-actual-high--level-hyphen"
+        ) to "Title with Actual High-Level Hyphen",
+
+        entry(
+            "removing-cyclic-dependencies--_--java-vs-go-2023-05-28"
+        ) to "Removing Cyclic Dependencies, Java vs Go (2023/05/28)",
+
+        entry(
+            "license-change-from-mit-to-bsd--3--clause-for-code-snippets-2023-04-13"
+        ) to "License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)",
+
+        entry(
+            "4-years-since-vocational-fair-at-unah--vs-2023-05-09"
+        ) to "4 Years Since Vocational Fair at UNAH-VS (2023/05/09)",
+
+        entry(
+            "ddo-and-power-bi-overview"
+        ) to "Data-Driven Organizations and Power BI Overview",
+
+        entry(
+            "finishing-writing-the-documentation-for-my-next-ep-2023-07-14"
+        ) to "Finishing Writing the Documentation for my Next EP (2023/07/14)",
+
+        entry(
+            "how-i-use-intellij-idea"
+        ) to "How I Use IntelliJ IDEA",
+
+        entry(
+            "this-is-a-state--of--the--art-ai-model"
+        ) to "This is a State-of-the-Art AI Model",
+
+        entry(
+            "sar-hn-_-sales-tax"
+        ) to "SAR HN: Sales Tax",
+    )
+
+    cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }
+}
+```
+
+<figcaption>
+<p align="center"><strong>
+The Text System is Defining High-Level Titles from Resource IDs
+</strong></p>
+</figcaption>
+
+Among other implementation details, semantics like article abstract, headings,
+Jekyll Front Matter, etc., had to be extracted from Markdown.
+
+Filtering files and directories from gitignore, handling tons of errors with
+the `Either` monad, learning, testing, and debugging were part of this stage. 
+
+They all were successful challenges that took a lot of effort. The effort is so
+consuming that comes from stages where I manually worked on this to validate
+concepts first.
