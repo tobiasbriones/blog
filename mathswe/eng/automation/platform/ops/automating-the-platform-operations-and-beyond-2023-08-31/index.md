@@ -53,3 +53,32 @@ parts of the system.
 In order to automate my common workflow on mathsoftware.engineer I needed to
 develop a CLI tool to write some commands to operate on the article's source
 code all the way to production.
+
+### Kotlin and FP
+
+One of the favorite technologies for this implementation was Kotlin for various
+reasons.
+
+The developing tooling is not stable yet and will not be for a while since this
+will be part of something big that is not well-defined in practical terms yet.
+
+For CLIs, Rust[^4] would be my first choice, but it's too complicated for this
+stage of the system, so I need something faster to develop.
+
+[^4]: I've been using Rust to automate Ubuntu system installation instead
+
+I could use Purescript or Haskell to build a robust DSL, but that would also be
+over-engineering for this stage too.
+
+A convenient tool for my familiarity and its FP support is Kotlin since Java
+was my first language, and I'm well versed all over these ecosystems.
+
+The JVM isn't convenient for CLIs or GitHub actions tasks due to VM startup and
+overhead. Getting crazy about GraalVM or Kotlin native wouldn't make a lot of
+sense either. Since performance optimization is not a requirement (yet), I won't
+bother about this concern.
+
+As said, I'd use Rust which is appropriate, but I ended up choosing Kotlin
+(JDK 19) because it's a great balance among all the constraints. Furthermore, I
+can use the Arrow library to use a decent approach to FP, that is, my code and
+ideas can still be future-proof this way.
