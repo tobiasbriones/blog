@@ -321,3 +321,22 @@ the `Either` monad, learning, testing, and debugging were part of this stage.
 They all were successful challenges that took a lot of effort. The effort is so
 consuming that comes from stages where I manually worked on this to validate
 concepts first.
+
+## The Future is SWAM
+
+In the process, I defined a new technology for executing MathSwe operations.
+
+I'm introducing **SWAM (Special Software and Models)**.
+
+The objective is to take rigorous *soft* specs like **models** with *concrete*
+tools like **software** to deploy MathSwe operations on the outer world
+unrelated to mathematical purity.
+
+Inspired by **S.W.A.T. (Special Weapons and Tactics)** from the police
+department teams to enforce the law, I can **establish a compromise and
+discipline link** to MathSwe software *operations* by developing these concepts.
+
+It's super exciting that, —after innovating in previous original tech concepts
+that are evolving like Repsymo, MathSwe, and premium (first-class) like
+mathsoftware.engineer and math.software— we'll have one more original technology
+to rely on.
