@@ -1,28 +1,27 @@
-# Blog
+# Math Software Engineer
 
-<link rel="icon" type="image/png" href="favicon.png">
+[![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/mathsoftware/engineer)
 
-[![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/tobiasbriones/blog)
+[![GitHub Project License](https://img.shields.io/github/license/mathsoftware/engineer.svg?style=flat-square)](https://github.com/mathsoftware/engineer#license)
 
-Build from Math Software Engineer's Blog source.
+Math Software Engineer's home.
 
 ## Contact
 
-This project: [Website](https://blog.mathsoftware.engineer),
-[Repository](https://github.com/tobiasbriones/blog)
+This project: [Website](https://mathsoftware.engineer),
+[Repository](https://github.com/mathsoftware/engineer)
 
 Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 ## About
 
-**Blog**
+**Math Software Engineer**
 
-Math Software Engineer's Blog.
+Math Software Engineer's home.
 
 Copyright © 2021-present Tobias Briones. All rights reserved.
 
 ### License
 
 Content licensed under the [CC-BY-4.0 License](LICENSE-CC). Code licensed
-under the [MIT License](LICENSE-MIT). See [LICENSE](LICENSE.md) for more
-details.
+under the [BSD-3-Clause License](LICENSE-BSD).
