@@ -119,9 +119,10 @@ enum class Attribute {
     Target,
     Src,
     Alt,
+    AriaLabel,
 }
 
-val Attribute.htmlName: String get() = name.lowercase()
+val Attribute.htmlName: String get() = name.replace(Regex("([a-z])([A-Z])"), "$1-$2").lowercase()
 
 fun Attribute.toHtmlString(values: List<String>) =
     if (values.isEmpty()) ""

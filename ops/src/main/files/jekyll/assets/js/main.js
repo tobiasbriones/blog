@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', initApp);
 
 function initApp() {
-  const nav = document.querySelector('nav');
-  const home = document.querySelector('nav .home');
-  const toc = document.querySelector('section.toc');
+  const nav = document.querySelector('header > nav');
+  const header = document.querySelector('header');
+  const toc = document.querySelector('nav.toc');
 
   updateFilePath();
   initHashNav();
@@ -45,7 +45,7 @@ function initApp() {
   }
 
   function initNav() {
-    const anchors = document.querySelectorAll('nav .article a');
+    const anchors = document.querySelectorAll('nav.toc a');
     let mobile = isMobile();
 
     const updateSelectedAnchor = hash => {
@@ -129,16 +129,16 @@ function initApp() {
   }
 
   function isNavShowing() {
-    return home.classList.contains('show');
+    return header.classList.contains('show');
   }
 
   function showNav() {
-    home.classList.add('show');
+    header.classList.add('show');
     toc.classList.add('show');
   }
 
   function hideNav() {
-    home.classList.remove('show');
+    header.classList.remove('show');
     toc.classList.remove('show');
   }
 

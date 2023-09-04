@@ -5,7 +5,6 @@ import fs.AppFiles
 import fs.copyDirectory
 import html.Div
 import html.Nav
-import html.Section
 import html.toHtmlString
 import md.Index
 import md.codeSnippetBlock
@@ -16,7 +15,7 @@ import kotlin.io.path.writeText
 data class JekyllIndex(
     val frontMatter: FrontMatter,
     val nav: Nav,
-    val toc: Section,
+    val toc: Nav,
     val index: Index,
     val subdirNav: Option<Div>,
 )

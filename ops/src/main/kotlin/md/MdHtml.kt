@@ -13,7 +13,10 @@ import kotlin.io.path.name
 
 fun Index.generateNav(home: String): Nav =
     Nav(
-        listOf(
+        attributes = mapOf(
+            AriaLabel to listOf("Navigation")
+        ),
+        children = listOf(
             A(
                 attributes = mapOf(
                     Class to listOf("home"),
@@ -34,10 +37,11 @@ fun Index.generateNav(home: String): Nav =
         )
     )
 
-fun Index.generateToC(): Section =
-    Section(
+fun Index.generateToC(): Nav =
+    Nav(
         attributes = mapOf(
-            Class to listOf("toc"),
+            Class to listOf("toc", "user-select-none"),
+            AriaLabel to listOf("Table of Contents")
         ),
         children = listOf(
             A(
