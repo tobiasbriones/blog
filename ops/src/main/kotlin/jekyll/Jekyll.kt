@@ -5,15 +5,18 @@ import fs.AppFiles
 import fs.copyDirectory
 import html.Div
 import html.Nav
+import html.Section
 import html.toHtmlString
 import md.Index
 import md.codeSnippetBlock
 import java.io.IOException
 import java.nio.file.Path
+import kotlin.io.path.writeText
 
 data class JekyllIndex(
     val frontMatter: FrontMatter,
     val nav: Nav,
+    val toc: Section,
     val index: Index,
     val subdirNav: Option<Div>,
 )
@@ -21,12 +24,31 @@ data class JekyllIndex(
 fun JekyllIndex.toMarkdownString(): String = """
     |${frontMatter.toMarkdownString()}
     |
-    |${nav.toHtmlString()}
-    |
     |$index
     |
     |${subdirNav.map(Div::toHtmlString).getOrElse { "" }}
 """.trimMargin("|")
+
+fun JekyllIndex.saveNavigation(root: Path): Either<String, Unit> =
+    saveInclude(root, "nav.html", nav.toHtmlString())
+
+fun JekyllIndex.saveToc(root: Path): Either<String, Unit> =
+    saveInclude(root, "${frontMatter.permalink}_toc.html", toc.toHtmlString())
+
+fun JekyllIndex.saveInclude(
+    root: Path,
+    file: String,
+    content: String,
+): Either<String, Unit> =
+    try {
+        root
+            .resolve(Path.of("_includes", file))
+            .writeText(content)
+            .right()
+    } catch (e: IOException) {
+        e.printStackTrace()
+        e.message.orEmpty().left()
+    }
 
 data class FrontMatter(
     val permalink: String,

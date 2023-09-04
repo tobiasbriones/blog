@@ -11,7 +11,7 @@ import java.util.stream.Stream
 import kotlin.collections.ArrayDeque
 import kotlin.io.path.name
 
-fun Index.generateNav(): Nav =
+fun Index.generateNav(home: String): Nav =
     Nav(
         listOf(
             A(
@@ -27,25 +27,27 @@ fun Index.generateNav(): Nav =
                         content = Some("home"),
                     ),
                     Span(
-                        content = Some("Blog"),
+                        content = Some(home),
                     ),
                 )
             ),
-            Div(
+        )
+    )
+
+fun Index.generateToC(): Section =
+    Section(
+        attributes = mapOf(
+            Class to listOf("toc"),
+        ),
+        children = listOf(
+            A(
                 attributes = mapOf(
-                    Class to listOf("article"),
+                    Class to listOf("title"),
+                    Href to listOf("#"),
                 ),
-                children = listOf(
-                    A(
-                        attributes = mapOf(
-                            Class to listOf("title"),
-                            Href to listOf("#"),
-                        ),
-                        content = Some(extractTitle()),
-                    ),
-                    tocList(content),
-                )
+                content = Some(extractTitle()),
             ),
+            tocList(content),
         )
     )
 
@@ -144,7 +146,11 @@ fun createNavigationTreeHtml(
                         A(
                             attributes = mapOf(
                                 Href to listOf(
-                                    "https://github.com/tobiasbriones/blog/$githubPath/${name(child)}"
+                                    "https://github.com/tobiasbriones/blog/$githubPath/${
+                                        name(
+                                            child
+                                        )
+                                    }"
                                 ),
                                 Target to listOf("_blank")
                             ),

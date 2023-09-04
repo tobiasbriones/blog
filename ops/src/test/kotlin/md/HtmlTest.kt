@@ -17,7 +17,7 @@ class HtmlTest {
 
     @Test
     fun navHtml() {
-        val navHtml = index.generateNav().toHtmlString()
+        val navHtml = index.generateToC().toHtmlString()
         val expected = """
             <nav>
               <a class="home" href="/">

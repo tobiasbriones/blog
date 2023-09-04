@@ -1,9 +1,8 @@
 package html
 
-import `---`
-import arrow.core.*
-import java.util.*
-import kotlin.collections.ArrayDeque
+import arrow.core.None
+import arrow.core.Option
+import arrow.core.getOrElse
 
 sealed interface Tag : AttributeList {
     val name: String get() = javaClass.simpleName.lowercase()
@@ -61,6 +60,12 @@ data class Strong(
 
 data class Img(
     override val children: List<Tag> = listOf(),
+    override val attributes: Map<Attribute, List<String>> = mapOf(),
+    override val content: Option<String> = None,
+) : Tag
+
+data class Section(
+    override val children: List<Tag>,
     override val attributes: Map<Attribute, List<String>> = mapOf(),
     override val content: Option<String> = None,
 ) : Tag

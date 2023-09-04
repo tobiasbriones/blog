@@ -1,0 +1,97 @@
+section.toc {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+section.toc.show {
+  transform: translateX(0%);
+}
+
+section.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section.toc .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+section.toc {
+  display: flex;
+  height: calc(100% - 63px);
+  flex-direction: column;
+}
+
+section.toc > ul {
+  padding: var(--content-padding);
+  padding-top: 0;
+  flex: 1;
+  overflow: auto;
+}
+
+nav a,
+section.toc a {
+  display: block;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--title-text-color);
+}
+
+nav a:hover,
+section.toc a:hover {
+  text-decoration: none;
+}
+
+section.toc a.selected {
+  font-weight: bold;
+}
+
+nav a:hover,
+section.toc a:hover {
+  background-color: var(--hover-background-color);
+}
+
+section.toc ul ul {
+  padding-left: 1rem;
+}
+
+section.toc ul ul ul {
+  padding-left: 2rem;
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    --content-padding: 4vw;
+  }
+
+  section.toc > ul {
+    width: 60%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  section.toc {
+    width: 25%;
+  }
+
+  nav a,
+  section.toc a {
+    padding: 0.5rem 1rem;
+  }
+
+  section.toc > ul {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 2160px) {
+  section.toc > ul {
+    width: 60%;
+    margin: auto;
+  }
+}

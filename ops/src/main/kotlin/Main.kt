@@ -297,6 +297,7 @@ fun build(entry: Entry, config: BuildConfig) {
         )
         .getOrNull() ?: return
 
+    val home = Entry(srcDir).toTitleCase(dic)
     val permalink = entry.path.name
     val title = index.extractTitle()
     val abstract = index.extractAbstract()
@@ -308,10 +309,19 @@ fun build(entry: Entry, config: BuildConfig) {
             Some(abstract),
             Some(coverUrl)
         ),
-        index.generateNav(),
+        index.generateNav(home),
+        index.generateToC(),
         index,
         subdirNav,
     )
+
+    jekyll
+        .saveNavigation(outDir)
+        .onLeft(printError)
+
+    jekyll
+        .saveToc(outDir)
+        .onLeft(printError)
 
     saveIndex(outEntryDir, jekyll.toMarkdownString())
     buildIndex(srcDir, outDir)
