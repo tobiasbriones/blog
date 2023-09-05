@@ -379,14 +379,61 @@ fun buildSubdirectories(outDir: Path, entry: Entry) {
         .fold(printError) { paths ->
             paths.filter(Path::isBrowsable)
                 .forEach {
+                    // Direct entry subdirectories
+
                     buildSubdirectory(
                         outDir,
                         entry.relPath,
                         entry.name(),
                         it
                     )
+
+                    if (it.name.endsWith("---ep")) {
+                        buildEp(it, outDir, entry.name(), entry.path)
+                    }
                 }
         }
+}
+
+fun buildEp(epDir: Path, outDir: Path, entryName: String, entryPath: Path) {
+    val epRoot = entryPath.resolve(epDir.toString())
+    val packageJson = epRoot.resolve("package.json")
+    val subPath = Path.of(entryName, epDir.toString())
+    val path = Path.of(outDir.toString(), subPath.toString())
+
+    if (packageJson.exists() && packageJson.isRegularFile()) {
+        val appSrc = epRoot.resolve("app")
+        val appOut = path.resolve("app")
+        val appHtml = appOut.parent.resolve("app.html")
+
+        if (appSrc.exists()) {
+            deleteDirectory(appSrc)
+        }
+
+        runCommand("cmd.exe /c npm i", epRoot)
+            .onLeft(handleError `$` "Failed to install Node deps at $epDir")
+            .onRight(::println)
+            .getOrNull() ?: return
+
+        runCommand("cmd.exe /c npm run build:prod", epRoot)
+            .onLeft(handleError `$` "Failed to build $epDir")
+            .onRight(::println)
+            .getOrNull() ?: return
+
+        appSrc.moveTo(appOut)
+
+        appOut
+            .resolve("index.html")
+            .moveTo(appHtml)
+
+        val html = appHtml
+            .readText()
+            .replace("</title>", """</title><base href="app/"/>""")
+
+        appHtml.writeText(html)
+
+        println("✔ Build ${epDir.name}")
+    }
 }
 
 fun buildSubdirectory(
@@ -415,7 +462,7 @@ fun buildSubdirectory(
     }
 }
 
-fun Path.fromEntryRelPathToGithubUrl(subPath: Path):Either<String, String> {
+fun Path.fromEntryRelPathToGithubUrl(subPath: Path): Either<String, String> {
     val githubPath = parent
         .toString()
         .replace("\\", "/")
