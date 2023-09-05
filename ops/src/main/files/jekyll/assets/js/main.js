@@ -134,12 +134,18 @@ function initApp() {
 
   function showNav() {
     header.classList.add('show');
-    toc.classList.add('show');
+
+    if (toc) {
+      toc.classList.add('show');
+    }
   }
 
   function hideNav() {
     header.classList.remove('show');
-    toc.classList.remove('show');
+
+    if (toc) {
+      toc.classList.remove('show');
+    }
   }
 
   function isMobile() {

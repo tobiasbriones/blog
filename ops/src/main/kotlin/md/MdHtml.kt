@@ -1,6 +1,7 @@
 package md
 
 import `---`
+import Entry
 import arrow.core.Some
 import html.*
 import html.Attribute.*
@@ -55,12 +56,14 @@ fun Index.generateToC(): Nav =
         )
     )
 
-fun List<String>.subDirectoriesNav(): Div {
+fun List<String>.subDirectoriesNav(dic: Dictionary): Div {
     val dirName: (String) -> String = { it.removeSuffix("---ep") }
     val iconName: (String) -> String =
         { if (it.endsWith("---ep")) "Example Project" else "Subdirectory" }
     val iconSrc: (String) -> String =
         { if (it.endsWith("---ep")) IC_EP else IC_FOLDER }
+    val subdirTitleCase: (String) -> String =
+        { Entry(Path.of(it `---` dirName)).toTitleCase(dic) }
 
     return Div(
         attributes = mapOf(
@@ -85,7 +88,7 @@ fun List<String>.subDirectoriesNav(): Div {
                                 )
                             ),
                             Strong(
-                                content = Some(subdir `---` dirName)
+                                content = Some(subdir `---` subdirTitleCase)
                             )
                         ),
                     )
@@ -95,7 +98,7 @@ fun List<String>.subDirectoriesNav(): Div {
     )
 }
 
-fun openInGitHubButton(githubPath: String): Div = Div(
+fun openInGitHubButton(githubUrl: String): Div = Div(
     attributes = mapOf(
         Class to listOf("social open-gh-btn", "my-4"),
     ),
@@ -107,7 +110,7 @@ fun openInGitHubButton(githubPath: String): Div = Div(
                     "btn-github",
                 ),
                 Href to listOf(
-                    "https://github.com/tobiasbriones/blog/$githubPath"
+                    githubUrl
                 ),
                 Target to listOf("_blank")
             ),
@@ -127,7 +130,7 @@ fun openInGitHubButton(githubPath: String): Div = Div(
 
 fun createNavigationTreeHtml(
     files: Stream<Path>,
-    githubPath: String,
+    originUrl: String,
 ): String {
     // If the filename is like .gitignore its directory was renamed to
     // _.gitignore/.gitignore.html to avoid hidden directories
@@ -150,11 +153,7 @@ fun createNavigationTreeHtml(
                         A(
                             attributes = mapOf(
                                 Href to listOf(
-                                    "https://github.com/tobiasbriones/blog/$githubPath/${
-                                        name(
-                                            child
-                                        )
-                                    }"
+                                    "$originUrl/${name(child)}"
                                 ),
                                 Target to listOf("_blank")
                             ),

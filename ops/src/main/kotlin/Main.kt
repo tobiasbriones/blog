@@ -369,7 +369,7 @@ fun Entry.generateSubdirectoriesNav(): Either<String, Option<Div>> {
                 .toList()
                 .toOption()
                 .flatMap { if (it.isEmpty()) None else Some(it) }
-                .map { it.subDirectoriesNav() }
+                .map { it.subDirectoriesNav(dic) }
         }
 }
 
@@ -415,27 +415,44 @@ fun buildSubdirectory(
     }
 }
 
-fun addDirectoryIndex(
-    outDir: Path,
-    entryName: String,
-    entryRelPath: Path, // src entry path, i.e. tags. e.g. /swe/dev/.../article
-    relPath: Path
-) {
-    val subPath = Path.of(entryName, relPath.toString())
-    val path = Path.of(outDir.toString(), subPath.toString())
-    val githubPath = entryRelPath
-        .parent
+fun Path.fromEntryRelPathToGithubUrl(subPath: Path):Either<String, String> {
+    val githubPath = parent
         .toString()
         .replace("\\", "/")
         .let { "$it/${subPath.toString().replace("\\", "/")}" }
         .let { "tree/main$it" }
-    val name = relPath.fileName.toString()
+
+    return getGitHubRepoUrl()
+        .map { "$it/$githubPath" }
+}
+
+fun addDirectoryIndex(
+    outDir: Path,
+    entryName: String,
+    entryRelPath: Path, // src entry path, i.e. classes. e.g. /swe/dev/.../article
+    relPath: Path
+) {
+    val subPath = Path.of(entryName, relPath.toString())
+    val path = Path.of(outDir.toString(), subPath.toString())
+
+    val originUrl = entryRelPath
+        .fromEntryRelPathToGithubUrl(subPath)
+        .onLeft(printError)
+        .getOrNull() ?: return
+
+    val name = with(relPath.fileName.toString()) {
+        if (relPath.parent == null) Entry(relPath).toTitleCase(dic)
+        else this
+    }
+
     val navigationTreeHtml =
-        createNavigationTreeHtml(path `---` Files::list, githubPath)
+        createNavigationTreeHtml(path `---` Files::list, originUrl)
+
     val frontMatter = FrontMatter(
         subPath.toString().replace("\\", "/"),
         subPath.toString().replace("\\", "/"),
     )
+
     val sb = StringBuilder()
 
     sb.append(frontMatter.toMarkdownString())
@@ -444,10 +461,23 @@ fun addDirectoryIndex(
     sb.append("\n")
     sb.append(navigationTreeHtml)
     sb.append("\n")
-    sb.append(openInGitHubButton(githubPath).toHtmlString())
+    sb.append(openInGitHubButton(originUrl).toHtmlString())
     val index = sb.toString()
 
     saveIndex(path, index)
+}
+
+fun getGitHubRepoUrl(): Either<String, String> =
+    runCommand("git config remote.origin.url")
+        .onLeft(handleError `$` "Failed to get Git remote info")
+        .map(String::fromGitOriginToRepoUrl)
+
+fun String.fromGitOriginToRepoUrl(): String = with(replace("\n", "")) {
+    if (contains("https")) this
+    else removePrefix("git@")
+        .removeSuffix(".git")
+        .replace(":", "/")
+        .let { "https://$it" }
 }
 
 fun addContentIndex(
@@ -463,12 +493,11 @@ fun addContentIndex(
         return
     }
 
-    val githubPath = entryRelPath
-        .parent
-        .toString()
-        .replace("\\", "/")
-        .let { "$it/${subPath.toString().replace("\\", "/")}" }
-        .let { "tree/main$it" }
+    val originUrl = entryRelPath
+        .fromEntryRelPathToGithubUrl(subPath)
+        .onLeft(printError)
+        .getOrNull() ?: return
+
     val name = relPath.fileName.toString()
     val fileContentHtml = createContentMarkdownString(path)
     val frontMatter = FrontMatter(
@@ -484,7 +513,7 @@ fun addContentIndex(
     sb.append("\n")
     sb.append(fileContentHtml)
     sb.append("\n")
-    sb.append(openInGitHubButton(githubPath).toHtmlString())
+    sb.append(openInGitHubButton(originUrl).toHtmlString())
     val index = sb.toString()
 
 

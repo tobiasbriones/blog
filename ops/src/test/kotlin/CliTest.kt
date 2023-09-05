@@ -1,3 +1,5 @@
+import java.nio.file.Path
+
 // MAKE SURE to add the working directory of the Git repository to test
 // For example: P:\tobiasbriones\test-blog-deploy
 // to run the program in that project
@@ -16,6 +18,13 @@ fun main() {
 //    runCmd("build 4-years-since-vocational-fair-at-unah-vs-2023-05-09")
 //    runCmd("create automating-the-platform-operations-and-beyond-2023-08-31 mathswe,eng,automation,platform,ops")
 //    runCmd("deploy automating-the-platform-operations-and-beyond-2023-08-31")
+
+    println(
+        Path.of("/swe/article")
+            .fromEntryRelPathToGithubUrl(Path.of("building/subdir/file"))
+            .onLeft(printError)
+            .getOrNull()
+    )
 }
 
 fun entries() {
