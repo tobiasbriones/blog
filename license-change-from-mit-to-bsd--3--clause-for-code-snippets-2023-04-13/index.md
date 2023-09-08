@@ -6,29 +6,6 @@ ogimage: ""
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Blog
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)
-    </a>
-    <ul>
-      <li>
-        <a href="#bibliography">
-          Bibliography
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
