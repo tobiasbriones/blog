@@ -3,7 +3,7 @@ permalink: fp-in-kotlin/kotlin
 title: "fp-in-kotlin/kotlin"
 ---
 
-# kotlin
+# Kotlin
 <ul>
   <li>
     <a href="Pipe.kt">

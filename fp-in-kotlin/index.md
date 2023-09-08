@@ -6,78 +6,6 @@ ogimage: ""
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Blog
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      FP in Kotlin
-    </a>
-    <ul>
-      <li>
-        <a href="#pipe-operator">
-          Pipe Operator
-        </a>
-        <ul>
-          <li>
-            <a href="#defining-a-pipe-operator">
-              Defining a Pipe Operator
-            </a>
-            <ul>
-              <li>
-                <a href="#finding-a-suitable-symbol">
-                  Finding a Suitable Symbol
-                </a>
-              </li>
-              <li>
-                <a href="#language-features">
-                  Language Features
-                </a>
-              </li>
-              <li>
-                <a href="#operator-definition">
-                  Operator Definition
-                </a>
-              </li>
-              <li>
-                <a href="#usage-example">
-                  Usage Example
-                </a>
-              </li>
-              <li>
-                <a href="#functional-language-design">
-                  Functional Language Design
-                </a>
-              </li>
-              <li>
-                <a href="#custom-pipe-in-kotlin">
-                  Custom Pipe in Kotlin
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#options-for-a-pipe-operator-in-kotlin">
-              Options for a Pipe Operator in Kotlin
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#designing-functional-languages-in-kotlin">
-          Designing Functional Languages in Kotlin
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
@@ -309,7 +237,7 @@ mathematical software.
     <a class="btn" href="kotlin">
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iI0ZCQzAyRCI+DQoJPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMCA0SDRjLTEuMSAwLTEuOTkuOS0xLjk5IDJMMiAxOGMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjhjMC0xLjEtLjktMi0yLTJoLThsLTItMnoiLz4NCjwvc3ZnPg==" alt="Subdirectory" />
       <strong>
-        kotlin
+        Kotlin
       </strong>
     </a>
   </div>
