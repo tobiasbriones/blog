@@ -6,25 +6,6 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/removing
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Blog
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      Removing Cyclic Dependencies, Java vs Go (2023-05-28)
-    </a>
-    <ul>
-      
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
