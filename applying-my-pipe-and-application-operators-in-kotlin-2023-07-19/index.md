@@ -6,25 +6,6 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/applying
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Blog
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      Applying my Pipe and Application Operators in Kotlin (2023-07-19)
-    </a>
-    <ul>
-      
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2023 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
