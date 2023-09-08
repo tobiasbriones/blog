@@ -6,46 +6,6 @@ ogimage: ""
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Blog
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      I Just Turned the Lights Off, Put My Headphones On, and Read This Crazy Paper About SWE Commandments (2022/10/15)
-    </a>
-    <ul>
-      <li>
-        <a href="#context">
-          Context
-        </a>
-        <ul>
-          <li>
-            <a href="#fun-fact">
-              Fun Fact
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#paper-review">
-          Paper Review
-        </a>
-      </li>
-      <li>
-        <a href="#conclusion">
-          Conclusion
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
