@@ -6,25 +6,6 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/from-imp
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Blog
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      From Imperative to Functional: TypeScript Fetch Promise
-    </a>
-    <ul>
-      
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2022-present Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
