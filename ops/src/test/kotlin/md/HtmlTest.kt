@@ -5,6 +5,7 @@ import html.toHtmlString
 import org.junit.jupiter.api.Test
 import java.nio.file.Path
 import kotlin.io.path.readText
+import kotlin.test.assertEquals
 
 class HtmlTest {
     private val index: Index = Index(
@@ -17,9 +18,9 @@ class HtmlTest {
 
     @Test
     fun navHtml() {
-        val navHtml = index.generateToC().toHtmlString()
+        val navHtml = index.generateNav("Blog").toHtmlString()
         val expected = """
-            <nav>
+            <nav aria-label="Navigation">
               <a class="home" href="/">
                 <span class="material-symbols-rounded">
                   home
@@ -28,7 +29,17 @@ class HtmlTest {
                   Blog
                 </span>
               </a>
-              <div class="article">
+            </nav>
+        """.trimIndent()
+
+        assertEquals(expected, navHtml)
+    }
+
+    @Test
+    fun tocHtml() {
+        val tocHtml = index.generateToC().toHtmlString()
+        val expected = """
+              <nav class="toc user-select-none" aria-label="Table of Contents">
                 <a class="title" href="#">
                   FP in Kotlin
                 </a>
@@ -88,10 +99,9 @@ class HtmlTest {
                     </a>
                   </li>
                 </ul>
-              </div>
-            </nav>
+              </nav>
         """.trimIndent()
 
-        assert(navHtml == expected)
+        assertEquals(expected, tocHtml)
     }
 }

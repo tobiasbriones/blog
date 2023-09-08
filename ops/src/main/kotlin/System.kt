@@ -9,8 +9,9 @@ fun runCommand(
     command: String,
     workingDir: Path? = null
 ): Either<String, String> {
+    val winCommand = "cmd /c $command"
     val processBuilder = ProcessBuilder(
-        *command
+        *winCommand
             .split("\\s+".toRegex())
             .toTypedArray()
     )

@@ -88,6 +88,23 @@ fun codeSnippetBlockHtml(res: FileResource): String = codeSnippetBlock(
     res.content,
 )
 
+fun copyJekyllRootFilesFromBuild(
+    outDir: Path,
+    dst: Path
+): Either<String, Unit> = try {
+    copyJekyllRootFiles(dst)
+        .flatMap {
+            // Copy generated files in the build process
+            copyDirectory(
+                outDir.resolve("_includes"),
+                dst.resolve("_includes"),
+            )
+        }
+} catch (e: IOException) {
+    e.printStackTrace()
+    e.message.orEmpty().left()
+}
+
 fun copyJekyllRootFiles(dst: Path): Either<String, Unit> = try {
     copyDirectory(
         AppFiles.pathOf(Path.of("jekyll", "Gemfile")).parent,

@@ -211,14 +211,14 @@ fun buildJekyll(outDir: Path) {
     println("Building Jekyll site...")
 
     runCommand(
-        "wsl bundle exec jekyll clean",
+        "bundle exec jekyll clean",
         outDir
     )
         .onLeft(handleError `$` "Failed to build Jekyll site")
         .onRight(::println)
 
     runCommand(
-        "wsl bundle exec jekyll build",
+        "bundle exec jekyll build",
         outDir
     )
         .onLeft(handleError `$` "Failed to build Jekyll site")
@@ -654,7 +654,7 @@ fun execDeploy(root: Path, entryName: String) {
 
     val config = buildConfigOf(root)
 
-    commitRootFiles(config.srcDir)
+    commitRootFiles(config.outDir, config.srcDir)
 
     if (entryName == ".") {
         entries.takeWhile {
@@ -685,8 +685,12 @@ fun execDeploy(root: Path, entryName: String) {
     println("✔ Deploy $entryName")
 }
 
-fun commitRootFiles(srcDir: Path) {
-    copyJekyllRootFiles(srcDir)
+fun commitRootFiles(outDir: Path, srcDir: Path) {
+    copyJekyllRootFilesFromBuild(outDir, srcDir)
+        .onLeft(handleError `$`
+            "Failed to copy build Jekyll root files from $outDir to $srcDir"
+        )
+        .getOrNull() ?: return
 
     val gitClean = runCommand("git status --porcelain")
         .onLeft(handleError `$` "Failed to check Git status")
@@ -710,9 +714,17 @@ fun commitRootFiles(srcDir: Path) {
 
 fun commitFromBuild(entry: Entry, config: BuildConfig) {
     val (srcDir, outDir) = config
+
+    // e.g. blog/article, from gh-pages branch
     val articleProdPath = srcDir.resolve(entry.name())
+
+    // e.g. blog/out/build/blog/article
     val articleBuildPath = outDir.resolve(entry.name())
+
+    // e.g. blog/out/build/blog/index.md
     val indexBuildPath = outDir.resolve("index.md")
+
+    // e.g. blog/index.md, from gh-pages branch
     val indexProdPath = srcDir.resolve("index.md")
 
     println("Committing build of ${entry.name()}")
