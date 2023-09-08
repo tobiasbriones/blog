@@ -6,25 +6,6 @@ ogimage: ""
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Blog
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      Pi Day (2022/03/14)
-    </a>
-    <ul>
-      
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
