@@ -79,3 +79,39 @@ hash, and you're smoothly led to the section via scroll.
 
 This navigation allows users with greater displays, like a monitor or tablet, to
 leverage greater power while enjoying the reading.
+
+## Mobile
+
+This is the mobile version of the responsive article navigation.
+
+As you can see, from **the bottom menu —which is also a new feature 👾—** you can
+open the navigation from the left, and it'll take the foreground of the screen.
+
+**The navigation can be expanded or hidden via the "Navigation" menu button**
+for either mobile or desktop, but this feature is more advantageous for mobile.
+
+![Mobile Article Navigation](static/mobile-article-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+Mobile Article Navigation
+</strong></p>
+</figcaption>
+
+Then, when you select a section, like `Node Circle and Content`, you'll be led
+to that section via smooth scroll:
+
+![Mobile Article Reading](static/mobile-article-reading.png)
+
+<figcaption>
+<p align="center"><strong>
+Mobile Article Reading
+</strong></p>
+</figcaption>
+
+Similarly to how a PDF is read, articles have those features now. The difference
+is that PDFs are binary files with no meaning 😐 while my articles are
+domain-specific systems (i.e., actual engineering instead of mere text) 🦾.
+
+This responsive mobile navigation will allow mobile readers to efficiently move
+among articles, even on mobile devices that can only support one view at a time.
