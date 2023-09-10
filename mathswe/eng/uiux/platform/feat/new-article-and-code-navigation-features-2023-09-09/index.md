@@ -46,3 +46,36 @@ version with only the headings or sections**[^x][^x].
 This well-designed navigation will start allowing readers to move smoothly among
 the platform articles, so besides having great qualities already, now they're
 also simpler and nice to browse with.
+
+### Desktop
+
+The desktop design has the article navigation on the left, and the article is
+focused in the center.
+
+You can see in the screenshot how the "More Recursion" section is selected in
+the navigation since the article is scrolled to that position.
+
+![New Article Navigation](static/new-article-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+New Article Navigation
+</strong></p>
+</figcaption>
+
+So, what's on the right? I'll implement that later. I'll place the footnotes,
+references, and others like the footer. That way, the design is from left to
+right, with the article centered as the page's main content.
+
+The navigation is updated whenever the reader scrolls over the article or loads
+a URL with a section hash.
+
+For example, the URL path for the selected section is
+`/drawing-a-tree-on-canvas-with-xy-coordinates#more-recursion`, indicating that,
+`more-recursion` is the section ID to select.
+
+When you select a section from the navigation, this is also applied to the URL
+hash, and you're smoothly led to the section via scroll.
+
+This navigation allows users with greater displays, like a monitor or tablet, to
+leverage greater power while enjoying the reading.
