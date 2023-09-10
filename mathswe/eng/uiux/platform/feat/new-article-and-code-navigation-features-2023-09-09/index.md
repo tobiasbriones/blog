@@ -10,7 +10,7 @@
 
 ## Article Navigation
 
-The features for navigating inside articles is in production and recently
+The features for navigating inside articles are in production and recently
 designed.
 
 Article contents navigation is fundamental to moving among the tree of
@@ -52,7 +52,7 @@ also simpler and nice to browse with.
 The desktop design has the article navigation on the left, and the article is
 focused in the center.
 
-You can see in the screenshot how the "More Recursion" section is selected in
+You can see in the screenshot how the `More Recursion` section is selected in
 the navigation since the article is scrolled to that position.
 
 ![New Article Navigation](images/new-article-navigation.png)
@@ -113,8 +113,8 @@ Similarly to how a PDF is read, articles have those features now. The difference
 is that PDFs are binary files with no meaning 😐 while my articles are
 domain-specific systems (i.e., actual engineering instead of mere text) 🦾.
 
-This responsive mobile navigation will allow mobile readers to efficiently move
-among articles, even on mobile devices that can only support one view at a time.
+This responsive mobile navigation will allow readers to efficiently move among
+articles, even on devices that can only support one view at a time.
 
 ## Source Code Navigation
 
