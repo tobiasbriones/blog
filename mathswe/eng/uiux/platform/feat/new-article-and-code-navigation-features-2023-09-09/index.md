@@ -3,3 +3,8 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # New Article and Code Navigation Features (2023/09/09)
+
+![New Article and Code Navigation Features (2023/09/09)](static/new-article-and-code-navigation-features-2023-09-09.png)
+
+---
+
