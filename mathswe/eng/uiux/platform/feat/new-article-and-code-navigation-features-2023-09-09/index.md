@@ -130,3 +130,92 @@ the project's source code besides its article.
 
 EP source code, files like markdown, and images can be browsed and viewed with
 this feature.
+
+### Accessing an Article EP
+
+Articles can have an EP (Example Project) associated with the reading, which
+has been integrated lately.
+
+I've worked with these concepts for much longer before, so now I'm executing.
+
+Underlying source code is usually a wanted feature from readers. It's when we
+beg the question, "Where's the full code?" 😸, since standalone code snippets
+often don't suffice.
+
+Further, than code, **the actual project is integrated into its article. They're
+projects inside articles (i.e., second-class); therefore, they're all EPs**.
+
+So, for richer articles with EP, you can read the publication as usual. Now, you
+can also **browse over the project's source code and run the deployment of the
+EP itself (if applicable)**.
+
+The article's EP appears at the bottom of the page, if any.
+
+![Article EP Navigation](images/article-ep-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+Article EP Navigation
+</strong></p>
+</figcaption>
+
+So you can read the source code files (and others like project Markdown docs
+and images). Each resource has its GitHub link, so you can also browse and read
+them from GitHub.
+
+![EP Source Code Navigation](images/ep-source-code-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+EP Source Code Navigation
+</strong></p>
+</figcaption>
+
+If you go to the GitHub subdirectory tree, you can browse over all (literally) 
+the source files.
+
+Recall that GitHub is a dev abstraction (lower-level), and using the web app to
+browse has the premium advantage of being a first-class experience (you don't
+exit the platform).
+
+![EP GitHub Code Navigation](static/ep-github-code-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+EP GitHub Code Navigation
+</strong></p>
+</figcaption>
+
+Code navigation has been a significant achievement in organizing and sharing my
+content and further projects. More enhancements are due in the future, but for
+now, it's a great step already.
+
+Another super exciting feature is the new standard to navigate to an EP 
+deployment path.
+
+That is, you can read the article; if it has an EP, you can open it in source
+code form. Furthermore, if the EP is a web app, it was deployed automatically
+by [SWAM Ops](/automating-the-platform-operations-and-beyond-2023-08-31)[^x]
+when the article was built. Therefore, **you can open it as a web application**.
+
+[^x]: SWAM Ops is an automation tool I've been writing for MathSwe software
+    operations, so in this case, for mathsoftware.engineer
+
+![Article EP Deployment](images/article-ep-deployment.png)
+
+<figcaption>
+<p align="center"><strong>
+Article EP Deployment
+</strong></p>
+</figcaption>
+
+This access has been available since always, but now it's standard and more
+automated, so I can worry much less about off-topic tasks when developing
+projects and articles.
+
+As you can see in the illustration, there's a URL path structure consisting of
+the article ID, the EP name (access to EP source code), and the "app" sub-path
+(access as a web app) when applicable.
+
+The new features for EP navigation are making project integration into articles
+more powerful, so they get to a further degree of quality and usefulness.
