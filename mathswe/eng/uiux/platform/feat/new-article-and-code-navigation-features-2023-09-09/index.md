@@ -4,7 +4,7 @@
 
 # New Article and Code Navigation Features (2023/09/09)
 
-![New Article and Code Navigation Features (2023/09/09)](static/new-article-and-code-navigation-features-2023-09-09.png)
+![New Article and Code Navigation Features (2023/09/09)](images/new-article-and-code-navigation-features-2023-09-09.png)
 
 ---
 
@@ -55,7 +55,7 @@ focused in the center.
 You can see in the screenshot how the "More Recursion" section is selected in
 the navigation since the article is scrolled to that position.
 
-![New Article Navigation](static/new-article-navigation.png)
+![New Article Navigation](images/new-article-navigation.png)
 
 <figcaption>
 <p align="center"><strong>
@@ -90,7 +90,7 @@ open the navigation from the left, and it'll take the foreground of the screen.
 **The navigation can be expanded or hidden via the "Navigation" menu button**
 for either mobile or desktop, but this feature is more advantageous for mobile.
 
-![Mobile Article Navigation](static/mobile-article-navigation.png)
+![Mobile Article Navigation](images/mobile-article-navigation.png)
 
 <figcaption>
 <p align="center"><strong>
@@ -101,7 +101,7 @@ Mobile Article Navigation
 Then, when you select a section, like `Node Circle and Content`, you'll be led
 to that section via smooth scroll:
 
-![Mobile Article Reading](static/mobile-article-reading.png)
+![Mobile Article Reading](images/mobile-article-reading.png)
 
 <figcaption>
 <p align="center"><strong>
