@@ -12,7 +12,8 @@ fun main() {
 //    create()
 //    serve()
 
-    runCmd("build drawing-a-tree-on-canvas-with-xy-coordinates")
+    println(ignoredPaths)
+    //runCmd("build drawing-a-tree-on-canvas-with-xy-coordinates")
 //    runCmd("build building-slides-from-screenshots-app-in-javafx jekyll")
 //    runCmd("build 4-years-since-vocational-fair-at-unah-vs-2023-05-09")
 //    runCmd("create automating-the-platform-operations-and-beyond-2023-08-31 mathswe,eng,automation,platform,ops")

@@ -281,6 +281,28 @@ fun build(entry: Entry, config: BuildConfig) {
         deleteEmptyDirectories(outEntryDir)
     }
 
+    fun copyStaticFiles() {
+        val staticDir = entry.path.resolve("static")
+        val outStaticDir = outEntryDir.resolve("static")
+
+        if (!staticDir.exists()) {
+            return
+        }
+        if (!outStaticDir.exists()) {
+            outStaticDir.createDirectory()
+        }
+
+        Files
+            .list(staticDir)
+            .filter(Path::isRegularFile)
+            .forEach {
+                it.copyTo(
+                    outStaticDir.resolve(it.name),
+                    overwrite = true,
+                )
+            }
+    }
+
     prepare()
     val index = entry
         .loadIndex()
@@ -326,6 +348,8 @@ fun build(entry: Entry, config: BuildConfig) {
     saveIndex(outEntryDir, jekyll.toMarkdownString())
     buildIndex(srcDir, outDir)
     buildSubdirectories(outDir, entry)
+    copyStaticFiles()
+
     println("✔ Build article ${entry.name()}")
 }
 
@@ -687,8 +711,9 @@ fun execDeploy(root: Path, entryName: String) {
 
 fun commitRootFiles(outDir: Path, srcDir: Path) {
     copyJekyllRootFilesFromBuild(outDir, srcDir)
-        .onLeft(handleError `$`
-            "Failed to copy build Jekyll root files from $outDir to $srcDir"
+        .onLeft(
+            handleError `$`
+                "Failed to copy build Jekyll root files from $outDir to $srcDir"
         )
         .getOrNull() ?: return
 
@@ -796,14 +821,7 @@ fun getIgnoredRelPaths(): Set<String> {
             .onLeft(
                 handleError `$` "Failed to get ignored Git files to exclude from building"
             )
-            .map { ignored ->
-                ignored
-                    .lines()
-
-                    // Allow article's static files to be copied in the build process
-                    .filter { !it.contains("/static/") }
-                    .toSet()
-            }
+            .map { ignored -> ignored.lines().toSet() }
             .getOrNull() ?: setOf()
 
     val ignoredDirs =
@@ -816,9 +834,6 @@ fun getIgnoredRelPaths(): Set<String> {
                     .lines()
                     .map { it.removePrefix("!! ") }
                     .map { it.removeSuffix("/") }
-
-                    // Allow article's static files to be copied in the build process
-                    .filter { !it.endsWith("/static") }
                     .toSet()
             }
             .getOrNull() ?: setOf()
