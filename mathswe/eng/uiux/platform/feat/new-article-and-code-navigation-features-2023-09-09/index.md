@@ -115,3 +115,18 @@ domain-specific systems (i.e., actual engineering instead of mere text) 🦾.
 
 This responsive mobile navigation will allow mobile readers to efficiently move
 among articles, even on mobile devices that can only support one view at a time.
+
+## Source Code Navigation
+
+Articles can have an associated EP (Example Project) or subdirectory in which
+there are source files that can be browsed and read now in first class without
+exiting the site.
+
+This is another win for educational content[^x] as it allows direct access to
+the project's source code besides its article.
+
+[^x]: I've provided my content on mathsoftware.engineer under CC and BSD 🆓
+    licenses so far, so it's always been education-friendly
+
+EP source code, files like markdown, and images can be browsed and viewed with
+this feature.
