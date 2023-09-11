@@ -219,3 +219,47 @@ the article ID, the EP name (access to EP source code), and the "app" sub-path
 
 The new features for EP navigation are making project integration into articles
 more powerful, so they get to a further degree of quality and usefulness.
+
+### Accessing an Article Subdirectory
+
+You can also access an article generic subdirectory with files the same way you
+do it for accessing article projects.
+
+Sometimes, source files are not projects but just files. So, they can be put
+into a subdirectory like the following example. Articles can either have EPs,
+subdirectories, or both.
+
+![Article Subdirectory Navigation](images/article-subdirectory-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+Article Subdirectory Navigation
+</strong></p>
+</figcaption>
+
+The subdirectory button appears at the bottom of the article and leads you to
+the subdirectory path.
+
+Then, you can open files to read them, as if it were a GitHub Gist containing
+the article code snippets.
+
+![Subdirectory File Navigation](images/subdirectory-file-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+Subdirectory File Navigation
+</strong></p>
+</figcaption>
+
+You can open them as files or subdirectories on GitHub too.
+
+![File GitHub Navigation](static/file-github-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+File GitHub Navigation
+</strong></p>
+</figcaption>
+
+So, besides projects, subdirectories with content can also be browsed and
+opened.
