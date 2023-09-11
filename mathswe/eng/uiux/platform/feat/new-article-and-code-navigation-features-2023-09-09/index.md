@@ -261,5 +261,5 @@ File GitHub Navigation
 </strong></p>
 </figcaption>
 
-So, besides projects, subdirectories with content can also be browsed and
-opened.
+So, besides article projects, its subdirectories with content can also be
+browsed and opened.
