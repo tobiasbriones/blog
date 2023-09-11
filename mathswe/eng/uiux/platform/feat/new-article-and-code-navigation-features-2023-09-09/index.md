@@ -263,3 +263,26 @@ File GitHub Navigation
 
 So, besides article projects, its subdirectories with content can also be
 browsed and opened.
+
+### Markdown and Further File Rendering
+
+As seen before, source code files are displayed as code, so markdown and image
+files are also rendered as such.
+
+If you open a markdown file, instead of reading its raw low-level text, you'll
+get the web app-rendered resource, which turns them into a sub-article.
+
+![Markdown File Opened](images/markdown-file-opened.png)
+
+<figcaption>
+<p align="center"><strong>
+Markdown File Opened
+</strong></p>
+</figcaption>
+
+This can be useful for EP documentation like `README.md` files.
+
+Image files can also be displayed, but that feature is still a low priority.
+
+These rendering features enrich the article projects and files so files can be
+viewed as high-level or first-class resources.
