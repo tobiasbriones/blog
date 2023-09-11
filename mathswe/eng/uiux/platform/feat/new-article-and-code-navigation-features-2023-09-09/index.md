@@ -286,3 +286,27 @@ Image files can also be displayed, but that feature is still a low priority.
 
 These rendering features enrich the article projects and files so files can be
 viewed as high-level or first-class resources.
+
+## Testing new Articles
+
+I've successfully tested the new ToC and source code navigation features in the
+coming articles in staging.
+
+As published in
+[Finishing Writing the Documentation for my Next EP (2023-07-14)](/finishing-writing-the-documentation-for-my-next-ep-2023-07-14),
+I have the article
+[Building Slides from Screenshots App in JavaFX](/building-slides-from-screenshots-app-in-javafx)
+almost ready to be published.
+
+![Excitement on new Articles Deployment](images/excitement-on-new-articles-deployment.png)
+
+<figcaption>
+<p align="center"><strong>
+Excitement on new Articles Deployment
+</strong></p>
+</figcaption>
+
+The introduction of these new platform UI/UX ergonomics will make a remarkable
+impact when releasing these kinds of polished and long articles. That's why I
+haven't published many articles and projects yet. As always, I optimize for
+quality rather than quantity.
