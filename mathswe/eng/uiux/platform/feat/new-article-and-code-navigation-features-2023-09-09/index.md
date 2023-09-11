@@ -50,8 +50,8 @@ Just to mention some designs depicted above, notice how:
     pure design decisions
 
 Notice the updates are available in production for **Engineer** (first-class)
-and the **Blog**. Another subdomain with super high priority but still "plain"
-is **Dev**, which looks to require a slightly different design.
+and the **Blog**. On the other hand, a subdomain with super high priority but
+still "plain" is **Dev**, which looks to require a slightly different design.
 
 With all this, there's much to update about these new results.
 
