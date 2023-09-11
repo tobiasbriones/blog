@@ -186,6 +186,17 @@ EP GitHub Code Navigation
 </strong></p>
 </figcaption>
 
+The following screenshot is another example of how this is achieved in 
+mobile too:
+
+![Mobile Source Code Reading](images/mobile-source-code-reading.png)
+
+<figcaption>
+<p align="center"><strong>
+Mobile Source Code Reading
+</strong></p>
+</figcaption>
+
 Code navigation has been a significant achievement in organizing and sharing my
 content and further projects. More enhancements are due in the future, but for
 now, it's a great step already.
