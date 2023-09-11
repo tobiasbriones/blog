@@ -80,7 +80,7 @@ hash, and you're smoothly led to the section via scroll.
 This navigation allows users with greater displays, like a monitor or tablet, to
 leverage greater power while enjoying the reading.
 
-## Mobile
+### Mobile
 
 This is the mobile version of the responsive article navigation.
 
