@@ -317,6 +317,28 @@ Excitement on new Articles Deployment
 </strong></p>
 </figcaption>
 
+So, this is how the source tree of the article project can be browsed. Its
+style is still plain because reading the contents of the resources is more
+important, so this has more priority over directory navigation.
+
+![Slides EP Source Tree Navigation](images/slides-ep-source-tree-navigation.png)
+
+<figcaption>
+<p align="center"><strong>
+Slides EP Source Tree Navigation
+</strong></p>
+</figcaption>
+
+This way, you can see (in the URL path) how the EP is *related* to its article:
+
+![Slides EP Source File Opened](images/slides-ep-source-file-opened.png)
+
+<figcaption>
+<p align="center"><strong>
+Slides EP Source File Opened
+</strong></p>
+</figcaption>
+
 The introduction of these new platform UI/UX ergonomics will make a remarkable
 impact when releasing these kinds of polished and long articles. That's why I
 haven't published many articles and projects yet. As always, I optimize for
