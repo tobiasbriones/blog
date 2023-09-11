@@ -84,11 +84,11 @@ That is, **the article and its navigation are the same, but the nav is a resumed
 version with only the headings or sections**[^5][^6].
 
 [^5]: It's important to see my design view to conceptualize and understand the
-principle of homogeneity —both article and nav are the *same*, with
-*different* levels of abstraction or purpose
+    principle of homogeneity —both article and nav are the *same*, with
+    *different* levels of abstraction or purpose
 
 [^6]: It could also include other major navigation links like image or table
-captions
+    captions
 
 This well-designed navigation will start allowing readers to move smoothly among
 the platform articles, so besides having great qualities already, now they're
