@@ -8,6 +8,13 @@
 
 ---
 
+Recent implementations to the article navigation (ToC), the integration of
+Example Projects (EPs) into articles, and UI/UX have made it to production for
+both mobile and desktop devices, facilitating readers a smooth and seamless
+navigation of article sections, access EP source code, EP web apps, and
+project-related files which are turning into a positive powerful impact on the
+platform's content quality and user experience.
+
 ## Updates on Platform UI UX Ergonomics
 
 The platform has received many functional and non-functional features recently.
