@@ -310,3 +310,27 @@ The introduction of these new platform UI/UX ergonomics will make a remarkable
 impact when releasing these kinds of polished and long articles. That's why I
 haven't published many articles and projects yet. As always, I optimize for
 quality rather than quantity.
+
+## Page Footer Style
+
+The site footer look has also changed recently.
+
+I tried not to change much about these secondary components because since I was
+using plain Jekyll and GitHub pages 😑. Now, I've polished the styles according
+to the design.
+
+![New Footer](images/new-footer.png)
+
+<figcaption>
+<p align="center"><strong>
+New Footer
+</strong></p>
+</figcaption>
+
+As I said, I'll put the footer strategically on the right side for the desktop
+layout so the article page in the center is more cohesive. This is because the
+footer is not part of the article, so it shouldn't go at the center but to the
+right bottom, that is, **a progressive disclosure design**.
+
+The new footer style (that was around for a while already) will put the cherry
+on top of the site design for now.
