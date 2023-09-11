@@ -43,15 +43,15 @@ Just to mention some designs depicted above, notice how:
 - Uses the Poppins font (which is the currently official font because of its
   mathematical/geometrical properties).
 - The `h1` heading is aligned to its version in the navigation view.
-- Some colors and sizes are well established (besides the Piaxid design
-  I've been devising since 2017[^1]).
+- Some colors and sizes are well established (besides the Piaxid design I've
+  been devising since 2017[^1]).
 
 [^1]: You can think of Piaxid as the philosophy I originally invented to make
     pure design decisions
 
 Notice the updates are available in production for **Engineer** (first-class)
-and the **Blog**. Another subdomain with super high priority but
-still "plain" is **Dev**, which looks to require a slightly different design.
+and the **Blog**. Another subdomain with super high priority but still "plain"
+is **Dev**, which looks to require a slightly different design.
 
 With all this, there's much to update about these new results.
 
@@ -61,8 +61,8 @@ The features for navigating inside articles are in production and recently
 designed.
 
 Article contents navigation is fundamental to moving among the tree of
-homogeneous[^2] articles I create. This way, all this high-quality content
-can be put together[^3].
+homogeneous[^2] articles I create. This way, all this high-quality content can
+be put together[^3].
 
 [^2]: My articles are homogeneous since they have the *same* design, so I can
     **scale up** the whole content as I add more articles by letting the
@@ -84,11 +84,11 @@ That is, **the article and its navigation are the same, but the nav is a resumed
 version with only the headings or sections**[^5][^6].
 
 [^5]: It's important to see my design view to conceptualize and understand the
-    principle of homogeneity —both article and nav are the *same*, with
-    *different* levels of abstraction or purpose
+principle of homogeneity —both article and nav are the *same*, with
+*different* levels of abstraction or purpose
 
 [^6]: It could also include other major navigation links like image or table
-    captions
+captions
 
 This well-designed navigation will start allowing readers to move smoothly among
 the platform articles, so besides having great qualities already, now they're
@@ -180,8 +180,8 @@ this feature.
 
 ### Accessing an Article EP
 
-Articles can have an EP (Example Project) associated with the reading, which
-has been integrated lately.
+Articles can have an EP (Example Project) associated with the reading, which has
+been integrated lately.
 
 I've worked with these concepts for much longer before, so now I'm executing.
 
@@ -206,9 +206,9 @@ Article EP Navigation
 </strong></p>
 </figcaption>
 
-So you can read the source code files (and others like project Markdown docs
-and images). Each resource has its GitHub link, so you can also browse and read
-them from GitHub.
+So you can read the source code files (and others like project Markdown docs and
+images). Each resource has its GitHub link, so you can also browse and read them
+from GitHub.
 
 ![EP Source Code Navigation](images/ep-source-code-navigation.png)
 
@@ -218,7 +218,7 @@ EP Source Code Navigation
 </strong></p>
 </figcaption>
 
-If you go to the GitHub subdirectory tree, you can browse over all (literally) 
+If you go to the GitHub subdirectory tree, you can browse over all (literally)
 the source files.
 
 Recall that GitHub is a dev abstraction (lower-level), and using the web app
@@ -237,8 +237,8 @@ EP GitHub Code Navigation
 </strong></p>
 </figcaption>
 
-The following screenshot is another example of how this is achieved in 
-mobile too:
+The following screenshot is another example of how this is achieved in mobile
+too:
 
 ![Mobile Source Code Reading](images/mobile-source-code-reading.png)
 
@@ -252,7 +252,7 @@ Code navigation has been a significant achievement in organizing and sharing my
 content and further projects. More enhancements are due in the future, but for
 now, it's a great step already.
 
-Another super exciting feature is the new standard to navigate to an EP 
+Another super exciting feature is the new standard to navigate to an EP
 deployment path.
 
 That is, you can read the article; if it has an EP, you can open it in source
@@ -368,9 +368,9 @@ Excitement on new Articles Deployment
 </strong></p>
 </figcaption>
 
-So, this is how the source tree of the article project can be browsed. Its
-style is still plain because reading the contents of the resources is more
-important, so this has more priority over directory navigation.
+So, this is how the source tree of the article project can be browsed. Its style
+is still plain because reading the contents of the resources is more important,
+so this has more priority over directory navigation.
 
 ![Slides EP Source Tree Navigation](images/slides-ep-source-tree-navigation.png)
 
