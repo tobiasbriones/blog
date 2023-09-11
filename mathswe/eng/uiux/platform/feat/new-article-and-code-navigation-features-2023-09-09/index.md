@@ -37,9 +37,9 @@ Just to mention some designs depicted above, notice how:
   mathematical/geometrical properties).
 - The `h1` heading is aligned to its version in the navigation view.
 - Some colors and sizes are well established (besides the Piaxid design
-  I've been devising since 2017[^x]).
+  I've been devising since 2017[^1]).
 
-[^x]: You can think of Piaxid as the philosophy I originally invented to make
+[^1]: You can think of Piaxid as the philosophy I originally invented to make
     pure design decisions
 
 With all this, there's much to update about these new results.
@@ -50,19 +50,19 @@ The features for navigating inside articles are in production and recently
 designed.
 
 Article contents navigation is fundamental to moving among the tree of
-homogeneous[^x] articles I create. This way, all this high-quality content
-can be put together[^x].
+homogeneous[^2] articles I create. This way, all this high-quality content
+can be put together[^3].
 
-[^x]: My articles are homogeneous since they have the *same* design, so I can
+[^2]: My articles are homogeneous since they have the *same* design, so I can
     **scale up** the whole content as I add more articles by letting the
     platform design principles **constant** (i.e., relativity)
 
-[^x]: Recall the cohesion principle to build greater wholes
+[^3]: Recall the cohesion principle to build greater wholes
 
-I finished polishing the so-called **ToC (Table of Contents)**[^x] feature this
+I finished polishing the so-called **ToC (Table of Contents)**[^4] feature this
 time.
 
-[^x]: I don't like using those commonly used generic terms you see from older
+[^4]: I don't like using those commonly used generic terms you see from older
     computing and academia, like "table" of "contents," because it makes the
     articles more heterogeneous by using those repetitive stereotypes
 
@@ -70,13 +70,13 @@ From design, we have that an article is the same as its navigation, so both have
 a different level of abstraction.
 
 That is, **the article and its navigation are the same, but the nav is a resumed
-version with only the headings or sections**[^x][^x].
+version with only the headings or sections**[^5][^6].
 
-[^x]: It's important to see my design view to conceptualize and understand the
+[^5]: It's important to see my design view to conceptualize and understand the
     principle of homogeneity —both article and nav are the *same*, with
     *different* levels of abstraction or purpose
 
-[^x]: It could also include other major navigation links like image or table
+[^6]: It could also include other major navigation links like image or table
     captions
 
 This well-designed navigation will start allowing readers to move smoothly among
@@ -158,10 +158,10 @@ Articles can have an associated EP (Example Project) or subdirectory in which
 there are source files that can be browsed and read now in first class without
 exiting the site.
 
-This is another win for educational content[^x] as it allows direct access to
+This is another win for educational content[^7] as it allows direct access to
 the project's source code besides its article.
 
-[^x]: I've provided my content on mathsoftware.engineer under CC and BSD 🆓
+[^7]: I've provided my content on mathsoftware.engineer under CC and BSD 🆓
     licenses so far, so it's always been education-friendly
 
 EP source code, files like markdown, and images can be browsed and viewed with
@@ -212,9 +212,9 @@ the source files.
 
 Recall that GitHub is a dev abstraction (lower-level), and using the web app
 (i.e., mathsoftware.engineer) to browse has the premium advantage of being a
-first-class experience (you don't exit the platform[^x]).
+first-class experience (you don't exit the platform[^8]).
 
-[^x]: Relatable with the math closure principle: **enjoy an uninterrupted
+[^8]: Relatable with the math closure principle: **enjoy an uninterrupted
     workflow in MathSwe, as any operation you perform in MathSwe stays in
     MathSwe** 🔢
 
@@ -246,10 +246,10 @@ deployment path.
 
 That is, you can read the article; if it has an EP, you can open it in source
 code form. Furthermore, if the EP is a web app, it was deployed automatically
-by [SWAM Ops](/automating-the-platform-operations-and-beyond-2023-08-31)[^x]
+by [SWAM Ops](/automating-the-platform-operations-and-beyond-2023-08-31)[^9]
 when the article was built. Therefore, **you can open it as a web application**.
 
-[^x]: SWAM Ops is an automation tool I've been writing for MathSwe software
+[^9]: SWAM Ops is an automation tool I've been writing for MathSwe software
     operations, so in this case, for mathsoftware.engineer
 
 ![Article EP Deployment](images/article-ep-deployment.png)
