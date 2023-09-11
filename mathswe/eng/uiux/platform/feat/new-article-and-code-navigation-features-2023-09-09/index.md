@@ -263,11 +263,11 @@ when the article was built. Therefore, **you can open it as a web application**.
 [^9]: SWAM Ops is an automation tool I've been writing for MathSwe software
     operations, so in this case, for mathsoftware.engineer
 
-![Article EP Deployment](images/article-ep-deployment.png)
+![Article EP Web App](images/article-ep-web-app.png)
 
 <figcaption>
 <p align="center"><strong>
-Article EP Deployment
+Article EP Web App
 </strong></p>
 </figcaption>
 
