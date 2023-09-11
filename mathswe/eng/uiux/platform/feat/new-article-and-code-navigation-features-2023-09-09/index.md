@@ -8,6 +8,42 @@
 
 ---
 
+## Updates on Platform UI UX Ergonomics
+
+The platform has received many functional and non-functional features recently.
+
+![New Style and Features](images/new-style-and-features.png)
+
+<figcaption>
+<p align="center"><strong>
+New Style and Features
+</strong></p>
+</figcaption>
+
+There have been updates on the standards in various regards.
+
+As previously noticed on
+[Automating the Platform Operations and Beyond (2023/08/31)](/automating-the-platform-operations-and-beyond-2023-08-31),
+there have been operations features internally to start automating design
+decisions and workflows.
+
+Page styles and new UI/UX features are also available in production.
+
+Just to mention some designs depicted above, notice how:
+
+- The page layout focuses the article in the center as the main content.
+- Puts the navigation to the left.
+- Uses the Poppins font (which is the currently official font because of its
+  mathematical/geometrical properties).
+- The `h1` heading is aligned to its version in the navigation view.
+- Some colors and sizes are well established (besides the Piaxid design
+  I've been devising since 2017[^x]).
+
+[^x]: You can think of Piaxid as the philosophy I originally invented to make
+    pure design decisions
+
+With all this, there's much to update about these new results.
+
 ## Article Navigation
 
 The features for navigating inside articles are in production and recently
