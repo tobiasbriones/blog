@@ -176,7 +176,11 @@ the source files.
 
 Recall that GitHub is a dev abstraction (lower-level), and using the web app
 (i.e., mathsoftware.engineer) to browse has the premium advantage of being a
-first-class experience (you don't exit the platform).
+first-class experience (you don't exit the platform[^x]).
+
+[^x]: Relatable with the math closure principle: **enjoy an uninterrupted
+    workflow in MathSwe, as any operation you perform in MathSwe stays in
+    MathSwe** 🔢
 
 ![EP GitHub Code Navigation](static/ep-github-code-navigation.png)
 
