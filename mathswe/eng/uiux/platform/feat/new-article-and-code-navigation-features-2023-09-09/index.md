@@ -257,7 +257,8 @@ deployment path.
 
 That is, you can read the article; if it has an EP, you can open it in source
 code form. Furthermore, if the EP is a web app, it was deployed automatically
-by [SWAM Ops](/automating-the-platform-operations-and-beyond-2023-08-31)[^9]
+by
+[SWAM Ops](/automating-the-platform-operations-and-beyond-2023-08-31#commands)[^9]
 when the article was built. Therefore, **you can open it as a web application**.
 
 [^9]: SWAM Ops is an automation tool I've been writing for MathSwe software
