@@ -407,3 +407,10 @@ right bottom, that is, **a progressive disclosure design**.
 
 The new footer style (that was around for a while already) will put the cherry
 on top of the site design for now.
+
+## Powering the Platform Articles with Advanced Navigation
+
+The latest article navigation (i.e., table of contents), EP and subdirectory
+access, and the application of styles have turned the platform articles into
+powerful math software engineering references and have also turned into more
+establishing MathSwe standards implemented into UI/UX ergonomics.
