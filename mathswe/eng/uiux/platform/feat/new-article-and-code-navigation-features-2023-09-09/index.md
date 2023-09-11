@@ -174,9 +174,9 @@ EP Source Code Navigation
 If you go to the GitHub subdirectory tree, you can browse over all (literally) 
 the source files.
 
-Recall that GitHub is a dev abstraction (lower-level), and using the web app to
-browse has the premium advantage of being a first-class experience (you don't
-exit the platform).
+Recall that GitHub is a dev abstraction (lower-level), and using the web app
+(i.e., mathsoftware.engineer) to browse has the premium advantage of being a
+first-class experience (you don't exit the platform).
 
 ![EP GitHub Code Navigation](static/ep-github-code-navigation.png)
 
