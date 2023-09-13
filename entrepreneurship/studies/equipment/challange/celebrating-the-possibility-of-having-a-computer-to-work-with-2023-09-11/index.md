@@ -63,6 +63,72 @@ times are just the beginning of the beginning.
 
 ### My Very First Computer
 
+The first computer I had was a gift (because it didn't turn on), but 
+I could find the pattern to make it work and give it a try for a 
+long while.
+
+The computer was a Dell Optiplex GX270 from 2003 that they gave me near 2011 (if
+memory serves me right). The "gift" was due to the machine's state —*it didn't
+turn on and was basically trash* 🤯.
+
+It had a trick to turn it on, and as expected —*I'm well known for finding 
+mysterious patterns*.
+
+It was a Pentium 4 HT with 512MB DDR of RAM Windows XP and 40GB of HHD disk in
+~2011, and it didn't even turn on well 💥.
+
+In a few moments, I was able to find the trick (as far as I remember): I just
+had to plug the power cord, and when the LED turns on, quickly unplug it and
+plug it back again ✔.
+
+I used first, mobile data[^x] (from my LG Optimus ME I had for a long time, and
+after having my Moto Q[^x]) via USB to share the connection, then a residential
+`512Kbps` was acquired[^x] to "do homeworks" you know[^x].
+
+[^x]: Fun Fact 🐯: In the beginning (in 2009), I used phone balance
+    (with some 3x or 4x balance bonus, I used to buy 1GB packs in the end to
+    have one day 👾) to enter the internet in a Samsung phone (not smart) I
+    bought at about $30 (then was cheapened to about $10 after I paid for it
+    😒), and I dreamed to be able to play web videos on that tiny
+    $$96x96 pixels^?$$ brick (something impossible obviously)
+
+[^x]: The Moto Q is one main pillar of my story as it was a failed device, and
+    its internet connection never worked, but even so, I hacked into it to get
+    internet (GPRS/EDGE) for free
+
+[^x]: For buggy reasons due to the old contract, I guess; I got to have 10Mbps
+    speed for months after some years in about 2017, then 512Kbps, then 20Mbps
+    other time, then slow again
+
+[^x]: I leveraged everything I could to learn; I've always been self-taught
+
+I haven't mentioned **I never had a monitor until 2019, when I was first able to
+buy my HP 22cwa (22" FHD)**.
+
+I used a ~~scholarship~~ service job scholarship[^x] money I got in late 2018
+to buy my first monitor and desk to work on.
+
+[^x]: I was persuaded to engage in this university program since I wasn't even
+    applicable due to my two simultaneous majors, and it's only about
+    bureaucracy and service work, totally unemphatic to super tough careers like
+    mathematics due to other issues like incompatible requirements they ask
+
+So, until 2019, I had to use the house TV as a huge 32" monitor, but 720p
+resolution 😵. Besides having *extremely low pixel density*, it was getting
+older, too.
+
+If that wasn't enough, I had that TV available because it was a supermarket
+raffle we won in 2009 by mere chance of life. I don't know what could've
+happened if it wasn't for that touch of luck long ago.
+
+Therefore, with all this context, I could endure at the beginning of this tech
+era.
+
+My first computer, a Dell Optiplex GX270 from 2003, was a "gift" in ~2011,
+albeit not in working condition, but I managed to decipher the pattern to bring
+it to life. I didn't even have a monitor until 2019. Until then, I relied on the
+32" 720p house TV, and the internet connection was what I could barely afford.
+
 ### The First Computer I Bought
 
 ![Optiplex 745 Barebones 1 2017](static/optiplex-745-barebones-1-2017.jpg)
