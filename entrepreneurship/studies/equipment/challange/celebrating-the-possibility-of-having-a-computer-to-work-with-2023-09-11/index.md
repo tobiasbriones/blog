@@ -142,7 +142,7 @@ The computer was gross: Pentium D 2.8Ghz, 1GB of RAM DDR2, 80GB of HDD
 disk, and Windows XP or 7 if I wanted.
 
 If that's not enough, I was also scammed: the HDD failed after a few months
-(I had to reinstall Windows 7 every day 🤪 and buy a new one).
+(I had to reinstall Windows 7 every day 🤪 and buy a new disk).
 
 Okay, so I used this computer for a few years more, but the experience was
 horrible, like the previous one.
@@ -222,9 +222,9 @@ to nonsense political strikes.
 Most of what I've learned (and played) has been through these miserably low-end
 refurbished equipment. I made and flashed Android ROMs in ~2012, started
 learning Java concepts and Android development, graduated from my electronics
-high school career in 2014 (e.g., as the only one who could program),
+high school career in 2014 (e.g., I was the only one who could program),
 already did web development in 2015[1], learned English almost from scratch in
-2015, and got to study two majors with top global grades, etc.
+2015, and got to study two majors at the university with top global grades, etc.
 
 In other words, these pictures represent a genius's successful struggles.
 Engineers solve problems, and mathematicians optimize. That's what I do.
@@ -232,7 +232,8 @@ Engineers solve problems, and mathematicians optimize. That's what I do.
 **I appreciate the goodwill efforts I've made as a form of original art**.
 It's a lovely motivation where I make the good of the past persist[^x].
 
-[^x]: Persisting your genuine achievements is a key to be **relative and scale**
+[^x]: Persisting your genuine achievements is a key to be **relative and
+    scale**, e.g., you keep using today what you achieved 15 years ago
 
 So it was incredibly challenging to have learned so much and moved on with
 machines and third-world living conditions like these.
