@@ -219,6 +219,24 @@ much lag, lack of resources, or unfavorable life limitations.
 I was in my first year of university by then, but there were many terms lost due
 to nonsense political strikes.
 
+Most of what I've learned (and played) has been through these miserably low-end
+refurbished equipment. I made and flashed Android ROMs in ~2012, started
+learning Java concepts and Android development, graduated from my electronics
+high school career in 2014 (e.g., as the only one who could program),
+already did web development in 2015[1], learned English almost from scratch in
+2015, and got to study two majors with top global grades, etc.
+
+In other words, these pictures represent a genius's successful struggles.
+Engineers solve problems, and mathematicians optimize. That's what I do.
+
+**I appreciate the goodwill efforts I've made as a form of original art**.
+It's a lovely motivation where I make the good of the past persist[^x].
+
+[^x]: Persisting your genuine achievements is a key to be **relative and scale**
+
+So it was incredibly challenging to have learned so much and moved on with
+machines and third-world living conditions like these.
+
 That Optiplex 745 was the first computer I bought, which made me pass through
 many weird challenges.
 
