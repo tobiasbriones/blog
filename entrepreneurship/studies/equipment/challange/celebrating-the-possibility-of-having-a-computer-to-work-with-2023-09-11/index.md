@@ -255,3 +255,8 @@ Excited Unpacking of the Optiplex 790 (2017/09/11)
 
 ### Moving Forward Times
 
+## References
+
+[1] tobiasbriones/word-knowledge: App that lets you play word games for fun or
+practicing languages. (n.d.). GitHub.
+[Word Knowledge \| GitHub](https://github.com/tobiasbriones/word-knowledge)
