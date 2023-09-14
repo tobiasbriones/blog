@@ -241,7 +241,52 @@ machines and third-world living conditions like these.
 That Optiplex 745 was the first computer I bought, which made me pass through
 many weird challenges.
 
-#### The other Legend in the History: My Mobile Phone
+#### My Mobile Phone during the University
+
+The Hyundai UNO L505 was the low-end phone that was with me for over 6 years
+during the university, and I used it to learn much of what I know today.
+
+I bought it for about $110 in early 2016 when it had a "discount" (it was
+cheapened about $30 a few months later I bought it 😒). It was a low-end (the
+best of the worst) that I could afford with all my current savings. It was a
+good decision ✔. I was in a hurry to get a phone.
+
+I wanted to buy it because **I always choose elegant designs**. Albeit the
+Optiplex 745 PC *wasn't elegant at all but a Frankenstein*, I did what I could.
+
+The model was elegant, had a "big" 5" screen, and was under the budget.
+
+Its MediaTek quad-core processor and Mali-T720 MP2 sucked for gaming, so I had
+to do what I could[^x].
+
+[^x]: If you wonder why gaming's been important to me, it's because it allows me
+to engage with mental models, and it's also been the only escape I've had
+
+**I used this phone to study when my computer was broken or when I was at the
+university**.
+
+That's how I learned programming, electronics, English, physics I and II, math
+from calculus to topology, abstract algebra, etc. I also held top grades, if
+that wasn't enough.
+
+Since I make decisions with rationale, I always wanted to keep working with
+desktop refurbished computers because of their power and low prices, even when
+they're old junk; it's pretty strategic as it was impossible to get anything
+better as a student.
+
+Power is everything when being an engineer. Laptops were always a complete joke
+for me, and developing engineering skills as a self-taught was always a 
+priority. Hence, I chose desktops over laptops.
+
+The problem with desktops is that I was screwed up when I needed a "computer"
+(they mean a laptop) for an exam or work.
+
+The trade-off is crucial: a powerful laptop (which is nonsense) costs you many
+times more than an older and powerful Optiplex desktop. Not to say the
+maintenance costs of toy laptops.
+
+So, **I used my phone to read PDF books and copy math problems to solve while on
+the university campus**.
 
 ![Hyundai UNO 2016-2022](static/hyundai-uno-2016--2022.jpg)
 
@@ -250,6 +295,23 @@ many weird challenges.
 Hyundai UNO 2016-2022
 </strong></p>
 </figcaption>
+
+The screen got broken in the end because I thought I dropped it into my pocket,
+but it fell out to the corner of the concrete 😣. It still worked and used it for
+about 2 years more.
+
+Then, I understood that **any computer or device is useful for learning if you
+have the discipline to supersede your limits. The real problem is when you have
+to professionally work: you need a powerful workstation to work as a
+professional engineer**.
+
+I'm currently working in my office and automating design decisions, but it's
+never been easy: you need a pricey engineering office to work and get money, but
+you also need money to get decent equipment to work with. If you know me, you
+understand that **I use relativity to get out of these *cycles***.
+
+That's how my phone was a necessary element I leveraged during these developing
+times and allowed me to study and do much out of it.
 
 ## My Opportunity: The Optiplex 790
 
