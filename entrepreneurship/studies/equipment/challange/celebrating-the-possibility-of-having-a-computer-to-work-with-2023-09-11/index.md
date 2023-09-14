@@ -131,38 +131,96 @@ it to life. I didn't even have a monitor until 2019. Until then, I relied on the
 
 ### The First Computer I Bought
 
-![Optiplex 745 Barebones 1 2017](static/optiplex-745-barebones-1-2017.jpg)
+Approximately around 2013, I could actually buy a computer: The Dell Optiplex
+745, another terrible computer.
+
+I had some savings of about $90 and could afford to buy a refurbished 745 back
+then. It was a bad decision: for a few bucks, I could get a Core2Duo version.
+Never mind.
+
+The computer was gross: Pentium D 2.8Ghz, 1GB of RAM DDR2, 80GB of HDD
+disk, and Windows XP or 7 if I wanted.
+
+If that's not enough, I was also scammed: the HDD failed after a few months
+(I had to reinstall Windows 7 every day 🤪 and buy a new one).
+
+Okay, so I used this computer for a few years more, but the experience was
+horrible, like the previous one.
+
+That Pentium D is most likely **the worst dual-core Intel processor**. It got
+overly hot, and the fan made so much noise that you could hear it from the house
+entrance[^x].
+
+[^x]: When I started using the CPU by opening software, the fan went all the
+    way up; remember that ambient temperatures were (still are) about 36 °C most
+    of the time
+
+I was learning programming, and one day, I opened up Android Studio (recall, 1
+GB of RAM). Say no more. I had to unplug the cord from the power outlet to
+unfreeze the computer in its misery 💥. Seriously, Android Studio in 1 GB of
+memory? 😆.
+
+I used Eclipse with the Android SDK for many years for Java and Android, from
+about 2013 to 2017.
+
+Not to say video games, I played what I could.
+
+Now, something wrong happened in 2016. I was cleaning the PC, but when I closed
+the CPU socket, it made a funny noise 🤪. I just had screwed up the CPU socket
+pins, and now I had to get a new motherboard.
+
+All Optiplex PCs I've had have been small form factor, by the way.
+
+Unfortunately, I didn't find any spare parts, so I had to settle with a Mini
+Tower motherboard I found on eBay.
+
+After receiving the motherboard, I set up everything again, but a mad truth I
+knew was coming: it didn't fit in the SFF case 😂:
+
+![Optiplex 745 Barebones 1 2016-2017](static/optiplex-745-barebones-1-2016--2017.jpg)
 
 <figcaption>
 <p align="center"><strong>
-Optiplex 745 Barebones 1 2017
+Optiplex 745 Barebones 1 2016-2017
 </strong></p>
 </figcaption>
 
 
-![Optiplex 745 Barebones 2 2017](static/optiplex-745-barebones-2-2017.jpg)
+![Optiplex 745 Barebones 2 2016-2017](static/optiplex-745-barebones-2-2016--2017.jpg)
 
 <figcaption>
 <p align="center"><strong>
-Optiplex 745 Barebones 2 2017
+Optiplex 745 Barebones 2 2016-2017
 </strong></p>
 </figcaption>
 
-![Optiplex 745 Barebones 3 2017](static/optiplex-745-barebones-3-2017.jpg)
+![Optiplex 745 Barebones 3 2016-2017](static/optiplex-745-barebones-3-2016--2017.jpg)
 
 <figcaption>
 <p align="center"><strong>
-Optiplex 745 Barebones 3 2017
+Optiplex 745 Barebones 3 2016-2017
 </strong></p>
 </figcaption>
 
-![Optiplex 745 Barebones 4 2017](static/optiplex-745-barebones-4-2017.jpg)
+![Optiplex 745 Barebones 4 2016-2017](static/optiplex-745-barebones-4-2016--2017.jpg)
 
 <figcaption>
 <p align="center"><strong>
-Optiplex 745 Barebones 4 2017
+Optiplex 745 Barebones 4 2016-2017
 </strong></p>
 </figcaption>
+
+The solution was to **assemble it barebones** and try to be careful with that
+environment.
+
+Even so, nothing stopped me from keeping growing and learning. No matter how
+much lag, lack of resources, or unfavorable life limitations.
+
+I was in my first year of university by then, but there were many terms lost due
+to nonsense political strikes.
+
+That Optiplex 745 was the first computer I bought, which made me pass through
+many weird challenges.
 
 #### The other Legend in the History: My Mobile Phone
 
