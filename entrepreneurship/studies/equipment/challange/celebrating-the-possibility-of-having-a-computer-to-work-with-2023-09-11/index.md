@@ -316,7 +316,50 @@ times and allowed me to study and do much out of it.
 
 ## My Opportunity: The Optiplex 790
 
-### The First Time I could have a Powerful Computer
+### The First Time I Could Have a Powerful Computer
+
+In 2017, I could afford to buy a relatively powerful computer with less than
+$200 I saved during two months of university strikes.
+
+There were more strikes at the university in 2017, and they canceled a term that
+was reset after all.
+
+I was currently taking[^x] "Differential Equations," "Data Structures," "Complex
+Variable," "Physics I," "Calculus III," and "Introduction to Systems
+Engineering." **Six classes for a single term, an excessively challenging life
+environment, and top grades were another seriously massive success**. No one
+ordinary can keep up with that. *The physics professor (i.e., the department
+boss and the hardest one to approve) even gave me money to go to the cinema as I
+had the best exams out of all physics sections*[^x].
+
+[^x]: It was the II term in 2017 that was expanded to the rest of the year
+    (consuming the III term that was lost) due to more strikes
+
+[^x]: It's popular that most engineering students don't pass these classes the
+    first time, so giving some "prize" was a "motivational experiment," but
+    these always failed
+
+Back then, I had thought to buy something about $130 I could afford, but the
+options were gross as well: I could only have old garbage like Core2Duo
+computers at best.
+
+I saved money for two months of strikes while I was studying at home with my
+phone and the Frankenstein. Then, **it was super exciting when I checked the
+announcement on the internet with I5 processor computers under the budget!**
+
+I was really happy when I found that I didn't have to buy another horrible
+computer from 2008 or older, like a Core2Duo. It was the first time I came
+across "powerful" quad-core PCs at that price.
+
+This time was a special milestone for me since **it was the first time I was
+going to have a computer so powerful**: The Dell Optiplex 790 (SFF, year 2011)
+with I5 2400 3. 1Ghz, 4GB of RAM DDR3 and 250GB HHD.
+
+I'd never had and had felt how it is to have a quad-core I5 processor, 4GB of
+RAM, and a computer that didn't look like Frankenstein. For most people, that's
+something ordinary, but for me, it was a dream.
+
+Therefore, I went to the store ("Tecknos Design") and acquired my computer.
 
 ![Optiplex 790 Receipt (2017/09/11)](static/optiplex-790-receipt-2017-09-11.png)
 
@@ -326,6 +369,9 @@ Optiplex 790 Receipt (2017/09/11)
 </strong></p>
 </figcaption>
 
+I got the computer delivered to my house an afternoon at 5 pm, and it was great.
+I'd never had computers like these before. Fortunately, that day was finally
+realized.
 
 ![Excited Unpacking of the Optiplex 790 (2017/09/11)](static/excited-unpacking-of-the-optiplex-790-2017-09-11.jpg)
 
@@ -334,6 +380,21 @@ Optiplex 790 Receipt (2017/09/11)
 Excited Unpacking of the Optiplex 790 (2017/09/11)
 </strong></p>
 </figcaption>
+
+I removed the wrap[^x], started using the "new" (refurbished) computer, and
+started noticing the huge differences compared to older machines[^x].
+
+[^x]: Fun Fact 🐯: In events like these, I take pictures, so this time, I can
+    write it down, for example
+
+[^x]: After six years, I'm writing this article about the day I first
+    got a decent computer 👾, i.e., **I feel the semantics of what happens to
+    me**
+
+As I said, I still didn't have a monitor, so continued using the TV until 2019.
+
+By achieving this Optiplex 790, a lot of future terrain to conquer was waiting,
+and here we are now, building that mathematical and software engineering future I had longed for so much.
 
 ### Moving Forward Times
 
