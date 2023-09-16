@@ -41,8 +41,8 @@ of dragging the scroll bar, and that the GTA Vice City introduction wasn't
 mandatory and could be skipped.
 
 One day, I sat down and imagined in my mind how I played FIFA on the old
-square house TV when turned off. I was developing abstract skills out of
-need: I couldn't have a decent computer or any at all.
+square house TV when turned off. **I was developing abstract skills out of
+need: I couldn't have a decent computer or any at all**.
 
 They were learning and gaming times[^x][^x]. I started from nothing at a fast
 learning rate, given the extreme limitations.
@@ -247,7 +247,7 @@ The Hyundai UNO L505 was the low-end phone that was with me for over 6 years
 during the university, and I used it to learn much of what I know today.
 
 I bought it for about $110 in early 2016 when it had a "discount" (it was
-cheapened about $30 a few months later I bought it 😒). It was a low-end (the
+cheapened about $30 a few months after I bought it 😒). It was a low-end (the
 best of the worst) that I could afford with all my current savings. It was a
 good decision ✔. I was in a hurry to get a phone.
 
@@ -260,14 +260,14 @@ Its MediaTek quad-core processor and Mali-T720 MP2 sucked for gaming, so I had
 to do what I could[^x].
 
 [^x]: If you wonder why gaming's been important to me, it's because it allows me
-to engage with mental models, and it's also been the only escape I've had
+    to engage with mental models, and it's also been the only escape I've had
 
 **I used this phone to study when my computer was broken or when I was at the
 university**.
 
-That's how I learned programming, electronics, English, physics I and II, math
-from calculus to topology, abstract algebra, etc. I also held top grades, if
-that wasn't enough.
+With low-end and even broken devices like all these, I learned much like
+programming, electronics, English, physics I and II, math from calculus to
+topology, abstract algebra, etc. I also held top grades, if that wasn't enough.
 
 Since I make decisions with rationale, I always wanted to keep working with
 desktop refurbished computers because of their power and low prices, even when
@@ -279,7 +279,8 @@ for me, and developing engineering skills as a self-taught was always a
 priority. Hence, I chose desktops over laptops.
 
 The problem with desktops is that I was screwed up when I needed a "computer"
-(they mean a laptop) for an exam or work.
+(they mean a laptop) for a in-campus exam or work (online classes didn't exist
+until 2020).
 
 The trade-off is crucial: a powerful laptop (which is nonsense) costs you many
 times more than an older and powerful Optiplex desktop. Not to say the
