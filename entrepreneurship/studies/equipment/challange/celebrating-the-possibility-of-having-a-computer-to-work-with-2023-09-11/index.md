@@ -174,6 +174,14 @@ All Optiplex PCs I've had have been small form factor, by the way.
 Unfortunately, I didn't find any spare parts, so I had to settle with a Mini
 Tower motherboard I found on eBay.
 
+![Order of Mini Tower Motherboard](static/order-of-mini-tower-motherboard.png)
+
+<figcaption>
+<p align="center"><strong>
+Order of Mini Tower Motherboard
+</strong></p>
+</figcaption>
+
 After receiving the motherboard, I set up everything again, but a mad truth I
 knew was coming: it didn't fit in the SFF case 😂:
 
@@ -184,7 +192,6 @@ knew was coming: it didn't fit in the SFF case 😂:
 Optiplex 745 Barebones 1 2016-2017
 </strong></p>
 </figcaption>
-
 
 ![Optiplex 745 Barebones 2 2016-2017](static/optiplex-745-barebones-2-2016--2017.jpg)
 
