@@ -379,7 +379,7 @@ Optiplex 790 Receipt (2017/09/11)
 </strong></p>
 </figcaption>
 
-I hate it when they misspell "Tobias" by "Tobillas", but never mind 😡.
+I hate when they misspell "Tobias" by "Tobillas," but never mind 😡.
 
 I got the computer delivered to my house an afternoon at 5 pm, and it was great.
 I'd never had computers like these before. Fortunately, that day was finally
