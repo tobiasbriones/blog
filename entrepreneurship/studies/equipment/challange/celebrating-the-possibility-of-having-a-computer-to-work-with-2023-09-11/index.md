@@ -323,6 +323,9 @@ times and allowed me to study and do much out of it.
 
 ## My Opportunity: The Optiplex 790
 
+For the first time, I could finally get a worthy computer that has been with 
+me over the last six years for both school and work.
+
 ### The First Time I Could Have a Powerful Computer
 
 In 2017, I could afford to buy a relatively powerful computer with less than
