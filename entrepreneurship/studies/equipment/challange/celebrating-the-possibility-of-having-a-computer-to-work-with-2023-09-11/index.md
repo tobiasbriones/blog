@@ -407,6 +407,46 @@ and here we are now, building that mathematical and software engineering future 
 
 ### Moving Forward Times
 
+The upgrade of having a 2nd gen I5 processor with 4GB of RAM was great, but it
+still was far from usable, so I leveraged a few strategic hardware upgrades to
+get a usable workstation out of the Optiplex 790 SSF.
+
+First, I bought a Samsung EVO 860 SSD of 250GB and 2x2GB of memory of the same
+kind via the Internet.
+
+![Order of Memory and Samsung SSD](static/order-of-memory-and-samsung-ssd.png)
+
+<figcaption>
+<p align="center"><strong>
+Order of Memory and Samsung SSD
+</strong></p>
+</figcaption>
+
+By passing from 4GB to 8GB of memory, I could be solvent with most memory
+limitations[^x].
+
+[^x]: Now in 2023, 8GB of RAM is mostly useless for working as software is so
+    bloated and requirements have advanced
+
+A Samsung SSD was a top upgrade for its performance, even when it was a SATA
+drive. SSDs were **expensive** at those times, I wanted to make the most out of
+my PC. It was overkill, but pretty fair.
+
+A 2.5" SSD renews those old computers, the change was extraordinary. If you move
+from a HHD to an SSD, the computer will feel like a new one, and the CPU can be
+used more often by avoiding slack time.
+
+I could've gotten a processor upgrade from the current I5 2400 to an I7 2600,
+but I never had the money or the chance, and it wasn't as rewarding as the SSD
+and RAM upgrades.
+
+Not to say getting a low-profile graphics card. The only option I was excited
+about was the GT 1030, but it was the same story as the processor upgrade, and
+GPUs get much more expensive, which makes it harder to achieve.
+
+As you can see, I could buy these resources (RAM and SSD) for my computer one
+year later.
+
 ## References
 
 [1] tobiasbriones/word-knowledge: App that lets you play word games for fun or
