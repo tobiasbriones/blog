@@ -447,6 +447,69 @@ GPUs get much more expensive, which makes it harder to achieve.
 As you can see, I could buy these resources (RAM and SSD) for my computer one
 year later.
 
+#### Last Challenges
+
+Two terrible events happened later: the mouse (literally) and the SSD stroke.
+
+**The first event** was the very day when I bought my first monitor. I was
+moving things to "install" it, but when I turned on the PC, it didn't work 😯. It
+was a jerk mouse that pissed and short-circuited the motherboard 😡. Its fate was
+also terrible: when it ran like crazy out of the computer when I opened it and
+lifted it, I let the computer fall out of phobia when I saw the little jerk
+running out, and then, the computer fell onto the mouse 💀. End of the story 🤪.
+
+That was in December 2018. I was about two months without a computer, and
+couldn't use the desk and monitor (for the first time) I just had bought.
+
+Again, I had to use my phone and paper to keep designing Piaxid and studying
+in "vacations" this time.
+
+I tend to go open-minded and philosophic when I don't have a computer or there's
+some power outage. It's another way to forcefully escape the routine, similar to
+gaming, writing, painting, etc.
+
+**The second event** was the SSD loss.
+
+**I enjoyed the Samsung SSD so much: it was the only premium part I had in my
+computer**. But something horrible happened one year after buying it (i.e., late
+2019): there was a power outage that struck twice; I left for the university,
+and when I turned the PC on when I came back, it didn't turn on 😐.
+
+The voltage regulator I had didn't help at all, and *the posterior power strikes
+that day happened after the PC was off,* but even though, it got broken, so it
+was all frustrated 😡.
+
+You know. In a bottom third-world country, this happens all the time: life
+conditions are excessively hard to get by with.
+
+I couldn't afford a UPS until late 2020, so that's all I could do.
+
+The computer was fine, but the SSD died completely.
+
+As depicted above, you can see how **the Optiplex 745 lasted everything when
+plugged directly into the wall outlet. I wasn't close to having more than
+that set up at those times**. I used it "barebones," and it still worked. Of
+course, "Frankenstein" hardware is ordinary and supports faults, but refined
+electronics like SSDs are pretty delicate.
+
+I've been using mundane Kingston A400 SSDs until now. They turned out to be
+cheaper, good, and a bit slower than my original Samsung in practice. The
+protocol was to buy cheap 240GB SSDs when they get damaged, but *it's been over
+4 years, and they haven't failed so far*. Maybe because *I could finally afford
+a (cheap) UPS*. Sorry for the Samsung one which was premium, loved, but didn't
+last more than a year 🤪.
+
+Since then, everything has been kind of peaceful with the Optiplex 790, except
+that 8GB of RAM (can't be expanded any further) has turned out lame at work.
+
+I hadn't bought a better workstation because I'm making major changes while
+building the office, and I take pretty seriously any heavy investment decisions.
+
+The Optiplex 790 has been with me for a long period of my career development
+(i.e., the last six years), including school and work. It has given me more
+challenges, but they were all addressed again. Finally, I've been developing the
+present and future of the office with this machine.
+
 ## References
 
 [1] tobiasbriones/word-knowledge: App that lets you play word games for fun or
