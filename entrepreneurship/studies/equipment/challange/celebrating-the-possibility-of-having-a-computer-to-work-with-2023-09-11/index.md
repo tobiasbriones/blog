@@ -255,7 +255,7 @@ machines and third-world living conditions like these.
 That Optiplex 745 was the first computer I bought, which made me pass through
 many weird challenges.
 
-#### My Mobile Phone during the University
+### My Mobile Phone during the University
 
 The Hyundai UNO L505 was the low-end phone that was with me for over 6 years
 during the university, and I used it to learn much of what I know today.
