@@ -518,6 +518,32 @@ The Optiplex 790 has been with me for a long period of my career development
 challenges, but they were all addressed again. Finally, I've been developing the
 present and future of the office with this machine.
 
+
+#### My New Phone: The LG G8X
+
+I bought a semi-new LG G8X in late 2021.
+
+It was a late 2019 high-end phone. It was cheaper than other brands because of
+the decline of LG, and the only good LG phones had was the hardware (i.e.,
+non-LG parts). Snapdragon chips are everything when getting a cheap, older
+device.
+
+It's supposed to have Android 12 upgrades, but mine was stuck in Android 10
+forever. In no way I'm flashing random Mediafire ROMs. I learned that when
+support is trash, you never play with "the recovery menu," "ROMs," or anything
+that problematic.
+
+With this phone, I've been able to proof concepts by recording lectures and a
+professional audio setup. It has a good camera for those moments, and it's been
+helpful for work (e.g., 2FA is crucial to be professional).
+
+It's been the most powerful device for gaming I've had so far. The Snapdragon
+855, Adreno 640, and 6GB of RAM are an economical and powerful setup. It's
+lagging behind nowadays, but it's been powerful.
+
+By leveraging the LG G8X, a new world of possibilities has been opened for my
+professional work and entertainment.
+
 ## Addressing Challenging Computer Needs Over the Decades with Innate Tech Skills
 
 I've had an innate link to technology and have been through extreme full-size
