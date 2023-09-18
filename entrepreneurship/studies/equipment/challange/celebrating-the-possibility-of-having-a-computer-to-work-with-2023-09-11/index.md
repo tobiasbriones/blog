@@ -290,14 +290,14 @@ better as a student.
 
 Power is everything when being an engineer. Laptops were always a complete joke
 for me, and developing engineering skills as a self-taught was always a 
-priority. Hence, I chose desktops over laptops.
+priority. Hence, **I chose desktops over laptops**.
 
 The problem with desktops is that I was screwed up when I needed a "computer"
 (they mean a laptop) for an on-campus exam or work (online classes didn't exist
 until 2020).
 
 The trade-off is crucial: a powerful laptop (which is nonsense) costs you many
-times more than an older and powerful Optiplex desktop. Not to say the
+times more than an older but powerful Optiplex desktop. Not to say the
 maintenance costs of toy laptops.
 
 So, **I used my phone to read PDF books and copy math problems to solve while on
