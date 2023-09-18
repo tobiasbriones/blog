@@ -483,7 +483,9 @@ that day happened after the PC was off,* but even though, it got broken, so it
 was all frustrated 😡.
 
 You know. In a bottom third-world country, this happens all the time: life
-conditions are excessively hard to get by with.
+conditions are excessively hard to get by with. For example, there are always
+random power outages for no reason, and also "planned" 8+ hours maintenance
+outages often.
 
 I couldn't afford a UPS until late 2020, so that's all I could do.
 
