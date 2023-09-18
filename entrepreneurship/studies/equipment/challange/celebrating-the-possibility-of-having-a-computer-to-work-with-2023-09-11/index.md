@@ -8,6 +8,13 @@
 
 ---
 
+With innate studying and tech skills, I've been growing through severe life
+challenges and adventures to afford working computers and devices over the last
+decades of personal and professional evolution that has finally paid off and
+positioned me in a favorable stance to keep evolving. Today, I'm celebrating six
+years since I achieved my first worthwhile computer that allowed me to keep
+undertaking life projects, finish my career, and get work experience.
+
 ## Inception: The Imaginary Computer and the Cyber Era
 
 I was drawn to computers while I grew up, and my fascination with tech
