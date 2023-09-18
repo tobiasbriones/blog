@@ -151,9 +151,9 @@ That Pentium D is most likely **the worst dual-core Intel processor**. It got
 overly hot, and the fan made so much noise that you could hear it from the house
 entrance[^x].
 
-[^x]: When I started using the CPU by opening software, the fan went all the
-    way up; remember that ambient temperatures were (still are) about 36 °C most
-    of the time
+[^x]: When I started using the CPU by running software, the fan went all the
+    way up; remember that day ambient temperatures were (still are) about 
+    33-43 °C most of the time
 
 I was learning programming, and one day, I opened up Android Studio (recall, 1
 GB of RAM). Say no more. I had to unplug the cord from the power outlet to
