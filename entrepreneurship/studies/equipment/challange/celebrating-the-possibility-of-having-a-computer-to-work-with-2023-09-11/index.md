@@ -513,6 +513,19 @@ The Optiplex 790 has been with me for a long period of my career development
 challenges, but they were all addressed again. Finally, I've been developing the
 present and future of the office with this machine.
 
+## Addressing Challenging Computer Needs Over the Decades with Innate Tech Skills
+
+I've had an innate link to technology and have been through extreme full-size
+challenges that have left unique experiences, knowledge, and feelings.
+
+All challenges have been resolved, and after all the struggles, I'm now in a
+favorable position as I finished my baseline higher-education studies and got
+engineering working experience with so much effort by leveraging what I could
+barely afford at the time.
+
+The future, from now on, is to carry on the integral development of the office
+with the valuable resources and experiences acquired over the last decades.
+
 ## References
 
 [1] tobiasbriones/word-knowledge: App that lets you play word games for fun or
