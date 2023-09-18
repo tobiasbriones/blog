@@ -308,6 +308,9 @@ The screen got broken in the end because I thought I dropped it into my pocket,
 but it fell out to the corner of the concrete 😣. It still worked and used it for
 about 2 years more.
 
+I also used this low-end phone as a webcam after 2020 for online classes and 
+when I started working.
+
 Then, I understood that **any computer or device is useful for learning if you
 have the discipline to supersede your limits. The real problem is when you have
 to professionally work: you need a powerful workstation to work as a
