@@ -68,6 +68,14 @@ times are just the beginning of the beginning.
 
 ## Extreme Decade Challenges
 
+Since the first time I engaged in computers, everything has been passing through
+challenging events, learning, growing, and also excitement about what I afforded
+to have.
+
+I started from the bottom with nothing in a hostile tech era and moved on all
+the way until the university by doing what I had to do with the resources
+permitted.
+
 ### My Very First Computer
 
 The first computer I had was a gift (because it didn't turn on), but 
