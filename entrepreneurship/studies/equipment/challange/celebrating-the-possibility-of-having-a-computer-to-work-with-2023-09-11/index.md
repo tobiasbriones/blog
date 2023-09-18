@@ -446,9 +446,13 @@ A Samsung SSD was a top upgrade for its performance, even when it was a SATA
 drive. SSDs were **expensive** at those times, I wanted to make the most out of
 my PC. It was overkill, but pretty fair.
 
-A 2.5" SSD renews those old computers, the change was extraordinary. If you move
-from a HHD to an SSD, the computer will feel like a new one, and the CPU can be
+A 2.5" SSD renews those old computers; the change was extraordinary. If you move
+from an HHD to an SSD, the computer will feel like a new one, and the CPU can be
 used more often by avoiding slack time.
+
+I was also able to get my first voltage regulator to try to protect the devices.
+I also got my first headphones and mouse pad (I used a notebook cover pasted on
+the table before since I couldn't afford any further 🥺).
 
 I was also able to buy my first monitor, the **HP 22cwa (22" FHD)**.
 
@@ -469,7 +473,8 @@ about was the GT 1030, but it was the same story as the processor upgrade, and
 GPUs get much more expensive, which makes it harder to achieve.
 
 As you can see, I could buy these resources (RAM and SSD) for my computer one
-year later.
+year later. Next, I acquired my first monitor and a good white desk, which
+allowed me to finally have a real computer setup.
 
 #### Last Challenges
 
