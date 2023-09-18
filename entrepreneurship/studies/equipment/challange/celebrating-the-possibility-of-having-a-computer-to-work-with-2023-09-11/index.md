@@ -360,11 +360,11 @@ had the best exams out of all physics sections*[^12].
     these always failed
 
 Back then, I had thought to buy something about $130 I could afford, but the
-options were gross as well: I could only have old garbage like Core2Duo
-computers at best.
+options were gross as well: I could only buy old garbage like Core2Duo computers
+at best.
 
 I saved money for two months of strikes while I was studying at home with my
-phone and the Frankenstein. Then, **it was super exciting when I checked the
+phone and the "Frankenstein". Then, **it was super exciting when I checked the
 announcement on the internet with I5 processor computers under the budget!**
 
 I was really happy when I found that I didn't have to buy another horrible
@@ -389,7 +389,7 @@ Optiplex 790 Receipt (2017/09/11)
 </strong></p>
 </figcaption>
 
-I hate when they misspell "Tobias" by "Tobillas," but never mind 😡.
+I hate when they misspell "Tobias" by "Tobillas," but never mind.
 
 I got the computer delivered to my house an afternoon at 5 pm, and it was great.
 I'd never had computers like these before. Fortunately, that day was finally
