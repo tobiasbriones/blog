@@ -286,7 +286,7 @@ for me, and developing engineering skills as a self-taught was always a
 priority. Hence, I chose desktops over laptops.
 
 The problem with desktops is that I was screwed up when I needed a "computer"
-(they mean a laptop) for a in-campus exam or work (online classes didn't exist
+(they mean a laptop) for an on-campus exam or work (online classes didn't exist
 until 2020).
 
 The trade-off is crucial: a powerful laptop (which is nonsense) costs you many
