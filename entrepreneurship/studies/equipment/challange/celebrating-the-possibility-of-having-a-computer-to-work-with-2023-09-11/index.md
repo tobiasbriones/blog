@@ -109,16 +109,7 @@ after having my Moto Q[^5]) via USB to share the connection, then a residential
 
 [^7]: I leveraged everything I could to learn; I've always been self-taught
 
-I haven't mentioned **I never had a monitor until 2019, when I was first able to
-buy my HP 22cwa (22" FHD)**.
-
-I used a ~~scholarship~~ service job scholarship[^8] money I got in late 2018
-to buy my first monitor and desk to work on.
-
-[^8]: I was persuaded to engage in this university program since I wasn't even
-    applicable due to my two simultaneous majors, and it's only about
-    bureaucracy and service work, totally unemphatic to super tough careers like
-    mathematics due to other issues like incompatible requirements they ask
+I didn't have a monitor until 2019.
 
 So, until 2019, I had to use the house TV as a huge 32" monitor, but 720p
 resolution 😵. Besides having *extremely low pixel density*, it was getting
@@ -156,9 +147,9 @@ horrible, like the previous one.
 
 That Pentium D is most likely **the worst dual-core Intel processor**. It got
 overly hot, and the fan made so much noise that you could hear it from the house
-entrance[^9].
+entrance[^8].
 
-[^9]: When I started using the CPU by running software, the fan went all the
+[^8]: When I started using the CPU by running software, the fan went all the
     way up; remember that day ambient temperatures were (still are) about 
     33-43 °C most of the time
 
@@ -244,9 +235,9 @@ In other words, these pictures represent a genius's successful struggles.
 Engineers solve problems, and mathematicians optimize. That's what I do.
 
 **I appreciate the goodwill efforts I've made as a form of original art**.
-It's a lovely motivation where I make the good of the past persist[^10].
+It's a lovely motivation where I make the good of the past persist[^9].
 
-[^10]: Persisting your genuine achievements is a key to be **relative and
+[^9]: Persisting your genuine achievements is a key to be **relative and
     scale**, e.g., you keep using today what you achieved 15 years ago
 
 So it was incredibly challenging to have learned so much and moved on with
@@ -271,9 +262,9 @@ Optiplex 745 PC *wasn't elegant at all but a Frankenstein*, I did what I could.
 The model was elegant, had a "big" 5" screen, and was under the budget.
 
 Its MediaTek quad-core processor and Mali-T720 MP2 sucked for gaming, so I had
-to do what I could[^11].
+to do what I could[^10].
 
-[^11]: If you wonder why gaming's been important to me, it's because it
+[^10]: If you wonder why gaming's been important to me, it's because it
     allows me to engage with mental models, and it's also been the only escape
     I've had
 
@@ -345,18 +336,18 @@ $200 I saved during two months of university strikes.
 There were more strikes at the university in 2017, and they canceled a term that
 was reset after all.
 
-I was currently taking[^12] "Differential Equations," "Data Structures,"
+I was currently taking[^11] "Differential Equations," "Data Structures,"
 "Complex Variable," "Physics I," "Calculus III," and "Introduction to Systems
 Engineering." **Six classes for a single term, an excessively challenging life
 environment, and top grades were another seriously massive success**. No one
 ordinary can keep up with that. *The physics professor (i.e., the department
 boss and the hardest one to approve) even gave me money to go to the cinema as I
-had the best exams out of all physics sections*[^13].
+had the best exams out of all physics sections*[^12].
 
-[^12]: It was the II term in 2017 that was expanded to the rest of the year
+[^11]: It was the II term in 2017 that was expanded to the rest of the year
     (consuming the III term that was lost) due to more strikes
 
-[^13]: It's popular that most engineering students don't pass these classes the
+[^12]: It's popular that most engineering students don't pass these classes the
     first time, so giving some "prize" was a "motivational experiment," but
     these always failed
 
@@ -404,20 +395,21 @@ Excited Unpacking of the Optiplex 790 (2017/09/11)
 </strong></p>
 </figcaption>
 
-I removed the wrap[^14], started using the "new" (refurbished) computer, and
-started noticing the huge differences compared to older machines[^15].
+I removed the wrap[^13], started using the "new" (refurbished) computer, and
+started noticing the huge differences compared to older machines[^14].
 
-[^14]: Fun Fact 🐯: In events like these, I take pictures, so this time, I can
+[^13]: Fun Fact 🐯: In events like these, I take pictures, so this time, I can
     write it down, for example
 
-[^15]: After six years, I'm writing this article about the day I first
+[^14]: After six years, I'm writing this article about the day I first
     got a decent computer 👾, i.e., **I feel the semantics of what happens to
     me**
 
 As I said, I still didn't have a monitor, so continued using the TV until 2019.
 
 By achieving this Optiplex 790, a lot of future terrain to conquer was waiting,
-and here we are now, building that mathematical and software engineering future I had longed for so much.
+and here we are now, building that mathematical and software engineering future
+I had longed for so much.
 
 ### Moving Forward Times
 
@@ -437,9 +429,9 @@ Order of Memory and Samsung SSD
 </figcaption>
 
 By passing from 4GB to 8GB of memory, I could be solvent with most memory
-limitations[^16].
+limitations[^15].
 
-[^16]: Now in 2023, 8GB of RAM is mostly useless for working as software is so
+[^15]: Now in 2023, 8GB of RAM is mostly useless for working as software is so
     bloated and requirements have advanced
 
 A Samsung SSD was a top upgrade for its performance, even when it was a SATA
@@ -449,6 +441,16 @@ my PC. It was overkill, but pretty fair.
 A 2.5" SSD renews those old computers, the change was extraordinary. If you move
 from a HHD to an SSD, the computer will feel like a new one, and the CPU can be
 used more often by avoiding slack time.
+
+I was also able to buy my first monitor, the **HP 22cwa (22" FHD)**.
+
+I used a ~~scholarship~~ service job scholarship[^16] money I got in late 2018
+to buy **my first monitor and desk** to work on.
+
+[^16]: I was persuaded to engage in this university program since I wasn't even
+    applicable due to my two simultaneous majors, and it's only about
+    bureaucracy and service work, totally unemphatic to super tough careers like
+    mathematics due to other issues like incompatible requirements they ask
 
 I could've gotten a processor upgrade from the current I5 2400 to an I7 2600,
 but I never had the money or the chance, and it wasn't as rewarding as the SSD
