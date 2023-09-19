@@ -41,7 +41,7 @@ Illegal Reflective Access Warning in Old Version of Apache POI and Java 9
 
 Apache POI 3.x is quite old, while 4.x came later.
 
-The solution was to update Apache POI to a new version to get rid of the
+The solution was to **update Apache POI to a new version** to get rid of the
 warning, as per my
 [StackOverflow Question](https://stackoverflow.com/questions/50071996/an-illegal-reflective-access-operation-has-occurred-apache-poi).
 
