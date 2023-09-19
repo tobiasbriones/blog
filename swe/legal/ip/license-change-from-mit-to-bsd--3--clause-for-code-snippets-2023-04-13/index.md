@@ -46,7 +46,7 @@ I also provide a "source code license" (e.g., BSD).
 [Drawing a Tree on Canvas with XY Coordinates \| mathsoftware.engineer](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates)
 there's a submodule with a complete web app source code, and also in binary
 form at its
-[web subdirectory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web),
+[EP app path](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/app),
 so that's what I mean about the DSLs. Articles are source code like any other
 app for me (and any modern software development), but the difference is that 
 they also contain content like text or images.
