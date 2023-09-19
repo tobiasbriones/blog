@@ -171,7 +171,7 @@ The API is the following:
 
 `tf.data.Dataset.list_files(split_list, shuffle=False)`
 
-[list_files | tf.data.Dataset | TensorFlow v2.12.0](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#list_files)
+[list_files \| tf.data.Dataset \| TensorFlow v2.12.0](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#list_files)
 
 I was explicitly passing `shuffle=False` since this was necessary for getting
 metrics correctly (after training). That is, the same order of files was
