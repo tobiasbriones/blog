@@ -189,4 +189,4 @@ to how it's stored, and this will probably introduce bias, and the model might
 get locked in a local minimum as per what I was reading about how the Stochastic
 Gradient Descent (SGD) works.
 
-Always make sure to shuffle data before training to avoid biases.
+**Always make sure to shuffle data before training to avoid biases.**
