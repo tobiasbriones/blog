@@ -68,7 +68,7 @@ Addressed issues:
 
 I list random troubleshooting experiences I face next.
 
-### Dev
+### Daily Dev
 
 This covers day-to-day annoying issues I have solved before in software
 development.
