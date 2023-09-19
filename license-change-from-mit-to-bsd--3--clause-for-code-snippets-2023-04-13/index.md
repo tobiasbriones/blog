@@ -1,7 +1,7 @@
 ---
 permalink: license-change-from-mit-to-bsd--3--clause-for-code-snippets-2023-04-13
 title: "License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)"
-description: "As of now, source code inside articles in MathSoftware.Engineer are licensed  under the BSD-3-Clause License, which supersedes the initial MIT License. "
+description: "As of now, source code inside articles in MathSoftware.Engineer are licensed under the BSD-3-Clause License, which supersedes the initial MIT License."
 ogimage: ""
 ---
 
@@ -12,8 +12,8 @@ ogimage: ""
 
 # License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)
 
-As of now, source code inside articles in MathSoftware.Engineer are licensed 
-under the BSD-3-Clause License, which supersedes the initial MIT License. 
+As of now, source code inside articles in MathSoftware.Engineer are licensed
+under the BSD-3-Clause License, which supersedes the initial MIT License.
 
 In the beginning, I provided the MIT License to the code snippets of the
 [Blog](/) and [mathsoftware.engineer](https://mathsoftware.engineer) as well.
@@ -52,31 +52,30 @@ I also provide a "source code license" (e.g., BSD).
 
 **For example**, in
 [Drawing a Tree on Canvas with XY Coordinates \| mathsoftware.engineer](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates)
-there's a submodule with a complete web app source code, and also in binary
-form at its
-[web subdirectory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web),
+there's a submodule with a complete web app source code, and also in binary form
+at its
+[EP app path](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/app),
 so that's what I mean about the DSLs. Articles are source code like any other
-app for me (and any modern software development), but the difference is that 
+app for me (and any modern software development), but the difference is that
 they also contain content like text or images.
 
 Be aware that the user is always responsible for checking what license they're
-given and complying with it and that **this article is not legal advice** but
-an informative update.
+given and complying with it and that **this article is not legal advice** but an
+informative update.
 
 The preference for BSD-3-Clause is because *it's more academically friendly*
-regarding the **explicit** clauses about **attribution for both source code
-and binary forms, as well as the non-endorsement clause**.
+regarding the **explicit** clauses about **attribution for both source code and
+binary forms, as well as the non-endorsement clause**.
 
-Although MIT and some other licenses are great licenses I also use and will
-keep using, my preferred choice as copyright holder was always BSD-3, which is a
-more conformable fit now that source code is more present in my written
-articles.
+Although MIT and some other licenses are great licenses I also use and will keep
+using, my preferred choice as copyright holder was always BSD-3, which is a more
+conformable fit now that source code is more present in my written articles.
 
 Today, I dropped the MIT License in favor of the preferred BSD-3-Clause License
-for source code like code snippets or DSLs written inside articles, so that 
+for source code like code snippets or DSLs written inside articles, so that
 content is still under the same CC-BY-4.0 License, but source code is now under
 the BSD-3-Clause License which matches better with the source-code-richer
-resources available now in the platform by being more consistent regarding 
+resources available now in the platform by being more consistent regarding
 already established standards.
 
 ## Bibliography
