@@ -137,8 +137,8 @@ I checked all possible configurations in the IDE, and everything was set up to
 JDK 19 (this code used to work before without setting up anything 😣 but it
 stopped compiling some day).
 
-In the end, I was able to set the actual version of the JDK to use by Gradle by
-editing the project's `build.gradle.kts` from `11` to `19`:
+In the end, I was able to **set the actual version of the JDK to use by Gradle
+by editing the project's `build.gradle.kts` from `11` to `19`**:
 
 ```kotlin
 kotlin {
