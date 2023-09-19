@@ -58,7 +58,7 @@ Standard file names use to contain lowercase symbols from the below:
 Some exceptions can have capital or uppercase styles like camel/pascal case
 and root files like `README.md` or `LICENSE` which are uppercase.
 
-## Encode a Hyphen
+## Encoding a Hyphen
 
 As per the global standard, hyphens (-) are used to separate words in file
 names so a simple extension is to be designed to add actual hyphens into
@@ -72,7 +72,7 @@ The simplest and most naturally-extensible design is to add a second hyphen
 - A second hyphen is mapped to an actual hyphen: from
   `state--of--the--art-word-separator` to `State-of-the-Art Word Separator`.
 
-### Analysis
+### Hyphen Design Analysis
 
 Adding a second hyphen to denote an actual hyphen is cohesive as both styles
 keep words together and is also progressive as one hyphen is naturally a word
@@ -84,14 +84,14 @@ separators and the former is more frequent than the latter (hence the
 preferences in the number of hyphens to add) so this design decision is 
 cohesive and progressive.
 
-### Example
+### Hyphen Example
 
 This was when I came out with this design:
 
 From `triangle-for-tangent-point-at-node--to--node-line.svg` to
 `Triangle for Tangent Point at Node-to-Node Line`.
 
-## Encode a Pipe
+## Encoding a Pipe
 
 As per the global standard, pipes (|) are not allowed into file names so a
 simple extension is to be designed to add pipe symbols to file names.
@@ -100,29 +100,29 @@ Since pipes (|) are (more meaningful) word separators just like whitespaces
 (default and most used) and hyphens (second most used), then a proper design
 is to add a third hyphen (---) to denote a pipe (|).
 
-So, adding this to the design listed in [Encode a Hyphen](#encode-a-hyphen):
+So, adding this to the design listed in [Encoding a Hyphen](#encoding-a-hyphen):
 
 - A third hyphen is mapped to a pipe: from `word-separator---blog` to `Word
   Separator | Blog`.
 
-### Analysis
+### Pipe Design Analysis
 
 Adding a third hyphen to denote a pipe is cohesive and progressive for what
-was said about word separators [above](#encode-a-pipe) so this is a correct
+was said about word separators [above](#encoding-a-pipe) so this is a correct
 design.
 
 The pipe operator is a fundamental element of functional programming (and so
 MathSwe) so I considered it as a high-priority to add it as the third hyphen
 in file names.
 
-### Example
+### Pipe Example
 
 This was also when I came out with this design:
 
 From `solutions-tree-with-html-and-css---ep-mrm.png` to `Solutions Tree
 with HTML and CSS | EP: MRM` when styled as the (high-level) image name.
 
-## Standardize Hyphens and Pipes on File Names
+## Standardizing Hyphens and Pipes on File Names
 
 Hyphens (-) and pipes (|) can have relevant semantics to empower cleverer 
 domain-specific file systems, but it's not trivial to denote such symbols as 
