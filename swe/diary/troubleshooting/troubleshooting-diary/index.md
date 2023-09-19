@@ -51,7 +51,7 @@ Troubleshooting from course projects are listed next.
 
 #### Distributed Text File System
 
-Documentation:
+**Documentation:**
 [Distributed Text File System | CP | DEV](https://dev.mathsoftware.engineer/distributed-text-file-system---cp).
 
 Addressed issues:
