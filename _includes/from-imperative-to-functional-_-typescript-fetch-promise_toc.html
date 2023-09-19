@@ -3,6 +3,180 @@
     From Imperative to Functional: TypeScript Fetch Promise
   </a>
   <ul>
-    
+    <li>
+      <a href="#source-code">
+        Source Code
+      </a>
+    </li>
+    <li>
+      <a href="#difference">
+        Difference
+      </a>
+    </li>
+    <li>
+      <a href="#getting-started-on-noticing-details">
+        Getting Started on Noticing Details
+      </a>
+    </li>
+    <li>
+      <a href="#general-concerns">
+        General Concerns
+      </a>
+      <ul>
+        <li>
+          <a href="#async-await">
+            Async Await
+          </a>
+          <ul>
+            <li>
+              <a href="#usefulness-of-imperative-with-async-await">
+                Usefulness of Imperative with Async Await
+              </a>
+            </li>
+            <li>
+              <a href="#rust-has-async-await">
+                Rust has Async Await
+              </a>
+            </li>
+            <li>
+              <a href="#workaround-excuses">
+                Workaround Excuses
+              </a>
+            </li>
+            <li>
+              <a href="#going-further-with-algebraic-effects">
+                Going Further with Algebraic Effects
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#mutable-variable">
+            Mutable Variable
+          </a>
+        </li>
+        <li>
+          <a href="#try-catch">
+            Try Catch
+          </a>
+          <ul>
+            <li>
+              <a href="#explaining-the-goto-antipattern">
+                Explaining the GoTo Antipattern
+              </a>
+            </li>
+            <li>
+              <a href="#ambiguity-in-imperative-code">
+                Ambiguity in Imperative Code
+              </a>
+            </li>
+            <li>
+              <a href="#why-keep-writing-workarounds?">
+                Why Keep Writing Workarounds?
+              </a>
+            </li>
+            <li>
+              <a href="#enhanced-try-catch:-try-expression">
+                Enhanced Try Catch: Try Expression
+              </a>
+            </li>
+            <li>
+              <a href="#trying-with-less-coupled-functions">
+                Trying with Less Coupled Functions
+              </a>
+            </li>
+            <li>
+              <a href="#the-error-propagation-expression-for-result">
+                The Error Propagation Expression for Result
+              </a>
+            </li>
+            <li>
+              <a href="#trying-to-refactor-try-catch">
+                Trying to Refactor Try Catch
+              </a>
+            </li>
+            <li>
+              <a href="#throwing-try-catch-and-heterogeneous-away">
+                Throwing Try Catch and Heterogeneous Away
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#mixed-paradigm">
+            Mixed Paradigm
+          </a>
+        </li>
+        <li>
+          <a href="#the-paradigm-shift-at-these-stages">
+            The Paradigm Shift at These Stages
+          </a>
+        </li>
+        <li>
+          <a href="#maintainability">
+            Maintainability
+          </a>
+          <ul>
+            <li>
+              <a href="#mixed-paradigms-is-not-quite-a-good-idea">
+                Mixed Paradigms is not Quite a Good Idea
+              </a>
+            </li>
+            <li>
+              <a href="#a-swe-experience">
+                A SWE Experience
+              </a>
+            </li>
+            <li>
+              <a href="#shaping-swe-properly">
+                Shaping SWE Properly
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#minor-issues">
+        Minor Issues
+      </a>
+      <ul>
+        <li>
+          <a href="#whitespaces-are-a-terrible-design">
+            Whitespaces are a Terrible Design
+          </a>
+        </li>
+        <li>
+          <a href="#unclear-constraints">
+            Unclear Constraints
+          </a>
+        </li>
+        <li>
+          <a href="#oop">
+            OOP
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#after-advanced-refactorizations">
+        After Advanced Refactorizations
+      </a>
+    </li>
+    <li>
+      <a href="#leveraging-fp-as-the-universal-approach-it-is">
+        Leveraging FP as the Universal Approach It Is
+      </a>
+    </li>
+    <li>
+      <a href="#references">
+        References
+      </a>
+    </li>
+    <li>
+      <a href="#bibliography">
+        Bibliography
+      </a>
+    </li>
   </ul>
 </nav>
