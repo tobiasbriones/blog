@@ -17,5 +17,6 @@
 - [Removing Cyclic Dependencies, Java vs Go (2023-05-28)](removing-cyclic-dependencies--_--java-vs-go-2023-05-28)
 - [From Imperative to Functional: TypeScript Fetch Promise](from-imperative-to-functional-_-typescript-fetch-promise)
 - [Finishing Writing the Documentation for my Next EP (2023-07-14)](finishing-writing-the-documentation-for-my-next-ep-2023-07-14)
+- [Troubleshooting Diary](troubleshooting-diary)
 - [FP in Kotlin](fp-in-kotlin)
 - [License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)](license-change-from-mit-to-bsd--3--clause-for-code-snippets-2023-04-13)
