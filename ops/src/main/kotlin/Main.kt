@@ -807,7 +807,7 @@ fun execNotice(root: Path) {
     val entries = Entry(root)
         .loadEntries(::hasNotice)
         .getOrNull() ?: return
-    val notice = generateRootNotice(entries)
+    val notice = generateRootNotice(entries, dic)
 
     println(notice)
 }

@@ -4,9 +4,10 @@ import Entry
 import arrow.core.Either
 import arrow.core.Either.Left
 import arrow.core.right
+import md.Dictionary
 import md.Index
 import md.Markdown
-import name
+import md.toTitleCase
 import newEntryFromAbsPath
 import path
 import java.io.File
@@ -69,10 +70,18 @@ fun hasNotice(entry: Entry): Boolean = with(entry.path) {
         .fold(false) { acc, path -> acc || path.resolve("notice.md").exists() }
 }
 
-fun generateRootNotice(entries: List<Entry>): String {
+fun generateRootNotice(entries: List<Entry>, dic: Dictionary = Dictionary()): String {
     val newLink: (Entry, String) -> String = { entry, subdir ->
         """
-        - [${entry.name()} ($subdir)](${entry.relPath.resolve(subdir)}).
+        - [${entry.toTitleCase(dic)} ($subdir)](${
+            entry
+                .relPath
+                .resolve(subdir)
+                .resolve("notice.md")
+                .toString()
+                .replace("\\", "/")
+                .removePrefix("/")
+        }).
     """.trimIndent()
     }
 

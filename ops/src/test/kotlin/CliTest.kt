@@ -67,7 +67,7 @@ fun testRootNoticeLinks() {
     val entries = Entry(Path.of(""))
         .loadEntries(::hasNotice)
         .getOrNull() ?: return
-    val notice = generateRootNotice(entries)
+    val notice = generateRootNotice(entries, dic)
 
     println(notice)
 }
