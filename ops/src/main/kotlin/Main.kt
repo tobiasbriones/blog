@@ -73,6 +73,7 @@ fun execute(
     Deploy -> execDeploy(root, arg1)
     Serve -> execServe(root)
     Create -> execCreate(root, arg1, arg2)
+    Notice -> execNotice(root)
 }
 
 fun execCreate(root: Path, entryName: String, tags: String) {
@@ -800,6 +801,15 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
         .onLeft(handleError `$` "Failed to commit files to Git")
         .onRight { println("✔ Commit files to Git") }
         .getOrNull() ?: return
+}
+
+fun execNotice(root: Path) {
+    val entries = Entry(root)
+        .loadEntries(::hasNotice)
+        .getOrNull() ?: return
+    val notice = generateRootNotice(entries)
+
+    println(notice)
 }
 
 fun coverUrl(entry: Entry): String =

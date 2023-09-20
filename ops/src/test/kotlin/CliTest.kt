@@ -1,3 +1,8 @@
+import fs.generateRootNotice
+import fs.hasNotice
+import fs.loadEntries
+import java.nio.file.Path
+
 // MAKE SURE to add the working directory of the Git repository to test
 // For example: P:\tobiasbriones\test-blog-deploy
 // to run the program in that project
@@ -12,7 +17,8 @@ fun main() {
 //    create()
 //    serve()
 
-    println(ignoredPaths)
+    testRootNoticeLinks()
+
     //runCmd("build drawing-a-tree-on-canvas-with-xy-coordinates")
 //    runCmd("build building-slides-from-screenshots-app-in-javafx jekyll")
 //    runCmd("build 4-years-since-vocational-fair-at-unah-vs-2023-05-09")
@@ -55,6 +61,15 @@ fun serve() {
 
 fun create() {
     runCmd("create test-article swe,test,cli,example")
+}
+
+fun testRootNoticeLinks() {
+    val entries = Entry(Path.of(""))
+        .loadEntries(::hasNotice)
+        .getOrNull() ?: return
+    val notice = generateRootNotice(entries)
+
+    println(notice)
 }
 
 fun runCmd(cmd: String) {

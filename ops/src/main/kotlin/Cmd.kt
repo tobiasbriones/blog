@@ -21,6 +21,7 @@ enum class Cmd {
     Deploy,
     Serve,
     Create,
+    Notice,
 }
 
 fun newOp(value: String): Either<None, Cmd> = try {
