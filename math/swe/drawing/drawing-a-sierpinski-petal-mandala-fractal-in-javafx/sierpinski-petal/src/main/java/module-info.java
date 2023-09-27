@@ -5,5 +5,7 @@
 module engineer.mathsoftware.blog.sierpinskipetal {
     requires javafx.controls;
     requires javafx.swing;
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.jackson.databind;
     exports engineer.mathsoftware.blog.sierpinskipetal;
 }
