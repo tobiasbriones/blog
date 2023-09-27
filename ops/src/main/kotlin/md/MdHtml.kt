@@ -87,7 +87,7 @@ fun List<String>.subDirectoriesNav(dic: Dictionary): Div {
                                     Alt to listOf(subdir `---` iconName)
                                 )
                             ),
-                            Strong(
+                            Span(
                                 content = Some(subdir `---` subdirTitleCase)
                             )
                         ),
@@ -120,7 +120,7 @@ fun openInGitHubButton(githubUrl: String): Div = Div(
                         Class to listOf("fab", "fa-github")
                     )
                 ),
-                Strong(
+                Span(
                     content = Some("Open in GitHub")
                 )
             ),
