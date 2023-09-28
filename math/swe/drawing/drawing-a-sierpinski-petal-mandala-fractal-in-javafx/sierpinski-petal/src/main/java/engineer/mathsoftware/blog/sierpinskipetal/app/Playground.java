@@ -35,10 +35,8 @@ class Playground {
     final Recorder recorder;
     double opacity;
     boolean record;
+    PlaygroundDrawing drawing;
     String title;
-    Flower flower;
-    BirdCat cat;
-    ImagesAnim img;
 
     double width() { return canvas.getWidth() / scale; }
 
@@ -67,69 +65,12 @@ class Playground {
     }
 
     void play() {
-        initModels();
         ctx.scale(scale, scale);
         loop.start();
     }
 
-    void initModels() {
-        initFlower();
-        initCat();
-        initImg();
-    }
-
-    void initFlower() {
-        var radius = 100;
-        var cx = cx();
-        var cy = cy() - radius;
-        var color = Color.web("#ffdab9");
-        var centerColor = Color.web("#f0f28d");
-        flower = new Flower(
-            radius,
-            color,
-            centerColor,
-            cx,
-            cy
-        );
-    }
-
-    void initCat() {
-        var radius = 100.0;
-        var ellipseA = 1.2 * radius;
-        var ellipseB = radius;
-        var cx = cx();
-        var cy = cy() + radius / 4;
-        var color = Color.web("#131313");
-        cat = new BirdCat(radius, ellipseA, ellipseB, cx, cy, color);
-    }
-
-    void initImg() {
-        img = new ImagesAnim();
-    }
-
-    void initImgLazy() {
-        try {
-            var objectMapper = new ObjectMapper();
-            var jsonArray = objectMapper.readValue(
-                new File("out/sim.json"),
-                new TypeReference<List<Object>>() {}
-            );
-
-            for (var image64 : jsonArray) {
-                var base64 = image64.toString().split(",")[1];
-                var decodedBytes = Base64.getDecoder().decode(base64);
-                var inputStream = new ByteArrayInputStream(decodedBytes);
-                var image = new Image(inputStream);
-
-                img.addImage(image);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     void draw(
-        int numAnim,
+        int animNum,
         double opacity,
         Cycle.State state,
         int tickCount,
@@ -137,10 +78,15 @@ class Playground {
     ) {
         this.opacity = opacity;
 
-        // Uncomment to Choose Animation //
-        // var didDraw = drawFlower(numAnim, state);
-        // var didDraw = drawCat(numAnim, cycleTime);
-        var didDraw = drawImg(numAnim, cycleTime);
+        if (drawing == null) {
+            initDrawing();
+        }
+
+        var didDraw = switch (drawing) {
+            case Flower flower -> flower.drawFlower(animNum, state);
+            case BirdCat cat -> cat.drawCat(animNum, cycleTime);
+            case ImagesAnim img -> img.drawImg(animNum, cycleTime);
+        };
 
         if (didDraw) {
             drawCompleted(tickCount);
@@ -148,6 +94,14 @@ class Playground {
         else {
             stop();
         }
+    }
+
+    void initDrawing() {
+        // Uncomment to select model //
+
+        // initFlower();
+        // initCat();
+        initImg();
     }
 
     void drawCompleted(int tickCount) {
@@ -167,57 +121,53 @@ class Playground {
         }
     }
 
-    boolean drawFlower(int numAnim, Cycle.State state) {
-        if (numAnim > Flower.NUM_ANIMS) {
-            return false;
-        }
-
-        flower.draw(numAnim, state);
-        return true;
+    void initFlower() {
+        var radius = 100;
+        var cx = cx();
+        var cy = cy() - radius;
+        var color = Color.web("#ffdab9");
+        var centerColor = Color.web("#f0f28d");
+        drawing = new Flower(
+            radius,
+            color,
+            centerColor,
+            cx,
+            cy
+        );
     }
 
-    boolean drawCat(int numAnim, double cycleTime) {
-        if (numAnim > BirdCat.NUM_ANIMS) {
-            return false;
-        }
-
-        if (BirdCat.isLast(numAnim)) {
-            clean();
-        }
-        else {
-            reset();
-        }
-
-        ctx.setGlobalAlpha(1);
-        cat.draw(numAnim - 1);
-        ctx.setGlobalAlpha(opacity);
-
-        if (BirdCat.isDynamic(numAnim)) {
-            cat.playAnim(numAnim, cycleTime);
-        }
-        else {
-            cat.drawOnly(numAnim);
-        }
-        return true;
+    void initCat() {
+        var radius = 100.0;
+        var ellipseA = 1.2 * radius;
+        var ellipseB = radius;
+        var cx = cx();
+        var cy = cy() + radius / 4;
+        var color = Color.web("#131313");
+        drawing = new BirdCat(radius, ellipseA, ellipseB, cx, cy, color);
     }
 
-    /**
-     * Converts a JSON simulation into a video production.
-     *
-     * The JSON file is an array of base64 images (screenshots).
-     */
-    boolean drawImg(int numAnim, double cycleTime) {
-        if (!img.isInit()) {
-            initImgLazy();
-            System.out.println("init");
-        }
+    void initImg() {
+        var drawing = new ImagesAnim();
+        this.drawing = drawing;
 
-        if (numAnim > img.numAnims()) {
-            return false;
-        }
+        try {
+            var objectMapper = new ObjectMapper();
+            var jsonArray = objectMapper.readValue(
+                new File("out/sim.json"),
+                new TypeReference<List<Object>>() {}
+            );
 
-        img.draw(numAnim - 1);
-        return true;
+            for (var image64 : jsonArray) {
+                var base64 = image64.toString().split(",")[1];
+                var decodedBytes = Base64.getDecoder().decode(base64);
+                var inputStream = new ByteArrayInputStream(decodedBytes);
+                var image = new Image(inputStream);
+
+                drawing.addImage(image);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     void reset() {
@@ -405,7 +355,9 @@ class Playground {
         ctx.drawImage(image, 0.0, 0.0);
     }
 
-    class Flower {
+    sealed interface PlaygroundDrawing permits BirdCat, Flower, ImagesAnim {}
+
+    final class Flower implements PlaygroundDrawing {
         final static int NUM_ANIMS = 9;
         final int radius;
         final Color color;
@@ -425,6 +377,15 @@ class Playground {
             this.centerColor = centerColor;
             this.cx = cx;
             this.cy = cy;
+        }
+
+        boolean drawFlower(int animNum, Cycle.State state) {
+            if (animNum > NUM_ANIMS) {
+                return false;
+            }
+
+            draw(animNum, state);
+            return true;
         }
 
         void draw(int numAnim, Cycle.State state) {
@@ -567,7 +528,7 @@ class Playground {
         }
     }
 
-    class BirdCat {
+    final class BirdCat implements PlaygroundDrawing {
         static final int NUM_ANIMS = 12;
         final double radius;
         final double ellipseA;
@@ -601,6 +562,31 @@ class Playground {
                 new Tuple<>(cx, cy),
                 new Tuple<>(ellipseA, ellipseB)
             );
+        }
+
+        boolean drawCat(int animNum, double cycleTime) {
+            if (animNum > BirdCat.NUM_ANIMS) {
+                return false;
+            }
+
+            if (BirdCat.isLast(animNum)) {
+                clean();
+            }
+            else {
+                reset();
+            }
+
+            ctx.setGlobalAlpha(1);
+            draw(animNum - 1);
+            ctx.setGlobalAlpha(opacity);
+
+            if (BirdCat.isDynamic(animNum)) {
+                playAnim(animNum, cycleTime);
+            }
+            else {
+                drawOnly(animNum);
+            }
+            return true;
         }
 
         void draw() {
@@ -1262,27 +1248,41 @@ class Playground {
     /**
      * It creates an animation from a list of images.
      */
-    class ImagesAnim {
+    final class ImagesAnim implements PlaygroundDrawing {
         final List<Image> images;
 
         ImagesAnim() {
             images = new ArrayList<>();
         }
 
-        void addImage(Image image) {
-            images.add(image);
-        }
-
         boolean isInit() {
             return images.size() > 0;
         }
 
-        int numAnims() {
+        int animsNum() {
             return images.size();
         }
 
+        void addImage(Image image) {
+            images.add(image);
+        }
+
+        /**
+         * Converts a JSON simulation into a video production.
+         *
+         * The JSON file is an array of base64 images (screenshots).
+         */
+        boolean drawImg(int animNum, double cycleTime) {
+            if (animNum > animsNum()) {
+                return false;
+            }
+
+            draw(animNum - 1);
+            return true;
+        }
+
         void draw(int numAnim) {
-            if (numAnim >= numAnims()) {
+            if (numAnim >= animsNum()) {
                 return;
             }
             clean();
