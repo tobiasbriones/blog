@@ -3,12 +3,14 @@
 // This file is part of https://github.com/tobiasbriones/blog
 
 package engineer.mathsoftware.blog.sierpinskipetal.app;
-
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.animation.AnimationTimer;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontSmoothingType;
@@ -16,16 +18,11 @@ import javafx.scene.text.TextAlignment;
 import javafx.scene.transform.Rotate;
 
 import javax.imageio.ImageIO;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @SuppressWarnings("ALL")
 class Playground {
@@ -41,6 +38,7 @@ class Playground {
     String title;
     Flower flower;
     BirdCat cat;
+    ImagesAnim img;
 
     double width() { return canvas.getWidth() / scale; }
 
@@ -54,8 +52,8 @@ class Playground {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
         this.scale = scale;
-        this.cycleDuration = 1.0;
-        this.targetFps = 60;
+        this.cycleDuration = 1;
+        this.targetFps = 30;
         this.loop = new FadeAnimLoop(
             this::draw,
             targetFps,
@@ -64,7 +62,7 @@ class Playground {
         );
         this.recorder = new Recorder(canvas, targetFps);
         this.opacity = 1.0;
-        this.record = true;
+        this.record = false;
         this.title = "Drawing a Flower";
     }
 
@@ -77,6 +75,7 @@ class Playground {
     void initModels() {
         initFlower();
         initCat();
+        initImg();
     }
 
     void initFlower() {
@@ -104,6 +103,31 @@ class Playground {
         cat = new BirdCat(radius, ellipseA, ellipseB, cx, cy, color);
     }
 
+    void initImg() {
+        img = new ImagesAnim();
+    }
+
+    void initImgLazy() {
+        try {
+            var objectMapper = new ObjectMapper();
+            var jsonArray = objectMapper.readValue(
+                new File("out/sim.json"),
+                new TypeReference<List<Object>>() {}
+            );
+
+            for (var image64 : jsonArray) {
+                var base64 = image64.toString().split(",")[1];
+                var decodedBytes = Base64.getDecoder().decode(base64);
+                var inputStream = new ByteArrayInputStream(decodedBytes);
+                var image = new Image(inputStream);
+
+                img.addImage(image);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     void draw(
         int numAnim,
         double opacity,
@@ -114,8 +138,9 @@ class Playground {
         this.opacity = opacity;
 
         // Uncomment to Choose Animation //
-//        var didDraw = drawFlower(numAnim, state);
-        var didDraw = drawCat(numAnim, cycleTime);
+        // var didDraw = drawFlower(numAnim, state);
+        // var didDraw = drawCat(numAnim, cycleTime);
+        var didDraw = drawImg(numAnim, cycleTime);
 
         if (didDraw) {
             drawCompleted(tickCount);
@@ -173,6 +198,25 @@ class Playground {
         else {
             cat.drawOnly(numAnim);
         }
+        return true;
+    }
+
+    /**
+     * Converts a JSON simulation into a video production.
+     *
+     * The JSON file is an array of base64 images (screenshots).
+     */
+    boolean drawImg(int numAnim, double cycleTime) {
+        if (!img.isInit()) {
+            initImgLazy();
+            System.out.println("init");
+        }
+
+        if (numAnim > img.numAnims()) {
+            return false;
+        }
+
+        img.draw(numAnim - 1);
         return true;
     }
 
@@ -355,6 +399,10 @@ class Playground {
 
         ctx.setStroke(color);
         ctx.strokeOval(cx - radiusX, cy - radiusY, diameterX, diameterY);
+    }
+
+    void drawImage(Image image) {
+        ctx.drawImage(image, 0.0, 0.0);
     }
 
     class Flower {
@@ -1208,6 +1256,37 @@ class Playground {
             );
             ctx.setStroke(Color.web("#212121"));
             ctx.stroke();
+        }
+    }
+
+    /**
+     * It creates an animation from a list of images.
+     */
+    class ImagesAnim {
+        final List<Image> images;
+
+        ImagesAnim() {
+            images = new ArrayList<>();
+        }
+
+        void addImage(Image image) {
+            images.add(image);
+        }
+
+        boolean isInit() {
+            return images.size() > 0;
+        }
+
+        int numAnims() {
+            return images.size();
+        }
+
+        void draw(int numAnim) {
+            if (numAnim >= numAnims()) {
+                return;
+            }
+            clean();
+            drawImage(images.get(numAnim));
         }
     }
 
