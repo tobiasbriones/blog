@@ -46,6 +46,15 @@ class Playground {
 
     double cy() { return height() / 2; }
 
+    double rem() {
+        // 1 rem = 16px, baseline is 720px width
+        return 16.0 * (width() / 720);
+    }
+
+    double sizePx(double size) {
+        return rem() * size;
+    }
+
     Playground(Canvas canvas, double scale) {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
