@@ -388,8 +388,8 @@ class Playground {
             return true;
         }
 
-        void draw(int numAnim, Cycle.State state) {
-            switch (numAnim) {
+        void draw(int animNum, Cycle.State state) {
+            switch (animNum) {
                 case 1 -> anim1_Diameter();
                 case 2 -> anim2_LeftPetal();
                 case 3 -> anim3_TopPetal();
@@ -538,10 +538,10 @@ class Playground {
         final Color color;
         final Shape.Ellipse ellipse;
 
-        static boolean isLast(int numAnim) { return numAnim == BirdCat.NUM_ANIMS; }
+        static boolean isLast(int animNum) { return animNum == BirdCat.NUM_ANIMS; }
 
-        static boolean isDynamic(int numAnim) {
-            return numAnim == 2 || numAnim == 5 || numAnim == 7 || numAnim == 11;
+        static boolean isDynamic(int animNum) {
+            return animNum == 2 || animNum == 5 || animNum == 7 || animNum == 11;
         }
 
         BirdCat(
@@ -597,8 +597,8 @@ class Playground {
             draw(to, 1);
         }
 
-        void drawOnly(int numAnim) {
-            draw(numAnim, numAnim);
+        void drawOnly(int animNum) {
+            draw(animNum, animNum);
         }
 
         void draw(int to, int from) {
@@ -627,8 +627,8 @@ class Playground {
             draw(to, from + 1);
         }
 
-        void playAnim(int numAnim, double cycleTime) {
-            switch (numAnim) {
+        void playAnim(int animNum, double cycleTime) {
+            switch (animNum) {
                 case 2 -> anim2_PreBody(cycleTime);
                 case 5 -> anim5_PreHead(cycleTime);
                 case 7 -> anim7_PreEye(cycleTime);
@@ -1281,12 +1281,12 @@ class Playground {
             return true;
         }
 
-        void draw(int numAnim) {
-            if (numAnim >= animsNum()) {
+        void draw(int animNum) {
+            if (animNum >= animsNum()) {
                 return;
             }
             clean();
-            drawImage(images.get(numAnim));
+            drawImage(images.get(animNum));
         }
     }
 
@@ -1312,7 +1312,7 @@ class Playground {
 
         interface Animable {
             void draw(
-                int numAnim,
+                int animNum,
                 double opacity,
                 Cycle.State state,
                 int tickCount,
