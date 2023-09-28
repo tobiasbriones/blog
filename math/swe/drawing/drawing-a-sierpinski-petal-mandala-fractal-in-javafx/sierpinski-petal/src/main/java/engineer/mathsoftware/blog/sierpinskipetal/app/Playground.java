@@ -35,7 +35,7 @@ class Playground {
     final Recorder recorder;
     double opacity;
     boolean record;
-    PlaygroundDrawing drawing;
+    Drawing drawing;
     String title;
 
     double width() { return canvas.getWidth() / scale; }
@@ -364,9 +364,9 @@ class Playground {
         ctx.drawImage(image, 0.0, 0.0);
     }
 
-    sealed interface PlaygroundDrawing permits BirdCat, Flower, ImagesAnim {}
+    sealed interface Drawing permits BirdCat, Flower, ImagesAnim {}
 
-    final class Flower implements PlaygroundDrawing {
+    final class Flower implements Drawing {
         final static int NUM_ANIMS = 9;
         final int radius;
         final Color color;
@@ -537,7 +537,7 @@ class Playground {
         }
     }
 
-    final class BirdCat implements PlaygroundDrawing {
+    final class BirdCat implements Drawing {
         static final int NUM_ANIMS = 12;
         final double radius;
         final double ellipseA;
@@ -1257,7 +1257,7 @@ class Playground {
     /**
      * It creates an animation from a list of images.
      */
-    final class ImagesAnim implements PlaygroundDrawing {
+    final class ImagesAnim implements Drawing {
         final List<Image> images;
 
         ImagesAnim() {
