@@ -12,8 +12,11 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontSmoothingType;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.transform.Rotate;
 
@@ -23,6 +26,7 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
+import java.util.List;
 
 @SuppressWarnings("ALL")
 class Playground {
@@ -36,7 +40,6 @@ class Playground {
     double opacity;
     boolean record;
     Drawing drawing;
-    String title;
 
     double width() { return canvas.getWidth() / scale; }
 
@@ -55,6 +58,18 @@ class Playground {
         return rem() * size;
     }
 
+    double padding() {
+        return sizePx(2.0);
+    }
+
+    double textPadding(double textSize) {
+        return sizePx(textSize / 4.0);
+    }
+
+    double textHeight(double textSize) {
+        return sizePx(textSize) + textPadding(textSize) * 2.0;
+    }
+
     Playground(Canvas canvas, double scale) {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
@@ -70,7 +85,6 @@ class Playground {
         this.recorder = new Recorder(canvas, targetFps);
         this.opacity = 1.0;
         this.record = false;
-        this.title = "Drawing a Flower";
     }
 
     void play() {
@@ -109,8 +123,8 @@ class Playground {
         // Uncomment to select model //
 
         // initFlower();
-        // initCat();
-        initImg();
+        initCat();
+        // initImg();
     }
 
     void drawCompleted(int tickCount) {
@@ -156,7 +170,7 @@ class Playground {
     }
 
     void initImg() {
-        var drawing = new ImagesAnim();
+        var drawing = new ImagesAnim("", "", Optional.empty());
         this.drawing = drawing;
 
         try {
@@ -193,7 +207,7 @@ class Playground {
         ctx.setGlobalAlpha(1);
         ctx.setFill(bgColor);
         ctx.fillRect(0.0, 0.0, width(), height());
-        drawSource(title);
+        drawTitles();
         ctx.setGlobalAlpha(opacity);
     }
 
@@ -215,33 +229,65 @@ class Playground {
         }
     }
 
-    void drawTitle(String title) {
-        setDrawingText("extrabold", 36, VPos.BOTTOM);
-        ctx.fillText(title, width() / 2, height() - 140);
+    void drawTitles() {
+        var bottom = padding() + textPadding(Caption.TITLE_SIZE);
+
+        setDrawingText(FontWeight.NORMAL, sizePx(Caption.TITLE_SIZE), VPos.BOTTOM);
+
+        ctx.fillText(
+            drawing.home().value(),
+            width() / 2,
+            height() - bottom
+        );
+        bottom += sizePx(Caption.TITLE_SIZE) + textPadding(Caption.TITLE_SIZE);
+
+        if (drawing.subHome().isPresent()) {
+            bottom += textPadding(Caption.TITLE_SIZE);
+            ctx.fillText(
+                drawing.subHome().get().value(),
+                width() / 2,
+                height() - bottom
+            );
+            bottom += sizePx(Caption.TITLE_SIZE) + textPadding(Caption.TITLE_SIZE);
+        }
+
+        var bigTitle = drawing.title().value().length() > 36;
+        var titleSize = bigTitle
+            ? Caption.TITLE_SIZE
+            : Caption.ABSTRACT_SIZE;
+
+        setDrawingText(FontWeight.BOLD, sizePx(titleSize), VPos.BOTTOM);
+        bottom += textPadding(titleSize);
+        ctx.fillText(
+            drawing.title().value(),
+            width() / 2,
+            height() - bottom
+        );
     }
 
-    void drawSource(String title) {
-        setDrawingText("medium", 24, VPos.BOTTOM);
+    void drawAbstract(Caption.Abstract abs) {
+        var homesNum = drawing.subHome().isPresent() ? 2 : 1;
+        var bottom =
+            padding() + textHeight(Caption.TITLE_SIZE) * homesNum + textHeight(
+                Caption.ABSTRACT_SIZE) + textPadding(Caption.ABSTRACT_SIZE);
 
-        ctx.fillText(
-            "BLOG | mathsoftware.engineer",
-            width() / 2,
-            height() - 32
-        );
-        ctx.fillText(
-            "Drawing a Sierpinski Petal Mandala Fractal in JavaFX",
-            width() / 2,
-            height() - 64
+        setDrawingText(
+            FontWeight.NORMAL,
+            sizePx(Caption.ABSTRACT_SIZE),
+            VPos.BOTTOM
         );
 
-        setDrawingText("extrabold", 36, VPos.BOTTOM);
-        ctx.fillText(title, width() / 2, height() - 96);
+        ctx.fillText(
+            abs.value(),
+            width() / 2,
+            height() - bottom
+        );
     }
 
     void drawRuler() {
         ctx.setStroke(Color.web("#757575"));
 
-        setDrawingText("medium", 16, VPos.TOP);
+        setDrawingText(FontWeight.MEDIUM, 16, VPos.TOP);
 
         ctx.strokeLine(0, 16, width(), 16);
         ctx.strokeLine(0, 24, width(), 24);
@@ -279,15 +325,15 @@ class Playground {
     }
 
     void setDrawingText(
-        String weight,
-        int size,
+        FontWeight weight,
+        double size,
         VPos baseline
     ) {
         ctx.setFill(Color.web("#212121"));
         ctx.setTextAlign(TextAlignment.CENTER);
         ctx.setTextBaseline(baseline);
         ctx.setFontSmoothingType(FontSmoothingType.GRAY);
-        ctx.setFont(Font.font("poppins " + weight, size));
+        ctx.setFont(Font.font("poppins", weight, size));
     }
 
     void encloseHRuler(
@@ -301,7 +347,7 @@ class Playground {
         ctx.strokeLine(cx - radius, 0, cx - radius, cy + radius);
         ctx.strokeLine(cx + radius, 0, cx + radius, cy + radius);
 
-        setDrawingText("medium", 20, VPos.BOTTOM);
+        setDrawingText(FontWeight.MEDIUM, 20, VPos.BOTTOM);
         ctx.fillText(txt, cx, cy - 2);
     }
 
@@ -316,7 +362,7 @@ class Playground {
         ctx.strokeLine(0, cy - radius, cx + radius, cy - radius);
         ctx.strokeLine(0, cy + radius, cx + radius, cy + radius);
 
-        setDrawingText("medium", 20, VPos.CENTER);
+        setDrawingText(FontWeight.MEDIUM, 20, VPos.CENTER);
         ctx.fillText(txt, cx, cy);
     }
 
@@ -364,7 +410,30 @@ class Playground {
         ctx.drawImage(image, 0.0, 0.0);
     }
 
-    sealed interface Drawing permits BirdCat, Flower, ImagesAnim {}
+    sealed interface Drawing permits BirdCat, Flower, ImagesAnim {
+        default Caption.Title home() {
+            return new Caption.Title("blog | mathsoftware.engineer");
+        }
+
+        default Optional<Caption.Title> subHome() {
+            return Optional.of(
+                new Caption.Title(
+                    "Drawing a Sierpinski Petal Mandala Fractal in JavaFX"
+                )
+            );
+        }
+
+        Caption.Title title();
+    }
+
+    sealed interface Caption {
+        double TITLE_SIZE = 1.25;
+        double ABSTRACT_SIZE = TITLE_SIZE * 1.6;
+
+        record Title(String value) implements Caption {}
+
+        record Abstract(String value) implements Caption {}
+    }
 
     final class Flower implements Drawing {
         final static int NUM_ANIMS = 9;
@@ -386,6 +455,11 @@ class Playground {
             this.centerColor = centerColor;
             this.cx = cx;
             this.cy = cy;
+        }
+
+        @Override
+        public Caption.Title title() {
+            return new Caption.Title("Drawing a Flower");
         }
 
         boolean drawFlower(int animNum, Cycle.State state) {
@@ -414,14 +488,14 @@ class Playground {
         void anim1_Diameter() {
             reset();
             encloseHRuler(radius, cx, cy - radius, "diameter");
-            drawTitle("Centering");
+            drawAbstract(new Caption.Abstract("Centering"));
         }
 
         void anim2_LeftPetal() {
             reset();
             fillCenteredCircle(radius, cx - radius / 2, cy, color);
             encloseHRuler(radius, cx - radius / 2, cy, "diameter");
-            drawTitle("Petal: Left");
+            drawAbstract(new Caption.Abstract("Petal: Left"));
         }
 
         void anim3_TopPetal() {
@@ -429,7 +503,7 @@ class Playground {
             fillCenteredCircle(radius, cx - radius / 2, cy, color);
             fillCenteredCircle(radius, cx, cy - radius / 2, color);
             encloseHRuler(radius, cx, cy - radius / 2, "diameter");
-            drawTitle("Petal: Top");
+            drawAbstract(new Caption.Abstract("Petal: Top"));
         }
 
         void anim4_RightPetal() {
@@ -438,21 +512,21 @@ class Playground {
             fillCenteredCircle(radius, cx, cy - radius / 2, color);
             fillCenteredCircle(radius, cx + radius / 2, cy, color);
             encloseHRuler(radius, cx + radius / 2, cy, "diameter");
-            drawTitle("Petal: Right");
+            drawAbstract(new Caption.Abstract("Petal: Right"));
         }
 
         void anim5_BottomPetal() {
             reset();
             fillPetals();
             encloseHRuler(radius, cx, cy + radius / 2, "diameter");
-            drawTitle("Petal: Bottom");
+            drawAbstract(new Caption.Abstract("Petal: Bottom"));
         }
 
         void anim6_Center() {
             reset();
             fillPetals();
             encloseHRuler(radius, cx, cy, "diameter");
-            drawTitle("Flower: Center");
+            drawAbstract(new Caption.Abstract("Flower: Center"));
         }
 
         void anim7_Center() {
@@ -460,7 +534,7 @@ class Playground {
             fillPetals();
             fillCenteredCircle(radius / 2, cx, cy, centerColor);
             encloseHRuler(radius / 2, cx, cy, "radius");
-            drawTitle("Flower: Center");
+            drawAbstract(new Caption.Abstract("Flower: Center"));
         }
 
         void anim8_Stem() {
@@ -494,7 +568,7 @@ class Playground {
                 "2.5*radius"
             );
 
-            drawTitle("Flower: Stem");
+            drawAbstract(new Caption.Abstract("Flower: Stem"));
         }
 
         void anim9_Flower(Cycle.State state) {
@@ -573,6 +647,11 @@ class Playground {
             );
         }
 
+        @Override
+        public Caption.Title title() {
+            return new Caption.Title("Drawing the Bird Cat");
+        }
+
         boolean drawCat(int animNum, double cycleTime) {
             if (animNum > BirdCat.NUM_ANIMS) {
                 return false;
@@ -646,7 +725,7 @@ class Playground {
         }
 
         void anim1_MemeTitle() {
-            setDrawingText("extrabold", 24, VPos.CENTER);
+            setDrawingText(FontWeight.BOLD, 24, VPos.CENTER);
             ctx.setFill(Color.web("#5d4037"));
             ctx.fillText(
                 "Scientists: The bird cat doesn't exist".toUpperCase(),
@@ -1258,10 +1337,31 @@ class Playground {
      * It creates an animation from a list of images.
      */
     final class ImagesAnim implements Drawing {
+        final String title;
+        final String home;
+        final Optional<Caption.Title> subHome;
         final List<Image> images;
 
-        ImagesAnim() {
-            images = new ArrayList<>();
+        ImagesAnim(String title, String home, Optional<Caption.Title> subHome) {
+            this.title = title;
+            this.home = home;
+            this.subHome = subHome;
+            this.images = new ArrayList<>();
+        }
+
+        @Override
+        public Caption.Title home() {
+            return new Caption.Title(home);
+        }
+
+        @Override
+        public Caption.Title title() {
+            return new Caption.Title(title);
+        }
+
+        @Override
+        public Optional<Caption.Title> subHome() {
+            return subHome;
         }
 
         boolean isInit() {
