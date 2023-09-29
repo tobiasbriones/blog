@@ -6,11 +6,13 @@ package engineer.mathsoftware.blog.sierpinskipetal.app;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.animation.AnimationTimer;
+import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.WritableImage;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -30,6 +32,7 @@ import java.util.List;
 
 @SuppressWarnings("ALL")
 class Playground {
+    static final Color bgColor = Color.web("#fafafa");
     final Canvas canvas;
     final GraphicsContext ctx;
     final double scale;
@@ -74,13 +77,13 @@ class Playground {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
         this.scale = scale;
-        this.cycleDuration = 1;
-        this.targetFps = 30;
+        this.cycleDuration = 2;
+        this.targetFps = 10;
         this.loop = new FadeAnimLoop(
             this::draw,
             targetFps,
             cycleDuration,
-            FadeAnimLoop.TimeMode.Relative
+            FadeAnimLoop.TimeMode.Absolute
         );
         this.recorder = new Recorder(canvas, targetFps);
         this.opacity = 1.0;
@@ -177,18 +180,21 @@ class Playground {
             var objectMapper = new ObjectMapper();
             var jsonArray = objectMapper.readValue(
                 new File("out/sim.json"),
-                new TypeReference<List<Object>>() {}
+                new TypeReference<List<String>>() {}
             );
 
+            var i = 1;
+
             for (var image64 : jsonArray) {
-                var base64 = image64.toString().split(",")[1];
+                var base64 = image64.split(",")[1];
                 var decodedBytes = Base64.getDecoder().decode(base64);
                 var inputStream = new ByteArrayInputStream(decodedBytes);
                 var image = new Image(inputStream);
 
                 drawing.addImage(image);
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -202,12 +208,16 @@ class Playground {
     }
 
     void clean() {
-        var bgColor = Color.web("#fafafa");
-
         ctx.setGlobalAlpha(1);
         ctx.setFill(bgColor);
         ctx.fillRect(0.0, 0.0, width(), height());
         drawTitles();
+        ctx.setGlobalAlpha(opacity);
+    }
+
+    void clean(Image bgImage) {
+        ctx.setGlobalAlpha(1);
+        ctx.drawImage(bgImage, 0.0, 0.0);
         ctx.setGlobalAlpha(opacity);
     }
 
@@ -1411,8 +1421,10 @@ class Playground {
             if (animNum >= animsNum()) {
                 return;
             }
+            var image = images.get(animNum);
+
             clean();
-            drawImage(images.get(animNum));
+            clean(image);
         }
     }
 
