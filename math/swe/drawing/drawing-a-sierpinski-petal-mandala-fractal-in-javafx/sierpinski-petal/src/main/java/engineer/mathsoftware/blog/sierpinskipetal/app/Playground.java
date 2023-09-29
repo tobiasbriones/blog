@@ -122,9 +122,9 @@ class Playground {
     void initDrawing() {
         // Uncomment to select model //
 
-        initFlower();
+        // initFlower();
         // initCat();
-        // initImg();
+        initImg();
     }
 
     void drawCompleted(int tickCount) {
@@ -421,7 +421,10 @@ class Playground {
     }
 
     void drawImage(Image image) {
-        ctx.drawImage(image, 0.0, 0.0);
+        var x = (width() - image.getWidth()) / 2;
+        var y = (height() - image.getHeight()) / 2;
+
+        ctx.drawImage(image, x, y);
     }
 
     sealed interface Drawing permits BirdCat, Flower, ImagesAnim {
