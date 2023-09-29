@@ -234,20 +234,12 @@ class Playground {
 
         setDrawingText(FontWeight.MEDIUM, sizePx(Caption.TITLE_SIZE), VPos.BOTTOM);
 
-        ctx.fillText(
-            drawing.home().value(),
-            width() / 2,
-            height() - bottom
-        );
+        drawTitleLabel(drawing.home().value(), bottom);
         bottom += sizePx(Caption.TITLE_SIZE) + textPadding(Caption.TITLE_SIZE);
 
         if (drawing.subHome().isPresent()) {
             bottom += textPadding(Caption.TITLE_SIZE);
-            ctx.fillText(
-                drawing.subHome().get().value(),
-                width() / 2,
-                height() - bottom
-            );
+            drawTitleLabel(drawing.subHome().get().value(), bottom);
             bottom += sizePx(Caption.TITLE_SIZE) + textPadding(Caption.TITLE_SIZE);
         }
 
@@ -257,13 +249,9 @@ class Playground {
             : Caption.ABSTRACT_SIZE;
 
         setDrawingText(FontWeight.BOLD, sizePx(titleSize), VPos.BOTTOM);
-        bottom += textPadding(titleSize);
-        ctx.fillText(
-            drawing.title().value(),
-            width() / 2,
-            height() - bottom
-        );
 
+        bottom += textPadding(titleSize);
+        drawTitleLabel(drawing.title().value(), bottom);
     }
 
     void drawAbstract(Caption.Abstract abs) {
@@ -278,8 +266,12 @@ class Playground {
             VPos.BOTTOM
         );
 
+        drawTitleLabel(abs.value(), bottom);
+    }
+
+    void drawTitleLabel(String title, double bottom) {
         ctx.fillText(
-            abs.value(),
+            title,
             width() / 2,
             height() - bottom
         );
