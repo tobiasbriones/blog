@@ -122,8 +122,8 @@ class Playground {
     void initDrawing() {
         // Uncomment to select model //
 
-        // initFlower();
-        initCat();
+        initFlower();
+        // initCat();
         // initImg();
     }
 
@@ -232,7 +232,7 @@ class Playground {
     void drawTitles() {
         var bottom = padding() + textPadding(Caption.TITLE_SIZE);
 
-        setDrawingText(FontWeight.NORMAL, sizePx(Caption.TITLE_SIZE), VPos.BOTTOM);
+        setDrawingText(FontWeight.MEDIUM, sizePx(Caption.TITLE_SIZE), VPos.BOTTOM);
 
         ctx.fillText(
             drawing.home().value(),
@@ -263,6 +263,7 @@ class Playground {
             width() / 2,
             height() - bottom
         );
+
     }
 
     void drawAbstract(Caption.Abstract abs) {
@@ -272,7 +273,7 @@ class Playground {
                 Caption.ABSTRACT_SIZE) + textPadding(Caption.ABSTRACT_SIZE);
 
         setDrawingText(
-            FontWeight.NORMAL,
+            FontWeight.LIGHT,
             sizePx(Caption.ABSTRACT_SIZE),
             VPos.BOTTOM
         );
@@ -333,7 +334,28 @@ class Playground {
         ctx.setTextAlign(TextAlignment.CENTER);
         ctx.setTextBaseline(baseline);
         ctx.setFontSmoothingType(FontSmoothingType.GRAY);
-        ctx.setFont(Font.font("poppins", weight, size));
+        loadFont(weight, size);
+    }
+
+    void loadFont(FontWeight weight, double size) {
+        var variant = switch (weight) {
+            case THIN -> "Thin";
+            case EXTRA_LIGHT -> "ExtraLight";
+            case LIGHT -> "Light";
+            case NORMAL -> "Regular";
+            case MEDIUM -> "Medium";
+            case SEMI_BOLD -> "SemiBold";
+            case BOLD -> "Bold";
+            case EXTRA_BOLD -> "ExtraBold";
+            case BLACK -> "Black";
+        };
+        var path = "/fonts/Poppins/Poppins-" + variant + ".ttf";
+        var font = Font.loadFont(
+            getClass().getResourceAsStream(path),
+            size
+        );
+
+        ctx.setFont(font);
     }
 
     void encloseHRuler(
