@@ -109,7 +109,7 @@ class Playground {
         var didDraw = switch (drawing) {
             case Flower flower -> flower.drawFlower(animNum, state);
             case BirdCat cat -> cat.drawCat(animNum, cycleTime);
-            case ImagesAnim img -> img.drawShot(animNum, cycleTime);
+            case ShotAnim img -> img.drawShot(animNum, cycleTime);
         };
 
         if (didDraw) {
@@ -171,7 +171,7 @@ class Playground {
     }
 
     void initImg() {
-        var drawing = new ImagesAnim();
+        var drawing = new ShotAnim();
         this.drawing = drawing;
 
         try {
@@ -187,7 +187,7 @@ class Playground {
                     objectMapper.writeValueAsString(ser.get("caption")),
                     new TypeReference<Map<String, String>>() {}
                 );
-                var shot = new ImagesAnim.ShotSer(
+                var shot = new ShotAnim.ShotSer(
                     screenshot64,
                     caption.get("home"),
                     caption.get("title"),
@@ -441,7 +441,7 @@ class Playground {
         ctx.drawImage(image, x, y);
     }
 
-    sealed interface Drawing permits BirdCat, Flower, ImagesAnim {
+    sealed interface Drawing permits BirdCat, Flower, ShotAnim {
         default Caption.Title home() {
             return new Caption.Title("blog | mathsoftware.engineer");
         }
@@ -1367,7 +1367,7 @@ class Playground {
     /**
      * It creates an animation from a list of images.
      */
-    final class ImagesAnim implements Drawing {
+    final class ShotAnim implements Drawing {
         record ShotCaption(
             Caption.Title home,
             Caption.Title title,
@@ -1412,7 +1412,7 @@ class Playground {
         final List<Shot> shots;
         Shot currentShot;
 
-        ImagesAnim() {
+        ShotAnim() {
             shots = new ArrayList<>();
             currentShot = null;
         }
