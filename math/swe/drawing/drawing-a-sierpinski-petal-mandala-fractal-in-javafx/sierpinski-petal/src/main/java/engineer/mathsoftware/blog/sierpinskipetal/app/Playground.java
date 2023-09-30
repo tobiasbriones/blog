@@ -221,7 +221,7 @@ class Playground {
 
     void clean(Image bgImage) {
         ctx.setGlobalAlpha(1);
-        ctx.drawImage(bgImage, 0.0, 0.0);
+        drawImage(bgImage);
         ctx.setGlobalAlpha(opacity);
     }
 
