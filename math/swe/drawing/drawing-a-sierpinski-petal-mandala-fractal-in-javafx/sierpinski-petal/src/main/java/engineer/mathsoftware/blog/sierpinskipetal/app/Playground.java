@@ -71,6 +71,16 @@ class Playground {
         return sizePx(textSize) + textPadding(textSize) * 2.0;
     }
 
+    double captionHeight() {
+        // Assume home + subHome + title //
+        return textHeight(Caption.TITLE_SIZE) * 2.0 + // Home, SubHome
+            textHeight(Caption.ABSTRACT_SIZE); // Title
+    }
+
+    double contentHeight() {
+        return height() - captionHeight();
+    }
+
     Playground(Canvas canvas, double scale) {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
@@ -439,7 +449,7 @@ class Playground {
 
     void drawImage(Image image) {
         var x = (width() - image.getWidth()) / 2;
-        var y = (height() - image.getHeight()) / 2;
+        var y = (contentHeight() - image.getHeight()) / 2;
 
         ctx.drawImage(image, x, y);
     }
