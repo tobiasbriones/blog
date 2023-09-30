@@ -6,13 +6,11 @@ package engineer.mathsoftware.blog.sierpinskipetal.app;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.animation.AnimationTimer;
-import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.WritableImage;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -111,7 +109,7 @@ class Playground {
         var didDraw = switch (drawing) {
             case Flower flower -> flower.drawFlower(animNum, state);
             case BirdCat cat -> cat.drawCat(animNum, cycleTime);
-            case ImagesAnim img -> img.drawImg(animNum, cycleTime);
+            case ImagesAnim img -> img.drawShot(animNum, cycleTime);
         };
 
         if (didDraw) {
@@ -173,25 +171,31 @@ class Playground {
     }
 
     void initImg() {
-        var drawing = new ImagesAnim("", "", Optional.empty());
+        var drawing = new ImagesAnim();
         this.drawing = drawing;
 
         try {
             var objectMapper = new ObjectMapper();
             var jsonArray = objectMapper.readValue(
                 new File("out/sim.json"),
-                new TypeReference<List<String>>() {}
+                new TypeReference<List<Map<String, Object>>>() {}
             );
 
-            var i = 1;
+            for (var ser : jsonArray) {
+                var screenshot64 = ser.get("screenshot").toString();
+                var caption = objectMapper.readValue(
+                    objectMapper.writeValueAsString(ser.get("caption")),
+                    new TypeReference<Map<String, String>>() {}
+                );
+                var shot = new ImagesAnim.ShotSer(
+                    screenshot64,
+                    caption.get("home"),
+                    caption.get("title"),
+                    caption.get("subHome"),
+                    caption.get("abstract")
+                ).toShot();
 
-            for (var image64 : jsonArray) {
-                var base64 = image64.split(",")[1];
-                var decodedBytes = Base64.getDecoder().decode(base64);
-                var inputStream = new ByteArrayInputStream(decodedBytes);
-                var image = new Image(inputStream);
-
-                drawing.addImage(image);
+                drawing.addShot(shot);
             }
         }
         catch (IOException e) {
@@ -1364,43 +1368,80 @@ class Playground {
      * It creates an animation from a list of images.
      */
     final class ImagesAnim implements Drawing {
-        final String title;
-        final String home;
-        final Optional<Caption.Title> subHome;
-        final List<Image> images;
+        record ShotCaption(
+            Caption.Title home,
+            Caption.Title title,
+            Optional<Caption.Title> subHome,
+            Optional<Caption.Abstract> abs
+        ) {}
 
-        ImagesAnim(String title, String home, Optional<Caption.Title> subHome) {
-            this.title = title;
-            this.home = home;
-            this.subHome = subHome;
-            this.images = new ArrayList<>();
+        record Shot(Image screenshot, ShotCaption caption) {}
+
+        record ShotSer(
+            String screenshot,
+            String home,
+            String title,
+            String subHome,
+            String abs
+        ) {
+            Shot toShot() {
+                var base64 = screenshot.split(",")[1];
+                var decodedBytes = Base64.getDecoder().decode(base64);
+                var inputStream = new ByteArrayInputStream(decodedBytes);
+                var image = new Image(inputStream);
+
+                return new Shot(
+                    image,
+                    new ShotCaption(
+                        new Caption.Title(home),
+                        new Caption.Title(title),
+                        optionalOf(subHome).map(Caption.Title::new),
+                        optionalOf(abs).map(Caption.Abstract::new)
+                    )
+                );
+            }
+
+            Optional<String> optionalOf(String str) {
+                if (str == null || str.trim().isEmpty()) {
+                    return Optional.empty();
+                }
+                return Optional.of(str);
+            }
+        }
+
+        final List<Shot> shots;
+        Shot currentShot;
+
+        ImagesAnim() {
+            shots = new ArrayList<>();
+            currentShot = null;
         }
 
         @Override
         public Caption.Title home() {
-            return new Caption.Title(home);
+            return currentShot.caption().home();
         }
 
         @Override
         public Caption.Title title() {
-            return new Caption.Title(title);
+            return currentShot.caption().title();
         }
 
         @Override
         public Optional<Caption.Title> subHome() {
-            return subHome;
+            return currentShot.caption().subHome();
         }
 
         boolean isInit() {
-            return images.size() > 0;
+            return shots.size() > 0;
         }
 
         int animsNum() {
-            return images.size();
+            return shots.size();
         }
 
-        void addImage(Image image) {
-            images.add(image);
+        void addShot(Shot shot) {
+            shots.add(shot);
         }
 
         /**
@@ -1408,7 +1449,7 @@ class Playground {
          *
          * The JSON file is an array of base64 images (screenshots).
          */
-        boolean drawImg(int animNum, double cycleTime) {
+        boolean drawShot(int animNum, double cycleTime) {
             if (animNum > animsNum()) {
                 return false;
             }
@@ -1421,10 +1462,12 @@ class Playground {
             if (animNum >= animsNum()) {
                 return;
             }
-            var image = images.get(animNum);
+            currentShot = shots.get(animNum);
 
             clean();
-            clean(image);
+            clean(currentShot.screenshot());
+
+            currentShot.caption().abs().ifPresent(abs -> drawAbstract(abs));
         }
     }
 
