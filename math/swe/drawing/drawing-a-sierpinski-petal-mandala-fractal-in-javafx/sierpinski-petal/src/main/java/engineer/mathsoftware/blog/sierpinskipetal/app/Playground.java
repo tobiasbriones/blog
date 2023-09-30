@@ -471,8 +471,8 @@ class Playground {
     }
 
     sealed interface Caption {
-        double TITLE_SIZE = 1.25;
-        double ABSTRACT_SIZE = TITLE_SIZE * 1.6;
+        double TITLE_SIZE = 1.5;
+        double ABSTRACT_SIZE = TITLE_SIZE * 1.5;
 
         record Title(String value) implements Caption {}
 
