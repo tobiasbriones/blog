@@ -75,7 +75,7 @@ class Playground {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
         this.scale = scale;
-        this.cycleDuration = 2;
+        this.cycleDuration = 0.5;
         this.targetFps = 10;
         this.loop = new FadeAnimLoop(
             this::draw,
@@ -271,8 +271,11 @@ class Playground {
     void drawAbstract(Caption.Abstract abs) {
         var homesNum = drawing.subHome().isPresent() ? 2 : 1;
         var bottom =
-            padding() + textHeight(Caption.TITLE_SIZE) * homesNum + textHeight(
-                Caption.ABSTRACT_SIZE) + textPadding(Caption.ABSTRACT_SIZE);
+            padding() + // bottom padding
+                textHeight(Caption.TITLE_SIZE) * homesNum + // home, home2
+                textHeight(Caption.ABSTRACT_SIZE) + // title
+                padding() + // extra padding to separate titles with abstract
+                textPadding(Caption.ABSTRACT_SIZE); // abstract padding
 
         setDrawingText(
             FontWeight.LIGHT,
