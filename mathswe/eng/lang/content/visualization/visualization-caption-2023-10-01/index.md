@@ -7,3 +7,8 @@
 ![Visualization Caption (2023/10/01)](visualization-caption-2023-10-01.png)
 
 ---
+
+## References
+
+OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
+[Chat \| OpenAI](https://chat.openai.com)
