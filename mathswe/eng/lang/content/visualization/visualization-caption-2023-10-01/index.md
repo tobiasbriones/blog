@@ -68,6 +68,33 @@ and preventing unethical practices from third parties.
 Captions are important to keep either domain or generated visualizations
 cohesive and coherent to the logical place where they belong.
 
+## Caption Design
+
+Captions consist of various concise elements that apply context from abstract
+sources all the way to the underlying visualization.
+
+One key principle is to create from the center, that is, optimize for the
+center. This plays well with the left-to-right/top-to-bottom (abstract to 
+detail) adage.
+
+When watching a graphic resource, the main content to optimize is the underlying
+resource, like the image or video. Therefore, the underlying visualization has
+to be in the center.
+
+Captions are secondary and complement the visualization, so they have to go to
+the bottom, always to the center.
+
+Needless to say:
+
+- The more top, the more specialized the caption to the (textual) content of the
+  visualization in the center.
+- The more bottom, the more abstract captions get.
+
+This is to guarantee the principle of cohesion or composability.
+
+A standard for visualization captions allows the generation of full-featured
+relative content from the source language.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
