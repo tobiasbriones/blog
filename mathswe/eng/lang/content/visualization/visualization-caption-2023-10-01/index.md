@@ -3,3 +3,7 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Visualization Caption (2023/10/01)
+
+![Visualization Caption (2023/10/01)](visualization-caption-2023-10-01.png)
+
+---
