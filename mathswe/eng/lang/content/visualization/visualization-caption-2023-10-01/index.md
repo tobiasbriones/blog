@@ -62,8 +62,8 @@ Even though files can be "easy to steal away from the place they belong,"
 this is fixed by applying good captions that prevent social media
 "influencers" from stealing and profiting from others' content.
 
-So, captions have two main advantages: relativizing generated binary content
-and preventing unethical practices from third parties.
+So, captions have two main advantages: relativizing generated binary content and
+preventing unethical practices from third parties.
 
 Captions are important to keep either domain or generated visualizations
 cohesive and coherent to the logical place where they belong.
@@ -74,7 +74,7 @@ Captions consist of various concise elements that apply context from abstract
 sources all the way to the underlying visualization.
 
 One key principle is to create from the center, that is, optimize for the
-center. This plays well with the left-to-right/top-to-bottom (abstract to 
+center. This plays well with the left-to-right/top-to-bottom (abstract to
 detail) adage.
 
 When watching a graphic resource, the main content to optimize is the underlying
