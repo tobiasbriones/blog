@@ -8,6 +8,66 @@
 
 ---
 
+## Importance of Captions
+
+Captions are integral to content like images, animations, or videos. They can be
+found in many formats and richness, but one (MathSwe) standard has to be
+introduced to formalize their usefulness and move forward, creating further
+original mathematical content.
+
+The following quote can give relevant insight into a visualization caption.
+
+> A visualization caption is a concise and formal description or label that
+> accompanies a graphical representation, chart, or graph. It provides essential
+> information about the visual content, such as its purpose, key insights, or
+> data sources, in a brief and clear manner. Effective visualization captions
+> are used to enhance understanding and context for the audience, especially
+> when interpreting complex data or presenting findings in reports or
+> presentations.
+>
+> Source: [Chat \| OpenAI](https://chat.openai.com) [1]
+
+They are essential because content that's generated —binary files— from the DSL,
+—unlike source code— lose the context as they're binary. Generated content can
+be images or videos, for instance.
+
+Notice that **domain components (like model representations) have the context
+distributed in the right place since they're relative, so they don't need many
+captions, but generated binary artifacts like images or videos are absolute, so
+the way to visually relativize them is by tracking the context with captions**.
+
+Recall that **I (so MathSwe) work with homogeneous designs**.
+
+According to the underlying language, it can be that *everything is an article*,
+for instance. So, a site, an article, a section, an image, or a paragraph *are
+all articles* (i.e., subject to the same principles).
+
+This can also mean that *everything is a function* if we're talking about
+programming instead of articles or books —that is, FP.
+
+For example, for domain content, we have a well-defined structure: domain name (
+or organization name), subdomain (if any), path (entry or article name),
+sections, subsections, resources inside subsections, etc. You don't need to add
+redundant context to each image or part of the article or app.
+
+On the other hand, if it comes to a separate file, that relative context is
+lost, so it has to be applied again.
+
+It's hard to "copy-paste" a domain-specific component (which is relative) to
+"steal it" to an *external system* (which is absolute or fragmented). Now, on
+the other hand, generated content such as files are "easy to steal"
+because their form is already absolute or "compiled."
+
+Even though files can be "easy to steal away from the place they belong,"
+this is fixed by applying good captions that prevent social media
+"influencers" from stealing and profiting from others' content.
+
+So, captions have two main advantages: relativizing generated binary content
+and preventing unethical practices from third parties.
+
+Captions are important to keep either domain or generated visualizations
+cohesive and coherent to the logical place where they belong.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
