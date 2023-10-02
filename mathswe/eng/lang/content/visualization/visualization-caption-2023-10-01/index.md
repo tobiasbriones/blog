@@ -124,6 +124,31 @@ The home or homes of a visualization add the abstract context of the place where
 they were generated. They're strong titles that differentiate from normal text
 but keep the composition clean.
 
+### Sub-Home
+
+Similarly to how the home gives the universe set where resources belong, this
+can be narrowed down to something concise, but more specific to have the context
+of where the resource is particularly related, so what it actually is about.
+
+It's a high-level title that does not give the context of the universe set like
+homes do, but the actual content of the visualization topic.
+
+**Sub-homes may be the underlying article name, app path, or the subdomain
+itself as well.**
+
+As said above, if we'd take a resource from this article, the sub-home would be
+its heading.
+
+They have the same definition as homes but are optional.
+
+They may be omitted for special first-class content. So, that's relative
+(like everything). It must be coherent and depends on the concept you want to
+optimize.
+
+Sub-home captions are a strategic way to communicate not the root source but the
+visualization topic or even more abstract like the subdomain but without being
+as abstract as the root source or home.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
