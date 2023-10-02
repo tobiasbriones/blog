@@ -62,6 +62,10 @@ video {
   border-radius: 1rem;
 }
 
+video {
+  min-width: 60%;
+}
+
 pre {
   background-color: #fafafa !important;
   border-radius: 0.5rem;
