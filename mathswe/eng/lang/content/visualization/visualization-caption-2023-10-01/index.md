@@ -149,6 +149,20 @@ Sub-home captions are a strategic way to communicate not the root source but the
 visualization topic or even more abstract like the subdomain but without being
 as abstract as the root source or home.
 
+### Visualization Title
+
+The next level consists of the actual title of the underlying resource that
+concisely encloses the definition of the visualization.
+
+If it's an image, its caption title is the name of the image. If it's a video
+animation, it defines the whole video in one simple title.
+
+The font weight is `Bold`, which is the proper weight for titles in general. It
+must be a high-level style (title cased) as well.
+
+By reading the caption title of the visualization you must be able to understand
+what it's all about.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
