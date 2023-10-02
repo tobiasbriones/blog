@@ -250,6 +250,33 @@ Text and UI dimensions can be complicated to write factually with logic (e.g.,
 what's the exact "correct" size?), so here I'm defining a compelling design to
 match these gorgeous MathSwe visualizations.
 
+## Reading the Context DSL with the Pipe Operator
+
+The DSL applied to captions is read via the pipe `|` symbol, thanks to
+the abstraction levels at each caption developed previously.
+
+For the following example, the context is clear.
+
+![Portrait 16-9 FHD Screenshot with Context](portrait-16--9-fhd-screenshot-with-context.png)
+
+<figcaption>
+<p align="center"><b>
+Portrait 16-9 FHD Screenshot with Context
+</b></p>
+</figcaption>
+
+It can be technically read as `MRM Solution Tree | Repsymo | math.software` with
+the pipe operator.
+
+Recall that *everything is an article/function* by the principle of
+homogeneity. So, you start with the constant `MRM Solution Tree`
+that is a feature (i.e., function) of `Repsymo` (i.e., the next function to
+pipe), and so on.
+
+By employing the pipe operator to read the caption language, you can build
+greater context that provides a concise understanding of the underlying
+visualization.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
