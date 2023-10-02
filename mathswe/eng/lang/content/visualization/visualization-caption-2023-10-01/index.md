@@ -197,6 +197,59 @@ article body*.
 The caption abstract is an optional soft title that encloses an elegant
 visualization description.
 
+## Caption Dimensions
+
+Caption font sizes have to be well-defined for compelling visualizations and
+predictive STEM simulations.
+
+**Captions (as well as everything) must be relative meaning that they look and
+behave exactly the same (predictability for the sake of the scientific method)
+without side effects.**
+
+So, if I export a production in 240p or FHD or 8K resolution, portrait or
+landscape, everything must be exactly the same.
+
+Lately, I defined the font sizes in code by using `720px` width as an absolute
+baseline, `1rem = 16px` as usual, so I have $$1 rem = 16 \frac{width}{720} px$$.
+
+This way, I can use relative units of size that will be converted to the
+rendering size when generating the animations.
+
+Therefore, the size for home captions (home, sub-home) is `1.5rem`, and for
+caption title and abstract is `1.5` the title size, or `2.25rem`.
+
+I devised another approach if I want to "embed" the caption into the
+visualization to save space. If captions occupy the space of the visualization,
+then the home captions are `1.25rem`.
+
+These metrics are not totally final, but they have the essence and are stable.
+
+Regarding the visualization content, that is, the canvas where the visualization
+lies is calculated by taking off the hard captions (homes and title), but the
+abstract (if any) is always taken as part of the animation since they're both
+tightly related.
+
+**Notice how the abstract is about the visualization rather than context. Hard
+captions like homes and titles give context instead.**
+
+Other technical details (that might change a bit) include the paddings to
+separate each caption.
+
+I set the text padding to the size of its font divided by four so they can have
+a good separation. So, the bigger the font (like the title and abstract size),
+the more padding they will have relative to their text size.
+
+The caption height is the height of the home, a sub-home, and the title
+captions, as mentioned earlier.
+
+There's a canvas padding that separates the abstract caption from the hard
+captions. This is what I said about separating the abstract further because
+it belongs more to the animation than the context or hard captions.
+
+Text and UI dimensions can be complicated to write factually with logic (e.g.,
+what's the exact "correct" size?), so here I'm defining a compelling design to
+match these gorgeous MathSwe visualizations.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
