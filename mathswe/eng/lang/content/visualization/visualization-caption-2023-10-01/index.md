@@ -247,8 +247,8 @@ The caption height is the height of the home, a sub-home, and the title
 captions, as mentioned earlier.
 
 There's a canvas padding that separates the abstract caption from the hard
-captions. This is what I said about separating the abstract further because
-it belongs more to the animation than the context or hard captions.
+captions. This is what I said about separating the abstract further because it
+belongs more to the animation than the context or hard captions.
 
 Text and UI dimensions can be complicated to write factually with logic (e.g.,
 what's the exact "correct" size?), so here I'm defining a compelling design to
@@ -314,8 +314,8 @@ clearer.
 
 ## Reading the Context DSL with the Pipe Operator
 
-The DSL applied to captions is read via the pipe `|` symbol, thanks to
-the abstraction levels at each caption developed previously.
+The DSL applied to captions is read via the pipe `|` symbol, thanks to the
+abstraction levels at each caption developed previously.
 
 For the following example, the context is clear.
 
@@ -330,8 +330,8 @@ Portrait 16-9 FHD Screenshot with Context
 It can be technically read as `MRM Solution Tree | Repsymo | math.software` with
 the pipe operator.
 
-Recall that *everything is an article/function* by the principle of
-homogeneity. So, you start with the constant `MRM Solution Tree`
+Recall that *everything is an article/function* by the principle of homogeneity.
+So, you start with the constant `MRM Solution Tree`
 that is a feature (i.e., function) of `Repsymo` (i.e., the next function to
 pipe), and so on.
 
