@@ -319,5 +319,5 @@ faster cadence.
 
 ## References
 
-OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
+[1] OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
 [Chat \| OpenAI](https://chat.openai.com)
