@@ -277,6 +277,29 @@ By employing the pipe operator to read the caption language, you can build
 greater context that provides a concise understanding of the underlying
 visualization.
 
+### No Redundant Context in Domain Components
+
+For generated artifacts like images and videos, context has to be passed as
+captions since these are absolute entities, but when these resources or
+visualizations are part of the (domain-specific) system, they already have their
+context implicitly, and it's redundant or undesired to duplicate that
+information.
+
+In other words, there's nothing "orphan" in the domain-specific system, as
+everything is in the correct place (i.e., relative).
+
+Recall that **boilerplate or redundancy is proof of poorly written code (or
+language) since math is applied to simplify *expressions*, which removes
+redundancy**.
+
+Therefore, only closely related captions must be added to resources, and when
+they're compiled to a binary form like a video, they should include the context
+via captions to relativize the artifact, just as mentioned earlier.
+
+Everything in the system has to be simplified or optimal, so captions with
+unnecessary context are not used until the moment the resource component is
+decoupled from the system (i.e., converted to a binary file).
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
