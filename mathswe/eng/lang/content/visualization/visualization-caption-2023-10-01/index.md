@@ -300,6 +300,23 @@ Everything in the system has to be simplified or optimal, so captions with
 unnecessary context are not used until the moment the resource component is
 decoupled from the system (i.e., converted to a binary file).
 
+## First Visualization Caption Standard
+
+Captions play a dual role by providing essential context to binary artifacts
+like images and videos, preserving their connection to their place of origin,
+and acting as ethical safeguards, preventing plagiarism committed by third
+parties.
+
+The design of captions included hierarchical arrangement, font weights, and
+sizes, remarking that every detail is carefully considered to ensure cohesion
+and predictability across various resolutions and contexts. Moreover, we can use
+the pipe operator that provides a concise and formal definition of the
+underlying visualization's origin and purpose.
+
+This first design of captions will allow implementations to take place, so keep
+moving forward with MathSwe system definitions and visualization results at a
+faster cadence.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
