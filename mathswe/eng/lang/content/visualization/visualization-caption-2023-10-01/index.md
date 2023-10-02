@@ -163,6 +163,40 @@ must be a high-level style (title cased) as well.
 By reading the caption title of the visualization you must be able to understand
 what it's all about.
 
+### Visualization Abstract Title
+
+The final element to enrich a presentation or visualization is its caption
+abstract title, which is a micro explanation after the caption title of what the
+visualization is about.
+
+The next level of detail after the caption abstract is not text anymore but the
+visualization itself.
+
+The abstract is optional and has to be separated from the other titles because
+it resembles more a paragraph (an abstract section in the end) than a title.
+
+It goes title-cased as well as the other titles because despite being a micro
+paragraph, it must still be a one-line title.
+
+The font-weight is `Light` because it has to be different from hard titles which
+are bolder, and it acts as normal text. Of course, the normal text has to
+have `Normal` weight, but I left the `Light` weight since the result is just
+compelling: a light font-weight is designed for a minimalist text that looks
+elegant, and contrasting with the previous hard titles, it looks much cleaner as
+well.
+
+This abstract is pretty useful for videos where there's a sequence of
+animations, so you have to explain each one.
+
+Thus, for video animations, **abstract captions always change (i.e., one per
+animation) unlike the hard titles that have to be more constant**. Needless to
+say, the more bottom, the less changing titles have to be. The animation itself
+is the most changing element here. So, *the animation plays the role of an
+article body*.
+
+The caption abstract is an optional soft title that encloses an elegant
+visualization description.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
