@@ -8,6 +8,10 @@
 
 ---
 
+Generated content from domain visuals requires captions to keep their context
+and inherent textual descriptions of the visualization, which is the first
+MathSwe standard for captions now available to implement.
+
 ## Importance of Captions
 
 Captions are integral to content like images, animations, or videos. They can be
