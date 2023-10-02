@@ -95,6 +95,35 @@ This is to guarantee the principle of cohesion or composability.
 A standard for visualization captions allows the generation of full-featured
 relative content from the source language.
 
+### Source Home
+
+For visualizations exported as binary files, this information will keep them
+attached to the origin where they belong.
+
+The home can be the domain name or app/organization name.
+
+**The home consists of two values: a mandatory home and an optional sub-home.**
+
+For example, if we take resources from this article, their home may
+be `blog | mathsoftware.engineer`, and the sub-home the name of the blog
+article `Visualization Caption (2023/10/01)`.
+
+They are the most abstract captions in the composition, so they go all the way
+to the bottom.
+
+**The font-weight is `Medium`**. It's an exact match. If it were bolder
+(`Semi Bold`), the whole caption would get bloated. If it were thinner
+(`Normal`), it'd look like a paragraph, but captions are not paragraphs but
+*titles*[^1].
+
+[^1]: The only exception is abstract captions that have to be `Light` since
+    they're "abstract titles," a bit longer, and require elegance to match the
+    composition
+
+The home or homes of a visualization add the abstract context of the place where
+they were generated. They're strong titles that differentiate from normal text
+but keep the composition clean.
+
 ## References
 
 OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
