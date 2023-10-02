@@ -254,6 +254,64 @@ Text and UI dimensions can be complicated to write factually with logic (e.g.,
 what's the exact "correct" size?), so here I'm defining a compelling design to
 match these gorgeous MathSwe visualizations.
 
+## Caption Samples in Animations
+
+These are some of the (updated) productions I was working on an EP Playground,
+and they show the result of captions in video animations or simulations.
+
+The following animation explains (from the DSL) how a solution tree is rendered
+in overall (I have a full simulation of this complex process of course).
+
+This resource is first-class, so it has to be as optimal (original, concise,
+formal, etc.) as possible.
+
+The abstract caption that changes provides an elegant description of what you're
+watching, as per the caption specs.
+
+<p>
+<video width="60%" poster="static/poster-_-fast-sequence-animation-with-abstract-captions.jpg" controls>
+  <source
+    src="static/fast-sequence-animation-with-abstract-captions.mp4"
+    type="video/mp4"
+  >
+  Your browser does not support the video tag.
+</video>
+</p>
+
+<figcaption>
+<p align="center"><b>
+Fast Sequence Animation with Abstract Captions
+</b></p>
+</figcaption>
+
+The following is a drawing of a flower I worked on an EP Playground from the
+Blog. It also has abstract captions that explain how to draw a flower.
+
+<p>
+<video poster="static/poster-_-embedded-captions.jpg" controls>
+  <source
+    src="static/embedded-captions.mp4"
+    type="video/mp4"
+  >
+  Your browser does not support the video tag.
+</video>
+</p>
+
+<figcaption>
+<p align="center"><b>
+Embedded Captions
+</b></p>
+</figcaption>
+
+This is cute because that's how I learned to draw a simple flower and how I
+share it.
+
+Recall that embedded captions are part of the visualization space and are
+slightly smaller.
+
+These examples make the idea of how captions are useful in video animations
+clearer.
+
 ## Reading the Context DSL with the Pipe Operator
 
 The DSL applied to captions is read via the pipe `|` symbol, thanks to
