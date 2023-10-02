@@ -86,7 +86,7 @@ resource, like the image or video. Therefore, the underlying visualization has
 to be in the center.
 
 Captions are secondary and complement the visualization, so they have to go to
-the bottom, always to the center.
+the bottom, always centered horizontally.
 
 Needless to say:
 
@@ -94,7 +94,7 @@ Needless to say:
   visualization in the center.
 - The more bottom, the more abstract captions get.
 
-This is to guarantee the principle of cohesion or composability.
+This is to guarantee the principle of **cohesion or composability**.
 
 A standard for visualization captions allows the generation of full-featured
 relative content from the source language.
@@ -106,7 +106,7 @@ attached to the origin where they belong.
 
 The home can be the domain name or app/organization name.
 
-**The home consists of two values: a mandatory home and an optional sub-home.**
+The home consists of two values: **a mandatory home and an optional sub-home**.
 
 For example, if we take resources from this article, their home may
 be `blog | mathsoftware.engineer`, and the sub-home the name of the blog
@@ -134,8 +134,8 @@ Similarly to how the home gives the universe set where resources belong, this
 can be narrowed down to something concise, but more specific to have the context
 of where the resource is particularly related, so what it actually is about.
 
-It's a high-level title that does not give the context of the universe set like
-homes do, but the actual content of the visualization topic.
+It's a **high-level title** that does not give the context of the universe set
+like homes do, but the actual content of the visualization topic.
 
 **Sub-homes may be the underlying article name, app path, or the subdomain
 itself as well.**
@@ -158,8 +158,8 @@ as abstract as the root source or home.
 The next level consists of the actual title of the underlying resource that
 concisely encloses the definition of the visualization.
 
-If it's an image, its caption title is the name of the image. If it's a video
-animation, it defines the whole video in one simple title.
+If it's an image, its caption title is **the name** of the image. If it's a
+video animation, it defines the whole video in one simple title (the video name).
 
 The font weight is `Bold`, which is the proper weight for titles in general. It
 must be a high-level style (title cased) as well.
@@ -170,24 +170,24 @@ what it's all about.
 ### Visualization Abstract Title
 
 The final element to enrich a presentation or visualization is its caption
-abstract title, which is a micro explanation after the caption title of what the
-visualization is about.
+abstract title, which is a micro explanation after the visualization title of
+what the visualization is about.
 
-The next level of detail after the caption abstract is not text anymore but the
-visualization itself.
+From here, **the next level of detail after the visualization abstract is not
+text anymore but the visualization itself**.
 
 The abstract is optional and has to be separated from the other titles because
 it resembles more a paragraph (an abstract section in the end) than a title.
 
-It goes title-cased as well as the other titles because despite being a micro
-paragraph, it must still be a one-line title.
+It goes **title-cased** as well as the other titles because despite being a
+micro paragraph, it must still be **a one-line title**.
 
-The font-weight is `Light` because it has to be different from hard titles which
-are bolder, and it acts as normal text. Of course, the normal text has to
+**The font-weight is `Light`** because it has to be different from hard titles
+which are bolder, and it acts as normal text. Of course, the normal text has to
 have `Normal` weight, but I left the `Light` weight since the result is just
-compelling: a light font-weight is designed for a minimalist text that looks
-elegant, and contrasting with the previous hard titles, it looks much cleaner as
-well.
+compelling: *a light font-weight is designed for a minimalist text that looks
+elegant*, and contrasting with the previous hard titles, it looks much cleaner
+as well.
 
 This abstract is pretty useful for videos where there's a sequence of
 animations, so you have to explain each one.
@@ -206,9 +206,9 @@ visualization description.
 Caption font sizes have to be well-defined for compelling visualizations and
 predictive STEM simulations.
 
-**Captions (as well as everything) must be relative meaning that they look and
-behave exactly the same (predictability for the sake of the scientific method)
-without side effects.**
+Captions (as well as everything) must be relative meaning that **they look and
+behave exactly the same** (*predictability* for the sake of the scientific
+method) without side effects.
 
 So, if I export a production in 240p or FHD or 8K resolution, portrait or
 landscape, everything must be exactly the same.
@@ -219,21 +219,22 @@ baseline, `1rem = 16px` as usual, so I have $$1 rem = 16 \frac{width}{720} px$$.
 This way, I can use relative units of size that will be converted to the
 rendering size when generating the animations.
 
-Therefore, the size for home captions (home, sub-home) is `1.5rem`, and for
-caption title and abstract is `1.5` the title size, or `2.25rem`.
+Therefore, **the size for home captions (home, sub-home) is `1.5rem`, and for
+caption title and abstract is `1.5` the title size, or `2.25rem`**.
 
 I devised another approach if I want to "embed" the caption into the
-visualization to save space. If captions occupy the space of the visualization,
-then the home captions are `1.25rem`.
+visualization to save space. **If captions occupy the space of the
+visualization, then the home captions are `1.25rem`**.
 
-These metrics are not totally final, but they have the essence and are stable.
+These metrics might not be totally final, but they have the essence and are
+stable.
 
 Regarding the visualization content, that is, the canvas where the visualization
 lies is calculated by taking off the hard captions (homes and title), but the
 abstract (if any) is always taken as part of the animation since they're both
 tightly related.
 
-**Notice how the abstract is about the visualization rather than context. Hard
+Notice how **the abstract is about the visualization rather than context. Hard
 captions like homes and titles give context instead.**
 
 Other technical details (that might change a bit) include the paddings to
@@ -347,16 +348,16 @@ visualizations are part of the (domain-specific) system, they already have their
 context implicitly, and it's redundant or undesired to duplicate that
 information.
 
-In other words, there's nothing "orphan" in the domain-specific system, as
-everything is in the correct place (i.e., relative).
+In other words, **there's nothing "orphan" in the domain-specific system, as
+everything is in the correct place** (i.e., relative).
 
 Recall that **boilerplate or redundancy is proof of poorly written code (or
 language) since math is applied to simplify *expressions*, which removes
 redundancy**.
 
-Therefore, only closely related captions must be added to resources, and when
-they're compiled to a binary form like a video, they should include the context
-via captions to relativize the artifact, just as mentioned earlier.
+Therefore, *only closely related captions must be added to resources*, and when
+they're compiled to a binary form like a video, *they should include the context
+via captions to relativize the artifact*, just as mentioned earlier.
 
 Everything in the system has to be simplified or optimal, so captions with
 unnecessary context are not used until the moment the resource component is
