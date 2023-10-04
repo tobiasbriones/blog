@@ -75,4 +75,50 @@ class MdTest {
 
         assertEquals(expected, codeBlock)
     }
+
+    @Test
+    fun codeSnippetParsing() {
+        val mdCodeBlock = """
+            `Definition of an "Article" DSL | Pipe.kt`
+
+            ```kotlin
+            data class Article(val title: Title, val content: String)
+
+            @JvmInline
+            value class Title(val value: String) {
+                override fun toString(): String = value
+            }
+
+            val title: (String) -> Title = { Title(it) }
+            ```
+        """.trimIndent()
+        val expected = """
+            
+            <figure>
+            {% capture markdownContent %}
+
+            `Pipe.kt`
+
+            ```kotlin
+            data class Article(val title: Title, val content: String)
+
+            @JvmInline
+            value class Title(val value: String) {
+                override fun toString(): String = value
+            }
+
+            val title: (String) -> Title = { Title(it) }
+            ```
+
+            {% endcapture %}
+
+            {{ markdownContent | markdownify }}
+
+            <figcaption>Definition of an "Article" DSL</figcaption>
+            </figure>
+            
+        """.trimIndent()
+
+        assertEquals(expected, Markdown(mdCodeBlock).parseCodeSnippets().value)
+    }
 }

@@ -222,6 +222,15 @@ function getFocusedHeading() {
   return invisibleHeadingClosestToTop;
 }
 
+function onCopyCodeSnippet(button) {
+  const code = button.getAttribute("data-code");
+  navigator
+    .clipboard
+    .writeText(code)
+    .then(() => console.log("Copied"))
+    .catch((reason) => console.log(`Failed to copy code to clipboard: ${reason}`))
+}
+
 function updateFilePath() {
   const pageTitle = document.querySelector('h1').textContent;
 
