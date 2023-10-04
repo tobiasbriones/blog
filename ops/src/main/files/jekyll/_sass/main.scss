@@ -2,6 +2,7 @@
 @import "header";
 @import "footer";
 @import "toc";
+@import "snippet";
 @import "menu";
 @import "table";
 @import "social";
@@ -41,32 +42,6 @@ h1, h2, h3, h4, h5, figcaption {
   color: var(--title-text-color);
 }
 
-figure > .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  margin-bottom: 0;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-
-figure > .header > .caption {
-  flex: 1;
-}
-
-figure > .header > .menu {
-  display: flex;
-  gap: 0.75rem;
-}
-
-figure > .header > .menu > button {
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
 figcaption {
   text-align: center;
 }
@@ -101,47 +76,16 @@ video {
   min-width: 60%;
 }
 
-pre {
-  background-color: #fafafa !important;
-  border-radius: 0.5rem;
-  padding: 1rem;
-}
-
-code {
-  background-color: #fafafa;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.25rem;
-  padding: 0 0.25rem;
-  color: inherit;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-pre {
-  margin: 0;
-}
-
-pre code {
-  border: none;
-  border-radius: 0;
-  padding: 0;
-}
-
-div > div.highlight {
-  border: 1px solid #e0e0e0;
-  margin-bottom: 1rem;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-code > span {
-  font-family: 'JetBrains Mono', monospace;
-}
-
 figcaption strong {
   color: var(--title-text-color);
 }
 
 strong {
   color: var(--content-text-color);
+}
+
+.show {
+  opacity: 1;
 }
 
 @media screen and (min-width: 720px) {

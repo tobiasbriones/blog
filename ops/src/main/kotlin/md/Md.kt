@@ -52,7 +52,7 @@ fun parseCodeSnippets(value: String): String {
                     { it + "\n" }
                 val html = """
 <figure>
-<div class="header">
+<div class="header user-select-none">
     <div class="caption">
         $abstract
     </div>
@@ -68,6 +68,10 @@ fun parseCodeSnippets(value: String): String {
             <span class="material-symbols-rounded">
             content_copy
             </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
         </button>
     </div>
 </div>

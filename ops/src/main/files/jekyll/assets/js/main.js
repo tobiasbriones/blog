@@ -224,10 +224,16 @@ function getFocusedHeading() {
 
 function onCopyCodeSnippet(button) {
   const code = button.getAttribute("data-code");
+  const tooltip = button.querySelector(".tooltip")
+
   navigator
     .clipboard
     .writeText(code)
-    .then(() => console.log("Copied"))
+    .then(() => {
+      tooltip.classList.add("show");
+
+      setTimeout(() => tooltip.classList.remove("show"), 2000)
+    })
     .catch((reason) => console.log(`Failed to copy code to clipboard: ${reason}`))
 }
 
