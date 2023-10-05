@@ -1,6 +1,8 @@
 import fs.generateRootNotice
 import fs.hasNotice
 import fs.loadEntries
+import fs.loadIndex
+import md.parse
 import java.nio.file.Path
 
 // MAKE SURE to add the working directory of the Git repository to test
@@ -17,7 +19,18 @@ fun main() {
 //    create()
 //    serve()
 
-    testRootNoticeLinks()
+//    testRootNoticeLinks()
+
+    val entry = Entry(Path.of(""))
+        .loadEntries()
+        .map {
+            it.find { it.name().contains("slides") }
+        }
+        .getOrNull()
+
+    val index = entry?.loadIndex()?.getOrNull()
+
+    val parse = index?.parse(entry)
 
     //runCmd("build drawing-a-tree-on-canvas-with-xy-coordinates")
 //    runCmd("build building-slides-from-screenshots-app-in-javafx jekyll")

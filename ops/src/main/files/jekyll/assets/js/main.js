@@ -224,7 +224,7 @@ function getFocusedHeading() {
 
 function onCopyCodeSnippet(button) {
   const code = button.getAttribute("data-code");
-  const tooltip = button.querySelector(".tooltip")
+  const tooltip = button.querySelector(".tooltip");
 
   navigator
     .clipboard
@@ -235,6 +235,14 @@ function onCopyCodeSnippet(button) {
       setTimeout(() => tooltip.classList.remove("show"), 2000)
     })
     .catch((reason) => console.log(`Failed to copy code to clipboard: ${reason}`))
+}
+
+function onOpenCodeSnippetLink(button) {
+  const path = button.getAttribute("data-path");
+  const currentURL = window.location.href.split('#')[0]; // Remove the hash part if it exists
+  const newURL = currentURL + '/' + path;
+
+  window.open(newURL, '_blank');
 }
 
 function updateFilePath() {
