@@ -66,15 +66,45 @@ It's useful for the given example that shows the operator usage:
 
 First, the `---` operator is defined:
 
-`Pipe.kt`
 
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        Pipe.kt
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="kotlin/Pipe.kt" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="infix fun &lt;X, Y&gt; X.`---`(f: (X) -&gt; Y): Y = f(this)
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 infix fun <X, Y> X.`---`(f: (X) -> Y): Y = f(this)
 ```
 
-<figcaption>
-<p align="center"><strong>Definition of the Pipe ("---") Operator</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Definition of the Pipe ("---") Operator</figcaption>
+</figure>
 
 Where:
 
@@ -100,8 +130,40 @@ That was the definition of the pipe operator.
 Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
 
-`Pipe.kt`
 
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        Pipe.kt
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="kotlin/Pipe.kt" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="data class Article(val title: Title, val content: String)
+
+@JvmInline
+value class Title(val value: String) {
+    override fun toString(): String = value
+}
+
+val title: (String) -&gt; Title = { Title(it) }
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 data class Article(val title: Title, val content: String)
 
@@ -113,29 +175,94 @@ value class Title(val value: String) {
 val title: (String) -> Title = { Title(it) }
 ```
 
-<figcaption>
-<p align="center"><strong>Definition of an "Article" DSL</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Definition of an "Article" DSL</figcaption>
+</figure>
 
 So, to test the code, I will add a user input title that is not cleaned, some
 content, and I'll also define more functions with **transformations**, so we can
 *pipe them*.
 
-`fun main | Pipe.kt`
 
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        fun main | Pipe.kt
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="kotlin/Pipe.kt" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="val inputTitle = &quot;FP in Kotlin: Defining a Pipe   Operator  &quot;
+val inputContent = &quot;Lorem ipsum dolor sit amet...&quot;
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 val inputTitle = "FP in Kotlin: Defining a Pipe   Operator  "
 val inputContent = "Lorem ipsum dolor sit amet..."
 ```
 
-<figcaption>
-<p align="center"><strong>Sample User Input for Example Snippet</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Sample User Input for Example Snippet</figcaption>
+</figure>
 
 Then, we'll have some useful example transformations:
 
-`fun main | Pipe.kt`
 
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        fun main | Pipe.kt
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="kotlin/Pipe.kt" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="val clean: (String) -&gt; String = { it.trim().replace(&quot;\\s+&quot;.toRegex(), &quot; &quot;) }
+val uppercase: (String) -&gt; String = { it.uppercase() }
+val markdownTitle: (String) -&gt; String = { &quot;# $it&quot; }
+val formatTitle: (String) -&gt; String =
+    { it `---` clean `---` uppercase `---` markdownTitle }
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 val clean: (String) -> String = { it.trim().replace("\\s+".toRegex(), " ") }
 val uppercase: (String) -> String = { it.uppercase() }
@@ -144,14 +271,45 @@ val formatTitle: (String) -> String =
     { it `---` clean `---` uppercase `---` markdownTitle }
 ```
 
-<figcaption>
-<p align="center"><strong>Transformations for Example Snippet</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Transformations for Example Snippet</figcaption>
+</figure>
 
 Finally, we can create an `Article` with `title` and `content`:
 
-`fun main | Kotlin.kt`
 
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        fun main | Kotlin.kt
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="print(
+    Article(
+        inputTitle `---` formatTitle `---` title,
+        inputContent
+    )
+)
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 print(
     Article(
@@ -161,10 +319,14 @@ print(
 )
 ```
 
-<figcaption>
-<p align="center"><strong>Building an "Article" for the Example 
-Snippet</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Building an "Article" for the Example Snippet</figcaption>
+</figure>
 
 With this, a title `String` can be transformed into a `Title` domain type by
 piping it to the transformations declared:
@@ -176,6 +338,32 @@ piping it to the transformations declared:
 
 The program's output is:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="Article(
+    title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
+    content=Lorem ipsum dolor sit amet...
+)
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```
 Article(
     title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
@@ -183,9 +371,14 @@ Article(
 )
 ```
 
-<figcaption>
-<p align="center"><strong>Program's Output (Formatted)</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Program's Output (Formatted)</figcaption>
+</figure>
 
 The example code is [here](kotlin/Pipe.kt).
 
@@ -232,13 +425,15 @@ standard for this language so it can be employed for some of the development of
 mathematical software.
 
 
+
+
 <div class="my-4">
   <div class="subdir-btn my-4">
     <a class="btn" href="kotlin">
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iI0ZCQzAyRCI+DQoJPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMCA0SDRjLTEuMSAwLTEuOTkuOS0xLjk5IDJMMiAxOGMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjhjMC0xLjEtLjktMi0yLTJoLThsLTItMnoiLz4NCjwvc3ZnPg==" alt="Subdirectory" />
-      <strong>
+      <span>
         Kotlin
-      </strong>
+      </span>
     </a>
   </div>
 </div>
