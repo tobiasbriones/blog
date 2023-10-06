@@ -62,6 +62,32 @@ something absolute or disconnected from the rest, hence flawed.
 
 Let's see what Go says if I build a dummy PoC project that resembles this flaw:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="package test
+        imports test&#x2F;ui
+        imports test&#x2F;data
+        imports test&#x2F;ui: import cycle not allowed
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```
 package test
         imports test/ui
@@ -69,13 +95,14 @@ package test
         imports test/ui: import cycle not allowed
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Go does not Compile Cyclic Package Dependencies
-</strong>
-</p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Go does not Compile Cyclic Package Dependencies</figcaption>
+</figure>
 
 I've used Go in my job experiences and for other projects as well.
 
@@ -101,6 +128,36 @@ source files, that shouldn't be a problem, as *they're actually the same*. So,
 here we wouldn't have the "sink" concept I mentioned earlier if you operate on
 the *same* package:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code=".
+├── data
+│   ├── data.go
+│   └── file.go
+├── go.mod
+├── main.go
+└── ui
+    └── ui.go
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```
 .
 ├── data
@@ -112,9 +169,14 @@ the *same* package:
     └── ui.go
 ```
 
-<figcaption>
-<p align="center"><strong>Go Project Structure</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Go Project Structure</figcaption>
+</figure>
 
 In Go, source files under the `package` `data` (or any `package`) belong to the
 same package `data`. So, circular requirements among **files** in the **same**
@@ -221,5 +283,7 @@ opinionated design of Go makes it easier to write simpler systems with bounded
 complexity, while Java is a legacy language that won't help with this unless
 you're well-versed in the language and enforce it manually, which turns in more
 technical debt.
+
+
 
 
