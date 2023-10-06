@@ -33,6 +33,33 @@ Troubleshooting from my university enrollment sections app are listed next.
 
 This was when Java 9 came out, and reflection operations were affected.
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.poi.util.DocumentHelper (file:&#x2F;T:&#x2F;Workspace&#x2F;Java&#x2F;Sections%20Manager&#x2F;libs&#x2F;poi&#x2F;poi-ooxml-3.17.jar) to method com.sun.org.apache.xerces.internal.util.SecurityManager.setEntityExpansionLimit(int)
+WARNING: Please consider reporting this to the maintainers of org.apache.poi.util.DocumentHelper
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.apache.poi.util.DocumentHelper (file:/T:/Workspace/Java/Sections%20Manager/libs/poi/poi-ooxml-3.17.jar) to method com.sun.org.apache.xerces.internal.util.SecurityManager.setEntityExpansionLimit(int)
@@ -41,11 +68,14 @@ WARNING: Use --illegal-access=warn to enable warnings of further illegal reflect
 WARNING: All illegal access operations will be denied in a future release
 ```
 
-<figcaption>
-<p align="center"><strong>
-Illegal Reflective Access Warning in Old Version of Apache POI and Java 9
-</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Illegal Reflective Access Warning in Old Version of Apache POI and Java 9</figcaption>
+</figure>
 
 Apache POI 3.x is quite old, while 4.x came later.
 
@@ -90,6 +120,37 @@ the `Stream` API that was introduced in Java 16.
 
 **The IDE was all right with the code, but it didn't compile in the end.**
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="fun entries(root: Entry): List&lt;Entry&gt; =
+    Files
+        .walk(root.path)
+        .filter(::filterPath)
+        .filter(Files::isRegularFile)
+        .filter { it.name == &quot;index.md&quot; }
+        .filter { it.parent != null }
+        .map { Entry(it.parent) }
+        .toList() &#x2F;&#x2F; &lt;- here
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 fun entries(root: Entry): List<Entry> =
     Files
@@ -102,12 +163,54 @@ fun entries(root: Entry): List<Entry> =
         .toList() // <- here
 ```
 
-<figcaption>
-<p align="center"><strong>
-Method "toList" Unresolved by the Compiler
-</strong></p>
-</figcaption>
+{% endcapture %}
 
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Method "toList" Unresolved by the Compiler</figcaption>
+</figure>
+
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="e: file:&#x2F;&#x2F;&#x2F;P:&#x2F;deployment&#x2F;blog&#x2F;ops&#x2F;src&#x2F;main&#x2F;kotlin&#x2F;Main.kt:282:10 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public inline fun &lt;T&gt; Enumeration&lt;TypeVariable(T)&gt;.toList(): List&lt;TypeVariable(T)&gt; defined in kotlin.collections
+public fun &lt;T&gt; Array&lt;out TypeVariable(T)&gt;.toList(): List&lt;TypeVariable(T)&gt; defined in kotlin.collections
+public fun BooleanArray.toList(): List&lt;Boolean&gt; defined in kotlin.collections
+public fun ByteArray.toList(): List&lt;Byte&gt; defined in kotlin.collections
+public fun CharArray.toList(): List&lt;Char&gt; defined in kotlin.collections
+public fun CharSequence.toList(): List&lt;Char&gt; defined in kotlin.text
+public fun DoubleArray.toList(): List&lt;Double&gt; defined in kotlin.collections
+public fun FloatArray.toList(): List&lt;Float&gt; defined in kotlin.collections
+public fun IntArray.toList(): List&lt;Int&gt; defined in kotlin.collections
+public fun LongArray.toList(): List&lt;Long&gt; defined in kotlin.collections
+public fun &lt;T&gt; Pair&lt;TypeVariable(T), TypeVariable(T)&gt;.toList(): List&lt;TypeVariable(T)&gt; defined in kotlin
+public fun ShortArray.toList(): List&lt;Short&gt; defined in kotlin.collections
+public fun &lt;T&gt; Triple&lt;TypeVariable(T), TypeVariable(T), TypeVariable(T)&gt;.toList(): List&lt;TypeVariable(T)&gt; defined in kotlin
+public fun &lt;T&gt; Iterable&lt;TypeVariable(T)&gt;.toList(): List&lt;TypeVariable(T)&gt; defined in kotlin.collections
+public fun &lt;K, V&gt; Map&lt;out TypeVariable(K), TypeVariable(V)&gt;.toList(): List&lt;Pair&lt;TypeVariable(K), TypeVariable(V)&gt;&gt; defined in kotlin.collections
+public fun &lt;T&gt; Sequence&lt;TypeVariable(T)&gt;.toList(): List&lt;TypeVariable(T)&gt; defined in kotlin.sequences
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```
 e: file:///P:/deployment/blog/ops/src/main/kotlin/Main.kt:282:10 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
 public inline fun <T> Enumeration<TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.collections
@@ -128,11 +231,14 @@ public fun <K, V> Map<out TypeVariable(K), TypeVariable(V)>.toList(): List<Pair<
 public fun <T> Sequence<TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.sequences
 ```
 
-<figcaption>
-<p align="center"><strong>
-The Method "toList" is not Found when Compiling
-</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>The Method "toList" is not Found when Compiling</figcaption>
+</figure>
 
 A solution was to add `import kotlin.streams.toList` to import the method
 `toList` so it's found. The problem is that is unnecessary, and **the IDE
@@ -148,17 +254,45 @@ stopped compiling some day).
 In the end, I was able to **set the actual version of the JDK to use by Gradle
 by editing the project's `build.gradle.kts` from `11` to `19`** (or the latest):
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="kotlin {
+    jvmToolchain(19)
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 kotlin {
     jvmToolchain(19)
 }
 ```
 
-<figcaption>
-<p align="center"><strong>
-Solution to Set the Correct Version of the JDK to Run the Kotlin App
-</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Solution to Set the Correct Version of the JDK to Run the Kotlin App</figcaption>
+</figure>
 
 ### Machine Learning
 
@@ -177,7 +311,41 @@ learn**, and that was the problem I had.
 
 The API is the following:
 
-`tf.data.Dataset.list_files(split_list, shuffle=False)`
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="tf.data.Dataset.list_files(split_list, shuffle=False)
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
+```
+tf.data.Dataset.list_files(split_list, shuffle=False)
+```
+
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Tensorflow "list_files" Method with Explicit File Unshuffling</figcaption>
+</figure>
 
 [list_files \| tf.data.Dataset \| TensorFlow v2.12.0](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#list_files)
 
@@ -198,5 +366,7 @@ get locked in a local minimum as per what I was reading about how the Stochastic
 Gradient Descent (SGD) works.
 
 **Always make sure to shuffle data before training to avoid biases.**
+
+
 
 
