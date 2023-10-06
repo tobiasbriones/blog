@@ -49,16 +49,45 @@ natural numbers [1]:
 
 Another example is the creation of the Fibonacci sequence inductively:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```haskell
 fib 0 = 0
 fib 1 = 1
 fib n = fib (n-1) + fib (n-2)
 ```
 
-<figcaption>
-<p align="center"><strong>The Fibonacci Sequence (a.k.a. "the 'Hello, world!' 
-of Haskell programming"</strong>[4]</p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+<div class="abstract">Also Known as "the 'Hello, world!' of Haskell programming"</div>
+
+<figcaption>The Fibonacci Sequence [4]</figcaption>
+</figure>
 
 The declarativeness of math enables creation with mathematical elegance unlike
 the imperativeness of those impure where every instance is to be addressed
@@ -103,5 +132,7 @@ Williams College. Retrieved March 14, 2023, from
 
 [4] The Fibonacci sequence - HaskellWiki. (n.d.).
 [The Fibonacci sequence \| Wiki \| Haskell](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition).
+
+
 
 
