@@ -37,6 +37,16 @@ div > div.highlight {
   border-bottom: none;
 }
 
+.header ~ .abstract {
+  padding: 1rem;
+  text-align: center;
+  font-weight: lighter;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-bottom: none;
+}
+
 .header ~ figcaption {
   padding: 0.5rem;
   border: 1px solid #e0e0e0;
@@ -74,6 +84,7 @@ figure > .header > .menu > button {
   align-items: center;
   justify-content: center;
   border: none;
+  border-top-right-radius: 0.5rem;
   background: none;
   cursor: pointer;
 }
@@ -97,4 +108,29 @@ figure > .header > .menu > button > .tooltip {
   border: 0.0625rem solid #f0f0f0;
   background-color: var(--content-background-color);
   pointer-events: none;
+}
+
+figure > .headerless {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+figure > .headerless > .caption {
+  height: 1.5rem;
+  box-sizing: content-box;
+}
+
+figure > .headerless > .menu {
+  z-index: 1;
+}
+
+figure > .headerless > .menu > button {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.headerless ~ div > div.highlight {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top: 1px solid #e0e0e0;
 }

@@ -1,5 +1,6 @@
 package md
 
+import `$`
 import `---`
 import Entry
 import arrow.core.None
@@ -11,6 +12,7 @@ import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.relativeTo
+import kotlin.system.exitProcess
 
 data class Markdown(val value: String)
 
@@ -20,30 +22,101 @@ fun Markdown.parseCodeSnippets(entry: Entry): Markdown =
     copy(value = parseCodeSnippets(value, entry))
 
 fun parseCodeSnippets(value: String, entry: Entry): String {
+    data class Caption(
+        val title: String,
+        val heading: String = "",
+        val abstract: String = ""
+    )
+
+    fun Caption.isNotEmpty() = title.isNotBlank()
+
+    val pipeTokens: (List<String>) -> String = { it.joinToString(" | ") }
+
+    val isHighLevelText: (String) -> Boolean = {
+        it.first() == it.first().uppercaseChar() && it.contains(" ")
+    }
+
+    val captionFromPipe: (List<String>) -> Caption = {
+        when (it.size) {
+            0 -> Caption("")
+            1 -> Caption(it[0])
+            2 -> if (it[1] `---` isHighLevelText)
+                Caption(title = it[1], abstract = it[0])
+            else
+                Caption(title = it[0], heading = it[1])
+
+            else -> if (it[1] `---` isHighLevelText)
+                Caption(
+                    title = it[1],
+                    abstract = it[0],
+                    heading = pipeTokens `$` it.subList(2, it.size - 1)
+                )
+            else
+                Caption(
+                    title = it[0],
+                    heading = pipeTokens `$` it.subList(1, it.size - 1)
+                // The last tokens are left for the heading
+                )
+        }
+    }
+
+    val captionFromDsl: (String) -> Caption = {
+        captionFromPipe `$` it
+            .removePrefix("`")
+            .removeSuffix("`")
+            .split("|")
+            .map(String::trim)
+    }
+
     val sb = StringBuilder(value.length)
     val mdSnippetBlock = StringBuilder()
-    var title = ""
-    var abstract = ""
+    var caption = Caption("")
+
+    val preprocessed = StringBuilder(value.length)
+    var dslLine = ""
 
     for (line in value.lines()) {
-        // Caption line
-        if (line.matches("^`[^`]*`$".toRegex())) {
-            val captions = line
-                .removePrefix("`")
-                .removeSuffix("`")
-                .split("|")
-                .map(String::trim)
+        // If it's a DSL line (i.e., '{ DSL code }') but it's multiline, make
+        // it single line to easy parsing
+        if (line.matches("^`[^`]*".toRegex()) && !line.matches("`$".toRegex())) {
+            // It closes the "`" but has more text in the same line in the
+            // end e.g. "`Title | file.ts` this file is..."
+            if (line.count { it == '`' } % 2 == 0) {
+                println("Syntax Error: Invalid DSL line $line")
+                exitProcess(1)
+            }
+            dslLine += line
+            continue
+        }
 
-            if (captions.isNotEmpty()) {
-                title = captions[0]
-                abstract =
-                    captions.subList(1, captions.size).joinToString(" | ")
+        if (dslLine.isNotBlank()) {
+            if (line.trim().endsWith("`")) {
+                dslLine += line
+
+                preprocessed.append(dslLine)
+                preprocessed.append("\n")
+                dslLine = ""
                 continue
+            } else {
+                println("Syntax Error: Invalid DSL line $dslLine \n $line")
+                exitProcess(1)
             }
         }
 
+        preprocessed.append(line)
+        preprocessed.append("\n")
+    }
+
+    for (line in preprocessed.lines()) {
+        // Caption line, e.g. `Image Title | package data | LocalRepository.kt`
+        if (line.matches("^`[^`]*`$".toRegex())) {
+            caption = captionFromDsl(line)
+            continue
+        }
+
         // Start of the MD code block
-        if (line.startsWith("```") && title.isNotBlank() && mdSnippetBlock.isBlank()) {
+        if (line.startsWith("```") && caption.isNotEmpty() && mdSnippetBlock
+            .isBlank()) {
             mdSnippetBlock.append(line)
             mdSnippetBlock.append("\n")
             continue
@@ -61,7 +134,7 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
                     ::encodeToHtml `---`
                     { it + "\n" }
 
-                val fileName = abstract
+                val fileName = caption.heading
                     .split("|")
                     .lastOrNone()
                     .map { it.trim() }
@@ -82,11 +155,19 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
                     }
                 }
 
-                val html = """
+                with(caption) {
+                    val headerless = if (heading.isBlank()) "headerless" else ""
+                    val headerClasses = "header user-select-none $headerless"
+
+                    val abstractHtml = if (abstract.isBlank()) "" else """
+                        <div class="abstract">$abstract</div>
+                    """.trimIndent()
+
+                    val html = """
 <figure>
-<div class="header user-select-none">
+<div class="$headerClasses">
     <div class="caption">
-        $abstract
+        $heading
     </div>
 
     <div class="menu">
@@ -109,16 +190,17 @@ $mdSnippetBlock
 
 {{ markdownContent | markdownify }}
 
+$abstractHtml
+
 <figcaption>$title</figcaption>
 </figure>
 """.trimIndent()
 
-                sb.append(html)
-                sb.append("\n")
-
+                    sb.append(html)
+                    sb.append("\n")
+                }
                 mdSnippetBlock.clear()
-                title = ""
-                abstract = ""
+                caption = Caption("")
             }
             continue
         }
