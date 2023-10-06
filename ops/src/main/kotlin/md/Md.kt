@@ -49,12 +49,12 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
                 Caption(
                     title = it[1],
                     abstract = it[0],
-                    heading = pipeTokens `$` it.subList(2, it.size - 1)
+                    heading = pipeTokens `$` it.subList(2, it.size)
                 )
             else
                 Caption(
                     title = it[0],
-                    heading = pipeTokens `$` it.subList(1, it.size - 1)
+                    heading = pipeTokens `$` it.subList(1, it.size)
                 // The last tokens are left for the heading
                 )
         }
