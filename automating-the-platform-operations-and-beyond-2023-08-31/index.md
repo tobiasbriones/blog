@@ -202,17 +202,45 @@ where Jekyll generated the site in the last building step.
 
 The response will be similar to this:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="[main] INFO ktor.application - Serving P:\tobiasbriones\test-blog-deploy\out\build\test-blog-deploy\_site
+[main] INFO ktor.application - Application started in 0.13 seconds.
+[DefaultDispatcher-worker-1] INFO ktor.application - Responding at http:&#x2F;&#x2F;127.0.0.1:8080
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```
 [main] INFO ktor.application - Serving P:\tobiasbriones\test-blog-deploy\out\build\test-blog-deploy\_site
 [main] INFO ktor.application - Application started in 0.13 seconds.
 [DefaultDispatcher-worker-1] INFO ktor.application - Responding at http://127.0.0.1:8080
 ```
 
-<figcaption>
-<p align="center"><strong>
-Command: Serve Project Out
-</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Command: Serve Project Out</figcaption>
+</figure>
 
 Applications can be locally served with this command after running the build
 plus Jekyll command that puts the output to the `out` building directory.
@@ -261,6 +289,87 @@ itself (simple 👍🏻), similar to how I encoded
 
 You can see how this smart dictionary works from the current spec:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="@Test
+fun toTitleCase() {
+    val entry: (String) -&gt; Entry = { Entry(Path.of(&quot;&#x2F;swe&#x2F;abc&#x2F;$it&quot;)) }
+    val cases = mapOf(
+        entry(
+            &quot;basic-title&quot;
+        ) to &quot;Basic Title&quot;,
+
+        entry(
+            &quot;temporal-coupled-article-2023-08-13&quot;
+        ) to &quot;Temporal Coupled Article (2023&#x2F;08&#x2F;13)&quot;,
+
+        entry(
+            &quot;example-title-_-everything-is-relative&quot;
+        ) to &quot;Example Title: Everything is Relative&quot;,
+
+        entry(
+            &quot;example-project---blog&quot;
+        ) to &quot;Example Project | Blog&quot;,
+
+        entry(
+            &quot;title-with-actual-high--level-hyphen&quot;
+        ) to &quot;Title with Actual High-Level Hyphen&quot;,
+
+        entry(
+            &quot;removing-cyclic-dependencies--_--java-vs-go-2023-05-28&quot;
+        ) to &quot;Removing Cyclic Dependencies, Java vs Go (2023&#x2F;05&#x2F;28)&quot;,
+
+        entry(
+            &quot;license-change-from-mit-to-bsd--3--clause-for-code-snippets-2023-04-13&quot;
+        ) to &quot;License Change from MIT to BSD-3-Clause for Code Snippets (2023&#x2F;04&#x2F;13)&quot;,
+
+        entry(
+            &quot;4-years-since-vocational-fair-at-unah--vs-2023-05-09&quot;
+        ) to &quot;4 Years Since Vocational Fair at UNAH-VS (2023&#x2F;05&#x2F;09)&quot;,
+
+        entry(
+            &quot;ddo-and-power-bi-overview&quot;
+        ) to &quot;Data-Driven Organizations and Power BI Overview&quot;,
+
+        entry(
+            &quot;finishing-writing-the-documentation-for-my-next-ep-2023-07-14&quot;
+        ) to &quot;Finishing Writing the Documentation for my Next EP (2023&#x2F;07&#x2F;14)&quot;,
+
+        entry(
+            &quot;how-i-use-intellij-idea&quot;
+        ) to &quot;How I Use IntelliJ IDEA&quot;,
+
+        entry(
+            &quot;this-is-a-state--of--the--art-ai-model&quot;
+        ) to &quot;This is a State-of-the-Art AI Model&quot;,
+
+        entry(
+            &quot;sar-hn-_-sales-tax&quot;
+        ) to &quot;SAR HN: Sales Tax&quot;,
+    )
+
+    cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```kotlin
 @Test
 fun toTitleCase() {
@@ -323,11 +432,14 @@ fun toTitleCase() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>
-The Text System is Defining High-Level Titles from Resource IDs
-</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>The Text System is Defining High-Level Titles from Resource IDs</figcaption>
+</figure>
 
 Among other implementation details, semantics like article abstract, headings,
 Jekyll Front Matter, etc., had to be extracted from Markdown.
@@ -367,5 +479,7 @@ well-defined, although many other system parts are still temporal.
 
 The latest developments represent a chapter in automating essential tasks,
 allowing me to create more content with significantly reduced overhead.
+
+
 
 
