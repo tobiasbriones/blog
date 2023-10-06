@@ -54,20 +54,14 @@ something absolute or disconnected from the rest, hence flawed.
 
 Let's see what Go says if I build a dummy PoC project that resembles this flaw:
 
+`Go does not Compile Cyclic Package Dependencies`
+
 ```
 package test
         imports test/ui
         imports test/data
         imports test/ui: import cycle not allowed
 ```
-
-<figcaption>
-<p align="center">
-<strong>
-Go does not Compile Cyclic Package Dependencies
-</strong>
-</p>
-</figcaption>
 
 I've used Go in my job experiences and for other projects as well.
 
@@ -93,6 +87,8 @@ source files, that shouldn't be a problem, as *they're actually the same*. So,
 here we wouldn't have the "sink" concept I mentioned earlier if you operate on
 the *same* package:
 
+`Go Project Structure`
+
 ```
 .
 ├── data
@@ -103,10 +99,6 @@ the *same* package:
 └── ui
     └── ui.go
 ```
-
-<figcaption>
-<p align="center"><strong>Go Project Structure</strong></p>
-</figcaption>
 
 In Go, source files under the `package` `data` (or any `package`) belong to the
 same package `data`. So, circular requirements among **files** in the **same**
