@@ -41,19 +41,14 @@ natural numbers [1]:
 
 Another example is the creation of the Fibonacci sequence inductively:
 
+`Also Known as "the 'Hello, world!' of Haskell programming" |
+The Fibonacci Sequence [4]`
+
 ```haskell
 fib 0 = 0
 fib 1 = 1
 fib n = fib (n-1) + fib (n-2)
 ```
-
-<p align="center">
-Also Known as "the 'Hello, world!' of Haskell programming"
-</p>
-
-<figcaption>
-<p align="center"><b>The Fibonacci Sequence</b> [4]</p>
-</figcaption>
 
 The declarativeness of math enables creation with mathematical elegance unlike
 the imperativeness of those impure where every instance is to be addressed

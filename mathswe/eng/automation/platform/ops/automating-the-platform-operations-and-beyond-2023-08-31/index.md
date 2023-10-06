@@ -194,17 +194,13 @@ where Jekyll generated the site in the last building step.
 
 The response will be similar to this:
 
+`Command: Serve Project Out`
+
 ```
 [main] INFO ktor.application - Serving P:\tobiasbriones\test-blog-deploy\out\build\test-blog-deploy\_site
 [main] INFO ktor.application - Application started in 0.13 seconds.
 [DefaultDispatcher-worker-1] INFO ktor.application - Responding at http://127.0.0.1:8080
 ```
-
-<figcaption>
-<p align="center"><strong>
-Command: Serve Project Out
-</strong></p>
-</figcaption>
 
 Applications can be locally served with this command after running the build
 plus Jekyll command that puts the output to the `out` building directory.
@@ -252,6 +248,8 @@ itself (simple 👍🏻), similar to how I encoded
 [hyphens and pipes on file names](/how-i-standardized-hyphen-and-pipe-symbols-on-file-names).
 
 You can see how this smart dictionary works from the current spec:
+
+`The Text System is Defining High-Level Titles from Resource IDs`
 
 ```kotlin
 @Test
@@ -314,12 +312,6 @@ fun toTitleCase() {
     cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }
 }
 ```
-
-<figcaption>
-<p align="center"><strong>
-The Text System is Defining High-Level Titles from Resource IDs
-</strong></p>
-</figcaption>
 
 Among other implementation details, semantics like article abstract, headings,
 Jekyll Front Matter, etc., had to be extracted from Markdown.

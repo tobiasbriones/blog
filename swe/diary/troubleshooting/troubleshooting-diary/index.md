@@ -25,6 +25,8 @@ Troubleshooting from my university enrollment sections app are listed next.
 
 This was when Java 9 came out, and reflection operations were affected.
 
+`Illegal Reflective Access Warning in Old Version of Apache POI and Java 9`
+
 ```
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.apache.poi.util.DocumentHelper (file:/T:/Workspace/Java/Sections%20Manager/libs/poi/poi-ooxml-3.17.jar) to method com.sun.org.apache.xerces.internal.util.SecurityManager.setEntityExpansionLimit(int)
@@ -32,12 +34,6 @@ WARNING: Please consider reporting this to the maintainers of org.apache.poi.uti
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
 ```
-
-<figcaption>
-<p align="center"><strong>
-Illegal Reflective Access Warning in Old Version of Apache POI and Java 9
-</strong></p>
-</figcaption>
 
 Apache POI 3.x is quite old, while 4.x came later.
 
@@ -82,6 +78,8 @@ the `Stream` API that was introduced in Java 16.
 
 **The IDE was all right with the code, but it didn't compile in the end.**
 
+`Method "toList" Unresolved by the Compiler`
+
 ```kotlin
 fun entries(root: Entry): List<Entry> =
     Files
@@ -94,11 +92,7 @@ fun entries(root: Entry): List<Entry> =
         .toList() // <- here
 ```
 
-<figcaption>
-<p align="center"><strong>
-Method "toList" Unresolved by the Compiler
-</strong></p>
-</figcaption>
+`The Method "toList" is not Found when Compiling`
 
 ```
 e: file:///P:/deployment/blog/ops/src/main/kotlin/Main.kt:282:10 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
@@ -120,12 +114,6 @@ public fun <K, V> Map<out TypeVariable(K), TypeVariable(V)>.toList(): List<Pair<
 public fun <T> Sequence<TypeVariable(T)>.toList(): List<TypeVariable(T)> defined in kotlin.sequences
 ```
 
-<figcaption>
-<p align="center"><strong>
-The Method "toList" is not Found when Compiling
-</strong></p>
-</figcaption>
-
 A solution was to add `import kotlin.streams.toList` to import the method
 `toList` so it's found. The problem is that is unnecessary, and **the IDE
 deleted it because it said it was an unused import.**
@@ -140,17 +128,13 @@ stopped compiling some day).
 In the end, I was able to **set the actual version of the JDK to use by Gradle
 by editing the project's `build.gradle.kts` from `11` to `19`** (or the latest):
 
+`Solution to Set the Correct Version of the JDK to Run the Kotlin App`
+
 ```kotlin
 kotlin {
     jvmToolchain(19)
 }
 ```
-
-<figcaption>
-<p align="center"><strong>
-Solution to Set the Correct Version of the JDK to Run the Kotlin App
-</strong></p>
-</figcaption>
 
 ### Machine Learning
 
@@ -169,7 +153,11 @@ learn**, and that was the problem I had.
 
 The API is the following:
 
-`tf.data.Dataset.list_files(split_list, shuffle=False)`
+`Tensorflow "list_files" Method with Explicit File Unshuffling`
+
+```
+tf.data.Dataset.list_files(split_list, shuffle=False)
+```
 
 [list_files \| tf.data.Dataset \| TensorFlow v2.12.0](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#list_files)
 

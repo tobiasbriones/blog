@@ -18,6 +18,8 @@ the difference **is clear** again.
 
 The difference between both snippets is the following:
 
+`Imperative`
+
 ```ts
 async function fetchTree(path: string): Promise<TreeNode> {
   const onError = reason => showError({ reason, msg: 'Failed to fetch tree' });
@@ -40,10 +42,7 @@ async function fetchTree(path: string): Promise<TreeNode> {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Imperative</strong></p>
-</figcaption>
-
+`More Functional`
 
 ```ts
 function fetchTree(path: string): Promise<TreeNode> {
@@ -57,10 +56,6 @@ function fetchTree(path: string): Promise<TreeNode> {
     });
 }
 ```
-
-<figcaption>
-<p align="center"><strong>More Functional</strong></p>
-</figcaption>
 
 The refactored code (a.k.a. "more functional") **is not functional**, but it 
 gets close. This is to avoid introducing functional abstractions like pipes, 

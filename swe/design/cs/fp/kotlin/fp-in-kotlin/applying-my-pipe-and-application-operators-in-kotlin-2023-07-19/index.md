@@ -11,6 +11,8 @@
 I've been applying the operators I designed a couple of days ago to make
 Kotlin's FP more expressive.
 
+`More Expressive Code with my Pipe and Application Operators`
+
 ```kotlin
 fun exec_build(root: String, entryName: String) {
     entries(root `---` Path::of `---` ::Entry)
@@ -19,14 +21,9 @@ fun exec_build(root: String, entryName: String) {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>
-More Expressive Code with my Pipe and Application Operators
-</strong></p>
-</figcaption>
+`More Conservative Code`
 
 ```kotlin
-
 fun exec_build(root: String, entryName: String) {
     val entry = Entry(Path.of(root))
     entries(entry)
@@ -34,12 +31,6 @@ fun exec_build(root: String, entryName: String) {
         .onSome { build(it, BuildConfig(Path.of(root, "_out"))) }
 }
 ```
-
-<figcaption>
-<p align="center"><strong>
-More Conservative Code
-</strong></p>
-</figcaption>
 
 An original (unheard) FP adage refers to "only transformations," not even
 identifiers. Of course, not even Haskell has that level of pureness. I mention
@@ -74,6 +65,8 @@ how a function can be readably stated or defined at some degree with Kotlin's
 For example, in the following snippet, the function is matched via `=` instead
 of being an imperative block `{}` with all the underlying flaws.
 
+`Example of Matching a Function`
+
 ```kotlin
 enum class Fn {
     Entries,
@@ -87,11 +80,7 @@ fun newFn(value: String): Either<None, Fn> = when (value.lowercase()) {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>
-Example of Matching a Function
-</strong></p>
-</figcaption>
+`Example of Imperative Boilerplate`
 
 ```java
 enum Fn {
@@ -107,12 +96,6 @@ static Optional<Fn> newFn(String value) {
     };
 }
 ```
-
-<figcaption>
-<p align="center"><strong>
-Example of Imperative Boilerplate
-</strong></p>
-</figcaption>
 
 Otherwise, an imperative code block with `return` would've been needed, like the
 above Java snippet —unnecessary. But that's some boilerplate that can be
