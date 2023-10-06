@@ -26,6 +26,47 @@ the difference **is clear** again.
 
 The difference between both snippets is the following:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="async function fetchTree(path: string): Promise&lt;TreeNode&gt; {
+  const onError = reason =&gt; showError({ reason, msg: &#x27;Failed to fetch tree&#x27; });
+  let tree = newTreeNode();
+
+  try {
+    const res = await fetch(path);
+
+    if (res.ok) {
+      tree = await res.json();
+    }
+    else {
+      onError(new Error(res.statusText));
+    }
+  }
+  catch (reason) {
+    onError(reason);
+  }
+  return tree;
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 async function fetchTree(path: string): Promise<TreeNode> {
   const onError = reason => showError({ reason, msg: 'Failed to fetch tree' });
@@ -48,11 +89,47 @@ async function fetchTree(path: string): Promise<TreeNode> {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Imperative</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
 
 
+
+<figcaption>Imperative</figcaption>
+</figure>
+
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="function fetchTree(path: string): Promise&lt;TreeNode&gt; {
+  return fetch(path)
+    .then(res =&gt; res.ok ? res : Promise.reject(res.statusText))
+    .then(res =&gt; res.json())
+    .catch(reason =&gt; {
+      showError({ reason, msg: &#x27;Failed to fetch tree&#x27; });
+      console.error(reason);
+      return newTreeNode();
+    });
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 function fetchTree(path: string): Promise<TreeNode> {
   return fetch(path)
@@ -66,9 +143,14 @@ function fetchTree(path: string): Promise<TreeNode> {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>More Functional</strong></p>
-</figcaption>
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>More Functional</figcaption>
+</figure>
 
 The refactored code (a.k.a. "more functional") **is not functional**, but it 
 gets close. This is to avoid introducing functional abstractions like pipes, 
@@ -155,5 +237,7 @@ Mainstream languages like JavaScript, TypeScript, and Java don't have good
 functional support, but we can still build better code regarding robustness 
 and clearness by leveraging their available features and our computer science 
 knowledge.
+
+
 
 
