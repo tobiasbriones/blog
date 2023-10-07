@@ -4,7 +4,7 @@
 
 # 4 Years Since Vocational Fair at UNAH-VS (2023-05-09)
 
-![4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg)
+![4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](static/4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg)
 
 ---
 
@@ -171,7 +171,7 @@ hardware.
 [^15]: I really was a fan of UWP, and I loved it, but now it's a completely 
     different story, as the project was just another Micro$oft charade
 
-![4 Years Since](4-years-since.png)
+![4 Years Since](static/4-years-since.png)
 
 <figcaption>
 <p align="center"><strong>4 Years Since</strong></p>
@@ -207,14 +207,14 @@ games.
 Since then, I've been pretty enthusiastic about genetic algorithms as they
 attempt to resemble a (naive) version of natural evolution.
 
-![Losnot in Paradise Sample 1](lostnot-in-paradise-sample-1.gif)
+![Losnot in Paradise Sample 1](static/lostnot-in-paradise-sample-1.gif)
 
 <figcaption>
 <p align="center"><strong>Losnot in Paradise Sample 1 [2]</strong></p>
 </figcaption>
 
 
-![AI Screenshot 1](ai-screenshot-1.png)
+![AI Screenshot 1](static/ai-screenshot-1.png)
 
 <figcaption>
 <p align="center"><strong>AI Screenshot 1 [2]</strong></p>
@@ -237,25 +237,25 @@ accept mediocrity in my standard.
     can see, I'm able to interoperate over diverse systems I've even never
     worked before with
 
-![PicRT Express Info English](picrt-express-info-english.png)
+![PicRT Express Info English](static/picrt-express-info-english.png)
 
 <figcaption>
 <p align="center"><strong>PicRT Express Info English [3]</strong></p>
 </figcaption>
 
-![PicRT Express 1](picrt-express-1.jpg)
+![PicRT Express 1](static/picrt-express-1.jpg)
 
 <figcaption>
 <p align="center"><strong>PicRT Express 1 [3]</strong></p>
 </figcaption>
 
-![PicRT Express 2](picrt-express-2.jpg)
+![PicRT Express 2](static/picrt-express-2.jpg)
 
 <figcaption>
 <p align="center"><strong>PicRT Express 2 [3]</strong></p>
 </figcaption>
 
-![PicRT Express 3](picrt-express-3.jpg)
+![PicRT Express 3](static/picrt-express-3.jpg)
 
 <figcaption>
 <p align="center"><strong>PicRT Express 3 [3]</strong></p>
@@ -277,20 +277,20 @@ engineering with applied mathematics.
 
 I showed some informal diagrams to depict what I did.
 
-![Package Structure](package-structure.png)
+![Package Structure](static/package-structure.png)
 
 <figcaption>
 <p align="center"><strong>Package Structure [4]</strong></p>
 </figcaption>
 
-![Instance Object Hierarchy](instance-object-hierarchy.png)
+![Instance Object Hierarchy](static/instance-object-hierarchy.png)
 
 <figcaption>
 <p align="center"><strong>Instance Object Hierarchy [4]</strong></p>
 </figcaption>
 
 
-![KeyPool Algorithm](keypool-algorithm.png)
+![KeyPool Algorithm](static/keypool-algorithm.png)
 
 <figcaption>
 <p align="center"><strong>KeyPool Algorithm [4]</strong></p>
@@ -304,7 +304,7 @@ These are the hardware projects I talked before.
 
 I took my projects out after 4 years, and here they are.
 
-![Look at the Projects](look-at-the-projects.jpg)
+![Look at the Projects](static/look-at-the-projects.jpg)
 
 <figcaption>
 <p align="center"><strong>Look at the Projects</strong></p>
@@ -318,37 +318,37 @@ and squared notebook paper.
 Here's the circuit of the LEDs that blink at the rhythm of the music in the
 protoboard.
 
-![Pulsing LEDs](pulsing-leds.jpg)
+![Pulsing LEDs](static/pulsing-leds.jpg)
 
 <figcaption>
 <p align="center"><strong>Pulsing LEDs</strong></p>
 </figcaption>
 
-![Pulsing LEDs: Testing 1](pulsing-leds-.-testing-1.jpg)
+![Pulsing LEDs: Testing 1](static/pulsing-leds-.-testing-1.jpg)
 
 <figcaption>
 <p align="center"><strong>Pulsing LEDs: Testing 1</strong></p>
 </figcaption>
 
-![Pulsing LEDs: Testing 2](pulsing-leds-.-testing-2.jpg)
+![Pulsing LEDs: Testing 2](static/pulsing-leds-.-testing-2.jpg)
 
 <figcaption>
 <p align="center"><strong>Pulsing LEDs: Testing 2</strong></p>
 </figcaption>
 
-![Pulsing LEDs: Testing 3](pulsing-leds-.-testing-3.jpg)
+![Pulsing LEDs: Testing 3](static/pulsing-leds-.-testing-3.jpg)
 
 <figcaption>
 <p align="center"><strong>Pulsing LEDs: Testing 3</strong></p>
 </figcaption>
 
-![Pulsing LEDs: Testing 4](pulsing-leds-.-testing-4.jpg)
+![Pulsing LEDs: Testing 4](static/pulsing-leds-.-testing-4.jpg)
 
 <figcaption>
 <p align="center"><strong>Pulsing LEDs: Testing 4</strong></p>
 </figcaption>
 
-![Pulsing LEDs: Testing 5](pulsing-leds-.-testing-5.jpg)
+![Pulsing LEDs: Testing 5](static/pulsing-leds-.-testing-5.jpg)
 
 <figcaption>
 <p align="center"><strong>Pulsing LEDs: Testing 5</strong></p>
@@ -358,7 +358,7 @@ This is the report:
 
 {% include iframe.html
 title = "LED's parpadeantes al ritmo de la música con efecto fade"
-src = "academy/career/math/cs/engineering/unah/4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
+src = "static/pulsing-leds.pdf"
 %}
 
 ### Pac-Man Blinking LEDs
@@ -366,13 +366,13 @@ src = "academy/career/math/cs/engineering/unah/4-years-since-vocational-fair-at-
 This is the circuit I designed, which resembles a Pac-Man and blinks at a given
 speed.
 
-![Pac-Man LEDs](pacman-leds.jpg)
+![Pac-Man LEDs](static/pacman-leds.jpg)
 
 <figcaption>
 <p align="center"><strong>Pac-Man LEDs</strong></p>
 </figcaption>
 
-![Pac-Man LEDs: Circuit Rear](pacman-leds-.-circuit-rear.jpg)
+![Pac-Man LEDs: Circuit Rear](static/pacman-leds-.-circuit-rear.jpg)
 
 <figcaption>
 <p align="center"><strong>Pac-Man LEDs: Circuit Rear</strong></p>
@@ -381,7 +381,7 @@ speed.
 The next image dates when I was soldering and testing the components of the
 circuit:
 
-![Pac-Man LEDs: Testing](pacman-leds-.-testing.jpg)
+![Pac-Man LEDs: Testing](static/pacman-leds-.-testing.jpg)
 
 <figcaption>
 <p align="center"><strong>Pac-Man LEDs: Testing</strong></p>
@@ -389,48 +389,41 @@ circuit:
 
 The circuit still worked great when I powered it, and recorded a video of it:
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/JaW0Abg1qe8"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-</iframe>
+[Pac-Man Blinking LEDs \| YouTube](https://youtu.be/JaW0Abg1qe8)
 
 ### FM Transmitter
 
 This is the failed radio FM transmitter:
 
-![FM Transmitter](fm-transmitter.jpg)
+![FM Transmitter](static/fm-transmitter.jpg)
 
 <figcaption>
 <p align="center"><strong>FM Transmitter</strong></p>
 </figcaption>
 
-![FM Transmitter: Testing](fm-transmitter-.-testing.jpg)
+![FM Transmitter: Testing](static/fm-transmitter-.-testing.jpg)
 
 <figcaption>
 <p align="center"><strong>FM Transmitter: Testing</strong></p>
 </figcaption>
 
-## Vocational Fair
+## Vocational Fair Day
 
 So, the day of the event took place 😎:
 
-![Vocational Fair UNAH-VS 2019 1](vocational-fair-unah-vs-2019-1.jpg)
+![Vocational Fair UNAH-VS 2019 1](static/vocational-fair-unah-vs-2019-1.jpg)
 
 <figcaption>
 <p align="center"><strong>Vocational Fair UNAH-VS 2019 1</strong></p>
 </figcaption>
 
-![Vocational Fair UNAH-VS 2019 2](vocational-fair-unah-vs-2019-2.jpg)
+![Vocational Fair UNAH-VS 2019 2](static/vocational-fair-unah-vs-2019-2.jpg)
 
 <figcaption>
 <p align="center"><strong>Vocational Fair UNAH-VS 2019 2</strong></p>
 </figcaption>
 
-![Vocational Fair UNAH-VS 2019 3](vocational-fair-unah-vs-2019-3.jpg)
+![Vocational Fair UNAH-VS 2019 3](static/vocational-fair-unah-vs-2019-3.jpg)
 
 <figcaption>
 <p align="center"><strong>Vocational Fair UNAH-VS 2019 3</strong></p>
