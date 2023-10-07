@@ -56,6 +56,12 @@ These new updates will allow the user a more robust and clean experience of the
 article and its EP. Now, I can immediately keep integrating further major
 updates.
 
+## Bibliography
+
+- [Visualization Caption (2023/10/01) \| Blog](/visualization-caption-2023-10-01).
+- [New Article and Code Navigation Features (2023/09/09) \| Blog](/new-article-and-code-navigation-features-2023-09-09).
+- [Automating the Platform Operations and Beyond (2023/08/31) \| Blog](/automating-the-platform-operations-and-beyond-2023-08-31).
+
 ## References
 
 [1] Clean up details on drawing-a-tree-on-canvas-with-xy-coordinates by
