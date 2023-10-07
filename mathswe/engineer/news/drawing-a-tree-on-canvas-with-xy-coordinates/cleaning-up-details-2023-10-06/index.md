@@ -12,8 +12,8 @@ Today, an initial set of fixes and enhancements were integrated into the
 first-class article "Drawing a Tree on Canvas with XY Coordinates" to keep up
 with the current changes.
 
-These are initial updates that will become major updates to the article in the
-next integrations.
+These are initial updates that will become major updates to the article[2]
+in the next integrations.
 
 ---
 
@@ -30,7 +30,7 @@ It fixes and standardizes many details on the article and EP:
 ---
 
 These changes can be seen in the article overall and the EP allowing a greater
-UI and internal experience of the solution tree EP.
+UI and internal experience of the solution tree EP[3].
 
 After a wide interlude, these minor updates made it to production.
 
@@ -67,3 +67,11 @@ updates.
 [1] Clean up details on drawing-a-tree-on-canvas-with-xy-coordinates by
 tobiasbriones · Pull Request #9 · mathsoftware/engineer. (n.d.). GitHub.
 [PR \| Engineer \| mathsoftware \| GitHub](https://github.com/mathsoftware/engineer/pull/9).
+
+[2] Briones, T. (n.d.). Drawing a Tree on Canvas with XY Coordinates. Math
+Software Engineer.
+[Drawing a Tree on Canvas with XY Coordinates](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates).
+
+[3] Briones, T. (n.d.). EP: MRM Solution Tree | Drawing a Tree on Canvas with XY
+Coordinates | mathsoftware.engineer. 
+[EP: MRM Solution Tree](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/app).
