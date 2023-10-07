@@ -12,6 +12,7 @@
 - [How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
 - [License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)](license-change-from-mit-to-bsd--3--clause-for-code-snippets-2023-04-13)
 - [New Article and Code Navigation Features (2023/09/09)](new-article-and-code-navigation-features-2023-09-09)
+- [Cleaning up Details (2023/10/06)](cleaning-up-details-2023-10-06)
 - [Everything is Relative](everything-is-relative)
 - [I Just Turned the Lights Off, Put My Headphones On, and Read This Crazy Paper About SWE Commandments (2022/10/15)](i-just-turned-the-lights-off--_--put-my-headphones-on--_--and-read-this-crazy-paper-about-swe-commandments-2022-10-15)
 - [This Article Represents a Milestone for Me (2022/12/18)](this-article-represents-a-milestone-for-me-2022-12-18)
