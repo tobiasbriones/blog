@@ -8,6 +8,54 @@
 
 ---
 
+Today, an initial set of fixes and enhancements were integrated into the
+first-class article "Drawing a Tree on Canvas with XY Coordinates" to keep up
+with the current changes.
+
+These are initial updates that will become major updates to the article in the
+next integrations.
+
+---
+
+This update includes several fixes, and enhancements [1]:
+
+It fixes and standardizes many details on the article and EP:
+
+- Naming standards.
+- Styles (spaces, sizes, others).
+- Small fixes (extra symbol, typo, unnecessary LaTeX, blank line).
+- Dependency updates.
+- Webpack fixes.
+
+---
+
+These changes can be seen in the article overall and the EP allowing a greater
+UI and internal experience of the solution tree EP.
+
+After a wide interlude, these minor updates made it to production.
+
+Newer updates (in general) will be shipped at a faster cadence thanks to the
+latest automation and standards I've been implementing and publishing. There are
+more platform standards to publish next, like captions for code snippets.
+
+Therefore, both the platform and projects are receiving updates.
+
+Next, incoming (platform) updates will allow the new and *powerful*
+code snippet component, enabling composable captions with features to copy code
+snippets, and open the underlying source code file (without leaving
+mathsoftware.engineer).
+
+It'll also contain the recently standardized animations for rendering the
+solution tree and an enhanced article redaction with the principles I've been
+talking about using FP to write article structures.
+
+For example, captions in code snippets will make them *cohesive*, feature-rich,
+and browsable —unlike plain snippets.
+
+These new updates will allow the user a more robust and clean experience of the
+article and its EP. Now, I can immediately keep integrating further major
+updates.
+
 ## References
 
 [1] Clean up details on drawing-a-tree-on-canvas-with-xy-coordinates by
