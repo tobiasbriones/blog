@@ -154,6 +154,9 @@ public class Main extends Application {
 <p align="center"><strong>Hello World</strong></p>
 </figcaption>
 
+At this point, the JavaFX application is set up, so the development can 
+take place.
+
 ### Initial Master-View-Detail Layout with Drag-and-Drop ListView
 
 I already developed the initial application layout (and logic) — which are
