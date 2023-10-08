@@ -266,7 +266,8 @@ public class AppController {
 ```
 
 This gives an initial layout to the app with a controller to set some structure
-as far as it's currently going.
+as far as it's currently going. This includes a master-view-detail app layout,
+where the master pane will be loaded with images via drag-and-drop.
 
 ## Application Data
 
