@@ -57,7 +57,7 @@ Our app package name is `engineer.mathsoftware.blog.slides`.
 
 The following is the initial app project.
 
-`module-info.java`
+`Definition of Application Modules | module-info.java`
 
 ```java
 module engineer.mathsoftware.blog.slides {
@@ -68,10 +68,6 @@ module engineer.mathsoftware.blog.slides {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Definition of Application Modules</strong></p>
-</figcaption>
-
 As given above, it's required JavaFX `controls`, and `fxml` mods since I decided
 to use FXML with the Scene Builder. Then, the main app package has to be opened
 to the `fxml` mod, so it can use reflection on our app, as well as exporting it
@@ -79,7 +75,7 @@ so JavaFX in general can see our app via reflection.
 
 Now, we move forward the main package.
 
-`package-info.java`
+`Main Application Package | package-info.java`
 
 ```java
 /**
@@ -89,11 +85,7 @@ Now, we move forward the main package.
 package engineer.mathsoftware.blog.slides;
 ```
 
-<figcaption>
-<p align="center"><strong>Main Application Package</strong></p>
-</figcaption>
-
-`Main.java`
+`Initial Hello World App | Main.java`
 
 ```java
 public class Main extends Application {
@@ -123,10 +115,6 @@ public class Main extends Application {
     }
 }
 ```
-
-<figcaption>
-<p align="center"><strong>Initial Hello World App</strong></p>
-</figcaption>
 
 ![Hello World](images/hello-world.png)
 
@@ -161,6 +149,8 @@ It requires events for the file drag-and-drop, and some buttons.
 It also has a menu bar that can be trivially implemented later.
 
 The current layout tree consists of:
+
+`Initial App Layout Tree`
 
 ```
 ├── VBox
@@ -202,7 +192,7 @@ The current layout tree consists of:
 For integrating this layout, the root view has to be loaded from the FXML
 resource `app.fxml` in the root of the `resources` project's directory.
 
-`start | Main`
+`Loading the FXML Resource | start | Main.java`
 
 ```java
 var root = FXMLLoader.<Parent>load(
@@ -211,10 +201,12 @@ var root = FXMLLoader.<Parent>load(
 ```
 
 <figcaption>
-<p align="center"><strong>Loading the FXML Resource</strong></p>
+<p align="center"><strong></strong></p>
 </figcaption>
 
 Then, `AppController` will handle the input events.
+
+`Initial Application Controller | AppController.java`
 
 ```java
 public class AppController {
@@ -238,10 +230,6 @@ public class AppController {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Initial Application Controller</strong></p>
-</figcaption>
-
 ## Application Data
 
 The application will handle data related to image files that make up the
@@ -249,7 +237,7 @@ presentation, which will be stored in a local directory.
 
 A basic image item needs to be loaded into the list of images.
 
-`ImageItem.java`
+`Definition of an Application Image Item with Name and Image | ImageItem.java`
 
 ```java
 public record ImageItem(String filename, Image image) {
@@ -265,11 +253,6 @@ public record ImageItem(String filename, Image image) {
     }
 }
 ```
-
-<figcaption>
-<p align="center"><strong>Definition of an Application Image Item with Name
-and Image</strong></p>
-</figcaption>
 
 Notice, how the `hashCode` and `equals` methods had to be overwritten because of
 the `Image` object[^x][^x].
@@ -287,7 +270,7 @@ The items need to be stored and loaded from our local storage.
 
 For this, I defined the `DataRepository` API.
 
-`DataRepository.java | package data`
+`Application Data API | DataRepository.java | package data`
 
 ```java
 public interface DataRepository {
@@ -307,13 +290,9 @@ public interface DataRepository {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Application Data API</strong></p>
-</figcaption>
-
 I also wrote a `Data` utility class to hold important functions.
 
-`Data.java | package data`
+`Application Data Filters | Data.java | package data`
 
 ```java
 public final class Data {
@@ -347,10 +326,6 @@ public final class Data {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Application Data Filters</strong></p>
-</figcaption>
-
 That way, we'll know whether a given file list (that can be dropped into the
 `ListView`) has supported file extensions which will avoid polluting the data
 directory with random files and ensure more correctness in our logic.
@@ -364,7 +339,8 @@ The implementation of the `DataRepository` is straightforward.
 It uses the `java.nio.file` API to access the file system, and the code written
 before.
 
-`Data.java | package data`
+`Implementation of "DataRepository" on "LocalDataRepository"
+| Data.java | package data`
 
 ```java
 public class LocalDataRepository implements DataRepository {
@@ -482,11 +458,6 @@ public class LocalDataRepository implements DataRepository {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Implementation of "DataRepository" on
-"LocalDataRepository"</strong></p>
-</figcaption>
-
 This realization of `DataRepository` allows us to access our `data` directory
 application images.
 
@@ -508,7 +479,7 @@ rearrange them in the order they will appear in the presentation.
 
 The `AppController` will need some fields.
 
-`class AppController`
+`Members of "AppController" | class AppController`
 
 ```java
 private static final String DATA_ROOT = "data";
@@ -521,13 +492,9 @@ public AppController() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Members of "AppController"</strong></p>
-</figcaption>
-
 A good initialization will be needed too.
 
-`class AppController`
+`Initialization of "AppController" | class AppController`
 
 ```java
 @FXML
@@ -551,13 +518,9 @@ private void initAddButton() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Initialization of "AppController"</strong></p>
-</figcaption>
-
 Including other methods will be helpful as well.
 
-`class AppControler`
+`Other Methods | class AppControler`
 
 ```java
 private void handleError(IOException e) {
@@ -624,7 +587,7 @@ The three events that will be required for this app consist of:
 - **Drag Exited:** Cancels the drag as files dragged with the mouse are out of 
   scope.
 
-`class AppContoller`
+`Drag Event Implementations | class AppContoller`
 
 ```java
 @FXML
@@ -667,10 +630,6 @@ private void onDragDropped(DragEvent dragEvent) {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Drag Event Implementations</strong></p>
-</figcaption>
-
 These implementations will allow the drag-and-drop feature in our application.
 
 ### List View
@@ -682,7 +641,7 @@ First, a custom cell renderer needs to be created, obviously.
 If you remember or are homesick for the Android old school like me, that would
 come in handy a lot.
 
-`class ImageItemCell`
+`Implementation of the Cell Items for the List View | class ImageItemCell`
 
 ```java
 class ImageItemCell extends ListCell<ImageItem> {
@@ -798,11 +757,6 @@ class ImageItemCell extends ListCell<ImageItem> {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Implementation of the Cell Items for the 
-List View</strong></p>
-</figcaption>
-
 I also added a `Tooltip` so the full file name is shown when you hover the item
 and a maximum length for the text to be covered with an ellipsis if long.
 
@@ -818,7 +772,8 @@ Then, this is integrated into the controller.
 First, the cell callback that was defined can be realized by the controller,
 i.e., `implements ImageItemCell.Listener` which is followed by:
 
-`class AppController`
+`Integration of the List View and Data Repository into the App Controller
+| class AppController`
 
 ```java
 @FXML private ListView<ImageItem> imageList;
@@ -902,11 +857,6 @@ private void handleError(IOException e) {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Integration of the List View and Data 
-Repository into the App Controller</strong></p>
-</figcaption>
-
 At this point, the list with drag-and-drop was built which is a big part of
 this master pane.
 
@@ -931,7 +881,7 @@ To delete all the items, the "clear" `Button` will "do the trick".
 
 Therefore, here we go with our controller again.
 
-`class AppController`
+`Implementation of Deleting Actions (the "Danger Zone") | class AppController`
 
 ```java
 @FXML private Parent view;
@@ -971,11 +921,6 @@ private void onClearButtonAction() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Implementation of Deleting Actions (the "Danger 
-Zone")</strong></p>
-</figcaption>
-
 This provides a safe delete mechanism for our application images.
 
 ### Arranging Image Items via More Drag and Drop
@@ -998,7 +943,7 @@ namely, `void onArrange(int draggedIdx, int destIdx);`. So, our abstract list of
 images (the data structure) gets sorted when this happens (then updates the
 view).
 
-`init | class ImageItemCell`
+`Updating the Init Method of "ImageItemCell" | init | class ImageItemCell`
 
 ```java
 setDragAndDropItemSort();
@@ -1006,12 +951,7 @@ setDragAndDropItemSort();
 getStyleClass().add("cell");
 ```
 
-<figcaption>
-<p align="center"><strong>Updating the Init Method of
-"ImageItemCell"</strong></p>
-</figcaption>
-
-`class ImageItemCell`
+`Drag and Drop Events Needed | class ImageItemCell`
 
 ```java
 private void setDragAndDropItemSort() {
@@ -1024,11 +964,7 @@ private void setDragAndDropItemSort() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Drag and Drop Events Needed</strong></p>
-</figcaption>
-
-`class ImageItemCell`
+`Drag Event Implementations to Rearrange a List Cell | class ImageItemCell`
 
 ```java
 private void onDragDetected(MouseEvent event) {
@@ -1092,10 +1028,6 @@ private void onDragDropped(DragEvent event) {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Drag Event Implementations to Rearrange a List Cell</strong></p>
-</figcaption>
-
 First, notice that if you're not careful, you'll introduce side effects to
 these kinds of events, as we can have many event implementations. In this case,
 the drag events fall into the `ListView` (the "bigger") and are also listened
@@ -1126,7 +1058,7 @@ I lately made the app less coupled, so we'll work with a `images` `List`
 stored in the controller as the "source of truth" for the image data. Then, this
 list will behave **reactively** to update the GUI.
 
-`class AppController`
+`Setting up the App Controller for the "onArrange" Event | class AppController`
 
 ```java
 private final ObservableList<ImageItem> images;
@@ -1167,11 +1099,6 @@ private void loadImageList() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Setting up the App Controller for the 
-"onArrange" Event</strong></p>
-</figcaption>
-
 What's mostly new here, is the `onArrange` event that was defined before in the
 `ImageItemCell` `Listener`. This method updates the data, and this data is
 reactive, so it automatically updates the `ListView` which was bound to the
@@ -1191,7 +1118,7 @@ Now both the cell and controller implementations are in sync.
 It was time to introduce some CSS here to add a class to the list cell when
 another item is being dragged to it.
 
-`app.css`
+`CSS Styles for Dragging a List Cell into Another Cell | app.css`
 
 ```css
 .cell {
@@ -1205,14 +1132,9 @@ another item is being dragged to it.
 }
 ```
 
-<figcaption>
-<p align="center"><strong>CSS Styles for Dragging a List Cell into
-Another Cell</strong></p>
-</figcaption>
-
 I also added a new method in `Main.java` to help load these resources.
 
-`start | class Main`
+`Loading CSS Styles into the App | start | class Main`
 
 ```java
 scene.getStylesheets().add(
@@ -1220,11 +1142,7 @@ scene.getStylesheets().add(
 );
 ```
 
-<figcaption>
-<p align="center"><strong>Loading CSS Styles into the App</strong></p>
-</figcaption>
-
-`class Main`
+`Method that Loads an App Resource by File Name | class Main`
 
 ```java
 private URL loadResource(String name) {
@@ -1233,11 +1151,6 @@ private URL loadResource(String name) {
     );
 }
 ```
-
-<figcaption>
-<p align="center"><strong>Method that Loads an App Resource by
-File Name</strong></p>
-</figcaption>
 
 Now, the CSS classes defined above can be used to style the `ListView` cells.
 
@@ -1258,7 +1171,7 @@ This menu is trivial to write now.
 
 First, we add the events to the FXML, and the controller.
 
-`class AppController`
+`Events for Handing the Menu Bar Items | class AppController`
 
 ```java
 @FXML private void onAddMenuItemAction() {}
@@ -1271,10 +1184,6 @@ First, we add the events to the FXML, and the controller.
 
 @FXML private void onAboutMenuItemAction() {}
 ```
-
-<figcaption>
-<p align="center"><strong>Events for Handing the Menu Bar Items</strong></p>
-</figcaption>
 
 I made minor modifications, like changing the name of a `MenuItem` from "New" to
 "Add" for more clarity of action.
@@ -1291,7 +1200,7 @@ They do the following:
 
 So first I extracted a method to reuse it:
 
-`class AppController`
+`Extraction of Methods in "AppController" for Code Reuse | class AppController`
 
 ```java
 @FXML
@@ -1309,17 +1218,13 @@ private void openFileViaFileChooser() { /* Impl. */ }
 private void showDeleteAllAlert() { /* Impl. */ }
 ```
 
-<figcaption>
-<p align="center"><strong>Extraction of Methods in "AppController" for Code Reuse</strong></p>
-</figcaption>
-
 The Swing JavaFX module has to be added to the application modules
 (`module-info.java`) via `requires javafx.swing;` as it's required to call to
 the `awt` `Desktop` API to open the system file explorer.
 
 Finally, the implementations are left to finish this menu.
 
-`class AppController`
+`Implementation of Menu Events | class AppController`
 
 ```java
 @FXML
@@ -1374,10 +1279,6 @@ private void onAboutMenuItemAction() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Implementation of Menu Events</strong></p>
-</figcaption>
-
 This was the application now has a functioning menu bar.
 
 ## View Detail and App Domain
@@ -1402,6 +1303,8 @@ pane.
 
 First, some refactorizations I did at this stage.
 
+`Project Package Refactorization`
+
 ```
 .
 ├── data
@@ -1417,13 +1320,9 @@ First, some refactorizations I did at this stage.
     └── pacakge-info.java
 ```
 
-<figcaption>
-<p align="center"><strong>Project Package Refactorization</strong></p>
-</figcaption>
-
 Leading to a project module like:
 
-`module-info.java`
+`Project Module After Refactorization | module-info.java`
 
 ```java
 module engineer.mathsoftware.blog.slides {
@@ -1435,10 +1334,6 @@ module engineer.mathsoftware.blog.slides {
     opens engineer.mathsoftware.blog.slides.ui to javafx.fxml;
 }
 ```
-
-<figcaption>
-<p align="center"><strong>Project Module After Refactorization</strong></p>
-</figcaption>
 
 Notice I moved `ImageItem` from `ui` to `data` as it makes more sense as I said
 in
@@ -1460,7 +1355,7 @@ images loaded into the master pane.
 
 After updating the `app.fxml` file, the logic is next.
 
-`class AppController`
+`Pagination Implementation | class AppController`
 
 ```java
 @FXML
@@ -1527,10 +1422,6 @@ private void updatePaginationCount() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Pagination Implementation</strong></p>
-</figcaption>
-
 The pagination has a page count that is set to the size of the images loaded
 into the app via `pagination.setPageCount(images.size())`, and set to `1`
 (default) if there are no items, besides setting it invisible. This is because
@@ -1560,7 +1451,7 @@ with this new control.
 
 It's time to start creating the models for this application.
 
-`interface Slide`
+`Application "Slide" Sum Type | interface Slide`
 
 ```java
 public sealed interface Slide {
@@ -1572,10 +1463,6 @@ public sealed interface Slide {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Application "Slide" Sum Type</strong></p>
-</figcaption>
-
 A `Slide` consists of:
 
 - `CodeSnippet`: A slide containing source code (from a given PL) styled as a
@@ -1586,7 +1473,7 @@ A `Slide` consists of:
 
 I also defined a basic enum to define the slides as simple iterable items.
 
-`enum SlideItem`
+`Application "SlideItem" Sum Type | enum SlideItem`
 
 ```java
 public enum SlideItem {
@@ -1596,16 +1483,12 @@ public enum SlideItem {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Application "SlideItem" Sum Type</strong></p>
-</figcaption>
-
 The (programming[^x]) language is required to style the slides, so it can be
 associated to a slide content.
 
 [^x]: It doesn't have to be a GP PL, like HTML or CSS which are niche languages
 
-`enum Language`
+`Application Language Support | enum Language`
 
 ```java
 public enum Language {
@@ -1625,14 +1508,10 @@ public enum Language {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Application Language Support</strong></p>
-</figcaption>
-
 Defining some colors will be useful for the possible drawings that can appear
 on the slides.
 
-`enum Palette`
+`Application Basic Color Palette | enum Palette`
 
 ```java
 public enum Palette {
@@ -1651,14 +1530,10 @@ public enum Palette {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Application Basic Color Palette</strong></p>
-</figcaption>
-
 So, we can define some relations for these types. A took the language color used
 by GitHub and set them to the languages that were added before.
 
-`class Colors`
+`Utility Class "Colors" | class Colors`
 
 ```java
 public final class Colors {
@@ -1689,16 +1564,12 @@ public final class Colors {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Utility Class "Colors"</strong></p>
-</figcaption>
-
 This way the app can be extended by mapping color values to the domain types.
 
 Regarding configurations, we can add some important settings like the target 
 size for the slides.
 
-`record SlideSize`
+`Establishing Slide Resolutions | record SlideSize`
 
 ```java
 public record SlideSize(double width, double height) {
@@ -1726,25 +1597,17 @@ public record SlideSize(double width, double height) {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Establishing Slide Resolutions</strong></p>
-</figcaption>
-
 Since screenshots will not likely be greater than FHD, these predefined
 resolutions will come in handy.
 
 In the long run, we'll also need to compile and save the whole presentation, so
 here's a basic configuration that will provide this insight.
 
-`record PresentaionConfig`
+`Presentation Configuration | record PresentaionConfig`
 
 ```java
 public record PresentationConfig(SlideSize size, Path savePath) {}
 ```
-
-<figcaption>
-<p align="center"><strong>Presentation Configuration</strong></p>
-</figcaption>
 
 So, it can be editable from the detail pane. A field for the size (HD, FHD), and
 the path to store the compilations.
@@ -1763,7 +1626,7 @@ into `String`s and vice-versa.
 
 I'll leave my implementation here, and let the reader figure it out.
 
-`class Enums`
+`Utility Class "Enums" | class Enums`
 
 ```java
 public final class Enums {
@@ -1805,10 +1668,6 @@ public final class Enums {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Utility Class "Enums"</strong></p>
-</figcaption>
-
 This `EnglishConverter` implementation will allow to use `enum`s more directly
 as English values to the views without losing the identity between a `enum`
 domain type, and a primitive `String` (i.e., the `enum` is set as the view value
@@ -1828,7 +1687,7 @@ pane in the middle.
 
 I added a CSS class to style the title `Label`s for example.
 
-`app.css`
+`Class "title" for Bold Text | app.css`
 
 ```css
 .title {
@@ -1836,16 +1695,12 @@ I added a CSS class to style the title `Label`s for example.
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Class "title" for Bold Text</strong></p>
-</figcaption>
-
 These styles can be added as a class to the (`Label`) nodes via SceneBuilder.
 
 First, declare the new fields in the controller, and add logic for what should
 be done. Of course, I figured all this out before.
 
-`class AppController`
+`Initialization of the Detail Pane | class AppController`
 
 ```java
 @FXML private ComboBox<SlideItem> slideComboBox;
@@ -1900,10 +1755,6 @@ private void initDetail() {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Initialization of the Detail Pane</strong></p>
-</figcaption>
-
 Here, some views have to be hidden if they're not applicable according to the
 setup of the other values. For example, `codeSnippetBox` is only showed when
 the `Slide` type is set to `CodeSnippet`.
@@ -1937,7 +1788,7 @@ The drawing logic will go to the `drawing` `package` of the application.
 First, I defined a `SlideDrawing` type to represent the editing applied to a
 `Slide`.
 
-`interface SlideDrawing | package drawing`
+`Definition of "SlideDrawing" | interface SlideDrawing | package drawing`
 
 ```java
 public interface SlideDrawing {
@@ -1946,14 +1797,6 @@ public interface SlideDrawing {
     void draw(Slide slide);
 }
 ```
-
-<figcaption>
-<p align="center">
-<strong>
-Definition of "SlideDrawing"
-</strong>
-</p>
-</figcaption>
 
 Then, I added a realization of this interface via a `class` based on a `Group`
 node.
@@ -1971,7 +1814,8 @@ lower-level optimizations for now 😑.
 Now, the first drawing implementation will build a `Slide` of type
 `Screenshot`.
 
-`class GroupSlideDrawing | package drawing`
+`Initial Implementation of "SlideDrawing" Based on a "Group" Parent
+| class GroupSlideDrawing | package drawing`
 
 ```java
 public class GroupSlideDrawing implements SlideDrawing {
@@ -2020,17 +1864,9 @@ public class GroupSlideDrawing implements SlideDrawing {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Initial Implementation of "SlideDrawing" Based on a "Group" Parent
-</strong>
-</p>
-</figcaption>
-
 Then here we draw a `Screenshot` `Slide`.
 
-`class GroupSlideDrawing | package drawing`
+`Drawing of a Screenshot Slide | class GroupSlideDrawing | package drawing`
 
 ```java
 private Group drawScreenshot(Slide.Screenshot screenshot) {
@@ -2103,14 +1939,6 @@ private static Image getRoundedImage(Image image, ImageView iv, double arc) {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Drawing of a Screenshot Slide
-</strong>
-</p>
-</figcaption>
-
 First, I take a `Group` as the parent of the drawing which is a basic "layout"
 to manually add the child positions. This basically resembles the
 `FrameLayout` from Android.
@@ -2155,7 +1983,8 @@ resized as per the configuration of the slide we put.
 If the given image is too big — either in width or height — it has to be resized
 to fit the parent.
 
-`class GroupSlideDrawing | package drawing`
+`Fitting the Image Size into the Drawing Group
+| class GroupSlideDrawing | package drawing`
 
 ```java
 private Group drawScreenshot(Slide.Screenshot screenshot) {
@@ -2212,14 +2041,6 @@ private static Image getRoundedImage(Image image, ImageView iv, double arc) {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Fitting the Image Size into the Drawing Group
-</strong>
-</p>
-</figcaption>
-
 Now we fit the size of the `ImageView`, draw the image, and set its position to
 center it.
 
@@ -2244,7 +2065,7 @@ the GUI logic for the view pane.
 This `class` can be extracted as an abstraction by using an `interface`, but
 it's unnecessary to over-engineer there.
 
-`class SlideDrawingView | package ui`
+`Implementation of "SlideDrawingView" | class SlideDrawingView | package ui`
 
 ```java
 class SlideDrawingView {
@@ -2353,14 +2174,6 @@ class SlideDrawingView {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Implementation of "SlideDrawingView"
-</strong>
-</p>
-</figcaption>
-
 I've defined the `SlideState` `record` so **we can save the slide state**.
 Persistence is another feature that will be needed, at least at the memory
 level.
@@ -2410,7 +2223,8 @@ This view has a listener, that will be realized into the controller class, that
 is, we add the interface `SlideDrawingView.ChangeListener` to the `class`
 signature, and implement it next.
 
-`class AppController | package ui`
+`Integration of the Drawing View into the Controller
+| class AppController | package ui`
 
 ```java
 private final Map<ImageItem, SlideDrawingView.SlideState> changes;
@@ -2479,14 +2293,6 @@ private void initSlideDrawingView() {
     slideDrawingView.setOnChangeListener(this);
 }
 ```
-
-<figcaption>
-<p align="center">
-<strong>
-Integration of the Drawing View into the Controller
-</strong>
-</p>
-</figcaption>
 
 As I explained before, we can now see the `Map` that will store the in-memory
 state. This maps a `ImageItem` to a `SlideState`.
@@ -2622,21 +2428,15 @@ This will require some minor features like saving `Image`s via the
 `DataRepository` (because it only supported *copying the file images* from your
 directory, so far).
 
-`interface DataRepository | package data`
+`Definition of Method to Add an Image Object to the Data Repository
+| interface DataRepository | package data`
 
 ```java
 void createOrUpdateImage(ImageItem item) throws IOException;
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Definition of Method to Add an Image Object to the Data Repository
-</strong>
-</p>
-</figcaption>
-
-`class LocalDataRepository | package data`
+`Implementation of "createOrUpdateImage" into "LocalDataRepository"
+| class LocalDataRepository | package data`
 
 ```java
 @Override
@@ -2649,18 +2449,11 @@ public void createOrUpdateImage(ImageItem item) throws IOException {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Implementation of "createOrUpdateImage" into "LocalDataRepository"
-</strong>
-</p>
-</figcaption>
-
 The GUI change is also straightforward in the controller after updating the FXML
 view.
 
-`class AppController | package ui`
+`Implementation of Button to Create New Slides
+| class AppController | package ui`
 
 ```java
 @FXML
@@ -2717,14 +2510,6 @@ private void initNewButton() {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Implementation of Button to Create New Slides
-</strong>
-</p>
-</figcaption>
-
 Notice how we make use of the freshly implemented `createOrUpdateImage` of
 `DataRepository` in the method `createNewSlide`. As said, I pass my EP icon as a
 default slide image, and then it's stored in the data directory of the app.
@@ -2738,7 +2523,7 @@ source code instead.
 To update the model, I added `Language` as a `record` component, so one slide
 can be rendered as per its language if applicable.
 
-`interface Slide`
+`Adding the Language to a Slide and the Caption Record | interface Slide`
 
 ```java
 public sealed interface Slide {
@@ -2764,14 +2549,6 @@ public sealed interface Slide {
     record Caption(String title, String subtitle) {}
 }
 ```
-
-<figcaption>
-<p align="center">
-<strong>
-Adding the Language to a Slide and the Caption Record
-</strong>
-</p>
-</figcaption>
 
 Notice the `Caption` product type is not part of the `Slide` sum type, but a
 standalone `record` in that interface.
@@ -2799,7 +2576,7 @@ Code Shot Slide
 </p>
 </figcaption>
 
-`class GroupSlideDrawing | package drawing`
+`Code Shot Slide Implementation | class GroupSlideDrawing | package drawing`
 
 ```java
 private Group drawCodeShot(Slide.CodeShot codeShot) {
@@ -2811,14 +2588,6 @@ private Group drawCodeShot(Slide.CodeShot codeShot) {
     /* ... */
 }
 ```
-
-<figcaption>
-<p align="center">
-<strong>
-Code Shot Slide Implementation
-</strong>
-</p>
-</figcaption>
 
 We get the color by `Language` via `Colors.color(lang)` — colors that were added
 above.
@@ -2844,7 +2613,7 @@ semantics that can be generally found.
 This implementation is general-purpose, so it works on any language, but it's
 not specific to each language. That would be a ton of more work for me 🤪.
 
-`interface Element | package lang`
+`Definition of Language Elements | interface Element | package lang`
 
 ```java
 public sealed interface Element extends Enums.ToEnum<ElementItem> {
@@ -2873,14 +2642,6 @@ public sealed interface Element extends Enums.ToEnum<ElementItem> {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Definition of Language Elements
-</strong>
-</p>
-</figcaption>
-
 The sum type consists of `Keyword | Symbol | Type | Number | StringLiteral | Comment | Other`.
 They all have a `String` value to hold their token.
 
@@ -2890,7 +2651,7 @@ the raw `String`.
 The details about enums is just an implementation I made to transform  $$1:1$$
 `interface` sum types into basic `enum` sum types.
 
-`class Enums`
+`Type "ToEnum" that Allows to Convert an Object to an Enum Type | class Enums`
 
 ```java
 public interface ToEnum<T extends Enum<T>> {
@@ -2902,17 +2663,10 @@ public interface ToEnum<T extends Enum<T>> {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Type "ToEnum" that Allows to Convert an Object to a Enum Type
-</strong>
-</p>
-</figcaption>
-
 So, I can add `ElementItem` paired with the previous `Element` `interface` type.
 
-`enum ElementItem | package lang`
+`Enum Sum Type "ElementItem" to Complement the "Element" Interface Sum Type
+| enum ElementItem | package lang`
 
 ```java
 public enum ElementItem {
@@ -2926,14 +2680,6 @@ public enum ElementItem {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Enum Sum Type "ElementItem" to Complement the "Element" Interface Sum Type
-</strong>
-</p>
-</figcaption>
-
 This can be trivially done in Haskell from *homogeneity*, but Java like any
 other mundane mixed-paradigm language, is *heterogeneous*, so an `enum` is a
 **different structure** than an `interface`. Not to say, OOP brings the whole
@@ -2944,7 +2690,7 @@ I defined the keywords in a utility class[^x].
 [^x]: I used ChatGPT to generate the keywords, and GitHub language colors, i.e.,
     the mechanical job
 
-`class Spec | package lang`
+`Definitions of Language Keywords | class Spec | package lang`
 
 ```java
 public static Class<? extends Enum<?>> keywordTypeOf(Language language) {
@@ -2966,14 +2712,6 @@ public static Class<? extends Enum<?>> keywordTypeOf(Language language) {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Definitions of Language Keywords
-</strong>
-</p>
-</figcaption>
-
 I obviously skipped the 500 LoC for the mechanical definition of each keyword in
 this class. So, here you can see how to get the keywords.
 
@@ -2982,7 +2720,7 @@ I also skipped markup or DSLs like CSS, HTML since they're quite different 😐.
 Now, another utility class (missing Kotlin and functional languages so much 🤔)
 to define the colors 🎨 for the language elements.
 
-`class SchemeColors | package lang`
+`Definitions of Language Element Colors | class SchemeColors | package lang`
 
 ```java
 public final class SchemeColors {
@@ -3000,19 +2738,11 @@ public final class SchemeColors {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Definitions of Language Element Colors
-</strong>
-</p>
-</figcaption>
-
 Finally, I implemented a parser to get the tokens by language from the raw
 strings. This has many details I won't show. I'll just show the declarative
 part of it: the regex.
 
-`class Parser | package lang`
+`Regex Used to Parse Language Elements | class Parser | package lang`
 
 ```java
 private static final Pattern STRING_PATTERN
@@ -3063,14 +2793,6 @@ public static List<String> tokens(String code){
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Regex Used to Parse Language Elements
-</strong>
-</p>
-</figcaption>
-
 The underlying details are a long story I won't mention as it's out of scope,
 but it was a good exercise to rehearse regular expressions, and work out some
 abstract connects.
@@ -3089,7 +2811,8 @@ slides into JavaFX nodes.
 
 I leave the full implementation next.
 
-`class CodeSnippetDrawing | pacakage drawing`
+`Implementation of the Code Snippet Drawing
+| class CodeSnippetDrawing | pacakage drawing`
 
 ```java
 class CodeSnippetDrawing {
@@ -3220,14 +2943,6 @@ class CodeSnippetDrawing {
 }
 ```
 
-<figcaption>
-<p align="center">
-<strong>
-Implementation of the Code Snippet Drawing
-</strong>
-</p>
-</figcaption>
-
 I defined some polite sizes in the constructor, so it looks good.
 
 The method `draw` will return the `Group` with the slide drawn on it, similar to
@@ -3265,7 +2980,7 @@ mentioned before.
 It consists of the class `CaptionRenderer` that was used in the
 [Code Snippet Drawing](#code-snippet-drawing) snippet.
 
-`CaptionRenderer | pacakage drawing`
+`Implementation of the Caption Drawing | CaptionRenderer | pacakage drawing`
 
 ```java
 class CaptionRenderer {
@@ -3391,14 +3106,6 @@ class CaptionRenderer {
     }
 }
 ```
-
-<figcaption>
-<p align="center">
-<strong>
-Implementation of the Caption Drawing
-</strong>
-</p>
-</figcaption>
 
 By decoupling this responsibility, as shown above, I was able to draw same-style
 captions for the other kinds of slides too.
