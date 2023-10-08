@@ -520,7 +520,7 @@ private void initAddButton() {
 
 Including other methods will be helpful as well.
 
-`Other Methods | class AppControler`
+`Other Methods | class AppController`
 
 ```java
 private void handleError(IOException e) {
@@ -587,7 +587,7 @@ The three events that will be required for this app consist of:
 - **Drag Exited:** Cancels the drag as files dragged with the mouse are out of 
   scope.
 
-`Drag Event Implementations | class AppContoller`
+`Drag Event Implementations | class AppController`
 
 ```java
 @FXML
@@ -1603,7 +1603,7 @@ resolutions will come in handy.
 In the long run, we'll also need to compile and save the whole presentation, so
 here's a basic configuration that will provide this insight.
 
-`Presentation Configuration | record PresentaionConfig`
+`Presentation Configuration | record PresentationConfig`
 
 ```java
 public record PresentationConfig(SlideSize size, Path savePath) {}
