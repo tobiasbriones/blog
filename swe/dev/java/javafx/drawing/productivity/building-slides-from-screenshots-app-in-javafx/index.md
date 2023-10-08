@@ -32,7 +32,7 @@ domain-specific systems**.
 
 I lately took this experience as the final motivation to start materializing the
 automation of these systems without requiring the monolithic products mentioned.
-I'm working this materialization out via my new — and first $$Blog + EP$$ —
+I'm working this materialization out via my new —and first blog with project—
 **EP: Slides**, here in this article.
 
 ## Getting Started
