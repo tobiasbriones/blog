@@ -265,6 +265,9 @@ public class AppController {
 }
 ```
 
+This gives an initial layout to the app with a controller to set some structure
+as far as it's currently going.
+
 ## Application Data
 
 The application will handle data related to image files that make up the
