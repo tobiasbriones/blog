@@ -27,13 +27,45 @@ Needless to say, those apps like Photoshop, Google Docs, Office, etc., are
 general-purpose (i.e., mediocre) and manual. Plus, you even have to pay a
 subscription or watch ads for a monolith you will barely use much.
 
-I need composition in functional programming terms, **I just engineer my
-domain-specific systems**.
+I need composition, **I just engineer my domain-specific systems**.
 
 I lately took this experience as the final motivation to start materializing the
 automation of these systems without requiring the monolithic products mentioned.
 I'm working this materialization out via my new —and first blog with project—
 **EP: Slides**, here in this article.
+
+### Domain Engineering
+
+These general-purpose software cannot be composed.
+
+Even if they have (bloated) AI assistance, macros, or even APIs
+(if at all), they're just products for profit. Photoshop can paint an image, but
+it'll never understand source code or your specific system. M$ Word or LaTeX
+**will never understand what an equation means, as in mathematics**, etc.
+
+They need bloated features like AI that take huge deep learning models to
+develop and train and have heavy licensing and marketing because they're general
+purpose. For instance, products that suck need capitalism
+(marketing) to *sell them*, but *they're not the solution to the problems*.
+
+If you're a domain expert, you **simplify matters** to the specific domain, and
+**the more you simplify, the less bloated** AI, marketing, and engineering you
+have because *you address the problems instead of the symptoms*.
+
+AI can have its place to automate *external systems* which I wanted to leave
+clear in this development, but it'll never replace the underlying domain as
+they're independent tools.
+
+That is, you need to *understand* **how AI should be useful to automate
+works *<u>for</u>* our domain language** instead of buying mundane
+general-purpose software that uses AI as magic. Notice *the difference between
+automation and magic*.
+
+I figured out one simple way to leverage an AI application for this project, so
+it serves as a good example.
+
+Recall the concepts of what this comes about even though my purpose this time is
+to develop these ideas conservatively in Java.
 
 ## Getting Started
 
