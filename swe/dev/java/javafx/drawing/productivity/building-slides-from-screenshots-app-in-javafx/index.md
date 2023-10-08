@@ -41,7 +41,7 @@ First, make sure to have Java 20+ installed on your development machine. You
 might need:
 
 - [SDKMAN](https://sdkman.io).
-- [Java installer from foojay.io](https://foojay.io/download).
+- [Java Installation Guide from foojay.io](https://foojay.io/java-quick-start/install-java).
 - [IntelliJ IDEA](https://www.jetbrains.com/idea).
 - [Scene Builder](https://gluonhq.com/products/scene-builder).
 
