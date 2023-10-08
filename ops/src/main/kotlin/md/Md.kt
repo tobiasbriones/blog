@@ -3,10 +3,7 @@ package md
 import `$`
 import `---`
 import Entry
-import arrow.core.None
-import arrow.core.Option
-import arrow.core.Some
-import arrow.core.lastOrNone
+import arrow.core.*
 import path
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
@@ -55,7 +52,7 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
                 Caption(
                     title = it[0],
                     heading = pipeTokens `$` it.subList(1, it.size)
-                // The last tokens are left for the heading
+                    // The last tokens are left for the heading
                 )
         }
     }
@@ -115,8 +112,11 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
         }
 
         // Start of the MD code block
-        if (line.startsWith("```") && caption.isNotEmpty() && mdSnippetBlock
-            .isBlank()) {
+        if (
+            line.startsWith("```") &&
+            caption.isNotEmpty() &&
+            mdSnippetBlock.isBlank()
+        ) {
             mdSnippetBlock.append(line)
             mdSnippetBlock.append("\n")
             continue
@@ -134,12 +134,15 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
                     ::encodeToHtml `---`
                     { it + "\n" }
 
-                val fileName = caption.heading
+                val filePath = caption
+                    .heading
                     .split("|")
-                    .lastOrNone()
                     .map { it.trim() }
+                    .map { findFile(entry.path, it) }
+                    .firstOrNone { it.isSome() }
+                    .flatten()
 
-                val linkButtonHtml = with(entry.findFile(fileName)) {
+                val linkButtonHtml = with(filePath) {
                     when (this) {
                         None -> ""
                         is Some -> """
