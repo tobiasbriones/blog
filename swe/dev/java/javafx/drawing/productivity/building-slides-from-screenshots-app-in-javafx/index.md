@@ -3225,6 +3225,8 @@ private void initSlideDrawingView() {
 Then, another controller will be needed to separate the logic for the drawing on
 top of the slides.
 
+This new controller will therefore work with the `SlideDrawingView`.
+
 `Adapting a new Controller for Drawing on Slides | class SlideDrawingView`
 
 ```java
@@ -3247,6 +3249,8 @@ void setViews(
     controller.setShapeBackButton(shapeBackButton);
 }
 ```
+
+Leading to the implementation of the UI inputs performed by user drawings.
 
 `Handling Drawings on Top of Slides | SlideDrawingController.java`
 
