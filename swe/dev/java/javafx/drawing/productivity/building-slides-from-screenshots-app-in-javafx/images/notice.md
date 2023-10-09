@@ -37,6 +37,9 @@ The following images were used to compose some parts shown in the screenshots:
 - [Dragging Files](dragging-files.png): Includes
   [Images from Pixabay](#images-from-pixabay), and system icons.
 
+- [Drawing Shapes](drawing-shapes.png): Includes
+  [Images from Pixabay](#images-from-pixabay), and system icons.
+
 - [Files Updated](files-updated.png): Includes
   [Images from Pixabay](#images-from-pixabay).
 
