@@ -3019,7 +3019,8 @@ mentioned before.
 It consists of the class `CaptionRenderer` that was used in the
 [Code Snippet Drawing](#code-snippet-drawing) snippet.
 
-`Implementation of the Caption Drawing | CaptionRenderer | pacakage drawing`
+`Implementation of the Caption Drawing
+| CaptionRenderer.java | pacakage drawing`
 
 ```java
 class CaptionRenderer {
