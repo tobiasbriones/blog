@@ -3166,7 +3166,423 @@ This way, the code snippet slides are fully available in the application.
 
 ## Drawing Shapes
 
+Rendering various kinds of shapes is a fit exercise to practice in this JavaFX
+application. They can be lines, rectangles, or circles.
 
+![Drawing Shapes](images/drawing-shapes.png)
+
+<figcaption>
+<p align="center"><b>Photopea: Editing the Presentation</b></p>
+</figcaption>
+
+This can give you the ability to annotate certain parts of slides, and even
+better, these annotations can be automated.
+
+First, we must begin from the domain, in this case, the drawing definitions and
+implementations for shapes that will support the app. After working out the
+domain, we figure out any automation that can be applied to the domain
+language, as said at the beginning of [Domain Engineering](#domain-engineering).
+
+First, I defined the shapes I wanted to draw.
+
+`Defining the App Shapes Sum Type | enum ShapeItem`
+
+```java
+public enum ShapeItem {
+    Line,
+    Rectangle,
+    Circle
+}
+```
+
+To start making this feature take shape (pun intended), let's go to the UI
+updates on the controller side.
+
+After updating the `app.fxml` file with the `ComboBox` to select the shape to
+draw and `Button` for undoing changes, the logic on the controller is next.
+
+`Implementing the Shapes UI | class AppController`
+
+```java
+@FXML private ComboBox<ShapeItem> shapeComboBox;
+@FXML private ComboBox<Palette> shapePaletteComboBox;
+@FXML private Button shapeBackButton;
+
+private void initSlideDrawingView() {
+    // ... //
+    slideDrawingView
+        .setViews(
+            scrollPane,
+            shapeComboBox,
+            shapePaletteComboBox,
+            shapeBackButton
+        );
+    // ... //
+}
+```
+
+Then, another controller will be needed to separate the logic for the drawing on
+top of the slides.
+
+`Adapting a new Controller for Drawing on Slides | class SlideDrawingView`
+
+```java
+private final SlideDrawingController controller;
+
+SlideDrawingView(HBox view) {
+    this.controller = new SlideDrawingController();
+    // ... //
+}
+
+void setViews(
+    ScrollPane scrollPane,
+    ComboBox<ShapeItem> shapeComboBox,
+    ComboBox<Palette> shapePaletteComboBox,
+    Button shapeBackButton
+) {
+    controller.setScrollPane(scrollPane);
+    controller.setShapeComboBox(shapeComboBox);
+    controller.setShapePaletteComboBox(shapePaletteComboBox);
+    controller.setShapeBackButton(shapeBackButton);
+}
+```
+
+`Handling Drawings on Top of Slides | SlideDrawingController.java`
+
+```java
+class SlideDrawingController {
+    private final Deque<ShapeRenderer> shapes;
+    private final ObjectProperty<ShapeItem> shapeProperty;
+    private final ObjectProperty<Palette> paletteProperty;
+    private Group group;
+    private ScrollPane scrollPane;
+    private boolean shiftPressed;
+
+    SlideDrawingController() {
+        shapes = new LinkedList<>();
+        paletteProperty = new SimpleObjectProperty<>();
+        shapeProperty = new SimpleObjectProperty<>();
+        group = null;
+        scrollPane = null;
+        shiftPressed = false;
+    }
+
+    void setDrawing(Group value) {
+        if (group != null) {
+           unbindEvents();
+        }
+        group = value;
+
+        bindEvents();
+        addShapes();
+    }
+
+    void setScrollPane(ScrollPane value) {
+        scrollPane = value;
+    }
+
+    void setShapeComboBox(ComboBox<ShapeItem> value) {
+        value.getItems().addAll(ShapeItem.values());
+        value.setConverter(new Enums.EnglishConverter<>(ShapeItem.class));
+        value.getSelectionModel().select(0);
+        shapeProperty.bind(value.valueProperty());
+    }
+
+    void setShapePaletteComboBox(ComboBox<Palette> value) {
+        value.getItems().addAll(Palette.values());
+        value.setConverter(new Enums.EnglishConverter<>(Palette.class));
+        value.getSelectionModel().select(0);
+        paletteProperty.bind(value.valueProperty());
+    }
+
+    void setShapeBackButton(Button value) {
+        var icBack = new Image(
+            Objects.requireNonNull(
+                getClass().getResourceAsStream("/ic_back.png")
+            )
+        );
+        var iv = new ImageView(icBack);
+
+        iv.setFitWidth(18.0);
+        iv.setFitHeight(18.0);
+        value.setGraphic(iv);
+        value.setOnAction(event -> popShape());
+    }
+
+    private void bindEvents() {
+        group.setOnMousePressed(event -> {
+            if (event.getButton() != MouseButton.SECONDARY) {
+                return;
+            }
+            var startX = event.getX();
+            var startY = event.getY();
+            var shape = pushShape();
+
+            shape.start(startX, startY);
+
+            scrollPane.setPannable(false);
+        });
+        group.setOnMouseDragged(event -> {
+            if (event.getButton() != MouseButton.SECONDARY) {
+                return;
+            }
+            if (shapes.peek() == null) {
+                return;
+            }
+            var shape = shapes.peek();
+            var currentX = event.getX();
+            var currentY = event.getY();
+            var normX = normalizeX(currentX);
+            var normY = normalizeY(currentY);
+
+            shape.keepProportions(shiftPressed);
+            shape.end(normX, normY);
+            shape.render();
+        });
+
+        group.setOnMouseReleased(event -> scrollPane.setPannable(true));
+
+        group.sceneProperty().addListener((observable, oldValue, newValue) -> {
+            newValue.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.SHIFT) {
+                  shiftPressed = true;
+                }
+            });
+
+            newValue.setOnKeyReleased(event -> {
+                if (event.getCode() == KeyCode.SHIFT) {
+                  shiftPressed = false;
+                }
+            });
+        });
+    }
+
+    private void unbindEvents() {
+        group.setOnMousePressed(null);
+    }
+
+    private void addShapes() {
+        shapes.forEach(shape -> shape.setGroup(group));
+    }
+
+    private ShapeRenderer pushShape() {
+        var renderer = new ShapeRenderer();
+        var shape = switch (shapeProperty.get()) {
+            case Rectangle -> new Rectangle();
+            case Circle -> new Circle();
+        };
+
+        renderer.setGroup(group);
+        renderer.setShape(shape);
+        renderer.setPalette(paletteProperty.get());
+
+        shapes.push(renderer);
+        return renderer;
+    }
+
+    private void popShape() {
+        if (shapes.isEmpty()) {
+            return;
+        }
+        var shape = shapes.pop();
+
+        shape.remove();
+    }
+
+    private double normalizeX(double x) {
+        var bounds = group.getBoundsInLocal();
+        return Math.max(0.0, Math.min(bounds.getWidth() - 1.0, x));
+    }
+
+    private double normalizeY(double y) {
+        var bounds = group.getBoundsInLocal();
+        return Math.max(0.0, Math.min(bounds.getHeight() - 1.0, y));
+    }
+}
+```
+
+As you can see, there's a `Deque` of `ShapeRenderer` containing the stack of
+shapes drawn on the Slide. By leveraging the stack data structure via the LIFO (
+Last In First Out) property provided by `Deque` (impl. via `LinkedList`), the 
+"undo" button can be trivially implemented.
+
+When binding events, a shape is set to be rendered, and the scroll pane is no
+longer pannable, which disables the scroll on the slide view while drawing a
+shape. This continues until the process is complete, and then the scroll pane
+gets back to normal.
+
+The `SHIFT` key is detected to read when the user wants to keep the proportions
+of the shape. This will be useful when implementing their rendering.
+
+The color to paint the shapes comes from the `Palette` enum, with `Good` and
+`Error` values.
+
+The rest are implementation details.
+
+Finally, the `ShapeRenderer` responsible for drawing a shape is coming next.
+
+`Implementing Rendering of Shapes | ShapeRenderer.java | package drawing`
+
+```java
+public class ShapeRenderer {
+    private final Shape shape;
+    private final Palette palette;
+    private Group group;
+    private double startX;
+    private double startY;
+    private double endX;
+    private double endY;
+    private boolean keepProportions;
+
+    public ShapeRenderer(Shape shape, Palette palette) {
+        this.shape = shape;
+        this.palette = palette;
+        this.group = null;
+        this.startX = 0.0;
+        this.startY = 0.0;
+        this.endX = 0.0;
+        this.endY = 0.0;
+        this.keepProportions = false;
+    }
+
+    public void setGroup(Group newGroup) {
+        group = newGroup;
+
+        group.getChildren().add(shape);
+    }
+
+    public double getStartX() {
+        return startX;
+    }
+
+    public double getStartY() {
+        return startY;
+    }
+
+    public double getEndX() {
+        return endX;
+    }
+
+    public double getEndY() {
+        return endY;
+    }
+
+    public void remove() {
+        group.getChildren().remove(shape);
+    }
+
+    public void keepProportions(boolean proportions) {
+        keepProportions = proportions;
+    }
+
+    public void start(double x, double y) {
+        startX = x;
+        startY = y;
+    }
+
+    public void end(double x, double y) {
+        endX = x;
+        endY = y;
+    }
+
+    public void render() {
+        switch (shape) {
+            case Line line -> renderLine(line);
+            case Rectangle rectangle -> renderRectangle(rectangle);
+            case Circle circle -> renderCircle(circle);
+            default ->
+                throw new IllegalStateException("Unexpected shape: " + shape);
+        }
+    }
+
+    private void renderLine(Line line) {
+        var color = Colors.color(palette);
+
+        line.setStartX(startX);
+        line.setStartY(startY);
+        line.setStrokeWidth(2.0);
+        line.setStroke(color);
+        line.setFill(color);
+
+        if (keepProportions) {
+            var xDiff = Math.abs(startX - endX);
+            var yDiff = Math.abs(startY - endY);
+            var horizontal = xDiff >= yDiff;
+
+            if (horizontal) {
+                line.setEndX(endX);
+                line.setEndY(startY);
+            }
+            else {
+                line.setEndX(startX);
+                line.setEndY(endY);
+            }
+        }
+        else {
+            line.setEndX(endX);
+            line.setEndY(endY);
+        }
+    }
+
+    private void renderRectangle(Rectangle rectangle) {
+        var width = Math.abs(endX - startX);
+        var height = Math.abs(endY - startY);
+        var arc = getCornerRadius(width, height);
+
+        rectangle.setX(Math.min(startX, endX));
+        rectangle.setY(Math.min(startY, endY));
+        rectangle.setWidth(width);
+        rectangle.setHeight(height);
+        rectangle.setArcWidth(arc);
+        rectangle.setArcHeight(arc);
+        rectangle.setStrokeWidth(2.0);
+        rectangle.setStroke(Colors.color(palette));
+        rectangle.setFill(Color.TRANSPARENT);
+    }
+
+    private void renderCircle(Circle circle) {
+        var width = Math.abs(endX - startX);
+        var height = Math.abs(endY - startY);
+        var radius = Math.max(width, height);
+
+        circle.setCenterX(Math.min(startX, endX));
+        circle.setCenterY(Math.min(startY, endY));
+        circle.setRadius(radius);
+        circle.setStrokeWidth(2.0);
+        circle.setStroke(Colors.color(palette));
+        circle.setFill(Color.TRANSPARENT);
+    }
+}
+```
+
+A `Group` (coming from `SlideDrawingView`, implemented via `GroupSlideDrawing`
+at method `draw`) is used as a canvas to draw the shapes. Recall that `Group`
+nodes are good in JavaFX for drawing shapes. So, this group is put on top of the
+slide to create the composition.
+
+The shapes are trivially drawn via JavaFX API and integrated into the
+corresponding slide.
+
+Notice the flag `keepProportions` is used to keep the aspect ratio of the shape
+when the key `SHIFT` is pressed. This is useful to draw straight lines, for
+instance.
+
+Finally, I recorded a video to demonstrate the shapes feature in the app.
+
+<p>
+<video poster="static/poster-_-drawing-shapes-on-slides.png" controls>
+  <source
+    src="static/drawing-shapes-on-slides.mp4"
+    type="video/mp4"
+  >
+  Your browser does not support the video tag.
+</video>
+</p>
+
+The drawing of lines, rectangles, and circles is a finished feature aimed at
+making (off-domain) annotations on top of the (domain) slides and can be
+extended properly thanks to computer science concepts applied to this
+application module.
 
 ## Integrating AI via OCR
 
