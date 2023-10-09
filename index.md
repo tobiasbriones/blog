@@ -19,6 +19,7 @@
 - [Applying my Pipe and Application Operators in Kotlin (2023-07-19)](applying-my-pipe-and-application-operators-in-kotlin-2023-07-19)
 - [Removing Cyclic Dependencies, Java vs Go (2023-05-28)](removing-cyclic-dependencies--_--java-vs-go-2023-05-28)
 - [From Imperative to Functional: TypeScript Fetch Promise](from-imperative-to-functional-_-typescript-fetch-promise)
+- [Leveraging Git to Finish my Article (2023/10/09)](leveraging-git-to-finish-my-article-2023-10-09)
 - [Finishing Writing the Documentation for my Next EP (2023-07-14)](finishing-writing-the-documentation-for-my-next-ep-2023-07-14)
 - [Troubleshooting Diary](troubleshooting-diary)
 - [FP in Kotlin](fp-in-kotlin)
