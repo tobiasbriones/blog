@@ -3584,6 +3584,12 @@ Finally, I recorded a video to demonstrate the shapes feature in the app.
 </video>
 </p>
 
+<figcaption>
+<p align="center"><strong>
+Drawing Shapes on Slides
+</strong></p>
+</figcaption>
+
 The drawing of lines, rectangles, and circles is a finished feature aimed at
 making (off-domain) annotations on top of the (domain) slides and can be
 extended properly thanks to computer science concepts applied to this
