@@ -3,3 +3,9 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Leveraging Git to Finish my Article (2023/10/09)
+
+![Leveraging Git to Finish my Article (2023/10/09)](images/leveraging-git-to-finish-my-article-after-a-long-interlude.png)
+
+<p align="center"><b>Screenshot from IntelliJ IDEA</b></p>
+
+---
