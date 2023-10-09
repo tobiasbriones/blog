@@ -41,7 +41,7 @@ These general-purpose software cannot be composed.
 Even if they have (bloated) AI assistance, macros, or even APIs
 (if at all), they're just products for profit. Photoshop can paint an image, but
 it'll never understand source code or your specific system. M$ Word or LaTeX
-**will never understand what an equation means, as in mathematics**, etc.
+**will never understand what an equation means, *as in mathematics***, etc.
 
 They need bloated features like AI that take huge deep learning models to
 develop and train and have heavy licensing and marketing because they're general
