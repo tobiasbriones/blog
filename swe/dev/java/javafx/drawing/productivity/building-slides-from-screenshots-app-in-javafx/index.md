@@ -57,7 +57,7 @@ clear in this development, but it'll never replace the underlying domain as
 they're independent tools.
 
 That is, you need to *understand* **how AI should be useful to automate
-works *<u>for</u>* our domain language** instead of buying mundane
+works *for* our domain language** instead of buying mundane
 general-purpose software that uses AI as magic. Notice *the difference between
 automation and magic*.
 
