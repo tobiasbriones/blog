@@ -17,11 +17,7 @@ The idea was to build a carousel presentation like
 [this PSD file](static/carousel.psd). It still didn't include captions, so
 besides the editing, that puts *more off-topic work* for me.
 
-![Photopea: Editing the Presentation](images/photopea-_-editing-the-presentation.png)
-
-<figcaption>
-<p align="center"><strong>Photopea: Editing the Presentation</strong></p>
-</figcaption>
+![](images/photopea-_-editing-the-presentation.png)
 
 Needless to say, those apps like Photoshop, Google Docs, Office, etc., are
 general-purpose (i.e., mediocre) and manual. Plus, you even have to pay a
@@ -148,11 +144,7 @@ public class Main extends Application {
 }
 ```
 
-![Hello World](images/hello-world.png)
-
-<figcaption>
-<p align="center"><strong>Hello World</strong></p>
-</figcaption>
+![](images/hello-world.png)
 
 At this point, the JavaFX application is set up, so the development can 
 take place.
@@ -166,11 +158,7 @@ what's being developed.
 This is the initial layout [app.fxml](slides---ep/src/main/resources/app.fxml)
 file that looks like:
 
-![Scene Builder: Initial app.fxml](images/scene-builder-.-initial-app.fxml.png)
-
-<figcaption>
-<p align="center"><strong>Scene Builder: Initial app.fxml</strong></p>
-</figcaption>
+![](images/scene-builder-.-initial-app.fxml.png)
 
 The layout tree (briefly) consists of:
 
@@ -234,10 +222,6 @@ var root = FXMLLoader.<Parent>load(
     Objects.requireNonNull(getClass().getResource("/app.fxml"))
 );
 ```
-
-<figcaption>
-<p align="center"><strong></strong></p>
-</figcaption>
 
 Then, `AppController` will handle the input events.
 
@@ -504,11 +488,7 @@ application images.
 
 The first part of the app is a master pane that lists the images.
 
-![Master Pane](images/master-pane.png)
-
-<figcaption>
-<p align="center"><strong>Master Pane</strong></p>
-</figcaption>
+![](images/master-pane.png)
 
 This pane will be able to list the images, add new image(s) via drag-and-drop
 and or a `Button` with `FileChooser`, delete an image, delete all images, and
@@ -579,41 +559,25 @@ Now the controller set up to keep adding the other features.
 One engaging feature of this app is its file drag-and-drop, where you can create
 or update one or many images just as simple.
 
-![Dragging Files](images/dragging-files.png)
-
-<figcaption>
-<p align="center"><strong>Dragging Files</strong></p>
-</figcaption>
+![](images/dragging-files.png)
 
 If the files are [accepted](#application-data) by our app then they will be
 added.
 
-![Files Updated](images/files-updated.png)
-
-<figcaption>
-<p align="center"><strong>Files Updated</strong></p>
-</figcaption>
+![](images/files-updated.png)
 
 They won't be added if rejected (e.g., a Photopea ".psd" file). Per
 [our rules](#application-data), one invalid file is enough to reject all of
 them.
 
-![Drag Canceled: Invalid Files](images/drag-canceled-.-invalid-files.png)
-
-<figcaption>
-<p align="center"><strong>Drag Canceled: Invalid Files</strong></p>
-</figcaption>
+![](images/drag-canceled-.-invalid-files.png)
 
 So our `DragEvent` cancels further actions with the clipboard files.
 
 Another way the `DragEvent` can finish is when you just cancel the drop action
 with your mouse by leaving the files out.
 
-![Drag Canceled](images/drag-canceled.png)
-
-<figcaption>
-<p align="center"><strong>Drag Canceled</strong></p>
-</figcaption>
+![](images/drag-canceled.png)
 
 The events are set from the `app.fxml` view already, so the controller 
 implementation is left.
@@ -904,19 +868,11 @@ this master pane.
 For deleting an item, you click on the delete button of the item, and a
 confirmation `Alert` will finish this action.
 
-![Delete Item](images/delete-item.png)
-
-<figcaption>
-<p align="center"><strong>Delete Item</strong></p>
-</figcaption>
+![](images/delete-item.png)
 
 To delete all the items, the "clear" `Button` will "do the trick".
 
-![Clear All](images/clear-all.png)
-
-<figcaption>
-<p align="center"><strong>Clear All</strong></p>
-</figcaption>
+![](images/clear-all.png)
 
 Therefore, here we go with our controller again.
 
@@ -969,11 +925,7 @@ already supports a drag-and-drop event for adding or updating files to the app,
 and now it needs one more implementation for arranging its items via this fancy
 mechanism.
 
-![ListView Drag and Drop Animation](images/listview-drag-and-drop-animation.gif)
-
-<figcaption>
-<p align="center"><strong>ListView Drag and Drop Animation</strong></p>
-</figcaption>
+![](images/listview-drag-and-drop-animation.gif)
 
 #### Cell Drag and Drop Implementation
 
@@ -1202,11 +1154,7 @@ master pane complete.
 
 This menu is trivial to write now.
 
-![File Menu Items](file-menu-items.png)
-
-<figcaption>
-<p align="center"><strong>File Menu Items</strong></p>
-</figcaption>
+![](file-menu-items.png)
 
 First, we add the events to the FXML, and the controller.
 
@@ -1386,11 +1334,7 @@ detail panes as well as the application logic.
 This component is a page indicator that will keep in sync with the list of
 images loaded into the master pane.
 
-![View Pagination in Sync with List View](images/view-pagination-in-sync-with-list-view.png)
-
-<figcaption>
-<p align="center"><strong>View Pagination in Sync with List View</strong></p>
-</figcaption>
+![](images/view-pagination-in-sync-with-list-view.png)
 
 After updating the `app.fxml` file, the logic is next.
 
@@ -1718,11 +1662,7 @@ Eventually, we come across the detail pane on the right of the GUI that allows
 to program what information will be taken to render what's shown in the view
 pane in the middle.
 
-![Detail Pane](detail-pane.png)
-
-<figcaption>
-<p align="center"><strong>Detail Pane</strong></p>
-</figcaption>
+![](detail-pane.png)
 
 I added a CSS class to style the title `Label`s for example.
 
@@ -1814,11 +1754,7 @@ The view pane displays the result of applying the information from the detail
 pane on the right side to the input images from the master pane on the left
 side. This view shows the drawings applied to build the presentation.
 
-![Screenshot Slide View Drawing](images/screenshot-slide-view-drawing.png)
-
-<figcaption>
-<p align="center"><strong>Screenshot Slide View Drawing</strong></p>
-</figcaption>
+![](images/screenshot-slide-view-drawing.png)
 
 ### Drawing Package
 
@@ -2357,15 +2293,7 @@ Rendering code snippets as a pretty image with styled code for any programming
 language is a gorgeous challenge with powerful results that resembles us a
 process when developing an IDE.
 
-![Code Snippet Slide](images/code-snippet-slide.png)
-
-<figcaption>
-<p align="center">
-<strong>
-Code Snippet Slide
-</strong>
-</p>
-</figcaption>
+![](images/code-snippet-slide.png)
 
 I pulled the PL colors assigned on GitHub to style the background to give
 context to the slide. The frames have shadows and rounded corners, and the code
@@ -2378,15 +2306,7 @@ I also added caption support to end up automating my job further.
 Regarding automation, I'll keep writing my DSLs and systems with my latest
 MathSwe standards.
 
-![Code Snippet Slide for Many Languages](images/code-snippet-slide-for-many-languages.png)
-
-<figcaption>
-<p align="center">
-<strong>
-Code Snippet Slide for Many Languages
-</strong>
-</p>
-</figcaption>
+![](images/code-snippet-slide-for-many-languages.png)
 
 I quickly wrote a parser with various regex and data types to give semantics
 to the code. Recall that it has to work for any PL for this EP. I'm not adding a
@@ -2429,39 +2349,15 @@ more automation of content.
 Since code snippets make sense to go in a brand-new slide only, I created a
 "new" button to add empty slides.
 
-![New Button for Empty Slides](images/new-button-for-empty-slides.png)
+![](images/new-button-for-empty-slides.png)
 
-<figcaption>
-<p align="center">
-<strong>
-New Button for Empty Slides
-</strong>
-</p>
-</figcaption>
-
-![Creating a New Slide](images/creating-a-new-slide.png)
-
-<figcaption>
-<p align="center">
-<strong>
-Creating a New Slide
-</strong>
-</p>
-</figcaption>
+![](images/creating-a-new-slide.png)
 
 Then, a new `ImageItem` is created with the logo of an EP app by default. Recall
 these are intended to build the slide from source code instead of images, and it
 doesn't have to be perfect as this is an example project.
 
-![New Slide Created](images/new-slide-created.png)
-
-<figcaption>
-<p align="center">
-<strong>
-New Slide Created
-</strong>
-</p>
-</figcaption>
+![](images/new-slide-created.png)
 
 This will require some minor features like saving `Image`s via the
 `DataRepository` (because it only supported *copying the file images* from your
@@ -2605,15 +2501,7 @@ This is almost the same as the screenshot slide that was done in the beginning.
 This kind of slide consists of a screenshot of code (not actual code), so e.g.,
 you can capture you're IDE and explain what's in the screenshot.
 
-![Code Shot Slide](images/code-shot-slide.png)
-
-<figcaption>
-<p align="center">
-<strong>
-Code Shot Slide
-</strong>
-</p>
-</figcaption>
+![](images/code-shot-slide.png)
 
 `Code Shot Slide Implementation | class GroupSlideDrawing | package drawing`
 
@@ -3170,11 +3058,7 @@ This way, the code snippet slides are fully available in the application.
 Rendering various kinds of shapes is a fit exercise to practice in this JavaFX
 application. They can be lines, rectangles, or circles.
 
-![Drawing Shapes](images/drawing-shapes.png)
-
-<figcaption>
-<p align="center"><b>Photopea: Editing the Presentation</b></p>
-</figcaption>
+![](images/drawing-shapes.png)
 
 This can give you the ability to annotate certain parts of slides, and even
 better, these annotations can be automated.
@@ -3574,21 +3458,7 @@ instance.
 
 Finally, I recorded a video to demonstrate the shapes feature in the app.
 
-<p>
-<video poster="static/poster-_-drawing-shapes-on-slides.png" controls>
-  <source
-    src="static/drawing-shapes-on-slides.mp4"
-    type="video/mp4"
-  >
-  Your browser does not support the video tag.
-</video>
-</p>
-
-<figcaption>
-<p align="center"><strong>
-Drawing Shapes on Slides
-</strong></p>
-</figcaption>
+![](static/drawing-shapes-on-slides.mp4)
 
 The drawing of lines, rectangles, and circles is a finished feature aimed at
 making (off-domain) annotations on top of the (domain) slides and can be
