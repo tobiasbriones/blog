@@ -67,7 +67,7 @@ fun parseImages(value: String, dic: Dictionary): String {
 
                 if (alt != null && path != null) {
                     val ext = path.getExtension()
-                    val name = Path.of(path).name.removeSuffix(ext)
+                    val name = Path.of(path).name.removeExtension()
                     val html = when (ext) {
                         "mp4" -> videoHtml(name, path)
                         else -> imageHtml(path, alt)
