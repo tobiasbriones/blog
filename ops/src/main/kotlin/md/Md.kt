@@ -8,15 +8,92 @@ import path
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
 import kotlin.io.path.absolutePathString
+import kotlin.io.path.name
 import kotlin.io.path.relativeTo
 import kotlin.system.exitProcess
 
 data class Markdown(val value: String)
 
-fun Markdown.parse(entry: Entry): Markdown = parseCodeSnippets(entry)
+fun Markdown.parse(entry: Entry, dic: Dictionary): Markdown =
+    parseCodeSnippets(entry)
+        .parseImages(dic)
 
 fun Markdown.parseCodeSnippets(entry: Entry): Markdown =
     copy(value = parseCodeSnippets(value, entry))
+
+fun Markdown.parseImages(dic: Dictionary): Markdown =
+    copy(value = parseImages(value, dic))
+
+fun parseImages(value: String, dic: Dictionary): String {
+    val sb = StringBuilder(value.length)
+    val imgPattern = "!\\[(.*?)]\\((.*?)\\)".toRegex()
+
+    fun imageHtml(path: String, alt: String): String {
+        val title = Entry(Path.of(path)).toTitleCase(dic)
+        val altValue = alt.ifBlank { title }
+        return """
+                <figure>
+                    <img src="$path" alt="$altValue" />
+                    <figcaption>$title</figcaption>
+                </figure>
+            """.trimIndent()
+    }
+
+    fun videoHtml(name: String, path: String): String {
+        val title = Entry(Path.of(path)).toTitleCase(dic)
+        val poster = "poster-_-$name.png"
+        return """
+                <figure>
+                    <video poster="static/$poster" controls>
+                      <source
+                        src="$path"
+                        type="video/mp4"
+                      >
+                      Your browser does not support the video tag.
+                    </video>
+
+                    <figcaption>$title</figcaption>
+                </figure>
+            """.trimIndent()
+    }
+
+    for (line in value.lines()) {
+        imgPattern
+            .find(line)
+            .toOption()
+            .onSome {
+                val alt = it.groups[1]?.value
+                val path = it.groups[2]?.value
+
+                if (alt != null && path != null) {
+                    val ext = path.getExtension()
+                    val name = Path.of(path).name.removeSuffix(ext)
+                    val html = when (ext) {
+                        "mp4" -> videoHtml(name, path)
+                        else -> imageHtml(path, alt)
+                    }
+
+                    sb.append(html)
+                    sb.append("\n")
+                }
+            }
+            .onNone {
+                sb.append(line)
+                sb.append("\n")
+            }
+    }
+
+    return sb.toString()
+}
+
+fun String.getExtension(): String {
+    val lastDotIndex = lastIndexOf(".")
+    return if (lastDotIndex != -1) {
+        substring(lastDotIndex, length)
+    } else {
+        this
+    }
+}
 
 fun parseCodeSnippets(value: String, entry: Entry): String {
     data class Caption(
@@ -241,7 +318,9 @@ data class Index(val content: Markdown) {
     override fun toString(): String = content.value
 }
 
-fun Index.parse(entry: Entry): Index = copy(content = content.parse(entry))
+fun Index.parse(entry: Entry, dic: Dictionary): Index = copy(
+    content = content.parse(entry, dic)
+)
 
 fun Index.extractTitle(): String = content
     .value

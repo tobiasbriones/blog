@@ -334,7 +334,7 @@ fun build(entry: Entry, config: BuildConfig) {
         ),
         index.generateNav(home),
         index.generateToC(),
-        index.parse(entry),
+        index.parse(entry, dic),
         subdirNav,
     )
 

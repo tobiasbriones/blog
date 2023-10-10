@@ -30,7 +30,7 @@ fun main() {
 
     val index = entry?.loadIndex()?.getOrNull()
 
-    val parse = index?.parse(entry)
+    val parse = index?.parse(entry, dic)
 
     //runCmd("build drawing-a-tree-on-canvas-with-xy-coordinates")
 //    runCmd("build building-slides-from-screenshots-app-in-javafx jekyll")
