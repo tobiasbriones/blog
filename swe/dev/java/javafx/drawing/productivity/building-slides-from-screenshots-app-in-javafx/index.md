@@ -158,7 +158,7 @@ what's being developed.
 This is the initial layout [app.fxml](slides---ep/src/main/resources/app.fxml)
 file that looks like:
 
-![](images/scene-builder-.-initial-app.fxml.png)
+![](images/scene-builder-_-initial-app-fxml.png)
 
 The layout tree (briefly) consists of:
 

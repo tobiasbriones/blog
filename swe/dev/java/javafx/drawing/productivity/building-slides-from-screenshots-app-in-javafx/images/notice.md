@@ -63,7 +63,7 @@ The following images were used to compose some parts shown in the screenshots:
   Includes [Photopea](https://photopea.com) app screenshot, and Windows 10 
   Video Player screenshot.
 
-- [Scene Builder: Initial app.fxml](scene-builder-.-initial-app.fxml.png):
+- [Scene Builder: Initial app.fxml](scene-builder-_-initial-app-fxml.png):
   Includes system icons, and the
   [Scene Builder](https://gluonhq.com/products/scene-builder) logo.
 
