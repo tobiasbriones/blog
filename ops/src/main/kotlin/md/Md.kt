@@ -29,7 +29,7 @@ fun parseImages(value: String, dic: Dictionary): String {
     val imgPattern = "!\\[(.*?)]\\((.*?)\\)".toRegex()
 
     fun imageHtml(path: String, alt: String): String {
-        val title = Entry(Path.of(path)).toTitleCase(dic)
+        val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
         val altValue = alt.ifBlank { title }
         return """
                 <figure>
@@ -40,7 +40,7 @@ fun parseImages(value: String, dic: Dictionary): String {
     }
 
     fun videoHtml(name: String, path: String): String {
-        val title = Entry(Path.of(path)).toTitleCase(dic)
+        val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
         val poster = "poster-_-$name.png"
         return """
                 <figure>
@@ -90,6 +90,15 @@ fun String.getExtension(): String {
     val lastDotIndex = lastIndexOf(".")
     return if (lastDotIndex != -1) {
         substring(lastDotIndex, length)
+    } else {
+        this
+    }
+}
+
+fun String.removeExtension(): String {
+    val lastDotIndex = lastIndexOf(".")
+    return if (lastDotIndex != -1) {
+        substring(0, lastDotIndex)
     } else {
         this
     }
