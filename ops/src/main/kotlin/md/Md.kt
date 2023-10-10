@@ -89,7 +89,7 @@ fun parseImages(value: String, dic: Dictionary): String {
 fun String.getExtension(): String {
     val lastDotIndex = lastIndexOf(".")
     return if (lastDotIndex != -1) {
-        substring(lastDotIndex, length)
+        substring(lastDotIndex + 1, length)
     } else {
         this
     }
