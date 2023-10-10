@@ -927,6 +927,10 @@ mechanism.
 
 ![](images/listview-drag-and-drop-animation.gif)
 
+By arranging the images loaded into the master pane via another ergonomic
+drag-and-drop mechanism, we can set important information for the slides such
+as, their order in the final presentation.
+
 #### Cell Drag and Drop Implementation
 
 First, a new event will need to be defined in the `ImageItemCell` `Listener`,
