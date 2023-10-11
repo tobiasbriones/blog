@@ -83,8 +83,9 @@ above).
 I figured out one simple way to leverage an AI application for this project, so
 it serves as a good example.
 
-Recall the concepts of what this comes about even though my purpose this time is
-to develop these ideas conservatively in Java.
+Recall the domain engineering automation concepts of what this comes about even
+though my purpose this time is to develop these ideas conservatively in Java as
+an example project.
 
 ## Getting Started
 
