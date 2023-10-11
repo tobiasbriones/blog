@@ -32,7 +32,7 @@ I'm working this materialization out via my new â€”and first blog with projectâ€
 
 ### Domain Engineering
 
-These general-purpose software cannot be composed.
+These general-purpose software out there cannot be composed.
 
 Even if they have (bloated) AI assistance, macros, or even APIs
 (if at all), they're just products for profit. Photoshop can paint an image, but
