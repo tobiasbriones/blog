@@ -151,6 +151,20 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
             .map(String::trim)
     }
 
+    val shortHeading: (String) -> String = {
+        with(it.split("|").map(String::trim)) {
+            when (size) {
+                1, 2 -> it
+                else ->
+                    // e.g, met draw | class TreeAxesCanvas | mrm-canvas.ts
+                    //  to met draw | class TreeAxesCanvas
+                    if (get(1).contains("class"))
+                        subList(0, 2).joinToString(" | ")
+                    else it
+            }
+        }
+    }
+
     val sb = StringBuilder(value.length)
     val mdSnippetBlock = StringBuilder()
     var caption = Caption("")
@@ -256,7 +270,7 @@ fun parseCodeSnippets(value: String, entry: Entry): String {
 <figure>
 <div class="$headerClasses">
     <div class="caption">
-        $heading
+        ${heading `---` shortHeading}
     </div>
 
     <div class="menu">
