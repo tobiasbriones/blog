@@ -3,3 +3,7 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # New Code Snippet Feature (2023/10/11)
+
+![](new-code-snippet-feature-2023-10-11.png)
+
+---
