@@ -938,7 +938,7 @@ namely, `void onArrange(int draggedIdx, int destIdx);`. So, our abstract list of
 images (the data structure) gets sorted when this happens (then updates the
 view).
 
-`Updating the Init Method of "ImageItemCell" | init | class ImageItemCell`
+`Updating the Init Method of "ImageItemCell" | met init | class ImageItemCell`
 
 ```java
 setDragAndDropItemSort();
@@ -1129,7 +1129,7 @@ another item is being dragged to it.
 
 I also added a new method in `Main.java` to help load these resources.
 
-`Loading CSS Styles into the App | start | class Main`
+`Loading CSS Styles into the App | met start | class Main`
 
 ```java
 scene.getStylesheets().add(
