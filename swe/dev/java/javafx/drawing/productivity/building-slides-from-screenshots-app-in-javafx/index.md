@@ -57,6 +57,29 @@ works *for* our domain language** instead of buying mundane
 general-purpose software that uses AI as magic. Notice *the difference between
 automation and magic*.
 
+For example, grammar checkers are not technical, so you get a lot of errors
+marked because they don't *understand* computer and math languages and idioms.
+They only want you to pay a subscription to fix all the "issues" ~~you have~~
+they sell you. Their dream is to remove all the "issues 💸," so your original
+tone even changes, and ends up sounding like a robotic agent or someone else.
+
+In the end, you have to be proficient in English (i.e., the domain) to know what
+you're doing because any "magic" tool was made just for the sake of a profit
+agenda, thus bloated under the hood. You have to compose your tools instead of
+paying for generic ones that turn into workarounds and will never return most of
+the investment.
+
+General-purpose software is useful *but not engineering-grade*. On the other
+hand, mathematical software must be engineering-grade by nature.
+
+You should refrain from saying, "It was ~~generated~~ by AI" when, in fact, the
+reality of how AI should work comes to "It was *automated* by AI." The exception
+would be only when the whole tool (as a final product) is named after AI, e.g.,
+"AI generated image."
+
+There are likely possible ways to make AI work for our domain language (as said
+above).
+
 I figured out one simple way to leverage an AI application for this project, so
 it serves as a good example.
 
