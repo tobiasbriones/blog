@@ -4,9 +4,13 @@
 
 # Pi Day (2023/03/14)
 
-![](axiom---piaxid-monochromatic-1-4.svg)
+![](pi-day-2023-03-14.svg)
 
-**Piaxid Monochromatic 1/4: Axiom**
+<p align="center">
+<b>
+Piaxid Monochromatic 1/4: Axiom
+</b>
+</p>
 
 ---
 
