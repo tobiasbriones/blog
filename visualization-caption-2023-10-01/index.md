@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/visualiz
 
 # Visualization Caption (2023/10/01)
 
-<img src="visualization-caption-2023-10-01.png" alt="Visualization Caption (2023/10/01)" />
+<img src="visualization-caption-2023-10-01.png" alt="Visualization Caption 2023 10 01" />
 
 ---
 
@@ -277,7 +277,8 @@ formal, etc.) as possible.
 The abstract caption that changes provides an elegant description of what you're
 watching, as per the caption specs.
 
-<p>
+
+<figure>
 <video width="60%" poster="static/poster-_-fast-sequence-animation-with-abstract-captions.jpg" controls>
   <source
     src="static/fast-sequence-animation-with-abstract-captions.mp4"
@@ -285,32 +286,26 @@ watching, as per the caption specs.
   >
   Your browser does not support the video tag.
 </video>
-</p>
 
 <figcaption>
-<p align="center"><b>
 Fast Sequence Animation with Abstract Captions
-</b></p>
 </figcaption>
+</figure>
 
 The following is a drawing of a flower I worked on an EP Playground from the
 Blog. It also has abstract captions that explain how to draw a flower.
 
-<p>
-<video poster="static/poster-_-embedded-captions.jpg" controls>
-  <source
-    src="static/embedded-captions.mp4"
-    type="video/mp4"
-  >
-  Your browser does not support the video tag.
-</video>
-</p>
+<figure>
+    <video poster="static/poster-_-embedded-captions.png" controls>
+      <source
+        src="static/embedded-captions.mp4"
+        type="video/mp4"
+      >
+      Your browser does not support the video tag.
+    </video>
 
-<figcaption>
-<p align="center"><b>
-Embedded Captions
-</b></p>
-</figcaption>
+    <figcaption>Embedded Captions</figcaption>
+</figure>
 
 This is cute because that's how I learned to draw a simple flower and how I
 share it.
@@ -330,14 +325,8 @@ For the following example, the context is clear.
 
 <figure>
     <img src="portrait-16--9-fhd-screenshot-with-context.png" alt="Portrait 16-9 FHD Screenshot with Context" />
-    <figcaption>Portrait 16-9 Fhd Screenshot with Context</figcaption>
+    <figcaption>Portrait 16-9 FHD Screenshot with Context</figcaption>
 </figure>
-
-<figcaption>
-<p align="center"><b>
-Portrait 16-9 FHD Screenshot with Context
-</b></p>
-</figcaption>
 
 It can be technically read as `MRM Solution Tree | Repsymo | math.software` with
 the pipe operator.
