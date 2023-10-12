@@ -4,7 +4,7 @@
 
 # Leveraging Git to Finish my Article (2023/10/09)
 
-![](images/leveraging-git-to-finish-my-article-after-a-long-interlude.png)
+![](images/leveraging-git-to-finish-my-article-2023-10-09.png)
 
 <p align="center"><b>Screenshot from IntelliJ IDEA</b></p>
 

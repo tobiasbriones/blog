@@ -6,7 +6,11 @@
 
 ![](images/troubleshooting-diary.png)
 
+<p align="center">
+<b>
 Image from [Pixabay](images/notice#cover)
+</b>
+</p>
 
 ---
 
