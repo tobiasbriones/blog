@@ -74,8 +74,8 @@ popular mainstream language or framework code but struggles with ultra-niche
 technologies like Purescript or even JavaFX. It makes up unexisting APIs and
 code that wouldn't compile. These unpopular techs require domain expertise, and
 there will be (hopefully) never enough data to train or fine-tune those
-ultra-bloated magic-based (and unethical) models with technology that requires
-actual engineering.
+ultra-bloated magic-based (and unethical with IP legal issues) models with
+technology that requires actual engineering.
 
 In the end, you must be proficient in your domain and realize that tools like
 ChatGPT are nothing but a faster way to *automate* what you otherwise have to
