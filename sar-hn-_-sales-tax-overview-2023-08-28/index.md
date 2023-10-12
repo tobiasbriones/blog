@@ -12,7 +12,7 @@ ogimage: ""
 
 # SAR HN: Sales Tax Overview (2023/08/28)
 
-![SAR HN: Sales Tax Overview (2023/08/28)](images/sar-hn-_-sales-tax-overview-2023-08-28.jpg)
+<img src="images/sar-hn-_-sales-tax-overview-2023-08-28.jpg" alt="SAR HN: Sales Tax Overview (2023/08/28)" />
 
 <figcaption>
 <p align="center">Image by
@@ -154,7 +154,10 @@ You can get trained on how to use these systems by taking this course or
 following up on SAR social media to get resources to get more familiar with this
 process.
 
-![DET Live: ISV Form](images/det-live-_-isv-form.jpg)
+<figure>
+    <img src="images/det-live-_-isv-form.jpg" alt="DET Live: ISV Form" />
+    <figcaption>Det Live: Isv Form</figcaption>
+</figure>
 
 <figcaption>
 <p align="center">
@@ -229,6 +232,7 @@ from [Ley del Impuesto Sobre Ventas Texto Consolidado \| SEFIN \| gob.hn](http:/
 
 [3] Declaración Jurada Impuesto Sobre Ventas | DET Live. (n.d.).
 [DETlive \| SAR \| gob.hn](http://detlive.sar.gob.hn/?q=Ayuda-ISV).
+
 
 
 
