@@ -2,7 +2,7 @@
 permalink: cleaning-up-details-2023-10-06
 title: "Cleaning up Details (2023/10/06)"
 description: "Today, an initial set of fixes and enhancements were integrated into the first-class article \"Drawing a Tree on Canvas with XY Coordinates\" to keep up with the current changes."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/cleaning-up-details-2023-10-06/cleaning-up-details-2023-10-06.png/cleaning-up-details-2023-10-06.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/cleaning-up-details-2023-10-06/cleaning-up-details-2023-10-06.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/cleaning
 
 # Cleaning up Details (2023/10/06)
 
-![Cleaning up Details (2023/10/06)](cleaning-up-details-2023-10-06.png)
+<img src="cleaning-up-details-2023-10-06.png" alt="Cleaning up Details (2023/10/06)" />
 
 ---
 
@@ -83,6 +83,7 @@ Software Engineer.
 [3] Briones, T. (n.d.). EP: MRM Solution Tree | Drawing a Tree on Canvas with XY
 Coordinates | mathsoftware.engineer. 
 [EP: MRM Solution Tree](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/app).
+
 
 
 
