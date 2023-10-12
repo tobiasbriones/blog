@@ -4,7 +4,7 @@
 
 # Visualization Caption (2023/10/01)
 
-![Visualization Caption (2023/10/01)](visualization-caption-2023-10-01.png)
+![](visualization-caption-2023-10-01.png)
 
 ---
 
@@ -269,7 +269,8 @@ formal, etc.) as possible.
 The abstract caption that changes provides an elegant description of what you're
 watching, as per the caption specs.
 
-<p>
+
+<figure>
 <video width="60%" poster="static/poster-_-fast-sequence-animation-with-abstract-captions.jpg" controls>
   <source
     src="static/fast-sequence-animation-with-abstract-captions.mp4"
@@ -277,32 +278,16 @@ watching, as per the caption specs.
   >
   Your browser does not support the video tag.
 </video>
-</p>
 
 <figcaption>
-<p align="center"><b>
 Fast Sequence Animation with Abstract Captions
-</b></p>
 </figcaption>
+</figure>
 
 The following is a drawing of a flower I worked on an EP Playground from the
 Blog. It also has abstract captions that explain how to draw a flower.
 
-<p>
-<video poster="static/poster-_-embedded-captions.jpg" controls>
-  <source
-    src="static/embedded-captions.mp4"
-    type="video/mp4"
-  >
-  Your browser does not support the video tag.
-</video>
-</p>
-
-<figcaption>
-<p align="center"><b>
-Embedded Captions
-</b></p>
-</figcaption>
+![](static/embedded-captions.mp4)
 
 This is cute because that's how I learned to draw a simple flower and how I
 share it.
@@ -320,13 +305,7 @@ abstraction levels at each caption developed previously.
 
 For the following example, the context is clear.
 
-![Portrait 16-9 FHD Screenshot with Context](portrait-16--9-fhd-screenshot-with-context.png)
-
-<figcaption>
-<p align="center"><b>
-Portrait 16-9 FHD Screenshot with Context
-</b></p>
-</figcaption>
+![](portrait-16--9-fhd-screenshot-with-context.png)
 
 It can be technically read as `MRM Solution Tree | Repsymo | math.software` with
 the pipe operator.
