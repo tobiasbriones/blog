@@ -2,7 +2,7 @@
 permalink: visualization-caption-2023-10-01
 title: "Visualization Caption (2023/10/01)"
 description: "Generated content from domain visuals requires captions to keep their context and inherent textual descriptions of the visualization, which is the first MathSwe standard for captions now available to implement."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/visualization-caption-2023-10-01/visualization-caption-2023-10-01.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/visualization-caption-2023-10-01/P:\tobiasbriones\blog\mathswe\eng\lang\content\visualization\visualization-caption-2023-10-01\visualization-caption-2023-10-01.png"
 ---
 
 
