@@ -2,7 +2,7 @@
 permalink: from-imperative-to-functional-_-typescript-fetch-promise
 title: "From Imperative to Functional: TypeScript Fetch Promise"
 description: "  the \"async-await hell\" and more boilerplate.   to avoid a multiple-`return` mess.   can be replaced with sum types or monads like Rust does, so there's no    reason why we should keep using `try`-`catch` blocks in robust software    development.   nonsense for high-level software (most projects) and yes, more boilerplate.   (functional/declarative, OO, etc.) so if we could go fully functional    (with better languages) why keep writing cheap code like that?   line (which gives more LoC) as it is factually the best way to format it.   error handling gets worse with imperative code. Code on the internet like    docs or tutorials almost always skip the status `ok` error handling and go    directly to fail when parsing the `JSON` data. Who cares when code is    imperative anyway?"
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/from-imperative-to-functional-_-typescript-fetch-promise/from-imperative-to-functional-_-typescript-fetch-promise.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/from-imperative-to-functional-_-typescript-fetch-promise/P:\tobiasbriones\blog\swe\design\ts\refactoring\drawing-a-tree-on-canvas-with-xy-coordinates\from-imperative-to-functional-_-typescript-fetch-promise\from-imperative-to-functional-_-typescript-fetch-promise.png"
 ---
 
 
