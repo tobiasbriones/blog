@@ -9,6 +9,7 @@ import path
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
 import kotlin.io.path.absolutePathString
+import kotlin.io.path.exists
 import kotlin.io.path.name
 import kotlin.io.path.relativeTo
 import kotlin.system.exitProcess
@@ -51,7 +52,12 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
 
     fun videoHtml(name: String, path: String): String {
         val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
-        val poster = "poster-_-$name.png"
+        val poster = with("poster-_-$name") {
+            if (Path.of("static/$this.png").exists())
+                "$this.png"
+            else
+                "$this.jpg"
+        }
         return """
                 <figure>
                     <video poster="static/$poster" controls>
