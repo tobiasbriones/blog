@@ -12,7 +12,7 @@ ogimage: ""
 
 # 4 Years Since Vocational Fair at UNAH-VS (2023-05-09)
 
-![4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](static/4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg)
+<img src="static/4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg" alt="4 Years Since Vocational Fair at Unah vs 2023 05 09" />
 
 ---
 
@@ -179,11 +179,10 @@ hardware.
 [^15]: I really was a fan of UWP, and I loved it, but now it's a completely 
     different story, as the project was just another Micro$oft charade
 
-![4 Years Since](static/4-years-since.png)
-
-<figcaption>
-<p align="center"><strong>4 Years Since</strong></p>
-</figcaption>
+<figure>
+    <img src="static/4-years-since.png" alt="4 Years Since" />
+    <figcaption>4 Years Since</figcaption>
+</figure>
 
 It was an undertaking where I took care of everything because I love harder
 challenges that make me grow.
@@ -213,25 +212,22 @@ to use *Artificial Intelligence and Games*[5] to learn theory about AI for
 games.
 
 Since then, I've been pretty enthusiastic about genetic algorithms as they
-attempt to resemble a (naive) version of natural evolution.
+attempt to resemble a (naive) version of natural evolution [2].
 
-![Losnot in Paradise Sample 1](static/lostnot-in-paradise-sample-1.gif)
+<figure>
+    <img src="static/lostnot-in-paradise-sample-1.gif" alt="Lostnot in Paradise Sample 1" />
+    <figcaption>Lostnot in Paradise Sample 1</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Losnot in Paradise Sample 1 [2]</strong></p>
-</figcaption>
+<figure>
+    <img src="static/ai-screenshot-1.png" alt="AI Screenshot 1" />
+    <figcaption>AI Screenshot 1</figcaption>
+</figure>
 
-
-![AI Screenshot 1](static/ai-screenshot-1.png)
-
-<figcaption>
-<p align="center"><strong>AI Screenshot 1 [2]</strong></p>
-</figcaption>
-
-Regarding computer vision, as mentioned, I had to develop PicRT Express in about
-5 days and had to learn new technologies during that time. Specifically, I was
-focused on implementing efficient native memory usage within a high-level UWP
-app[^18]. So I could show how to apply mathematics to image transformations!
+Regarding computer vision, as mentioned, I had to develop PicRT Express[3] in
+about 5 days and had to learn new technologies during that time. Specifically, I
+was focused on implementing efficient native memory usage within a high-level
+UWP app[^18]. So I could show how to apply mathematics to image transformations!
 
 [^18]: I always tried to learn new tools and paradigms to have a solid
     experience on SWE, that's why I usually learn weird tech like UWP, Swing,
@@ -245,29 +241,25 @@ accept mediocrity in my standard.
     can see, I'm able to interoperate over diverse systems I've even never
     worked before with
 
-![PicRT Express Info English](static/picrt-express-info-english.png)
+<figure>
+    <img src="static/picrt-express-info-english.png" alt="PicRT Express Info English" />
+    <figcaption>PicRT Express Info English</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>PicRT Express Info English [3]</strong></p>
-</figcaption>
+<figure>
+    <img src="static/picrt-express-1.jpg" alt="PicRT Express 1" />
+    <figcaption>PicRT Express 1</figcaption>
+</figure>
 
-![PicRT Express 1](static/picrt-express-1.jpg)
+<figure>
+    <img src="static/picrt-express-2.jpg" alt="PicRT Express 2" />
+    <figcaption>PicRT Express 2</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>PicRT Express 1 [3]</strong></p>
-</figcaption>
-
-![PicRT Express 2](static/picrt-express-2.jpg)
-
-<figcaption>
-<p align="center"><strong>PicRT Express 2 [3]</strong></p>
-</figcaption>
-
-![PicRT Express 3](static/picrt-express-3.jpg)
-
-<figcaption>
-<p align="center"><strong>PicRT Express 3 [3]</strong></p>
-</figcaption>
+<figure>
+    <img src="static/picrt-express-3.jpg" alt="PicRT Express 3" />
+    <figcaption>PicRT Express 3</figcaption>
+</figure>
 
 These open-source projects, along with others, played a crucial role in
 advancing my career in machine learning. Particularly during my job at Truora
@@ -283,26 +275,22 @@ engineering with applied mathematics.
 
 ## Diagrams
 
-I showed some informal diagrams to depict what I did.
+I showed some informal diagrams to depict what I did [4].
 
-![Package Structure](static/package-structure.png)
+<figure>
+    <img src="static/package-structure.png" alt="Package Structure" />
+    <figcaption>Package Structure</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Package Structure [4]</strong></p>
-</figcaption>
+<figure>
+    <img src="static/instance-object-hierarchy.png" alt="Instance Object Hierarchy" />
+    <figcaption>Instance Object Hierarchy</figcaption>
+</figure>
 
-![Instance Object Hierarchy](static/instance-object-hierarchy.png)
-
-<figcaption>
-<p align="center"><strong>Instance Object Hierarchy [4]</strong></p>
-</figcaption>
-
-
-![KeyPool Algorithm](static/keypool-algorithm.png)
-
-<figcaption>
-<p align="center"><strong>KeyPool Algorithm [4]</strong></p>
-</figcaption>
+<figure>
+    <img src="static/keypool-algorithm.png" alt="Keypool Algorithm" />
+    <figcaption>Keypool Algorithm</figcaption>
+</figure>
 
 ## Electronics
 
@@ -312,11 +300,10 @@ These are the hardware projects I talked before.
 
 I took my projects out after 4 years, and here they are.
 
-![Look at the Projects](static/look-at-the-projects.jpg)
-
-<figcaption>
-<p align="center"><strong>Look at the Projects</strong></p>
-</figcaption>
+<figure>
+    <img src="static/look-at-the-projects.jpg" alt="Look at the Projects" />
+    <figcaption>Look at the Projects</figcaption>
+</figure>
 
 As you can see in the image, I designed the Pac-Man lights with simple materials
 and squared notebook paper.
@@ -326,41 +313,35 @@ and squared notebook paper.
 Here's the circuit of the LEDs that blink at the rhythm of the music in the
 protoboard.
 
-![Pulsing LEDs](static/pulsing-leds.jpg)
+<figure>
+    <img src="static/pulsing-leds.jpg" alt="Pulsing Leds" />
+    <figcaption>Pulsing Leds</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Pulsing LEDs</strong></p>
-</figcaption>
+<figure>
+    <img src="static/pulsing-leds-_-testing-1.jpg" alt="Pulsing Leds: Testing 1" />
+    <figcaption>Pulsing Leds: Testing 1</figcaption>
+</figure>
 
-![Pulsing LEDs: Testing 1](static/pulsing-leds-.-testing-1.jpg)
+<figure>
+    <img src="static/pulsing-leds-_-testing-2.jpg" alt="Pulsing Leds: Testing 2" />
+    <figcaption>Pulsing Leds: Testing 2</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 1</strong></p>
-</figcaption>
+<figure>
+    <img src="static/pulsing-leds-_-testing-3.jpg" alt="Pulsing Leds: Testing 3" />
+    <figcaption>Pulsing Leds: Testing 3</figcaption>
+</figure>
 
-![Pulsing LEDs: Testing 2](static/pulsing-leds-.-testing-2.jpg)
+<figure>
+    <img src="static/pulsing-leds-_-testing-4.jpg" alt="Pulsing Leds: Testing 4" />
+    <figcaption>Pulsing Leds: Testing 4</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 2</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 3](static/pulsing-leds-.-testing-3.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 3</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 4](static/pulsing-leds-.-testing-4.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 4</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 5](static/pulsing-leds-.-testing-5.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 5</strong></p>
-</figcaption>
+<figure>
+    <img src="static/pulsing-leds-_-testing-5.jpg" alt="Pulsing Leds: Testing 5" />
+    <figcaption>Pulsing Leds: Testing 5</figcaption>
+</figure>
 
 This is the report:
 
@@ -374,26 +355,23 @@ src = "static/pulsing-leds.pdf"
 This is the circuit I designed, which resembles a Pac-Man and blinks at a given
 speed.
 
-![Pac-Man LEDs](static/pacman-leds.jpg)
+<figure>
+    <img src="static/pacman-leds.jpg" alt="Pacman Leds" />
+    <figcaption>Pacman Leds</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Pac-Man LEDs</strong></p>
-</figcaption>
-
-![Pac-Man LEDs: Circuit Rear](static/pacman-leds-.-circuit-rear.jpg)
-
-<figcaption>
-<p align="center"><strong>Pac-Man LEDs: Circuit Rear</strong></p>
-</figcaption>
+<figure>
+    <img src="static/pacman-leds-_-circuit-rear.jpg" alt="Pacman Leds: Circuit Rear" />
+    <figcaption>Pacman Leds: Circuit Rear</figcaption>
+</figure>
 
 The next image dates when I was soldering and testing the components of the
 circuit:
 
-![Pac-Man LEDs: Testing](static/pacman-leds-.-testing.jpg)
-
-<figcaption>
-<p align="center"><strong>Pac-Man LEDs: Testing</strong></p>
-</figcaption>
+<figure>
+    <img src="static/pacman-leds-_-testing.jpg" alt="Pacman Leds: Testing" />
+    <figcaption>Pacman Leds: Testing</figcaption>
+</figure>
 
 The circuit still worked great when I powered it, and recorded a video of it:
 
@@ -403,39 +381,34 @@ The circuit still worked great when I powered it, and recorded a video of it:
 
 This is the failed radio FM transmitter:
 
-![FM Transmitter](static/fm-transmitter.jpg)
+<figure>
+    <img src="static/fm-transmitter.jpg" alt="Fm Transmitter" />
+    <figcaption>Fm Transmitter</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>FM Transmitter</strong></p>
-</figcaption>
-
-![FM Transmitter: Testing](static/fm-transmitter-.-testing.jpg)
-
-<figcaption>
-<p align="center"><strong>FM Transmitter: Testing</strong></p>
-</figcaption>
+<figure>
+    <img src="static/fm-transmitter-_-testing.jpg" alt="Fm Transmitter: Testing" />
+    <figcaption>Fm Transmitter: Testing</figcaption>
+</figure>
 
 ## Vocational Fair Day
 
 So, the day of the event took place 😎:
 
-![Vocational Fair UNAH-VS 2019 1](static/vocational-fair-unah-vs-2019-1.jpg)
+<figure>
+    <img src="static/vocational-fair-unah-vs-2019-1.jpg" alt="Vocational Fair Unah vs 2019 1" />
+    <figcaption>Vocational Fair Unah vs 2019 1</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Vocational Fair UNAH-VS 2019 1</strong></p>
-</figcaption>
+<figure>
+    <img src="static/vocational-fair-unah-vs-2019-2.jpg" alt="Vocational Fair Unah vs 2019 2" />
+    <figcaption>Vocational Fair Unah vs 2019 2</figcaption>
+</figure>
 
-![Vocational Fair UNAH-VS 2019 2](static/vocational-fair-unah-vs-2019-2.jpg)
-
-<figcaption>
-<p align="center"><strong>Vocational Fair UNAH-VS 2019 2</strong></p>
-</figcaption>
-
-![Vocational Fair UNAH-VS 2019 3](static/vocational-fair-unah-vs-2019-3.jpg)
-
-<figcaption>
-<p align="center"><strong>Vocational Fair UNAH-VS 2019 3</strong></p>
-</figcaption>
+<figure>
+    <img src="static/vocational-fair-unah-vs-2019-3.jpg" alt="Vocational Fair Unah vs 2019 3" />
+    <figcaption>Vocational Fair Unah vs 2019 3</figcaption>
+</figure>
 
 ## References
 
@@ -457,6 +430,7 @@ from [Gencesk 2D \| Prototype 2018 \| Tobias Briones \| GitHub](https://github.c
 
 [5] Yannakakis, G. N., & Togelius, J. (2018). Artificial Intelligence and Games.
 Springer.
+
 
 
 
