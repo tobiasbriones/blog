@@ -2,7 +2,7 @@
 permalink: removing-cyclic-dependencies--_--java-vs-go-2023-05-28
 title: "Removing Cyclic Dependencies, Java vs Go (2023-05-28)"
 description: "I just came across a cyclic package dependency case in Java. It's important to address the role of graphs in visualizing abstract concepts like cyclic dependencies in software design to reduce complexity and build simple systems. The benefits of using Go as a more modern and opinionated language are also emphasized."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/removing-cyclic-dependencies--_--java-vs-go-2023-05-28/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/removing-cyclic-dependencies--_--java-vs-go-2023-05-28/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png"
 ---
 
 
@@ -12,14 +12,15 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/removing
 
 # Removing Cyclic Dependencies, Java vs Go (2023-05-28)
 
-![Removing Cyclic Dependencies, Java vs Go (2023-05-28)](images/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png)
+<img src="images/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png" alt="Removing Cyclic Dependencies, Java vs Go 2023 05 28" />
 
-<figcaption>
-<p align="center">Background by 
+<p align="center">
+<b>
+Background by 
 <a href="https://pixabay.com/users/pexels-2286921">Pexels</a> via
 <a href="https://pixabay.com/photos/abstract-architecture-contemporary-1867937">Pixabay</a>
+</b>
 </p>
-</figcaption>
 
 ---
 
@@ -42,11 +43,10 @@ The `data` package requires the `ui` package when the dependency would normally
 consist of a "client" package (i.e., `ui`) that requires a more-universal or
 abstract one (i.e., `data`). This way the dependencies keep simple or linear.
 
-![Removing Cyclic Dependency Commit](images/removing-cyclic-dependency-commit.png)
-
-<figcaption>
-<p align="center"><strong>Removing Cyclic Dependency Commit</strong></p>
-</figcaption>
+<figure>
+    <img src="images/removing-cyclic-dependency-commit.png" alt="Removing Cyclic Dependency Commit" />
+    <figcaption>Removing Cyclic Dependency Commit</figcaption>
+</figure>
 
 When module `D` depends on `U`, and `U` depends on `D`, you're saying that
 `D` depends on `D` (itself), so this is a kind of *sink*[^1] that strikes me as
@@ -283,6 +283,7 @@ opinionated design of Go makes it easier to write simpler systems with bounded
 complexity, while Java is a legacy language that won't help with this unless
 you're well-versed in the language and enforce it manually, which turns in more
 technical debt.
+
 
 
 
