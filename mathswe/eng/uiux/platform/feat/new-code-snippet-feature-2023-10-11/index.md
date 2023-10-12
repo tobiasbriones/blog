@@ -58,3 +58,56 @@ They have a specific structure consisting of a heading including the context of
 the source code, the body containing the snippet, an optional abstract caption,
 and the snippet title serving as a conclusion. These elements constitute a
 cohesive block of code that can be composed as per needs.
+
+## Code Snippet Feature
+
+The new code snippet feature is available in production, and it has two major
+features to make snippets powerful tools for users besides the implementation
+of the standard provided above.
+
+The two features implemented are copying and opening its file.
+
+The "copy" button puts the code snippet as is in your clipboard.
+
+`Try to Copy this Snippet`
+
+```ts
+const axesCanvas = new TreeAxesCanvas();
+
+axesCanvas.init(canvasEl);
+axesCanvas.render();
+```
+
+The "open" source file button is programmed for code snippets that have a
+subdirectory or project (EP) associated with the article. That is, if the
+snippet exists in the article files, SWAM Ops programmed a button for that
+snippet, so you can open it.
+
+`This Snippet Belongs to a Source File | Go to the Source File | met start | Main.java`
+
+```java
+var root = FXMLLoader.<Parent>load(loadResource("app.fxml"));
+var scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+scene.getStylesheets().add(
+    loadResource("app.css").toExternalForm()
+);
+
+primaryStage.setTitle("Slides");
+primaryStage.setScene(scene);
+primaryStage.show();
+```
+
+The source file navigation was implemented when
+[Source Code Navigation \| Source Code Navigation](/new-article-and-code-navigation-features-2023-09-09#source-code-navigation).
+
+The news here is the snippet buttons, so you can visit its file directly 🎉.
+
+Code snippets are composed according to the needs.
+
+If you noticed, the first snippet is plain simple, while the Java snippet has a
+full header, belongs to a source file, and has an abstract besides the common
+features. As said, they're composable.
+
+That's how the code snippet features are finished in production, replacing the
+older default snippets.
