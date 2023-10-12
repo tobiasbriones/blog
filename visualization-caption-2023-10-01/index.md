@@ -2,7 +2,7 @@
 permalink: visualization-caption-2023-10-01
 title: "Visualization Caption (2023/10/01)"
 description: "Generated content from domain visuals requires captions to keep their context and inherent textual descriptions of the visualization, which is the first MathSwe standard for captions now available to implement."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/visualization-caption-2023-10-01/visualization-caption-2023-10-01.png/visualization-caption-2023-10-01.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/visualization-caption-2023-10-01/visualization-caption-2023-10-01.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/visualiz
 
 # Visualization Caption (2023/10/01)
 
-![Visualization Caption (2023/10/01)](visualization-caption-2023-10-01.png)
+<img src="visualization-caption-2023-10-01.png" alt="Visualization Caption (2023/10/01)" />
 
 ---
 
@@ -328,7 +328,10 @@ abstraction levels at each caption developed previously.
 
 For the following example, the context is clear.
 
-![Portrait 16-9 FHD Screenshot with Context](portrait-16--9-fhd-screenshot-with-context.png)
+<figure>
+    <img src="portrait-16--9-fhd-screenshot-with-context.png" alt="Portrait 16-9 FHD Screenshot with Context" />
+    <figcaption>Portrait 16-9 Fhd Screenshot with Context</figcaption>
+</figure>
 
 <figcaption>
 <p align="center"><b>
@@ -392,6 +395,7 @@ faster cadence.
 
 [1] OpenAI. (2023). ChatGPT (September 25 Version) [Large language model].
 [Chat \| OpenAI](https://chat.openai.com)
+
 
 
 
