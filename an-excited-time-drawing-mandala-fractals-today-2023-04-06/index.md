@@ -2,7 +2,7 @@
 permalink: an-excited-time-drawing-mandala-fractals-today-2023-04-06
 title: "An Excited Time Drawing Mandala Fractals Today (2023-04-06)"
 description: "Today at this moment, I was thinking about fractals and mandalas. I'm always thinking about these concepts, but I just got excited about it and stayed playing with some drawings I figured out."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/an-excited-time-drawing-mandala-fractals-today-2023-04-06/P:\tobiasbriones\blog\math\swe\drawing\an-excited-time-drawing-mandala-fractals-today-2023-04-06\an-excited-time-drawing-mandala-fractals-today-2023-04-06.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/an-excited-time-drawing-mandala-fractals-today-2023-04-06/an-excited-time-drawing-mandala-fractals-today-2023-04-06.png"
 ---
 
 
