@@ -4,7 +4,7 @@
 
 # Cleaning up Details (2023/10/06)
 
-![Cleaning up Details (2023/10/06)](cleaning-up-details-2023-10-06.png)
+![](cleaning-up-details-2023-10-06.png)
 
 ---
 
