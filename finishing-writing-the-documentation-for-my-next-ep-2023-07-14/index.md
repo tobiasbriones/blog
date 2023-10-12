@@ -12,14 +12,15 @@ ogimage: ""
 
 # Finishing Writing the Documentation for my Next EP (2023-07-14)
 
-![Finishing Writing the Documentation for my Next EP (2023-07-14)](static/finishing-writing-the-documentation-for-my-next-ep-2023-07-14.png)
+<img src="static/finishing-writing-the-documentation-for-my-next-ep-2023-07-14.png" alt="Finishing Writing the Documentation for my Next EP 2023 07 14" />
 
-<figcaption>
-<p align="center">Background by
+<p align="center">
+<b>
+Background by
 <a href="https://pixabay.com/users/stocksnap-894430">StockSnap</a> via
 <a href="https://pixabay.com/photos/tiles-shapes-texture-pattern-art-2617112">Pixabay</a>
+</b>
 </p>
-</figcaption>
 
 ---
 
@@ -49,13 +50,10 @@ soon with an extensive experience in all kinds of features I ventured into.
 For now, I still have to blog some sections for the last features I developed
 and then finish other minor details.
 
-![IntelliJ: Finishing Writing with the Blog and Project Side-to-Side](static/intellij-_-finishing-writing-with-the-blog-and-project-side--to--side.png)
-
-<figcaption>
-<p align="center"><strong>
-IntelliJ: Finishing Writing with the Blog and Project Side-to-Side
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/intellij-_-finishing-writing-with-the-blog-and-project-side--to--side.png" alt="Intellij: Finishing Writing with the Blog and Project Side-to-Side" />
+    <figcaption>Intellij: Finishing Writing with the Blog and Project Side-to-Side</figcaption>
+</figure>
 
 Sure, I employ my two monitors, and tons of pro tools like IntelliJ
 subscriptions, Git, etc., not to say my knowledge and experience —**building
@@ -109,13 +107,10 @@ a text.
 The following is an example of the artifacts that can be produced with the
 application:
 
-![Screenshot-Slide Sample](screenshot--slide-sample.png)
-
-<figcaption>
-<p align="center"><strong>
-Screenshot-Slide Sample
-</strong></p>
-</figcaption>
+<figure>
+    <img src="screenshot--slide-sample.png" alt="Screenshot-Slide Sample" />
+    <figcaption>Screenshot-Slide Sample</figcaption>
+</figure>
 
 It's a `Screenshot` `Slide`, that is, a `Slide` created from a screenshot.
 
@@ -124,6 +119,7 @@ vertical `Line` `Shape`, and a `Caption` with a title and subtitle.
 
 I will finish writing soon, and with this, I'll get one more great reference for
 my blog.
+
 
 
 
