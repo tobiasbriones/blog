@@ -2,7 +2,7 @@
 permalink: new-code-snippet-feature-2023-10-11
 title: "New Code Snippet Feature (2023/10/11)"
 description: "Code snippets are a powerful communication weapon in engineering for documentation. The new MathSwe standard has made it to production with cohesive code blocks implementing crucial features for copy and open actions."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/new-code-snippet-feature-2023-10-11/new-code-snippet-feature-2023-10-11.png/new-code-snippet-feature-2023-10-11.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/new-code-snippet-feature-2023-10-11.png/new-code-snippet-feature-2023-10-11.png"
 ---
 
 
