@@ -111,3 +111,16 @@ features. As said, they're composable.
 
 That's how the code snippet features are finished in production, replacing the
 older default snippets.
+
+## Powerful Code Snippet Integration
+
+Code snippet captions have been standardized by extending the previously
+published specs for visualization captions.
+
+Code snippets were implemented, allowing composability for various kinds of
+possible snippets.
+
+The implementation of the code snippet standard and the copy and open file
+features have come to make the platform source code more integrated, resulting
+in crucial value for users who mainly benefit from source code, including
+myself.
