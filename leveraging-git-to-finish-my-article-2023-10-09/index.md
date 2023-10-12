@@ -13,7 +13,7 @@ ogimage: ""
 # Leveraging Git to Finish my Article (2023/10/09)
 
 <figure>
-    <img src="images/leveraging-git-to-finish-my-article-after-a-long-interlude.png" alt="Leveraging Git to Finish my Article (2023/10/09)" />
+    <img src="images/leveraging-git-to-finish-my-article-after-a-long-interlude.png" alt="Leveraging Git to Finish my Article After a Long Interlude" />
     <figcaption>Leveraging Git to Finish my Article After a Long Interlude</figcaption>
 </figure>
 
