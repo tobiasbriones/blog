@@ -14,7 +14,11 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/troubles
 
 <img src="images/troubleshooting-diary.png" alt="Troubleshooting Diary" />
 
+<p align="center">
+<b>
 Image from [Pixabay](images/notice#cover)
+</b>
+</p>
 
 ---
 
