@@ -274,15 +274,15 @@ protoboard.
 
 ![](static/pulsing-leds.jpg)
 
-![](static/pulsing-leds-.-testing-1.jpg)
+![](static/pulsing-leds-_-testing-1.jpg)
 
-![](static/pulsing-leds-.-testing-2.jpg)
+![](static/pulsing-leds-_-testing-2.jpg)
 
-![](static/pulsing-leds-.-testing-3.jpg)
+![](static/pulsing-leds-_-testing-3.jpg)
 
-![](static/pulsing-leds-.-testing-4.jpg)
+![](static/pulsing-leds-_-testing-4.jpg)
 
-![](static/pulsing-leds-.-testing-5.jpg)
+![](static/pulsing-leds-_-testing-5.jpg)
 
 This is the report:
 
@@ -298,12 +298,12 @@ speed.
 
 ![](static/pacman-leds.jpg)
 
-![](static/pacman-leds-.-circuit-rear.jpg)
+![](static/pacman-leds-_-circuit-rear.jpg)
 
 The next image dates when I was soldering and testing the components of the
 circuit:
 
-![](static/pacman-leds-.-testing.jpg)
+![](static/pacman-leds-_-testing.jpg)
 
 The circuit still worked great when I powered it, and recorded a video of it:
 
@@ -315,7 +315,7 @@ This is the failed radio FM transmitter:
 
 ![](static/fm-transmitter.jpg)
 
-![](static/fm-transmitter-.-testing.jpg)
+![](static/fm-transmitter-_-testing.jpg)
 
 ## Vocational Fair Day
 
