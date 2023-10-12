@@ -222,11 +222,10 @@ top-down monolith.
 This is an example of how I applied what I've been developing in this
 article to this same article.
 
-![How I Applied Cohesion to This Same Article](how-i-applied-cohesion-to-this-same-article.png)
-
-<figcaption>
-<p align="center"><strong>How I Applied Cohesion to This Same Article</strong></p>
-</figcaption>
+<figure>
+    <img src="how-i-applied-cohesion-to-this-same-article.png" alt="How I Applied Cohesion to this Same Article" />
+    <figcaption>How I Applied Cohesion to this Same Article</figcaption>
+</figure>
 
 From my illustration, it's easily readable to follow how I *connected*
 sections by *concluding* with the idea of *the next section* so content is
@@ -270,12 +269,12 @@ the articles.
 
 This is from my previous article, so for the record:
 
-![First OG Cover from Previous Article \| Photopea](images/first-og-cover-from-previous-article---photopea.png)
+<figure>
+    <img src="images/first-og-cover-from-previous-article---photopea.png" alt="First OG Cover from Previous Article | Photopea" />
+    <figcaption>First OG Cover from Previous Article | Photopea</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>First OG Cover from Previous Article | Photopea</strong></p>
-<p align="center">Source: Screenshot | <it>Photopea</it> (under fair use)</p>
-</figcaption>
+<p align="center">Source: Screenshot | <i>Photopea</i> (under fair use)</p>
 
 It contains the article title, the author image with the small and first[^6]
 version of MathSwe logo I created[^7] attached to the bottom-right, and
@@ -299,11 +298,10 @@ icons[^8] for home, keywords, and reading time.
 
 And then, here is the current cover for this article:
 
-![OG Cover](og-cover.png)
-
-<figcaption>
-<p align="center"><strong>OG Cover</strong></p>
-</figcaption>
+<figure>
+    <img src="og-cover.png" alt="OG Cover" />
+    <figcaption>OG Cover</figcaption>
+</figure>
 
 A further step is to automate all this of course 👾.
 
@@ -357,6 +355,7 @@ In this article, I developed what I currently have as one of my milestones for
 [mathsoftware.engineer](https://mathsoftware.engineer) and MathSwe content
 including last-days insights and thoughts based on my
 [previous article](how-i-standardized-hypen-and-pipe-symbols-on-file-names).
+
 
 
 
