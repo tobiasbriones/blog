@@ -4,7 +4,7 @@
 
 # An Excited Time Drawing Mandala Fractals Today (2023-04-06)
 
-![Cover](cover.png)
+![](an-excited-time-drawing-mandala-fractals-today-2023-04-06.png)
 
 ---
 
