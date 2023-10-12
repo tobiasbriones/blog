@@ -30,11 +30,7 @@ few days.
 
 One example is the below drawing with animation I was checking last time:
 
-![Basic Fractal with Circles](basic-fractal-with-circles.gif)
-
-<figcaption>
-<p align="center"><strong>Basic Fractal with Circles</strong></p>
-</figcaption>
+![](basic-fractal-with-circles.gif)
 
 It was just a basic PoC, and I got some insights, for example: recalled that
 understanding the *constant part of relativity* and recursion is a *key* to 
@@ -95,11 +91,7 @@ It was good to have worked with drawings, mandala fractals, and ideas these
 days as they gave insights, and relaxation, I'm closer to fulfilling some
 objectives about MathSwe and Repsymo, and I'll keep doing this great job.
 
-![Drawing](drawing.png)
-
-<figcaption>
-<p align="center"><strong>Drawing</strong></p>
-</figcaption>
+![](drawing.png)
 
 ## Bibliography
 
