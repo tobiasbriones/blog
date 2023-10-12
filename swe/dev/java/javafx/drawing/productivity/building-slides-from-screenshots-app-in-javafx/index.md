@@ -69,6 +69,18 @@ agenda, thus bloated under the hood. You have to compose your tools instead of
 paying for generic ones that turn into workarounds and will never return most of
 the investment.
 
+Another clear example is ChatGPT, which can generate mundane Python or any
+popular mainstream language or framework code but struggles with ultra-niche
+technologies like Purescript or even JavaFX. It makes up unexisting APIs and
+code that wouldn't compile. These unpopular techs require domain expertise, and
+there will be (hopefully) never enough data to train or fine-tune those
+ultra-bloated magic-based (and unethical) models with technology that requires
+actual engineering.
+
+In the end, you must be proficient in your domain and realize that tools like
+ChatGPT are nothing but a faster way to *automate* what you otherwise have to
+search in Google results.
+
 General-purpose software is useful *but not engineering-grade*. On the other
 hand, mathematical software must be engineering-grade by nature.
 
