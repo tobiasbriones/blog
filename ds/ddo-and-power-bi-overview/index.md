@@ -4,7 +4,7 @@
 
 # Data-Driven Organizations and Power BI Overview
 
-![Cover](images/cover.jpg)
+![](images/ddo-and-power-bi-overview.jpg)
 
 <figcaption>
 
