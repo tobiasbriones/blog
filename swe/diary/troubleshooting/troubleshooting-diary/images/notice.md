@@ -2,9 +2,9 @@
 
 ## Cover
 
-<img src="cover.png" alt="cover.png" width="160" />
+<img src="troubleshooting-diary.png" alt="cover.png" width="160" />
 
-[Cover](cover.png):
+[Cover](troubleshooting-diary.png):
 
 - From: 
   - [Rubiks Cube Rubik | Pixabay](https://pixabay.com/illustrations/rubiks-cube-cube-rubik-puzzle-toy-2583645)

@@ -4,7 +4,7 @@
 
 # Troubleshooting Diary
 
-![Cover](images/cover.png)
+![Cover](images/troubleshooting-diary.png)
 
 Image from [Pixabay](images/notice#cover)
 
