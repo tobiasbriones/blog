@@ -2,7 +2,7 @@
 permalink: troubleshooting-diary
 title: "Troubleshooting Diary"
 description: "In this article, I will document and keep updating routine problems I face as a software engineer with proposed solutions I used to fix them."
-ogimage: ""
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/troubleshooting-diary/troubleshooting-diary.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: ""
 
 # Troubleshooting Diary
 
-![Cover](images/cover.png)
+<img src="images/troubleshooting-diary.png" alt="Troubleshooting Diary" />
 
 Image from [Pixabay](images/notice#cover)
 
@@ -366,6 +366,7 @@ get locked in a local minimum as per what I was reading about how the Stochastic
 Gradient Descent (SGD) works.
 
 **Always make sure to shuffle data before training to avoid biases.**
+
 
 
 
