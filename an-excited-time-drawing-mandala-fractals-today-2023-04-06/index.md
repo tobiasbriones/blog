@@ -2,7 +2,7 @@
 permalink: an-excited-time-drawing-mandala-fractals-today-2023-04-06
 title: "An Excited Time Drawing Mandala Fractals Today (2023-04-06)"
 description: "Today at this moment, I was thinking about fractals and mandalas. I'm always thinking about these concepts, but I just got excited about it and stayed playing with some drawings I figured out."
-ogimage: ""
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/an-excited-time-drawing-mandala-fractals-today-2023-04-06/an-excited-time-drawing-mandala-fractals-today-2023-04-06.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: ""
 
 # An Excited Time Drawing Mandala Fractals Today (2023-04-06)
 
-![Cover](cover.png)
+<img src="an-excited-time-drawing-mandala-fractals-today-2023-04-06.png" alt="An Excited Time Drawing Mandala Fractals Today 2023 04 06" />
 
 ---
 
@@ -38,11 +38,10 @@ few days.
 
 One example is the below drawing with animation I was checking last time:
 
-![Basic Fractal with Circles](basic-fractal-with-circles.gif)
-
-<figcaption>
-<p align="center"><strong>Basic Fractal with Circles</strong></p>
-</figcaption>
+<figure>
+    <img src="basic-fractal-with-circles.gif" alt="Basic Fractal with Circles" />
+    <figcaption>Basic Fractal with Circles</figcaption>
+</figure>
 
 It was just a basic PoC, and I got some insights, for example: recalled that
 understanding the *constant part of relativity* and recursion is a *key* to 
@@ -103,11 +102,10 @@ It was good to have worked with drawings, mandala fractals, and ideas these
 days as they gave insights, and relaxation, I'm closer to fulfilling some
 objectives about MathSwe and Repsymo, and I'll keep doing this great job.
 
-![Drawing](drawing.png)
-
-<figcaption>
-<p align="center"><strong>Drawing</strong></p>
-</figcaption>
+<figure>
+    <img src="drawing.png" alt="Drawing" />
+    <figcaption>Drawing</figcaption>
+</figure>
 
 ## Bibliography
 
@@ -116,6 +114,7 @@ objectives about MathSwe and Repsymo, and I'll keep doing this great job.
 - [Fractal Geometry \| Computer Science \| Loyola Marymount University](https://cs.lmu.edu/~ray/notes/fractals)
 - [Creative Self-Care: Make Art! \| Healthy IU \| Indiana University](https://healthy.iu.edu/campus-programs-services/university/creative-self-care/mandalas.html)
 - [Restoring Creative Balance: How to Create Mental ‘Space’ and Design a Mandala \| The Elm \| University of Maryland](https://elm.umaryland.edu/elm-stories/Elm-Stories-Content/Restoring-Creative-Balance-How-to-Create-Mental-Space-and-Design-a-Mandala.php)
+
 
 
 
