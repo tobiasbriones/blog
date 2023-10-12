@@ -296,7 +296,7 @@ The following is a drawing of a flower I worked on an EP Playground from the
 Blog. It also has abstract captions that explain how to draw a flower.
 
 <figure>
-    <video poster="static/poster-_-embedded-captions.png" controls>
+    <video poster="static/poster-_-embedded-captions.jpg" controls>
       <source
         src="static/embedded-captions.mp4"
         type="video/mp4"
