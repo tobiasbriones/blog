@@ -8,6 +8,10 @@
 
 ---
 
+Code snippets are a powerful communication weapon in engineering for
+documentation. The new MathSwe standard has made it to production with cohesive
+code blocks implementing crucial features for copy and open actions.
+
 ## Structure
 
 Code snippets, like any other article or content, must have an inherent
