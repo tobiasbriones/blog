@@ -12,12 +12,13 @@ ogimage: ""
 
 # Pi Day (2023/03/14)
 
-<figure>
-    <img src="axiom---piaxid-monochromatic-1-4.svg" alt="Axiom | Piaxid Monochromatic 1 4" />
-    <figcaption>Axiom | Piaxid Monochromatic 1 4</figcaption>
-</figure>
+<img src="pi-day-2023-03-14.svg" alt="Pi Day 2023 03 14" />
 
-**Piaxid Monochromatic 1/4: Axiom**
+<p align="center">
+<b>
+Piaxid Monochromatic 1/4: Axiom
+</b>
+</p>
 
 ---
 
