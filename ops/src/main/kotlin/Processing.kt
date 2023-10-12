@@ -1,13 +1,9 @@
-import arrow.core.*
-import arrow.core.Either.*
-import md.Index
-import md.Markdown
-import md.extractTitle
-import java.io.File
-import java.io.IOException
+
+import arrow.core.None
+import arrow.core.Option
+import arrow.core.Some
 import java.nio.file.Files
 import java.nio.file.Path
-import java.util.stream.Stream
 
 
 fun Entry.coverPath(): Option<Path> {
@@ -26,7 +22,7 @@ fun Entry.coverPath(): Option<Path> {
 }
 
 fun Entry.coverGitHubUrl(username: String, repo: String, path: String = "") =
-    """https://raw.githubusercontent.com/$username/$repo/gh-pages/${name()}/$path${name()}.png
+    """https://raw.githubusercontent.com/$username/$repo/gh-pages/${name()}/$path
     """.trimIndent()
 
 fun Entry.tags(): List<String> = relPath

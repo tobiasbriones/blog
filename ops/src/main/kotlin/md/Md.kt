@@ -4,6 +4,7 @@ import `$`
 import `---`
 import Entry
 import arrow.core.*
+import name
 import path
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
@@ -16,22 +17,31 @@ data class Markdown(val value: String)
 
 fun Markdown.parse(entry: Entry, dic: Dictionary): Markdown =
     parseCodeSnippets(entry)
-        .parseImages(dic)
+        .parseImages(dic, entry)
 
 fun Markdown.parseCodeSnippets(entry: Entry): Markdown =
     copy(value = parseCodeSnippets(value, entry))
 
-fun Markdown.parseImages(dic: Dictionary): Markdown =
-    copy(value = parseImages(value, dic))
+fun Markdown.parseImages(dic: Dictionary, entry: Entry): Markdown =
+    copy(value = parseImages(value, dic, entry))
 
-fun parseImages(value: String, dic: Dictionary): String {
+fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
     val sb = StringBuilder(value.length)
     val imgPattern = "!\\[(.*?)]\\((.*?)\\)".toRegex()
+
+    data class Img(val path: String, val alt: String)
 
     fun imageHtml(path: String, alt: String): String {
         val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
         val altValue = alt.ifBlank { title }
-        return """
+
+
+        // Cover image //
+        return if (path.contains(entry.name())) """
+                <img src="$path" alt="$altValue" />
+            """.trimIndent()
+        // Normal Image //
+        else """
                 <figure>
                     <img src="$path" alt="$altValue" />
                     <figcaption>$title</figcaption>
@@ -60,22 +70,27 @@ fun parseImages(value: String, dic: Dictionary): String {
     for (line in value.lines()) {
         imgPattern
             .find(line)
-            .toOption()
-            .onSome {
+            ?.let {
                 val alt = it.groups[1]?.value
                 val path = it.groups[2]?.value
 
-                if (alt != null && path != null) {
-                    val ext = path.getExtension()
-                    val name = Path.of(path).name.removeExtension()
-                    val html = when (ext) {
-                        "mp4" -> videoHtml(name, path)
-                        else -> imageHtml(path, alt)
-                    }
-
-                    sb.append(html)
-                    sb.append("\n")
+                if (alt != null && path != null)
+                    Some(Img(path, alt))
+                else
+                    None
+            }
+            .toOption()
+            .flatten()
+            .onSome { (path, alt) ->
+                val ext = path.getExtension()
+                val name = Path.of(path).name.removeExtension()
+                val html = when (ext) {
+                    "mp4" -> videoHtml(name, path)
+                    else -> imageHtml(path, alt)
                 }
+
+                sb.append(html)
+                sb.append("\n")
             }
             .onNone {
                 sb.append(line)

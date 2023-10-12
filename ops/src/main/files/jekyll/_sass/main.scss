@@ -63,6 +63,7 @@ blockquote p:not(:last-child) {
   color: var(--third-text-color);
 }
 
+p img,
 figure img,
 figure video {
   display: block;
