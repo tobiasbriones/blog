@@ -2,7 +2,7 @@
 permalink: troubleshooting-diary
 title: "Troubleshooting Diary"
 description: "In this article, I will document and keep updating routine problems I face as a software engineer with proposed solutions I used to fix them."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/troubleshooting-diary/troubleshooting-diary.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/troubleshooting-diary/P:\tobiasbriones\blog\swe\diary\troubleshooting\troubleshooting-diary\images\troubleshooting-diary.png"
 ---
 
 
