@@ -12,7 +12,10 @@ ogimage: ""
 
 # Leveraging Git to Finish my Article (2023/10/09)
 
-![Leveraging Git to Finish my Article (2023/10/09)](images/leveraging-git-to-finish-my-article-after-a-long-interlude.png)
+<figure>
+    <img src="images/leveraging-git-to-finish-my-article-after-a-long-interlude.png" alt="Leveraging Git to Finish my Article (2023/10/09)" />
+    <figcaption>Leveraging Git to Finish my Article After a Long Interlude</figcaption>
+</figure>
 
 <p align="center"><b>Screenshot from IntelliJ IDEA</b></p>
 
@@ -121,6 +124,7 @@ documentation or article, updates, FP universal principles, and blog with EPs.
 
 This way, development is optimal because it's about small changes that
 immediately return the investment.
+
 
 
 
