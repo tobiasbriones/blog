@@ -79,10 +79,14 @@ programmed to think. I think he used to be high as F. like me too. He imagined
 crazy ideas in his mind. Now we have machines in this era, and I can expand on
 that idea.
 
-![Drawing Order](drawing-order.png)
+<figure>
+    <img src="drawing-order.png" alt="Drawing Order" />
+    <figcaption>Drawing Order</figcaption>
+</figure>
 
 **Image from the MRM | Repsymo Solver I invented**. Guess what those little 
 numbers mean.
+
 
 
 
