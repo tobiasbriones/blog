@@ -2,7 +2,7 @@
 permalink: automating-the-platform-operations-and-beyond-2023-08-31
 title: "Automating the Platform Operations and Beyond (2023/08/31)"
 description: "Transitioning from a default environment to a richer and more standardized platform to publish articles in a faster cadence has been tackled as a CLI tool in Kotlin (Arrow) as part of an ongoing process that's also left new features and powerful visions."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/automating-the-platform-operations-and-beyond-2023-08-31/P:\tobiasbriones\blog\mathswe\eng\automation\platform\ops\automating-the-platform-operations-and-beyond-2023-08-31\automating-the-platform-operations-and-beyond-2023-08-31.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/automating-the-platform-operations-and-beyond-2023-08-31/automating-the-platform-operations-and-beyond-2023-08-31.png"
 ---
 
 
