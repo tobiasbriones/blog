@@ -2,7 +2,7 @@
 permalink: leveraging-git-to-finish-my-article-2023-10-09
 title: "Leveraging Git to Finish my Article (2023/10/09)"
 description: "After a long interlude, I'm writing the last three sections, checking the conclusion, working out the abstract, and cover image for \"Building Slides from Screenshots App in JavaFX\" —a great title where I granularly blogged the development of a powerful JavaFX desktop app."
-ogimage: ""
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/leveraging-git-to-finish-my-article-2023-10-09/leveraging-git-to-finish-my-article-2023-10-09.png"
 ---
 
 
@@ -12,10 +12,7 @@ ogimage: ""
 
 # Leveraging Git to Finish my Article (2023/10/09)
 
-<figure>
-    <img src="images/leveraging-git-to-finish-my-article-after-a-long-interlude.png" alt="Leveraging Git to Finish my Article After a Long Interlude" />
-    <figcaption>Leveraging Git to Finish my Article After a Long Interlude</figcaption>
-</figure>
+<img src="images/leveraging-git-to-finish-my-article-2023-10-09.png" alt="Leveraging Git to Finish my Article 2023 10 09" />
 
 <p align="center"><b>Screenshot from IntelliJ IDEA</b></p>
 
