@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/cleaning
 
 # Cleaning up Details (2023/10/06)
 
-<img src="cleaning-up-details-2023-10-06.png" alt="Cleaning up Details (2023/10/06)" />
+<img src="cleaning-up-details-2023-10-06.png" alt="Cleaning up Details 2023 10 06" />
 
 ---
 
