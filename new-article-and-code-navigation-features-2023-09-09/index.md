@@ -2,7 +2,7 @@
 permalink: new-article-and-code-navigation-features-2023-09-09
 title: "New Article and Code Navigation Features (2023/09/09)"
 description: "Recent implementations to the article navigation (ToC), the integration of Example Projects (EPs) into articles, and UI/UX have made it to production for both mobile and desktop devices, facilitating readers a smooth and seamless navigation of article sections, access EP source code, EP web apps, and project-related files which are turning into a positive powerful impact on the platform's content quality and user experience."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/new-article-and-code-navigation-features-2023-09-09/new-article-and-code-navigation-features-2023-09-09.png/new-article-and-code-navigation-features-2023-09-09.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/new-article-and-code-navigation-features-2023-09-09/new-article-and-code-navigation-features-2023-09-09.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/new-arti
 
 # New Article and Code Navigation Features (2023/09/09)
 
-![New Article and Code Navigation Features (2023/09/09)](images/new-article-and-code-navigation-features-2023-09-09.png)
+<img src="images/new-article-and-code-navigation-features-2023-09-09.png" alt="New Article and Code Navigation Features 2023 09 09" />
 
 ---
 
@@ -27,13 +27,10 @@ platform's content quality and user experience.
 
 The platform has received many functional and non-functional features recently.
 
-![New Style and Features](images/new-style-and-features.png)
-
-<figcaption>
-<p align="center"><strong>
-New Style and Features
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/new-style-and-features.png" alt="New Style and Features" />
+    <figcaption>New Style and Features</figcaption>
+</figure>
 
 There have been updates on the standards in various regards.
 
@@ -110,13 +107,10 @@ focused in the center.
 You can see in the screenshot how the `More Recursion` section is selected in
 the navigation since the article is scrolled to that position.
 
-![New Article Navigation](images/new-article-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-New Article Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/new-article-navigation.png" alt="New Article Navigation" />
+    <figcaption>New Article Navigation</figcaption>
+</figure>
 
 So, what's on the right? I'll implement that later. I'll place the footnotes,
 references, and others like the footer. That way, the design is from left to
@@ -145,24 +139,18 @@ open the navigation from the left, and it'll take the foreground of the screen.
 **The navigation can be expanded or hidden via the "Navigation" menu button**
 for either mobile or desktop, but this feature is more advantageous for mobile.
 
-![Mobile Article Navigation](images/mobile-article-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-Mobile Article Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/mobile-article-navigation.png" alt="Mobile Article Navigation" />
+    <figcaption>Mobile Article Navigation</figcaption>
+</figure>
 
 Then, when you select a section, like `Node Circle and Content`, you'll be led
 to that section via smooth scroll:
 
-![Mobile Article Reading](images/mobile-article-reading.png)
-
-<figcaption>
-<p align="center"><strong>
-Mobile Article Reading
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/mobile-article-reading.png" alt="Mobile Article Reading" />
+    <figcaption>Mobile Article Reading</figcaption>
+</figure>
 
 Similarly to how a PDF is read, articles have those features now. The difference
 is that PDFs are binary files with no meaning 😐 while my articles are
@@ -206,25 +194,19 @@ EP itself (if applicable)**.
 
 The article's EP appears at the bottom of the page, if any.
 
-![Article EP Navigation](images/article-ep-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-Article EP Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/article-ep-navigation.png" alt="Article EP Navigation" />
+    <figcaption>Article EP Navigation</figcaption>
+</figure>
 
 So you can read the source code files (and others like project Markdown docs and
 images). Each resource has its GitHub link, so you can also browse and read them
 from GitHub.
 
-![EP Source Code Navigation](images/ep-source-code-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-EP Source Code Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/ep-source-code-navigation.png" alt="EP Source Code Navigation" />
+    <figcaption>EP Source Code Navigation</figcaption>
+</figure>
 
 If you go to the GitHub subdirectory tree, you can browse over all (literally)
 the source files.
@@ -237,24 +219,18 @@ first-class experience (you don't exit the platform[^8]).
     workflow in MathSwe, as any operation you perform in MathSwe stays in
     MathSwe** 🔢
 
-![EP GitHub Code Navigation](static/ep-github-code-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-EP GitHub Code Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/ep-github-code-navigation.png" alt="EP GitHub Code Navigation" />
+    <figcaption>EP GitHub Code Navigation</figcaption>
+</figure>
 
 The following screenshot is another example of how this is achieved in mobile
 too:
 
-![Mobile Source Code Reading](images/mobile-source-code-reading.png)
-
-<figcaption>
-<p align="center"><strong>
-Mobile Source Code Reading
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/mobile-source-code-reading.png" alt="Mobile Source Code Reading" />
+    <figcaption>Mobile Source Code Reading</figcaption>
+</figure>
 
 Code navigation has been a significant achievement in organizing and sharing my
 content and further projects. More enhancements are due in the future, but for
@@ -272,13 +248,10 @@ when the article was built. Therefore, **you can open it as a web application**.
 [^9]: SWAM Ops is an automation tool I've been writing for MathSwe software
     operations, so in this case, for mathsoftware.engineer
 
-![Article EP Web App](images/article-ep-web-app.png)
-
-<figcaption>
-<p align="center"><strong>
-Article EP Web App
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/article-ep-web-app.png" alt="Article EP Web App" />
+    <figcaption>Article EP Web App</figcaption>
+</figure>
 
 This access has been available since always, but now it's standard and more
 automated, so I can worry much less about off-topic tasks when developing
@@ -300,13 +273,10 @@ Sometimes, source files are not projects but just files. So, they can be put
 into a subdirectory like the following example. Articles can either have EPs,
 subdirectories, or both.
 
-![Article Subdirectory Navigation](images/article-subdirectory-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-Article Subdirectory Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/article-subdirectory-navigation.png" alt="Article Subdirectory Navigation" />
+    <figcaption>Article Subdirectory Navigation</figcaption>
+</figure>
 
 The subdirectory button appears at the bottom of the article and leads you to
 the subdirectory path.
@@ -314,23 +284,17 @@ the subdirectory path.
 Then, you can open files to read them, as if it were a GitHub Gist containing
 the article code snippets.
 
-![Subdirectory File Navigation](images/subdirectory-file-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-Subdirectory File Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/subdirectory-file-navigation.png" alt="Subdirectory File Navigation" />
+    <figcaption>Subdirectory File Navigation</figcaption>
+</figure>
 
 You can open them as files or subdirectories on GitHub too.
 
-![File GitHub Navigation](static/file-github-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-File GitHub Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/file-github-navigation.png" alt="File GitHub Navigation" />
+    <figcaption>File GitHub Navigation</figcaption>
+</figure>
 
 So, besides article projects, its subdirectories with content can also be
 browsed and opened.
@@ -343,13 +307,10 @@ files are also rendered as such.
 If you open a markdown file, instead of reading its raw low-level text, you'll
 get the web app-rendered resource, which turns them into a sub-article.
 
-![Markdown File Opened](images/markdown-file-opened.png)
-
-<figcaption>
-<p align="center"><strong>
-Markdown File Opened
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/markdown-file-opened.png" alt="Markdown File Opened" />
+    <figcaption>Markdown File Opened</figcaption>
+</figure>
 
 This can be useful for EP documentation like `README.md` files.
 
@@ -369,35 +330,26 @@ I have the article
 [Building Slides from Screenshots App in JavaFX](/building-slides-from-screenshots-app-in-javafx)
 almost ready to be published.
 
-![Excitement on new Articles Deployment](images/excitement-on-new-articles-deployment.png)
-
-<figcaption>
-<p align="center"><strong>
-Excitement on new Articles Deployment
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/excitement-on-new-articles-deployment.png" alt="Excitement on New Articles Deployment" />
+    <figcaption>Excitement on New Articles Deployment</figcaption>
+</figure>
 
 So, this is how the source tree of the article project can be browsed. Its style
 is still plain because reading the contents of the resources is more important,
 so this has more priority over directory navigation.
 
-![Slides EP Source Tree Navigation](images/slides-ep-source-tree-navigation.png)
-
-<figcaption>
-<p align="center"><strong>
-Slides EP Source Tree Navigation
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/slides-ep-source-tree-navigation.png" alt="Slides EP Source Tree Navigation" />
+    <figcaption>Slides EP Source Tree Navigation</figcaption>
+</figure>
 
 This way, you can see (in the URL path) how the EP is *related* to its article:
 
-![Slides EP Source File Opened](images/slides-ep-source-file-opened.png)
-
-<figcaption>
-<p align="center"><strong>
-Slides EP Source File Opened
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/slides-ep-source-file-opened.png" alt="Slides EP Source File Opened" />
+    <figcaption>Slides EP Source File Opened</figcaption>
+</figure>
 
 The introduction of these new platform UI/UX ergonomics will make a remarkable
 impact when releasing these kinds of polished and long articles. That's why I
@@ -412,13 +364,10 @@ I tried not to change much about these secondary components because since I was
 using plain Jekyll and GitHub pages 😑. Now, I've polished the styles according
 to the design.
 
-![New Footer](images/new-footer.png)
-
-<figcaption>
-<p align="center"><strong>
-New Footer
-</strong></p>
-</figcaption>
+<figure>
+    <img src="images/new-footer.png" alt="New Footer" />
+    <figcaption>New Footer</figcaption>
+</figure>
 
 As I said, I'll put the footer strategically on the right side for the desktop
 layout so the article page in the center is more cohesive. This is because the
@@ -434,6 +383,7 @@ The latest article navigation (i.e., table of contents), EP and subdirectory
 access, and the application of styles have turned the platform articles into
 powerful math software engineering references and have also turned into more
 establishing MathSwe standards implemented into UI/UX ergonomics.
+
 
 
 
