@@ -45,8 +45,8 @@ purpose. For instance, products that suck need capitalism
 (marketing) to *sell them*, but *they're not the solution to the problems*.
 
 If you're a domain expert, you **simplify matters** to the specific domain, and
-**the more you simplify, the less bloated** AI, marketing, and engineering you
-have because *you address the problems instead of the symptoms*.
+**the more you simplify, the less bloated** AI, marketing, analytics and
+engineering you have because *you address the problems instead of the symptoms*.
 
 AI can have its place to automate *external systems* which I wanted to leave
 clear in this development, but it'll never replace the underlying domain as
