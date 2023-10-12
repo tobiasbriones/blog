@@ -12,7 +12,10 @@ ogimage: ""
 
 # Pi Day (2023/03/14)
 
-![Piaxid Monochromatic 1/4: Axiom](axiom---piaxid-monochromatic-1-4.svg)
+<figure>
+    <img src="axiom---piaxid-monochromatic-1-4.svg" alt="Axiom | Piaxid Monochromatic 1 4" />
+    <figcaption>Axiom | Piaxid Monochromatic 1 4</figcaption>
+</figure>
 
 **Piaxid Monochromatic 1/4: Axiom**
 
@@ -132,6 +135,7 @@ Williams College. Retrieved March 14, 2023, from
 
 [4] The Fibonacci sequence - HaskellWiki. (n.d.).
 [The Fibonacci sequence \| Wiki \| Haskell](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition).
+
 
 
 
