@@ -2,7 +2,7 @@
 permalink: removing-cyclic-dependencies--_--java-vs-go-2023-05-28
 title: "Removing Cyclic Dependencies, Java vs Go (2023-05-28)"
 description: "I just came across a cyclic package dependency case in Java. It's important to address the role of graphs in visualizing abstract concepts like cyclic dependencies in software design to reduce complexity and build simple systems. The benefits of using Go as a more modern and opinionated language are also emphasized."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/removing-cyclic-dependencies--_--java-vs-go-2023-05-28/P:\tobiasbriones\blog\swe\design\cs\module\graph\removing-cyclic-dependencies--_--java-vs-go-2023-05-28\images\removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/removing-cyclic-dependencies--_--java-vs-go-2023-05-28/images/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png"
 ---
 
 
