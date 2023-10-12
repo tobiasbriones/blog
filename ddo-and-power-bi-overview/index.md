@@ -12,19 +12,18 @@ ogimage: ""
 
 # Data-Driven Organizations and Power BI Overview
 
-![Cover](images/cover.jpg)
+<img src="images/ddo-and-power-bi-overview.jpg" alt="Data-Driven Organizations and Power BI Overview" />
 
-<figcaption>
-
+<p align="center">
+<b>
 Image from
-<it>
+<i>
 <a href="https://pixabay.com/photos/chart-data-business-graph-finance-6765401">Pixabay
 </a>
-</it>
+</i>
 by Mariakray
-
-</figcaption>
-
+</b>
+</p>
 ---
 
 An introductory framework about the data-driven culture and why it's fundamental
@@ -94,27 +93,37 @@ customers, and 18.8 times as likely to be profitable. That is,
 **organizations leveraging analytics are significantly more competitive than 
 those that don't**.
 
-![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
+<figure>
+    <img src="images/mckinsey-exhibit-1.svgz" alt="mckinsey-exhibit-1" />
+    <figcaption>McKinsey Exhibit 1</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Extensive use of customer analytics drives corporate 
-performance heavily</strong></p>
-Source: <it>Five facts: How customer analytics boosts corporate
-performance | McKinsey</it> [7] (under fair use)
-</figcaption>
+<p align="center">
+<b>
+Extensive use of customer analytics drives corporate 
+performance heavily
+</b>
 
----
+<br>
+Source: <i>Five facts: How customer analytics boosts corporate
+performance | McKinsey</i> [7] (under fair use)
+</p>
 
-![mckinsey-exhibit-2](images/mckinsey-exhibit-2.svgz)
+<figure>
+    <img src="images/mckinsey-exhibit-2.svgz" alt="mckinsey-exhibit-2" />
+    <figcaption>McKinsey Exhibit 2</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>Successful companies outperform the competition 
-across full customer lifecycle</strong></p>
-Source: <it>Five facts: How customer analytics boosts corporate
-performance | McKinsey</it> [7] (under fair use)
-</figcaption>
+<p align="center">
+<b>
+Successful companies outperform the competition across full customer 
+lifecycle
+</b>
 
----
+<br>
+Source: <i>Five facts: How customer analytics boosts corporate
+performance | McKinsey</i> [7] (under fair use)
+</p>
 
 ### The Role of the CIO
 
@@ -159,12 +168,11 @@ following comparison:
  Within IT              | Everywhere                   |
  IT-risk-focused        | Business-risk-focused        |
 
-<figcaption>
 <p align="center">
-<strong>
-Source: <it>CIO Agenda 2018</it> | Gartner [4]
-</strong></p>
-</figcaption>
+<b>
+Source: <i>CIO Agenda 2018</i> | Gartner [4]
+</b>
+</p>
 
 ### Watch Out Fake Friends
 
@@ -368,14 +376,10 @@ analysis techniques as soon as possible. Every competent business must make sure
 to have at least descriptive analysis functioning for daily and basic reports
 and keep moving forward to be able to make informed decisions.
 
-![Descriptive Predictive and Prescriptive Analysis](descriptive-predictive-and-prescriptive-analysis.svg)
-
-<figcaption>
-
-<p align="center"><strong>Descriptive Predictive and Prescriptive 
-Analysis</strong></p>
-
-</figcaption>
+<figure>
+    <img src="descriptive-predictive-and-prescriptive-analysis.svg" alt="Descriptive Predictive and Prescriptive Analysis" />
+    <figcaption>Descriptive Predictive and Prescriptive Analysis</figcaption>
+</figure>
 
 ---
 
@@ -664,6 +668,7 @@ from [Business Intelligence (BI) | Investopedia](https://www.investopedia.com/te
 [9] UNSW Online. (2020, January 29). Descriptive, Predictive, Prescriptive
 Analytics | UNSW Online. Retrieved March 16, 2022,
 from [Descriptive, Predictive & Prescriptive Analytics: What are the differences? | UNSW Online](https://studyonline.unsw.edu.au/blog/descriptive-predictive-prescriptive-analytics).
+
 
 
 
