@@ -4,14 +4,15 @@
 
 # Removing Cyclic Dependencies, Java vs Go (2023-05-28)
 
-![Removing Cyclic Dependencies, Java vs Go (2023-05-28)](images/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png)
+![](images/removing-cyclic-dependencies--_--java-vs-go-2023-05-28.png)
 
-<figcaption>
-<p align="center">Background by 
+<p align="center">
+<b>
+Background by 
 <a href="https://pixabay.com/users/pexels-2286921">Pexels</a> via
 <a href="https://pixabay.com/photos/abstract-architecture-contemporary-1867937">Pixabay</a>
+</b>
 </p>
-</figcaption>
 
 ---
 
@@ -34,11 +35,7 @@ The `data` package requires the `ui` package when the dependency would normally
 consist of a "client" package (i.e., `ui`) that requires a more-universal or
 abstract one (i.e., `data`). This way the dependencies keep simple or linear.
 
-![Removing Cyclic Dependency Commit](images/removing-cyclic-dependency-commit.png)
-
-<figcaption>
-<p align="center"><strong>Removing Cyclic Dependency Commit</strong></p>
-</figcaption>
+![](images/removing-cyclic-dependency-commit.png)
 
 When module `D` depends on `U`, and `U` depends on `D`, you're saying that
 `D` depends on `D` (itself), so this is a kind of *sink*[^1] that strikes me as

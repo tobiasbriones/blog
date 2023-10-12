@@ -4,19 +4,18 @@
 
 # Data-Driven Organizations and Power BI Overview
 
-![Cover](images/cover.jpg)
+![](images/ddo-and-power-bi-overview.jpg)
 
-<figcaption>
-
+<p align="center">
+<b>
 Image from
-<it>
+<i>
 <a href="https://pixabay.com/photos/chart-data-business-graph-finance-6765401">Pixabay
 </a>
-</it>
+</i>
 by Mariakray
-
-</figcaption>
-
+</b>
+</p>
 ---
 
 An introductory framework about the data-driven culture and why it's fundamental
@@ -88,25 +87,29 @@ those that don't**.
 
 ![mckinsey-exhibit-1](images/mckinsey-exhibit-1.svgz)
 
-<figcaption>
-<p align="center"><strong>Extensive use of customer analytics drives corporate 
-performance heavily</strong></p>
-Source: <it>Five facts: How customer analytics boosts corporate
-performance | McKinsey</it> [7] (under fair use)
-</figcaption>
+<p align="center">
+<b>
+Extensive use of customer analytics drives corporate 
+performance heavily
+</b>
 
----
+<br>
+Source: <i>Five facts: How customer analytics boosts corporate
+performance | McKinsey</i> [7] (under fair use)
+</p>
 
 ![mckinsey-exhibit-2](images/mckinsey-exhibit-2.svgz)
 
-<figcaption>
-<p align="center"><strong>Successful companies outperform the competition 
-across full customer lifecycle</strong></p>
-Source: <it>Five facts: How customer analytics boosts corporate
-performance | McKinsey</it> [7] (under fair use)
-</figcaption>
+<p align="center">
+<b>
+Successful companies outperform the competition across full customer 
+lifecycle
+</b>
 
----
+<br>
+Source: <i>Five facts: How customer analytics boosts corporate
+performance | McKinsey</i> [7] (under fair use)
+</p>
 
 ### The Role of the CIO
 
@@ -151,12 +154,11 @@ following comparison:
 | Within IT              | Everywhere                   |
 | IT-risk-focused        | Business-risk-focused        |
 
-<figcaption>
 <p align="center">
-<strong>
-Source: <it>CIO Agenda 2018</it> | Gartner [4]
-</strong></p>
-</figcaption>
+<b>
+Source: <i>CIO Agenda 2018</i> | Gartner [4]
+</b>
+</p>
 
 ### Watch Out Fake Friends
 
@@ -360,14 +362,7 @@ analysis techniques as soon as possible. Every competent business must make sure
 to have at least descriptive analysis functioning for daily and basic reports
 and keep moving forward to be able to make informed decisions.
 
-![Descriptive Predictive and Prescriptive Analysis](descriptive-predictive-and-prescriptive-analysis.svg)
-
-<figcaption>
-
-<p align="center"><strong>Descriptive Predictive and Prescriptive 
-Analysis</strong></p>
-
-</figcaption>
+![](descriptive-predictive-and-prescriptive-analysis.svg)
 
 ---
 

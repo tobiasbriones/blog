@@ -4,7 +4,7 @@
 
 # Automating the Platform Operations and Beyond (2023/08/31)
 
-![Automating the Platform Operations and Beyond (2023/08/31)](automating-the-platform-operations-and-beyond-2023-08-31.png)
+![](automating-the-platform-operations-and-beyond-2023-08-31.png)
 
 ---
 
@@ -113,13 +113,7 @@ It lists all the article entries found in the repository.
 
 *Example:*
 
-![Command: Entries List](command-_-entries-list.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Entries List
-</strong></p>
-</figcaption>
+![](command-_-entries-list.png)
 
 The command will show the number of articles and list them all in their ID form
 as found in the working repository.
@@ -139,13 +133,7 @@ Where classes from $$1 \to n$$ go from coarse to finer subdirectories.
 
 *Example:*
 
-![Command: Create Entry](command-_-create-entry.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Create Entry
-</strong></p>
-</figcaption>
+![](command-_-create-entry.png)
 
 Entry names must be correct values; they must not exist already, and the classes
 are passed as a value separated by commas.
@@ -171,13 +159,7 @@ Where:
 
 *Example:*
 
-![Command: Build Working Article](command-_-build-working-article.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Build Working Article
-</strong></p>
-</figcaption>
+![](command-_-build-working-article.png)
 
 There are two steps in the building process. One is the **intermediate source
 generation** (i.e. the `ops` tool) that's still readable and targeted for
@@ -217,13 +199,7 @@ Where:
 
 *Example:*
 
-![Command: Deploy Article](command-_-deploy-article.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Deploy Article
-</strong></p>
-</figcaption>
+![](command-_-deploy-article.png)
 
 Articles have to be already published, that is, integrated into the `main`
 branch, so the process is applied from source to production.

@@ -4,7 +4,7 @@
 
 # Applying my Pipe and Application Operators in Kotlin (2023-07-19)
 
-![Applying my Pipe and Application Operators in Kotlin (2023-07-19)](applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png)
+![](applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png)
 
 ---
 
@@ -43,13 +43,7 @@ entire whole (the **Stream**).
 
 ✔ Some bloated parenthesis with the application operator.
 
-![Slide: Pipe and Application Operators](slide-_-pipe-and-application-operators.png)
-
-<figcaption>
-<p align="center"><strong>
-Slide: Pipe and Application Operators
-</strong></p>
-</figcaption>
+![](slide-_-pipe-and-application-operators.png)
 
 Notice, `exec_build` returns `Unit` and naturally has side effects, but removing
 the variable statement also would've allowed turning that imperative function

@@ -4,7 +4,7 @@
 
 # Pi Day (2022/03/14)
 
-![Piaxid Monochromatic 1/4](piaxid-monochromatic-1-4.svg)
+![](piaxid-monochromatic-1-4.svg)
 
 **Piaxid Monochromatic 1/4**
 
