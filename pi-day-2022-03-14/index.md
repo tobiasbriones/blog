@@ -12,7 +12,10 @@ ogimage: ""
 
 # Pi Day (2022/03/14)
 
-![Piaxid Monochromatic 1/4](piaxid-monochromatic-1-4.svg)
+<figure>
+    <img src="piaxid-monochromatic-1-4.svg" alt="Piaxid Monochromatic 1 4" />
+    <figcaption>Piaxid Monochromatic 1 4</figcaption>
+</figure>
 
 **Piaxid Monochromatic 1/4**
 
@@ -49,6 +52,7 @@ I have been working under this philosophy set for 5 years and is what I am. I'll
 keep writing about Pi as of now.
 
 --- <cite>Pi Day (2022/03/14)</cite> Tobias Briones
+
 
 
 
