@@ -2,7 +2,7 @@
 permalink: cleaning-up-details-2023-10-06
 title: "Cleaning up Details (2023/10/06)"
 description: "Today, an initial set of fixes and enhancements were integrated into the first-class article \"Drawing a Tree on Canvas with XY Coordinates\" to keep up with the current changes."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/cleaning-up-details-2023-10-06/P:\tobiasbriones\blog\mathswe\engineer\news\drawing-a-tree-on-canvas-with-xy-coordinates\cleaning-up-details-2023-10-06\cleaning-up-details-2023-10-06.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/cleaning-up-details-2023-10-06/cleaning-up-details-2023-10-06.png"
 ---
 
 
