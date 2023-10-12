@@ -12,7 +12,7 @@ ogimage: ""
 
 # Celebrating the Possibility of Having a Computer to Work with (2023/09/11)
 
-![Celebrating the Possibility of Having a Computer to Work with (2023/09/11)](static/celebrating-the-possibility-of-having-a-computer-to-work-with-2023-09-11.jpg)
+<img src="static/celebrating-the-possibility-of-having-a-computer-to-work-with-2023-09-11.jpg" alt="Celebrating the Possibility of Having a Computer to Work with 2023 09 11" />
 
 ---
 
@@ -188,48 +188,33 @@ All Optiplex PCs I've had have been small form factor, by the way.
 Unfortunately, I didn't find any spare parts, so I had to settle with a Mini
 Tower motherboard I found on eBay.
 
-![Order of Mini Tower Motherboard](static/order-of-mini-tower-motherboard.png)
-
-<figcaption>
-<p align="center"><strong>
-Order of Mini Tower Motherboard
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/order-of-mini-tower-motherboard.png" alt="Order of Mini Tower Motherboard" />
+    <figcaption>Order of Mini Tower Motherboard</figcaption>
+</figure>
 
 After receiving the motherboard, I set up everything again, but a mad truth I
 knew was coming: it didn't fit in the SFF case 😂:
 
-![Optiplex 745 Barebones 1 2016-2017](static/optiplex-745-barebones-1-2016--2017.jpg)
+<figure>
+    <img src="static/optiplex-745-barebones-1-2016--2017.jpg" alt="Optiplex 745 Barebones 1 2016-2017" />
+    <figcaption>Optiplex 745 Barebones 1 2016-2017</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>
-Optiplex 745 Barebones 1 2016-2017
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/optiplex-745-barebones-2-2016--2017.jpg" alt="Optiplex 745 Barebones 2 2016-2017" />
+    <figcaption>Optiplex 745 Barebones 2 2016-2017</figcaption>
+</figure>
 
-![Optiplex 745 Barebones 2 2016-2017](static/optiplex-745-barebones-2-2016--2017.jpg)
+<figure>
+    <img src="static/optiplex-745-barebones-3-2016--2017.jpg" alt="Optiplex 745 Barebones 3 2016-2017" />
+    <figcaption>Optiplex 745 Barebones 3 2016-2017</figcaption>
+</figure>
 
-<figcaption>
-<p align="center"><strong>
-Optiplex 745 Barebones 2 2016-2017
-</strong></p>
-</figcaption>
-
-![Optiplex 745 Barebones 3 2016-2017](static/optiplex-745-barebones-3-2016--2017.jpg)
-
-<figcaption>
-<p align="center"><strong>
-Optiplex 745 Barebones 3 2016-2017
-</strong></p>
-</figcaption>
-
-![Optiplex 745 Barebones 4 2016-2017](static/optiplex-745-barebones-4-2016--2017.jpg)
-
-<figcaption>
-<p align="center"><strong>
-Optiplex 745 Barebones 4 2016-2017
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/optiplex-745-barebones-4-2016--2017.jpg" alt="Optiplex 745 Barebones 4 2016-2017" />
+    <figcaption>Optiplex 745 Barebones 4 2016-2017</figcaption>
+</figure>
 
 The solution was to **assemble it barebones** and try to be careful with that
 environment.
@@ -311,13 +296,10 @@ maintenance costs of toy laptops.
 So, **I used my phone to read PDF books and copy math problems to solve while on
 the university campus**.
 
-![Hyundai UNO 2016-2022](static/hyundai-uno-2016--2022.jpg)
-
-<figcaption>
-<p align="center"><strong>
-Hyundai UNO 2016-2022
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/hyundai-uno-2016--2022.jpg" alt="Hyundai Uno 2016-2022" />
+    <figcaption>Hyundai Uno 2016-2022</figcaption>
+</figure>
 
 The screen got broken in the end because I thought I dropped it into my pocket,
 but it fell out to the corner of the concrete 😣. It still worked and used it for
@@ -389,13 +371,10 @@ something ordinary, but for me, it was a dream.
 
 Therefore, I went to the store ("Tecknos Design") and acquired my computer.
 
-![Optiplex 790 Receipt (2017/09/11)](static/optiplex-790-receipt-2017-09-11.png)
-
-<figcaption>
-<p align="center"><strong>
-Optiplex 790 Receipt (2017/09/11)
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/optiplex-790-receipt-2017-09-11.png" alt="Optiplex 790 Receipt 2017 09 11" />
+    <figcaption>Optiplex 790 Receipt 2017 09 11</figcaption>
+</figure>
 
 I hate when they misspell "Tobias" by "Tobillas," but never mind.
 
@@ -403,13 +382,10 @@ I got the computer delivered to my house an afternoon at 5 pm, and it was great.
 I'd never had computers like these before. Fortunately, that day was finally
 realized.
 
-![Excited Unpacking of the Optiplex 790 (2017/09/11)](static/excited-unpacking-of-the-optiplex-790-2017-09-11.jpg)
-
-<figcaption>
-<p align="center"><strong>
-Excited Unpacking of the Optiplex 790 (2017/09/11)
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/excited-unpacking-of-the-optiplex-790-2017-09-11.jpg" alt="Excited Unpacking of the Optiplex 790 2017 09 11" />
+    <figcaption>Excited Unpacking of the Optiplex 790 2017 09 11</figcaption>
+</figure>
 
 I removed the wrap[^13], started using the "new" (refurbished) computer, and
 started noticing the huge differences compared to older machines[^14].
@@ -436,13 +412,10 @@ get a usable workstation out of the Optiplex 790 SSF.
 First, I bought a Samsung EVO 860 SSD of 250GB and 2x2GB of memory of the same
 kind via the Internet.
 
-![Order of Memory and Samsung SSD](static/order-of-memory-and-samsung-ssd.png)
-
-<figcaption>
-<p align="center"><strong>
-Order of Memory and Samsung SSD
-</strong></p>
-</figcaption>
+<figure>
+    <img src="static/order-of-memory-and-samsung-ssd.png" alt="Order of Memory and Samsung Ssd" />
+    <figcaption>Order of Memory and Samsung Ssd</figcaption>
+</figure>
 
 By passing from 4GB to 8GB of memory, I could be solvent with most memory
 limitations[^15].
@@ -592,6 +565,7 @@ with the valuable resources and experiences acquired over the last decades.
 [1] tobiasbriones/word-knowledge: App that lets you play word games for fun or
 practicing languages. (n.d.). GitHub.
 [Word Knowledge \| GitHub](https://github.com/tobiasbriones/word-knowledge)
+
 
 
 
