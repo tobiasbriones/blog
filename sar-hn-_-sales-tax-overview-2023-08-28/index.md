@@ -12,14 +12,15 @@ ogimage: ""
 
 # SAR HN: Sales Tax Overview (2023/08/28)
 
-<img src="images/sar-hn-_-sales-tax-overview-2023-08-28.jpg" alt="SAR HN: Sales Tax Overview (2023/08/28)" />
+<img src="images/sar-hn-_-sales-tax-overview-2023-08-28.jpg" alt="SAR HN: Sales Tax Overview 2023 08 28" />
 
-<figcaption>
-<p align="center">Image by
+<p align="center">
+<b>
+Image by
 <a href="https://pixabay.com/users/photomix-company-1546875">PhotoMIX-Company</a> via
 <a href="https://pixabay.com/photos/cash-register-printer-receipt-store-5610295">Pixabay</a>
+</b>
 </p>
-</figcaption>
 
 ---
 
@@ -155,21 +156,14 @@ following up on SAR social media to get resources to get more familiar with this
 process.
 
 <figure>
-    <img src="images/det-live-_-isv-form.jpg" alt="DET Live: ISV Form" />
-    <figcaption>Det Live: Isv Form</figcaption>
+    <img src="images/det-live-_-isv-form.jpg" alt="Det Live: ISV Form" />
+    <figcaption>Det Live: ISV Form</figcaption>
 </figure>
 
-<figcaption>
 <p align="center">
-<strong>
-DET Live: ISV Form
-</strong>
+Source: <i>Declaración Jurada Impuesto Sobre Ventas | DET Live [3] (under fair
+use)</i>
 </p>
-<p>
-Source: <it>Declaración Jurada Impuesto Sobre Ventas | DET Live [3] (under fair
-use)</it>
-</p>
-</figcaption>
 
 You will have to fill several fields, and others will get autofilled, and once
 sent, you can't change it. I'd advise you to have an accountant for this or have
@@ -204,13 +198,11 @@ like the university (UNAH) tests are.
 src = "static/my-sales-tax-diploma.pdf"
 %}
 
-<figcaption>
 <p align="center">
-<strong>
+<b>
 My Sales Tax Diploma
-</strong>
+</b>
 </p>
-</figcaption>
 
 This way I finished this learning activity.
 
