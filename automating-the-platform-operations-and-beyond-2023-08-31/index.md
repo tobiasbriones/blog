@@ -2,7 +2,7 @@
 permalink: automating-the-platform-operations-and-beyond-2023-08-31
 title: "Automating the Platform Operations and Beyond (2023/08/31)"
 description: "Transitioning from a default environment to a richer and more standardized platform to publish articles in a faster cadence has been tackled as a CLI tool in Kotlin (Arrow) as part of an ongoing process that's also left new features and powerful visions."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/automating-the-platform-operations-and-beyond-2023-08-31/automating-the-platform-operations-and-beyond-2023-08-31.png/automating-the-platform-operations-and-beyond-2023-08-31.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/automating-the-platform-operations-and-beyond-2023-08-31/automating-the-platform-operations-and-beyond-2023-08-31.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/automati
 
 # Automating the Platform Operations and Beyond (2023/08/31)
 
-![Automating the Platform Operations and Beyond (2023/08/31)](automating-the-platform-operations-and-beyond-2023-08-31.png)
+<img src="automating-the-platform-operations-and-beyond-2023-08-31.png" alt="Automating the Platform Operations and Beyond 2023 08 31" />
 
 ---
 
@@ -121,13 +121,10 @@ It lists all the article entries found in the repository.
 
 *Example:*
 
-![Command: Entries List](command-_-entries-list.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Entries List
-</strong></p>
-</figcaption>
+<figure>
+    <img src="command-_-entries-list.png" alt="Command: Entries List" />
+    <figcaption>Command: Entries List</figcaption>
+</figure>
 
 The command will show the number of articles and list them all in their ID form
 as found in the working repository.
@@ -147,13 +144,10 @@ Where classes from $$1 \to n$$ go from coarse to finer subdirectories.
 
 *Example:*
 
-![Command: Create Entry](command-_-create-entry.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Create Entry
-</strong></p>
-</figcaption>
+<figure>
+    <img src="command-_-create-entry.png" alt="Command: Create Entry" />
+    <figcaption>Command: Create Entry</figcaption>
+</figure>
 
 Entry names must be correct values; they must not exist already, and the classes
 are passed as a value separated by commas.
@@ -179,13 +173,10 @@ Where:
 
 *Example:*
 
-![Command: Build Working Article](command-_-build-working-article.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Build Working Article
-</strong></p>
-</figcaption>
+<figure>
+    <img src="command-_-build-working-article.png" alt="Command: Build Working Article" />
+    <figcaption>Command: Build Working Article</figcaption>
+</figure>
 
 There are two steps in the building process. One is the **intermediate source
 generation** (i.e. the `ops` tool) that's still readable and targeted for
@@ -257,13 +248,10 @@ Where:
 
 *Example:*
 
-![Command: Deploy Article](command-_-deploy-article.png)
-
-<figcaption>
-<p align="center"><strong>
-Command: Deploy Article
-</strong></p>
-</figcaption>
+<figure>
+    <img src="command-_-deploy-article.png" alt="Command: Deploy Article" />
+    <figcaption>Command: Deploy Article</figcaption>
+</figure>
 
 Articles have to be already published, that is, integrated into the `main`
 branch, so the process is applied from source to production.
@@ -479,6 +467,7 @@ well-defined, although many other system parts are still temporal.
 
 The latest developments represent a chapter in automating essential tasks,
 allowing me to create more content with significantly reduced overhead.
+
 
 
 
