@@ -8,7 +8,8 @@
 
 <p align="center">
 <b>
-Image from [Pixabay](images/notice#cover)
+Image from 
+<a href="images/notice#cover">Pixabay</a>
 </b>
 </p>
 
