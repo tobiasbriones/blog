@@ -2,7 +2,7 @@
 permalink: applying-my-pipe-and-application-operators-in-kotlin-2023-07-19
 title: "Applying my Pipe and Application Operators in Kotlin (2023-07-19)"
 description: "I've been applying the operators I designed a couple of days ago to make Kotlin's FP more expressive."
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/applying-my-pipe-and-application-operators-in-kotlin-2023-07-19/applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png/applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/applying-my-pipe-and-application-operators-in-kotlin-2023-07-19/applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/applying
 
 # Applying my Pipe and Application Operators in Kotlin (2023-07-19)
 
-![Applying my Pipe and Application Operators in Kotlin (2023-07-19)](applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png)
+<img src="applying-my-pipe-and-application-operators-in-kotlin-2023-07-19.png" alt="Applying my Pipe and Application Operators in Kotlin 2023 07 19" />
 
 ---
 
@@ -120,13 +120,10 @@ entire whole (the **Stream**).
 
 ✔ Some bloated parenthesis with the application operator.
 
-![Slide: Pipe and Application Operators](slide-_-pipe-and-application-operators.png)
-
-<figcaption>
-<p align="center"><strong>
-Slide: Pipe and Application Operators
-</strong></p>
-</figcaption>
+<figure>
+    <img src="slide-_-pipe-and-application-operators.png" alt="Slide: Pipe and Application Operators" />
+    <figcaption>Slide: Pipe and Application Operators</figcaption>
+</figure>
 
 Notice, `exec_build` returns `Unit` and naturally has side effects, but removing
 the variable statement also would've allowed turning that imperative function
@@ -273,6 +270,7 @@ for a more-correct functional approach [^3].
 
 As you can see, more expressive code inducing a greater degree of functional
 purity leads to more cohesive expressions.
+
 
 
 
