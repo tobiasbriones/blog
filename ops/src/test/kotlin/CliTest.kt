@@ -1,8 +1,8 @@
+
+import arrow.core.Some
 import fs.generateRootNotice
 import fs.hasNotice
 import fs.loadEntries
-import fs.loadIndex
-import md.parse
 import java.nio.file.Path
 
 // MAKE SURE to add the working directory of the Git repository to test
@@ -21,16 +21,24 @@ fun main() {
 
 //    testRootNoticeLinks()
 
-    val entry = Entry(Path.of(""))
-        .loadEntries()
-        .map {
-            it.find { it.name().contains("slides") }
-        }
-        .getOrNull()
+    val secondaryPath = Path.of(
+        "article",
+        "images",
+        "article.png"
+    )
 
-    val index = entry?.loadIndex()?.getOrNull()
+    val entry = Entry(Path.of("article"))
 
-    val parse = index?.parse(entry, dic)
+    println(
+        Some(secondaryPath)
+            .map {
+                entry.coverGitHubUrl(
+                    "tobiasbriones",
+                    "blog",
+                    secondaryPath.toString()
+                )
+            }
+    )
 
     //runCmd("build drawing-a-tree-on-canvas-with-xy-coordinates")
 //    runCmd("build building-slides-from-screenshots-app-in-javafx jekyll")
