@@ -2,7 +2,7 @@
 permalink: from-imperative-to-functional-_-typescript-fetch-promise
 title: "From Imperative to Functional: TypeScript Fetch Promise"
 description: "  the \"async-await hell\" and more boilerplate.   to avoid a multiple-`return` mess.   can be replaced with sum types or monads like Rust does, so there's no    reason why we should keep using `try`-`catch` blocks in robust software    development.   nonsense for high-level software (most projects) and yes, more boilerplate.   (functional/declarative, OO, etc.) so if we could go fully functional    (with better languages) why keep writing cheap code like that?   line (which gives more LoC) as it is factually the best way to format it.   error handling gets worse with imperative code. Code on the internet like    docs or tutorials almost always skip the status `ok` error handling and go    directly to fail when parsing the `JSON` data. Who cares when code is    imperative anyway?"
-ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/from-imperative-to-functional-_-typescript-fetch-promise/from-imperative-to-functional-_-typescript-fetch-promise.png/from-imperative-to-functional-_-typescript-fetch-promise.png"
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/from-imperative-to-functional-_-typescript-fetch-promise/from-imperative-to-functional-_-typescript-fetch-promise.png"
 ---
 
 
@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/from-imp
 
 # From Imperative to Functional: TypeScript Fetch Promise
 
-![From Imperative to Functional: TypeScript Fetch Promise](from-imperative-to-functional-_-typescript-fetch-promise.png)
+<img src="from-imperative-to-functional-_-typescript-fetch-promise.png" alt="From Imperative to Functional: Typescript Fetch Promise" />
 
 This
 [gist](https://gist.github.com/tobiasbriones/544350fc301ffe32c1dd64d2f6ec6d81)
@@ -237,6 +237,7 @@ Mainstream languages like JavaScript, TypeScript, and Java don't have good
 functional support, but we can still build better code regarding robustness 
 and clearness by leveraging their available features and our computer science 
 knowledge.
+
 
 
 
