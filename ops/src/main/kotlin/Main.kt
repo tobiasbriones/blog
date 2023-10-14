@@ -819,7 +819,10 @@ fun coverUrl(entry: Entry): String =
             entry.coverGitHubUrl(
                 "tobiasbriones",
                 "blog",
-                it.toString()
+                it
+                    .relativeTo(entry.path)
+                    .toString()
+                    .replace("\\", "/")
             )
         }
         .getOrElse { "" }

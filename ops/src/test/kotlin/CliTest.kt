@@ -1,9 +1,9 @@
 
-import arrow.core.Some
 import fs.generateRootNotice
 import fs.hasNotice
 import fs.loadEntries
 import java.nio.file.Path
+import kotlin.io.path.relativeTo
 
 // MAKE SURE to add the working directory of the Git repository to test
 // For example: P:\tobiasbriones\test-blog-deploy
@@ -30,14 +30,17 @@ fun main() {
     val entry = Entry(Path.of("article"))
 
     println(
-        Some(secondaryPath)
-            .map {
-                entry.coverGitHubUrl(
-                    "tobiasbriones",
-                    "blog",
-                    secondaryPath.toString()
-                )
-            }
+        Path.of(
+        "P:\\tobiasbriones\\blog\\mathswe\\engineer\\news\\drawing-a-tree-on" +
+            "-canvas-with-xy-coordinates\\cleaning-up-details-2023-10-06" +
+                "\\cleaning-up-details-2023-10-06.png")
+            .relativeTo(Path.of(
+                "P:\\tobiasbriones\\blog\\mathswe\\engineer\\news\\drawing-a-tree-on" +
+                    "-canvas-with-xy-coordinates\\cleaning-up-details-2023-10-06"
+            ))
+            .toString()
+            .replace("\\", "/")
+
     )
 
     //runCmd("build drawing-a-tree-on-canvas-with-xy-coordinates")
