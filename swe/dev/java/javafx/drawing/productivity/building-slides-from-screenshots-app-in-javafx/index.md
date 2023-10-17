@@ -3531,6 +3531,45 @@ automate a system by working on external systems consisting of binary images
 containing information that can be extracted and transformed into our domain
 language.
 
+### Setting up Tesseract
+
+Tesseract OCR is one of the main open-source projects I found, so I could detect
+text in Java via the Tess4J library that wraps it.
+
+Since the project setup was simple as said in
+[Getting Started](#getting-started), there's no build tool to avoid complicating
+it more.
+
+Thus, for adding the Tesseract library, you might want to add it via IntelliJ
+IDEA to your project if you're not using a build system.
+
+![](images/intellij-_-adding-the-tesseract-for-java-lib.png)
+
+The module `tess4j` has to be added to the Java project source code, that is,
+update the `module-info` file.
+
+`Requiring "tess4j" in the Project Java Module | module-info.java`
+
+```java
+module engineer.mathsoftware.blog.slides {
+    // ... //
+    requires tess4j;
+    // ... //
+}
+```
+
+It's important to follow the instructions I left in the
+[resources/readme.md](slides---ep/src/main/resources/readme.md) file since you
+must download and copy the `tessdata` directory from its repository to run the
+OCR model in the app [^x]. This directory contains the `eng.traineddata`
+file with the English data to load the model.
+
+[^x]: I didn't track those files in Git because they're nasty binary files and
+    third-party on top of that, so you have to copy them manually
+
+The tess4j library will allow us to call the Tesseract OCR API in Java and infer
+the text boxes on the slides.
+
 ## Designing an Auto Save Mechanism
 
 ## Automation of Screenshots and Code Snippets Content
