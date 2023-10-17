@@ -3694,6 +3694,197 @@ public sealed interface SlideAI {
 The framework developed in the AI package enables the app to consume the OCR
 model to add rich automation features to existing slides.
 
+### AI Drawing
+
+As said before, AI has its own shapes to implement. We won't only infer the
+abstract boxes where words are detected by Tesseract but also draw them just
+like other drawings done for building the slides.
+
+The development takes place in the `drawing.ai` package to decouple the drawing
+of `Slide` from the drawing of AI elements, as mentioned before.
+
+`Defining the Structure of an AI Drawing | package drawing.ai`
+
+```java
+public interface AIDrawing {
+    void setup(AIShape shape);
+
+    Group draw(Group slideDrawing);
+
+    void clear();
+}
+```
+
+One shape will be defined, that is, the `WordSelection` `AIShape`, which will
+represent the selection the user is performing with the mouse.
+
+`Defining the AI Shapes Required`
+
+```java
+public sealed interface AIShape {
+    record WordSelection(
+        List<BoundingBox> wordBoxes,
+        Stateful<BoundingBox, State> wordFocus
+    ) implements AIShape {
+        public static WordSelection of(SlideAI.OcrWordDetection detection) {
+            return new WordSelection(detection.wordBoxes(), new WordSelectionState());
+        }
+    }
+
+    enum State {
+        Normal,
+        Hovered,
+        Selected
+    }
+
+    static Color color(State state) {
+        return Color.web(switch (state) {
+            case Normal -> "#388e3c";
+            case Hovered, Selected -> "#1b5e20";
+        });
+    }
+
+    static Color fill(State state) {
+        return switch (state) {
+            case Normal -> Color.TRANSPARENT;
+            case Hovered -> Color.web("#1b5e20", 0.4);
+            case Selected -> Color.web("#0D47A1", 0.6);
+        };
+    }
+}
+```
+
+Notice how `AIShape` is a sum type consisting of the `WordSelection` product
+type only, as we don't need other shapes for AI to work on the app.
+
+Imagine a `WordSelection` as the text you highlight with a marker but also has a
+hover/selected state (i.e., when you pass the mouse over a word).
+
+The `color` and `fill` functions match the AI Shape `State` to a border and
+background color, respectively.
+
+Now, there's a peculiarity in the static construction method of `WordSelection`.
+It introduces the `ai` package to the `drawing.ai` package by transforming a
+list of `BoundingBox` (i.e., an `OcrWordDetection` value from the package `ai`)
+into a `WordSelection` (of the package `drawing.ai`).
+
+Notice how an external type like an AWT `Rectangle` from the AI output has been
+transformed into domain types like JavaFX `BoundingBox`, then
+`OcrWordDetection` of the `ai` package, and now to `WordSelection` of the
+`drawing.ai` package. **Each part of a DSL code must have its definitions to
+make sense of the code or be semantic**. Recall that data types *save
+information*. This app is not a DSL, but it gets close.
+
+Regarding the `Stateful` value required to create a `WordSelection`, it's more
+of an implementation detail to handle the states among all the words selected
+around.
+
+`Stateful AI | package drawing.ai`
+
+```java
+/**
+ * Defines an object that has state, thus the focus in a list of other objects.
+ */
+public interface Stateful<T, S> {
+    record Focus<T, S>(T object, S state) {}
+
+    void set(T newObject, S newState);
+
+    Optional<Focus<T, S>> get();
+}
+```
+
+The `Stateful` interface receives two generic types for the object to hold
+the `Focus` (or attention in the GUI) and the type for the state it can have,
+like hover, for instance.
+
+Then, I added a utility class to provide a `Stateful` object for the
+`WordSelection` AI shape. We know now that it'll be implemented as
+`implements Stateful<BoundingBox, AIShape.State>`, since the element to focus is
+a `BoundingBox` matching a selection of word(s), and this can have
+an `AIShape.State` like `Normal`, `Hover`, or `Selected`.
+
+Now, the drawing or funny part is left to complete the `drawing.ai` package.
+
+`AI Drawing Implementation | package drawing.ai`
+
+```java
+public class GroupAIDrawing implements AIDrawing {
+    private final Group group;
+    private AIShape ai;
+
+    public GroupAIDrawing(Group drawing) {
+        group = drawing;
+        ai = null;
+    }
+
+    @Override
+    public void setup(AIShape shape) {
+        ai = shape;
+    }
+
+    @Override
+    public Group draw(Group slideDrawing) {
+        switch (ai) {
+            case WordSelection ocr -> drawWordSelection(
+                ocr.wordBoxes(),
+                ocr.wordFocus()
+            );
+        }
+        return slideDrawing;
+    }
+
+    @Override
+    public void clear() {
+        group.getChildren().clear();
+    }
+
+    private void drawWordSelection(
+        Iterable<? extends BoundingBox> boundingBoxes,
+        Stateful<? extends BoundingBox, State> state
+    ) {
+        boundingBoxes.forEach(boundingBox -> drawBoundingBox(
+            boundingBox,
+            State.Normal
+        ));
+
+        state.get().ifPresent(focus -> drawBoundingBox(
+            focus.object(),
+            focus.state()
+        ));
+    }
+
+    private void drawBoundingBox(
+        BoundingBox boundingBox,
+        State state
+    ) {
+        var rect = new Rectangle();
+
+        rect.setX(boundingBox.getMinX());
+        rect.setY(boundingBox.getMinY());
+        rect.setWidth(boundingBox.getWidth());
+        rect.setHeight(boundingBox.getHeight());
+        rect.setStroke(color(state));
+        rect.setStrokeWidth(2.0);
+        rect.setFill(fill(state));
+        rect.setArcWidth(16.0);
+        rect.setArcHeight(16.0);
+        group.getChildren().add(rect);
+    }
+}
+```
+
+The class `GroupAIDrawing` implements the `AIDrawing` interface defined first,
+so the OCR can be represented in the app via the method `drawWordSelection`
+after `draw` is called.
+
+Notice how this design can scale since we have an `AIShape` sum type being
+matched in the method `draw`. It'd be trivial to add more AI shapes, and *if you
+forget to implement them, it won't compile*.
+
+The implementation of the AI-drawing package allows us to represent the OCR
+integrated into the package AI via stateful bounding boxes.
+
 ## Designing an Auto Save Mechanism
 
 ## Automation of Screenshots and Code Snippets Content
