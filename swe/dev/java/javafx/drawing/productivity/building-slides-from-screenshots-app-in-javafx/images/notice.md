@@ -59,6 +59,9 @@ The following images were used to compose some parts shown in the screenshots:
 - [ListView Drag and Drop Animation](listview-drag-and-drop-animation.gif):
   Includes [Images from Pixabay](#images-from-pixabay).
 
+- [OCR Word Selection](ocr-word-selection.png):
+  Includes IntelliJ IDEA screenshots, and system icons.
+
 - [Photopea: Editing the Presentation](photopea-_-editing-the-presentation.png):
   Includes [Photopea](https://photopea.com) app screenshot, and Windows 10 
   Video Player screenshot.
