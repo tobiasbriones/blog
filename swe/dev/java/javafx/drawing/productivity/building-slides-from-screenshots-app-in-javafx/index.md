@@ -3507,6 +3507,30 @@ application module.
 
 ## Integrating AI via OCR
 
+There's a feasible way to implement an AI application here, taking into account
+the slides that were composed before. AI can operate on these slides to extract
+further information, like text from screenshot-based slides.
+
+![](images/ocr-word-selection.png)
+
+The feature consists of detecting words from images (screenshots), so we have
+valuable information for the user to accurately select or underline words
+without relying on manual mouse precision.
+
+From the image above, you can see how words on the IntelliJ screenshot are
+selected and how I trivially underlined the main package
+`engineer.mathsoftware.blog.slides` at once.
+
+Notice how images or screenshots are out of the app domain since they're binary
+or compiled data from the wild world, unlike code snippet slides where it'd be
+relatively trivial to implement word selection since we have the source code in
+the JavaFX `TextFlow` component, so it's part of the app domain.
+
+An OCR implementation matches a strategic use case for showing how AI can
+automate a system by working on external systems consisting of binary images
+containing information that can be extracted and transformed into our domain
+language.
+
 ## Designing an Auto Save Mechanism
 
 ## Automation of Screenshots and Code Snippets Content
