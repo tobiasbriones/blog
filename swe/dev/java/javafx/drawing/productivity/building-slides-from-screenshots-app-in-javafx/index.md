@@ -3570,6 +3570,130 @@ file with the English data to load the model.
 The tess4j library will allow us to call the Tesseract OCR API in Java and infer
 the text boxes on the slides.
 
+### Implementing the AI Package
+
+Then, I created a package `ai` to separate the logic for AI-only code to start
+writing the new AI feature logic.
+
+`Creating the AI Package | package ai`
+
+```java
+/**
+ * Provides tools that help the application automate the user workflow. For
+ * example, automated OCR text selection with bounding boxes instead of
+ * selecting text boxes with the mouse pulse.
+ */
+package engineer.mathsoftware.blog.slides.ai;
+```
+
+I also created a similar package with a different domain. AI is an
+implementation layer on top of the app, so if we're going to draw AI shapes
+(like bounding boxes, which are an AI field rather than slide responsibilities),
+then those AI shapes must be placed in a different package than `drawing`. I
+added a subpackage `ai` to it.
+
+`Creating a Drawing Package Special for AI Shapes | package drawing.ai`
+
+```java
+/**
+ * Provides implementations for AI-based drawings on top of slides.
+ */
+package engineer.mathsoftware.blog.slides.drawing.ai;
+```
+
+The package `drawing.ai` will be used later on the front-end side to consume the
+AI logic.
+
+To implement the AI back-end or AI package, we have to get bounding boxes
+inferring words provided by an image. Then, we have to define the AI features
+that will be supported by the app, that is, OCR.
+
+`Reading Word Boxes from an Image | class Ocr | package ai`
+
+```java
+static List<BoundingBox> textBoxes(Image image) {
+    var boxes = new ArrayList<BoundingBox>();
+    var tesseract = new Tesseract();
+    var bufferedImage = SwingFXUtils.fromFXImage(image, null);
+    var dataRes = Ocr.class.getClassLoader().getResource("tessdata");
+
+    if (dataRes == null){
+        throw new RuntimeException(
+            "tessdata not found in the app resources directory"
+        );
+    }
+    try {
+        var dataPath = Path.of(dataRes.toURI()).toAbsolutePath().toString();
+
+        tesseract.setLanguage("eng");
+        tesseract.setDatapath(dataPath);
+        tesseract.setPageSegMode(1);
+        tesseract.setOcrEngineMode(ITessAPI.TessOcrEngineMode.OEM_LSTM_ONLY);
+
+        var words = tesseract.getWords(
+            bufferedImage,
+            ITessAPI.TessPageIteratorLevel.RIL_WORD
+        );
+
+        for (var word : words) {
+            var rect = word.getBoundingBox();
+
+            boxes.add(new BoundingBox(
+                rect.getMinX(),
+                rect.getMinY(),
+                rect.getWidth(),
+                rect.getHeight()
+            ));
+        }
+    }
+    catch (URISyntaxException e) {
+        throw new RuntimeException(e);
+    }
+    return boxes;
+}
+```
+
+The OCR output will be read as a list of `BoundingBox` from the
+`javafx.geometry` package.
+
+Then, the `tessdata` is loaded from the app resources directory, a new
+`Tesseract` model is created and set up with the training data, language
+(English), and other options that can work to tune the model.
+
+Notice how a `bufferedImage` is created with the `javafx.swing` package to
+convert the input JavaFX `Image` into a (AWT) `BufferedImage` that is required
+by the `tess4j` API [^x].
+
+[^x]: This conversion from JavaFX to AWT is similar to when saving snapshots to
+    the disk
+
+This `BufferedImage` is passed to the `getWords` method, and the result is
+mapped to domain `BoundingBox` objects.
+
+As a side note, try not to use low-quality or small images since these will
+make the model have a hard time detecting anything 😆.
+
+The method `textBoxes` of the (utility) class `Ocr` will provide the word boxes
+given any image, which makes our work done regarding external AI integration.
+
+Regarding the AI application model, I defined a `SlideAI` sum type to define the
+AI features.
+
+`AI Supported by the App | interface SlideAI | package ai`
+
+```java
+public sealed interface SlideAI {
+    record OcrWordDetection(List<BoundingBox> wordBoxes) implements SlideAI {
+        public static OcrWordDetection from(Image image) {
+            return new OcrWordDetection(Ocr.textBoxes(image));
+        }
+    }
+}
+```
+
+The framework developed in the AI package enables the app to consume the OCR
+model to add rich automation features to existing slides.
+
 ## Designing an Auto Save Mechanism
 
 ## Automation of Screenshots and Code Snippets Content
