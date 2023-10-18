@@ -4126,7 +4126,7 @@ void setWordSelectionFocus(BoundingBox box, State state) {
 ```java
 private void bindEvents(){
     group.setOnMouseMoved(
-        event -> aiController.onMouseMoved(event.getX(),event.getY())
+        event -> aiController.onMouseMoved(event.getX(), event.getY())
     );
     group.setOnMouseExited(event -> aiController.onMouseExited());
         group.setOnMousePressed(event -> {
