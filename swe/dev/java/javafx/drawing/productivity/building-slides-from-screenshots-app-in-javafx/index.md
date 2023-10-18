@@ -3885,6 +3885,341 @@ forget to implement them, it won't compile*.
 The implementation of the AI-drawing package allows us to represent the OCR
 integrated into the package AI via stateful bounding boxes.
 
+### JavaFX Word Detection
+
+Once the OCR API is ready, the new AI features have to be implemented on the
+JavaFX side of the app. One part of this was already done in the AI drawing
+package, so the GUI logic is left to finish.
+
+For handling the user events, I created another class for the AI controller.
+
+`Initial OCR Integration on the JavaFX App | class AIController`
+
+```java
+private final ObjectProperty<OcrWordDetection> wordDetectionProperty;
+private Group group;
+private SlideAIView aiView;
+private Image slideDrawingSnapshot;
+private BackgroundStatus status;
+
+AIController() {
+    wordDetectionProperty = new SimpleObjectProperty<>();
+    group = null;
+    aiView = null;
+    slideDrawingSnapshot = null;
+    status = null;
+}
+
+void setStatus(BackgroundStatus newStatus) {
+    status = newStatus;
+}
+
+void init(Group slideDrawing) {
+    group = slideDrawing;
+    aiView = new SlideAIView();
+    slideDrawingSnapshot = null;
+
+    aiView.init(slideDrawing);
+    aiView.hide();
+    aiView.ocrWordDetectionProperty().bind(wordDetectionProperty);
+    loadSlideDrawingSnapshot();
+    loadOcr();
+}
+
+void onShowTextBoxes() {
+    aiView.show();
+}
+
+void onHideTextBoxes() {
+    aiView.hide();
+}
+
+private void loadSlideDrawingSnapshot() {
+    if(slideDrawingSnapshot == null) {
+        var params = new SnapshotParameters();
+        var invScaleX = 1.0 / group.getScaleX();
+        var invScaleY = 1.0 / group.getScaleY();
+
+        params.setTransform(new Scale(invScaleX, invScaleY));
+        slideDrawingSnapshot = group.snapshot(params,null);
+    }
+}
+
+private void loadOcr() {
+    clearOcr();
+    setStatusMsg("Loading AI...");
+
+    Thread.startVirtualThread(
+        () -> {
+            try {
+                var det = OcrWordDetection.from(slideDrawingSnapshot);
+
+                Platform.runLater(() -> {
+                    loadOcr(det);
+                    setStatusMsg("AI loaded");
+                });
+            }
+            catch (RuntimeException e) {
+                setStatusMsg(e.getMessage());
+            }
+        }
+    );
+}
+
+private void loadOcr(OcrWordDetection det) {
+    wordDetectionProperty.set(det);
+}
+
+private void clearOcr() {
+    wordDetectionProperty.set(null);
+}
+
+private void setStatusMsg(String msg) {
+    if (status != null) {
+        status.setStatus(msg);
+    }
+}
+```
+
+It has a `wordDetectionProperty` for the `OcrWordDetection` (product) type
+defined before. Recall this type was defined to establish the AI features that
+the app will support. Now, we're implementing those features (i.e., OCR word
+detection).
+
+That property will update the bounding boxes of detected words. So, if you press
+the OCR button (F1), those boxes will load, so the AI controller will reflect
+them on the screen. This can be readable from the `loadOcr` and
+`clearOcr` methods.
+
+When initializing this controller, the `Group` where the `Slide` is rendered is
+taken as a base to infer the text. The `AIController` works with its
+`SlideAIView`, which will be added later.
+
+The AI view can be shown or hidden since it's a layer on top of the original
+slide. If AI has already been computed, there's no reason to keep evaluating or
+running the model again. You might only want to hide or show the AI results
+(boxes), given the slide didn't change, of course.
+
+Notice how I used a snapshot of the slide `Group` loading in
+`loadSlideDrawingSnapshot` only once. This takes the appropriate image sizes by
+reverting any scale or zoom in the `Group` view (i.e., the main slide view in
+the center of the app).
+
+In `loadOcr`, a virtual thread is used to infer the bounding boxes from the OCR
+model [^x].
+
+[^x]: Make sure to implement a thread-safe implementation, see how I use the
+    `Platform.runLater` call to send updates to the JavaFX UI thread
+
+The status messages are the labels I implemented in the right-bottom of the app.
+I added a status message to the left bottom when starting the development. Now,
+I saw the opportunity to add a secondary label to the right bottom to notify
+about other tasks.
+
+After the initial results on the controller side, I added an FSM to handle
+another state required by this problem: I needed AI invalidation to infer the
+OCR only once, provided the slide hadn't changed. This solves performance issues
+if you press the OCR key several times without modifying the slide.
+
+`Optimizing Redundant Model Inference | AI Invalidation Handling
+| class SlideDrawingController`
+
+```java
+private final AIInvalidation aiInvalidation;
+
+SlideDrawingController() {
+    // ... //
+    aiInvalidation = new AIInvalidation(this::loadAI);
+    // ... //
+}
+
+void setDrawing(Group value) {
+    // ... //
+    aiInvalidation.slideChanged();
+    // ... //
+}
+
+private void bindEvents() {
+    // ... //
+    group.sceneProperty().addListener((observable, oldValue, newValue) -> {
+        if (newValue == null) {
+            return;
+        }
+        newValue.setOnKeyPressed(event -> {
+            switch (event.getCode()) {
+                case SHIFT -> shiftPressed = true;
+                case F1 -> onF1Pressed();
+            }
+        });
+
+        newValue.setOnKeyReleased(event -> {
+            switch (event.getCode()) {
+                case SHIFT -> shiftPressed = false;
+                case F1 -> aiController.onHideTextBoxes();
+            }
+    });
+    // ... //
+}
+
+private void onF1Pressed() {
+    aiInvalidation.validate();
+    aiController.onShowTextBoxes();
+}
+
+private void loadAI() {
+    aiController.init(group);
+}
+
+private static final class AIInvalidation {
+    private final Runnable validator;
+    private boolean isInvalid;
+
+    AIInvalidation(Runnable validator) {
+        this.validator = validator;
+        this.isInvalid = true;
+    }
+
+    void validate() {
+        if (isInvalid) {
+            validator.run();
+        }
+        isInvalid = false;
+    }
+
+    void slideChanged() {
+        isInvalid = true;
+    }
+}
+```
+
+I don't usually pass references in the constructor like
+`new AIInvalidation(this::loadAI);` to avoid cycles, but it's fine for now,
+since I'm using plain JavaFX with MVC.
+
+When the `F1` key is pressed, the OCR is activated, which validates the AI
+system resulting in up-to-date and optimized inference, so we can now show the
+text boxes loaded into the `AIController`.
+
+The implementation of OCR is about to be completed in the application.
+
+Now it's about time for the mouse hover detection.
+
+`AI Mouse Event Detection | class SlideAIView`
+
+```java
+private final ObjectProperty<WordSelection> wordSelectionProperty;
+
+void setWordSelectionFocus(BoundingBox box, State state) {
+    var sel = wordSelectionProperty.get();
+
+    sel.wordFocus().set(box, state);
+    updateTextBoxes(sel);
+}
+```
+
+`AI Mouse Event Detection | class SlideDrawingController`
+
+```java
+private void bindEvents(){
+    group.setOnMouseMoved(
+        event -> aiController.onMouseMoved(event.getX(),event.getY())
+    );
+    group.setOnMouseExited(event -> aiController.onMouseExited());
+        group.setOnMousePressed(event -> {
+        if (event.getButton() == MouseButton.SECONDARY) {
+            var startX = event.getX();
+            var startY = event.getY();
+            var shape = pushShape();
+
+            shape.start(startX, startY);
+
+            scrollPane.setPannable(false);
+        }
+        else {
+            aiController.onMouseClicked();
+        }
+    });
+}
+```
+
+`AI Mouse Event Detection | class AIController`
+
+```java
+private final ObjectProperty<WordSelection> wordSelectionProperty;
+
+void onMouseMoved(double x, double y) {
+    if (aiView == null) {
+        return;
+    }
+    if (!aiView.isShowing()) {
+        return;
+    }
+    if (wordSelectionProperty.isNull().get()) {
+        return;
+    }
+    var match = wordSelectionProperty
+        .get()
+        .wordBoxes()
+        .stream()
+        .filter(box -> box.contains(x, y))
+        // Avoid selecting the whole slide box
+        .filter(box -> box.getHeight() < 100.0)
+        .findFirst();
+
+    match.ifPresentOrElse(
+        box -> aiView.setWordSelectionFocus(box, State.Hovered),
+        () -> aiView.setWordSelectionFocus(null, null)
+    );
+}
+
+void onMouseClicked() {
+    if (aiView == null) {
+        return;
+    }
+    if (!aiView.isShowing()) {
+        return;
+    }
+    if (wordSelectionProperty.isNull().get()) {
+        return;
+    }
+    var sel = wordSelectionProperty.get();
+    var focus = sel.wordFocus();
+
+    focus.get().ifPresent(
+        stateFocus -> aiView.setWordSelectionFocus(
+            stateFocus.object(),
+            State.Selected
+        )
+    );
+}
+
+void onMouseExited() {
+    if (aiView == null) {
+        return;
+    }
+    aiView.setWordSelectionFocus(null, null);
+}
+```
+
+I skipped further details for the sake of brevity.
+
+Some adjustments had to be made, for example, for filtering out the slide box
+(the whole slide) that is detected by OCR (because slides contain text, but we
+only want to select simple text, not containers) via
+`filter(box -> box.getHeight() < 100.0)`.
+
+Now, the mouse events are available, along with all the overwhelming OCR
+back-end, which leads us to the final feature for automated underlining.
+
+The JavaFX implementations for the AI controller are mostly complete with the
+logic to integrate the packages AI and AI-drawing, with all the required tooling
+like filters and mouse events for handling bounding box states. Among the
+required tooling, there was also the AI invalidation FSM to fix performance
+issues by disabling redundant OCR invocations.
+
+Said cross-domain implementations make the app able to detect text from images
+when pressing the F1 key.
+
 ## Designing an Auto Save Mechanism
 
 ## Automation of Screenshots and Code Snippets Content
