@@ -63,11 +63,16 @@ They only want you to pay a subscription to fix all the "issues" ~~you have~~
 they sell you. Their dream is to remove all the "issues 💸," so your original
 tone even changes, and ends up sounding like a robotic agent or someone else.
 
-In the end, you have to be proficient in English (i.e., the domain) to know what
-you're doing because any "magic" tool was made just for the sake of a profit
-agenda, thus bloated under the hood. You have to compose your tools instead of
-paying for generic ones that turn into workarounds and will never return most of
-the investment.
+They won't even tell you the *real* enhancements of your technical text you
+should be fixing. They're not engineering grade. They tell you to remove
+something for "clarity issues," then it tells you to add it back again 🤯 for
+correctness.
+
+In the end, **you have to be proficient** in English (i.e., the domain) to know
+what you're doing because any "magic" tool was made just for the sake of a
+profit agenda, thus bloated under the hood. You have to compose your tools
+instead of paying for generic ones that turn into workarounds and will never
+return most of the investment.
 
 Another clear example is ChatGPT, which can generate mundane Python or any
 popular mainstream language or framework code but struggles with ultra-niche
@@ -77,9 +82,9 @@ there will be (hopefully) never enough data to train or fine-tune those
 ultra-bloated magic-based (and unethical with IP legal issues) models with
 technology that requires actual engineering.
 
-In the end, you must be proficient in your domain and realize that tools like
-ChatGPT are nothing but a faster way to *automate* what you otherwise have to
-search in Google results.
+In the end, **you must be proficient in your domain** and realize that tools
+like ChatGPT are nothing but a faster way to *automate* what you otherwise have
+to search in Google results.
 
 General-purpose software is useful *but not engineering-grade*. On the other
 hand, mathematical software must be engineering-grade by nature.
@@ -94,6 +99,10 @@ above).
 
 I figured out one simple way to leverage an AI application for this project, so
 it serves as a good example.
+
+I'm not developing anything domain-specific here, but blogging a new example
+project whose target is to **start taking action, devising standards, and
+proving concepts**.
 
 Recall the domain engineering automation concepts of what this comes about even
 though my purpose this time is to develop these ideas conservatively in Java as
