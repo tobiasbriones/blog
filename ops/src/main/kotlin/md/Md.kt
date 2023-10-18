@@ -53,7 +53,7 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
     fun videoHtml(name: String, path: String): String {
         val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
         val poster = with("poster-_-$name") {
-            if (Path.of("static/$this.png").exists())
+            if (entry.path.resolve("static/$this.png").exists())
                 "$this.png"
             else
                 "$this.jpg"
