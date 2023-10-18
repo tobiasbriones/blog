@@ -3519,7 +3519,7 @@ without relying on manual mouse precision.
 
 From the image above, you can see how words on the IntelliJ screenshot are
 selected and how I trivially underlined the main package
-`engineer.mathsoftware.blog.slides` at once.
+`engineer.mathsoftware.blog.slides` in one go.
 
 Notice how images or screenshots are out of the app domain since they're binary
 or compiled data from the wild world, unlike code snippet slides where it'd be
@@ -3617,7 +3617,7 @@ static List<BoundingBox> textBoxes(Image image) {
     var bufferedImage = SwingFXUtils.fromFXImage(image, null);
     var dataRes = Ocr.class.getClassLoader().getResource("tessdata");
 
-    if (dataRes == null){
+    if (dataRes == null) {
         throw new RuntimeException(
             "tessdata not found in the app resources directory"
         );
@@ -4017,9 +4017,9 @@ I saw the opportunity to add a secondary label to the right bottom to notify
 about other tasks.
 
 After the initial results on the controller side, I added an FSM to handle
-another state required by this problem: I needed AI invalidation to infer the
-OCR only once, provided the slide hadn't changed. This solves performance issues
-if you press the OCR key several times without modifying the slide.
+another state required by this problem: I needed **AI invalidation** to infer
+the OCR only once, provided the slide hadn't changed. This solves performance
+issues if you press the OCR key several times without modifying the slide.
 
 `Optimizing Redundant Model Inference | AI Invalidation Handling
 | class SlideDrawingController`
@@ -4095,6 +4095,10 @@ private static final class AIInvalidation {
 I don't usually pass references in the constructor like
 `new AIInvalidation(this::loadAI);` to avoid cycles, but it's fine for now,
 since I'm using plain JavaFX with MVC.
+
+It's readable that the methods `validate` make the model up to date, whether
+it's invalid or is already valid, and `slideChanged` invalidates the model, so
+the next time, `validate` will make sure to load AI again.
 
 When the `F1` key is pressed, the OCR is activated, which validates the AI
 system resulting in up-to-date and optimized inference, so we can now show the
@@ -4219,6 +4223,16 @@ issues by disabling redundant OCR invocations.
 
 Said cross-domain implementations make the app able to detect text from images
 when pressing the F1 key.
+
+
+### Clever Word Underlining
+
+![](static/ocr-word-detection-for-automated-underlining.mp4)
+
+![](static/ocr-side-effects.mp4)
+
+### Automating the User Workflow via AI
+
 
 ## Designing an Auto Save Mechanism
 
