@@ -4305,8 +4305,8 @@ the end it's just about drawing a trivial shape, but *you need to know where*.
 
 As a side notice, I also made other works to the app to make it usable, like
 saving slide changes (efficiently using `Map`, of course), zoom (which changes
-the slide `Group` scaling), and any other kind of work under the hood a
-responsible SW engineer tackles in the everyday duty. Out of all this,
+the slide `Group` scaling), default values, and any other kind of work under the
+hood a responsible SW engineer tackles in the everyday duty. Out of all this,
 performance fixes can be vastly applied to this app, but that's not what an EP
 consists of.
 
