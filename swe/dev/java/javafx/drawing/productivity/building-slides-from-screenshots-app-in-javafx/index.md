@@ -4510,6 +4510,206 @@ elegant complexity.
 
 ## Designing an Auto Save Mechanism
 
+One mandatory feature for a modern application is to provide a safe and
+intelligent saving mechanism to preserve the state of the app and the user's
+work.
+
+I've worked on the application UI states in memory. Now, I implemented the
+save slide feature with an automatic system to make the app even more usable.
+
+First, I extracted the data paths used by the app to a utility class, so this
+can be trivially replaced by real environment settings in a real case.
+
+`Environment Variables | class Env | package data`
+
+```java
+public static final String DATA_ROOT = "data";
+
+public static final String SAVE_DIR = Path
+    .of(DATA_ROOT, "presentation")
+    .toString();
+```
+
+The auto-save feature takes place in the package `ui`, introducing the package
+`data` again.
+
+`Auto Save Implementation`
+
+```java
+class AutoSave {
+    private final DataRepository repository;
+    private final SaveInvalidation saveInvalidation;
+    private Group group;
+    private ImageItem currentSlide;
+    private BackgroundStatus status;
+
+    AutoSave() {
+        repository = new LocalDataRepository(Env.SAVE_DIR);
+        saveInvalidation = new SaveInvalidation(this::saveSlide);
+        group = null;
+        currentSlide = null;
+        status = null;
+    }
+
+    void enable(boolean enable) {
+        saveInvalidation.enable(enable);
+    }
+
+    void setDrawing(Group newGroup) {
+        group = newGroup;
+    }
+
+    void setStatus(BackgroundStatus newStatus) {
+        status = newStatus;
+    }
+
+    void onSlideChanged(ImageItem newItem) {
+        // setDrawing has not been called yet for the newItem!
+        saveInvalidation.slideChanged();
+        saveInvalidation.validateNow();
+
+        currentSlide = newItem;
+        group = null;
+    }
+
+    void onDrawingChanged(ImageItem newItem) {
+        currentSlide = newItem;
+        saveInvalidation.slideChanged();
+
+        saveInvalidation.validateLater();
+    }
+
+    void saveSlide() {
+        if (group == null) {
+            return;
+        }
+        var params = new SnapshotParameters();
+        var invScaleX = 1.0 / group.getScaleX();
+        var invScaleY = 1.0 / group.getScaleY();
+        var slideFilename = currentSlide.filename();
+
+        status.setStatus("Saving " + slideFilename + "...");
+        params.setTransform(new Scale(invScaleX, invScaleY));
+        var snapshot = group.snapshot(params, null);
+        var slide = new ImageItem(slideFilename, snapshot);
+
+        Thread.startVirtualThread(() -> {
+            try {
+                repository.createOrUpdateImage(slide);
+
+                Platform.runLater(() ->
+                    status.setStatus(slideFilename + " " + "saved")
+                );
+            }
+            catch (IOException e) {
+                Platform.runLater(() -> status.setStatus(e.getMessage()));
+            }
+        });
+    }
+}
+```
+
+The `AutoSave` has a `DataRepository` from the package `data` implemented as a
+local repository to save to the disk. It has a `SaveInvalidation` FSM similar to
+the `AIInvalidation` that had the state when AI is loaded and up to date to
+avoid redundant model invocations. This way, **the save FSM will perform the
+side effects only when necessary**.
+
+The auto-saving can be activated via the `enable` method. It has the drawing
+`Group` that is what we want to save. The `BackgroundStatus` is the right bottom
+label shown to notify updates.
+
+![](auto-save-menu-item.png)
+
+When the drawing changes, it's called `onDrawingChanged`, which employs the save
+FSM to *invalidate the save state*, and then it invokes `validateLater` to run
+the saving action in the background.
+
+The method `saveSlide` reference is passed to the save FSM via
+`new SaveInvalidation(this::saveSlide)`, which applies the proper scaling to the
+slide `Group`, and it runs a virtual thread to use the `LocalDataRepository`
+to store the slide snapshot in the background. Then, it updates the UI safely,
+informing the slide was saved.
+
+The `SaveInvalidation` implementation takes place as a static nested class.
+
+`Save Invalidation FSM | class AutoSave`
+
+```java
+private static class SaveInvalidation {
+    static final long WAIT_TIME_MS = 2_000L;
+    final Runnable validator;
+    boolean isInvalid;
+    boolean isEnabled;
+    volatile long lastTime;
+
+    SaveInvalidation(Runnable validator) {
+        this.validator = validator;
+        this.isInvalid = true;
+        this.isEnabled = true;
+        this.lastTime = 0L;
+    }
+
+    void enable(boolean enable) {
+        isEnabled = enable;
+        isInvalid = false;
+    }
+
+    void validateLater() {
+        if (!isInvalid || !isEnabled) {
+            return;
+        }
+
+        Thread.startVirtualThread(() -> {
+            var timeDiff = System.currentTimeMillis() - lastTime;
+
+            if (timeDiff < WAIT_TIME_MS) {
+                try {
+                    Thread.sleep(WAIT_TIME_MS - timeDiff);
+                }
+                catch (InterruptedException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+            Platform.runLater(this::validateNow);
+        });
+    }
+
+    void validateNow() {
+        if (!isInvalid || !isEnabled) {
+            return;
+        }
+        validator.run();
+        isInvalid = false;
+        lastTime = System.currentTimeMillis();
+    }
+
+    void slideChanged() {
+        isInvalid = true;
+    }
+}
+```
+
+The method `slideChanged` *invalidates the save state*.
+
+The method `validateNow` *runs the saving effect*, then it *validates the state*
+with `slideChanged` and saves the current time to avoid bloating the CPU if
+there are more changes continuously.
+
+Lastly, when `validateLater` is called, it starts a virtual thread that runs
+within a minimum `WAIT_TIME_MS` span, and after waiting for any necessary
+cool-down time, it calls `validateNow`. Hence, "later" because of the
+multithread behavior.
+
+The `AutoSave` class was integrated into the `SlideDrawingController` to set the
+drawing and change events.
+
+The repository specified and implemented in the package `data`, the saving
+logic, and a state machine made it possible to implement a robust auto-saving
+mechanism for the slides app, which adds further automation under the hood,
+besides the AI implemented in the previous section.
+
 ## Automation of Screenshots and Code Snippets Content
 
 I foresaw an opportunity to develop a gorgeous example project to start my
