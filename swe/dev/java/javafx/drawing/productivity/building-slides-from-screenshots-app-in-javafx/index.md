@@ -4233,12 +4233,174 @@ issues by disabling redundant OCR invocations.
 Said cross-domain implementations make the app able to detect text from images
 when pressing the F1 key.
 
-
 ### Clever Word Underlining
+
+Now that text is detected in the app via OCR, many advanced features can branch
+from here. The feature established for this stage was automatic word
+underlining.
+
+Word underlining takes place when you click a word on the slide.
+
+I took the existing event `onMouseClicked` from the `AIController` and returned
+an optional `Line` if there was an underline action from the user.
+
+`Implementing Word Underlining | class AIController`
+
+```java
+Optional<Line> onMouseClicked() {
+    // ... //
+    var sel = wordSelectionProperty.get();
+    var focus = sel.wordFocus();
+    // ... //
+    return focus
+        .get()
+        .map(Stateful.Focus::object)
+        .map(rect -> new Line(
+                rect.getMinX(),
+                rect.getMaxY(),
+                rect.getMaxX(),
+                rect.getMaxY()
+            )
+        );
+}
+```
+
+The `focus` comes from `sel.wordFocus();`, which is the
+`Stateful<BoundingBox, AIShape.State>` object implemented in the package
+`drawing.ai`. If there's a `Focus<BoundingBox, State>`, it's mapped to a JavaFX
+`Line`.
+
+The event when there's underlining can be gathered from the
+`SlideDrawingController`, which is an appropriate abstraction to handle it.
+
+`Underlining a Word when Clicked | class SlideDrawingController`
+
+```java
+private void bindEvents() {
+    // ... //
+    group.setOnMousePressed(event -> {
+        if (event.getButton() == MouseButton.SECONDARY) { /* ... */ }
+        else {
+            aiController
+                .onMouseClicked()
+                .ifPresent(line -> {
+                    var shape = pushShape();
+
+                    shape.start(line.getStartX(), line.getStartY());
+                    shape.end(line.getEndX(), line.getEndY());
+                    shape.render();
+                });
+        }
+    });
+    // ... //
+}
+```
+
+Finally, the `Line` that lies below a word in an image is inferred after passing
+through a complex OCR and cross-application-domain process, which enables us to
+draw it just like any other shape that the app can already draw.
+
+This is **the beauty of simplicity**. The process is overwhelming but simple. In
+the end it's just about drawing a trivial shape, but *you need to know where*.
+
+As a side notice, I also made other works to the app to make it usable, like
+saving slide changes (efficiently using `Map`, of course), zoom (which changes
+the slide `Group` scaling), and any other kind of work under the hood a
+responsible SW engineer tackles in the everyday duty. Out of all this,
+performance fixes can be vastly applied to this app, but that's not what an EP
+consists of.
+
+Words can be underlined so far, but **the system can be more clever**.
+
+I defined an operation to *sum lines underlined in the same row* so you can
+keep underlining all the way left or right in the same row after an initial
+selection.
+
+`Adding Lines in the Same Row | Clever Underlining | class AIController`
+
+```java
+private final List<BoundingBox> aiBoxes;
+
+AIController() {
+    // ... //
+    aiBoxes = new ArrayList<>();
+    // ... //
+}
+
+void init(Group slideDrawing) {
+    // ... //
+    aiBoxes.clear();
+    // ... //
+}
+
+Optional<Line> onMouseClicked() {
+    // ... //
+    return focus
+        .get()
+        .map(Stateful.Focus::object)
+        .map(this::sumLine); // ← sum it instead of returning it
+}
+
+private Line sumLine(BoundingBox rect) {
+    aiBoxes.add(rect);
+
+    var selection = aiBoxes
+        .stream()
+        .filter(box -> isInSameRow(rect, box))
+        .reduce((b1, b2) -> {
+            var x1 = Math.min(b1.getMinX(), b2.getMinX());
+            var x2 = Math.max(b1.getMaxX(), b2.getMaxX());
+            var y1 = Math.min(b1.getMinY(), b2.getMinY());
+            var y2 = Math.max(b1.getMaxY(), b2.getMaxY());
+            return new BoundingBox(x1, y1, x2 - x1, y2 - y1);
+        }
+    )
+    .orElse(rect);
+
+    if (!selection.equals(rect)) {
+        aiBoxes.remove(rect);
+        aiBoxes.add(selection);
+    }
+    return new Line(
+        selection.getMinX(),
+        selection.getMaxY(),
+        selection.getMaxX(),
+        selection.getMaxY()
+    );
+}
+
+private static boolean isInSameRow(BoundingBox rect, BoundingBox box) {
+    return box.getMinY() <= rect.getMaxY() && box.getMaxY() >= rect.getMinY();
+}
+```
+
+Now, some MSWE comes into handy to evaluate these operations. First, recall that
+we get the word boxes from OCR, so we can still work with them here, before
+transforming them into plain lines.
+
+Once the boxes belong to the same row, they're reduced to the clever
+`BoundingBox` by taking polite space among all the word boxes.
+
+Nothing can be that easy. There's something to fix, according to me.
+
+![](images/clear-ai-lines-commit.png)
+
+So, we have to remove redundant drawings of AI lines.
+
+I created a method `getFocusLinesInRow` returning a `List<Line>` in
+the `AIController` with the lines in the same row of the current word `Focus`.
+Notice this is a temporarily coupled functionality.
+
+Then, a method `clearAiLineRow` is called in `SlideDrawingController` before
+drawing the AI underlining. This takes the current row lines, filters them, and
+removes the redundant line shape.
+
+I recorded a video to show what this feature looks like in action.
 
 ![](static/ocr-word-detection-for-automated-underlining.mp4)
 
-![](static/ocr-side-effects.mp4)
+The single-word and multi-word underlining is finally implemented, which proved
+an appropriate AI application for this JavaFX app.
 
 ### Automating the User Workflow via AI
 
