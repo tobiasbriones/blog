@@ -10,6 +10,8 @@ The following images were used to compose some parts shown in the screenshots:
 
 ## Screenshots
 
+- [Clear AI Lines Commit](clear-ai-lines-commit.png): IntelliJ screenshot.
+
 - [Clear All](clear-all.png): Includes
   [Images from Pixabay](#images-from-pixabay), and system icons.
 
