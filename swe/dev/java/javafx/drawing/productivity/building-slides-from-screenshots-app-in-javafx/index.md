@@ -4402,6 +4402,90 @@ I recorded a video to show what this feature looks like in action.
 The single-word and multi-word underlining is finally implemented, which proved
 an appropriate AI application for this JavaFX app.
 
+### OCR Side Effects
+
+The OCR integration has to be further engineered to make the model predictions
+useful. This includes removing bloat like the background from the slide to
+sanitize the data as much as possible so the segmented image passed to the model
+provides much certainty of its results.
+
+Notice how a white background introduces a side effect to the model, which seems
+to infer that (white) text is part of the background. Therefore, text's not
+detected.
+
+![](static/ocr-side-effects.mp4)
+
+This magnifies when the background is white, but the effect exists, disregarding
+the background color.
+
+AI is not "magic," as you have to clean your data and input so it matches the
+ones the model was originally designed for. This includes responsibility for
+both the model designers and consumers.
+
+Needless to say, for engineering-grade models, one must leverage strongly
+typed (functional) languages to ensure expected correctness. That's a minimum
+requirement I'd expect from engineers since it **bounds** the overwhelming black
+box of these deep learning models.
+
+Notice how I use the term "expected correctness" referring to mathematical
+expectation. Black box models are stochastic, so we *expect* them to be correct
+in the long run as a pattern.
+
+Recall that in mathematical sciences, we study the order of randomness. Even
+something stochastic has to converge to some *expected value*, that is, the
+mathematical pattern we ought to study.
+
+If we know the pattern, we can turn a system into engineering-grade ✔.
+
+For an OCR app, we expect **well-defined metrics** or patterns until a certain
+degree. I emphasize *well-defined* because **I've worked with meaningless
+subjective ML generic metrics**, so again, *you must be proficient in your
+domain*. AI is not magic. You must build the same good OL' engineering and math
+under the hood.
+
+It can be daunting to try to make ML models work. From my job experiences, we've
+had to use several OCR providers as fallbacks. They all suck, but some suck less
+for the underlying problem, so we might as well make that one the "primary
+provider 💸."
+
+One of the shoe stones you'll find is when the image quality is low or bad, and
+you can't make your users buy an iPhone 15 Pro MAX ULTRA and employ basic
+skills to shoot a photo 😣.
+
+Solutions you find out there are generic, and if you try to make them work for
+you by fine-tuning, they will just become the same over-engineered OOP
+inheritance garbage based on product type classes that were popular in the Java
+times, the same way "AI" is hyped today.
+
+If you know me, you know the answer: **engineer for the domain as much as
+possible first. The simplest designs are the best.** You don't need over-bloated
+AI or solutions most of the time. Of course, many businesses won't care about
+this, but the marketing buzzwords instead, unfortunately.
+
+For this app, leveraging OCR is a valid approach to enhance the user workflow
+*when it comes to screenshots*, but *the goal must be domain-based to optimize
+for source code slides instead of binary images*. Remember when I said that word
+detection was trivial for code snippet slides? Now compare trivial to ML models
+that had to be trained with supercomputers of 5 years ago 💸 and world-wide data.
+
+For this app, the major and first fix to clean the model's input is to
+**classify or segment the screenshot out of the background**, which *simplifies*
+the OCR input.
+
+Segmenting the image is trivial in theory since the slide is a composition of
+both the image and background. That is, the screenshot is part of the app
+domain.
+
+However, in practice, this is harder than it looks since it requires more
+design. What I mean is that **systems are expensive to engineer** (properly).
+Particularly, MSWE is *specialized*, so you will hardly find competent SW
+engineers with a mathematician's background.
+
+Stochasticity is inherent in black-box models, and terrible side effects arise
+when poorly engineered. We first must eradicate the side effects by leveraging
+domain facts as much as possible. Therefore, stochastic behavior is consistent,
+making our model engineering-grade.
+
 ### Automating the User Workflow via AI
 
 
