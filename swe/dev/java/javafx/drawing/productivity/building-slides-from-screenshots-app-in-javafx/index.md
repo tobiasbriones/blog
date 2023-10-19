@@ -4488,6 +4488,25 @@ making our model engineering-grade.
 
 ### Automating the User Workflow via AI
 
+AI is a set of complex and complicated emerging technologies that can be wisely
+leveraged to automate many works for our domain as a pattern.
+
+Screenshot slides have text information, so whenever there's information, we
+shall extract it to enrich our systems with informed actions and decisions,
+which was the reason I devised implementing OCR for the Slides EP.
+
+The OCR implementation consisted of finding a respectable open-source library
+that can be consumed from Java to avoid cloud provider costs and keep
+documentation in the project via an installable dependency.
+
+It consisted of a cross-domain design, from the selected Tesseract OCR library
+to the `ai`, `drawing.ai`, and `ui` application packages.
+
+I've shown how these models are a valid technique for empowering users with
+automation for external systems like binary files generated out of the
+application while leaving clear how crucial it is to have a domain-first
+approach when engineering systems, so we rely on simple solutions that create
+elegant complexity.
 
 ## Designing an Auto Save Mechanism
 
