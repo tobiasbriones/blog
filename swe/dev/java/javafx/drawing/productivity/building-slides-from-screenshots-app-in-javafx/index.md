@@ -110,12 +110,12 @@ an example project.
 
 #### Domain Composition Versus Magic
 
-It struck me as funny (after writing this section) when I read "Adobe Photoshop
-API magic, now available in the cloud" 😂 on the Photoshop developer page. It
-tells you to remove background via API, but you actually need **composition**,
-like in FP. You should "compose backgrounds" instead of removing them from a
-binary image. That contrasts *a simple solution for the former versus a
-complicated one for the latter*.
+It struck me as funny (after writing [Domain Engineering](#domain-engineering))
+when I read "Adobe Photoshop API magic, now available in the cloud" 😂 on the
+Photoshop developer page. It tells you to remove background via API, but you
+actually need **composition**, like in FP. You should "compose backgrounds"
+instead of removing them from a binary image. That contrasts *a simple solution
+for the former versus a complicated one for the latter*.
 
 ## Getting Started
 
