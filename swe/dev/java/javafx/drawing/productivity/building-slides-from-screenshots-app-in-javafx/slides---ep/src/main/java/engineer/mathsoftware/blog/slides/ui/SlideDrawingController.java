@@ -146,6 +146,7 @@ class SlideDrawingController {
                         clearAiLineRow();
                         shape.start(line.getStartX(), line.getStartY());
                         shape.end(line.getEndX(), line.getEndY());
+                        shape.setStrokeWidth(2.0);
                         shape.render();
                         saveState();
                     });
