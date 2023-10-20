@@ -91,7 +91,7 @@ public class ShapeRenderer {
 
         line.setStartX(startX);
         line.setStartY(startY);
-        line.setStrokeWidth(2.0);
+        line.setStrokeWidth(4.0);
         line.setStroke(color);
         line.setFill(color);
 
@@ -126,7 +126,7 @@ public class ShapeRenderer {
         rectangle.setHeight(height);
         rectangle.setArcWidth(arc);
         rectangle.setArcHeight(arc);
-        rectangle.setStrokeWidth(2.0);
+        rectangle.setStrokeWidth(4.0);
         rectangle.setStroke(Colors.color(palette));
         rectangle.setFill(Color.TRANSPARENT);
     }
@@ -139,7 +139,7 @@ public class ShapeRenderer {
         circle.setCenterX(Math.min(startX, endX));
         circle.setCenterY(Math.min(startY, endY));
         circle.setRadius(radius);
-        circle.setStrokeWidth(2.0);
+        circle.setStrokeWidth(4.0);
         circle.setStroke(Colors.color(palette));
         circle.setFill(Color.TRANSPARENT);
     }
