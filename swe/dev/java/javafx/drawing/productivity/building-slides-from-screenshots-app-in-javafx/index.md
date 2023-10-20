@@ -108,6 +108,15 @@ Recall the domain engineering automation concepts of what this comes about even
 though my purpose this time is to develop these ideas conservatively in Java as
 an example project.
 
+#### Domain Composition Versus Magic
+
+It struck me as funny (after writing this section) when I read "Adobe Photoshop
+API magic, now available in the cloud" 😂 on the Photoshop developer page. It
+tells you to remove background via API, but you actually need **composition**,
+like in FP. You should "compose backgrounds" instead of removing them from a
+binary image. That contrasts *a simple solution for the former versus a
+complicated one for the latter*.
+
 ## Getting Started
 
 First, make sure to have Java 20+ installed on your development machine. You
