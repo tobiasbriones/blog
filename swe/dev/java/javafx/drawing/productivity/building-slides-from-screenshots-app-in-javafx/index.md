@@ -4715,23 +4715,39 @@ besides the AI implemented in the previous section.
 I foresaw an opportunity to develop a gorgeous example project to start my
 automation journey for content like screenshot stories and code snippet slides.
 
-This is my first EP-with-blog, and it was extremely extensive. I blogged the
-development process with high granularity and left insights, as always.
+This is my first blog with EP, and it was extremely extensive. I blogged the
+development process with high granularity and left insights, as I usually do.
 
-The implementation was feasible with JavaFX as expected, which shows how
+The implementation was feasible with JavaFX, as expected, which shows how
 **JavaFX is a powerful platform for well-defined engineering applications**.
-Also remember that we can use Kotlin to further enrich the platform's
-robustness.
+Although the app is an example project, the development was significantly
+complex. Also, remember that we can use Kotlin with Arrow to further enrich the
+platform's robustness via functional approaches for the domain languages.
 
-There were good exercises for putting into practice tools such as JavaFX, the
-newest Java 20+ features, and regular expressions.
+There were good exercises for putting into practice tools such as JavaFX, new
+Java 21+ features, and regular expressions. The exercises scaled up to the level
+of an advantageous AI OCR integration that left plenty of insight into domain
+automation.
 
-The development of this EP was the next step to take — from theory to practice —
+The development of this EP was the next step to take —from theory to practice—
 many design concepts and standards I had devised before.
 
-The application consists of a master-view-detail pane with advanced features
-like drag-and-drop, rendering of shapes, and source code. These features also
-include others like exporting the production or adding AI support. **This system
-allows us to optimize and build automated domain-specific presentations**. As a
-math software engineer, such achievement boosts my automation tools one step
-further in these graphical domains leading to fastening future undertakings.
+The main package `slides` defined the domain of the application, while several
+others were required to design the desktop app, namely, the `ui`, `data`,
+`drawing`, `drawing.ai`, and `ai` packages containing the development of
+features such as drag-and-drop, item arranging, menus with shortcuts,
+pagination, advanced drawing of both slide shapes and AI shapes, advanced
+parsing of code snippet language tokens, captions, cross-domain OCR word
+manipulation for automated underlining, and essentials like auto-saving and
+under-the-hood requirements to enhance the app design and usability.
+
+The final development results turned into a desktop app with a
+master-view-detail layout able to create three kinds of slides: code snippet,
+code shot, and screenshot. The code snippet slides are mainly encouraged since
+they belong to the domain by consisting of source code, while the other two
+consist of binary images as inputs.
+
+The slides app is a system that allows us to optimize the building of
+domain-specific presentations. As a math software engineer, such achievement
+boosts my automation tools one step further in these graphical domains, leading
+to fastening future undertakings.
