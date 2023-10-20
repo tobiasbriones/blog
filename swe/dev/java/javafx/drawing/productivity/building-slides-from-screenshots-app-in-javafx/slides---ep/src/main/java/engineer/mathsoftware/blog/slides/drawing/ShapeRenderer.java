@@ -23,6 +23,7 @@ public class ShapeRenderer {
     private double startY;
     private double endX;
     private double endY;
+    private double strokeWidth;
     private boolean keepProportions;
 
     public ShapeRenderer(Shape shape, Palette palette) {
@@ -33,6 +34,7 @@ public class ShapeRenderer {
         this.startY = 0.0;
         this.endX = 0.0;
         this.endY = 0.0;
+        this.strokeWidth = 4.0;
         this.keepProportions = false;
     }
 
@@ -56,6 +58,10 @@ public class ShapeRenderer {
 
     public double getEndY() {
         return endY;
+    }
+
+    public void setStrokeWidth(double newStrokeWidth) {
+        strokeWidth = newStrokeWidth;
     }
 
     public void remove() {
@@ -91,7 +97,7 @@ public class ShapeRenderer {
 
         line.setStartX(startX);
         line.setStartY(startY);
-        line.setStrokeWidth(4.0);
+        line.setStrokeWidth(strokeWidth);
         line.setStroke(color);
         line.setFill(color);
 
@@ -126,7 +132,7 @@ public class ShapeRenderer {
         rectangle.setHeight(height);
         rectangle.setArcWidth(arc);
         rectangle.setArcHeight(arc);
-        rectangle.setStrokeWidth(4.0);
+        rectangle.setStrokeWidth(strokeWidth);
         rectangle.setStroke(Colors.color(palette));
         rectangle.setFill(Color.TRANSPARENT);
     }
@@ -139,7 +145,7 @@ public class ShapeRenderer {
         circle.setCenterX(Math.min(startX, endX));
         circle.setCenterY(Math.min(startY, endY));
         circle.setRadius(radius);
-        circle.setStrokeWidth(4.0);
+        circle.setStrokeWidth(strokeWidth);
         circle.setStroke(Colors.color(palette));
         circle.setFill(Color.TRANSPARENT);
     }
