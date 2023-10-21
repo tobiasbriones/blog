@@ -8,7 +8,7 @@ nav.toc {
   background-color: var(--content-background-color);
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 3;
 }
 
 nav.toc.show {
@@ -44,6 +44,7 @@ nav a {
 
 nav a:hover {
   background-color: var(--hover-background-color);
+  color: inherit;
 }
 
 nav.toc a {

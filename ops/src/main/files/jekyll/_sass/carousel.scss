@@ -1,0 +1,109 @@
+div.carousel-inner {
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+}
+
+div.carousel {
+  display: flex;
+  align-items: center;
+}
+
+div.carousel-inner img {
+  width: 100%;
+  margin: auto;
+}
+
+div.carousel.fullscreen-active img {
+  width: auto;
+  margin: 0;
+}
+
+div.carousel + h5 {
+  padding: 0.5rem;
+  margin-top: 0;
+  border-radius: 0.5rem;
+  border: 1px none #e0e0e0;
+  border-bottom-style: solid;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--title-text-color);
+}
+
+.carousel-indicators {
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-next-icon::before,
+.carousel-control-prev-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon::before {
+  left: 0;
+  top: -0.125rem;
+}
+
+.carousel-control-next-icon::before {
+  left: -0.25rem;
+  top: -0.125rem;
+}
+
+button.fullscreen {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(0, 0, 0, 0.1) none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+button.fullscreen:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+button.fullscreen > .enter {
+  display: block;
+}
+
+.fullscreen-active > button.fullscreen > .enter {
+  display: none;
+}
+
+button.fullscreen > .exit {
+  display: none;
+}
+
+.fullscreen-active > button.fullscreen > .exit {
+  display: block;
+}
+
+button.fullscreen > .material-symbols-rounded {
+  font-size: 1.25rem;
+  color: white;
+}
+
+@media screen and (min-width: 720px) {
+  button.fullscreen {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 1rem;
+  }
+}

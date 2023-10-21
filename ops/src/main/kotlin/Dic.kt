@@ -4,7 +4,7 @@ val dic: Dictionary = Dictionary(
     uppercase = setOf(
         "bsd", "mit", "ep", "bi", "unah-vs", "ai", "ml", "swe",
         "sar", "hn", "hn:", "mrm", "fxml", "html", "css", "uml",
-        "ssd", "fhd", "hd", "og", "isv", "ocr",
+        "ssd", "fhd", "hd", "og", "isv", "ocr", "fm", "unah", "vs"
 
     ),
     composed = mapOf(
@@ -23,6 +23,7 @@ val dic: Dictionary = Dictionary(
         "intellij" to "IntelliJ",
         "intellij:" to "IntelliJ:",
         "picrt" to "PicRT",
-        "mckinsey" to "McKinsey"
+        "mckinsey" to "McKinsey",
+        "leds" to "LEDs"
     )
 )

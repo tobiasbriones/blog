@@ -9,6 +9,7 @@ function initApp() {
   initHashNav();
   initMenu();
   initNav();
+  initFullScreenElements();
 
   function initHashNav() {
     document
@@ -220,6 +221,98 @@ function getFocusedHeading() {
     }
   }
   return invisibleHeadingClosestToTop;
+}
+
+function initFullScreenElements() {
+  document
+    .querySelectorAll('.fullscreen')
+    .forEach(fullscreenButton => {
+      const parent = fullscreenButton.parentElement;
+      let resizeListener;
+
+      fullscreenButton.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+          parent.classList.remove('fullscreen-active');
+          removeFullscreenDimensions(parent);
+
+          if (resizeListener) {
+            window.removeEventListener('resize', resizeListener);
+            resizeListener = null;
+          }
+
+          document.exitFullscreen();
+        } else {
+          parent.classList.add('fullscreen-active');
+
+          parent.requestFullscreen();
+
+          resizeListener = () => {
+            setFullscreenDimensions(parent);
+          };
+          window.addEventListener('resize', resizeListener);
+
+          parent.addEventListener('fullscreenchange', (e) => {
+            console.log(e)
+            removeFullscreenDimensions(parent);
+          });
+        }
+      });
+    });
+
+  function setFullscreenDimensions(parent) {
+    // Get the viewport dimensions
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Find the first <img> child element
+    const firstImg = parent.querySelector('img');
+
+    // Get the dimensions of the first <img> child
+    const imgWidth = firstImg.width;
+    const imgHeight = firstImg.height;
+
+    // Calculate the aspect ratios
+    const viewportAspectRatio = viewportWidth / viewportHeight;
+    const imgAspectRatio = imgWidth / imgHeight;
+
+    removeFullscreenDimensions(parent);
+
+    // Calculate the scaling based on the aspect ratio
+    let scale = 1;
+
+    if (viewportAspectRatio < imgAspectRatio) {
+      const baseWidth = Math.min(viewportWidth, imgWidth);
+      scale = baseWidth / imgWidth;
+    } else {
+      const baseHeight = Math.min(viewportHeight, imgHeight);
+      scale = baseHeight / imgHeight;
+    }
+
+    // Apply the scaling transform to all slides
+    parent
+      .querySelectorAll('img')
+      .forEach(img => {
+
+        // Calculate the position to center the image
+        const xOffset = (viewportWidth - imgWidth * scale) / 2;
+        const yOffset = (viewportHeight - imgHeight * scale) / 2;
+
+        // Center the image using the transform-origin property
+        img.style.transformOrigin = 'left center';
+        // It's already centered vertically by the flex parent
+        img.style.transform = `scale(${scale}) translateX(${xOffset}px)`;
+        // img.style.transform = `scale(${scale})`;
+      });
+  }
+
+  function removeFullscreenDimensions(parent) {
+    parent
+      .querySelectorAll('img')
+      .forEach(img => {
+        img.style.transform = 'none';
+        img.style.transformOrigin = 'initial';
+      });
+  }
 }
 
 function onCopyCodeSnippet(button) {

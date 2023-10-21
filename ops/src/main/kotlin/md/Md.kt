@@ -36,7 +36,6 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
         val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
         val altValue = alt.ifBlank { title }
 
-
         // Cover image //
         return if (path.contains(entry.name())) """
                 <img src="$path" alt="$altValue" />
@@ -49,6 +48,149 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
                 </figure>
             """.trimIndent()
     }
+
+    fun carouselHtml(firstImagePath: String): String {
+        fun getSequence(): List<String> {
+            val seq = mutableListOf(firstImagePath)
+            var i = 2
+
+            while (true) {
+                val nextImagePath = firstImagePath
+                    .replace("_seq-1.", "_seq-$i.")
+
+                if (!entry.path.resolve(nextImagePath).exists()) {
+                    break
+                }
+                seq.add(nextImagePath)
+                i++
+            }
+            return seq
+        }
+
+        data class CarItem(val index: Int, val src: String, val alt: String)
+
+        val activeClass: (CarItem) -> String =
+            { if (it.index == 0) "active" else "" }
+        val ariaCurrent: (CarItem) -> String =
+            { if (it.index == 0) "aria-current=\"true\"" else "" }
+
+
+        val id = firstImagePath
+            .substringAfterLast("/")
+            .removeExtension()
+            .removeSuffix("_seq-1")
+
+        val title = Entry(Path.of(id)).toTitleCase(dic).removeExtension()
+
+        val seq = getSequence()
+        val items = seq
+            .mapIndexed { idx, img ->
+                CarItem(
+                    idx, img, img.substringAfterLast("/")
+                )
+            }
+        val indicators = items
+            .map {
+                """
+                    |<button
+                    |    type="button"
+                    |    data-bs-target="#$id"
+                    |    data-bs-slide-to="${it.index}"
+                    |    aria-label="Slide ${it.index + 1}"
+                    |    class="${it `---` activeClass}"
+                    |    ${it `---` ariaCurrent}
+                    |>
+                    |</button>
+                """.trimMargin("|")
+            }
+            .reduce { acc, next -> "$acc\n$next" }
+            .run {
+                """
+                    |<div class="carousel-indicators">
+                    |    $this
+                    |</div>
+                """.trimMargin("|")
+            }
+
+        val control = """|
+            |<button
+            |    class="carousel-control-prev"
+            |    type="button"
+            |    data-bs-target="#$id"
+            |    data-bs-slide="prev"
+            |>
+            |    <span
+            |        class="carousel-control-prev-icon"
+            |        aria-hidden="true"
+            |    >
+            |    </span>
+            |    <span class="visually-hidden">Previous</span>
+            |</button>
+            |
+            |<button
+            |    class="carousel-control-next"
+            |    type="button"
+            |    data-bs-target="#$id"
+            |    data-bs-slide="next"
+            |>
+            |    <span
+            |        class="carousel-control-next-icon"
+            |        aria-hidden="true"
+            |    >
+            |    </span>
+            |    <span class="visually-hidden">Next</span>
+            |</button>
+        """.trimMargin("|")
+
+        return items
+            .map {
+                """
+                |<div class="carousel-item ${it `---` activeClass}">
+                |    <img class="d-block" src="${it.src}" alt="${it.alt}">
+                |</div>
+            """.trimMargin("|")
+            }
+            .reduce { acc, next -> "$acc\n$next" }
+            .run {
+                """
+                    |<div>
+                    |<div id="$id" class="carousel slide" data-bs-ride="false" 
+                    |data-bs-touch="false"
+                    |>
+                    |$indicators
+                    |
+                    |<div class="carousel-inner">
+                    |    $this
+                    |</div>
+                    |
+                    |$control
+                    |
+                    |<button type="button" class="fullscreen">
+                    |<span class="material-symbols-rounded enter">
+                    |fullscreen
+                    |</span>
+                    |
+                    |<span class="material-symbols-rounded exit">
+                    |fullscreen_exit
+                    |</span>
+                    |</button>
+                    |
+                    |</div>
+                    |
+                    |<h5>$title</h5>
+                    |
+                    |</div>
+                """.trimMargin("|")
+            }
+    }
+
+    fun mapImageHtml(path: String, alt: String): String =
+        with(path.substringAfterLast("_")) {
+            when {
+                startsWith("seq-1.") -> carouselHtml(path)
+                else -> imageHtml(path, alt)
+            }
+        }
 
     fun videoHtml(name: String, path: String): String {
         val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
@@ -92,7 +234,7 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
                 val name = Path.of(path).name.removeExtension()
                 val html = when (ext) {
                     "mp4" -> videoHtml(name, path)
-                    else -> imageHtml(path, alt)
+                    else -> mapImageHtml(path, alt)
                 }
 
                 sb.append(html)
