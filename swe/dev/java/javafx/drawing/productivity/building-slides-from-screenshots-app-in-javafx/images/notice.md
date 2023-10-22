@@ -77,5 +77,7 @@ The following images were used to compose some parts shown in the screenshots:
 - [Screenshot Slide View Drawing](screenshot-slide-view-drawing.png):
   Includes [Images from Pixabay](#images-from-pixabay).
 
+- [Text Selected via OCR](text-selected-via-ocr.png): IntelliJ screenshot.
+
 - [View Pagination in Sync with List View](view-pagination-in-sync-with-list-view.png):
   Includes [Images from Pixabay](#images-from-pixabay).
