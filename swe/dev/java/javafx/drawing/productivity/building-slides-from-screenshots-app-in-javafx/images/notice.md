@@ -45,7 +45,8 @@ The following images were used to compose some parts shown in the screenshots:
 - [Files Updated](files-updated.png): Includes
   [Images from Pixabay](#images-from-pixabay).
 
-- [Fix OOME Commit](fix-oome-commit.png): IntelliJ screenshot.
+- [Screenshot: Fix OOME Commit](screenshot-_-fix-oome-commit.png): IntelliJ
+  screenshot.
 
 - [Hello World](hello-world.png): Includes system icons.
 
