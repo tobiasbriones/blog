@@ -119,7 +119,7 @@ for the former versus a complicated one for the latter*.
 
 ## Getting Started
 
-First, make sure to have Java 20+ installed on your development machine. You
+First, make sure to have Java 21+ installed on your development machine. You
 might need:
 
 - [SDKMAN](https://sdkman.io).
