@@ -228,89 +228,87 @@ function initFullScreenElements() {
     .querySelectorAll('.fullscreen')
     .forEach(fullscreenButton => {
       const parent = fullscreenButton.parentElement;
-      let resizeListener;
 
       fullscreenButton.addEventListener('click', () => {
         if (document.fullscreenElement) {
-          parent.classList.remove('fullscreen-active');
-          removeFullscreenDimensions(parent);
-
-          if (resizeListener) {
-            window.removeEventListener('resize', resizeListener);
-            resizeListener = null;
-          }
-
           document.exitFullscreen();
         } else {
-          parent.classList.add('fullscreen-active');
-
-          parent.requestFullscreen();
-
-          resizeListener = () => {
-            setFullscreenDimensions(parent);
-          };
-          window.addEventListener('resize', resizeListener);
-
-          parent.addEventListener('fullscreenchange', (e) => {
-            console.log(e)
-            removeFullscreenDimensions(parent);
-          });
+          goFullscreen(parent);
         }
       });
     });
 
+  document
+    .querySelectorAll('.zoom')
+    .forEach(zoomButton => {
+      const parent = zoomButton.parentElement;
+
+      zoomButton.addEventListener('click', () => {
+        // Apply zoom to all slide images
+        if (parent.classList.contains('zoom-in')) {
+          parent.classList.remove('zoom-in');
+        } else {
+          parent.classList.add('zoom-in');
+        }
+      });
+    });
+
+  function goFullscreen(parent) {
+    parent.requestFullscreen();
+    parent.classList.add('fullscreen-active');
+    parent.addEventListener('fullscreenchange', onFullscreenChange);
+
+    window.addEventListener('resize', onResize);
+
+    function onResize() {
+      if (document.fullscreenElement) {
+        setFullscreenDimensions(parent);
+      }
+    }
+
+    function onFullscreenChange() {
+      // Exiting fullscreen
+      if (!document.fullscreenElement) {
+        removeFullscreenDimensions(parent);
+        window.removeEventListener('resize', onResize);
+        parent.removeEventListener('fullscreenchange', onFullscreenChange);
+      }
+    }
+  }
+
   function setFullscreenDimensions(parent) {
-    // Get the viewport dimensions
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-
-    // Find the first <img> child element
-    const firstImg = parent.querySelector('img');
-
-    // Get the dimensions of the first <img> child
-    const imgWidth = firstImg.width;
-    const imgHeight = firstImg.height;
-
-    // Calculate the aspect ratios
-    const viewportAspectRatio = viewportWidth / viewportHeight;
-    const imgAspectRatio = imgWidth / imgHeight;
-
-    removeFullscreenDimensions(parent);
-
-    // Calculate the scaling based on the aspect ratio
-    let scale = 1;
-
-    if (viewportAspectRatio < imgAspectRatio) {
-      const baseWidth = Math.min(viewportWidth, imgWidth);
-      scale = baseWidth / imgWidth;
-    } else {
-      const baseHeight = Math.min(viewportHeight, imgHeight);
-      scale = baseHeight / imgHeight;
-    }
 
     // Apply the scaling transform to all slides
     parent
       .querySelectorAll('img')
       .forEach(img => {
+        const imgWidth = img.width;
+        const imgHeight = img.height;
+        const widthRatio = viewportWidth / imgWidth;
+        // Calculate image size with width=100% to the img as the baseline
+        const fitImgHeight = imgHeight * widthRatio;
+        const viewportAspectRatio = viewportWidth / viewportHeight;
+        const imgAspectRatio = imgWidth / imgHeight;
 
-        // Calculate the position to center the image
-        const xOffset = (viewportWidth - imgWidth * scale) / 2;
-        const yOffset = (viewportHeight - imgHeight * scale) / 2;
+        // VP is wider than Image (portrait), fit height
+        if (viewportAspectRatio > imgAspectRatio) {
+          const scale = viewportHeight / fitImgHeight;
+          img.style.transform = `scale(${scale})`;
+        }
 
-        // Center the image using the transform-origin property
-        img.style.transformOrigin = 'left center';
-        // It's already centered vertically by the flex parent
-        img.style.transform = `scale(${scale}) translateX(${xOffset}px)`;
-        // img.style.transform = `scale(${scale})`;
+        // Else Image (landscape) is wider than VP, fit the width
+        // so width=100% by CSS, and scale=1 by default
       });
   }
 
   function removeFullscreenDimensions(parent) {
+    parent.classList.remove('fullscreen-active');
     parent
       .querySelectorAll('img')
       .forEach(img => {
         img.style.transform = 'none';
-        img.style.transformOrigin = 'initial';
       });
   }
 }

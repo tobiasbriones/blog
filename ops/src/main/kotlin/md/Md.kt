@@ -154,8 +154,7 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             .run {
                 """
                     |<div>
-                    |<div id="$id" class="carousel slide" data-bs-ride="false" 
-                    |data-bs-touch="false"
+                    |<div id="$id" class="carousel slide" data-bs-ride="false"
                     |>
                     |$indicators
                     |
@@ -164,6 +163,17 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
                     |</div>
                     |
                     |$control
+                    |
+                    |
+                    |<button type="button" class="zoom">
+                    |<span class="material-symbols-rounded enter">
+                    |zoom_in
+                    |</span>
+                    |
+                    |<span class="material-symbols-rounded exit">
+                    |zoom_out
+                    |</span>
+                    |</button>
                     |
                     |<button type="button" class="fullscreen">
                     |<span class="material-symbols-rounded enter">
