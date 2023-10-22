@@ -14,7 +14,7 @@ val dic: Dictionary = Dictionary(
         "gitlab" to listOf("git", "lab"),
         "youtube" to listOf("you", "tube"),
         "listview" to listOf("list", "view"),
-        "" to listOf("", ""),
+        "codeshot" to listOf("code", "shot"),
     ),
     acronym = mapOf(
         "ddo" to "Data-Driven Organizations",
