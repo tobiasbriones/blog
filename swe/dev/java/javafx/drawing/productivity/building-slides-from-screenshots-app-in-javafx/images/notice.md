@@ -45,12 +45,13 @@ The following images were used to compose some parts shown in the screenshots:
 - [Files Updated](files-updated.png): Includes
   [Images from Pixabay](#images-from-pixabay).
 
-- [Screenshot: Fix OOME Commit](screenshot-_-fix-oome-commit.png): IntelliJ
-  screenshot.
+- [Screenshot: Fix OOME Commit](screenshot-_-fix-oome-commit.png):
+  Includes IntelliJ screenshot.
 
 - [Hello World](hello-world.png): Includes system icons.
 
-- [IntelliJ: Adding the Tesseract for Java Lib](intellij-_-adding-the-tesseract-for-java-lib.png): Includes system icons.
+- [IntelliJ: Adding the Tesseract for Java Lib](intellij-_-adding-the-tesseract-for-java-lib.png):
+  Includes system icons.
 
 - [Master Pane](master-pane.png): Includes
   [Images from Pixabay](#images-from-pixabay).
@@ -68,8 +69,8 @@ The following images were used to compose some parts shown in the screenshots:
   Includes IntelliJ IDEA screenshots, and system icons.
 
 - [Photopea: Editing the Presentation](photopea-_-editing-the-presentation.png):
-  Includes [Photopea](https://photopea.com) app screenshot, and Windows 10 
-  Video Player screenshot.
+  Includes [Photopea](https://photopea.com) app screenshot, and Windows 10 Video
+  Player screenshot.
 
 - [Scene Builder: Initial app.fxml](scene-builder-_-initial-app-fxml.png):
   Includes system icons, and the
@@ -78,8 +79,11 @@ The following images were used to compose some parts shown in the screenshots:
 - [Screenshot Slide View Drawing](screenshot-slide-view-drawing.png):
   Includes [Images from Pixabay](#images-from-pixabay).
 
-- [AI: Text Selected via OCR](ai-_-text-selected-via-ocr.png): IntelliJ
+- [AI: Text Selected via OCR](ai-_-text-selected-via-ocr.png): Includes IntelliJ
   screenshot.
 
 - [View Pagination in Sync with List View](view-pagination-in-sync-with-list-view.png):
   Includes [Images from Pixabay](#images-from-pixabay).
+
+- [CodeShot: Inspecting Video Rendering Race Condition](codeshot-_-inspecting-video-rendering-race-condition.png):
+  Includes IntelliJ screenshot.
