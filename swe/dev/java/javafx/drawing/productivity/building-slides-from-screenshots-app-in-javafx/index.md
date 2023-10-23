@@ -117,6 +117,71 @@ actually need **composition**, like in FP. You should "compose backgrounds"
 instead of removing them from a binary image. That contrasts *a simple solution
 for the former versus a complicated one for the latter*.
 
+## Slides App
+
+The application consists of many advanced features in a JavaFX
+master-view-detail desktop implementation for creating slide images and
+presentations based on images like screenshots, and code snippets. The types of
+artifacts generated are depicted here, so it's clear what the final app can
+build.
+
+![](static/slide.jpg)
+
+The three kinds of slides are:
+
+- **Code Snippet:** Turns code into a slide. Many languages are supported.
+- **CodeShot:** Turns a code screenshot into a language-centric slide.
+- **Screenshot:** Uses a screenshot (or any image) to build a slide.
+
+The code snippet slides are based on source code, and everything is rendered via
+JavaFX `Node` and `Shape` views, including the syntax highlight.
+
+![](code-snippet-_-slide-app.png)
+
+Many languages are supported, which is readable from the language syntax and
+background color for each snippet slide.
+
+![](code-snippet-_-fibonacci-sequence.png)
+
+![](code-snippet-_-uniform-expectation.png)
+
+The CodeShot slide should take a screenshot of code (probably from your IDE) so
+you can tell a story of what was going on. You leverage a screenshot this time
+instead of a code snippet to take other screenshot elements like a Git diff or
+IDE special features.
+
+![](images/codeshot-_-inspecting-video-rendering-race-condition.png)
+
+Code shots are also language-centric, like code snippets, but they're built upon
+code screenshots instead of source code.
+
+Slides based on (general) screenshots should be about no-code, like IDE or tool
+screenshots showing special information. A common example is a Git message
+explaining what happened.
+
+![](images/screenshot-_-fix-oome-commit.png)
+
+The slide above has **underlined text** (multiple words) thanks to both the
+JavaFX shapes and AI automation tools integrated into the app. I mention "
+automated" as the underlining of words in images is automatic by AI
+(you just have to click to underline the text).
+
+Drawable shapes on a slide can be **lines, rectangles, and circles**. The green
+color is for good and red for errors.
+
+![](images/ai-_-text-selected-via-ocr.png)
+
+The above slide was also underlined (single word) automatically by AI.
+
+Finally, a powerful artifact out of all these features is effectively **a
+presentation**.
+
+![](static/presentation-_-video-rendering-side-effect-fix_seq-1.png)
+
+Domain-specific feature automation within the app slide implementations results
+in engineering-grade, high-quality artifacts like images and presentations to
+convey a technical story efficiently for both the author and consumer.
+
 ## Getting Started
 
 First, make sure to have Java 21+ installed on your development machine. You
