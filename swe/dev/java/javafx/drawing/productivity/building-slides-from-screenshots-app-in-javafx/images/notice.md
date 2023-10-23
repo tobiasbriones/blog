@@ -10,6 +10,9 @@ The following images were used to compose some parts shown in the screenshots:
 
 ## Screenshots
 
+- [Cover](building-slides-from-screenshots-app-in-javafx.png): Includes 
+  system icons (Windows Video Player).
+
 - [Clear AI Lines Commit](clear-ai-lines-commit.png): IntelliJ screenshot.
 
 - [Clear All](clear-all.png): Includes
