@@ -4,7 +4,7 @@
 
 # From Imperative to Functional: TypeScript Fetch Promise
 
-![From Imperative to Functional: TypeScript Fetch Promise](from-imperative-to-functional-_-typescript-fetch-promise.png)
+![](from-imperative-to-functional-_-typescript-fetch-promise.png)
 
 This
 [gist](https://gist.github.com/tobiasbriones/544350fc301ffe32c1dd64d2f6ec6d81)
@@ -17,6 +17,8 @@ still has some imperative style because JS/TS is not a functional language but
 the difference **is clear** again.
 
 The difference between both snippets is the following:
+
+`Imperative`
 
 ```ts
 async function fetchTree(path: string): Promise<TreeNode> {
@@ -40,10 +42,7 @@ async function fetchTree(path: string): Promise<TreeNode> {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Imperative</strong></p>
-</figcaption>
-
+`More Functional`
 
 ```ts
 function fetchTree(path: string): Promise<TreeNode> {
@@ -57,10 +56,6 @@ function fetchTree(path: string): Promise<TreeNode> {
     });
 }
 ```
-
-<figcaption>
-<p align="center"><strong>More Functional</strong></p>
-</figcaption>
 
 The refactored code (a.k.a. "more functional") **is not functional**, but it 
 gets close. This is to avoid introducing functional abstractions like pipes, 

@@ -4,9 +4,13 @@
 
 # Pi Day (2023/03/14)
 
-![Piaxid Monochromatic 1/4: Axiom](axiom---piaxid-monochromatic-1-4.svg)
+![](pi-day-2023-03-14.svg)
 
-**Piaxid Monochromatic 1/4: Axiom**
+<p align="center">
+<b>
+Piaxid Monochromatic 1/4: Axiom
+</b>
+</p>
 
 ---
 
@@ -41,16 +45,14 @@ natural numbers [1]:
 
 Another example is the creation of the Fibonacci sequence inductively:
 
+`Also Known as "the 'Hello, world!' of Haskell programming" |
+The Fibonacci Sequence [4]`
+
 ```haskell
 fib 0 = 0
 fib 1 = 1
 fib n = fib (n-1) + fib (n-2)
 ```
-
-<figcaption>
-<p align="center"><strong>The Fibonacci Sequence (a.k.a. "the 'Hello, world!' 
-of Haskell programming"</strong>[4]</p>
-</figcaption>
 
 The declarativeness of math enables creation with mathematical elegance unlike
 the imperativeness of those impure where every instance is to be addressed

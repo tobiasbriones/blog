@@ -31,7 +31,7 @@ To avoid issues, I either had to design a simple symbol or use a verbose `pipe`
 operator name.
 
 So, I took my design from
-[How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hypen-and-pipe-symbols-on-file-names)
+[How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
 where I designed the standards for (among others) the pipe operator on file
 names. Notice that file systems also require simple symbols to work with, so the
 standard from my previous article was what I was looking for.
@@ -58,15 +58,11 @@ It's useful for the given example that shows the operator usage:
 
 First, the `---` operator is defined:
 
-`Pipe.kt`
+`Definition of the Pipe ("---") Operator | Pipe.kt`
 
 ```kotlin
 infix fun <X, Y> X.`---`(f: (X) -> Y): Y = f(this)
 ```
-
-<figcaption>
-<p align="center"><strong>Definition of the Pipe ("---") Operator</strong></p>
-</figcaption>
 
 Where:
 
@@ -92,7 +88,7 @@ That was the definition of the pipe operator.
 Now, to address a concrete example to use this new feature, I implemented a
 basic DSL for an `Article` domain type.
 
-`Pipe.kt`
+`Definition of an "Article" DSL | Pipe.kt`
 
 ```kotlin
 data class Article(val title: Title, val content: String)
@@ -105,28 +101,20 @@ value class Title(val value: String) {
 val title: (String) -> Title = { Title(it) }
 ```
 
-<figcaption>
-<p align="center"><strong>Definition of an "Article" DSL</strong></p>
-</figcaption>
-
 So, to test the code, I will add a user input title that is not cleaned, some
 content, and I'll also define more functions with **transformations**, so we can
 *pipe them*.
 
-`fun main | Pipe.kt`
+`Sample User Input for Example Snippet | fun main | Pipe.kt`
 
 ```kotlin
 val inputTitle = "FP in Kotlin: Defining a Pipe   Operator  "
 val inputContent = "Lorem ipsum dolor sit amet..."
 ```
 
-<figcaption>
-<p align="center"><strong>Sample User Input for Example Snippet</strong></p>
-</figcaption>
-
 Then, we'll have some useful example transformations:
 
-`fun main | Pipe.kt`
+`Transformations for Example Snippet | fun main | Pipe.kt`
 
 ```kotlin
 val clean: (String) -> String = { it.trim().replace("\\s+".toRegex(), " ") }
@@ -136,13 +124,9 @@ val formatTitle: (String) -> String =
     { it `---` clean `---` uppercase `---` markdownTitle }
 ```
 
-<figcaption>
-<p align="center"><strong>Transformations for Example Snippet</strong></p>
-</figcaption>
-
 Finally, we can create an `Article` with `title` and `content`:
 
-`fun main | Kotlin.kt`
+`Building an "Article" for the Example Snippet | fun main | Kotlin.kt`
 
 ```kotlin
 print(
@@ -152,11 +136,6 @@ print(
     )
 )
 ```
-
-<figcaption>
-<p align="center"><strong>Building an "Article" for the Example 
-Snippet</strong></p>
-</figcaption>
 
 With this, a title `String` can be transformed into a `Title` domain type by
 piping it to the transformations declared:
@@ -168,16 +147,14 @@ piping it to the transformations declared:
 
 The program's output is:
 
+`Program's Output (Formatted)`
+
 ```
 Article(
     title=# FP IN KOTLIN: DEFINING A PIPE OPERATOR,
     content=Lorem ipsum dolor sit amet...
 )
 ```
-
-<figcaption>
-<p align="center"><strong>Program's Output (Formatted)</strong></p>
-</figcaption>
 
 The example code is [here](kotlin/Pipe.kt).
 

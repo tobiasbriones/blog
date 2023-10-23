@@ -4,7 +4,7 @@
 
 # 4 Years Since Vocational Fair at UNAH-VS (2023-05-09)
 
-![4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg)
+![](static/4-years-since-vocational-fair-at-unah-vs-2023-05-09.jpg)
 
 ---
 
@@ -88,19 +88,19 @@ business and (Altara) mall area. Engaging in those activities during those
 months made me feel like an entrepreneur. Now, I have become one, or I can say
 I've always been an *innovative* entrepreneur.
 
-I was also engaging into the new chapters of Dragon Ball Heroes that were
-appearing in that time 😆.
+I was also engaging in the new chapters of Dragon Ball Heroes that were
+appearing at that time 😆.
 
-I worked with some projects or ideas I had already developed like **Losnot
-in Paradise**[2][^7] —game with AI in Java I developed the previous year for the
-"Programming II" course from the mathematics career.
+I worked with some projects or ideas I had already developed like **Losnot in
+Paradise**[2][^7] —a game with AI in Java that I developed the previous year for
+the "Programming II" course of the mathematics degree.
 
 [^7]: A video game in which our friend LOS is lost in a weird jungle of a weird
     exoplanet and while you help him to face all kinds of obstacles I am
     responsible for providing an AI algorithm to tell LOS how to play and get
     out of there in his spacecraft!
 
-I developed new great ideas like **PicRT Express**[3][^8] —UWP app that
+I developed new great ideas like **PicRT Express**[3][^8] —a UWP app that
 implements a bridge to call C++ from C# to use OpenCV for image processing on
 the high-level client app.
 
@@ -115,7 +115,7 @@ consisting of LEDs I arranged so it looks like a Pac-Man and one potentiometer
 to control with a 555 IC the speed at which they blink.
 
 Regarding failed experiments, I've failed to build an **FM Transmitter** since
-high-school. Issues like capacitance levels appear when working on protoboards,
+high school. Issues like capacitance levels appear when working on protoboards,
 so I used to choose the PCB[^9] instead, but it never worked. Telecom is
 not an easy field [^10].
 
@@ -127,14 +127,14 @@ not an easy field [^10].
     collides with legal frequencies or channels, which adds another layer of
     complexity to telecommunications engineering
 
-Designing the circuits, ideas, and PCBs was a bit more tough as working with
+Designing the circuits, ideas, and PCBs was a bit tougher as working with
 hardware is different from software.
 
 For instance, I also implemented and explained the transistor as an amplifier
 and how to polarize efficiently.
 
-So, for the hardware projects, I had to spend some money, and go out get them,
-which added another significant layer of complexity for me.
+So, for the hardware projects, I had to spend some money and go out to get
+them, which added another significant layer of complexity for me.
 
 Another trouble I had was taking my personal desktop computer[^11][^12] and
 monitor[^13] to the university since I was personally looking forward to
@@ -171,11 +171,7 @@ hardware.
 [^15]: I really was a fan of UWP, and I loved it, but now it's a completely 
     different story, as the project was just another Micro$oft charade
 
-![4 Years Since](4-years-since.png)
-
-<figcaption>
-<p align="center"><strong>4 Years Since</strong></p>
-</figcaption>
+![](static/4-years-since.png)
 
 It was an undertaking where I took care of everything because I love harder
 challenges that make me grow.
@@ -205,25 +201,17 @@ to use *Artificial Intelligence and Games*[5] to learn theory about AI for
 games.
 
 Since then, I've been pretty enthusiastic about genetic algorithms as they
-attempt to resemble a (naive) version of natural evolution.
+attempt to resemble a (naive) version of natural evolution [2].
 
-![Losnot in Paradise Sample 1](lostnot-in-paradise-sample-1.gif)
+![](static/lostnot-in-paradise-sample-1.gif)
 
-<figcaption>
-<p align="center"><strong>Losnot in Paradise Sample 1 [2]</strong></p>
-</figcaption>
+![](static/ai-screenshot-1.png)
 
-
-![AI Screenshot 1](ai-screenshot-1.png)
-
-<figcaption>
-<p align="center"><strong>AI Screenshot 1 [2]</strong></p>
-</figcaption>
-
-Regarding computer vision, as mentioned, I had to develop PicRT Express in about
-5 days and had to learn new technologies during that time. Specifically, I was
-focused on implementing efficient native memory usage within a high-level UWP
-app[^18]. So I could show how to apply mathematics to image transformations!
+Regarding computer vision, as mentioned, I had to develop PicRT Express[3] in
+about five days and had to learn new technologies during that time.
+Specifically, I was focused on implementing efficient native memory usage within
+a high-level UWP app[^18]. So I could show how to apply mathematics to image
+transformations!
 
 [^18]: I always tried to learn new tools and paradigms to have a solid
     experience on SWE, that's why I usually learn weird tech like UWP, Swing,
@@ -237,29 +225,13 @@ accept mediocrity in my standard.
     can see, I'm able to interoperate over diverse systems I've even never
     worked before with
 
-![PicRT Express Info English](picrt-express-info-english.png)
+![](static/picrt-express-info-english.png)
 
-<figcaption>
-<p align="center"><strong>PicRT Express Info English [3]</strong></p>
-</figcaption>
+![](static/picrt-express-1.jpg)
 
-![PicRT Express 1](picrt-express-1.jpg)
+![](static/picrt-express-2.jpg)
 
-<figcaption>
-<p align="center"><strong>PicRT Express 1 [3]</strong></p>
-</figcaption>
-
-![PicRT Express 2](picrt-express-2.jpg)
-
-<figcaption>
-<p align="center"><strong>PicRT Express 2 [3]</strong></p>
-</figcaption>
-
-![PicRT Express 3](picrt-express-3.jpg)
-
-<figcaption>
-<p align="center"><strong>PicRT Express 3 [3]</strong></p>
-</figcaption>
+![](static/picrt-express-3.jpg)
 
 These open-source projects, along with others, played a crucial role in
 advancing my career in machine learning. Particularly during my job at Truora
@@ -270,31 +242,18 @@ field.
 
 That is, my endeavors always pay off the effort 🤗!
 
-These were the insights I had for the AI, computer vision, and software
-engineering with applied mathematics.
+These were the insights I had for AI, computer vision, and software engineering
+with applied mathematics.
 
 ## Diagrams
 
-I showed some informal diagrams to depict what I did.
+I showed some informal diagrams to depict what I did [4].
 
-![Package Structure](package-structure.png)
+![](static/package-structure.png)
 
-<figcaption>
-<p align="center"><strong>Package Structure [4]</strong></p>
-</figcaption>
+![](static/instance-object-hierarchy.png)
 
-![Instance Object Hierarchy](instance-object-hierarchy.png)
-
-<figcaption>
-<p align="center"><strong>Instance Object Hierarchy [4]</strong></p>
-</figcaption>
-
-
-![KeyPool Algorithm](keypool-algorithm.png)
-
-<figcaption>
-<p align="center"><strong>KeyPool Algorithm [4]</strong></p>
-</figcaption>
+![](static/keypool-algorithm.png)
 
 ## Electronics
 
@@ -304,11 +263,7 @@ These are the hardware projects I talked before.
 
 I took my projects out after 4 years, and here they are.
 
-![Look at the Projects](look-at-the-projects.jpg)
-
-<figcaption>
-<p align="center"><strong>Look at the Projects</strong></p>
-</figcaption>
+![](static/look-at-the-projects.jpg)
 
 As you can see in the image, I designed the Pac-Man lights with simple materials
 and squared notebook paper.
@@ -318,47 +273,15 @@ and squared notebook paper.
 Here's the circuit of the LEDs that blink at the rhythm of the music in the
 protoboard.
 
-![Pulsing LEDs](pulsing-leds.jpg)
+![](static/pulsing-leds.jpg)
 
-<figcaption>
-<p align="center"><strong>Pulsing LEDs</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 1](pulsing-leds-.-testing-1.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 1</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 2](pulsing-leds-.-testing-2.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 2</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 3](pulsing-leds-.-testing-3.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 3</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 4](pulsing-leds-.-testing-4.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 4</strong></p>
-</figcaption>
-
-![Pulsing LEDs: Testing 5](pulsing-leds-.-testing-5.jpg)
-
-<figcaption>
-<p align="center"><strong>Pulsing LEDs: Testing 5</strong></p>
-</figcaption>
+![](static/pulsing-leds-_-testing_seq-1.jpg)
 
 This is the report:
 
 {% include iframe.html
 title = "LED's parpadeantes al ritmo de la música con efecto fade"
-src = "academy/career/math/cs/engineering/unah/4-years-since-vocational-fair-at-unah-vs-2023-05-09/pulsing-leds.pdf"
+src = "static/pulsing-leds.pdf"
 %}
 
 ### Pac-Man Blinking LEDs
@@ -366,75 +289,32 @@ src = "academy/career/math/cs/engineering/unah/4-years-since-vocational-fair-at-
 This is the circuit I designed, which resembles a Pac-Man and blinks at a given
 speed.
 
-![Pac-Man LEDs](pacman-leds.jpg)
+![](static/pacman-leds.jpg)
 
-<figcaption>
-<p align="center"><strong>Pac-Man LEDs</strong></p>
-</figcaption>
-
-![Pac-Man LEDs: Circuit Rear](pacman-leds-.-circuit-rear.jpg)
-
-<figcaption>
-<p align="center"><strong>Pac-Man LEDs: Circuit Rear</strong></p>
-</figcaption>
+![](static/pacman-leds-_-circuit-rear.jpg)
 
 The next image dates when I was soldering and testing the components of the
 circuit:
 
-![Pac-Man LEDs: Testing](pacman-leds-.-testing.jpg)
-
-<figcaption>
-<p align="center"><strong>Pac-Man LEDs: Testing</strong></p>
-</figcaption>
+![](static/pacman-leds-_-testing.jpg)
 
 The circuit still worked great when I powered it, and recorded a video of it:
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/JaW0Abg1qe8"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-</iframe>
+[Pac-Man Blinking LEDs \| YouTube](https://youtu.be/JaW0Abg1qe8)
 
 ### FM Transmitter
 
 This is the failed radio FM transmitter:
 
-![FM Transmitter](fm-transmitter.jpg)
+![](static/fm-transmitter.jpg)
 
-<figcaption>
-<p align="center"><strong>FM Transmitter</strong></p>
-</figcaption>
+![](static/fm-transmitter-_-testing.jpg)
 
-![FM Transmitter: Testing](fm-transmitter-.-testing.jpg)
-
-<figcaption>
-<p align="center"><strong>FM Transmitter: Testing</strong></p>
-</figcaption>
-
-## Vocational Fair
+## Vocational Fair Day
 
 So, the day of the event took place 😎:
 
-![Vocational Fair UNAH-VS 2019 1](vocational-fair-unah-vs-2019-1.jpg)
-
-<figcaption>
-<p align="center"><strong>Vocational Fair UNAH-VS 2019 1</strong></p>
-</figcaption>
-
-![Vocational Fair UNAH-VS 2019 2](vocational-fair-unah-vs-2019-2.jpg)
-
-<figcaption>
-<p align="center"><strong>Vocational Fair UNAH-VS 2019 2</strong></p>
-</figcaption>
-
-![Vocational Fair UNAH-VS 2019 3](vocational-fair-unah-vs-2019-3.jpg)
-
-<figcaption>
-<p align="center"><strong>Vocational Fair UNAH-VS 2019 3</strong></p>
-</figcaption>
+![](static/vocational-fair-unah-vs-2019_seq-1.jpg)
 
 ## References
 
