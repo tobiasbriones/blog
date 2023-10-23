@@ -4507,7 +4507,7 @@ both the model designers and consumers.
 
 Needless to say, for engineering-grade models, one must leverage strongly
 typed (functional) languages to ensure expected correctness. That's a minimum
-requirement I'd expect from engineers since it **bounds** the overwhelming black
+requirement I'd expect from engineers since **it bounds** the overwhelming black
 box of these deep learning models.
 
 Notice how I use the term "expected correctness" referring to mathematical
@@ -4521,10 +4521,10 @@ mathematical pattern we ought to study.
 If we know the pattern, we can turn a system into engineering-grade ✔.
 
 For an OCR app, we expect **well-defined metrics** or patterns until a certain
-degree. I emphasize *well-defined* because **I've worked with meaningless
-subjective ML generic metrics**, so again, *you must be proficient in your
-domain*. AI is not magic. You must build the same good OL' engineering and math
-under the hood.
+degree. I emphasize *well-defined* because **I've worked with subjective ML
+metrics, which are generic/popular and therefore meaningless**, so again, *you
+must be proficient in your domain*. AI is not magic. You must build the same
+good OL' engineering and math under the hood.
 
 It can be daunting to try to make ML models work. From my job experiences, we've
 had to use several OCR providers as fallbacks. They all suck, but some suck less
@@ -4547,9 +4547,10 @@ this, but the marketing buzzwords instead, unfortunately.
 
 For this app, leveraging OCR is a valid approach to enhance the user workflow
 *when it comes to screenshots*, but *the goal must be domain-based to optimize
-for source code slides instead of binary images*. Remember when I said that word
-detection was trivial for code snippet slides? Now compare trivial to ML models
-that had to be trained with supercomputers of 5 years ago 💸 and world-wide data.
+for source code slides instead of binary images*. Remember when I said that
+*word detection was trivial for code snippet slides?* Now **compare trivial to
+ML models** that had to be trained with supercomputers of 5 years ago 💸 and
+worldwide data.
 
 For this app, the major and first fix to clean the model's input is to
 **classify or segment the screenshot out of the background**, which *simplifies*
