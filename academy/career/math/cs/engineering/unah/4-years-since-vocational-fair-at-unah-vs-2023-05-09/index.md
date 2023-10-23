@@ -275,15 +275,7 @@ protoboard.
 
 ![](static/pulsing-leds.jpg)
 
-![](static/pulsing-leds-_-testing-1.jpg)
-
-![](static/pulsing-leds-_-testing-2.jpg)
-
-![](static/pulsing-leds-_-testing-3.jpg)
-
-![](static/pulsing-leds-_-testing-4.jpg)
-
-![](static/pulsing-leds-_-testing-5.jpg)
+![](static/pulsing-leds-_-testing_seq-1.jpg)
 
 This is the report:
 
@@ -322,11 +314,7 @@ This is the failed radio FM transmitter:
 
 So, the day of the event took place 😎:
 
-![](static/vocational-fair-unah-vs-2019-1.jpg)
-
-![](static/vocational-fair-unah-vs-2019-2.jpg)
-
-![](static/vocational-fair-unah-vs-2019-3.jpg)
+![](static/vocational-fair-unah-vs-2019_seq-1.jpg)
 
 ## References
 
