@@ -100,9 +100,9 @@ above).
 I figured out one simple way to leverage an AI application for this project, so
 it serves as a good example.
 
-I'm not developing anything domain-specific here, but blogging a new example
-project whose target is to **start taking action, devising standards, and
-proving concepts**.
+Developing anything domain-specific here is natural but not the objective,
+though. Thus, the purpose is to blog a new example project to **start taking
+action, devising standards, and proving concepts**.
 
 Recall the domain engineering automation concepts of what this comes about even
 though my purpose this time is to develop these ideas conservatively in Java as
