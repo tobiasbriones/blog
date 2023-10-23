@@ -137,8 +137,8 @@ math or programming. As said before, *it won't return most of the investment
 since general-purpose software is not composable*.
 
 Hence, as math software engineers, we must compromise to build composable
-software to remove the need for "magic" and duplicate expensive-to-engineer
-features.
+software to remove both needs for "magic" and for duplicating
+expensive-to-engineer features.
 
 ## Slides App
 
