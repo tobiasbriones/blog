@@ -1,0 +1,34 @@
+---
+permalink: building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java/engineer/mathsoftware/blog/slides/drawing/ai/AIDrawing.java.html
+title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java/engineer/mathsoftware/blog/slides/drawing/ai/AIDrawing.java"
+---
+
+# AIDrawing.java
+```java
+// Copyright (c) 2023 Tobias Briones. All rights reserved.
+// SPDX-License-Identifier: BSD-3-Clause
+// This file is part of https://github.com/tobiasbriones/blog
+
+package engineer.mathsoftware.blog.slides.drawing.ai;
+
+import javafx.scene.Group;
+
+public interface AIDrawing {
+    void setup(AIShape shape);
+
+    Group draw(Group slideDrawing);
+
+    void clear();
+}
+
+```
+<div class="social open-gh-btn my-4">
+  <a class="btn btn-github" href="https://github.com/tobiasbriones/blog/tree/main/swe/dev/java/javafx/drawing/productivity/building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java/engineer/mathsoftware/blog/slides/drawing/ai/AIDrawing.java" target="_blank">
+    <i class="fab fa-github">
+      
+    </i>
+    <span>
+      Open in GitHub
+    </span>
+  </a>
+</div>
