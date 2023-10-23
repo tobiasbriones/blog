@@ -240,4 +240,5 @@ private fun minorWords(): List<String> = listOf(
     "this",
     "those",
     "these",
+    "via",
 )
