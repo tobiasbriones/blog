@@ -126,6 +126,16 @@ actually need **composition**, like in FP. You should "compose backgrounds"
 instead of removing them from a binary image. That contrasts *a simple solution
 for the former versus a complicated one for the latter*.
 
+Although you can compose layers in Photoshop or certain functionalities in
+general-purpose software, you just can't take some 10% of the monolith and pay
+10% of the price to actually compose it with a totally different domain like
+math or programming. As said before, *it won't return most of the investment
+since general-purpose software is not composable*.
+
+Hence, as math software engineers, we must compromise to build composable
+software to remove the need for "magic" and duplicate expensive-to-engineer
+features.
+
 ## Slides App
 
 The application consists of many advanced features in a JavaFX
