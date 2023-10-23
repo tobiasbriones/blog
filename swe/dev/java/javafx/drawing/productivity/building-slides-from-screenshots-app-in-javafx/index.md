@@ -62,9 +62,9 @@ clear in this development, but it'll never replace the underlying domain as
 they're independent tools.
 
 That is, you need to *understand* **how AI should be useful to automate
-works *for* our domain language** instead of buying mundane
-general-purpose software that uses AI as magic. Notice *the difference between
-automation and magic*.
+works *for* our domain language** instead of buying mundane general-purpose
+software that uses AI as magic. Notice *the difference between automation and
+magic*.
 
 For example, grammar checkers are not technical, so you get a lot of errors
 marked because they don't *understand* computer and math languages and idioms.
@@ -171,8 +171,8 @@ explaining what happened.
 ![](images/screenshot-_-fix-oome-commit.png)
 
 The slide above has **underlined text** (multiple words) thanks to both the
-JavaFX shapes and AI automation tools integrated into the app. I mention "
-automated" as the underlining of words in images is automatic by AI
+JavaFX shapes and AI automation tools integrated into the app. I mention
+"automated" as the underlining of words in images is automatic by AI
 (you just have to click to underline the text).
 
 Drawable shapes on a slide can be **lines, rectangles, and circles**. The green
@@ -274,8 +274,8 @@ public class Main extends Application {
 
 ![](images/hello-world.png)
 
-At this point, the JavaFX application is set up, so the development can 
-take place.
+At this point, the JavaFX application is set up, so the development can take
+place.
 
 ### Initial Master-View-Detail Layout with Drag-and-Drop ListView
 
@@ -707,16 +707,16 @@ with your mouse by leaving the files out.
 
 ![](images/drag-canceled.png)
 
-The events are set from the `app.fxml` view already, so the controller 
+The events are set from the `app.fxml` view already, so the controller
 implementation is left.
 
 The three events that will be required for this app consist of:
 
-- **Drag Over:** Files are being dragged onto the `ListView`, so they will 
-  either be accepted or rejected.
+- **Drag Over:** Files are being dragged onto the `ListView`, so they will
+    either be accepted or rejected.
 - **Drag Dropped:** Files were deposited into the app.
-- **Drag Exited:** Cancels the drag as files dragged with the mouse are out of 
-  scope.
+- **Drag Exited:** Cancels the drag as files dragged with the mouse are out of
+    scope.
 
 `Drag Event Implementations | class AppController`
 
@@ -1151,10 +1151,10 @@ private void onDragDropped(DragEvent event) {
 }
 ```
 
-First, notice that if you're not careful, you'll introduce side effects to
-these kinds of events, as we can have many event implementations. In this case,
-the drag events fall into the `ListView` (the "bigger") and are also listened
-from each of its cells, that is, each `ImageItemCell`.
+First, notice that if you're not careful, you'll introduce side effects to these
+kinds of events, as we can have many event implementations. In this case, the
+drag events fall into the `ListView` (the "bigger") and are also listened from
+each of its cells, that is, each `ImageItemCell`.
 
 What controls this crazy state sharing, if you notice, are the calls to the
 `consume` method of the `DragEvent`s. Setting `setDropCompleted` to `true` also
@@ -1310,9 +1310,9 @@ I made minor modifications, like changing the name of a `MenuItem` from "New" to
 They do the following:
 
 - **Add:** Opens the `FileChooser` just like pressing the existing "Add"
-  `Button` to *add* (or update) an image.
+    `Button` to *add* (or update) an image.
 - **OpenWD:** Opens the app data directory (*working directory*) into the system
-  file explorer so you can browse over the original application images.
+    file explorer so you can browse over the original application images.
 - **Clear:** Same as the *"Clear" `Button`*.
 - **Quit:** *Closes* the app.
 - **About:** Shows a basic `Alert` with info *about* the application.
@@ -1412,7 +1412,7 @@ this will require much more work before we start drawing something on this view.
 Some refactorizations are needed to keep the project maintainable.
 
 Then the master pane developed before has to be related to the view pane via
-a  `Pagination`.
+a `Pagination`.
 
 Once the initial application domain is defined, the detail pane can be worked
 out to enable the configurations that will be applied to the drawing in the view
@@ -1681,7 +1681,7 @@ public final class Colors {
 
 This way the app can be extended by mapping color values to the domain types.
 
-Regarding configurations, we can add some important settings like the target 
+Regarding configurations, we can add some important settings like the target
 size for the slides.
 
 `Establishing Slide Resolutions | record SlideSize`
@@ -3198,8 +3198,8 @@ better, these annotations can be automated.
 
 First, we must begin from the domain, in this case, the drawing definitions and
 implementations for shapes that will support the app. After working out the
-domain, we figure out any automation that can be applied to the domain
-language, as said at the beginning of [Domain Engineering](#domain-engineering).
+domain, we figure out any automation that can be applied to the domain language,
+as said at the beginning of [Domain Engineering](#domain-engineering).
 
 First, I defined the shapes I wanted to draw.
 
@@ -3424,8 +3424,8 @@ class SlideDrawingController {
 ```
 
 As you can see, there's a `Deque` of `ShapeRenderer` containing the stack of
-shapes drawn on the Slide. By leveraging the stack data structure via the LIFO (
-Last In First Out) property provided by `Deque` (impl. via `LinkedList`), the 
+shapes drawn on the Slide. By leveraging the stack data structure via the LIFO
+(Last In First Out) property provided by `Deque` (impl. via `LinkedList`), the
 "undo" button can be trivially implemented.
 
 When binding events, a shape is set to be rendered, and the scroll pane is no
@@ -4533,8 +4533,8 @@ for the underlying problem, so we might as well make that one the "primary
 provider 💸."
 
 One of the shoe stones you'll find is when the image quality is low or bad, and
-you can't make your users buy an iPhone 15 Pro MAX ULTRA and employ basic
-skills to shoot a photo 😣.
+you can't make your users buy an iPhone 15 Pro MAX ULTRA and employ basic skills
+to shoot a photo 😣.
 
 Solutions you find out there are generic, and if you try to make them work for
 you by fine-tuning, they will just become the same over-engineered OOP
@@ -4599,8 +4599,8 @@ One mandatory feature for a modern application is to provide a safe and
 intelligent saving mechanism to preserve the state of the app and the user's
 work.
 
-I've worked on the application UI states in memory. Now, I implemented the
-save slide feature with an automatic system to make the app even more usable.
+I've worked on the application UI states in memory. Now, I implemented the save
+slide feature with an automatic system to make the app even more usable.
 
 First, I extracted the data paths used by the app to a utility class, so this
 can be trivially replaced by real environment settings in a real case.
