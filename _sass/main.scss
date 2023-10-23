@@ -3,6 +3,7 @@
 @import "footer";
 @import "toc";
 @import "snippet";
+@import "carousel";
 @import "menu";
 @import "table";
 @import "social";
@@ -40,6 +41,15 @@ article {
 h1, h2, h3, h4, h5, figcaption {
   font-weight: bold;
   color: var(--title-text-color);
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 figcaption {

@@ -9,6 +9,7 @@ function initApp() {
   initHashNav();
   initMenu();
   initNav();
+  initFullScreenElements();
 
   function initHashNav() {
     document
@@ -220,6 +221,96 @@ function getFocusedHeading() {
     }
   }
   return invisibleHeadingClosestToTop;
+}
+
+function initFullScreenElements() {
+  document
+    .querySelectorAll('.fullscreen')
+    .forEach(fullscreenButton => {
+      const parent = fullscreenButton.parentElement;
+
+      fullscreenButton.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          goFullscreen(parent);
+        }
+      });
+    });
+
+  document
+    .querySelectorAll('.zoom')
+    .forEach(zoomButton => {
+      const parent = zoomButton.parentElement;
+
+      zoomButton.addEventListener('click', () => {
+        // Apply zoom to all slide images
+        if (parent.classList.contains('zoom-in')) {
+          parent.classList.remove('zoom-in');
+        } else {
+          parent.classList.add('zoom-in');
+        }
+      });
+    });
+
+  function goFullscreen(parent) {
+    parent.requestFullscreen();
+    parent.classList.add('fullscreen-active');
+    parent.addEventListener('fullscreenchange', onFullscreenChange);
+
+    window.addEventListener('resize', onResize);
+
+    function onResize() {
+      if (document.fullscreenElement) {
+        setFullscreenDimensions(parent);
+      }
+    }
+
+    function onFullscreenChange() {
+      // Exiting fullscreen
+      if (!document.fullscreenElement) {
+        removeFullscreenDimensions(parent);
+        window.removeEventListener('resize', onResize);
+        parent.removeEventListener('fullscreenchange', onFullscreenChange);
+      }
+    }
+  }
+
+  function setFullscreenDimensions(parent) {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Apply the scaling transform to all slides
+    parent
+      .querySelectorAll('img')
+      .forEach(img => {
+        const imgWidth = img.width;
+        const imgHeight = img.height;
+        const widthRatio = viewportWidth / imgWidth;
+        // Calculate image size with width=100% to the img as the baseline
+        const fitImgHeight = imgHeight * widthRatio;
+        const viewportAspectRatio = viewportWidth / viewportHeight;
+        const imgAspectRatio = imgWidth / imgHeight;
+
+        // VP is wider than Image (portrait), fit height
+        if (viewportAspectRatio > imgAspectRatio) {
+          const scale = viewportHeight / fitImgHeight;
+          img.style.transform = `scale(${scale})`;
+        }
+
+        // Else Image (landscape) is wider than VP, fit the width
+        // so width=100% by CSS, and scale=1 by default
+      });
+  }
+
+  function removeFullscreenDimensions(parent) {
+    parent.classList.remove('fullscreen-active');
+    parent
+      .querySelectorAll('img')
+      .forEach(img => {
+        img.style.transform = 'none';
+      });
+  }
 }
 
 function onCopyCodeSnippet(button) {
