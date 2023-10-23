@@ -88,19 +88,19 @@ business and (Altara) mall area. Engaging in those activities during those
 months made me feel like an entrepreneur. Now, I have become one, or I can say
 I've always been an *innovative* entrepreneur.
 
-I was also engaging into the new chapters of Dragon Ball Heroes that were
-appearing in that time 😆.
+I was also engaging in the new chapters of Dragon Ball Heroes that were
+appearing at that time 😆.
 
-I worked with some projects or ideas I had already developed like **Losnot
-in Paradise**[2][^7] —game with AI in Java I developed the previous year for the
-"Programming II" course from the mathematics career.
+I worked with some projects or ideas I had already developed like **Losnot in
+Paradise**[2][^7] —a game with AI in Java that I developed the previous year for
+the "Programming II" course of the mathematics degree.
 
 [^7]: A video game in which our friend LOS is lost in a weird jungle of a weird
     exoplanet and while you help him to face all kinds of obstacles I am
     responsible for providing an AI algorithm to tell LOS how to play and get
     out of there in his spacecraft!
 
-I developed new great ideas like **PicRT Express**[3][^8] —UWP app that
+I developed new great ideas like **PicRT Express**[3][^8] —a UWP app that
 implements a bridge to call C++ from C# to use OpenCV for image processing on
 the high-level client app.
 
@@ -115,7 +115,7 @@ consisting of LEDs I arranged so it looks like a Pac-Man and one potentiometer
 to control with a 555 IC the speed at which they blink.
 
 Regarding failed experiments, I've failed to build an **FM Transmitter** since
-high-school. Issues like capacitance levels appear when working on protoboards,
+high school. Issues like capacitance levels appear when working on protoboards,
 so I used to choose the PCB[^9] instead, but it never worked. Telecom is
 not an easy field [^10].
 
@@ -127,14 +127,14 @@ not an easy field [^10].
     collides with legal frequencies or channels, which adds another layer of
     complexity to telecommunications engineering
 
-Designing the circuits, ideas, and PCBs was a bit more tough as working with
+Designing the circuits, ideas, and PCBs was a bit tougher as working with
 hardware is different from software.
 
 For instance, I also implemented and explained the transistor as an amplifier
 and how to polarize efficiently.
 
-So, for the hardware projects, I had to spend some money, and go out get them,
-which added another significant layer of complexity for me.
+So, for the hardware projects, I had to spend some money and go out to get
+them, which added another significant layer of complexity for me.
 
 Another trouble I had was taking my personal desktop computer[^11][^12] and
 monitor[^13] to the university since I was personally looking forward to
@@ -208,9 +208,10 @@ attempt to resemble a (naive) version of natural evolution [2].
 ![](static/ai-screenshot-1.png)
 
 Regarding computer vision, as mentioned, I had to develop PicRT Express[3] in
-about 5 days and had to learn new technologies during that time. Specifically, I
-was focused on implementing efficient native memory usage within a high-level
-UWP app[^18]. So I could show how to apply mathematics to image transformations!
+about five days and had to learn new technologies during that time.
+Specifically, I was focused on implementing efficient native memory usage within
+a high-level UWP app[^18]. So I could show how to apply mathematics to image
+transformations!
 
 [^18]: I always tried to learn new tools and paradigms to have a solid
     experience on SWE, that's why I usually learn weird tech like UWP, Swing,
@@ -241,8 +242,8 @@ field.
 
 That is, my endeavors always pay off the effort 🤗!
 
-These were the insights I had for the AI, computer vision, and software
-engineering with applied mathematics.
+These were the insights I had for AI, computer vision, and software engineering
+with applied mathematics.
 
 ## Diagrams
 
@@ -274,15 +275,7 @@ protoboard.
 
 ![](static/pulsing-leds.jpg)
 
-![](static/pulsing-leds-_-testing-1.jpg)
-
-![](static/pulsing-leds-_-testing-2.jpg)
-
-![](static/pulsing-leds-_-testing-3.jpg)
-
-![](static/pulsing-leds-_-testing-4.jpg)
-
-![](static/pulsing-leds-_-testing-5.jpg)
+![](static/pulsing-leds-_-testing_seq-1.jpg)
 
 This is the report:
 
@@ -321,11 +314,7 @@ This is the failed radio FM transmitter:
 
 So, the day of the event took place 😎:
 
-![](static/vocational-fair-unah-vs-2019-1.jpg)
-
-![](static/vocational-fair-unah-vs-2019-2.jpg)
-
-![](static/vocational-fair-unah-vs-2019-3.jpg)
+![](static/vocational-fair-unah-vs-2019_seq-1.jpg)
 
 ## References
 
