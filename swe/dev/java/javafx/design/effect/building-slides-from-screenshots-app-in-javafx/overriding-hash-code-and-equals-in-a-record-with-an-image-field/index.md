@@ -4,7 +4,7 @@
 
 # Overriding Hash Code and Equals in a Record with an Image Field
 
-![Overriding Hash Code and Equals in a Record with an Image Field](overriding-hash-code-and-equals-in-a-record-with-an-image-field.png)
+![](overriding-hash-code-and-equals-in-a-record-with-an-image-field.png)
 
 ---
 
@@ -24,11 +24,7 @@ but I want to provide more documentation.
 
 This snippet explains why, according to the use case I had with that app.
 
-![Why Override Hash Code and Equals Methods in a Record](why-override-hash-code-and-equals-methods-in-a-record.png)
-
-<figcaption>
-<p align="center"><strong>Why Override Hash Code and Equals Methods in a Record</strong></p>
-</figcaption>
+![](why-override-hash-code-and-equals-methods-in-a-record.png)
 
 ## Updating an Existing Image
 
@@ -36,22 +32,13 @@ This behavior can be depicted as follows.
 
 Let's say I want to update the bird image by drag-and-drop.
 
-![Highlighting our Target](images/highlighting-our-target.png)
-
-<figcaption>
-<p align="center"><strong>Highlighting our Target</strong></p>
-</figcaption>
+![](images/highlighting-our-target.png)
 
 If we don't explicitly override the `record` `hashCode`, and `equals` methods
 according to our model, the `Image` **binary field** will introduce the **side
 effect**:
 
-![GUI Bug that Takes the Updated Image as Brand New](images/gui-bug-that-takes-the-updated-image-as-brand-new.png)
-
-<figcaption>
-<p align="center"><strong>GUI Bug that Takes the Updated Image as Brand
-New</strong></p>
-</figcaption>
+![](images/gui-bug-that-takes-the-updated-image-as-brand-new.png)
 
 That is, when we add an existing image to the app, the list of images in the GUI
 doesn't remove the old image since it takes both (old and new) images as
@@ -69,11 +56,7 @@ possible for the domain, and any professional software engineer also must.
 Now, by fixing this detail, we get the correct behavior in the front-end as
 well:
 
-![Expected Update Behavior after Fixing the Bug](images/expected-update-behavior-after-fixing-the-bug.png)
-
-<figcaption>
-<p align="center"><strong>Expected Update Behavior after Fixing the Bug</strong></p>
-</figcaption>
+![](images/expected-update-behavior-after-fixing-the-bug.png)
 
 Binary files are always a red flag 🚩 as they're external systems that have to be
 pushed to the boundaries, like in FP: the DSL is part of the system, and side
@@ -96,13 +79,7 @@ I actually took this article from the app dev article to separate the content,
 and I will publish this article that has been ready since long ago right after I
 publish the dev one.
 
-![Slides EP: Code Snippet](slides-ep-_-code-snippet.png)
-
-<figcaption>
-<p align="center"><strong>
-Slides EP: Code Snippet
-</strong></p>
-</figcaption>
+![](slides-ep-_-code-snippet.png)
 
 Notice the difference in quality this experimental version provides me compared
 to the generic code snippet images I generated above via other third-party
