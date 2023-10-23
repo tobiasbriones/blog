@@ -51,8 +51,8 @@ For now, I still have to blog some sections for the last features I developed
 and then finish other minor details.
 
 <figure>
-    <img src="static/intellij-_-finishing-writing-with-the-blog-and-project-side--to--side.png" alt="Intellij: Finishing Writing with the Blog and Project Side-to-Side" />
-    <figcaption>Intellij: Finishing Writing with the Blog and Project Side-to-Side</figcaption>
+    <img src="static/intellij-_-finishing-writing-with-the-blog-and-project-side--to--side.png" alt="IntelliJ : Finishing Writing with the Blog and Project Side-to-Side" />
+    <figcaption>IntelliJ : Finishing Writing with the Blog and Project Side-to-Side</figcaption>
 </figure>
 
 Sure, I employ my two monitors, and tons of pro tools like IntelliJ
