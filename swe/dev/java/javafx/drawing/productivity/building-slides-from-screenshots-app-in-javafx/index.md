@@ -16,9 +16,9 @@ set goals.
 ## Sharing a Story from Screenshots
 
 I wanted to build a little presentation from my daily work, so I took the
-screenshots to work them out in Photopea[^x].
+screenshots to work them out in Photopea[^1].
 
-[^x]: Photopea is a free web app that resembles Photoshop and has been my
+[^1]: Photopea is a free web app that resembles Photoshop and has been my
     choice for many years
 
 The idea was to build a carousel presentation like
@@ -406,11 +406,11 @@ public record ImageItem(String filename, Image image) {
 ```
 
 Notice, how the `hashCode` and `equals` methods had to be overwritten because of
-the `Image` object[^x][^x].
+the `Image` object[^2][^3].
 
-[^x]: In this case, two `ImageItem`s are equal if their names are equal
+[^2]: In this case, two `ImageItem`s are equal if their names are equal
 
-[^x]: The binary `Image` field made it impossible to update the same item from a
+[^3]: The binary `Image` field made it impossible to update the same item from a
     `List` with different object instances but the same name
 
 This item will model the images (screenshots) saved to the application data
@@ -1598,10 +1598,10 @@ public enum SlideItem {
 }
 ```
 
-The (programming[^x]) language is required to style the slides, so it can be
+The (programming[^4]) language is required to style the slides, so it can be
 associated to a slide content.
 
-[^x]: It doesn't have to be a GP PL, like HTML or CSS which are niche languages
+[^4]: It doesn't have to be a GP PL, like HTML or CSS which are niche languages
 
 `Application Language Support | enum Language`
 
@@ -2453,12 +2453,13 @@ Another insight I got about how to increase the productivity of these
 domain-specific systems is to pre-parse their input via AI.
 
 Notice **AI can be a bridge between the general-purpose input and the
-domain-specific one, but the underlying domain will always exist**[^x].
+domain-specific one, but the underlying domain will always exist**[^5].
 
-[^x]: I mention this because many idiots believe the marketing idea that "AI is
+[^5]: I mention this because many idiots believe the marketing idea that "AI is
     everything" (same for other marketing-hyped concepts like capitalism or
-    OOP), while in fact, **we always need good ol' math and engineering**, so AI
-    (capitalism, OOP, etc.) is just one small part of a system
+    OOP), while in fact, **everything is rooted in complex (usually "boring")
+    math, domain, and engineering facts**, so AI (capitalism, OOP, etc.) is
+    just one small part of a system, it's just one more tool
 
 Among the graphic rendering of the slide, they're all about JavaFX `Node`s like
 `Shape`s and normal GUI views. For backgrounds, a `Rectangle` shape is good. For
@@ -2744,9 +2745,9 @@ other mundane mixed-paradigm language, is *heterogeneous*, so an `enum` is a
 **different structure** than an `interface`. Not to say, OOP brings the whole
 jungle: interfaces are used as an all-in-one for many other affairs, too.
 
-I defined the keywords in a utility class[^x].
+I defined the keywords in a utility class[^6].
 
-[^x]: I used ChatGPT to generate the keywords, and GitHub language colors, i.e.,
+[^6]: I used ChatGPT to generate the keywords, and GitHub language colors, i.e.,
     the mechanical job
 
 `Definitions of Language Keywords | class Spec | package lang`
@@ -3653,10 +3654,10 @@ module engineer.mathsoftware.blog.slides {
 It's important to follow the instructions I left in the
 [resources/readme.md](slides---ep/src/main/resources/readme.md) file since you
 must download and copy the `tessdata` directory from its repository to run the
-OCR model in the app [^x]. This directory contains the `eng.traineddata`
+OCR model in the app [^7]. This directory contains the `eng.traineddata`
 file with the English data to load the model.
 
-[^x]: I didn't track those files in Git because they're nasty binary files and
+[^7]: I didn't track those files in Git because they're nasty binary files and
     third-party on top of that, so you have to copy them manually
 
 The tess4j library will allow us to call the Tesseract OCR API in Java and infer
@@ -3754,9 +3755,9 @@ Then, the `tessdata` is loaded from the app resources directory, a new
 
 Notice how a `bufferedImage` is created with the `javafx.swing` package to
 convert the input JavaFX `Image` into a (AWT) `BufferedImage` that is required
-by the `tess4j` API [^x].
+by the `tess4j` API [^8].
 
-[^x]: This conversion from JavaFX to AWT is similar to when saving snapshots to
+[^8]: This conversion from JavaFX to AWT is similar to when saving snapshots to
     the disk
 
 This `BufferedImage` is passed to the `getWords` method, and the result is
@@ -4098,9 +4099,9 @@ reverting any scale or zoom in the `Group` view (i.e., the main slide view in
 the center of the app).
 
 In `loadOcr`, a virtual thread is used to infer the bounding boxes from the OCR
-model [^x].
+model [^9].
 
-[^x]: Make sure to implement a thread-safe implementation, see how I use the
+[^9]: Make sure to implement a thread-safe implementation, see how I use the
     `Platform.runLater` call to send updates to the JavaFX UI thread
 
 The status messages are the labels I implemented in the right-bottom of the app.
