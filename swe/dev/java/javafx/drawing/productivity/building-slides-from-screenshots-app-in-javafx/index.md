@@ -4834,3 +4834,20 @@ The slides app is a system that allows us to optimize the building of
 domain-specific presentations. As a math software engineer, such achievement
 boosts my automation tools one step further in these graphical domains, leading
 to fastening future undertakings.
+
+## Bibliography
+
+- [JavaFX \| openjfx.io](https://openjfx.io/).
+- [JavaFX Fundamentals \| dev.java](https://dev.java/learn/javafx/).
+- [SDKMAN](https://sdkman.io).
+- [Java Installation Guide \| foojay.io](https://foojay.io/java-quick-start/install-java).
+- [Beginning JavaFX Applications with IntelliJ IDE \| foojay.io](https://foojay.io/today/beginning-javafx-with-intellij/).
+- [IntelliJ IDEA](https://www.jetbrains.com/idea).
+- [Scene Builder](https://gluonhq.com/products/scene-builder).
+- [Drag-and-Drop Feature in JavaFX Applications \| Docs \| Oracle](https://docs.oracle.com/javafx/2/drag_drop/jfxpub-drag_drop.htm).
+- [Using JavaFX UI Controls: Pagination Control \| Docs \| Oracle](https://docs.oracle.com/javafx/2/ui_controls/pagination.htm).
+- [A categorized list of all Java and JVM features since JDK 8 to 21 \| Advanced Web Machinery](https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-21/).
+- [JavaFX - 2D Shapes \| tutorialspoint.com](https://www.tutorialspoint.com/javafx/javafx_2d_shapes.htm).
+- [What is OCR? \| Northern Essex Community College](https://www.necc.mass.edu/wp-content/uploads/accessible-media-necc/uncategorized/resources/What-is-OCR.pdf).
+- [Tess4J \| SourceForge](https://tess4j.sourceforge.net/).
+- [Photopea \| GitHub](https://github.com/photopea/photopea).
