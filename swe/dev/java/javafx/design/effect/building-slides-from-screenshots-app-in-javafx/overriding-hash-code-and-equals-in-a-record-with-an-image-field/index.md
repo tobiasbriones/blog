@@ -26,6 +26,25 @@ This snippet explains why, according to the use case I had with that app.
 
 ![](why-override-hash-code-and-equals-methods-in-a-record.png)
 
+You may not use a binary file or large data like an `Image` to give an object
+identity, which leads us to overwrite the `hashCode` and `equals` methods in a
+Java `record`. Even though they're implemented by default, we have to optimize
+sometimes.
+
+The truth is that records are known to be "transparent carriers of immutable
+data," but they can also contain mutable objects or images that reference disk
+effects. Whenever we see any scenario including "mutability, side effects,
+binary, etc.," we have the red flag 🚩 to take action there.
+
+If the behavior is not fixed, the side effects will cause problems in
+identifying the items. For example, when you update the image in the disk, the
+hashes will be different for the same item in the program, so two modified
+versions of the same item will match differently. Even if the image in the disk
+is the same, it'll happen the same if you create two `Image` objects since
+they'll match differently by just being different object instances. Moreover,
+using bloated fields to compute an object's identity is nonsense programming
+logic and inefficient.
+
 ## Updating an Existing Image
 
 This behavior can be depicted as follows.
