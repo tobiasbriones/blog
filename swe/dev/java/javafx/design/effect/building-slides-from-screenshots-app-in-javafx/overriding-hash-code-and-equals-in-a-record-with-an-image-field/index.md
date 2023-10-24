@@ -105,9 +105,9 @@ I leave the old slide I used for this article at the beginning for the record
 ![](legacy-third-party-slide.png)
 
 Notice the difference in quality this experimental version provides me compared
-to the generic code snippet images I generated above via other third-party
-generic tools that are always bugged or never work well. This opens a new era
-for my technical content creation.
+to the generic code snippet images I generated above via other third-party tools
+that are always bugged or never work well. This opens a new era for my technical
+content creation.
 
 ## Setting a Correct Model Identity
 
