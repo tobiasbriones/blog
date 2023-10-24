@@ -232,7 +232,7 @@ Finally, a powerful artifact out of all these features is effectively **a
 presentation**.
 
 <div>
-<div id="presentation-_-video-rendering-side-effect-fix" class="carousel slide" data-bs-ride="false"
+<div id="presentation-_-video-rendering-side-effect-fix" class="carousel slide " data-bs-ride="false"
 >
 <div class="carousel-indicators">
     <button
@@ -319,11 +319,12 @@ presentation**.
     data-bs-target="#presentation-_-video-rendering-side-effect-fix"
     data-bs-slide="prev"
 >
-    <span
+   <div class="icon">
+     <span
         class="carousel-control-prev-icon"
-        aria-hidden="true"
-    >
-    </span>
+        aria-hidden="true">
+     </span>
+   </div>
     <span class="visually-hidden">Previous</span>
 </button>
 
@@ -333,11 +334,12 @@ presentation**.
     data-bs-target="#presentation-_-video-rendering-side-effect-fix"
     data-bs-slide="next"
 >
-    <span
+   <div class="icon">
+     <span
         class="carousel-control-next-icon"
-        aria-hidden="true"
-    >
-    </span>
+        aria-hidden="true">
+      </span>
+    </div>
     <span class="visually-hidden">Next</span>
 </button>
 
