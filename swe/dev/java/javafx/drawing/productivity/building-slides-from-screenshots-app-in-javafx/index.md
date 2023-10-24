@@ -505,7 +505,7 @@ It uses the `java.nio.file` API to access the file system, and the code written
 before.
 
 `Implementation of "DataRepository" on "LocalDataRepository"
-| Data.java | package data`
+| LocalDataRepository.java | package data`
 
 ```java
 public class LocalDataRepository implements DataRepository {
