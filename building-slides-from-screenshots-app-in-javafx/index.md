@@ -244,71 +244,11 @@ presentation**.
     aria-current="true"
 >
 </button>
-<button
-    type="button"
-    data-bs-target="#presentation-_-video-rendering-side-effect-fix"
-    data-bs-slide-to="1"
-    aria-label="Slide 2"
-    class=""
-    
->
-</button>
-<button
-    type="button"
-    data-bs-target="#presentation-_-video-rendering-side-effect-fix"
-    data-bs-slide-to="2"
-    aria-label="Slide 3"
-    class=""
-    
->
-</button>
-<button
-    type="button"
-    data-bs-target="#presentation-_-video-rendering-side-effect-fix"
-    data-bs-slide-to="3"
-    aria-label="Slide 4"
-    class=""
-    
->
-</button>
-<button
-    type="button"
-    data-bs-target="#presentation-_-video-rendering-side-effect-fix"
-    data-bs-slide-to="4"
-    aria-label="Slide 5"
-    class=""
-    
->
-</button>
-<button
-    type="button"
-    data-bs-target="#presentation-_-video-rendering-side-effect-fix"
-    data-bs-slide-to="5"
-    aria-label="Slide 6"
-    class=""
-    
->
-</button>
 </div>
 
 <div class="carousel-inner">
     <div class="carousel-item active">
     <img class="d-block" src="static/presentation-_-video-rendering-side-effect-fix_seq-1.png" alt="presentation-_-video-rendering-side-effect-fix_seq-1.png">
-</div>
-<div class="carousel-item ">
-    <img class="d-block" src="static/presentation-_-video-rendering-side-effect-fix_seq-2.png" alt="presentation-_-video-rendering-side-effect-fix_seq-2.png">
-</div>
-<div class="carousel-item ">
-    <img class="d-block" src="static/presentation-_-video-rendering-side-effect-fix_seq-3.png" alt="presentation-_-video-rendering-side-effect-fix_seq-3.png">
-</div>
-<div class="carousel-item ">
-    <img class="d-block" src="static/presentation-_-video-rendering-side-effect-fix_seq-4.png" alt="presentation-_-video-rendering-side-effect-fix_seq-4.png">
-</div>
-<div class="carousel-item ">
-    <img class="d-block" src="static/presentation-_-video-rendering-side-effect-fix_seq-5.png" alt="presentation-_-video-rendering-side-effect-fix_seq-5.png">
-</div>
-<div class="carousel-item ">
-    <img class="d-block" src="static/presentation-_-video-rendering-side-effect-fix_seq-6.png" alt="presentation-_-video-rendering-side-effect-fix_seq-6.png">
 </div>
 </div>
 
@@ -1163,6 +1103,8 @@ before.
 
     @Override
     public List&lt;ImageItem&gt; readAllImages() throws IOException {
+        requireLocalStorage();
+
         var images = new ArrayList&lt;ImageItem&gt;();
         var files = Files
             .walk(pathOf(&quot;&quot;), 1)
@@ -1289,6 +1231,8 @@ public class LocalDataRepository implements DataRepository {
 
     @Override
     public List<ImageItem> readAllImages() throws IOException {
+        requireLocalStorage();
+
         var images = new ArrayList<ImageItem>();
         var files = Files
             .walk(pathOf(""), 1)
@@ -2101,15 +2045,15 @@ private void loadImageList() {
 private void createOrUpdateImages(Iterable&lt;? extends File&gt; files) {
     for (var file : files) {
         var path = file.toPath();
-    
+
         try {
             repository.createOrUpdateImage(path);
-        
+
             var imageName = path.getFileName().toString();
             var newImage = repository.readImage(imageName);
             var newImageItem = new ImageItem(imageName, newImage);
             var listItems = imageList.getItems();
-        
+
             listItems.remove(newImageItem);
             listItems.add(new ImageItem(imageName, newImage));
         }
@@ -2193,15 +2137,15 @@ private void loadImageList() {
 private void createOrUpdateImages(Iterable<? extends File> files) {
     for (var file : files) {
         var path = file.toPath();
-    
+
         try {
             repository.createOrUpdateImage(path);
-        
+
             var imageName = path.getFileName().toString();
             var newImage = repository.readImage(imageName);
             var newImageItem = new ImageItem(imageName, newImage);
             var listItems = imageList.getItems();
-        
+
             listItems.remove(newImageItem);
             listItems.add(new ImageItem(imageName, newImage));
         }
@@ -8056,7 +8000,7 @@ instance.
 Finally, I recorded a video to demonstrate the shapes feature in the app.
 
 <figure>
-    <video poster="static/poster-_-drawing-shapes-on-slides.png" controls>
+    <video poster="static/poster-_-drawing-shapes-on-slides.jpg" controls>
       <source
         src="static/drawing-shapes-on-slides.mp4"
         type="video/mp4"
@@ -9991,7 +9935,7 @@ removes the redundant line shape.
 I recorded a video to show what this feature looks like in action.
 
 <figure>
-    <video poster="static/poster-_-ocr-word-detection-for-automated-underlining.png" controls>
+    <video poster="static/poster-_-ocr-word-detection-for-automated-underlining.jpg" controls>
       <source
         src="static/ocr-word-detection-for-automated-underlining.mp4"
         type="video/mp4"
@@ -10017,7 +9961,7 @@ to infer that (white) text is part of the background. Therefore, text's not
 detected.
 
 <figure>
-    <video poster="static/poster-_-ocr-side-effects.png" controls>
+    <video poster="static/poster-_-ocr-side-effects.jpg" controls>
       <source
         src="static/ocr-side-effects.mp4"
         type="video/mp4"
