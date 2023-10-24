@@ -114,5 +114,5 @@ content creation.
 Large structures, binary files, memory addresses, and any kind of
 poorly-meaningful side effects have to be pushed to the system boundaries, and
 we have to avoid merging them into our domain boundaries like in this case where
-a Record should be defined via a meaningful key from our application domain
+a `record` should be defined via a meaningful key from our application domain
 instead of an in-memory image object.
