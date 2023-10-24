@@ -1063,11 +1063,11 @@ before.
 <figure>
 <div class="header user-select-none ">
     <div class="caption">
-        Data.java | package data
+        LocalDataRepository.java | package data
     </div>
 
     <div class="menu">
-        <button type="button" data-path="slides---ep/src/main/java/engineer/mathsoftware/blog/slides/data/Data.java" onclick="onOpenCodeSnippetLink(this)">
+        <button type="button" data-path="slides---ep/src/main/java/engineer/mathsoftware/blog/slides/data/LocalDataRepository.java" onclick="onOpenCodeSnippetLink(this)">
     <span class="material-symbols-rounded">
     open_in_new
     </span>
