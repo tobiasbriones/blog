@@ -969,15 +969,15 @@ private void loadImageList() {
 private void createOrUpdateImages(Iterable<? extends File> files) {
     for (var file : files) {
         var path = file.toPath();
-    
+
         try {
             repository.createOrUpdateImage(path);
-        
+
             var imageName = path.getFileName().toString();
             var newImage = repository.readImage(imageName);
             var newImageItem = new ImageItem(imageName, newImage);
             var listItems = imageList.getItems();
-        
+
             listItems.remove(newImageItem);
             listItems.add(new ImageItem(imageName, newImage));
         }
