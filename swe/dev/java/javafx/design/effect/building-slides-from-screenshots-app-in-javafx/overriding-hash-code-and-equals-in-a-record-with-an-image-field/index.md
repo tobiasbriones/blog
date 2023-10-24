@@ -94,7 +94,15 @@ Regarding development, I finished the EP and will publish the complete
 development documentation as notified in
 [Finishing Writing the Documentation for my Next EP (2023-07-14)](/finishing-writing-the-documentation-for-my-next-ep-2023-07-14).
 
+The article is published in
+[Building Slides from Screenshots App in JavaFX](https://blog.mathsoftware.engineer/building-slides-from-screenshots-app-in-javafx).
+
 ![](slides-ep-_-code-snippet.png)
+
+I leave the old slide I used for this article at the beginning for the record
+(pun intended).
+
+![](legacy-third-party-slide.png)
 
 Notice the difference in quality this experimental version provides me compared
 to the generic code snippet images I generated above via other third-party
