@@ -94,10 +94,6 @@ Regarding development, I finished the EP and will publish the complete
 development documentation as notified in
 [Finishing Writing the Documentation for my Next EP (2023-07-14)](/finishing-writing-the-documentation-for-my-next-ep-2023-07-14).
 
-I actually took this article from the app dev article to separate the content,
-and I will publish this article that has been ready since long ago right after I
-publish the dev one.
-
 ![](slides-ep-_-code-snippet.png)
 
 Notice the difference in quality this experimental version provides me compared
