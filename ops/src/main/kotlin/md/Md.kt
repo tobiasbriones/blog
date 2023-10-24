@@ -6,8 +6,10 @@ import Entry
 import arrow.core.*
 import name
 import path
+import java.io.IOException
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
+import javax.imageio.ImageIO
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.exists
 import kotlin.io.path.name
@@ -67,6 +69,24 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             return seq
         }
 
+        fun isPortrait(): Boolean =
+            try {
+                val path = entry.path.resolve(firstImagePath)
+
+                if (path.exists()) {
+                    val image = ImageIO.read(path.toFile())
+                    val width = image.width
+                    val height = image.height
+                    val ratio = width / height
+
+                    ratio < 0.75
+                } else {
+                    false
+                }
+            } catch (e: IOException) {
+                false
+            }
+
         data class CarItem(val index: Int, val src: String, val alt: String)
 
         val activeClass: (CarItem) -> String =
@@ -81,6 +101,10 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             .removeSuffix("_seq-1")
 
         val title = Entry(Path.of(id)).toTitleCase(dic).removeExtension()
+
+        val portrait = if (isPortrait()) "portrait" else ""
+
+        val carouselClasses = "carousel slide $portrait"
 
         val seq = getSequence()
         val items = seq
@@ -111,7 +135,6 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
                     |</div>
                 """.trimMargin("|")
             }
-
         val control = """|
             |<button
             |    class="carousel-control-prev"
@@ -119,11 +142,12 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             |    data-bs-target="#$id"
             |    data-bs-slide="prev"
             |>
-            |    <span
+            |   <div class="icon">
+            |     <span
             |        class="carousel-control-prev-icon"
-            |        aria-hidden="true"
-            |    >
-            |    </span>
+            |        aria-hidden="true">
+            |     </span>
+            |   </div>
             |    <span class="visually-hidden">Previous</span>
             |</button>
             |
@@ -133,14 +157,16 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             |    data-bs-target="#$id"
             |    data-bs-slide="next"
             |>
-            |    <span
+            |   <div class="icon">
+            |     <span
             |        class="carousel-control-next-icon"
-            |        aria-hidden="true"
-            |    >
-            |    </span>
+            |        aria-hidden="true">
+            |      </span>
+            |    </div>
             |    <span class="visually-hidden">Next</span>
             |</button>
         """.trimMargin("|")
+
 
         return items
             .map {
@@ -154,7 +180,7 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             .run {
                 """
                     |<div>
-                    |<div id="$id" class="carousel slide" data-bs-ride="false"
+                    |<div id="$id" class="$carouselClasses" data-bs-ride="false"
                     |>
                     |$indicators
                     |

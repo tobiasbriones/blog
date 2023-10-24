@@ -5,7 +5,7 @@ val dic: Dictionary = Dictionary(
         "bsd", "mit", "ep", "bi", "unah-vs", "ai", "ml", "swe",
         "sar", "hn", "hn:", "mrm", "fxml", "html", "css", "uml",
         "ssd", "fhd", "hd", "og", "isv", "ocr", "fm", "unah", "vs",
-        "oome", "ai:", "ep:",
+        "oome", "ai:", "ep:", "gui",
 
     ),
     composed = mapOf(
