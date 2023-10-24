@@ -55,6 +55,8 @@ public class LocalDataRepository implements DataRepository {
 
     @Override
     public List<ImageItem> readAllImages() throws IOException {
+        requireLocalStorage();
+
         var images = new ArrayList<ImageItem>();
         var files = Files
             .walk(pathOf(""), 1)
