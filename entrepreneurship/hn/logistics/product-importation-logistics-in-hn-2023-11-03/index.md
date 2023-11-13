@@ -86,6 +86,29 @@ and set up a side business that helps you out in these tough times. Regarding
 bringing products in, the situation allows it, and it's improving in
 modernization.
 
+## Transportation to HN
+
+The investments in transportation infrastructure allow maritime, air, road, and
+rail means to serve to get products in.
+
+Ports are the key to maritime shipping. This includes [2] Puerto Cortés
+—suitable for large vessels, first in Latin America to qualify under the
+"National Nuclear Security Administration’s Megaports and U.S. Customs & Border
+Protection Container Security Initiatives (CSI)"[^4]. Followed by Puerto
+Castilla —strategic on the Pacific coast.
+
+[^4]: What an annoying large name it sounds like a Java "enterprise" class 😵
+
+The development of the international Palmerola (near the capital) airport opened
+in 2021 has allowed the deprecation of the legacy Toncontin airport (for int.
+flights) which is one of the most dangerous airports in the world. Further,
+there are other airports to support the air transport around Ramón Villeda
+Morales near San Pedro Sula [2].
+
+The improvements and conditions in Honduras's means of transportation, mainly
+ports, airports, and roads allow you to import your products to run your
+business in HN.
+
 ## References
 
 [1] [A cross-border guide to ecommerce in Honduras \| Zonos Docs](https://zonos.com/docs/guides/country-guides/honduras). (
