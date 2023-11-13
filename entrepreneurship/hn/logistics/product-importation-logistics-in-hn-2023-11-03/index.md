@@ -129,8 +129,8 @@ source of importation.
 
 ## References
 
-[1] [A cross-border guide to ecommerce in Honduras \| Zonos Docs](https://zonos.com/docs/guides/country-guides/honduras). (
-n.d.). Zonos.
+[1] [A cross-border guide to ecommerce in Honduras \| Zonos Docs](https://zonos.com/docs/guides/country-guides/honduras). 
+(n.d.). Zonos.
 
 [2] Lac, & Lac. (2023, April 2).
 [Exporting to Honduras \| A Trade & Export Guide \| LAC](https://www.latinamericancargo.com/exporting-to-honduras-a-trade-export-guide).
