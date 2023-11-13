@@ -109,6 +109,23 @@ The improvements and conditions in Honduras's means of transportation, mainly
 ports, airports, and roads allow you to import your products to run your
 business in HN.
 
+## Product Importation History
+
+Next, there's the overview of products and sources of importation and
+exportation to understand what's being moved over this market.
+
+In 2021, Honduras held the 102nd position in the global economy by GDP, ranked
+100th in total exports, and 91st in total imports. Importantly, Honduras mainly
+imported Refined Petroleum, Non-Retail Pure Cotton Yarn, Non-Retail Synthetic
+Staple Fibers Yarn, Coated Flat-Rolled Iron, and Packaged Medicaments, with
+primary sources being the United States, China, Guatemala, El Salvador, and
+Mexico. On the export front, key products included Coffee, Knit Sweaters,
+Insulated Wire, Knit T-shirts, and Palm Oil, with major export destinations
+being the United States, El Salvador, Guatemala, Nicaragua, and Germany [4].
+
+Notice how you want to import products from the US since that's the main 
+source of importation.
+
 ## References
 
 [1] [A cross-border guide to ecommerce in Honduras \| Zonos Docs](https://zonos.com/docs/guides/country-guides/honduras). (
