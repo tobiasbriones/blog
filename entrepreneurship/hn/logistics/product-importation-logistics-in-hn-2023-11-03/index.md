@@ -127,6 +127,90 @@ being the United States, El Salvador, Guatemala, Nicaragua, and Germany [4].
 Notice how you want to import products from the US since that's the main 
 source of importation.
 
+## Local Product Delivery
+
+You might find several ways to ship products locally to customers and reach the
+maximum population of potential buyers in the territory bounds.
+
+I recently received a package from a (small) online store in HN and paid
+attention to the process to get experience in this stage for further reference.
+The shipment was interdepartmental from the capital to SPS.
+
+The product was sent to my home through Cargo Expreso, who claim to deliver
+shipments within the next business day, with interdepartmental shipments
+guaranteed by the second business day and support for letters, documents,
+packages, furniture, spare parts, or any other item [6].
+
+My package was delivered on the second day, and their website or information
+system is lame because I wanted to track the package, but their tracking system
+didn't find it. You'll have to use the chat with a human agent to get basic
+tracking status.
+
+Moreover, the chat has terrible UX/UI (it feels like an image with events rather
+than HTML elements) based on a PHP polling the back-end every ~5 seconds (I
+checked the console logs). The input element is hard to focus, of course,
+because it's 12px height 🤦🏻‍♂️. An average customer must have a hard time here.
+
+The chat was slow to respond even when it's a bot 🤦🏻‍♂️, and when I
+contacted the human agent, they provided basic tracking information but didn't
+solve my explicit question of why the track search didn't work for me when I
+entered my package guide ID number.
+
+That raises the issue that your customers are waiting for a product they paid
+for, but who knows where it is (they can be scammed online by fake sellers, too,
+so there's the concern of trust).
+
+The chatbot is useless since it has the option to track a package, but the only
+thing it does is provide a non-clickable and non-selectable (i.e., absolutely
+useless) link to the main page (which is also wrong because it has to lead you
+to the track page path instead of home 🤦🏻‍♂️) and tells you an annoying message
+of going back to the main menu, like mocking at you because it didn't help at
+all.
+
+The seller also had to refund the shipment fee back to me because the Cargo
+Expreso system failed to accept them the local payment (before shipping), so I
+had to pay with cash the day I received increasing the processing burden
+further.
+
+The delivery itself was acceptable, as expected compared to other major services
+like Walmart deliveries. The package was integral and in perfect state and
+wrapping.
+
+Consider that's the best of the cases when it comes to branded services like
+Cargo Expreso or Walmart deliveries, for instance. On the other hand,
+opportunist trashy (big) businesses like Acosa and Diunsa scam you when you shop
+online (and in person as well). I've always been affected by wrongdoing business
+practices, just like many other users. The store can be 10 minutes away, but
+they take more than three days to deliver, if at all, with all kinds of hassle
+and opportunism included.
+
+The problem, in general, is that delivery systems in HN lack basic technology
+like GPS, so they have to call you to get manual old-fashioned addresses, so you
+lose a lot of time the day you're expecting a delivery even when they have your
+address but "don't know where it is." It's too repetitive and overwhelming.
+
+Recall that new generations hate talking on the phone, with (many times)
+pedantic stranger boomers who are lost in their own city while doing *their job*
+📞😵. That's a general issue here when you ask for products online from local
+stores.
+
+That's why I only order supermarket products from Walmart when I want online
+with shipment service —which is still far from optimal though—, and have
+preferred shops in my mind to try to reduce the hassle.
+
+What I mean by this is how hard it is to find good-quality providers because
+your customers need a great experience to keep engaging with your brand. You
+need to rely on third parties to focus on your niche, but if they're a hassle,
+customers might as well go for local stores or buy on Amazon.
+
+Recall that *customers want their products, so they can get them anywhere, not
+only from your online store*. So, **make sure to set up a smooth experience to
+eliminate any stress in the process and build trust**.
+
+I could still see Cargo Expreso with good eyes, but I would definitely research
+more about other country-wide delivery options and evaluate whether they
+operate with better working technologies.
+
 ## References
 
 [1] [A cross-border guide to ecommerce in Honduras \| Zonos Docs](https://zonos.com/docs/guides/country-guides/honduras). 
