@@ -124,8 +124,13 @@ Mexico. On the export front, key products included Coffee, Knit Sweaters,
 Insulated Wire, Knit T-shirts, and Palm Oil, with major export destinations
 being the United States, El Salvador, Guatemala, Nicaragua, and Germany [4].
 
-Notice how you want to import products from the US since that's the main 
-source of importation.
+The USA stands as Honduras' primary trade partner, with $5.1 billion worth of
+goods flowing into Honduras from the U.S. in 2019, constituting nearly 43% of
+its overall imports. Simultaneously, over half (52.5%) of Honduras' exports were
+destined for the United States during the same period [2].
+
+Notice how you want to import products from the USA since that's the mainstream
+source of importation to get products to Honduras.
 
 ## Local Product Delivery
 
