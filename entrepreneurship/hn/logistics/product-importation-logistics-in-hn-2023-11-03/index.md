@@ -284,6 +284,7 @@ operate with better working technologies.
 
 - [Cost, Insurance, and Freight (CIF) Definition, Rules, and Example \| Investopedia](https://www.investopedia.com/terms/c/cif.asp).
 - [Value-Added Tax (VAT) \| Investopedia](https://www.investopedia.com/terms/v/valueaddedtax.asp).
+- [What is parcel shipping? \| Freight Quote](https://www.freightquote.com/define/what-is-parcel-shipping/).
 
 ## References
 
