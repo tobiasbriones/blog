@@ -132,6 +132,29 @@ destined for the United States during the same period [2].
 Notice how you want to import products from the USA since that's the mainstream
 source of importation to get products to Honduras.
 
+## Consumer Industry Examples
+
+Some popular consumer goods that can be imported via companies like LAC
+(Latin American Cargo) to and from North America, Latin America, and the
+Caribbean can turn out interesting for some business domains.
+
+These goods can be (not limited to) [3]:
+
+- Electronic equipment, systems, and accessories.
+- High-end luxury products, high fashion clothing and accessories.
+- High-tech products, consumer electronics products and gadgets.
+- Home appliances from dishwashers and dryers to refrigerators and ovens.
+- Household equipment and decorating accessories.
+- Tables, chairs, beds, desks, and all other kinds and sizes of furniture.
+
+You can also use companies like [Aeropost](https://courier.aeropost.com/SAP/es)
+to bring products from online shops like Amazon, but it's for end users, so
+it'll likely turn up way too expensive. One exception might be niche products
+you can sell at a higher price locally if that helps.
+
+These sets of products can provide a wider idea of businesses that can leverage
+international services to acquire the goods.
+
 ## Landing Requirements and Costs
 
 Importing to HN is similar to other countries in Central America as well. If
