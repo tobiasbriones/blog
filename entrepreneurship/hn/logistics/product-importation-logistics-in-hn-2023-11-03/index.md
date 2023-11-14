@@ -216,6 +216,11 @@ I could still see Cargo Expreso with good eyes, but I would definitely research
 more about other country-wide delivery options and evaluate whether they
 operate with better working technologies.
 
+## Bibliography
+
+- [Cost, Insurance, and Freight (CIF) Definition, Rules, and Example \| Investopedia](https://www.investopedia.com/terms/c/cif.asp).
+- [Value-Added Tax (VAT) \| Investopedia](https://www.investopedia.com/terms/v/valueaddedtax.asp).
+
 ## References
 
 [1] [A cross-border guide to ecommerce in Honduras \| Zonos Docs](https://zonos.com/docs/guides/country-guides/honduras). 
