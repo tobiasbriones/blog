@@ -4,6 +4,18 @@
 
 # Product Importation Logistics in HN (2023/11/03)
 
+![](images/product-importation-logistics-in-hn-2023-11-03.png)
+
+<p align="center">
+<b>
+Derived from 
+<a href="images/notice#cover">Pixabay</a>
+Images
+</b>
+</p>
+
+---
+
 Importing products and running businesses in Honduras is a complex challenge to
 deliver goods to final customers, requiring studying the process and country
 situation all the way to get to the customer's home. There are ugly as well as
