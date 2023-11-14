@@ -65,8 +65,8 @@ Out of the serious challenges and benefits/improvements, what struck me as
 relevant is the fact that **"over half the population use the internet, less
 than half shop online, making the market opportunity average"** [1]. This,
 together with the informal economy, severely affects the e-commerce market,
-which leads us to focus on market research to validate niche, active products
-and services with concurrent consumers.
+which leads us to **focus on market research to validate niche, active products
+and services with concurrent consumers**.
 
 General-purpose businesses are saturated here in SPS if that helps.
 
