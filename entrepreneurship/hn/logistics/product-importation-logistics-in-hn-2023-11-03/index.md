@@ -21,7 +21,7 @@ deliver goods to final customers, requiring studying the process and country
 situation all the way to get to the customer's home. There are ugly as well as
 advantageous facts to help build a business according to the entrepreneur
 context, and those willing to start the adventure in Honduras will want to make
-sure to set up their business domain and logistics as far as the country
+sure to set up their business domain and logistics as far as the country's
 situation allows it.
 
 ## Importing Products and Running Businesses in HN
