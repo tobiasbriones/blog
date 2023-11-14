@@ -7,7 +7,7 @@
 ## Importing Products and Running Businesses in HN
 
 There's a chance you can operate traditional businesses in Honduras (HN). Since
-I've lived here for over 15 years straight until I finished university, I
+I've lived here for over 18 years straight until I finished university, I
 can leverage that experience to develop something in these bounds.
 
 First, you have to **expect the severe challenges** you find in countries like
