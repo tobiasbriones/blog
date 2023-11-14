@@ -4,6 +4,14 @@
 
 # Product Importation Logistics in HN (2023/11/03)
 
+Importing products and running businesses in Honduras is a complex challenge to
+deliver goods to final customers, requiring studying the process and country
+situation all the way to get to the customer's home. There are ugly as well as
+advantageous facts to help build a business according to the entrepreneur
+context, and those willing to start the adventure in Honduras will want to make
+sure to set up their business domain and logistics as far as the country
+situation allows it.
+
 ## Importing Products and Running Businesses in HN
 
 There's a chance you can operate traditional businesses in Honduras (HN). Since
