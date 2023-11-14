@@ -168,7 +168,8 @@ restructured [2]. You can keep reading for general information.
 
 It's important to consider that **San Pedro Sula is claimed to be the most
 important economic and industrial area** of Honduras [5], so it's strategic to
-run operations there. Although it's a dangerous zone as mentioned in
+run operations there, so *you might as well land to SPS*. Although it's a
+dangerous zone, as mentioned in
 [Importing Products and Running Businesses in HN](#importing-products-and-running-businesses-in-hn),
 you might get your niche more safely. For example, some maps tell you how
 "violent" a zone is according to data [9].
