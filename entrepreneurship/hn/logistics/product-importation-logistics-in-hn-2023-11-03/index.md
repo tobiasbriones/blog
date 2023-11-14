@@ -132,6 +132,70 @@ destined for the United States during the same period [2].
 Notice how you want to import products from the USA since that's the mainstream
 source of importation to get products to Honduras.
 
+## Landing Requirements and Costs
+
+Importing to HN is similar to other countries in Central America as well. If
+you're familiar with nearby counties, that'd be another advantage to running a
+business in HN.
+
+You have to keep up to date since HN customs procedures are being modernized and
+restructured [2]. You can keep reading for general information.
+
+It's important to consider that San Pedro Sula is claimed to be the most
+important economic and industrial area of Honduras [5], so it's strategic to run
+operations there. Although it's a dangerous zone as mentioned in
+[Importing Products and Running Businesses in HN](#importing-products-and-running-businesses-in-hn),
+you might get your niche more safely. For example, some maps tell you how "
+violent" a zone is according to data [9].
+
+Going back to trade agreements:
+
+There are benefits from the "CAFTA-DR free trade agreement" where "all U.S.
+consumer and industrial goods enter Honduras duty-free. The same applies to
+textile and apparel products that meet the origin requirements of the
+agreement". The trend continues for US agricultural products, with most already
+enjoying duty-free entry. In the coming years, all tariffs will be eliminated.
+Notably, rice and chicken leg quarters will be tariff-free by 2023, followed by
+dairy products in 2025. While quotas for white corn imports are set to increase,
+a maximum 15% tariff applies to remaining goods, aligning with the Central
+American Common Market standards [2].
+
+Among the document requirements to export to HN, we have: Import permit
+application, commercial invoice, bill of lading, packing list, certificate of
+origin, phyto or zoo-sanitary certificates, sanitary product registration, and
+other requirements as per your exporting needs [2][10].
+
+Regarding restrictions, there are known things that can't be imported or have
+constraints, but that doesn't matter for our research.
+
+Expanding on what was said in
+[Importing Products and Running Businesses in HN](#importing-products-and-running-businesses-in-hn)
+about the tax rates and zero tax de minimis threshold, resulting in high tax
+rates, we can argue that trade agreements help with this. For example, the duty
+range is low and often waived, and there are no usual obstacles as per legal
+regulations [1].
+
+Landed costs include the following fees associated with the products [1]:
+
+- Product price.
+- Shipping.
+- Duties.
+- Taxes.
+- Fees (currency conversion, carrier, broker, customs, or government fees).
+
+The standard rate for import taxes is 15% applied to the CIF value of the
+order, and all imports are subject to 15% VAT.
+
+For computing the landed costs, you can use Zonos, which "provides a complete
+breakdown of duties, taxes, and fees that make up a total landed cost" via a
+Zonos API for simple integrations. It works for e-commerce logistics solutions
+and supports many countries (including Honduras) [11].
+
+Being at the heart of Central America, the process in Honduras is simplified
+because it's similar to nearby counties, but landing costs imply many challenges
+you might want to address at a time. Even though, there are many technologies
+and modernization we can leverage as operations intel to complete the mission.
+
 ## Local Product Delivery
 
 You might find several ways to ship products locally to customers and reach the
