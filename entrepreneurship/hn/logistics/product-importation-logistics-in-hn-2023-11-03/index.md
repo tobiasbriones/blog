@@ -166,9 +166,9 @@ business in HN.
 You have to keep up to date since HN customs procedures are being modernized and
 restructured [2]. You can keep reading for general information.
 
-It's important to consider that San Pedro Sula is claimed to be the most
-important economic and industrial area of Honduras [5], so it's strategic to run
-operations there. Although it's a dangerous zone as mentioned in
+It's important to consider that **San Pedro Sula is claimed to be the most
+important economic and industrial area** of Honduras [5], so it's strategic to
+run operations there. Although it's a dangerous zone as mentioned in
 [Importing Products and Running Businesses in HN](#importing-products-and-running-businesses-in-hn),
 you might get your niche more safely. For example, some maps tell you how
 "violent" a zone is according to data [9].
