@@ -2,6 +2,7 @@
 
 - [4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](4-years-since-vocational-fair-at-unah-vs-2023-05-09)
 - [Data-Driven Organizations and Power BI Overview](ddo-and-power-bi-overview)
+- [Product Importation Logistics in HN (2023/11/03)](product-importation-logistics-in-hn-2023-11-03)
 - [SAR HN: Sales Tax Overview (2023/08/28)](sar-hn-_-sales-tax-overview-2023-08-28)
 - [Celebrating the Possibility of Having a Computer to Work with (2023/09/11)](celebrating-the-possibility-of-having-a-computer-to-work-with-2023-09-11)
 - [Pi Day (2022/03/14)](pi-day-2022-03-14)
