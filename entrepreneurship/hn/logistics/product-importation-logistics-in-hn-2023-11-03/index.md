@@ -246,3 +246,6 @@ www.laprensa.hn.
 
 [9] [Análisis sobre la situación del delito de extorsión en Honduras \| 2022 \| Programa De Las Naciones Unidas Para El Desarrollo](https://www.undp.org/es/honduras/noticias/analisis-sobre-la-situacion-del-delito-de-extorsion-en-honduras-2022).
 (n.d.). UNDP.
+
+[10] [Honduras - Import requirements and documentation](https://www.trade.gov/country-commercial-guides/honduras-import-requirements-and-documentation).
+(n.d.). International Trade Administration | Trade.gov.
