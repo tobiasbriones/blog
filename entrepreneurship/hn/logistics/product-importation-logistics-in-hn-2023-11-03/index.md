@@ -252,7 +252,7 @@ didn't find it. You'll have to use the chat with a human agent to get basic
 tracking status.
 
 Moreover, the chat has terrible UX/UI (it feels like an image with events rather
-than HTML elements) based on a PHP polling the back-end every ~5 seconds (I
+than HTML elements) based on a PHP polling to the back-end every ~5 seconds (I
 checked the console logs). The input element is hard to focus, of course,
 because it's 12px height 🤦🏻‍♂️. An average customer must have a hard time here.
 
@@ -289,7 +289,7 @@ practices, just like many other users. The store can be 10 minutes away, but
 they take more than three days to deliver, if at all, with all kinds of hassle
 and opportunism included.
 
-The problem, in general, is that delivery systems in HN lack basic technology
+A problem, in general, is that delivery systems in HN lack basic technology
 like GPS, so they have to call you to get manual old-fashioned addresses, so you
 lose a lot of time the day you're expecting a delivery even when they have your
 address but "don't know where it is." It's too repetitive and overwhelming.
