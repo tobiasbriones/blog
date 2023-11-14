@@ -316,6 +316,33 @@ I could still see Cargo Expreso with good eyes, but I would definitely research
 more about other country-wide delivery options and evaluate whether they
 operate with better working technologies.
 
+## Getting Goods to Customers
+
+If you have experience as a Honduran citizen and nearby Central American
+countries, you may be capable of running a (side) business to help with the
+economic situation. The challenges, particularly in Honduras, are
+extremely crazy, but given your experience in the area, they could be overcome
+with a planned business strategy.
+
+Products are waiting to be imported (probably from the USA) to Honduras, so you
+run a business or even create locally developed products that are in decline.
+
+As per requirements and costs for landing, you'll face constraints according to
+your market or product types, and several trade agreements can lower the duty
+fees despite high taxes to pay along the way.
+
+Being at the "heart of Central America," and having means of transportation and
+freight for international and interdepartmental (locally) shipment at hand, with
+strategic places like San Pedro Sula, and new infrastructure modernization in
+progress like the Palmerola int. airport, running business in Honduras may seem
+more suitable.
+
+There's a lot of complexity in the process of importing products, paying taxes
+and fees, registering a business formally or going informal, and managing
+logistics locally until the stage to deliver these goods to consumers optimally.
+Studying the situation in Honduras can get started with the information
+previously addressed.
+
 ## Bibliography
 
 - [Cost, Insurance, and Freight (CIF) Definition, Rules, and Example \| Investopedia](https://www.investopedia.com/terms/c/cif.asp).
