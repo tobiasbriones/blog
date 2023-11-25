@@ -50,9 +50,9 @@ I can't burn readers with one of my in-house MVP[^x] libs [^x].
     classes, unlike MVP, which is a bit better and relies on "contract"
     interfaces that enrich our design with better abstractions
 
-[^x]: MVC is a horrible (and most popular out there) pattern I'd only use for
-    Android apps I used to write 10 years ago in 2013, but it's good for basic
-    GUIs if there's no better support from the GUI tooling
+[^x]: MVC is a horrible (and most popular out there) pattern outdated from
+    Android apps written ten years ago (I used it in 2013), but it's good for 
+    basic GUIs if there's no better support from the GUI tooling
 
 So the complex part of this package will be the `Canvas` graphics instead.
 
@@ -73,7 +73,7 @@ Two classes will be added next:
 - `AppView`: Visual component that renders our GUI and graphics.
 - `AppController`: Logic control of the view.
 
-The package will be accessed via the `AppView` class, so it keeps familiar to
+The package will be accessed via the `AppView` class, so it keeps familiar with
 what we had before:
 
 `Hello World Moved to the App Package | class AppView`
