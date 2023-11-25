@@ -35,7 +35,7 @@ With this, Java and JavaFX should be available on your machine as well as the
 dev tools, environment, and starting project, so we can start writing the JavaFX
 code.
 
-#### Package App
+### Package App
 
 This package will implement the JavaFX GUI application.
 
@@ -59,6 +59,8 @@ So the complex part of this package will be the `Canvas` graphics instead.
 
 First, create the `package` from the base `sierpinskipetal` one:
 
+`Definition of the "app" Package | package app`
+
 ```java
 /**
  * Implements the JavaFX application for drawing and animating the underlying
@@ -67,10 +69,6 @@ First, create the `package` from the base `sierpinskipetal` one:
 package engineer.mathsoftware.blog.sierpinskipetal.app;
 ```
 
-<figcaption>
-<p align="center"><strong>Definition of the "app" Package</strong></p>
-</figcaption>
-
 Two classes will be added next:
 
 - `AppView`: Visual component that renders our GUI and graphics.
@@ -78,6 +76,8 @@ Two classes will be added next:
 
 The package will be accessed via the `AppView` class, so it keeps familiar to
 what we had before:
+
+`Hello World Moved to the App Package | class AppView`
 
 ```java
 public class AppView {
@@ -115,10 +115,6 @@ public class AppView {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Hello World Moved to the AppView Class</strong></p>
-</figcaption>
-
 `AppView` provides the `newInstance` static factory method that gets us a
 properly built view with its `AppController` created and set up.
 
@@ -131,6 +127,8 @@ The `init` method avoids abusing the view's constructor [^x].
     see in the Java culture
 
 Now add the controller:
+
+`Creation of AppController | class AppController`
 
 ```java
 class AppController {
@@ -148,14 +146,11 @@ class AppController {
 }
 ```
 
-<figcaption>
-<p align="center"><strong>Creation of AppController</strong></p>
-</figcaption>
-
 Then, any control logic will be placed there later.
 
-Finally, the `Main` class will look like this (I made the window's height bigger
-too):
+Finally, the `Main` class will look like this:
+
+`App Entry | Main.java`
 
 ```java
 public class Main extends Application {
@@ -178,15 +173,17 @@ public class Main extends Application {
 }
 ```
 
-Which produces the same "Hello World" app [above](#hello-world) (but a little
-bigger).
+Which produces the same "Hello World" app [above](#getting-started) (but a
+little bigger).
 
-#### Canvas View
+### Canvas View
 
 It's time to get create the canvas component to move our "Hello World" to
 `Canvas`.
 
 The view is `AppCanvasView` as follows:
+
+`Creation of the App Canvas | class AppCanvasView`
 
 ```java
 class AppCanvasView {
@@ -242,13 +239,13 @@ coupling among objects (MVP-like), but that's not this package design's scope.
 
 The result is the "Hello World" `Canvas` rendered in the middle of the window:
 
-![Canvas Hello World](canvas-hello-world.png)
+`Canvas Hello World`
 
-<figcaption>
-<p align="center"><strong>Canvas Hello World</strong></p>
-</figcaption>
+![](canvas-hello-world.png)
 
-#### Getting Started with a Playground
+This way the application `Canvas` is integrated and ready to be employed.
+
+### Getting Started with a Playground
 
 I created a `Playground` class to apply many concepts before going all the way
 ahead with this article. It requires having experience with `Canvas`[^x], and I
@@ -272,6 +269,9 @@ this class** [^x].
 
 This is an idea of what my `Playground` currently looks like:
 
+`Integrating an In-House Environment to Run Ideas in the App Canvas
+| Creation of a Canvas Playground | class Playground`
+
 ```java
 @SuppressWarnings("ALL")
 class Playground {
@@ -292,7 +292,7 @@ class Playground {
     double cx() { return width() / 2; }
 
     double cy() { return height() / 2; }
-    
+
     Playground(Canvas canvas, double scale) {
         this.canvas = canvas;
         this.ctx = canvas.getGraphicsContext2D();
@@ -309,7 +309,7 @@ class Playground {
         this.opacity = 1.0;
         this.title = "Drawing a Flower";
     }
-    
+
     void play() {
         ctx.scale(scale, scale);
         loop.start();
@@ -348,6 +348,8 @@ class Playground {
 ```
 
 Then you can call it from the `draw` method on `AppCanvasView`:
+
+`Activating the Canvas Playground | met draw | class AppCanvasView`
 
 ```java
 var playground = new Playground(canvas, CANVAS_SCALE);
