@@ -6,13 +6,13 @@
 
 ## Getting Started
 
-Tools and project set up is given next, so you can build the basics for
+Tools and project setup are given next, so you can build the basics for
 developing the underlying drawing in JavaFX.
 
-You can get started as I said in
+As said in
 [Getting Started | Building Slides from Screenshots App in JavaFX](/building-slides-from-screenshots-app-in-javafx#getting-started),
-and by using the *package name* `engineer.mathsoftware.blog.sierpinskipetal` for
-this app.
+you can get started and let the *package name* be `engineer.mathsoftware.blog.
+sierpinskipetal` for this app.
 
 It's important to note the `module-info.java` in the module's source root
 (`src` dir), as we use Java modules to import JavaFX mods in this case.
@@ -31,9 +31,8 @@ module engineer.mathsoftware.blog.sierpinskipetal {
 }
 ```
 
-With this, Java and JavaFX should be available on your machine as well as the
-dev tools, environment, and starting project, so we can start writing the JavaFX
-code.
+With this, Java and JavaFX should be available on your machine, as well as the
+dev tools, environment, and starting project, so we can develop the JavaFX code.
 
 ### Package App
 
