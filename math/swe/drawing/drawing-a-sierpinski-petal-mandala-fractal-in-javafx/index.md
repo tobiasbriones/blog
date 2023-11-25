@@ -254,14 +254,14 @@ you're doing or to check ideas.
 [^x]: The `Canvas` API is pretty similar for both JavaFX and HTML5, so the
     experience is mostly interoperable
 
-The rules are simple, write any code you'd like to test in the `Playground` as
-if it was a *script*. I didn't leave convoluted code that's normally required,
+The rules are simple. Write any code you'd like to test in the `Playground` as
+if it were a *script*. I didn't leave convoluted code that's normally required,
 like access modifiers, explicit conversions, all kinds of hints, etc., **so
 I can focus on scripting inside `Playground` instead, as that's the purpose of
 this class** [^x].
 
 [^x]: Even if it's a playground, make sure to keep writing code that can be
-    refactored, as I said in my **EP: TCP File System:** *"Projects are never
+    refactored; as I said in my **EP: TCP File System:** *"Projects are never
     perfect, and they evolve from prototypes or initial developments. I didn't
     make a mistake in writing that code that way. We just need to write code
     that can be refactorized."*
@@ -355,22 +355,23 @@ var playground = new Playground(canvas, CANVAS_SCALE);
 playground.play();
 ```
 
-You can pass a `CANVAS_SCALE` value to get build more professional productions.
+You can pass a `CANVAS_SCALE` value to build more professional productions.
 
 In nearly 2,000 LoC, I wrote two drawings with animations, the implementations
 for the `FadeAnimLoop` `AnimationTimer`, a `Cycle` FSM object[^x] that manages
-the state of the animation[^x]. In addition, I also implemented simulation
-recording, so for example, I can export the animations at *any resolution and
-frame rate* without frame loss.
+the state of the animation[^x].
 
-[^x]: OOP should be used to implement FSMs with mutable state instead of idiotic
-    "real world" analogies
+[^x]: OOP should be used to implement FSMs with mutable states instead of
+    idiotic "real world" analogies
 
-[^x]: Non-programmers who come from other fields are usually like "I wasn't able
-    to figure it out", when it comes to non-trivial visualizations, since
+[^x]: Non-programmers who come from other fields are usually like, "I wasn't
+    able to figure it out," when it comes to non-trivial visualizations since
     writing working programming logic is hard (not to say well-engineered code),
-    so here, in these cases, I decouple the state from other systems to bound it
-    —Unbounded mutable state is always a red flag 🚩
+    so here, in these cases, **I decouple the state from other systems to 
+    bound it** —*Unbounded mutable state is always a red flag 🚩*
+
+In addition, I also implemented simulation recording, so, for example, I can
+export the animations at *any resolution and frame rate* without frame loss.
 
 With this, you can play around before writing the final application code for 
 drawing and animating.
