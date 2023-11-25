@@ -245,7 +245,7 @@ The result is the "Hello World" `Canvas` rendered in the middle of the window:
 
 This way the application `Canvas` is integrated and ready to be employed.
 
-### Getting Started with a Playground
+### Testing Designs with a Playground
 
 I created a `Playground` class to apply many concepts before going all the way
 ahead with this article. It requires having experience with `Canvas`[^x], and I
