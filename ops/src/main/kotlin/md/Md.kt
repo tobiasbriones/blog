@@ -634,7 +634,9 @@ fun findFile(root: Path, name: String): Option<Path> {
             ): FileVisitResult {
                 val path = file.absolutePathString().replace("\\", "/")
 
-                if (path.contains("/app/") || path.contains("/node_modules/")) {
+                if (path.contains("---ep/app/") ||
+                    path.contains("/node_modules/")
+                ) {
                     return FileVisitResult.CONTINUE
                 }
 
