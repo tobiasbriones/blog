@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Updating from Angular V15 to V17 | 2dp Repsymo (2023/12/06)
+# Updating from Angular V15 to V17 | 2DP Repsymo (2023/12/06)
 
 ![](updating-from-angular-v15-to-v17---2dp-repsymo-2023-12-06.png)
 
