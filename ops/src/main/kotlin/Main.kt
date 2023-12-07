@@ -364,6 +364,14 @@ fun buildIndex(srcDir: Path, outDir: Path) {
             .map(Index::extractTitle)
     }
 
+    val escapeMd: (String) -> String = { it.replace("|", "\\|") }
+
+    val titleMd: (Entry) -> String = {
+        title(it)
+            .map(escapeMd)
+            .getOrElse { "" }
+    }
+
     Entry(srcDir)
         .loadEntries()
         .mapLeft(handleError `$` "Failed to load entries for root $srcDir")
@@ -373,7 +381,7 @@ fun buildIndex(srcDir: Path, outDir: Path) {
             |
             |${
                 entries.joinToString("\n") {
-                    "- [${title(it).getOrElse { "" }}](${it.name()})"
+                    "- [${titleMd(it)}](${it.name()})"
                 }
             }
         """.trimMargin("|")
