@@ -4,6 +4,10 @@
 
 # Updating from Angular V15 to V17 | 2dp Repsymo (2023/12/06)
 
+![](updating-from-angular-v15-to-v17---2dp-repsymo-2023-12-06.png)
+
+----
+
 ## References
 
 [1] Update project from Angular v15 to v17 by
