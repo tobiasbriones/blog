@@ -15,6 +15,7 @@ class TextTest {
             "sar",
             "hn:", // edge case, I have to add ":" so it's recognized, see
             // test case
+            "2dp"
         ),
         composed = mapOf(
             "mathswe" to listOf("math", "swe"),
@@ -87,6 +88,10 @@ class TextTest {
             entry(
                 "sar-hn-_-sales-tax"
             ) to "SAR HN: Sales Tax",
+
+            entry(
+                "updating-from-angular-v15-to-v17---2dp-repsymo-2023-12-06"
+            ) to "Updating from Angular V15 to V17 | 2DP Repsymo (2023/12/06)",
         )
 
         cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }
