@@ -320,7 +320,7 @@ data Line
 
 It's readable that *`Segment` defines all the possible line segments, leaving
 `HSegment`, `VSegment`, and any other type redundant*, so **the `Line` type has
-no mutually exclusive subsets**.
+overlapping (not mutually exclusive) subsets**.
 
 You can also see how the expressions in the `minus` function simplify when
 the `angle` is zero or straight (horizontal or vertical line) since
