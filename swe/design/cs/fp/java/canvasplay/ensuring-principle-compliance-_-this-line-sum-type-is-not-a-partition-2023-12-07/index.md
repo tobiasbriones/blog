@@ -285,6 +285,9 @@ getting the `Line` design right at the beginning of this section.
 The coordinate properties (start/end points) don't play well, and are a bit
 redundant. This can be eventually fixed.
 
+One out-of-scope detail to add is a data type for points, so we don't use
+raw `double` primitives.
+
 Naming is another severe challenge many times here 😵, you must be a domain
 expert (and FP expert) in granular terms to get this all the way right. It also
 takes a huge amount of resources like time, experience, etc.
@@ -294,9 +297,30 @@ I work out challenges per layers, like my EPs, blogs, playgrounds, etc.
 Now, there are concerns in this incipient stage of this playground, but **the
 reason for this article comes here: `Line` is not a partition**.
 
+In Haskell terms, we have this definition:
+
+```haskell
+data Line
+    = Segment { sx :: Double, sy :: Double, ex :: Double, ey :: Double }
+    | HSegment { cx :: Double, cy :: Double, radius :: Double }
+    | VSegment { cx :: Double, cy :: Double, radius :: Double }
+```
+
 It's readable that *`Segment` defines all the possible line segments leaving
-`HSegment`, `VSegment`, and any other type redundant*, so the `Line` type has
-not mutually exclusive subsets.
+`HSegment`, `VSegment`, and any other type redundant*, so **the `Line` type has
+not mutually exclusive subsets**.
+
+Adding to this what I said about the *repetition* in the records `HSegment` and
+`VSegment`. If the physical representation (hard) is the same, then the
+difference (between a horizontal or vertical line) must be a relation (soft)
+, as I also described before. **These are mathematical rules to simplify or
+factorize programs**.
+
+Finally, I finish here without a final solution yet, since I'm working in a
+playground, leaving the insight, and a design is so robust like this will take a
+much different approach and language. From now on, I'll keep refactorizing the
+Java playground as I go, and as needed because I'm soon creating (and staying)
+with the Kotlin and HTML5 playground, to optimize the little DSL.
 
 ## References
 
