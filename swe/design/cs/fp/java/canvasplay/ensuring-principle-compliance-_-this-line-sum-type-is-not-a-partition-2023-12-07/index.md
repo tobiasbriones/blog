@@ -345,5 +345,5 @@ with the Kotlin and HTML5 playground to optimize the little DSL.
 [2] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
 8.3: Equivalence Relations. Theorem 8.3.1.
 
-[2] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
+[3] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
 8.3: Equivalence Relations. Lemma 8.3.3.
