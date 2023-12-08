@@ -139,7 +139,7 @@ product types can overlap, you must avoid it to create mutually disjoint
 subsets, leading to leveraging the properties of partitions to apply ADTs
 properly and employ their algebra more powerfully.
 
-### Current Design of a Line Shape
+## Current Design of a Line Shape
 
 The initial design that came into mind required supporting line segments in
 general and trivial types of segments like horizontal or vertical.
