@@ -8,6 +8,10 @@
 
 ---
 
+A Line shape from the initial DSL in Canvas Play is a study case of why sum
+types must induce partitions in their underlying set, emphasizing the need to
+comply with mathematical principles to detect these flaws.
+
 ## Initial DSL for Drawing Shapes in Canvas Play
 
 Lately, I designed a small math DSL in Java and JavaFX for drawing high-level 2D
