@@ -86,7 +86,7 @@ and assumptions. Similarly, we can define a triangle as a sum type
 (partition) of triangles according to their angle:
 `T' = Acute | Right | Obtuse`. Thus leveraging other properties induced by the
 equivalence classes of the partition (e.g., can use the Pythagorean theorem for
-the class of acute triangles).
+the class of right triangles).
 
 They're all triangles whether you define them using `T` or `T'`. The difference
 is **the property you need to optimize**, like side lengths or angles.
