@@ -530,6 +530,7 @@ fun encodeToHtml(input: String): String {
             '"' -> result.append("&quot;")
             '\'' -> result.append("&#x27;")
             '/' -> result.append("&#x2F;")
+            '|' -> result.append("&vert;")
             else -> result.append(char)
         }
     }

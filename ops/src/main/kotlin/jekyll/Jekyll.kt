@@ -21,12 +21,12 @@ data class JekyllIndex(
 )
 
 fun JekyllIndex.toMarkdownString(): String = """
-    |${frontMatter.toMarkdownString()}
-    |
-    |$index
-    |
-    |${subdirNav.map(Div::toHtmlString).getOrElse { "" }}
-""".trimMargin("|")
+    |'${frontMatter.toMarkdownString()}
+    |'
+    |'$index
+    |'
+    |'${subdirNav.map(Div::toHtmlString).getOrElse { "" }}
+""".trimMargin("|'")
 
 fun JekyllIndex.saveNavigation(root: Path): Either<String, Unit> =
     saveInclude(root, "nav.html", nav.toHtmlString())
