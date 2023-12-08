@@ -139,6 +139,165 @@ product types can overlap, you must avoid it to create mutually disjoint
 subsets, leading to leveraging the properties of partitions to apply ADTs
 properly and employ their algebra more powerfully.
 
+### Current Design of a Line Shape
+
+The initial design that came into mind required supporting line segments in
+general, and trivial types of segments like horizontal or vertical.
+
+The **proper definition of a `Line` is crucial for the DSL**, since polygons are
+made up of lines, and shapes are filled with solid polygons. That includes a
+universe of creations, so the objective here is to notice the current design
+flaws. It's an objective as well to create awareness of how important it is to
+notice a design.
+
+First, we have the `sealed interface` to denote the union:
+`public sealed interface Line extends Shape` in `Line.java`. The records defined
+there are `Segment`, `HSegment`, and `VSegment`.
+
+The `Shape` base interface is just defining the `area` for now.
+
+Regarding virtual methods (because this is Java), we have the following:
+
+`Virtual Methods of a Line | interface Line`
+
+```java
+double sx();
+
+double sy();
+
+double ex();
+
+double ey();
+
+Line minus(double minusRadius);
+
+@Override
+default double area() {
+    return 0.0;
+}
+```
+
+The `area` of a `Line` is zero by default since they're one-dimensional shapes,
+so don't have any area in a 2D space.
+
+Now, the product types are implemented as follows.
+
+`A Segment Represents an Arbitrary Line Segment
+| Type Segment of Line | interface Line`
+
+```java
+record Segment(
+    double sx,
+    double sy,
+    double ex,
+    double ey
+) implements Line {
+    @Override
+    public Segment minus(double minusRadius) {
+        var x = ex - sx;
+        var y = ey - sy;
+        var angle = atan(y / x);
+        var dx = minusRadius * cos(angle);
+        var dy = minusRadius * sin(angle);
+        return new Segment(
+            sx + dx,
+            sy + dy,
+            ex - dx,
+            ey - dy
+        );
+    }
+}
+```
+
+Notice how a general `Segment` is trivially implemented because of the property
+methods `sx`, `sy`, `ex`, and `ey` (start and end points) of `Line`
+automatically implemented in `Segment`.
+
+So, `minus` was left to implement, and it had complex expressions to subtract or
+trim the segment into a new one. One "minor" flaw is readable since I have to
+check for `x` different from zero. Of course, I can't use nasty exceptions.
+
+There's no reason to keep using exceptions in modern programming, but you know,
+it's Java. Fun fact 🐯: the `Result` type (used in Android Kotlin, Rust, or
+anywhere you want) is a sum type consisting of `Ok` or `Err`.
+
+Then, we have `HSegment` and `VSegment`, which are trivial types of lines.
+
+```java
+record HSegment(
+    double cx,
+    double cy,
+    double radius
+) implements Line {
+    @Override
+    public double sx() { return cx - radius; }
+
+    @Override
+    public double sy() { return cy; }
+
+    @Override
+    public double ex() { return cx + radius; }
+
+    @Override
+    public double ey() { return cy; }
+
+    @Override
+    public HSegment minus(double minusRadius) {
+        return new HSegment(cx, cy, radius - minusRadius);
+    }
+}
+
+record VSegment(
+    double cx,
+    double cy,
+    double radius
+) implements Line {
+    @Override
+    public double sx() { return cx; }
+
+    @Override
+    public double sy() { return cy + radius; }
+
+    @Override
+    public double ex() { return cx; }
+
+    @Override
+    public double ey() { return cy - radius; }
+
+    @Override
+    public VSegment minus(double minusRadius) {
+        return new VSegment(cx, cy, radius - minusRadius);
+    }
+}
+```
+
+Something to consider is that all the designs (MathSwe universally) are centered
+to be symmetric and simple. So, shapes are drawn from the center by default.
+
+The horizontal and vertical segments **have exactly the same physical structure,
+so it's inefficient to keep that redundancy**. The solution can be to *factor
+out* the repetition, and create a simple enum (enums are basic sun types in Java
+as well) to denote *its orientation*.
+
+Well, the solution is not as easy because of what I said about the importance of
+getting the `Line` design right at the beginning of this section.
+
+The coordinate properties (start/end points) don't play well, and are a bit
+redundant. This can be eventually fixed.
+
+Naming is another severe challenge many times here 😵, you must be a domain
+expert (and FP expert) in granular terms to get this all the way right. It also
+takes a huge amount of resources like time, experience, etc.
+
+I work out challenges per layers, like my EPs, blogs, playgrounds, etc.
+
+Now, there are concerns in this incipient stage of this playground, but **the
+reason for this article comes here: `Line` is not a partition**.
+
+It's readable that *`Segment` defines all the possible line segments leaving
+`HSegment`, `VSegment`, and any other type redundant*, so the `Line` type has
+not mutually exclusive subsets.
+
 ## References
 
 [1] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
