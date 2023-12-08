@@ -142,9 +142,9 @@ properly and employ their algebra more powerfully.
 ### Current Design of a Line Shape
 
 The initial design that came into mind required supporting line segments in
-general, and trivial types of segments like horizontal or vertical.
+general and trivial types of segments like horizontal or vertical.
 
-The **proper definition of a `Line` is crucial for the DSL**, since polygons are
+The **proper definition of a `Line` is crucial for the DSL** since polygons are
 made up of lines, and shapes are filled with solid polygons. That includes a
 universe of creations, so the objective here is to notice the current design
 flaws. It's an objective as well to create awareness of how important it is to
@@ -178,7 +178,7 @@ default double area() {
 ```
 
 The `area` of a `Line` is zero by default since they're one-dimensional shapes,
-so don't have any area in a 2D space.
+so they don't have any area in a 2D space.
 
 Now, the product types are implemented as follows.
 
@@ -208,6 +208,10 @@ record Segment(
     }
 }
 ```
+
+There are many "validations" to check, but they must be part of the type system
+instead of imperative tricks with primitive-obsession. They're *defined* as much
+as the DSL gets more robust.
 
 Notice how a general `Segment` is trivially implemented because of the property
 methods `sx`, `sy`, `ex`, and `ey` (start and end points) of `Line`
@@ -274,30 +278,34 @@ record VSegment(
 Something to consider is that all the designs (MathSwe universally) are centered
 to be symmetric and simple. So, shapes are drawn from the center by default.
 
-The horizontal and vertical segments **have exactly the same physical structure,
-so it's inefficient to keep that redundancy**. The solution can be to *factor
-out* the repetition, and create a simple enum (enums are basic sun types in Java
-as well) to denote *its orientation*.
+The horizontal and vertical segments **have the same physical structure, so it's
+inefficient to keep that redundancy**. The solution can be to *factor out* the
+repetition and create a simple (soft) enum (enums can be basic sum types in
+Java) to denote *its orientation*.
 
 Well, the solution is not as easy because of what I said about the importance of
 getting the `Line` design right at the beginning of this section.
 
-The coordinate properties (start/end points) don't play well, and are a bit
-redundant. This can be eventually fixed.
+The coordinate properties (start/end points) don't play well and are a bit
+redundant. This can be eventually fixed. This happens because `Line` is not a
+partition, so concepts get more bloated since we're not working with
+**orthogonal** records —*consequences of boilerplate or redundancy*.
 
 One out-of-scope detail to add is a data type for points, so we don't use
 raw `double` primitives.
 
-Naming is another severe challenge many times here 😵, you must be a domain
+Naming is another frequent severe challenge here 😵. You must be a domain
 expert (and FP expert) in granular terms to get this all the way right. It also
 takes a huge amount of resources like time, experience, etc.
 
-I work out challenges per layers, like my EPs, blogs, playgrounds, etc.
+I work out challenges per layer, like my EPs, blogs, playgrounds, etc.
 
-Now, there are concerns in this incipient stage of this playground, but **the
+Now, there are concerns in this playground's incipient stage, but **the
 reason for this article comes here: `Line` is not a partition**.
 
 In Haskell terms, we have this definition:
+
+`Definition of Line in Haskell`
 
 ```haskell
 data Line
@@ -306,21 +314,28 @@ data Line
     | VSegment { cx :: Double, cy :: Double, radius :: Double }
 ```
 
-It's readable that *`Segment` defines all the possible line segments leaving
+It's readable that *`Segment` defines all the possible line segments, leaving
 `HSegment`, `VSegment`, and any other type redundant*, so **the `Line` type has
-not mutually exclusive subsets**.
+no mutually exclusive subsets**.
 
-Adding to this what I said about the *repetition* in the records `HSegment` and
-`VSegment`. If the physical representation (hard) is the same, then the
-difference (between a horizontal or vertical line) must be a relation (soft)
-, as I also described before. **These are mathematical rules to simplify or
-factorize programs**.
+You can also see how the expressions in the `minus` function simplify when
+the `angle` is zero or straight (horizontal or vertical line) since
+`atan(y / x)`, `cos(angle)`, and `sin(angle)` get trivial. If the segment is
+vertical, then `x = ex - sx = 0`, so this implementation of `minus` in
+`Segment` will have to play well with *subsets where expressions get trivial*
+like `HSegment` or `VSegment` in order to compose.
 
-Finally, I finish here without a final solution yet, since I'm working in a
-playground, leaving the insight, and a design is so robust like this will take a
-much different approach and language. From now on, I'll keep refactorizing the
-Java playground as I go, and as needed because I'm soon creating (and staying)
-with the Kotlin and HTML5 playground, to optimize the little DSL.
+Adding to what I said about the *repetition* in the records `HSegment` and
+`VSegment`: If the physical representation (**hard**) is the same, then the
+difference (between a horizontal or vertical line) must be a relation
+(**soft**), as I also described before. **These are mathematical rules to
+simplify or factorize programs**.
+
+Finally, I finish here without a final solution yet since I'm working in a
+playground, leaving the insight and a design so robust will take a much
+different approach and language. From now on, I'll keep refactorizing the Java
+playground as I go, and as needed because I'm soon creating (and staying)
+with the Kotlin and HTML5 playground to optimize the little DSL.
 
 ## References
 
