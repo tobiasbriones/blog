@@ -337,6 +337,33 @@ different approach and language. From now on, I'll keep refactorizing the Java
 playground as I go, and as needed because I'm soon creating (and staying)
 with the Kotlin and HTML5 playground to optimize the little DSL.
 
+## Identification of Design Flaws in Sum Types
+
+From the initial DSL, I'm about to merge in Canvas Play, I spotted several
+(expected) design flaws usual in the incipient development and design stages.
+These are related to sum types, so I wrote the documentation about this study
+case.
+
+Sum types are ADTs whose algebraic power can be exploited further as far as our
+design coherence.
+
+When engineering software, **we must ensure compliance with underlying
+principles**, like *inducing partitions in sum types*, since —as said above—
+this likely depends on our design or domain to be coherent and not on the
+compiler.
+
+It was seen how a triangle sum type creates a partition, where its product types
+or records are orthogonal by being mutually disjoint, leading to independent
+problems that can be addressed and composed. This is how FP has to be employed.
+
+Regarding the current design of a line in the Java playground, some flaws were
+noticed, like the need for mutually disjoint subsets, and hard/physical
+duplication of records.
+
+Studying these flaws makes awareness of how essential it is to verify the
+compliance of mathematical principles in software and domain design since it is
+what opens our minds on how to go through the right way.
+
 ## References
 
 [1] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
