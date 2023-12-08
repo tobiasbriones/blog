@@ -40,3 +40,14 @@ place. Of course, I'm a math software engineer and take this to its finest.
 
 So, the final phase of the initial DSL design in Canvas Play has left some
 design concerns I should share.
+
+## References
+
+[1] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
+6.1: Partitions of Sets.
+
+[2] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
+8.3: Equivalence Relations. Theorem 8.3.1.
+
+[2] Epp, S. (2010). Discrete Mathematics with Applications (4th ed.).Section
+8.3: Equivalence Relations. Lemma 8.3.3.
