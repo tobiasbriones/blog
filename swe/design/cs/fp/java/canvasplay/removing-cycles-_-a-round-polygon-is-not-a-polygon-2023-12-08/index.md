@@ -65,6 +65,35 @@ rectangle of `w - arcWidth / 2` times `h - arcHeight / 2` dimensions.
 So, the canvas API is fine, but don't fall for the fake friends since primitive
 values won't give the idea of high-level (mathematical) constructs.
 
+### The Outer World
+
+There are many more misleading definitions that apparently make sense but would
+damage a system design if employed, not to say the very mathematical
+definitions.
+
+> Rounded rectangle is a rectangle with chamfered corners. However, these two
+> shapes have one more significant difference: rectangles can have three
+> dimensions and appear in 3D animation, while rounded rectangles can’t. So, if
+> you plan to create 3D animation for your model, we recommend you to use
+> rectangles, not rounded rectangles.
+>
+> Source: *Rounded rectangle* | AnyLogic Help (under fair use) [3]
+
+The above idea says that "Rounded rectangle **is** a rectangle," which is
+totally wrong. It also dares to say that "rectangles can have **three
+dimensions**" —also wrong.
+
+It even gets weirder: "while rounded rectangles **can’t**." So if a round
+rectangle is a rectangle, why are "rectangles" 3D, but "round rectangles"
+can't be?
+
+Of course, those "definitions" make sense in their corresponding context or
+software, but you see how they just pass unnoticed as if it were true.
+
+You must pay close attention to all the details and particularly avoid falling
+for banal non-mathematical ideas like the misleading "definitions" of a round
+rectangle.
+
 ## References
 
 [1] Alexander, D. C., & Koeberlein, G. M. (2011). Elementary Geometry for
