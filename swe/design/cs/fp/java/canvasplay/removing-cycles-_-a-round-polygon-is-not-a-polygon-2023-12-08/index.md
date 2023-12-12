@@ -94,6 +94,66 @@ You must pay close attention to all the details and particularly avoid falling
 for banal non-mathematical ideas like the misleading "definitions" of a round
 rectangle.
 
+## Rounded Rectangle
+
+The definition of a rounded rectangle comes from a model that composes an inner
+rectangle, the ellipse arcs defining the round borders, and the four remaining
+rectangles of the borders.
+
+First, a "**quadrilateral** is a polygon that has four sides," a
+"**parallelogram** is a quadrilateral in which both pairs of opposite sides are
+parallel," and a "**rectangle** is a parallelogram that has a right angle" [1].
+
+So, it's clear to prove a rectangle is not a 3D shape and a rounded rectangle is
+not a rectangle. That is, proving false the misled random "definitions" from the
+internet.
+
+It's clear that a rounded rectangle is *not exactly* "four sides," but much
+more, so it's not a rectangle.
+
+Now, there can be various definitions of a "round shape," but this one can be
+depicted from the canvas API. I figured out how it takes the values, and it's a
+model that takes the whole width and height, as said in
+[Round Rect in Canvas](#round-rect-in-canvas).
+
+`Round Rectangle Model`
+
+![](canvas-round-rect.svg)
+
+Let $$a, b$$ be the width and height of the green inner rectangle, and $$r_x,
+r_y$$ the radius of the ellipses[^1], respectively.
+
+[^1]: Circles this time to simplify
+
+The canvas API takes $$w = a + 2r_x$$ and $$h = b + 2r_y$$ for
+pragmatic/low-level reasons as mentioned, which suggests that it takes a
+"single rectangle" and mutates its borders, which is far from real.
+
+Regarding the arcs, they share the same style of the above: $$arcWidth = 2r_x$$
+and $$arcHeight = 2r_y$$.
+
+From the high-level mathematical perspective, taking the green rectangle with
+$$a$$ and $$b$$ is appropriate since that **is** an actual rectangle, and you
+finish composing the rest.
+
+If you take the whole `width, height` (commonly suggested out there), you have
+more than you need, so they *don't compose well*. If you also take the
+`arcWidth, arcHeight` is a flaw as well, since the (short) side of the dark-blue
+surrounding rectangles is $$r_x$$ or $$r_y$$, so you either take the "canvas" or
+the "math" approach to keep consistent.
+
+Another issue with general-purpose tools is to understand what they actually
+mean, so you might think you're drawing something, but it's actually different.
+*Creating tests for the drawings is a responsibility* but often complicated, so
+**it's best to stand by the theory** to minimize the doubt.
+
+In other words, **the only way to build engineering-grade math software is via
+its DSL**.
+
+Rounded rectangles are not rectangles but more complex shapes primarily
+composed of rectangles, and you have to be careful with the definitions to be
+"on the same page."
+
 ## References
 
 [1] Alexander, D. C., & Koeberlein, G. M. (2011). Elementary Geometry for
