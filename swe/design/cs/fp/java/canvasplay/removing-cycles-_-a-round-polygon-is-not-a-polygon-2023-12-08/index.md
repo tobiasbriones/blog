@@ -77,7 +77,7 @@ definitions.
 > you plan to create 3D animation for your model, we recommend you to use
 > rectangles, not rounded rectangles.
 >
-> Source: *Rounded rectangle* | AnyLogic Help (under fair use) [3]
+> Source: *Rounded rectangle* \| AnyLogic Help (under fair use) [3]
 
 The above idea says that "Rounded rectangle **is** a rectangle," which is
 totally wrong. It also dares to say that "rectangles can have **three
