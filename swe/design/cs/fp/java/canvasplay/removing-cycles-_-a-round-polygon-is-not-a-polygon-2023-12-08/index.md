@@ -133,8 +133,8 @@ Regarding the arcs, they share the same style of the above: $$arcWidth = 2r_x$$
 and $$arcHeight = 2r_y$$.
 
 From the high-level mathematical perspective, taking the green rectangle with
-$$a$$ and $$b$$ is appropriate since that **is** an actual rectangle, and you
-finish composing the rest.
+$$a$$ and $$b$$ is appropriate since *that **is** an actual rectangle, and you
+finish composing the rest*.
 
 If you take the whole `width, height` (commonly suggested out there), you have
 more than you need, so they *don't compose well*. If you also take the
