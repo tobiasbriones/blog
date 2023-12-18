@@ -87,6 +87,9 @@ It even gets weirder: "while rounded rectangles **can’t**." So if a round
 rectangle is a rectangle, why are "rectangles" 3D, but "round rectangles"
 can't be?
 
+The only way a "rectangle" can be in a 3D space is when it lies on a plane
+subspace, but even so, the above concepts are wrong and confusing at best.
+
 Of course, those "definitions" make sense in their corresponding context or
 software, but you see how they just pass unnoticed as if it were true.
 
