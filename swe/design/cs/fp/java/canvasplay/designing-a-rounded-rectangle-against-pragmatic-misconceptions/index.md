@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Removing Cycles: a Round Polygon is Not a Polygon (2023/12/08)
+# Designing a Rounded Rectangle Against Pragmatic Misconceptions
 
 ![](removing-cycles-_-a-round-polygon-is-not-a-polygon-2023-12-08.png)
 
