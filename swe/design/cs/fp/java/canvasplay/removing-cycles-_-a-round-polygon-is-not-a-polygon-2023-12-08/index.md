@@ -213,6 +213,30 @@ threshold in canvas terms. The mathematical definition shows how
 side-effect-free is, while the canvas model is more imperative and pragmatic but
 limited.
 
+### The Math Model Design
+
+The two concepts of a rounded rectangle given can be further contrasted one more
+time to show how the mathematical way is the correct design in the long term
+given its composability.
+
+The math model consists of two parts: the ellipse arc radius and the inner
+rectangle. So, if you change $$r_x, r_y$$ (the arcs), the dark-blue borders are
+responsive as the arcs grow, and $$a, b$$ (the green rectangle) don't mutate
+(contrary to the canvas model). Conversely, if you change $$a, b$$, the arcs
+won't change. Therefore, one change to one part of the model doesn't apply an
+*effect* to the other, leading to a composable design.
+
+If you change either the inner rect or the arcs, the final dimensions `w, h`
+will change (as a kind of "tradeoff"), but that design *is not part of the
+rounded rectangle model*. It's part of a high-level "user" model that *will
+carry on the composition allowed by the mathematical model* mentioned.
+
+Defining mathematical concepts is rigorous, specifically a rounded rectangle.
+The same correctness of math is extended via FP with properties like
+composition. So, we can build mathematical software like complex shapes or
+visualizations the same we work out mathematics, for instance, employing
+definitions and properties.
+
 ## References
 
 [1] Alexander, D. C., & Koeberlein, G. M. (2011). Elementary Geometry for
