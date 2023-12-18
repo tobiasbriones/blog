@@ -8,6 +8,12 @@
 
 ---
 
+Some fake friends show up as design flaws in systems apparently working in easy
+conditions but unable to scale, like the false and persuasive idea that a
+rounded rectangle is a rectangle. A rounded rectangle is similar to a rectangle
+but quite different in definition, requiring the application of math to
+establish a correct design.
+
 ## Vague Idea of a Round Rectangle
 
 The popular idea of a round rectangle usually comes from taking a rectangle and
