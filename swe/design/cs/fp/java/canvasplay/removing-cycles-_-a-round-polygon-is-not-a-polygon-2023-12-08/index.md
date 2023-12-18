@@ -227,9 +227,16 @@ won't change. Therefore, one change to one part of the model doesn't apply an
 *effect* to the other, leading to a composable design.
 
 If you change either the inner rect or the arcs, the final dimensions `w, h`
-will change (as a kind of "tradeoff"), but that design *is not part of the
-rounded rectangle model*. It's part of a high-level "user" model that *will
-carry on the composition allowed by the mathematical model* mentioned.
+will change, but that design *is not part of the rounded rectangle model*. It's
+part of a high-level "user" model that *will carry on the composition allowed by
+the mathematical model* mentioned.
+
+Therefore, the canvas model *trades* an easy mundane API by an inner mutation
+that degenerates to an ellipse in an inconsistent obfuscated way
+(arcs greater than `w, h`) —*tightly coupled characteristic of imperative
+systems*— while the math model *allows you to feature* what you need with no
+tradeoff, so it degenerates to an ellipse correctly (when the inner rectangle
+degenerates to a point) —*declarativeness of mathematical systems and FP*.
 
 Defining mathematical concepts is rigorous, specifically a rounded rectangle.
 The same correctness of math is extended via FP with properties like
