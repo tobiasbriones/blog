@@ -4,7 +4,7 @@
 
 # Designing a Rounded Rectangle Against Pragmatic Misconceptions
 
-![](removing-cycles-_-a-round-polygon-is-not-a-polygon-2023-12-08.png)
+![](designing-a-rounded-rectangle-against-pragmatic-misconceptions.png)
 
 ---
 
