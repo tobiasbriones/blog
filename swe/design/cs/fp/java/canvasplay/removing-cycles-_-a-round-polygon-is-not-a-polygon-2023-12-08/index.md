@@ -154,6 +154,65 @@ Rounded rectangles are not rectangles but more complex shapes primarily
 composed of rectangles, and you have to be careful with the definitions to be
 "on the same page."
 
+### Degenerate Rounded Rectangle
+
+A rounded rectangle can take a degenerate form like other shapes do when pushed
+to trivial.
+
+Significant differences exist between "the canvas" and "the math"
+rounded rectangle definitions. The former takes the whole "final" `w, h` and the
+latter is an inner rectangle with an ellipse model to round its outer corners.
+
+The canvas way is low-level while the math way can be composed.
+
+In the canvas API, $$r_x, r_y$$ have to be bounded to prevent a *degenerate
+shape*, indeed, that bound is `w` and `h` respectively. Any arc length greater
+than that is "ignored."
+
+In the canvas model, you can control the final width/height trivially, but —as a
+tradeoff— the inner rectangle doesn't exist, so it's up to your abstractions
+whether to take it for calculations. This leads to annoying effects like
+"deleting" your rect if too much "border" is applied since **the border will
+consume the shape in the canvas model**.
+
+A rounded rectangle can be drawn in canvas with a value like
+`arcWidth = arcHeight = 24`.
+
+![](canvas-round-rect-24px-arc.png)
+
+Since the canvas API takes the final width and height `w, h`, the shape
+degenerates when $$arcWidth \geq w \land arcHeight \geq h$$.
+
+![](canvas-degenerate-round-rect.png)
+
+This shows how **the arcs and the inner rectangle (unexisting in the canvas
+model) are *tightly coupled***, unlike the mathematical definition given before.
+
+On the other hand, when taking the mathematical definition of the shape, *any
+change to the arcs doesn't change the inner rectangle*. That is, **the math
+model is uncoupled and composable**.
+
+Since the rounded borders are ellipsis, the rounded rectangle consisting of an
+inner rectangle, four boundary rectangles, and four ellipse arcs degenerates to
+an ellipse when $$a = 0 \land b = 0$$.
+
+The boundary rectangles have lengths corresponding to $$a, b$$ for the
+stretching sides, so they're also zero.
+
+This gives the simplified (degenerate) ellipse composed of the four concentric
+arcs of 90° each.
+
+The math way is rigorous, although the canvas way is pragmatic by taking `w, h`
+like any other imperative "shortcuts," which only makes it more convoluted in
+the end, for example, when wondering if your rect is going to be consumed by the
+arcs, or extracting properties like area or scaling to a composable design.
+
+A rounded rectangle degenerates to an ellipse when its inner rectangle
+degenerates to a point in mathematical terms, or when the arcs are off the
+threshold in canvas terms. The mathematical definition shows how
+side-effect-free is, while the canvas model is more imperative and pragmatic but
+limited.
+
 ## References
 
 [1] Alexander, D. C., & Koeberlein, G. M. (2011). Elementary Geometry for
