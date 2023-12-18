@@ -19,7 +19,7 @@ The canvas APIs take raw primitives, so like the `fillRoundRect` method (and the
 API itself analogously), take the top-left, width, and height (i.e., a
 rectangle) and the arcs to soften it.
 
-`Methods "fillRect", "fillRoundRect" of the JavaFX GraphicsContext API [2]`
+`Round Rect in the JavaFX GraphicsContext API [2]`
 
 ```java
 public void fillRect(
