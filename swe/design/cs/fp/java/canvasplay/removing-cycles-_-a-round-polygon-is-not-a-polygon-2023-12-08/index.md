@@ -247,6 +247,35 @@ composition. So, we can build mathematical software like complex shapes or
 visualizations the same we work out mathematics, for instance, employing
 definitions and properties.
 
+## Leveraging Math to Clarify the Rounded Rectangle Design
+
+There are many vague non-mathematical concepts out there, like the meaning of a
+rectangle and a rounded rectangle. These false ideas suggest that rounded
+rectangles are rectangles, that you can make a rectangle rounded by mutating its
+borders imperatively, and even that they're 3D shapes.
+
+A fake idea includes the name itself, "rounded *rectangle*," leading to a fake
+friend or idea that suggests to be something it's not.
+
+Particularly in the domain of shapes, math will give us the theoretical
+framework to build math software and throw away general-purpose shortcuts like
+primitive-driven design, the need for overwhelming and complicated tests, and
+implementation ambiguity.
+
+A round rectangle consists of ellipse arcs and an inner rectangle, and by using
+a math definition, we're led to composable high-level constructs.
+
+Rounded rectangles degenerate to an ellipse when the inner rectangle
+degenerates (to a point), only leaving the four arcs. It's been seen how the
+canvas API is tightly coupled with respect to high-level designs since one
+change to one part of its model changes everything else —not happening when
+using the math model.
+
+By applying basic math, the design misconceptions and flawed general-purpose or
+imperative issues will go away. Rounded rectangles are 2D shapes more complex
+than rectangles, and by standing by the theory, we can scale more complex
+compositions properly.
+
 ## References
 
 [1] Alexander, D. C., & Koeberlein, G. M. (2011). Elementary Geometry for
