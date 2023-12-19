@@ -11,7 +11,7 @@
 ## This Quadrilateral Sum Type is not a Partition
 
 As an initial design in the canvas playground, I sent the rounded shapes like
-round rectangles as part of their corresponding polygon. So, a round rect is
+rounded rectangles as part of their corresponding polygon. So, a round rect is
 vaguely considered a rect, while a round triangle is vaguely considered a
 triangle, etc.
 
@@ -20,7 +20,8 @@ union `Rectangle | RoundRectangle`, but it must not be defined so. The reason
 to stay away from this general design flaw has analytical roots and can silently
 occur in languages like Java.
 
-`A Round Rectangle must not be a Quadrilateral | An Initial Design of Quadrilateral Shapes`
+`A Rounded Rectangle must not be a Quadrilateral | An Initial Design of 
+Quadrilateral Shapes`
 
 ```java
 public sealed interface Quadrilateral extends Shape {
@@ -35,7 +36,7 @@ public sealed interface Quadrilateral extends Shape {
     }
 
     // TODO wrong design 👎🏻
-    record RoundRectangle(
+    record RoundedRectangle(
         Rectangle rectangle,
         double arcX,
         double arcY
@@ -60,7 +61,7 @@ we can show that the above `Quadrilateral` sum type *seems to be a partition
 (but it's not)*[^1], there are always more design principles to comply like
 **acyclicity**. The fact that it's not a partition leads to cycles.
 
-[^1]: A rectangle can't be rounded, and a round rectangle can't be straight,
+[^1]: A rectangle can't be rounded, and a rounded rectangle can't be straight,
     thus the subsets of our `Quadrilateral` sum type are(?) disjoint and induce
     a partition of our quadrilateral shapes in this case, **if it weren't by the
     issue that `RoundRectangle` is *composed* of a `Rectangle`**
