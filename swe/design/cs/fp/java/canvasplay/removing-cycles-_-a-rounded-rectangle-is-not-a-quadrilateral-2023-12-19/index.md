@@ -96,3 +96,77 @@ articles to sustain design flaws that also happen generally, such as failing to
 design sum types correctly when they don't form a partition, and even further
 consequences of this, like the creation of dependent records that can easily
 become a cycle or sink.
+
+
+### Incorrect Coproduct Design Leading to Cycles
+
+The more advanced consequence of why this design is also wrong is a cycle that
+has to be removed.
+
+I defined a
+[Rounded Rectangle](/designing-a-rounded-rectangle-against-pragmatic-misconceptions#rounded-rectangle)
+to help clarify the design I'm facing here.
+
+Imagine I want to employ the fake common sense idea by leaving the rounded
+rectangle in `Quadrilateral`.
+
+![](product-types-are-not-orthogonal.svg)
+
+The flaw is clear: **`RoundedRectangle` is a `Quadrilateral` composed of a
+`Rectangle`, which is also a `Quadrilateral`**. Therefore, we have a design
+cycle. Records (i.e., `RoundRectangle` and `Rectangle`) of the sum type must be
+orthogonal, but `RoundedRectangle` depends on `Rectangle`, so `Quadrilateral`
+fails to be a partition by not having mutually disjoint subsets.
+
+If we need to expand the support later, the `Rectangle` field
+of `RoundedRectangle` will turn into a general `Quadrilateral` to have rounded
+rhombuses and others. Then the cycle would be direct because we would be 
+matching a `RoundedRectangle` cyclically for no reason.
+
+`The Sink can be Seen when Pattern Matching | Matching a Quadrilateral`
+
+```java
+static QuadrilateralDrawing of(
+    GraphicsContext ctx,
+    Quadrilateral quadrilateral
+) {
+    return switch (quadrilateral) {
+        case Rectangle rectangle -> new CanvasRectangleDrawing(
+            ctx,
+            rectangle.width(),
+            rectangle.height(),
+            rectangle.cx(),
+            rectangle.cy()
+        );
+        case RoundRectangle(var rectangle, var arcX, var arcY) ->
+            //                    ↑                    //
+            // If you were to pattern-match a          //
+            // Quadrilateral, you fall into a loop.    //
+            //                                         //
+            new CanvasRoundRectangleDrawing(
+                ctx,
+                rectangle.width(),
+                rectangle.height(),
+                rectangle.cx(),
+                rectangle.cy(),
+                arcX,
+                arcY
+            );
+    };
+}
+```
+
+Then, when matching the `rectangle` field of `RoundedRectangle`, we might as
+well be matching a `Quadrilateral` (if we expand from `RoundedRectangle`
+to `RoundedQuadrilateral` as said above) again from the beginning, but this
+second time will never make sense, *proving that `RoundedRectangle` must not
+belong to `Quadrilateral`, which is then a flawed sum type*.
+
+Getting aware that `Quadrilateral` is flawed is direct proof (from the first
+statements above), and getting so advanced until this point is something I
+wanted to emphasize to denote how the design flaws scale so much.
+
+When not ensuring principle compliance, we can leave behind severe design
+issues. In this case, having a record depending on its "sibling" proves how that
+can lead to a cycle flaw, and you don't want to mess with cycles, as I've
+addressed in other articles.
