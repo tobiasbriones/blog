@@ -7,3 +7,91 @@
 ![](removing-cycles-_-a-round-rectangle-is-not-a-quadrilateral-2023-12-19.png)
 
 ---
+
+## This Quadrilateral Sum Type is not a Partition
+
+As an initial design in the canvas playground, I sent the rounded shapes like
+round rectangles as part of their corresponding polygon. So, a round rect is
+vaguely considered a rect, while a round triangle is vaguely considered a
+triangle, etc.
+
+That way, a 4-gon/4-side polygon/quadrilateral can be designed as the
+union `Rectangle | RoundRectangle`, but it must not be defined so. The reason
+to stay away from this general design flaw has analytical roots and can silently
+occur in languages like Java.
+
+`A Round Rectangle must not be a Quadrilateral | An Initial Design of Quadrilateral Shapes`
+
+```java
+public sealed interface Quadrilateral extends Shape {
+    record Rectangle(
+        double width,
+        double height,
+        double cx,
+        double cy
+    ) implements Quadrilateral {
+        @Override
+        public double area() { return width * height; }
+    }
+
+    // TODO wrong design 👎🏻
+    record RoundRectangle(
+        Rectangle rectangle,
+        double arcX,
+        double arcY
+    ) implements Quadrilateral {
+        @Override
+        public double area() {
+            // TODO take borders into account if necessary, not a useful
+            // feature so far
+            return rectangle.area();
+        }
+    }
+}
+```
+
+I didn't implement the `area` property because, with proper composition,
+everything gets pretty trivial, so I save the effort on these occasions when I
+know I'll perform major refactorizations and redesigns.
+
+Even though, as said in
+[Ensuring Principle Compliance: This Line Sum Type is Not a Partition](/ensuring-principle-compliance-_-this-line-sum-type-is-not-a-partition-2023-12-07),
+we can show that the above `Quadrilateral` sum type *seems to be a partition
+(but it's not)*[^1], there are always more design principles to comply like
+**acyclicity**. The fact that it's not a partition leads to cycles.
+
+[^1]: A rectangle can't be rounded, and a round rectangle can't be straight,
+    thus the subsets of our `Quadrilateral` sum type are(?) disjoint and induce
+    a partition of our quadrilateral shapes in this case, **if it weren't by the
+    issue that `RoundRectangle` is *composed* of a `Rectangle`**
+
+**The `Quadrilateral` sum type is not a partition** since `RoundRectangle` is
+composed of `Rectangle`, which is a "sibling" product type of the union, so
+**the records of the sum type are coupled, making them non-orthogonal or
+dependent**.
+
+The failure of `Quadrilateral` not being a partition is **the first flaw that
+must be immediately redesigned for fixing** or else brings interesting issues
+like cycles.
+
+Even if it could make sense the idea to put a rounded shape close to its
+original shape, it's a fake friend insight.
+
+First, **a rounded rectangle is not a rectangle** as said in
+[Designing a Rounded Rectangle Against Pragmatic Misconceptions](/designing-a-rounded-rectangle-against-pragmatic-misconceptions)
+—where I also write about these fake friends— and **it's neither a
+quadrilateral**. It doesn't have exactly "four sides" so it doesn't belong to
+the `Quadrilateral` sum type. It has to be **a different type of composed 
+shape**.
+
+The above theory and articles show us not only how a rounded rectangle is not a
+rectangle, but further, even if we're fool enough to think so, **the FP design
+will tell us it's wrong and how to fix it** (something impossible in ordinary
+poorly-engineered paradigms like imperative or Java OOP).
+
+From the pre-initial (experimental) design of `Quadrilateral` biased with fake
+friend popular concepts, I worked out the theoretical framework in various
+articles to sustain design flaws that also happen generally, such as failing to
+design sum types correctly when they don't form a partition, and even further
+consequences of this, like the creation of dependent records that can easily
+become a cycle or sink.
