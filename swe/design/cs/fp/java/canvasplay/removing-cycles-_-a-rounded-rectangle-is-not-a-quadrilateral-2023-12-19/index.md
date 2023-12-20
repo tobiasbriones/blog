@@ -357,3 +357,5 @@ completely unnoticed in ordinary languages like JVM Java-biased languages (the
 [Discriminated Unions - F#. Microsoft Learn.](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/discriminated-unions).
 
 [3] [Enums - rust by example.](https://doc.rust-lang.org/rust-by-example/custom_types/enum.html).
+
+[4] [std::variant - cppreference.com](https://en.cppreference.com/w/cpp/utility/variant).
