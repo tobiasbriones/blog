@@ -206,6 +206,22 @@ field of a record has to be a type, not a data constructor).
 Data constructors are not types but values, while the sum type like
 `Quadrilateral` is the type [1].
 
+The error suggests to enable `DataKinds` since we know the data constructor
+`Rectangle` (i.e., a function) has type `Double -> Double -> Quadrilateral`.
+Recall **it has a type, but it isn't one**. If you enable it via the
+pragma `{-# LANGUAGE DataKinds #-}`, you'll still get the error:
+
+`Cyles Disallowed in the Same Group of Declarations`
+
+```
+Data constructor ‘Rectangle’ cannot be used here
+  (it is defined and used in the same recursive group)
+```
+
+It means you're coupling (using) a data constructor (physical, not a type)
+belonging to the same group of declarations (the sum type), thus
+**leading to a cycle in your design you must fix**.
+
 Notice how Haskell's strong **type system disallows compiling these cycles**
 since a (soft) type constructor is required instead of a (hard) data constructor
 for the record components.
