@@ -325,6 +325,30 @@ languages, you have to be alert since it won't be so obvious.
 The product types are not even normal types, but *variants* of *their* sum type,
 while **the actual type is the sum type**.
 
+### FSharp Experiment
+
+After investigating the robustness of Haskell and Purescript, I tried another
+functional language with ADT support, like F#.
+
+`Flawed Quadrilateral in F#`
+
+```fsharp
+type Quadrilateral
+    = Rectangle of width : double * height: double
+    | RoundedRectangle of rectangle: Rectangle * arc: double
+```
+
+Failing with error `The type 'Rectangle' is not defined`.
+
+The principle is the same as separating type constructors off data types: "The
+case identifiers can be used as constructors for the discriminated union
+type"[2].
+
+The F# ADTs proved similar functioning principles, like the other functional
+languages disallowing nonsense constructs at compile time that just pass
+completely unnoticed in ordinary languages like JVM Java-biased languages (the
+"competition").
+
 ## References
 
 [1] [Constructor - HaskellWiki](https://wiki.haskell.org/Constructor).
