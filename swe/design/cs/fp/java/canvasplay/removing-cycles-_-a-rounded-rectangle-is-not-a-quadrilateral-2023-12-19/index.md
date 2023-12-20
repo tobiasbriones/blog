@@ -170,3 +170,78 @@ When not ensuring principle compliance, we can leave behind severe design
 issues. In this case, having a record depending on its "sibling" proves how that
 can lead to a cycle flaw, and you don't want to mess with cycles, as I've
 addressed in other articles.
+
+## FP-First Approach to Get the Design Right
+
+In Haskell, this algebraic lack of principle compliance is much easier to
+understand and get right quickly.
+
+A sum type is a *type* constructor, but the records are *data* constructors 
+(functions).
+
+`Flawed Quadrilateral in Haskell`
+
+```haskell
+data Quadrilateral
+    = Rectangle { width :: Double, height :: Double }
+    | RoundedRectangle { rect :: Rectangle, arc :: Double }
+```
+
+Fails to compile with error:
+
+`GHC Error of Flawed Quadrilateral`
+
+```
+Not in scope: type constructor or class ‘Rectangle’
+Suggested fix:
+  Perhaps you intended to use DataKinds
+  to refer to the data constructor of that name?
+```
+
+So, `Quadrilateral` *is a type*, while `Rectangle` and `RoundedRectangle` *are
+data* constructors. This way, `Rectangle` can't be defined as a field
+of `RoundedRectangle` because it's a data constructor, not a type constructor (a
+field of a record has to be a type, not a data constructor).
+
+Notice how Haskell's strong **type system disallows compiling these cycles**
+since a (soft) type constructor is required instead of a (hard) data constructor
+for the record components.
+
+Recursion per se is not the problem when we have design sinks or cycles. The
+difference is that recursion *defines* something (like a `Tree`) softly with
+relations, while **cycles are a problem because they're hard/physical**
+(creating coupling), so they use recursiveness in *data* constructors or also
+module/package circular dependencies as I said in
+[Removing Cyclic Dependencies, Java vs Go (2023-05-28)](/removing-cyclic-dependencies--_--java-vs-go-2023-05-28).
+
+Now, I'll go back to the tree example just to clarify that recursion is not the
+problem with sinks (**do not fear recursion**) but *coupling*.
+
+`Defining a Binary Tree Recursively in Haskell`
+
+```haskell
+data BinTree a = Leaf | Node a (BinTree a) (BinTree a)
+```
+
+Recursion defines complex abstractions declaratively via a *pattern*. The
+`BinTree` is a (soft) *type*, so something potentially infinite like a tree can
+be exactly enclosed in the above definition. If you start using imperative
+recursion with hard constructs like data constructors, structs, modules, etc.,
+you quickly create cycles *because of the hard coupling*. These hard constructs
+have nothing to do with the recursive nature of math —which is declarative.
+
+To complement the above idea, recall that *coupling disallows orthogonal
+concepts, thus preventing partitions, etc.*
+
+It's as if soft recursion "travels at infinite light speed" because "it's
+weightless like light." On the other hand, when you "add weight," you trade
+the "speed" to be "slower than light," so that's an analogy of how physical
+coupling (or monoliths, too) "draw so much energy" and "break the pattern."
+Then, broken patterns lead to imperative workarounds, etc.
+
+Having an FP-first mindset enables us to wisely employ any other programming
+language.
+
+Haskell's type and data constructor concepts helped clarify the role of sum and
+product types. Its type system also helped prevent the compilation of cycles,
+leaving insight into how to proceed better in Java and further system designs.
