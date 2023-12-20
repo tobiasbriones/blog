@@ -245,3 +245,28 @@ language.
 Haskell's type and data constructor concepts helped clarify the role of sum and
 product types. Its type system also helped prevent the compilation of cycles,
 leaving insight into how to proceed better in Java and further system designs.
+
+### Purescript Follows the Same Principle
+
+The sum type in Purescript is expected to behave the same as Haskell since
+they're the same family of languages.
+
+`Flawed Quadrilateral in Purescript`
+
+```purescript
+data Quadrilateral
+    = Rectangle { width :: Number, height :: Number }
+    | RoundedRectangle { rect :: Rectangle, arc :: Number }
+```
+
+Failing with error `Unknown type Rectangle`.
+
+Recall that `Quadrilateral` is flawed because its product type
+`RoundedRectangle` *depends* on `Rectangle`, which is another type of its sum
+type. This coupling makes them dependent, so `Quadrilateral` is incorrectly
+defined by not being a partition with mutually disjoint subsets. A robust
+functional language won't even compile this nonsense, but in ordinary
+languages, you have to be alert since it won't be so obvious.
+
+The product types are not even normal types, but *variants* of *their* sum type,
+while **the actual type is the sum type**.
