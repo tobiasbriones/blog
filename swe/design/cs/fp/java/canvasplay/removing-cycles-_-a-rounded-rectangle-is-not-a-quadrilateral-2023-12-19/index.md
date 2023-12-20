@@ -203,6 +203,9 @@ data* constructors. This way, `Rectangle` can't be defined as a field
 of `RoundedRectangle` because it's a data constructor, not a type constructor (a
 field of a record has to be a type, not a data constructor).
 
+Data constructors are not types but values, while the sum type like
+`Quadrilateral` is the type [1].
+
 Notice how Haskell's strong **type system disallows compiling these cycles**
 since a (soft) type constructor is required instead of a (hard) data constructor
 for the record components.
