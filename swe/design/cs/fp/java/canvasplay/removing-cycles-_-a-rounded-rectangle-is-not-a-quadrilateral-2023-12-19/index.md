@@ -328,3 +328,6 @@ while **the actual type is the sum type**.
 ## References
 
 [1] [Constructor - HaskellWiki](https://wiki.haskell.org/Constructor).
+
+[2] KathleenDollard. (2021, September 15).
+[Discriminated Unions - F#. Microsoft Learn.](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/discriminated-unions).
