@@ -109,7 +109,7 @@ to help clarify the design I'm facing here.
 Imagine I want to employ the fake common sense idea by leaving the rounded
 rectangle in `Quadrilateral`.
 
-![](product-types-are-not-orthogonal.svg)
+![](product-types-of-the-union-are-not-orthogonal.svg)
 
 The flaw is clear: **`RoundedRectangle` is a `Quadrilateral` composed of a
 `Rectangle`, which is also a `Quadrilateral`**. Therefore, we have a design
