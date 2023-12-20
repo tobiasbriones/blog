@@ -97,7 +97,6 @@ design sum types correctly when they don't form a partition, and even further
 consequences of this, like the creation of dependent records that can easily
 become a cycle or sink.
 
-
 ### Incorrect Coproduct Design Leading to Cycles
 
 The more advanced consequence of why this design is also wrong is a cycle that
@@ -118,12 +117,20 @@ cycle. Records (i.e., `RoundRectangle` and `Rectangle`) of the sum type must be
 orthogonal, but `RoundedRectangle` depends on `Rectangle`, so `Quadrilateral`
 fails to be a partition by not having mutually disjoint subsets.
 
+When not ensuring principle compliance, we can leave behind severe design
+issues. In this case, having a record depending on its "sibling" proves how that
+can lead to a cycle flaw, and you don't want to mess with cycles, as I've
+addressed in other articles.
+
+## Incoherent Design of Rounded Shapes
+
 If we need to expand the support later, the `Rectangle` field
 of `RoundedRectangle` will turn into a general `Quadrilateral` to have rounded
-rhombuses and others. Then the cycle would be direct because we would be 
-matching a `RoundedRectangle` cyclically for no reason.
+rhombuses and others. This recursive definition is similar to that of a `Tree`,
+but that doesn't have anything to do with a rounded shape or
+`RoundedQuadrilateral`.
 
-`The Sink can be Seen when Pattern Matching | Matching a Quadrilateral`
+`Matching a Quadrilateral`
 
 ```java
 static QuadrilateralDrawing of(
@@ -138,9 +145,13 @@ static QuadrilateralDrawing of(
             rectangle.cx(),
             rectangle.cy()
         );
+        // ... Other real Quadrilaterals ... //
+
+        // This ↓ is not a Rectangle but "looked" like one according to //
+        // "popular" opinion 🤪                                        //
         case RoundRectangle(var rectangle, var arcX, var arcY) ->
             //                    ↑                    //
-            // If you were to pattern-match a          //
+            // If you were to pattern-match a general  //
             // Quadrilateral, you fall into a loop.    //
             //                                         //
             new CanvasRoundRectangleDrawing(
@@ -157,19 +168,43 @@ static QuadrilateralDrawing of(
 ```
 
 Then, when matching the `rectangle` field of `RoundedRectangle`, we might as
-well be matching a `Quadrilateral` (if we expand from `RoundedRectangle`
-to `RoundedQuadrilateral` as said above) again from the beginning, but this
-second time will never make sense, *proving that `RoundedRectangle` must not
-belong to `Quadrilateral`, which is then a flawed sum type*.
+well be matching a `Quadrilateral` again from the beginning, but this
+second time will never make sense because we need *one* shape not a recursion of
+them, *proving that `RoundedRectangle` must not belong to `Quadrilateral`, which
+is then a flawed sum type*.
+
+In short, making a definition where we want rounded quadrilaterals (not only
+rectangles) like:
+
+`The Initial "RoundedRectangle" Design Diverges when Scaling
+| Incoherent Design of Rounded Shapes`
+
+```
+sealed interface Quadrilateral {
+    record Rectangle(...) ...
+    record RoundedQuadrilateral(Quadrilateral quadrilateral, ...) ...
+}
+```
+
+Provides **a technically correct design** —unlike the one depicted in the
+[diagram](#incorrect-coproduct-design-leading-to-cycles) which is incorrect.
+Now, it kind of resembles the recursive structure of a tree, but **it's
+incoherent to the domain** since the structures of a round shape and a tree have
+nothing to do 😂. I might as well visualize this structure for fun to see how
+it's represented —you know, I find mysterious patterns.
 
 Getting aware that `Quadrilateral` is flawed is direct proof (from the first
 statements above), and getting so advanced until this point is something I
 wanted to emphasize to denote how the design flaws scale so much.
 
-When not ensuring principle compliance, we can leave behind severe design
-issues. In this case, having a record depending on its "sibling" proves how that
-can lead to a cycle flaw, and you don't want to mess with cycles, as I've
-addressed in other articles.
+I'll say in advance that fixing this design is just about defining rounded
+shapes in a more concrete package importing basic shapes. Rounded shapes are
+compositions of basic ones, so a rounded rectangle is at the wrong level of
+abstraction here.
+
+Even if I know the answers, I keep finding out insights about these cycle flaws
+and type systems to document conclusions of these design and learning
+activities.
 
 ## FP-First Approach to Get the Design Right
 
