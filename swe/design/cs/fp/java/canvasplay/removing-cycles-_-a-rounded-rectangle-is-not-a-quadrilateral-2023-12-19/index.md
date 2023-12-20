@@ -270,3 +270,7 @@ languages, you have to be alert since it won't be so obvious.
 
 The product types are not even normal types, but *variants* of *their* sum type,
 while **the actual type is the sum type**.
+
+## References
+
+[1] [Constructor - HaskellWiki](https://wiki.haskell.org/Constructor).
