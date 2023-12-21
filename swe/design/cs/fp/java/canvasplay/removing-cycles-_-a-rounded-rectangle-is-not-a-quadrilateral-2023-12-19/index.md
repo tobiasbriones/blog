@@ -349,6 +349,134 @@ languages disallowing nonsense constructs at compile time that just pass
 completely unnoticed in ordinary languages like JVM Java-biased languages (the
 "competition").
 
+### Rust Makes It Again
+
+The same design flaw is also expected to fail in Rust which features a great
+type system.
+
+In Rust sum types are `enum` and product types are struct-like **variants**[3].
+
+The denotation of variants for the possibilities of a sum type or union
+resembles similar C++ variants that "represent a type safe union"[4]. The
+difference is that C++ is a Frankenstein horrible language, while Rust was
+designed with a significant insight from FP languages.
+
+By compiling the snippet with the cyclic dependency, it leads to:
+
+`Flawed Quadrilateral in Rust`
+
+```rust
+enum Quadrilateral {
+    Rectangle { width: f64, height: f64 },
+    RoundedRectangle { rectangle: Quadrilateral::Rectangle, arc: f64 }
+}
+```
+
+Failing with error:
+
+`Rust Variants are not Types`
+
+```
+error[E0573]: expected type, found variant `Quadrilateral::Rectangle`
+ --> src/main.rs:3:35
+  |
+3 |     RoundedRectangle { rectangle: Quadrilateral::Rectangle, arc: f64  }
+  |                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  |                                   |
+  |                                   not a type
+  |                                   help: try using the variant's enum: `crate::Quadrilateral`
+```
+
+There are three takeaways here:
+
+- `expected type, found variant`: The Rust type system is great because a
+  variant is not a type, thus leading to the benefits of category theory seen
+  before in functional languages.
+- `try using the variant's enum`: The type is suggested as `Quadrilateral`
+  or the sum type.
+
+For a system language like Rust, that's great 👍🏻. On the other hand, imagine OO
+languages 👎🏻, despite being high-level GC and matured languages like JVM
+languages or C# will never catch up with the very basics (disregarding how much
+they try). OOP was another fake friend 🚩, and pragmatic misconception, just like
+the ones I wrote in the
+[previous article](#this-quadrilateral-sum-type-is-not-a-partition) above.
+
+Finally, the third insight of this Rust experiment is when defining the
+recursive type by letting `RoundedRectangle` consist of a `Quadrilateral`
+type (its own sum type) instead of a variant.
+
+This is directly achieved in a high-level (functional) language like Haskell:
+
+`Rounded Rectangle Receiving a Quadrilateral in Haskell`
+
+```haskell
+data Quadrilateral
+    = Rectangle { width :: Double, height :: Double }
+    | RoundedRectangle { rectangle :: Quadrilateral, arc :: Double }
+```
+
+In Rust, there's an implementation detail issue —of a cyclic nature:
+
+`Recursive Types in Rust Require Infinite Memory`
+
+```rust
+enum Quadrilateral {
+    Rectangle { width: f64, height: f64 },
+    RoundedRectangle { rectangle: Quadrilateral, arc: f64 }
+}
+```
+
+```
+error[E0072]: recursive type `Quadrilateral` has infinite size
+ --> src/main.rs:1:1
+  |
+1 | enum Quadrilateral {
+  | ^^^^^^^^^^^^^^^^^^
+2 |     Rectangle { width: f64, height: f64 },
+3 |     RoundedRectangle { rectangle: Quadrilateral, arc: f64 }
+  |                                   ------------- recursive without indirection
+```
+
+It just boils down to the reason that Rust needs to calculate the memory layout
+at compile time, so it goes like the following: a `Quadrilateral` can be a
+`Rectangle` that has a fixed size (two `f64` decimals), but also a
+`RoundedRectangle` whose size loops over cycles arbitrarily, so the size of
+`Quadrilateral` is undefined.
+
+Recall that recursion has to be applied to soft relations, so in this problem,
+we face against memory, which is quite hard/physical! So, **you never use
+recursion for physical problems because it leads to cycles**. This is
+imperative (pun intended) to notice since Rust is a lower-level language facing
+pretty much everything kind of physical affairs.
+
+Haskell won't let you down here since concepts like laziness make it possible to
+define infinite lists. That is, you don't need the infinite *physical* memory
+(just enough of it) to create an endless structure since the recursion or
+declarativeness is a (soft) definition (while the memory is an implementation
+detail).
+
+Now, to address the implementation detail in Rust, we just have to use a pointer
+through `Box`, which has a fixed size, and then the memory allocation of the
+recursive type will be dynamic, thus allowed.
+
+`Adding Indirection to Allow Recursive Types`
+
+```rust
+enum Quadrilateral {
+    Rectangle { width: f64, height: f64 },
+    RoundedRectangle { rectangle: Box<Quadrilateral>, arc: f64 }
+    //                             ↑ Indirection allows recursive types       //
+}
+```
+
+Rust didn't disappoint this time with its strong type system and functional
+capacities. Despite being a system language, it creates a proper sum type where
+its product types are not types but variants, making the cycle of the stated
+problem impossible. It was also insightful another example of a cycle created by
+recursive types and how it was addressed to separate the low-level
+representation details from the domain definition.
+
 ## References
 
 [1] [Constructor - HaskellWiki](https://wiki.haskell.org/Constructor).
