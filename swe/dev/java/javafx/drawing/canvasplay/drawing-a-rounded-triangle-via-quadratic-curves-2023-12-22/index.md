@@ -4,6 +4,17 @@
 
 # Drawing a Rounded Triangle via Quadratic Curves (2023/12/22)
 
+![](static/drawing-a-rounded-triangle-via-quadratic-curves-2023-12-22.png)
+
+<p align="center">
+<b>
+Derived from
+<a href="static/notice#cover">Pixabay</a> Background Images
+</b>
+</p>
+
+---
+
 I added support for rounded triangles to the Canvas Play JavaFX project using
 quadratic Bézier curves.
 
