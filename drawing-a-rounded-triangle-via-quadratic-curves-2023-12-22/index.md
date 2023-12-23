@@ -2,7 +2,7 @@
 permalink: drawing-a-rounded-triangle-via-quadratic-curves-2023-12-22
 title: "Drawing a Rounded Triangle via Quadratic Curves (2023/12/22)"
 description: "I added support for rounded triangles to the Canvas Play JavaFX project using quadratic Bézier curves."
-ogimage: ""
+ogimage: "https://blog.mathsoftware.engineer/drawing-a-rounded-triangle-via-quadratic-curves-2023-12-22/static/drawing-a-rounded-triangle-via-quadratic-curves-2023-12-22.png"
 ---
 
 
