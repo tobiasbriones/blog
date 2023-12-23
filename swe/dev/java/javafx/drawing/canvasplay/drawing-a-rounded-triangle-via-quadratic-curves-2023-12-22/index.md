@@ -27,7 +27,15 @@ Rounded triangles will be part of my still unpublished blog EP for drawing a
 I used quadratic Bézier curves to define the borders given the radius at each of
 the three vertexes.
 
-`Drawing a Rounded Triangle`
+Moreover, I took extra time today to build the presentation from the drawing so
+the code is left clear —as always, optimizing for quality and caring about my
+readers.
+
+![](static/drawing-a-rounded-triangle_seq-1.png)
+
+The "low-level" canvas code follows the same step-by-step model.
+
+`Canvas Drawing of a Rounded Triangle`
 
 ```java
 ctx.beginPath();
@@ -59,6 +67,8 @@ ctx.quadraticCurveTo(
     base.cy()
 );
 ```
+
+So, the test is left to give some guarantees about the API stability.
 
 `Experimental Canvas Play API | Rounded Triangle Test Case`
 
