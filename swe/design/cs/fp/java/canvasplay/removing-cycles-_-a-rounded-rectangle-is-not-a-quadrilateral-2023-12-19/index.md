@@ -477,6 +477,28 @@ problem impossible. It was also insightful another example of a cycle created by
 recursive types and how it was addressed to separate the low-level
 representation details from the domain definition.
 
+## Rounded Triangle with the Same Problem
+
+I also worked on the rounded triangle shape with the same approach as the
+rounded rectangle, so solving the "rounded rectangle problem" will solve a
+pattern of problems in the future.
+
+I published what I did in Canvas Play with rounded triangles in
+[Drawing a Rounded Triangle via Quadratic Curves (2023/12/22)](/drawing-a-rounded-triangle-via-quadratic-curves-2023-12-22).
+
+Using quadratic Bézier curves can be useful to build rounded polygons in
+general, but they're not necessarily ellipse arcs, which is the way the rounded
+rectangle and rounded shapes generally are defined.
+
+I could use the same idea depicted in the above update by using ellipse arcs
+instead of quadratic curves, so it stands by the usual mathematical definition
+of rounded shapes.
+
+I'm addressing the problem that a `RoundedRectangle` is not a
+`Quadrilateral`. If I solve the design issues here, at least, all the other
+rounded polygons should be fixed, so I'll be able to have a ton of rounded
+shapes at once 🎉.
+
 ## References
 
 [1] [Constructor - HaskellWiki](https://wiki.haskell.org/Constructor).
