@@ -17,3 +17,7 @@ Background Derived from
 
 - "Types and Programming Languages," by Benjamin C. Pierce.
 - "Foundations" by Jeremy Avigad.
+
+## References
+
+[1] [The HoTT Book](https://homotopytypetheory.org/book/). (2022, March 18). Homotopy Type Theory.
