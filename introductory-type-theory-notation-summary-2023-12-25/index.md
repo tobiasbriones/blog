@@ -1,8 +1,8 @@
 ---
 permalink: introductory-type-theory-notation-summary-2023-12-25
 title: "Introductory Type Theory Notation Summary (2023/12/25)"
-description: "[1] [The HoTT Book](https://homotopytypetheory.org/book/). (2022, March 18). Homotopy Type Theory."
-ogimage: ""
+description: "I collected an introductory summary as a presentation of the notation used in type theory."
+ogimage: "https://blog.mathsoftware.engineer/introductory-type-theory-notation-summary-2023-12-25/static/introductory-type-theory-notation-summary-2023-12-25.png"
 ---
 
 
