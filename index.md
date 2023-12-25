@@ -1,6 +1,7 @@
 # Blog | Math Software Engineer
 
 - [4 Years Since Vocational Fair at UNAH-VS (2023-05-09)](4-years-since-vocational-fair-at-unah-vs-2023-05-09)
+- [Introductory Type Theory Notation Summary (2023/12/25)](introductory-type-theory-notation-summary-2023-12-25)
 - [Data-Driven Organizations and Power BI Overview](ddo-and-power-bi-overview)
 - [Product Importation Logistics in HN (2023/11/03)](product-importation-logistics-in-hn-2023-11-03)
 - [SAR HN: Sales Tax Overview (2023/08/28)](sar-hn-_-sales-tax-overview-2023-08-28)
