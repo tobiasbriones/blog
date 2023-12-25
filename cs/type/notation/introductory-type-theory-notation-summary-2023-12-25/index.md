@@ -3,3 +3,8 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Introductory Type Theory Notation Summary (2023/12/25)
+
+## Bibliography
+
+- "Types and Programming Languages," by Benjamin C. Pierce.
+- "Foundations" by Jeremy Avigad.
