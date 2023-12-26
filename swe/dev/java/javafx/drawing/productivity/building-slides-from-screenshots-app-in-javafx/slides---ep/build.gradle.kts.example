@@ -1,0 +1,51 @@
+plugins {
+    java
+    id("application")
+    id("org.openjfx.javafxplugin") version "0.1.0"
+}
+
+group = "engineer.mathsoftware.blog"
+version = "1.0-SNAPSHOT"
+
+application {
+    mainModule.set("engineer.mathsoftware.blog.slides.ui")
+    mainClass.set("engineer.mathsoftware.blog.slides.ui.Main")
+}
+
+javafx {
+    version = "21.0.1"
+    configuration = "compileOnly"
+    modules("javafx.controls", "javafx.fxml", "javafx.swing")
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j
+//    implementation("net.sourceforge.tess4j:tess4j:5.9.0")
+
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+
+    testLogging {
+        events("passed")
+    }
+}
+
+tasks.withType<JavaCompile>().all {
+    options.compilerArgs = listOf("--enable-preview")
+}
+
+tasks.withType<JavaExec>().all {
+    jvmArgs("--enable-preview")
+}
+
+tasks.withType<Test>().all {
+    jvmArgs("--enable-preview")
+}
