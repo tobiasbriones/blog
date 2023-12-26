@@ -32,8 +32,6 @@ class SlideDrawingController {
     private final ChangeState changes;
     private final ObjectProperty<ShapeItem> shapeProperty;
     private final ObjectProperty<Palette> paletteProperty;
-    private final AIController aiController;
-    private final AIInvalidation aiInvalidation;
     private final AutoSave autoSave;
     private final BooleanProperty autoSaveProperty;
     private Group group;
@@ -45,8 +43,6 @@ class SlideDrawingController {
         changes = new ChangeState();
         paletteProperty = new SimpleObjectProperty<>();
         shapeProperty = new SimpleObjectProperty<>();
-        aiController = new AIController();
-        aiInvalidation = new AIInvalidation(this::loadAI);
         autoSave = new AutoSave();
         autoSaveProperty = new SimpleBooleanProperty();
         group = null;
@@ -55,7 +51,6 @@ class SlideDrawingController {
     }
 
     void setStatus(BackgroundStatus newStatus) {
-        aiController.setStatus(newStatus);
         autoSave.setStatus(newStatus);
     }
 
@@ -66,7 +61,6 @@ class SlideDrawingController {
         group = newDrawing;
 
         autoSave.setDrawing(group);
-        aiInvalidation.slideChanged();
         clearState();
         bindEvents();
     }
@@ -123,10 +117,6 @@ class SlideDrawingController {
     }
 
     private void bindEvents() {
-        group.setOnMouseMoved(
-            event -> aiController.onMouseMoved(event.getX(), event.getY())
-        );
-        group.setOnMouseExited(event -> aiController.onMouseExited());
         group.setOnMousePressed(event -> {
             if (event.getButton() == MouseButton.SECONDARY) {
                 var startX = event.getX();
@@ -136,20 +126,6 @@ class SlideDrawingController {
                 shape.start(startX, startY);
 
                 scrollPane.setPannable(false);
-            }
-            else {
-                aiController
-                    .onMouseClicked()
-                    .ifPresent(line -> {
-                        var shape = pushShape();
-
-                        clearAiLineRow();
-                        shape.start(line.getStartX(), line.getStartY());
-                        shape.end(line.getEndX(), line.getEndY());
-                        shape.setStrokeWidth(2.0);
-                        shape.render();
-                        saveState();
-                    });
             }
         });
         group.setOnMouseDragged(event -> {
@@ -193,14 +169,12 @@ class SlideDrawingController {
             newValue.setOnKeyPressed(event -> {
                 switch (event.getCode()) {
                     case SHIFT -> shiftPressed = true;
-                    case F1 -> onF1Pressed();
                 }
             });
 
             newValue.setOnKeyReleased(event -> {
                 switch (event.getCode()) {
                     case SHIFT -> shiftPressed = false;
-                    case F1 -> aiController.onHideTextBoxes();
                 }
             });
         });
@@ -208,24 +182,6 @@ class SlideDrawingController {
         autoSaveProperty.addListener((observable, oldValue, newValue) ->
             autoSave.enable(newValue)
         );
-    }
-
-    private void clearAiLineRow() {
-        aiController
-            .getFocusLinesInRow()
-            .forEach(line -> shapes
-                .stream()
-                .filter(shape ->
-                    shape.getStartX() == line.getStartX()
-                        && shape.getEndX() == line.getEndX()
-                        && shape.getStartY() == line.getStartY()
-                        && shape.getEndY() == line.getEndY()
-                )
-                .findFirst()
-                .ifPresent(shape -> {
-                    shape.remove();
-                    shapes.remove(shape);
-                }));
     }
 
     private void unbindEvents() {
@@ -278,15 +234,6 @@ class SlideDrawingController {
 
         shape.remove();
         saveState();
-    }
-
-    private void onF1Pressed() {
-        aiInvalidation.validate();
-        aiController.onShowTextBoxes();
-    }
-
-    private void loadAI() {
-        aiController.init(group);
     }
 
     private double normalizeX(double x) {
