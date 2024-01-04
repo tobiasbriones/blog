@@ -44,3 +44,29 @@ data QuadrantAngle (q :: Quadrant) where
   AngleII :: Obtuse -> QuadrantAngle 'QII
   AngleIII :: ReflexObtuse -> QuadrantAngle 'QIII
   AngleIV :: ReflexAcute -> QuadrantAngle 'QIV
+
+type family AngleQuadrant a :: Quadrant where
+  AngleQuadrant Acute = 'QI
+  AngleQuadrant Obtuse = 'QII
+  AngleQuadrant ReflexObtuse = 'QIII
+  AngleQuadrant ReflexAcute = 'QIV
+
+class ToQuadrantAngle a where
+  toQuadrantAngle :: a -> QuadrantAngle (AngleQuadrant a)
+
+instance ToQuadrantAngle Acute where
+  toQuadrantAngle = AngleI
+
+instance ToQuadrantAngle Obtuse where
+  toQuadrantAngle = AngleII
+
+instance ToQuadrantAngle ReflexObtuse where
+  toQuadrantAngle = AngleIII
+
+instance ToQuadrantAngle ReflexAcute where
+  toQuadrantAngle = AngleIV
+
+
+data MeasuredAngle where -- [0-360)
+  AxisAngle :: QuadrantalAngle -> MeasuredAngle
+  InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
