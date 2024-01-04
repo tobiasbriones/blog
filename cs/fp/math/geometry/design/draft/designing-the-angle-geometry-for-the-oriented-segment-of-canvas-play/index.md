@@ -195,3 +195,28 @@ Engineer, which will remind me of the past 2023/12/31.
 With the previous work, I devised an engineered draft giving insight for further
 math DSLs, by leveraging the value type angles defined first and creating
 abstractions for the plane quadrants, leading to higher-level definitions.
+
+## The Power of Domain Language Engineering
+
+Notice that, **all the languages (a.k.a. DSLs) I've created here come from math,
+so nothing is made up**. That is, *I'm a domain expert* —which is the main
+requirement to be a *math* software engineer.
+
+If you don't have a *well/factually established* domain like math, physics,
+medicine, aeronautics, etc., you shouldn't be writing DSLs that much. I mention
+it because *the domain is what makes you an engineer* (able to give certain
+guarantees, employ **facts** to build something useful for society, etc.)
+rather than a programmer, software developer, or anything else in most IT jobs.
+
+One of the remarkable skills of mathematical software engineering is **the
+research** component.
+
+It's also important to notice this since DSLs are *expensive to engineer*. I
+take plenty of resources to make formal sense of everything I create. Once I
+achieve results, it pays off forever, since I relativize, that is, *relate*
+everything to everything, so one improvement in one part of the system improves
+everything else (i.e., relative not absolute), etc.
+
+Therefore, with a well-informed background coming from objective domains, we can
+build engineering-grade software which must be the major goal of any software
+engineer.
