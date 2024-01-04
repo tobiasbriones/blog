@@ -313,6 +313,16 @@ With all the study and design in Haskell, I encountered my design in the JavaFX
 project of Canvas Play clearly and already wrote the new API for line segments,
 including the ADT for oriented segments.
 
+An **oriented segment** is a line segment defined by an angle and radius. This
+is an important standard of MathSwe since it optimizes the center, making it
+symmetric. For example, when you draw, your target point should be the center of
+the figure, and then scale it. Other definitions I like are valid
+transformations but non-primary. I like the "a line is defined by two points"
+definition.
+
+With the code and insights I've created, I can also unify all this together 
+in Canvas Play (Java).
+
 I also created Haskell code for the line segments I mentioned in the
 [introductory article](#the-line-type-of-canvas-play). I'll leave the 
 playground drafts here, as well, for the record.
