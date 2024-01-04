@@ -290,3 +290,75 @@ everything else (i.e., relative not absolute), etc.
 Therefore, with a well-informed background coming from objective domains, we can
 build engineering-grade software which must be the major goal of any software
 engineer.
+
+## The Oriented Segment of Canvas Play
+
+With all the study and design in Haskell, I encountered my design in the JavaFX
+project of Canvas Play clearly and already wrote the new API for line segments,
+including the ADT for oriented segments.
+
+I also created Haskell code for the line segments I mentioned in the
+[introductory article](#the-line-type-of-canvas-play). I'll leave the 
+playground drafts here, as well, for the record.
+
+`Devising the Design for Oriented Segments for Canvas Play
+| Drafts with General Conclusion | Main.hs`
+
+```haskell
+class Orientation a orientation where
+  orientation :: a -> orientation
+
+data AxisOrientation = Horizontal | Vertical
+
+instance Orientation QuadrantalAngle AxisOrientation where
+  orientation x = case x of
+    Zero -> Horizontal
+    Straight -> orientation Zero
+    Main.Right -> Vertical
+    ReflexRight -> orientation Main.Right
+
+data AcuteOrientation
+  = Acute15
+  | Acute30
+  | Acute45
+  | Acute60
+
+instance Orientation Acute (Maybe AcuteOrientation) where
+  orientation (Acute (Angle a))
+    | a == 15 = Just Acute15
+    | a == 30 = Just Acute30
+    | a == 45 = Just Acute45
+    | a == 60 = Just Acute60
+    | otherwise = Nothing
+
+
+-- mod Algebra
+data Sign = Positive | Negative
+
+
+-- Imported from mod Shape
+class Area a where
+  area :: a -> Double
+
+
+class Minus a where
+  minus :: a -> a
+
+
+-- mod Shape.Line
+data Line = Segment Double Double Double Double
+
+instance Area Line where
+  area _ = 0
+
+instance Minus Line where
+  --  Dummy implementation, the structure is what mattered here
+  minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
+```
+
+It left my mind clear by getting close to the
+actual problem. This is how the FP-first mindset allows you to do a better job,
+even if the target language has nothing to do with FP.
+
+This way, I just mentally compile the design devised optimally in FP terms to a
+program written in the Java way.

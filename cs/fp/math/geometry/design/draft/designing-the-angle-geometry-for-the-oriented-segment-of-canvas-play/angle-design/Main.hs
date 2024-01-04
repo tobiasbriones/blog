@@ -70,3 +70,63 @@ instance ToQuadrantAngle ReflexAcute where
 data MeasuredAngle where -- [0-360)
   AxisAngle :: QuadrantalAngle -> MeasuredAngle
   InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
+
+
+-- Drafts for General Conclusions --
+
+class Orientation a orientation where
+  orientation :: a -> orientation
+
+data AxisOrientation = Horizontal | Vertical
+
+instance Orientation QuadrantalAngle AxisOrientation where
+  orientation x = case x of
+    Zero -> Horizontal
+    Straight -> orientation Zero
+    Main.Right -> Vertical
+    ReflexRight -> orientation Main.Right
+
+data AcuteOrientation
+  = Acute15
+  | Acute30
+  | Acute45
+  | Acute60
+
+instance Orientation Acute (Maybe AcuteOrientation) where
+  orientation (Acute (Angle a))
+    | a == 15 = Just Acute15
+    | a == 30 = Just Acute30
+    | a == 45 = Just Acute45
+    | a == 60 = Just Acute60
+    | otherwise = Nothing
+
+
+-- mod Algebra
+data Sign = Positive | Negative
+
+
+-- Imported from mod Shape
+class Area a where
+  area :: a -> Double
+
+
+class Minus a where
+  minus :: a -> a
+
+
+-- mod Shape.Line
+data Line = Segment Double Double Double Double
+
+instance Area Line where
+  area _ = 0
+
+instance Minus Line where
+  --  Dummy implementation, the structure is what mattered here
+  minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
+
+
+main = do
+  let angle1 = InQuadrantAngle $ AngleI $ Acute 8
+  let angle2 = AxisAngle $ Straight
+  let a3 = toQuadrantAngle $ Acute 48
+  print $ Angle 2
