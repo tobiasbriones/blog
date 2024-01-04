@@ -63,9 +63,9 @@ types. However, I'm not doing that since I only need the design, not the
 production code, and this is impossible to do in Java (the targeting
 language) anyway[^1].
 
-[^1]: You can validate fields in any programming language, and even return
-    `Optional` in Java (and exceptions are out) but that's barely a
-    runtime check
+[^1]: You can validate fields in any programming language and even return
+    `Optional` in Java (don't use exceptions as they're an ill-design), but
+    that's barely a runtime check
 
 These definitions can be defined for general angles for multiples of the base
 angles in `[0, 360]` degrees if needed and provide a solid domain understanding
