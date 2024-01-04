@@ -200,6 +200,72 @@ With the previous work, I devised an engineered draft giving insight for further
 math DSLs, by leveraging the angle types defined first and creating
 abstractions for the plane quadrants, leading to higher-level definitions.
 
+## High-Level Angles
+
+What's left is to finish composing the results into high-level angles that
+operate over the cartesian plane in the range of `[0, 360)` degrees.
+
+Connecting the details of
+the [previous section](#leveraging-powerful-functional-abstractions), I defined
+a type family to map the type of angles to their corresponding quadrant to
+ensure correctness and simplicity —as always.
+
+`Mapping Angles to their Quadrant | Main.hs`
+
+```haskell
+type family AngleQuadrant a :: Quadrant where
+  AngleQuadrant Acute = 'QI
+  AngleQuadrant Obtuse = 'QII
+  AngleQuadrant ReflexObtuse = 'QIII
+  AngleQuadrant ReflexAcute = 'QIV
+```
+
+Then, I created a type class to convert the values. So, if I need a
+`QuadrantAngle` it can help for doing `let angle = toQuadrantAngle $ Acute 48`
+instead of `let angle = AngleI $ Acute 48` which requires client knowledge of
+the specific quadrant or data constructors you have to use, according to the
+angle you have.
+
+`Straightforward Type Class Implementation`
+
+```haskell
+class ToQuadrantAngle a where
+  toQuadrantAngle :: a -> QuadrantAngle (AngleQuadrant a)
+
+instance ToQuadrantAngle Acute where
+  toQuadrantAngle = AngleI
+
+instance ToQuadrantAngle Obtuse where
+  toQuadrantAngle = AngleII
+
+instance ToQuadrantAngle ReflexObtuse where
+  toQuadrantAngle = AngleIII
+
+instance ToQuadrantAngle ReflexAcute where
+  toQuadrantAngle = AngleIV
+```
+
+**The type family helped simplify** the parameters of the `ToQuadrantAngle`
+class and the client code because *it defines the quadrant corresponding to each
+type of angle, so we can engineer that information into the type system*. This
+is an instance (no pun intended) of how type families are so powerful as "
+functions for types."
+
+Finally, I created the type for covering all possible angles (without including
+their multiples).
+
+`Sum of All the Possible Angle`
+
+```haskell
+data MeasuredAngle where -- [0-360)
+  AxisAngle :: QuadrantalAngle -> MeasuredAngle
+  InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
+```
+
+The design built from the angle definitions, and the angles by quadrant in the
+cartesian plane resulted in an expressive rigorous definition of angles
+in the `[0, 360)` degrees set.
+
 ## The Power of Domain Language Engineering
 
 Notice that, **all the languages (a.k.a. DSLs) I've created here come from math,
