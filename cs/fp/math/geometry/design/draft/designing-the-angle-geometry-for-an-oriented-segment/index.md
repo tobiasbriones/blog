@@ -250,8 +250,8 @@ instance ToQuadrantAngle ReflexAcute where
 **The type family helped simplify** the parameters of the `ToQuadrantAngle`
 class and the client code because *it defines the quadrant corresponding to each
 type of angle, so we can engineer that information into the type system*. This
-is an instance (no pun intended) of how type families are so powerful as "
-functions for types."
+is an instance (no pun intended) of how type families are so powerful as
+"functions for types."
 
 Finally, I created the type for covering all possible angles (without including
 their multiples).
