@@ -68,7 +68,7 @@ instance ToQuadrantAngle ReflexAcute where
 
 
 data MeasuredAngle where -- [0-360)
-  AxisAngle :: QuadrantalAngle -> MeasuredAngle
+  InAxisAngle :: QuadrantalAngle -> MeasuredAngle
   InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
 
 
@@ -127,6 +127,6 @@ instance Minus Line where
 
 main = do
   let angle1 = InQuadrantAngle $ AngleI $ Acute 8
-  let angle2 = AxisAngle $ Straight
+  let angle2 = InAxisAngle $ Straight
   let a3 = toQuadrantAngle $ Acute 48
   print $ Angle 2

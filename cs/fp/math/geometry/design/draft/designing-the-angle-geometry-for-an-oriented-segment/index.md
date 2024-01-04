@@ -260,7 +260,7 @@ their multiples).
 
 ```haskell
 data MeasuredAngle where -- [0-360)
-  AxisAngle :: QuadrantalAngle -> MeasuredAngle
+  InAxisAngle :: QuadrantalAngle -> MeasuredAngle
   InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
 ```
 
