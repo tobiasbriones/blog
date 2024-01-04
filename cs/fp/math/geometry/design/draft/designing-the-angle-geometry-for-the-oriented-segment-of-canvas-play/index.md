@@ -92,3 +92,106 @@ angle x = Angle $ case x of
 
 With the above definitions, I could model angles that cover the entire cartesian
 plane and develop further DSL insights.
+
+## Leveraging Powerful Functional Abstractions
+
+From here, I started designing higher-level constructs. First, we can think in
+terms of the cartesian quadrants.
+
+`Quadrants of the Plane | Main.hs`
+
+```haskell
+data Quadrant = QI | QII | QIII | QIV
+```
+
+So, I can define a GADT for the four types of angles defined previously.
+
+`Defining Angle Types by Quadrant`
+
+```haskell
+data QuadrantAngle (q :: Quadrant) where
+  AngleI :: Acute -> QuadrantAngle 'QI
+  AngleII :: Obtuse -> QuadrantAngle 'QII
+  AngleIII :: ReflexObtuse -> QuadrantAngle 'QIII
+  AngleIV :: ReflexAcute -> QuadrantAngle 'QIV
+```
+
+The above GADT starts employing advanced features, namely, `GADTs` itself
+and `DataKinds`, where I use the *phantom parameter type* `q` to enforce the
+type of `QuadrantAngle` to create from the data constructors. So, I can build
+a `QuadrantAngle` *of* `'QI` (i.e., the *promoted data constructor* `QI` of
+`Quadrant`), etc.
+
+With the type safety above, I can enforce a function that requires an angle
+belonging to the first quadrant, for example:
+
+`Example Function Taking Angles in QI`
+
+```haskell
+fn :: QuadrantAngle 'QI -> Angle
+fn (AngleI (Acute a)) = a + (angle Straight)
+```
+
+If you try to match nonsense
+like:
+
+`Matching for Other Cases is Nonsense`
+
+```haskell
+fn (AngleII (Obtuse a)) = a * (angle ReflexRight)
+```
+
+The program compilation will disallow to proceed with the output:
+
+`Unable to Match Erroneous Logic Thanks to the Functional Type System`
+
+```
+• Inaccessible code in
+    a pattern with constructor:
+      AngleII :: Obtuse -> QuadrantAngle 'QII,
+    in an equation for ‘fn’
+  Couldn't match type ‘'QI’ with ‘'QII’
+```
+
+This is because I defined `fn` above to take only angles in the first quadrant,
+so any other case like `AngleII` that belongs to other quadrants will fail to
+compile. In other words, **if the program compiles, then it's already *mostly*
+correct because the very application logic is *encoded* into the functional type
+system**. Now, it depends on you as the engineer to *encode* that domain logic
+correctly.
+
+Of course, if you try this system further, like calling the function with
+ill-types, results in:
+
+```haskell
+let valid = fn $ AngleI $ Acute 20
+let wrong = fn $ AngleIV $ ReflexAcute 340
+```
+
+```
+• Couldn't match type ‘'QIV’ with ‘'QI’
+  Expected: QuadrantAngle 'QI
+    Actual: QuadrantAngle 'QIV
+• In the second argument of ‘($)’, namely
+    ‘AngleIV $ ReflexAcute 340’
+```
+
+**The type system provided by functions (i.e., by FP) is one of the most
+powerful *engineering* tools**, and you won't find it elsewhere in ordinary
+programming languages. Provided only by FP, for example, type and data
+constructors are functions, data constructors are promoted to type constructors,
+type families are "functions for types," etc.
+
+I learned and put into practice many concepts of Haskell and its top type
+system, based on type theory, where everything is a function, including type and
+data constructors and advanced abstractions like type families and GADTs. This
+is in contrast to non-functional languages that can only be randomly designed
+via a pragmatic variety of workarounds.
+
+I also have to say this work is part of my end-of-year memories, where I
+learned a lot more while doing related research for my next publication at MSW
+Engineer, which will remind me of the past 2023/12/31.
+
+With the previous work, I devised an engineered draft giving insight for further
+math DSLs, by leveraging the value type angles defined first and creating
+abstractions for the plane quadrants, leading to higher-level definitions.
