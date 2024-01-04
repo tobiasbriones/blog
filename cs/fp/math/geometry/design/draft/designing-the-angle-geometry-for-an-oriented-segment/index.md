@@ -154,7 +154,8 @@ fn (AngleII (Obtuse a)) = a * (angle ReflexRight)
 
 The program compilation will disallow to proceed with the output:
 
-`Unable to Match Erroneous Logic Thanks to the Functional Type System`
+`Unable to Match Erroneous Logic Thanks to the Functional Type System
+| Requires a QI Angle`
 
 ```
 • Inaccessible code in
