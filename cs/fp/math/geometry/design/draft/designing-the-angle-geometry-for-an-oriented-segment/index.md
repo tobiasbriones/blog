@@ -190,9 +190,9 @@ type families are "functions for types," etc.
 
 I learned and put into practice many concepts of Haskell and its top type
 system, based on type theory, where everything is a function, including type and
-data constructors and advanced abstractions like type families and GADTs. This
-is in contrast to non-functional languages that can only be randomly designed
-via a pragmatic variety of workarounds.
+data constructors, thus inducing advanced abstractions like type families,
+GADTs, etc. This is in contrast to non-functional languages that can only be
+randomly designed via a pragmatic variety of workarounds.
 
 I also have to say this work is part of my end-of-year memories, where I
 learned a lot more while doing related research for my next publication at MSW
@@ -223,8 +223,8 @@ type family AngleQuadrant a :: Quadrant where
 ```
 
 Then, I created a type class to convert the values. So, if I need a
-`QuadrantAngle` it can help for doing `let angle = toQuadrantAngle $ Acute 48`
-instead of `let angle = AngleI $ Acute 48` which requires client knowledge of
+`QuadrantAngle`, it can help for doing `let angle = toQuadrantAngle $ Acute 48`
+instead of `let angle = AngleI $ Acute 48`, which requires client knowledge of
 the specific quadrant or data constructors you have to use, according to the
 angle you have.
 
@@ -274,14 +274,8 @@ Notice that, **all the languages (a.k.a. DSLs) I've created here come from math,
 so nothing is made up**. That is, *I'm a domain expert* —which is the main
 requirement to be a *math* software engineer.
 
-If you don't have a *well/factually established* domain like math, physics,
-medicine, aeronautics, etc., you shouldn't be writing DSLs that much. I mention
-it because *the domain is what makes you an engineer* (able to give certain
-guarantees, employ **facts** to build something useful for society, etc.)
-rather than a programmer, software developer, or anything else in most IT jobs.
-
 One of the remarkable skills of mathematical software engineering is **the
-research** component.
+scientific research** component.
 
 It's also important to notice this since DSLs are *expensive to engineer*. I
 take plenty of resources to make formal sense of everything I create. Once I
@@ -304,7 +298,7 @@ I also created Haskell code for the line segments I mentioned in the
 playground drafts here, as well, for the record.
 
 `Devising the Design for Oriented Segments for Canvas Play
-| Drafts with General Conclusion | Main.hs`
+| Drafts with General Conclusions | Main.hs`
 
 ```haskell
 class Orientation a orientation where
