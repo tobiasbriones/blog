@@ -264,6 +264,26 @@ data MeasuredAngle where -- [0-360)
   InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
 ```
 
+The sum types are conceptually orthogonal —which is simple to understand in a
+functional language[^2] while a stone in the shoe in OO/mixed[^3]
+languages[^4]—. Therefore, I have a correct design where the sum types
+induce a partition of orthogonal products that simplifies the programs 
+since all physical and logical redundancies are eliminated. Then, we have 
+independent concepts that can be composed as demonstrated above.
+
+[^2]: Good design that Haskell encourages
+
+[^3]: It becomes hard to see and achieve in OO languages because they're
+    inherently over-engineered
+
+[^4]: For example, data constructors are not functions but objects, and then
+    each extra object creates one more (sub)type in all the idiotic JVM
+    languages (Java, Kotlin, and Scala), which is total nonsense —part of
+    the research I've been doing
+
+A plane angle is represented via orthogonal definitions: quadrantal angles plus
+angles that belong to one of the four quadrants.
+
 The design built from the angle definitions, and the angles by quadrant in the
 cartesian plane resulted in an expressive rigorous definition of angles
 in the `[0, 360)` degrees set.
