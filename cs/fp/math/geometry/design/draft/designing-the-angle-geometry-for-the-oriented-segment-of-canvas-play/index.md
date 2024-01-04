@@ -27,3 +27,68 @@ language details.
 So, I was drafting a more robust language to study the separate concepts
 concerning the design I'm finishing in Java to go back with powerful insights
 for the next project's PRs.
+
+## Angle Definitions
+
+When working with Haskell, I became eager to go further, so I wrote the
+languages needed for the `Line` DSL regarding angle definitions. These
+definitions are not requirements for me now, but they'll be useful in the future
+for engineering math software.
+
+First, I used the `DataKinds`, `GADTs`, and `TypeFamilies` language extensions,
+which can be enabled via pragmas at the source file header. I also imported
+the `Maybe` monad for an implementation until the end.
+
+I defined the value types of angles there are so I can build up from these
+domain truths.
+
+`Initializing the Domain Design | Angle Value Types | Main.hs`
+
+```haskell
+newtype Angle = Angle Double
+  deriving (Show, Num)
+
+newtype Acute = Acute Angle -- (0-90)
+
+newtype Obtuse = Obtuse Angle -- (90-180)
+
+newtype ReflexObtuse = ReflexObtuse Angle -- (180-270)
+
+newtype ReflexAcute = ReflexAcute Angle -- (180-360)
+```
+
+The value types allow understanding the semantics of the code, but it's still
+not safe. One should use LiquidHaskell to define the subsets of the refinement
+types. However, I'm not doing that since I only need the design, not the
+production code, and this is impossible to do in Java (the targeting
+language) anyway[^1].
+
+[^1]: You can validate fields in any programming language, and even return
+    `Optional` in Java (and exceptions are out) but that's barely a
+    runtime check
+
+These definitions can be defined for general angles for multiples of the base
+angles in `[0, 360]` degrees if needed and provide a solid domain understanding
+and inference options.
+
+So, now we have the constant angles lying on the axes.
+
+`Quadrantal Angle Sum Type | Main.hs`
+
+```haskell
+data QuadrantalAngle
+  = Zero
+  | Right
+  | Straight
+  | ReflexRight
+
+angle :: QuadrantalAngle -> Angle
+angle x = Angle $ case x of
+  Zero -> 0
+  Main.Right -> 90
+  Straight -> 180
+  ReflexRight -> 270
+```
+
+With the above definitions, I could model angles that cover the entire cartesian
+plane and develop further DSL insights.
