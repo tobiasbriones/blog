@@ -388,3 +388,25 @@ even if the target language has nothing to do with FP.
 
 This way, I just mentally compile the design devised optimally in FP terms to a
 program written in the Java way.
+
+## Engineering Geometry Languages in Haskell with Insights
+
+Further language designs primarily concerning Canvas Play arose many insights
+requiring good analytical judgment to be addressed. Thus leading to Haskell. To
+clarify the underlying, I just wrote the definitions for angles so I could
+finally address the oriented segment and further design challenges in Canvas
+Play.
+
+I started with general angles consisting of real numbers, with an `Angle`
+type with a `Double` data representation. Then, the design scaled to refinement
+types of independent angles belonging to a common subset, like `Acute`, and the
+quadrantal angles, like `Right`. All the definitions are orthogonal, so far so
+great. Much greater when abstractions are applied to create more high-level
+orthogonal concepts like `MeasuredAngle` consisting in angles of
+`[0, 360]` degrees and providing an engineering-grade API thanks to the
+functional type system of Haskell.
+
+The language specification for angles results in one more enabler for my
+instinct when engineering DSLs, where I've been enforcing the proper
+understanding of the theory with concepts like orthogonality to produce quality
+software. The above notions are useful for the API for an oriented segment 
