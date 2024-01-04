@@ -39,10 +39,10 @@ First, I used the `DataKinds`, `GADTs`, and `TypeFamilies` language extensions,
 which can be enabled via pragmas at the source file header. I also imported
 the `Maybe` monad for an implementation until the end.
 
-I defined the value types of angles there are so I can build up from these
-domain truths.
+I defined the types of angles there are so I could build up from these domain
+truths.
 
-`Initializing the Domain Design | Angle Value Types | Main.hs`
+`Initializing the Domain Design | Angle Types | Main.hs`
 
 ```haskell
 newtype Angle = Angle Double
@@ -57,11 +57,15 @@ newtype ReflexObtuse = ReflexObtuse Angle -- (180-270)
 newtype ReflexAcute = ReflexAcute Angle -- (180-360)
 ```
 
-The value types allow understanding the semantics of the code, but it's still
-not safe. One should use LiquidHaskell to define the subsets of the refinement
+The types allow understanding the semantics of the code, but **it's still not
+safe**. One should use LiquidHaskell to define the subsets of the refinement
 types. However, I'm not doing that since I only need the design, not the
-production code, and this is impossible to do in Java (the targeting
-language) anyway[^1].
+production code, and this is hard to achieve in Java (the targeting language)
+anyway[^1]. Something about **refinement types** in Java might happen, according
+to [this recent project](https://catarinagamboa.github.io/liquidjava.html)
+inspired by ML and Haskell, and
+[this paper](https://arxiv.org/pdf/2110.05444.pdf), but I haven't tried them in
+Java so far.
 
 [^1]: You can validate fields in any programming language and even return
     `Optional` in Java (don't use exceptions as they're an ill-design), but
@@ -193,7 +197,7 @@ learned a lot more while doing related research for my next publication at MSW
 Engineer, which will remind me of the past 2023/12/31.
 
 With the previous work, I devised an engineered draft giving insight for further
-math DSLs, by leveraging the value type angles defined first and creating
+math DSLs, by leveraging the angle types defined first and creating
 abstractions for the plane quadrants, leading to higher-level definitions.
 
 ## The Power of Domain Language Engineering
