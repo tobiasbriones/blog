@@ -68,7 +68,7 @@ language) anyway[^1].
     that's barely a runtime check
 
 These definitions can be defined for general angles for multiples of the base
-angles in `[0, 360]` degrees if needed and provide a solid domain understanding
+angles in `[0, 360)` degrees if needed and provide a solid domain understanding
 and inference options.
 
 So, now we have the constant angles lying on the axes.
