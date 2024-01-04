@@ -4,6 +4,8 @@
 
 # Designing the Angle Geometry for an Oriented Segment
 
+![](designing-the-angle-geometry-for-an-oriented-segment.png)
+
 ## The Line Type of Canvas Play
 
 I'm correcting some design flaws in the Java Canvas Play for the Line sum type
