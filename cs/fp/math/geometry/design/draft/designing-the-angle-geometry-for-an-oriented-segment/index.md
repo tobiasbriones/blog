@@ -6,6 +6,11 @@
 
 ![](designing-the-angle-geometry-for-an-oriented-segment.png)
 
+Line segments oriented by an angle and orthogonal design concepts led to an
+engineering-grade draft of a language I designed in Haskell. It defines angles
+with high-level forms in the geometric domain, showing greater insight and skill
+for related domain languages.
+
 ## The Line Type of Canvas Play
 
 I'm correcting some design flaws in the Java Canvas Play for the Line sum type
