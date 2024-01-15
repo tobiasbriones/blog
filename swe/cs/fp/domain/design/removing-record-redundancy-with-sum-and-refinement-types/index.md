@@ -90,8 +90,7 @@ data Orientation
   = Quadrantal QuadrantalOrientation
   | Angled SignedAcute
 
-data OrientedSegment
-  = OrientedSegment
+data OrientedSegment = OrientedSegment
   { orientation :: Orientation
   , radius :: Double
   , cp :: Point
