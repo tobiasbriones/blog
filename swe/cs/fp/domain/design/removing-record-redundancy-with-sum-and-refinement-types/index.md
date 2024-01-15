@@ -118,3 +118,58 @@ The introduction of a sum type for the segment orientation eliminated the two
 redundant records for horizontal and vertical *variants* by factorizing them
 from two redundant records into a cohesive `OrientedSegment` record with sum
 type variants.
+
+## Enriching the Domain Types with Refinements
+
+One important case when redundancy is shown is when we have a superset already
+but want a smaller subset to create a specific type.
+
+From the [above example](#physical-redundancy) of the `Line` sum type, we can
+see that `Segment` covers all the other possible options, so we don't need to
+over-engineer this with a sum type but create a simple subset or refinement type
+of the universe set.
+
+From [the simplification](#factorizing-the-duplication-with-sum-types) above
+that removed the duplication, we have **our universe set as
+`OrientedSegment`** since we want to take subsets like `HSegment` and
+`VSegment` **without creating redundant types**. The simplification above is a
+correct step to perform, but something else is still missing to fix the `Line`
+design since we no longer have the `HSegment`
+and `VSegment` types.
+
+Notice a sum type is a universe consisting of a partition of its subsets[^4] or
+variants, while a refinement type is a subset of some universe type. In both,
+it's essential to know well the universe type to proceed with a design. You
+cannot create refinements of a variant since they're not types[^5][^6]. They're
+different abstractions, so use them wisely.
+
+[^4]: So you can optimize for one of the disjoint subsets of your choice
+
+[^5]: The type in the example [above](#physical-redundancy) is `Line`,
+    not `Segment`, so you cannot refine `Segment` with the given ADT
+
+[^6]: In Java, you can because of what I said in my
+    [other article's footnote](/designing-the-angle-geometry-for-an-oriented-segment#fn:4),
+    but of course, don't do it
+
+`Refinements for Safe-and-Efficient Oriented Segment Subtypes
+| Subsets of a Universe Set`
+
+```haskell
+-- Ensure to create the refinements via LiquidHaskell --
+
+-- HSegment
+--   = { (HSegment x _ _) in OrientedSegment | x is (Quadrantal Horizontal) }
+newtype HSegment = HSegment OrientedSegment
+
+-- VSegment
+--   = { (VSegment x _ _) in OrientedSegment | x is (Quadrantal Vertical) }
+newtype VSegment = VSegment OrientedSegment
+```
+
+First, you have to notice you have a universe set. Then you'll want specific
+types for important subsets, so you know you should create refinements reusing
+the universe type instead of creating more types again from scratch that'll
+pollute the code with duplication. Therefore, we have a cohesive system,
+eliminating design duplications, yet a powerful type system to cover all the
+domain needs.
