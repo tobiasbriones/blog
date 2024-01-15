@@ -171,3 +171,97 @@ the universe type instead of creating more types again from scratch that'll
 pollute the code with duplication. Therefore, we have a cohesive system,
 eliminating design duplications, yet a powerful type system to cover all the
 domain needs.
+
+## Removing Field Redundancy for Memory Optimization
+
+The refinement applied to `OrientedSegment` is a neat solution, but more
+redundancy complications can arise when the data representation of the
+refinement types gets simplified down in structure, thus leading to duplicated
+fields created at runtime.
+
+If we create the refinements as suggested
+[above](#enriching-the-domain-types-with-refinements), since each subtype is a
+refinement of `OrientedSegment`, they will store **a redundant field** for the
+`orientation`, thus inefficient in memory.
+
+We know they're unnecessary from the very refinement definition: A `HSegment`
+will always be horizontal, etc. That information is already part of the type
+system, so it's redundant to store the `orientation` field.
+
+Since we're in FP, we can trivially compose what we need. So, as I said above,
+the `OrientedSegment` consists of a ball that gives its radius and center point.
+
+Therefore, we can define the data type for what we need, and exclude the
+redundant part that is now part of the type system.
+
+`Extracting the Common Fields for Our Refinement | Definition of an \(R^2\) Ball`
+
+```haskell
+data Ball = Ball { radius :: Double, cp :: Point }
+```
+
+Now that the redundant `orientation` field is removed, we can define the
+refinements in a memory-optimal layout.
+
+`Memory Efficient Refinements`
+
+```haskell
+newtype HSegment = HSegment Ball
+
+newtype VSegment = VSegment Ball
+```
+
+Now, as an engineer, you have two options:
+
+- Include `Ball` in the previous definitions, which might be over-engineering.
+- Keep the redundant fields between `OrientedSegment` and `Ball` in the design
+  to trade the memory duplication off at runtime, although much better than 
+  the problem of [Physical Redundancy](#physical-redundancy).
+
+Recall that records with the same fields in the same package are disallowed
+because (that's redundant, thus inefficient) the compiler generates accessor
+functions with the names of the record fields.
+
+`Duplicated Record Fields are Disallowed`
+
+```
+Main.hs:30:20: error:
+    Multiple declarations of ‘radius’
+    Declared at: Main.hs:25:5
+                 Main.hs:30:20
+   |
+30 | data Ball = Ball { radius :: Double, cp :: Point }
+   |                    ^^^^^^
+
+Main.hs:30:38: error:
+    Multiple declarations of ‘cp’
+    Declared at: Main.hs:26:5
+                 Main.hs:30:38
+   |
+30 | data Ball = Ball { radius :: Double, cp :: Point }
+   |                                      ^^
+```
+
+The Haskell compiler is a great ally when spotting "code smells" that are just
+bypassed in ordinary languages. Of course, it all comes from mathematics instead
+of made-up C++ or JS tricks; hence it's so good.
+
+So, you have to decide the tradeoff as the designer. Recall that the former
+solution is more mathematical, while the latter focuses on implementation
+details.
+
+It'd be great if a compiler generated the refinements properly. For example, the
+[refinement made before](#enriching-the-domain-types-with-refinements) should
+not store the `oriented` field in runtime, provided the compiler could infer
+this valuable[^6] information. That's what I mean by "implementation detail."
+When you deal with them, tradeoffs come across, and the math or high-level 
+concepts fade away 😐.
+
+[^6]: Pun intended since `oriented` is a redundant "value" in runtime, but I
+    also suggest it's "valuable" information for the compiler to infer
+
+The previous math-like refinement could still be optimized not to remove a
+design redundancy but a memory one, meaning an implementation detail. As an
+engineer, you must understand your domain and technical tradeoffs since
+compilers, even the Haskell one, are far from perfect to give us the perfect
+solution to every situation.
