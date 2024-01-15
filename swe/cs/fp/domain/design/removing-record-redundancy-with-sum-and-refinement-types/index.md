@@ -4,6 +4,11 @@
 
 # Removing Record Redundancy with Sum and Refinement Types
 
+Systems should initiate simplification by removing common duplications like
+records that only differ in their name, particular types already created as a
+universal definition, and runtime memory waste. The engineer should probably
+leverage algebraic and refinement types with composition for an optimal design.
+
 ## Physical Redundancy
 
 Creating repeating structures is a design flaw that should probably be removed
