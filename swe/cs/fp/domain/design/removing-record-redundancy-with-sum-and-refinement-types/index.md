@@ -38,3 +38,83 @@ key to reaching the engineering grade.
 In the above case, we notice (as boilerplate) a physical redundancy since two
 records are defined the same way, so as a software engineer when reading that
 code, you must obviously see it *factorizable* to simplify the code.
+
+### Factorizing the Duplication with Sum Types
+
+When something hard/physical is duplicated (thus inefficient), a common insight
+as an engineer is to create relations to simplify the problem. Sum types are
+relations since they create the disjoint union of variants, while product types
+or records are hard because they define the actual data to be held.
+
+I can state a design fixing some of the issues described before. I'll take the
+geometric language design I gave in
+[Designing the Angle Geometry for an Oriented Segment](/designing-the-angle-geometry-for-an-oriented-segment)
+as a base. The repetition will be removed by softening the problem via a sum
+type.
+
+For a given concept, we can have **a main definition** out of all the equivalent
+ones in our domain[^2].
+
+[^2]: This is like mathematical equivalent definitions where you prove the
+    double implication among all of them, so you choose one at your will that
+    makes the most sense for the underlying application
+
+`Main Segment Definition`
+
+```haskell
+data Segment
+  = Segment { start :: Point, end :: Point }
+```
+
+Then, we won't have the overlap problem I stated in other articles, where
+`Segment` "eats" the other variants when defined as a sum type. So, notice I
+broke the flawed `Line` [sum type](#physical-redundancy), and now `Segment` is
+directly a product type.
+
+For an API for segments with common orientations, **an equivalent definition**
+is what I did to fix the design issues of overlapping. You should immediately
+notice *the sum type needed is for the orientation variants* (i.e., horizontal
+or vertical).
+
+` Introducing the Sum Type to Remove the Record Redundancy
+| Equivalent Segment Definition`
+
+```haskell
+newtype SignedAcute = SignedAcute Angle -- (-90, 0) and (0, 90) deg
+
+data QuadrantalOrientation = Horizontal | Vertical -- { 0, 90 } deg
+
+-- Defines the angle to build an oriented segment which must be exactly in
+-- (-90, 90]deg.
+data Orientation
+  = Quadrantal QuadrantalOrientation
+  | Angled SignedAcute
+
+data OrientedSegment
+  = OrientedSegment
+  { orientation :: Orientation
+  , radius :: Double
+  , cp :: Point
+  }
+```
+
+The `OrientedSegment` is an equivalent definition of `Segment`
+storing the segment angle and ball in $$R^2$$ for its length. Both are
+**isomorphic types**.
+
+I'm also taking the exact `(-90, 90]deg` angle *from the DSL* to populate the
+whole plane, so any possible line segment can be defined via
+`OrientedSegment` in only one way.
+
+Any segment can be described with either data type I designed, and they don't
+overlap since they're equivalent/independent definitions instead of belonging to
+the same `Line` sum type given in [Physical Redundancy](#physical-redundancy).
+
+The sum type removing the redundancy of the previous `HSegment` and
+`VSegment` records is `QuadrantalOrientation`. That's what I mean by
+*factorizing expressions to simplify them*.
+
+The introduction of a sum type for the segment orientation eliminated the two
+redundant records for horizontal and vertical *variants* by factorizing them
+from two redundant records into a cohesive `OrientedSegment` record with sum
+type variants.
