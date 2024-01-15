@@ -242,6 +242,11 @@ Main.hs:30:38: error:
    |                                      ^^
 ```
 
+Storing repeated values at runtime is also a
+[Physical Redundancy](#physical-redundancy). Hence, we have a tight relation
+between the product types we design and the physical data that occupies the
+hardware.
+
 The Haskell compiler is a great ally when spotting "code smells" that are just
 bypassed in ordinary languages. Of course, it all comes from mathematics instead
 of made-up C++ or JS tricks; hence it's so good.
