@@ -62,8 +62,7 @@ ones in our domain[^2].
 `Main Segment Definition`
 
 ```haskell
-data Segment
-  = Segment { start :: Point, end :: Point }
+data Segment = Segment { start :: Point, end :: Point }
 ```
 
 Then, we won't have the overlap problem I stated in other articles, where
