@@ -151,7 +151,7 @@ different abstractions, so use them wisely.
     [other article's footnote](/designing-the-angle-geometry-for-an-oriented-segment#fn:4),
     but of course, don't do it
 
-`Refinements for Safe-and-Efficient Oriented Segment Subtypes
+`Refinements for Oriented Segment Subtypes
 | Subsets of a Universe Set`
 
 ```haskell
