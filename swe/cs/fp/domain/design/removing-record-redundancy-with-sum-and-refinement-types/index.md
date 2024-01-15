@@ -9,7 +9,7 @@
 Creating repeating structures is a design flaw that should probably be removed
 via expression simplification.
 
-From the definitions of various kinds of line shapes, I've been writing about a
+From the definitions line shapes, I've been writing about a
 [problem](/ensuring-principle-compliance-_-this-line-sum-type-is-not-a-partition-2023-12-07),
 so we have something like the following design example:
 
