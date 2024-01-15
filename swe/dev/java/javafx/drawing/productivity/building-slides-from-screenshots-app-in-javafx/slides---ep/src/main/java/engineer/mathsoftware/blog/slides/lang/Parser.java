@@ -14,7 +14,7 @@ public class Parser<K extends Enum<?>> {
         .compile("(['\"])([^'\"]*)(['\"])");
     private static final Pattern SINGLE_LINE_COMMENT_PATTERN
         = Pattern
-        .compile("(//)(.*)(\\r\\n|\\r|\\n)");
+        .compile("(//|#|--)(.*)(\\r\\n|\\r|\\n)");
     private static final String PASCAL_CASE_GROUP_REGEX
         = "([A-Z][a-zA-Z0-9]*)";
     private static final Pattern PASCAL_CASE_TYPE_PATTERN
@@ -113,7 +113,7 @@ public class Parser<K extends Enum<?>> {
         if (STRING_PATTERN.matcher(token).find()) {
             return new Element.TokenParsing(new Element.StringLiteral(value));
         }
-        if (token.startsWith("//")) {
+        if (token.startsWith("//") || token.startsWith("#") || token.startsWith("--")) {
             return new Element.TokenParsing(new Element.Comment(value));
         }
         if (token.matches(PASCAL_CASE_GROUP_REGEX)) {

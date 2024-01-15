@@ -140,7 +140,8 @@ public final class Spec {
             Foreign,
             Export,
             Qualified,
-            Hiding
+            Hiding,
+            Newtype
         }
     }
 
