@@ -39,7 +39,7 @@ In the above case, we notice (as boilerplate) a physical redundancy since two
 records are defined the same way, so as a software engineer when reading that
 code, you must obviously see it *factorizable* to simplify the code.
 
-### Factorizing the Duplication with Sum Types
+## Factorizing the Duplication with Sum Types
 
 When something hard/physical is duplicated (thus inefficient), a common insight
 as an engineer is to create relations to simplify the problem. Sum types are
