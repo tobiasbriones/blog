@@ -287,3 +287,38 @@ tech jobs.
 
 These skills primarily concern **engineers** rather than apparently similar
 roles lacking **rigor**, like software development or programming.
+
+## Fixing Redundancy is a Major Key to Simplify Systems
+
+Removing design flaws showing redundancy, or boilerplate, is mandatory for
+crafting engineering-grade software since the existence of repetition in the
+codebase suggests we need to apply simplification techniques like polymorphism
+to our *expressions*.
+
+If we don't simplify the code, we'll have a far-from-correct design, resulting
+hard to test, document, etc. Therefore, it's not an engineering-grade design.
+
+The inefficient hard duplication in a program, like **records that only differ
+in their name**, can be simplified by factorizing the duplication into a
+cohesive unit with sum-type variants.
+
+Refinement types are a complex feature that barely a few languages like Haskell
+extensions can support, if at all. They're powerful abstractions since we can
+**express** the very same math definitions. Notice how types are the sets of 
+set theory while subtypes are then subsets of set theory.
+
+When tools like compilers are unable to help anymore, we have to
+"get our hands dirty" with implementation details, bringing tradeoffs with
+lower-level code. Therefore, you apply the "engineer" part of your "math
+software engineer" title.
+
+It's essential to have a strong mathematical and computer science background for
+being a software engineer.
+
+The functional type system allows us to create simple expressions for our
+programs via abstractions like **algebraic and refinement types**, which are all
+about pure functions, thus functional programming.
+
+FP also includes the concepts of types analogously to mathematical sets.
+So, we can have further abstractions like isomorphic types to enrich our domain
+with equivalent definitions of your choice.
