@@ -257,12 +257,12 @@ details.
 
 It'd be great if a compiler generated the refinements properly. For example, the
 [refinement made before](#enriching-the-domain-types-with-refinements) should
-not store the `oriented` field in runtime, provided the compiler could infer
+not store the `oriented` field at runtime, provided the compiler could infer
 this valuable[^6] information. That's what I mean by "implementation detail."
 When you deal with them, tradeoffs come across, and the math or high-level 
 concepts fade away 😐.
 
-[^6]: Pun intended since `oriented` is a redundant "value" in runtime, but I
+[^6]: Pun intended since `oriented` is a redundant "value" at runtime, but I
     also suggest it's "valuable" information for the compiler to infer
 
 The previous math-like refinement could still be optimized not to remove a
