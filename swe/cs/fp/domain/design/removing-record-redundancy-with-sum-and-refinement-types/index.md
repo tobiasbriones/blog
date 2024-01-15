@@ -135,18 +135,18 @@ correct step to perform, but something else is still missing to fix the `Line`
 design since we no longer have the `HSegment`
 and `VSegment` types.
 
-Notice a sum type is a universe consisting of a partition of its subsets[^4] or
+Notice a sum type is a universe consisting of a partition of its subsets[^3] or
 variants, while a refinement type is a subset of some universe type. In both,
 it's essential to know well the universe type to proceed with a design. You
-cannot create refinements of a variant since they're not types[^5][^6]. They're
+cannot create refinements of a variant since they're not types[^4][^5]. They're
 different abstractions, so use them wisely.
 
-[^4]: So you can optimize for one of the disjoint subsets of your choice
+[^3]: So you can optimize for one of the disjoint subsets of your choice
 
-[^5]: The type in the example [above](#physical-redundancy) is `Line`,
+[^4]: The type in the example [above](#physical-redundancy) is `Line`,
     not `Segment`, so you cannot refine `Segment` with the given ADT
 
-[^6]: In Java, you can because of what I said in my
+[^5]: In Java, you can because of what I said in my
     [other article's footnote](/designing-the-angle-geometry-for-an-oriented-segment#fn:4),
     but of course, don't do it
 
