@@ -265,3 +265,25 @@ design redundancy but a memory one, meaning an implementation detail. As an
 engineer, you must understand your domain and technical tradeoffs since
 compilers, even the Haskell one, are far from perfect to give us the perfect
 solution to every situation.
+
+## Principles for Engineers
+
+Simplifying expressions in functional programs is **a basic/essential skill**
+any software engineer must have since it's how you were trained in the CS/math
+majors.
+
+So, instead of simplifying polynomials and such with set theory, you now have to
+simplify programming expressions with type theory. That's how you apply abstract
+skills developed during math courses, mostly if you're self-taught since that
+shows you're ahead.
+
+Applying simplification techniques *is mandatory for any engineer*, regardless
+of your domain, whether it is mathematical software or not. If you work in other
+domains, you'll always have expressions to simplify building the
+"business/app logic" into engineering-grade artifacts. Programmers and
+developers are not engineers because they don't *engineer* anything and don't
+care about the engineering grade. It doesn't matter how they get called in their
+tech jobs.
+
+These skills primarily concern **engineers** rather than apparently similar
+roles lacking **rigor**, like software development or programming.
