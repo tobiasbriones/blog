@@ -88,7 +88,7 @@ newtype SignedAcute = SignedAcute Angle -- (-90, 0) and (0, 90) deg
 
 data QuadrantalOrientation = Horizontal | Vertical -- { 0, 90 } deg
 
--- Defines the angle to build an oriented segment which must be exactly in
+-- Defines the angle to build an oriented segment, which must be exactly in
 -- (-90, 90]deg.
 data Orientation
   = Quadrantal QuadrantalOrientation
