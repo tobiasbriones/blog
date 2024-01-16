@@ -1,0 +1,19 @@
+---------------------------- 1 Main Definition ----------------------------
+
+-- A line segment is defined by two points.
+data Segment = Segment { start :: Point, end :: Point }
+
+
+------------------------- 2 Equivalent Definition -------------------------
+
+-- A line segment is defined by a center point, a radius, and an angle.
+data OrientedSegment = OrientedSegment
+    { orientation :: Orientation
+    , radius      :: Double
+    , cp          :: Point
+    }
+
+-- Oriented segment angle in (-90, 90]deg.
+data Orientation
+    = Quadrantal QuadrantalOrientation
+    | Angled SignedAcute
