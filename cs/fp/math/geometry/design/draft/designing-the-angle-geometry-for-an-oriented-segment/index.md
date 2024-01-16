@@ -4,8 +4,6 @@
 
 # Designing the Angle Geometry for an Oriented Segment
 
-![](designing-the-angle-geometry-for-an-oriented-segment.png)
-
 Line segments oriented by an angle and orthogonal design concepts led to an
 engineering-grade draft of a language I designed in Haskell. It defines angles
 with high-level forms in the geometric domain, showing greater insight and skill
