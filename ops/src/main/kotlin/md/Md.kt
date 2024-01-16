@@ -10,10 +10,7 @@ import java.io.IOException
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
 import javax.imageio.ImageIO
-import kotlin.io.path.absolutePathString
-import kotlin.io.path.exists
-import kotlin.io.path.name
-import kotlin.io.path.relativeTo
+import kotlin.io.path.*
 import kotlin.system.exitProcess
 
 data class Markdown(val value: String)
@@ -21,12 +18,16 @@ data class Markdown(val value: String)
 fun Markdown.parse(entry: Entry, dic: Dictionary): Markdown =
     parseCodeSnippets(entry)
         .parseImages(dic, entry)
+        .parseAutomaticCoverImage(entry)
 
 fun Markdown.parseCodeSnippets(entry: Entry): Markdown =
     copy(value = parseCodeSnippets(value, entry))
 
 fun Markdown.parseImages(dic: Dictionary, entry: Entry): Markdown =
     copy(value = parseImages(value, dic, entry))
+
+fun Markdown.parseAutomaticCoverImage(entry: Entry): Markdown =
+    copy(value = parseAutomaticCoverImage(value, entry))
 
 fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
     val sb = StringBuilder(value.length)
@@ -284,6 +285,47 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
 
     return sb.toString()
 }
+
+fun parseAutomaticCoverImage(value: String, entry: Entry): String {
+    val coverImageName = "${entry.name()}.png"
+    val path = entry.path.resolve(coverImageName)
+    val coverImageMd = "![]($coverImageName)"
+
+    if (path.notExists()) {
+        return value
+    }
+    if (value.contains(coverImageMd)) {
+        return value
+    }
+
+    val sb = StringBuilder(value.length)
+    var state = CoverImageState.Start
+
+    for (line in value.lines()) {
+        when (state) {
+            CoverImageState.Start -> {
+                if (line.startsWith("# ")) {
+                    state = CoverImageState.Heading
+                }
+            }
+            CoverImageState.Heading -> {
+                sb.append("\n")
+                sb.append(coverImageMd)
+                sb.append("\n")
+
+                state = CoverImageState.Cover
+            }
+            CoverImageState.Cover -> {}
+        }
+
+        sb.append(line)
+        sb.append("\n")
+    }
+
+    return sb.toString()
+}
+
+enum class CoverImageState { Start, Heading, Cover }
 
 fun String.getExtension(): String {
     val lastDotIndex = lastIndexOf(".")
