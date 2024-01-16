@@ -1,7 +1,7 @@
 ---
 permalink: designing-the-angle-geometry-for-an-oriented-segment
 title: "Designing the Angle Geometry for an Oriented Segment"
-description: "data Sign = Positive | Negative"
+description: "Line segments oriented by an angle and orthogonal design concepts led to an engineering-grade draft of a language I designed in Haskell. It defines angles with high-level forms in the geometric domain, showing greater insight and skill for related domain languages."
 ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/designing-the-angle-geometry-for-an-oriented-segment/designing-the-angle-geometry-for-an-oriented-segment.png"
 ---
 
@@ -12,7 +12,7 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/designin
 
 # Designing the Angle Geometry for an Oriented Segment
 
-<img src="designing-the-angle-geometry-for-an-oriented-segment.png" alt="Designing the Angle Geometry for an Oriented Segment" />
+![](designing-the-angle-geometry-for-an-oriented-segment.png)
 
 Line segments oriented by an angle and orthogonal design concepts led to an
 engineering-grade draft of a language I designed in Haskell. It defines angles
@@ -72,7 +72,7 @@ truths.
 </button>
 
         <button type="button" data-code="newtype Angle = Angle Double
-  deriving (Show, Num)
+    deriving (Show, Num)
 
 newtype Acute = Acute Angle -- (0-90)
 
@@ -95,7 +95,7 @@ newtype ReflexAcute = ReflexAcute Angle -- (180-360)
 {% capture markdownContent %}
 ```haskell
 newtype Angle = Angle Double
-  deriving (Show, Num)
+    deriving (Show, Num)
 
 newtype Acute = Acute Angle -- (0-90)
 
@@ -150,17 +150,17 @@ So, now we have the constant angles lying on the axes.
 </button>
 
         <button type="button" data-code="data QuadrantalAngle
-  = Zero
-  &vert; Right
-  &vert; Straight
-  &vert; ReflexRight
+    = Zero
+    &vert; Right
+    &vert; Straight
+    &vert; ReflexRight
 
 angle :: QuadrantalAngle -&gt; Angle
 angle x = Angle $ case x of
-  Zero -&gt; 0
-  Main.Right -&gt; 90
-  Straight -&gt; 180
-  ReflexRight -&gt; 270
+    Zero        -&gt; 0
+    Main.Right  -&gt; 90
+    Straight    -&gt; 180
+    ReflexRight -&gt; 270
 " onclick="onCopyCodeSnippet(this)">
             <span class="material-symbols-rounded">
             content_copy
@@ -175,17 +175,17 @@ angle x = Angle $ case x of
 {% capture markdownContent %}
 ```haskell
 data QuadrantalAngle
-  = Zero
-  | Right
-  | Straight
-  | ReflexRight
+    = Zero
+    | Right
+    | Straight
+    | ReflexRight
 
 angle :: QuadrantalAngle -> Angle
 angle x = Angle $ case x of
-  Zero -> 0
-  Main.Right -> 90
-  Straight -> 180
-  ReflexRight -> 270
+    Zero        -> 0
+    Main.Right  -> 90
+    Straight    -> 180
+    ReflexRight -> 270
 ```
 
 {% endcapture %}
@@ -258,10 +258,10 @@ So, I can define a GADT for the four types of angles defined previously.
         
 
         <button type="button" data-code="data QuadrantAngle (q :: Quadrant) where
-  AngleI :: Acute -&gt; QuadrantAngle &#x27;QI
-  AngleII :: Obtuse -&gt; QuadrantAngle &#x27;QII
-  AngleIII :: ReflexObtuse -&gt; QuadrantAngle &#x27;QIII
-  AngleIV :: ReflexAcute -&gt; QuadrantAngle &#x27;QIV
+    AngleI   :: Acute        -&gt; QuadrantAngle &#x27;QI
+    AngleII  :: Obtuse       -&gt; QuadrantAngle &#x27;QII
+    AngleIII :: ReflexObtuse -&gt; QuadrantAngle &#x27;QIII
+    AngleIV  :: ReflexAcute  -&gt; QuadrantAngle &#x27;QIV
 " onclick="onCopyCodeSnippet(this)">
             <span class="material-symbols-rounded">
             content_copy
@@ -276,10 +276,10 @@ So, I can define a GADT for the four types of angles defined previously.
 {% capture markdownContent %}
 ```haskell
 data QuadrantAngle (q :: Quadrant) where
-  AngleI :: Acute -> QuadrantAngle 'QI
-  AngleII :: Obtuse -> QuadrantAngle 'QII
-  AngleIII :: ReflexObtuse -> QuadrantAngle 'QIII
-  AngleIV :: ReflexAcute -> QuadrantAngle 'QIV
+    AngleI   :: Acute        -> QuadrantAngle 'QI
+    AngleII  :: Obtuse       -> QuadrantAngle 'QII
+    AngleIII :: ReflexObtuse -> QuadrantAngle 'QIII
+    AngleIV  :: ReflexAcute  -> QuadrantAngle 'QIV
 ```
 
 {% endcapture %}
@@ -491,10 +491,10 @@ ensure correctness and simplicity —as always.
 </button>
 
         <button type="button" data-code="type family AngleQuadrant a :: Quadrant where
-  AngleQuadrant Acute = &#x27;QI
-  AngleQuadrant Obtuse = &#x27;QII
-  AngleQuadrant ReflexObtuse = &#x27;QIII
-  AngleQuadrant ReflexAcute = &#x27;QIV
+    AngleQuadrant Acute        = &#x27;QI
+    AngleQuadrant Obtuse       = &#x27;QII
+    AngleQuadrant ReflexObtuse = &#x27;QIII
+    AngleQuadrant ReflexAcute  = &#x27;QIV
 " onclick="onCopyCodeSnippet(this)">
             <span class="material-symbols-rounded">
             content_copy
@@ -509,10 +509,10 @@ ensure correctness and simplicity —as always.
 {% capture markdownContent %}
 ```haskell
 type family AngleQuadrant a :: Quadrant where
-  AngleQuadrant Acute = 'QI
-  AngleQuadrant Obtuse = 'QII
-  AngleQuadrant ReflexObtuse = 'QIII
-  AngleQuadrant ReflexAcute = 'QIV
+    AngleQuadrant Acute        = 'QI
+    AngleQuadrant Obtuse       = 'QII
+    AngleQuadrant ReflexObtuse = 'QIII
+    AngleQuadrant ReflexAcute  = 'QIV
 ```
 
 {% endcapture %}
@@ -541,19 +541,19 @@ angle you have.
         
 
         <button type="button" data-code="class ToQuadrantAngle a where
-  toQuadrantAngle :: a -&gt; QuadrantAngle (AngleQuadrant a)
+    toQuadrantAngle :: a -&gt; QuadrantAngle (AngleQuadrant a)
 
 instance ToQuadrantAngle Acute where
-  toQuadrantAngle = AngleI
+    toQuadrantAngle = AngleI
 
 instance ToQuadrantAngle Obtuse where
-  toQuadrantAngle = AngleII
+    toQuadrantAngle = AngleII
 
 instance ToQuadrantAngle ReflexObtuse where
-  toQuadrantAngle = AngleIII
+    toQuadrantAngle = AngleIII
 
 instance ToQuadrantAngle ReflexAcute where
-  toQuadrantAngle = AngleIV
+    toQuadrantAngle = AngleIV
 " onclick="onCopyCodeSnippet(this)">
             <span class="material-symbols-rounded">
             content_copy
@@ -568,19 +568,19 @@ instance ToQuadrantAngle ReflexAcute where
 {% capture markdownContent %}
 ```haskell
 class ToQuadrantAngle a where
-  toQuadrantAngle :: a -> QuadrantAngle (AngleQuadrant a)
+    toQuadrantAngle :: a -> QuadrantAngle (AngleQuadrant a)
 
 instance ToQuadrantAngle Acute where
-  toQuadrantAngle = AngleI
+    toQuadrantAngle = AngleI
 
 instance ToQuadrantAngle Obtuse where
-  toQuadrantAngle = AngleII
+    toQuadrantAngle = AngleII
 
 instance ToQuadrantAngle ReflexObtuse where
-  toQuadrantAngle = AngleIII
+    toQuadrantAngle = AngleIII
 
 instance ToQuadrantAngle ReflexAcute where
-  toQuadrantAngle = AngleIV
+    toQuadrantAngle = AngleIV
 ```
 
 {% endcapture %}
@@ -612,8 +612,8 @@ their multiples).
         
 
         <button type="button" data-code="data MeasuredAngle where -- [0-360)
-  InAxisAngle :: QuadrantalAngle -&gt; MeasuredAngle
-  InQuadrantAngle :: QuadrantAngle q -&gt; MeasuredAngle
+    InAxisAngle     :: QuadrantalAngle -&gt; MeasuredAngle
+    InQuadrantAngle :: QuadrantAngle q -&gt; MeasuredAngle
 " onclick="onCopyCodeSnippet(this)">
             <span class="material-symbols-rounded">
             content_copy
@@ -628,8 +628,8 @@ their multiples).
 {% capture markdownContent %}
 ```haskell
 data MeasuredAngle where -- [0-360)
-  InAxisAngle :: QuadrantalAngle -> MeasuredAngle
-  InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
+    InAxisAngle     :: QuadrantalAngle -> MeasuredAngle
+    InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
 ```
 
 {% endcapture %}
@@ -719,30 +719,30 @@ playground drafts here, as well, for the record.
 </button>
 
         <button type="button" data-code="class Orientation a orientation where
-  orientation :: a -&gt; orientation
+    orientation :: a -&gt; orientation
 
 data AxisOrientation = Horizontal &vert; Vertical
 
 instance Orientation QuadrantalAngle AxisOrientation where
-  orientation x = case x of
-    Zero -&gt; Horizontal
-    Straight -&gt; orientation Zero
-    Main.Right -&gt; Vertical
-    ReflexRight -&gt; orientation Main.Right
+    orientation x = case x of
+        Zero        -&gt; Horizontal
+        Straight    -&gt; orientation Zero
+        Main.Right  -&gt; Vertical
+        ReflexRight -&gt; orientation Main.Right
 
 data AcuteOrientation
-  = Acute15
-  &vert; Acute30
-  &vert; Acute45
-  &vert; Acute60
+    = Acute15
+    &vert; Acute30
+    &vert; Acute45
+    &vert; Acute60
 
 instance Orientation Acute (Maybe AcuteOrientation) where
-  orientation (Acute (Angle a))
-    &vert; a == 15 = Just Acute15
-    &vert; a == 30 = Just Acute30
-    &vert; a == 45 = Just Acute45
-    &vert; a == 60 = Just Acute60
-    &vert; otherwise = Nothing
+    orientation (Acute (Angle a))
+        &vert; a == 15   = Just Acute15
+        &vert; a == 30   = Just Acute30
+        &vert; a == 45   = Just Acute45
+        &vert; a == 60   = Just Acute60
+        &vert; otherwise = Nothing
 
 
 -- mod Algebra
@@ -751,22 +751,22 @@ data Sign = Positive &vert; Negative
 
 -- Imported from mod Shape
 class Area a where
-  area :: a -&gt; Double
+    area :: a -&gt; Double
 
 
 class Minus a where
-  minus :: a -&gt; a
+    minus :: a -&gt; a
 
 
 -- mod Shape.Line
 data Line = Segment Double Double Double Double
 
 instance Area Line where
-  area _ = 0
+    area _ = 0
 
 instance Minus Line where
-  --  Dummy implementation, the structure is what mattered here
-  minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
+    --  Dummy implementation, the structure is what mattered here
+    minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
 " onclick="onCopyCodeSnippet(this)">
             <span class="material-symbols-rounded">
             content_copy
@@ -781,30 +781,30 @@ instance Minus Line where
 {% capture markdownContent %}
 ```haskell
 class Orientation a orientation where
-  orientation :: a -> orientation
+    orientation :: a -> orientation
 
 data AxisOrientation = Horizontal | Vertical
 
 instance Orientation QuadrantalAngle AxisOrientation where
-  orientation x = case x of
-    Zero -> Horizontal
-    Straight -> orientation Zero
-    Main.Right -> Vertical
-    ReflexRight -> orientation Main.Right
+    orientation x = case x of
+        Zero        -> Horizontal
+        Straight    -> orientation Zero
+        Main.Right  -> Vertical
+        ReflexRight -> orientation Main.Right
 
 data AcuteOrientation
-  = Acute15
-  | Acute30
-  | Acute45
-  | Acute60
+    = Acute15
+    | Acute30
+    | Acute45
+    | Acute60
 
 instance Orientation Acute (Maybe AcuteOrientation) where
-  orientation (Acute (Angle a))
-    | a == 15 = Just Acute15
-    | a == 30 = Just Acute30
-    | a == 45 = Just Acute45
-    | a == 60 = Just Acute60
-    | otherwise = Nothing
+    orientation (Acute (Angle a))
+        | a == 15   = Just Acute15
+        | a == 30   = Just Acute30
+        | a == 45   = Just Acute45
+        | a == 60   = Just Acute60
+        | otherwise = Nothing
 
 
 -- mod Algebra
@@ -813,22 +813,22 @@ data Sign = Positive | Negative
 
 -- Imported from mod Shape
 class Area a where
-  area :: a -> Double
+    area :: a -> Double
 
 
 class Minus a where
-  minus :: a -> a
+    minus :: a -> a
 
 
 -- mod Shape.Line
 data Line = Segment Double Double Double Double
 
 instance Area Line where
-  area _ = 0
+    area _ = 0
 
 instance Minus Line where
-  --  Dummy implementation, the structure is what mattered here
-  minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
+    --  Dummy implementation, the structure is what mattered here
+    minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
 ```
 
 {% endcapture %}
@@ -868,6 +868,7 @@ The language specification for angles results in one more enabler for my
 instinct when engineering DSLs, where I've been enforcing the proper
 understanding of the theory with concepts like orthogonality to produce quality
 software. The above notions are useful for the API for an oriented segment 
+
 
 
 
