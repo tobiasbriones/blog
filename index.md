@@ -21,6 +21,7 @@
 - [Everything is Relative](everything-is-relative)
 - [I Just Turned the Lights Off, Put My Headphones On, and Read This Crazy Paper About SWE Commandments (2022/10/15)](i-just-turned-the-lights-off--_--put-my-headphones-on--_--and-read-this-crazy-paper-about-swe-commandments-2022-10-15)
 - [This Article Represents a Milestone for Me (2022/12/18)](this-article-represents-a-milestone-for-me-2022-12-18)
+- [Removing Record Redundancy with Sum and Refinement Types](removing-record-redundancy-with-sum-and-refinement-types)
 - [Designing a Rounded Rectangle Against Pragmatic Misconceptions](designing-a-rounded-rectangle-against-pragmatic-misconceptions)
 - [Ensuring Principle Compliance: This Line Sum Type is Not a Partition (2023/12/07)](ensuring-principle-compliance-_-this-line-sum-type-is-not-a-partition-2023-12-07)
 - [Applying my Pipe and Application Operators in Kotlin (2023-07-19)](applying-my-pipe-and-application-operators-in-kotlin-2023-07-19)
