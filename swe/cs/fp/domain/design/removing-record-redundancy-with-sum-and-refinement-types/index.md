@@ -96,8 +96,8 @@ data Orientation
 
 data OrientedSegment = OrientedSegment
   { orientation :: Orientation
-  , radius :: Double
-  , cp :: Point
+  , radius      :: Double
+  , cp          :: Point
   }
 ```
 
