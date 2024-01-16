@@ -169,7 +169,7 @@ or vertical).
 
 data QuadrantalOrientation = Horizontal &vert; Vertical -- { 0, 90 } deg
 
--- Defines the angle to build an oriented segment which must be exactly in
+-- Defines the angle to build an oriented segment, which must be exactly in
 -- (-90, 90]deg.
 data Orientation
   = Quadrantal QuadrantalOrientation
@@ -177,8 +177,8 @@ data Orientation
 
 data OrientedSegment = OrientedSegment
   { orientation :: Orientation
-  , radius :: Double
-  , cp :: Point
+  , radius      :: Double
+  , cp          :: Point
   }
 " onclick="onCopyCodeSnippet(this)">
             <span class="material-symbols-rounded">
@@ -197,7 +197,7 @@ newtype SignedAcute = SignedAcute Angle -- (-90, 0) and (0, 90) deg
 
 data QuadrantalOrientation = Horizontal | Vertical -- { 0, 90 } deg
 
--- Defines the angle to build an oriented segment which must be exactly in
+-- Defines the angle to build an oriented segment, which must be exactly in
 -- (-90, 90]deg.
 data Orientation
   = Quadrantal QuadrantalOrientation
@@ -205,8 +205,8 @@ data Orientation
 
 data OrientedSegment = OrientedSegment
   { orientation :: Orientation
-  , radius :: Double
-  , cp :: Point
+  , radius      :: Double
+  , cp          :: Point
   }
 ```
 
