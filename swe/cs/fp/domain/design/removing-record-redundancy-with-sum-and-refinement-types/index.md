@@ -24,9 +24,9 @@ so we have something like the following design example:
 data Point = Point Double Double
 
 data Line
-  = Segment { start :: Point, end :: Point }
-  | HSegment { radius :: Double, center :: Point }
-  | VSegment { radius :: Double, center :: Point }
+    = Segment { start :: Point, end :: Point }
+    | HSegment { radius :: Double, center :: Point }
+    | VSegment { radius :: Double, center :: Point }
 ```
 
 I'll omit the fact that `Line` is not a partition[^1] and just focus on the 
@@ -91,14 +91,14 @@ data QuadrantalOrientation = Horizontal | Vertical -- { 0, 90 } deg
 -- Defines the angle to build an oriented segment, which must be exactly in
 -- (-90, 90]deg.
 data Orientation
-  = Quadrantal QuadrantalOrientation
-  | Angled SignedAcute
+    = Quadrantal QuadrantalOrientation
+    | Angled SignedAcute
 
 data OrientedSegment = OrientedSegment
-  { orientation :: Orientation
-  , radius      :: Double
-  , cp          :: Point
-  }
+    { orientation :: Orientation
+    , radius      :: Double
+    , cp          :: Point
+    }
 ```
 
 The `OrientedSegment` is an equivalent definition of `Segment`
