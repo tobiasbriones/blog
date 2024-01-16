@@ -4,8 +4,6 @@
 
 # Designing the Angle Geometry for an Oriented Segment
 
-![](designing-the-angle-geometry-for-an-oriented-segment.png)
-
 Line segments oriented by an angle and orthogonal design concepts led to an
 engineering-grade draft of a language I designed in Haskell. It defines angles
 with high-level forms in the geometric domain, showing greater insight and skill
@@ -53,7 +51,7 @@ truths.
 
 ```haskell
 newtype Angle = Angle Double
-  deriving (Show, Num)
+    deriving (Show, Num)
 
 newtype Acute = Acute Angle -- (0-90)
 
@@ -88,17 +86,17 @@ So, now we have the constant angles lying on the axes.
 
 ```haskell
 data QuadrantalAngle
-  = Zero
-  | Right
-  | Straight
-  | ReflexRight
+    = Zero
+    | Right
+    | Straight
+    | ReflexRight
 
 angle :: QuadrantalAngle -> Angle
 angle x = Angle $ case x of
-  Zero -> 0
-  Main.Right -> 90
-  Straight -> 180
-  ReflexRight -> 270
+    Zero        -> 0
+    Main.Right  -> 90
+    Straight    -> 180
+    ReflexRight -> 270
 ```
 
 With the above definitions, I could model angles that cover the entire cartesian
@@ -121,10 +119,10 @@ So, I can define a GADT for the four types of angles defined previously.
 
 ```haskell
 data QuadrantAngle (q :: Quadrant) where
-  AngleI :: Acute -> QuadrantAngle 'QI
-  AngleII :: Obtuse -> QuadrantAngle 'QII
-  AngleIII :: ReflexObtuse -> QuadrantAngle 'QIII
-  AngleIV :: ReflexAcute -> QuadrantAngle 'QIV
+    AngleI   :: Acute        -> QuadrantAngle 'QI
+    AngleII  :: Obtuse       -> QuadrantAngle 'QII
+    AngleIII :: ReflexObtuse -> QuadrantAngle 'QIII
+    AngleIV  :: ReflexAcute  -> QuadrantAngle 'QIV
 ```
 
 The above GADT starts employing advanced features, namely, `GADTs` itself
@@ -222,10 +220,10 @@ ensure correctness and simplicity —as always.
 
 ```haskell
 type family AngleQuadrant a :: Quadrant where
-  AngleQuadrant Acute = 'QI
-  AngleQuadrant Obtuse = 'QII
-  AngleQuadrant ReflexObtuse = 'QIII
-  AngleQuadrant ReflexAcute = 'QIV
+    AngleQuadrant Acute        = 'QI
+    AngleQuadrant Obtuse       = 'QII
+    AngleQuadrant ReflexObtuse = 'QIII
+    AngleQuadrant ReflexAcute  = 'QIV
 ```
 
 Then, I created a type class to convert the values. So, if I need a
@@ -238,19 +236,19 @@ angle you have.
 
 ```haskell
 class ToQuadrantAngle a where
-  toQuadrantAngle :: a -> QuadrantAngle (AngleQuadrant a)
+    toQuadrantAngle :: a -> QuadrantAngle (AngleQuadrant a)
 
 instance ToQuadrantAngle Acute where
-  toQuadrantAngle = AngleI
+    toQuadrantAngle = AngleI
 
 instance ToQuadrantAngle Obtuse where
-  toQuadrantAngle = AngleII
+    toQuadrantAngle = AngleII
 
 instance ToQuadrantAngle ReflexObtuse where
-  toQuadrantAngle = AngleIII
+    toQuadrantAngle = AngleIII
 
 instance ToQuadrantAngle ReflexAcute where
-  toQuadrantAngle = AngleIV
+    toQuadrantAngle = AngleIV
 ```
 
 **The type family helped simplify** the parameters of the `ToQuadrantAngle`
@@ -266,8 +264,8 @@ their multiples).
 
 ```haskell
 data MeasuredAngle where -- [0-360)
-  InAxisAngle :: QuadrantalAngle -> MeasuredAngle
-  InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
+    InAxisAngle     :: QuadrantalAngle -> MeasuredAngle
+    InQuadrantAngle :: QuadrantAngle q -> MeasuredAngle
 ```
 
 The sum types are conceptually orthogonal —which is simple to understand in a
@@ -338,30 +336,30 @@ playground drafts here, as well, for the record.
 
 ```haskell
 class Orientation a orientation where
-  orientation :: a -> orientation
+    orientation :: a -> orientation
 
 data AxisOrientation = Horizontal | Vertical
 
 instance Orientation QuadrantalAngle AxisOrientation where
-  orientation x = case x of
-    Zero -> Horizontal
-    Straight -> orientation Zero
-    Main.Right -> Vertical
-    ReflexRight -> orientation Main.Right
+    orientation x = case x of
+        Zero        -> Horizontal
+        Straight    -> orientation Zero
+        Main.Right  -> Vertical
+        ReflexRight -> orientation Main.Right
 
 data AcuteOrientation
-  = Acute15
-  | Acute30
-  | Acute45
-  | Acute60
+    = Acute15
+    | Acute30
+    | Acute45
+    | Acute60
 
 instance Orientation Acute (Maybe AcuteOrientation) where
-  orientation (Acute (Angle a))
-    | a == 15 = Just Acute15
-    | a == 30 = Just Acute30
-    | a == 45 = Just Acute45
-    | a == 60 = Just Acute60
-    | otherwise = Nothing
+    orientation (Acute (Angle a))
+        | a == 15   = Just Acute15
+        | a == 30   = Just Acute30
+        | a == 45   = Just Acute45
+        | a == 60   = Just Acute60
+        | otherwise = Nothing
 
 
 -- mod Algebra
@@ -370,22 +368,22 @@ data Sign = Positive | Negative
 
 -- Imported from mod Shape
 class Area a where
-  area :: a -> Double
+    area :: a -> Double
 
 
 class Minus a where
-  minus :: a -> a
+    minus :: a -> a
 
 
 -- mod Shape.Line
 data Line = Segment Double Double Double Double
 
 instance Area Line where
-  area _ = 0
+    area _ = 0
 
 instance Minus Line where
-  --  Dummy implementation, the structure is what mattered here
-  minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
+    --  Dummy implementation, the structure is what mattered here
+    minus (Segment sx sy ex ey) = Segment (sx - 1) (sy - 1) (ex - 1) (ey - 1)
 ```
 
 It left my mind clear by getting close to the
