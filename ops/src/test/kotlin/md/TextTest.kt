@@ -29,7 +29,8 @@ class TextTest {
             "ddo" to "Data-Driven Organizations",
         ),
         custom = mapOf(
-            "intellij idea" to "IntelliJ IDEA"
+            "intellij idea" to "IntelliJ IDEA",
+            "msw mvp app" to "Math.Software MVP App",
         )
     )
 
@@ -92,6 +93,10 @@ class TextTest {
             entry(
                 "updating-from-angular-v15-to-v17---2dp-repsymo-2023-12-06"
             ) to "Updating from Angular V15 to V17 | 2DP Repsymo (2023/12/06)",
+
+            entry(
+                "initializing-operations---msw-mvp-app-2024-01-30"
+            ) to "Initializing Operations | Math.Software MVP App (2024/01/30)"
         )
 
         cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }
