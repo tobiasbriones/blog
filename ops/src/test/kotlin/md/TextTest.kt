@@ -30,7 +30,7 @@ class TextTest {
         ),
         custom = mapOf(
             "intellij idea" to "IntelliJ IDEA",
-            "msw mvp app" to "Math.Software MVP App",
+            "msw mvp app" to "Math Software MVP App",
         )
     )
 
@@ -96,7 +96,7 @@ class TextTest {
 
             entry(
                 "initializing-operations---msw-mvp-app-2024-01-30"
-            ) to "Initializing Operations | Math.Software MVP App (2024/01/30)"
+            ) to "Initializing Operations | Math Software MVP App (2024/01/30)"
         )
 
         cases.forEach { assertEquals(it.value, it.key.toTitleCase(dic)) }

@@ -26,6 +26,6 @@ val dic: Dictionary = Dictionary(
         "picrt" to "PicRT",
         "mckinsey" to "McKinsey",
         "leds" to "LEDs",
-        "msw mvp app" to "Math.Software MVP App",
+        "msw mvp app" to "Math Software MVP App",
     )
 )
