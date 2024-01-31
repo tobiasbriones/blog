@@ -64,3 +64,36 @@ I created the `math.software---mvp` app with React 18, TypeScript 5 with SWC,
 and Vite 5. I installed the `bootstrap-react`, `bootstrap`, and
 `better-react-mathjax` dependencies. I'll write more about it in the next PR
 blog.
+
+## Official MVP Structure
+
+After writing an extensive draft of the blog I mentioned earlier, I concluded
+the standards for the repository name, semantics, and internal project
+structure.
+
+For example, I declared there can only be one MVP (repo or project) per GitHub
+organization and must be named after `{ org_name }---mvp` with the pipe operator
+[I standardized before](/how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
+and have been using successfully. The file/project name is piped to the MVP
+context just like I've been doing with EPs and CPs. MVPs are mono repositories
+containing internal MVPs because of their volatile and centralized nature.
+
+MVP projects must be explicitly piped with the `---mvp` context to clarify their
+purpose.
+
+The new MVP project has the structure:
+
+`Opening Operations at the Math Software MVP | Initial Project Structure`
+
+```
+mathsoftware---mvp
+├── math.software---mvp
+│   └── README.md
+└── README.md
+```
+
+Since the mono repository `mathsoftware---mvp` is the only MVP in the
+organization by the new standard, the rest of the MVPs will be hosted there.
+
+To start operations, I just introduced the **Math.Software MVP** (i.e., the web
+app) in the `math.software---mvp` directory.
