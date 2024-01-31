@@ -97,3 +97,24 @@ organization by the new standard, the rest of the MVPs will be hosted there.
 
 To start operations, I just introduced the **Math.Software MVP** (i.e., the web
 app) in the `math.software---mvp` directory.
+
+## Setting Up Deployments
+
+I updated the Netlify deployment since I had
+[the prototype I made in ~a day](#fast-paced-prototype)
+with plain HTML. I set the repository with readme files up-to-date and status
+badges.
+
+Production will run in the premium APEX domain
+[math.software](https://math.software) until the engineering grade version
+is formally created, thus deprecating the MVP version[^3].
+
+[^3]: The purpose of MVPs is to deprecate them in pro of engineering grade
+    projects since it shows you're having massive success
+
+Staging is running in the [staging.math.software](https://staging.math.software)
+subdomain deploying the `msw/staging` branch.
+
+The deployment is established for a long while and supports the staging
+environment as a plus. By opening deployment operations, my premium domain name
+will start returning the investment 🎉🥳🎉.
