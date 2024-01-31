@@ -6,7 +6,7 @@
 
 Previous theoretical and practical works are being iterated for reaching
 production at math.software with the new MVP (Minimum Viable Project) web app
-offering high-engineering standards and domain-specific mathematical software.
+offering high engineering standards and domain-specific mathematical software.
 While MVPs are pragmatically developed, engineering-grade counterparts will
 be internally ascertained.
 
