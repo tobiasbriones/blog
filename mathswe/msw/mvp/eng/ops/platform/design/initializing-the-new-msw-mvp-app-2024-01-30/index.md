@@ -170,3 +170,23 @@ start extracting plenty of value from previous works from the past year.
 The upcoming news will be the work in the `msw` branch for adding the prototype
 I wrote in plain HTML, so there will be something (minimal and validated ✔) to
 deliver to production for the `0.1.0` version.
+
+## Reaching Production with Informed Standards
+
+I'm focused on deploying as many results involving MathSwe as possible without
+compromising the engineering, academic, and brand components. I started with a
+plain prototype of the math.software MVP. Eventually, all this led to a draft
+for the next MathSwe standards to keep complying with the engineering component
+I just mentioned.
+
+The new standards are being employed, empowering more iterations to get previous
+works more mature and hitting the light.
+
+MathSwe MVPs are designed with a General SWE (Mainstream/Mainstream+ according
+to the draft mentioned) quality grade. They're stable and well-engineered
+artifacts. As the organization's vision, MVPs aim to be replaced in the future
+with their engineering-grade counterparts, showing major maturity milestones.
+
+The **math.software** app is an MVP that will reach production soon in `v0.1.0`
+with minimal and stable features, allowing me to exploit my premium domain and
+pass from theory to practice once more.
