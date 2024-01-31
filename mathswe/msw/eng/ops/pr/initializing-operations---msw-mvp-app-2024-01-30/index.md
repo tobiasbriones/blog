@@ -57,3 +57,10 @@ formal background and philosophy.
 The current logos are not official yet. I have to draw them with the Canvas DSL
 I've also been designing, but since we're against the MVP development, it's
 perfectly valid to add what I have for now and iterate.
+
+## Web App
+
+I created the `math.software---mvp` app with React 18, TypeScript 5 with SWC,
+and Vite 5. I installed the `bootstrap-react`, `bootstrap`, and
+`better-react-mathjax` dependencies. I'll write more about it in the next PR
+blog.
