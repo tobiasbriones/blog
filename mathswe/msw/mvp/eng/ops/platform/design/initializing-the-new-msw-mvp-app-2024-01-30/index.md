@@ -138,3 +138,35 @@ MathSwe MVPs must be of high standards, showing that the grade of MVPs is
 relative. Since the underlying field is MSWE, even a simple MVP must have great
 mainstream quality, unlike ordinary MVPs that can consist of "runnable mockups."
 Thus, by MVP in MathSwe, we can think of quality General SWE.
+
+## Celebrating the Opening of the Premium App
+
+This is the first blog (and PR) about the new major project **MVP:
+Math.Software** located in the **mathsoftware** GitHub organization 🎉🥳🎉.
+
+As usual, I'm providing
+[the `BSD-3-Clause` License](https://github.com/mathsoftware/mathsoftware---mvp/blob/main/LICENSE)
+to the organization's MVP[^x].
+
+[^x]: Remember that, from my new standard draft, one organization can have at
+    most one MVP repository or project, so that is what I mean by "the
+    organization's MVP"
+
+The initial app will be released under version `0.1.0` as per standard[^x]. For
+formality reasons, I declare a version `0.1.0-dev` (which is SemVer compliant)
+in the project's `package.json` while in development of that version, so the
+very last commit before release should be for removing the "dev" suffix since
+the iteration is complete. That is, version `0.1.0` (without `-dev`) is left
+exactly before release, so the version declared doesn't lie. The same applies to
+any other version, so the information assigned is coherent.
+
+[^x]: The initial version of SemVer software should be `0.1.0` in contrast to
+    some projects I've seen using awkward `0.0.1` versions
+
+Finally, I added the temporal styles I worked on for the current version of MSW
+Engineer (the ones the blog is using right now). So, the new iterations will
+start extracting plenty of value from previous works from the past year.
+
+The upcoming news will be the work in the `msw` branch for adding the prototype
+I wrote in plain HTML, so there will be something (minimal and validated ✔) to
+deliver to production for the `0.1.0` version.
