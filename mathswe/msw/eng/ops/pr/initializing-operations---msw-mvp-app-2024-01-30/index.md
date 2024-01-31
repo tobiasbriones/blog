@@ -42,3 +42,18 @@ while enriching the mathematical side of MathSwe in the background.
 
 Since I must go to production now, I'll be using MVPs for MSW and Repsymo to go
 the right way.
+
+## Milestone with Logo Upgrades
+
+I created the **Math** and exported (with more retouches[^2]) the **MSW
+(Mathematical Software)** and **MSWE (Mathematical Software Engineering)**
+icons I've been devising over the years since I worked on the **Piaxid**
+concept. So, my logos have a formal sense I ascertained from so many years of
+formal background and philosophy.
+
+[^2]: I stopped working on the logos in Photopea since I'm working in the
+    Canvas Play DSL for mathematical drawings and visualizations
+
+The current logos are not official yet. I have to draw them with the Canvas DSL
+I've also been designing, but since we're against the MVP development, it's
+perfectly valid to add what I have for now and iterate.
