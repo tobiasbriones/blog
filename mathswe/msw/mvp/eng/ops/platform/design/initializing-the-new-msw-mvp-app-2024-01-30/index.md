@@ -4,6 +4,12 @@
 
 # Initializing the New Math Software MVP App (2024/01/30)
 
+Previous theoretical and practical works are being iterated for reaching
+production at math.software with the new MVP (Minimum Viable Project) web app
+offering high-engineering standards and domain-specific mathematical software.
+While MVPs are pragmatically developed, engineering-grade counterparts will
+be internally ascertained.
+
 ## Fast Paced Prototype
 
 I started working on the app prototype in a single `index.html` file with the
