@@ -136,11 +136,13 @@ In other words, two/three steps behind the engineering grade.
 
 Notice by "engineering grade" I mean traditional engineering with rigor.
 
-The app is aimed to be a PWA. Since I also have experience with this, I'm taking
-into account the tradeoffs. For example, adding the fonts and everything bundled
-with the app instead of using a CDN, which involves adding third-party copyright
-notices in the source code to comply with IP laws. I'll manage it in further ops
-before the app is ready for one of the upcoming releases.
+The app is aimed to be a PWA like Repsymo always was, so it must work offline
+for the highest user experience. Since I also have experience with this, I'm
+considering the tradeoffs. For example, adding the fonts and everything bundled
+with the app instead of downloading them lazily via CDN, which involves adding
+third-party copyright notices in the source code to comply with IP laws. I'll
+manage it in further ops before the app is ready for one of the upcoming
+releases.
 
 MathSwe MVPs must be of high standards, showing that the grade of MVPs is
 relative. Since the underlying field is MSWE, even a simple MVP must have great
