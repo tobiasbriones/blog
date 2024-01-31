@@ -147,8 +147,8 @@ Thus, by MVP in MathSwe, we can think of quality General SWE.
 
 ## Celebrating the Opening of the Premium App
 
-This is the first blog (and PR) about the new major project **MVP:
-Math.Software** located in the **mathsoftware** GitHub organization 🎉🥳🎉.
+This is the first blog about the new major project **MVP: Math.Software**
+located in the **mathsoftware** GitHub organization 🎉🥳🎉.
 
 As usual, I'm providing
 [the `BSD-3-Clause` License](https://github.com/mathsoftware/mathsoftware---mvp/blob/main/LICENSE)
