@@ -118,3 +118,23 @@ subdomain deploying the `msw/staging` branch.
 The deployment is established for a long while and supports the staging
 environment as a plus. By opening deployment operations, my premium domain name
 will start returning the investment 🎉🥳🎉.
+
+## Expected MVP Quality
+
+The MVP versions will have a "Mainstream/Mainstream+" quality grade according to
+my current blog draft. That is quality near the "Pre-Engineering" grade or one
+step behind the boundary between the engineering grade and general engineering.
+In other words, two/three steps behind the engineering grade.
+
+Notice by "engineering grade" I mean traditional engineering with rigor.
+
+The app is aimed to be a PWA. Since I also have experience with this, I'm taking
+into account the tradeoffs like adding the fonts and everything bundled with the
+app instead of using a CDN, which involves adding third-party copyright notices
+to comply with IP laws. I'll manage it in further ops before the app is ready
+for one of the upcoming releases.
+
+MathSwe MVPs must be of high standards, showing that the grade of MVPs is
+relative. Since the underlying field is MSWE, even a simple MVP must have great
+mainstream quality, unlike ordinary MVPs that can consist of "runnable mockups."
+Thus, by MVP in MathSwe, we can think of quality General SWE.
