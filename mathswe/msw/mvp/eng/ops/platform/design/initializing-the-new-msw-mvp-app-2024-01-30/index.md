@@ -106,17 +106,19 @@ app) in the `math.software---mvp` directory.
 
 ## Setting Up Deployments
 
-I updated the Netlify deployment since I had
+I updated the Netlify deployment since I was testing
 [the prototype I made in ~a day](#fast-paced-prototype)
 with plain HTML. I set the repository with readme files up-to-date and status
 badges.
 
 Production will run in the premium APEX domain
-[math.software](https://math.software) until the engineering grade version
-is formally created, thus deprecating the MVP version[^3].
+[math.software](https://math.software). The MVP versions will be deprecated[^3]
+when the engineering-grade counterparts become available. Therefore, the process
+is efficient while the platform matures as per demand.
 
-[^3]: The purpose of MVPs is to deprecate them in pro of engineering grade
-    projects since it shows you're having massive success
+[^3]: The purpose of MVPs is to finish their lifecycle and replace them with
+    engineering-grade counterparts in the long run, which shows you're having
+    massive success
 
 Staging is running in the [staging.math.software](https://staging.math.software)
 subdomain deploying the `msw/staging` branch.
