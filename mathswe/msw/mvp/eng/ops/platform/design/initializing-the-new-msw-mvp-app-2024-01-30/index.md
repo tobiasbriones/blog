@@ -80,8 +80,8 @@ structure.
 For example, I declared there can only be one MVP (repo or project) per GitHub
 organization and must be named after `{ org_name }---mvp` with the pipe operator
 [I standardized before](/how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
-and have been using successfully. The file/project name is piped to the MVP
-context just like I've been doing with EPs and CPs. MVPs are mono repositories
+and have been using successfully. The project name is piped to the MVP context
+just like I've been doing with EPs and CPs. MVPs are mono repositories
 containing internal MVPs because of their volatile and centralized nature.
 
 MVP projects must be explicitly piped with the `---mvp` context to clarify their
@@ -92,8 +92,8 @@ The new MVP project has the structure:
 `Opening Operations at the Math Software MVP | Initial Project Structure`
 
 ```
-mathsoftware---mvp
-├── math.software---mvp
+mathsoftware---mvp       (monorepo)
+├── math.software---mvp  (webapp)
 │   └── README.md
 └── README.md
 ```
