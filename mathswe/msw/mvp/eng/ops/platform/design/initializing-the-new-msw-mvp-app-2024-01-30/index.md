@@ -156,13 +156,13 @@ located in the **mathsoftware** GitHub organization 🎉🥳🎉.
 
 As usual, I'm providing
 [the `BSD-3-Clause` License](https://github.com/mathsoftware/mathsoftware---mvp/blob/main/LICENSE)
-to the organization's MVP[^x].
+to the organization's MVP[^4].
 
-[^x]: Remember that, from my new standard draft, one organization can have at
+[^4]: Remember that, from my new standard draft, one organization can have at
     most one MVP repository or project, so that is what I mean by "the
     organization's MVP"
 
-The initial app will be released under version `0.1.0` as per standard[^x]. For
+The initial app will be released under version `0.1.0` as per standard[^5]. For
 formality reasons, I declare a version `0.1.0-dev` (which is SemVer compliant)
 in the project's `package.json` while in development of that version, so the
 very last commit before release should be for removing the "dev" suffix since
@@ -170,7 +170,7 @@ the iteration is complete. That is, version `0.1.0` (without `-dev`) is left
 exactly before release, so the version declared doesn't lie. The same applies to
 any other version, so the information assigned is coherent.
 
-[^x]: The initial version of SemVer software should be `0.1.0` in contrast to
+[^5]: The initial version of SemVer software should be `0.1.0` in contrast to
     some projects I've seen using awkward `0.0.1` versions
 
 Finally, I added the temporal styles I worked on for the current version of MSW
