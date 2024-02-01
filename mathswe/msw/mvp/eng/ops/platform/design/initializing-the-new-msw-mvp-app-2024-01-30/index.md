@@ -28,9 +28,9 @@ the most important projects involving MathSwe directly.
 ## Drafting new Engineering Standards
 
 In one of my next blog drafts, I'm adapting the **MVP (Minimum Viable
-Project)[^1]** concept and introducing **Pre-Engineering Grade** as well as
-granular variants of software quality that branch in two: General SWE and
-Specialized SWE.
+Project)[^1]** concept and introducing "Pre-Engineering Grade," as well as
+granular variants of software quality that branch in two: **General** SWE and
+**Specialized** SWE.
 
 [^1]: I changed the popular "Product" noun of the acronym to "Project" since the
     underlying structures refer more to the technical organization of projects
