@@ -129,10 +129,11 @@ will start returning the investment 🎉🥳🎉.
 
 ## Expected MVP Quality
 
-The MVP versions will have a "Mainstream/Mainstream+" quality grade according to
-my current blog draft. That is quality near the "Pre-Engineering" grade or one
-step behind the boundary between the engineering grade and general engineering.
-In other words, two/three steps behind the engineering grade.
+By my current blog draft, the MVP versions will have a
+"Mainstream/Mainstream+" quality grade. That is quality near the
+"Pre-Engineering Grade" or one step behind the boundary between general
+engineering and the engineering grade. In other words, two/three steps behind
+the engineering grade.
 
 Notice by "engineering grade" I mean traditional engineering with rigor.
 
