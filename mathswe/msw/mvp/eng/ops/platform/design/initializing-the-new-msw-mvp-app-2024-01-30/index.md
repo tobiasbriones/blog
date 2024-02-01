@@ -190,13 +190,14 @@ for the next MathSwe standards to keep complying with the engineering component
 I just mentioned.
 
 The new standards are being employed, empowering more iterations to get previous
-works more mature and hitting the light.
+works more mature.
 
-MathSwe MVPs are designed with a General SWE (Mainstream/Mainstream+ according
-to the draft mentioned) quality grade. They're stable and well-engineered
-artifacts. As the organization's vision, MVPs aim to be replaced in the future
-with their engineering-grade counterparts, showing major maturity milestones.
+MathSwe MVPs are designed with a General SWE quality grade. They're stable for
+users and well-designed artifacts. As the organization's vision, MVPs provide
+early access while aiming to be replaced with their engineering-grade
+counterparts, showing major maturity milestones.
 
 The **math.software** app is an MVP that will reach production soon in `v0.1.0`
-with minimal and stable features, allowing me to exploit my premium domain and
-pass from theory to practice once more.
+with minimal and stable features, allowing me to integrate past results
+appropriately and exploit my premium domain, thus passing from theory to
+practice once more.
