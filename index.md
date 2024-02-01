@@ -18,6 +18,7 @@
 - [New Article and Code Navigation Features (2023/09/09)](new-article-and-code-navigation-features-2023-09-09)
 - [New Code Snippet Feature (2023/10/11)](new-code-snippet-feature-2023-10-11)
 - [Cleaning up Details (2023/10/06)](cleaning-up-details-2023-10-06)
+- [Initializing the New Math Software MVP App (2024/01/30)](initializing-the-new-msw-mvp-app-2024-01-30)
 - [Everything is Relative](everything-is-relative)
 - [I Just Turned the Lights Off, Put My Headphones On, and Read This Crazy Paper About SWE Commandments (2022/10/15)](i-just-turned-the-lights-off--_--put-my-headphones-on--_--and-read-this-crazy-paper-about-swe-commandments-2022-10-15)
 - [This Article Represents a Milestone for Me (2022/12/18)](this-article-represents-a-milestone-for-me-2022-12-18)
