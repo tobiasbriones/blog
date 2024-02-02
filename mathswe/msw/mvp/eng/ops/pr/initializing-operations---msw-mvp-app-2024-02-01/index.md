@@ -87,6 +87,15 @@ they'll be published as standalone libraries instead of belonging to the `app`
 modular monolith. They'll still be MVPs but moving toward the demanding
 engineering grade.
 
+---
+
+Abstraction order is mandatory for coherent designs. I also clarified why MVPs
+and the engineering grade are both essential to succeed in software engineering.
+
+My experience in Repsymo and newer standards allowed me to create the MVP of the
+`mathsoftware` organization with operations initialized, so the next development
+will go straight to the initial development for releasing `v0.1.0`.
+
 ## References
 
 [1] [Initialize MVP ops by tobiasbriones · Pull Request #2 · mathsoftware/mathsoftware---mvp](https://github.com/mathsoftware/mathsoftware---mvp/pull/2).
