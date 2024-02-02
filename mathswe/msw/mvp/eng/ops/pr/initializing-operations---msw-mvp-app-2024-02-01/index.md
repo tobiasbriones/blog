@@ -61,6 +61,24 @@ like that.
 The web app configuration performed will allow the stable development of
 upcoming pre-release versions.
 
+---
+
+Finally, the initial source code structure was defined in the second PR[2] with
+the following paths of the `src` directory:
+
+- `sys`: TS functionalities.
+- `math`: Mathematical code (in-house/fast prototypes).
+- `ui`: Standalone React components.
+- `app`: Web app integration.
+
+Notice they're in **abstraction order** (from `sys` to `app`). The abstraction
+order is key for engineering anything (and avoiding cycles I mention so much).
+
+When these paths get upgraded, for instance, `math` is rewritten in Purescript,
+they'll be published as standalone libraries instead of belonging to the `app`
+modular monolith. They'll still be MVPs but moving toward the demanding
+engineering grade.
+
 ## References
 
 [1] [Initialize MVP ops by tobiasbriones · Pull Request #2 · mathsoftware/mathsoftware---mvp](https://github.com/mathsoftware/mathsoftware---mvp/pull/2).
