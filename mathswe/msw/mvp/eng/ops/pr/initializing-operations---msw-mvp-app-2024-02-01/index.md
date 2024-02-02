@@ -4,6 +4,11 @@
 
 # Initializing Operations | Math Software MVP App (2024/02/01)
 
+The Math Software MVP and its web app received two PRs providing project
+initialization and implementing newer standard drafts outlining the MVP
+structure. Other structural aspects were considered from the experience I had
+working with Repsymo.
+
 ---
 
 First, I recently published
