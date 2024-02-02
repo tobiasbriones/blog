@@ -4,6 +4,14 @@
 
 # Initializing Operations | Math Software MVP App (2024/02/01)
 
+---
+
+First, I recently published
+[Initializing the New Math Software MVP App (2024/01/30)](https://blog.mathsoftware.engineer/initializing-the-new-msw-mvp-app-2024-01-30)
+as an update on what's happening with the **Math.Software MVP** app.
+
+---
+
 The first PR[1] initialized most of the project applying the MVP structure from
 the draft mentioned.
 
