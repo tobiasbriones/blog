@@ -24,6 +24,13 @@ resources to plan, research, and operate are **a rich banner, storing records of
 consent, documentation for all websites and apps, country-specific requirements,
 ambiguity**, etc.
 
+These expand with other requirements like integrating third-party API consent
+(like Google consent mode).
+
+I don't plan to use cookies heavily, so **normal and healthy cookie usage is
+expected** because you need them, e.g., for saving logins and optimizing
+products with analytics.
+
 Cookies are an essential part of any website or web app. So, complying with
 legal data privacy requirements from the beginning is necessary to **always stay
 transparent**, not only in the open-source commitments but in the business
