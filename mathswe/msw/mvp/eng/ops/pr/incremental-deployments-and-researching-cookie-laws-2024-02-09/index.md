@@ -47,6 +47,19 @@ portraying the privacy policies to users.
 
 ---
 
+Regarding Repsymo, I applied
+the [new standard draft](/initializing-the-new-msw-mvp-app-2024-01-30#drafting-new-engineering-standards)
+to the repsymo org by creating the MVP repo by renaming the
+old `2dp-repsymo-solver` repo to the standard `repsymo---mvp` name.
+
+The MVP repo will contain the Repsymo web app as one of its internal MVPs.
+
+I removed the old deployment in app.repsymo.com to deploy to the premium domain
+[rsm.math.software](https://rsm.math.software) [2].
+
+I'm also updating operations in Repsymo now that the platform as a whole is
+stabilizing [3][4].
+
 ## References
 
 [1] [Initiate web app operations by tobiasbriones · Pull Request #1 · mathswe/mathswe.com.](https://github.com/mathswe/mathswe.com/pull/1)
