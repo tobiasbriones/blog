@@ -29,3 +29,14 @@ legal data privacy requirements from the beginning is necessary to **always stay
 transparent**, not only in the open-source commitments but in the business
 operations as well. These entrepreneurial activities are being addressed with
 priority so the engineering tasks can take strength back again.
+
+## References
+
+[1] [Initiate web app operations by tobiasbriones · Pull Request #1 · mathswe/mathswe.com.](https://github.com/mathswe/mathswe.com/pull/1)
+GitHub.
+
+[2] [Set app base URL to new deployment env rsm.math.software by tobiasbriones · Pull Request #54 · repsymo/repsymo---mvp.](https://github.com/repsymo/repsymo---mvp/pull/54) GitHub.
+
+[3] [Update app info and add analytics support by tobiasbriones · Pull Request #55 · repsymo/repsymo---mvp.](https://github.com/repsymo/repsymo---mvp/pull/55) GitHub.
+
+[4] [Update app info by tobiasbriones · Pull Request #56 · repsymo/repsymo---mvp.](https://github.com/repsymo/repsymo---mvp/pull/56) GitHub.
