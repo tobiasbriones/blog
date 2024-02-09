@@ -39,6 +39,9 @@ priority so the engineering tasks can take strength back again.
 
 ---
 
+I was able to be productive before getting affected by these cookie requirements
+(and other personal tasks).
+
 I initialized the mathswe.com website. Now, I can open production [1] and start
 portraying the privacy policies to users.
 
