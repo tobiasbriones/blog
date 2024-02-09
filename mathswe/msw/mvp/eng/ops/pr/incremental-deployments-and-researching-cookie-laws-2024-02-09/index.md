@@ -3,3 +3,29 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Incremental Deployments and Researching Cookie Laws (2024/02/09)
+
+Since MathSwe.com will be the business unit, the legal requirements will be
+centralized in the .com domain, thus leaving the software and engineering
+focused on quality by decoupling the real-world operations or constraints from
+engineering.
+
+The first requirement that appeared was **compliance with cookie laws**, so I
+took the chance to open the MathSwe website while researching and writing the
+privacy policy and **cookie policy**. This must be soon in production to unblock
+my engineering tasks. As said, MathSwe.com will address such legal complexities
+so they can be just mirrored in the other domains.
+
+Complying with international cookie laws is complicated and expensive if
+implemented well. I'm good at handling complexity by being an engineer so I can
+minimize operational expenses.
+
+Particular parts that become complicated and require valuable engineering
+resources to plan, research, and operate are **a rich banner, storing records of
+consent, documentation for all websites and apps, country-specific requirements,
+ambiguity**, etc.
+
+Cookies are an essential part of any website or web app. So, complying with
+legal data privacy requirements from the beginning is necessary to **always stay
+transparent**, not only in the open-source commitments but in the business
+operations as well. These entrepreneurial activities are being addressed with
+priority so the engineering tasks can take strength back again.
