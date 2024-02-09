@@ -37,6 +37,13 @@ transparent**, not only in the open-source commitments but in the business
 operations as well. These entrepreneurial activities are being addressed with
 priority so the engineering tasks can take strength back again.
 
+---
+
+I initialized the mathswe.com website. Now, I can open production [1] and start
+portraying the privacy policies to users.
+
+---
+
 ## References
 
 [1] [Initiate web app operations by tobiasbriones · Pull Request #1 · mathswe/mathswe.com.](https://github.com/mathswe/mathswe.com/pull/1)
