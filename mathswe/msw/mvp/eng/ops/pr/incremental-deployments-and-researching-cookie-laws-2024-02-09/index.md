@@ -58,7 +58,7 @@ the [new standard draft](/initializing-the-new-msw-mvp-app-2024-01-30#drafting-n
 to the repsymo org by creating the MVP repo by renaming the
 old `2dp-repsymo-solver` repo to the standard `repsymo---mvp` name.
 
-The MVP repo will contain the Repsymo web app as one of its internal MVPs.
+The MVP repo contains the Repsymo web app as one of its internal MVPs.
 
 I removed the old deployment in app.repsymo.com to deploy to the premium domain
 [rsm.math.software](https://rsm.math.software) [2].
