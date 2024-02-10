@@ -60,6 +60,41 @@ I removed the old deployment in app.repsymo.com to deploy to the premium domain
 I'm also updating operations in Repsymo now that the platform as a whole is
 stabilizing [3][4].
 
+---
+
+Implementing cookie laws is a new challenge that's being addressed to keep full
+transparency and comply with the latest international standards, which is the
+**responsibility** of an engineer.
+
+These tasks take many resources and block important developments, so their
+implementation will be a relief to proceed to deliver more continuous
+deployments to users.
+
+I partially opened the MathSwe.com website, so I can address the business
+affairs, like legal notices, in the appropriate domain. This operational
+initiation will eventually proceed with further entrepreneurial activities.
+Evolution is progressive to be efficient and scale horizontally.
+
+I also worked on the old Repsymo repo and transformed it to the current standard
+mode, so each iteration will be faster and deliver more models because the
+project concepts are much more stable than ever.
+
+The Math Software and Repsymo apps are deployed to the premium domain as MVPs in
+dev mode (`v0.1.0-dev`), so they ship value in the most efficient (or
+"agile") way. After addressing the cookie challenge, production versions will be
+normal (e.g., `v0.1.0`), while development tests will go to
+[the already available staging](/initializing-the-new-msw-mvp-app-2024-01-30#setting-up-deployments)
+platform.
+
+Regarding technical complexities, I don't see anything particular to worry about
+since I can engineer and optimize anything required for mathematical software.
+Business or real-world operational complexities are an external factor that
+needs dedication to address.
+
+All the recent challenges are requiring grit (as always) to embrace the
+ambiguity and uncertainty of real-life constraints, so I'll keep dominating
+these early-stage operational complexities.
+
 ## References
 
 [1] [Initiate web app operations by tobiasbriones · Pull Request #1 · mathswe/mathswe.com.](https://github.com/mathswe/mathswe.com/pull/1)
