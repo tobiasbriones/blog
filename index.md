@@ -19,6 +19,7 @@
 - [New Code Snippet Feature (2023/10/11)](new-code-snippet-feature-2023-10-11)
 - [Cleaning up Details (2023/10/06)](cleaning-up-details-2023-10-06)
 - [Initializing the New Math Software MVP App (2024/01/30)](initializing-the-new-msw-mvp-app-2024-01-30)
+- [Incremental Deployments and Researching Cookie Laws (2024/02/09)](incremental-deployments-and-researching-cookie-laws-2024-02-09)
 - [Initializing Operations \| Math Software MVP App (2024/02/01)](initializing-operations---msw-mvp-app-2024-02-01)
 - [Everything is Relative](everything-is-relative)
 - [I Just Turned the Lights Off, Put My Headphones On, and Read This Crazy Paper About SWE Commandments (2022/10/15)](i-just-turned-the-lights-off--_--put-my-headphones-on--_--and-read-this-crazy-paper-about-swe-commandments-2022-10-15)
