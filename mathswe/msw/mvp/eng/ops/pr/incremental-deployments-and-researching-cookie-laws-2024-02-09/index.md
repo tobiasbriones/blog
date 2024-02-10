@@ -4,6 +4,12 @@
 
 # Incremental Deployments and Researching Cookie Laws (2024/02/09)
 
+Some Repsymo and MSW operational tasks were advanced, while a new
+entrepreneurial challenge to implementing cookie privacy in MathSwe appeared and
+is slowing down engineering activities.
+
+---
+
 Since MathSwe.com will be the business unit, the legal requirements will be
 centralized in the .com domain, thus leaving the software and engineering
 focused on quality by decoupling the real-world operations or constraints from
