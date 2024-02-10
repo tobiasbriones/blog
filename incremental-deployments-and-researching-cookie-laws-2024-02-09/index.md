@@ -44,7 +44,7 @@ These expand with other requirements like integrating third-party API consent
 (like Google consent mode).
 
 I don't plan to use cookies heavily, so **normal and healthy cookie usage is
-expected** because you need them, e.g., for saving logins and optimizing
+expected** because you need them, e.g., for saving login tokens and optimizing
 products with analytics.
 
 Cookies are an essential part of any website or web app. So, complying with
