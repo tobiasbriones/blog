@@ -27,7 +27,7 @@ This snippet explains why, according to the use case I had with that app.
 ![](why-override-hash-code-and-equals-methods-in-a-record.png)
 
 You may not use a binary file or large data like an `Image` to give an object
-identity, which leads us to overwrite the `hashCode` and `equals` methods in a
+equality, which leads us to overwrite the `hashCode` and `equals` methods in a
 Java `record`. Even though they're implemented by default, we have to optimize
 sometimes.
 
@@ -42,7 +42,7 @@ hashes will be different for the same item in the program, so two modified
 versions of the same item will match differently. Even if the image in the disk
 is the same, it'll happen the same if you create two `Image` objects since
 they'll match differently by just being different object instances. Moreover,
-using bloated fields to compute an object's identity is nonsense programming
+using bloated fields to compute an object's equality is nonsense programming
 logic and inefficient.
 
 ## Updating an Existing Image
@@ -109,7 +109,7 @@ to the generic code snippet images I generated above via other third-party tools
 that are always bugged or never work well. This opens a new era for my technical
 content creation.
 
-## Setting a Correct Model Identity
+## Setting a Correct Object Equality
 
 Large structures, binary files, memory addresses, and any kind of
 poorly-meaningful side effects have to be pushed to the system boundaries, and
