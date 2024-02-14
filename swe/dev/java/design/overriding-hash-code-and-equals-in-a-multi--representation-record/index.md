@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Overriding Hash Code and Equals in Multi-Representation Record
+# Overriding Hash Code and Equals in a Multi-Representation Record
 
 ## Multiple Email Representations
 
