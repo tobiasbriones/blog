@@ -77,6 +77,61 @@ There's a myriad of functional abstractions to simplify programs, others like
 GADs and type families. Since you must be wise when applying them, you'll need
 mathematical and domain skills to catch symmetries and patterns first.
 
+## Symmetries for the Angle DSL and ML
+
+I also wrote
+[Designing the Angle Geometry for an Oriented Segment](/designing-the-angle-geometry-for-an-oriented-segment)[4],
+where I designed a draft DSL in Haskell to understand the domain problem
+clearly. The language is about defining the angles of the cartesian plane
+thoroughly from low-level to high-level representations.
+
+The plane has four orthogonal or visually perpendicular subplanes bounded by two
+axes. Of course, the unit vectors $$i,\, j$$ are orthogonal (from abstract
+linear algebra) and perpendicular (from geometry), so you have the pleasure of
+depicting these abstractions graphically.
+
+I spotted the obvious symmetry in the plane and *partitioned* the data types
+into the four quadrants `QI, QII, QIII, QIV`, and the four quadrantal
+angles `0, 90, 180, 270`, composing any angle in `[0, 360)deg` in the plane
+**without redundancies**.
+
+Therefore, my design is correct and efficient as per domain. Not to say the
+powerful abstractions like GADTs, type classes/families, etc., that remove more
+code redundancies and make ill-code not compile. In other words, I'm
+describing potential **engineering-grade** software.
+
+Expanding these results further, notice the ML conclusion of the MIT side:
+
+> ...the approach presented in the paper "diverges substantially from related
+> previous works, adopting a geometric perspective and employing tools from
+> differential geometry. This theoretical contribution lends mathematical
+> support to the emerging subfield of 'Geometric Deep Learning,' which has
+> applications in graph learning, 3D data, and more. The paper helps establish a
+> theoretical basis to guide further developments in this rapidly expanding
+> research area."
+>
+> Source: How symmetry can come to the aid of machine learning | MIT News [1]
+> (under fair use)
+
+Eventually, this concludes with **geometric perspectives**, **differential
+geometry** (i.e., calculus), and the emerging **geometric deep learning** field.
+
+Recall that generic tools and software will never have the engineering grade of
+proper mathematical software. They manage to compute low-level math, but the
+abstractions are what really matters.
+
+Moreover, all scientific and engineering projects always rely on math. Will they
+rely on general-purpose tricks or actual mathematical software in the coming
+future? Certainly, the engineering of software must be standardized.
+
+As I [said above](#how-the-functional-type-system-reduces-complexity),
+**engineering is a function of its domain**, so abstractions will always matter
+more than implementation details. MathSwe optimizes for the domain and the
+engineering grade (whenever possible).
+
+By engineering mathematical software, the latest theoretical results will open
+extraordinary opportunities for MathSwe to undertake.
+
 ## References
 
 [1] [How symmetry can come to the aid of machine learning.](https://news.mit.edu/2024/how-symmetry-can-aid-machine-learning-0205)
