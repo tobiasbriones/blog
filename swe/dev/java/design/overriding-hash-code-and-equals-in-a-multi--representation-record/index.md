@@ -60,3 +60,37 @@ objects, like in a `Set` or `Map`.
 The `hashCode` and `equals` methods have to be overridden in this case since
 the `Email` type has many representations of the same model, so all the
 redundant emails boil down to the main form and then compare for equality.
+
+### Email Normalization Definitions
+
+Important definitions are required for finishing the previous `Email`
+implementation. They
+regard [the definitions given first](#multiple-email-representations) for
+dots (.) and plus (+) symbols.
+
+`Email Normalization for the Local Component | Email.kt`
+
+```kotlin
+/**
+ * It removes the redundancy of an email local value containing dots (.).
+ */
+fun normalizedLocalDot(local: String): String =
+    local.replace(".", "")
+
+/**
+ * It removes the redundancy of an email local value containing a plus (+)
+ * symbol, by eliminating everything after the first + occurrence.
+ */
+fun normalizedLocalPlus(local: String): String =
+    local.takeWhile { char -> char != '+' }
+
+/**
+ * It normalizes the email local value by removing any redundancy.
+ */
+fun normalizedLocal(local: String): String =
+    normalizedLocalDot(normalizedLocalPlus(local))
+```
+
+This way, `normalizedLocalDot` takes care of any dot by removing
+it, `normalizedLocalPlus` filters out anything after any plus symbol,
+and `normalizedLocal` composes both.
