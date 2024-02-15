@@ -11,4 +11,4 @@
 
 [2] Briones, T. (2024, January 15).
 [Removing Record Redundancy with Sum and Refinement Types.](/removing-record-redundancy-with-sum-and-refinement-types#factorizing-the-duplication-with-sum-types)
-Blog | Math Software Engineer.
+Factorizing the Duplication with Sum Types | Blog | Math Software Engineer.
