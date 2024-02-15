@@ -211,7 +211,7 @@ This way, `normalizedLocalDot` takes care of any dot by removing
 it, `normalizedLocalPlus` filters out anything after any plus symbol,
 and `normalizedLocal` composes both.
 
-### Measuring Email Uniqueness Challenge
+### Email Uniqueness Challenge
 
 This problem gives you a list of strings supposed to be email addresses
 with [the dot and plus constraints](#multiple-email-representations) defined
@@ -352,10 +352,11 @@ fun uniqueEmailsNum(emails: Array<String>): Int = emails
 <figcaption>Counting Unique Emails</figcaption>
 </figure>
 
-The generic email list is mapped to matching expressions, that is, strings that
-belong to the email language given by the regex. The two groups are destructured
-to map the `String` to the domain type `Email` and then converted to a `Set` to
-remove redundant values, providing the required count. This works
+The solution maps the generic email list to matching expressions, representing
+strings belonging to the email language defined by the regex. By destructuring
+the two groups, it maps the original `String` to the `Email` domain type.
+Subsequently, it converts the `Email` list to a `Set` to eliminate redundant
+entries, thus resolving the count required for uniqueness. This works
 because `Email` already has the implementation for equality.
 
 #### Testing Email Values
