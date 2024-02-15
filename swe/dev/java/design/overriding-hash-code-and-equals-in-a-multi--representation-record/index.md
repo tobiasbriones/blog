@@ -190,3 +190,25 @@ fun `test uniqueEmailsNum with emails containing plus symbol and dots`() {
 
 With the given test suite, the `uniqueEmailsNum` function can be checked for
 many cases.
+
+## Reducing Multiple Representations to the Main One
+
+Definitions can allow multiple representations of the same model, while the main
+form is clean without repetitions. Alternative forms can be reduced to
+the main one, simplifying the problems required to solve.
+
+An email address is one example of a model that can hold infinitely many forms
+that point to the same address or owner.
+
+Addressing these simplifications will often lead to a declarative mathematical
+approach with engineering standards like code maintenance and scalability. The
+approach given for an `Email` type can be further worked out to build a DSL.
+
+One declarative approach to *define the language of all emails* is employing
+regular expressions —another formal concept— thus enriching the program
+capabilities by accurately refining our domain.
+
+The hash value of equal objects must match to keep consistency in object
+equality and hash-based data structures. Therefore, the redundant alternatives
+are filtered out for implementing equality and making them equal to the main
+form.
