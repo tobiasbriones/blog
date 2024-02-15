@@ -273,7 +273,8 @@ public final class Spec {
             Inline,
             Value,
             Fun,
-            Infix
+            Infix,
+            Override
         }
     }
 
