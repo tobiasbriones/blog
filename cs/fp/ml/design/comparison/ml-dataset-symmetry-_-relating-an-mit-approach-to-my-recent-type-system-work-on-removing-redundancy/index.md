@@ -7,7 +7,7 @@
 ## How Symmetry Reduces Complexity
 
 I was reading an MIT article about
-[How symmetry can come to the aid of machine learning](https://news.mit.edu/2024/how-symmetry-can-aid-machine-learning-0205).
+[How symmetry can come to the aid of machine learning](https://news.mit.edu/2024/how-symmetry-can-aid-machine-learning-0205)[1].
 It struck my attention due to the last works I wrote about removing redundancy
 in records with functional abstractions while designing the API of Canvas Play.
 
@@ -26,7 +26,7 @@ gain.
 ## How the Functional Type System Reduces Complexity
 
 I recently worked on articles like
-[Removing Record Redundancy with Sum and Refinement Types](/removing-record-redundancy-with-sum-and-refinement-types)
+[Removing Record Redundancy with Sum and Refinement Types](/removing-record-redundancy-with-sum-and-refinement-types)[2]
 while designing an initial DSL in Java for the Canvas Play project. I'm showing
 now that [the symmetry approach from MIT](#how-symmetry-reduces-complexity)
 is quite related to my work in FP.
