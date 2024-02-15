@@ -94,3 +94,64 @@ fun normalizedLocal(local: String): String =
 This way, `normalizedLocalDot` takes care of any dot by removing
 it, `normalizedLocalPlus` filters out anything after any plus symbol,
 and `normalizedLocal` composes both.
+
+### Measuring Email Uniqueness Challenge
+
+This problem gives you a list of strings supposed to be email addresses
+with [the dot and plus constraints](#multiple-email-representations) defined
+before. You have to return the number of unique emails in the list.
+
+These kinds of toy (interview) problems don't care much about realistic
+requirements. For example, you can pass the tests even if the email is invalid,
+but the count "passes." They're probably also full of imperative approaches that
+are hard to maintain with real conditions.
+
+By working out the subproblems declaratively with mathematical definitions, you
+will scale a well-defined domain supporting any kind of requirements.
+
+First, I needed to define a language to match any valid email address.
+
+`Email Regex Pattern | Email.kt`
+
+```kotlin
+/**
+ * Defines a regex for valid email addresses, capturing the "local" and
+ * "domain" groups.
+ */
+val emailPattern: Regex = """
+    (?<local>^[a-zA-Z0-9._%+-]+)@(?<domain>[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$)
+    """
+    .trimIndent()
+    .toRegex()
+```
+
+The regex captures two groups, `local` and `domain`, for matching expressions.
+The set of accepted inputs is **the language**. Of course, the language just
+defined is that of all valid emails we required above.
+
+Notice the email language defined by the regex might be actually integrated into
+the `Email` type for building a DSL, for example, by using refinements.
+
+Finally, checking redundancy can boil down to counting a `Set`.
+
+`Counting Unique Emails | Email.kt`
+
+```kotlin
+/**
+ * Returns the number of unique email addresses.
+ */
+fun uniqueEmailsNum(emails: Array<String>): Int = emails
+    .mapNotNull { emailPattern.find(it) }
+    .map { match ->
+        val (local, domain) = match.destructured
+        Email(local, domain)
+    }
+    .toSet()
+    .size
+```
+
+The generic email list is mapped to matching expressions, that is, strings that
+belong to the email language given by the regex. The two groups are destructured
+to map the `String` to the domain type `Email` and then converted to a `Set` to
+remove redundant values, providing the required count. This works
+because `Email` already has the implementation for equality.
