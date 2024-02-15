@@ -88,7 +88,8 @@ Blog | Math Software Engineer.
 
 [3] Briones, T. (2024, January 15).
 [Factorizing the Duplication with Sum Types.](/removing-record-redundancy-with-sum-and-refinement-types#factorizing-the-duplication-with-sum-types)
-Removing Record Redundancy with Sum and Refinement Types | Blog | Math Software Engineer.
+Removing Record Redundancy with Sum and Refinement Types | Blog | Math Software
+Engineer.
 
 [4] Briones, T. (2024, January 4).
 [Designing the Angle Geometry for an Oriented Segment](/designing-the-angle-geometry-for-an-oriented-segment)
