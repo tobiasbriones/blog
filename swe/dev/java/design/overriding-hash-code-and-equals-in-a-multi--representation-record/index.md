@@ -155,3 +155,38 @@ belong to the email language given by the regex. The two groups are destructured
 to map the `String` to the domain type `Email` and then converted to a `Set` to
 remove redundant values, providing the required count. This works
 because `Email` already has the implementation for equality.
+
+#### Testing Email Values
+
+I generated and reviewed a bunch of tests to check my code.
+
+`Tests for the Uniqueness Challange | class EmailTest | EmailTest.kt`
+
+```kotlin
+// ... //
+@Test
+fun `test uniqueEmailsNum with duplicate emails`() {
+    val emails = arrayOf(
+        "test.email@gmail.com",
+        "test.email@gmail.com",
+        "test.email@outlook.com"
+    )
+    assertEquals(2, uniqueEmailsNum(emails))
+}
+
+// ... //
+
+@Test
+fun `test uniqueEmailsNum with emails containing plus symbol and dots`() {
+    val emails = arrayOf(
+        "test.email+spam@gmail.com",
+        "test.email+spam.news@yahoo.com",
+        "testemail+spam.news1@yahoo.com",
+        "test.email+update@outlook.com"
+    )
+    assertEquals(3, uniqueEmailsNum(emails))
+}
+```
+
+With the given test suite, the `uniqueEmailsNum` function can be checked for
+many cases.
