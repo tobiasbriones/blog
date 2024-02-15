@@ -4,6 +4,11 @@
 
 # Overriding Hash Code and Equals in a Multi-Representation Record
 
+Certain models, like email addresses, can hold multiple alternatives or synonyms
+of the same model to provide different representations but the same
+functionality, thus leading to noise that must be filtered out for
+functionality purposes.
+
 ## Multiple Email Representations
 
 An email model consists of a **local** name followed by an **@** symbol and a
