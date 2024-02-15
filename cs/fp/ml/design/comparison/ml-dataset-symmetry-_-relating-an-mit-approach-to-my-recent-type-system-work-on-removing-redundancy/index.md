@@ -83,5 +83,13 @@ mathematical and domain skills to catch symmetries and patterns first.
 (2024, February 5). MIT News | Massachusetts Institute of Technology.
 
 [2] Briones, T. (2024, January 15).
-[Removing Record Redundancy with Sum and Refinement Types.](/removing-record-redundancy-with-sum-and-refinement-types#factorizing-the-duplication-with-sum-types)
-Factorizing the Duplication with Sum Types | Blog | Math Software Engineer.
+[Removing Record Redundancy with Sum and Refinement Types.](/removing-record-redundancy-with-sum-and-refinement-types)
+Blog | Math Software Engineer.
+
+[3] Briones, T. (2024, January 15).
+[Factorizing the Duplication with Sum Types.](/removing-record-redundancy-with-sum-and-refinement-types#factorizing-the-duplication-with-sum-types)
+Removing Record Redundancy with Sum and Refinement Types | Blog | Math Software Engineer.
+
+[4] Briones, T. (2024, January 4).
+[Designing the Angle Geometry for an Oriented Segment](/designing-the-angle-geometry-for-an-oriented-segment)
+Blog | Math Software Engineer.
