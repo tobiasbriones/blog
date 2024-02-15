@@ -100,7 +100,7 @@ This way, `normalizedLocalDot` takes care of any dot by removing
 it, `normalizedLocalPlus` filters out anything after any plus symbol,
 and `normalizedLocal` composes both.
 
-### Measuring Email Uniqueness Challenge
+### Email Uniqueness Challenge
 
 This problem gives you a list of strings supposed to be email addresses
 with [the dot and plus constraints](#multiple-email-representations) defined
