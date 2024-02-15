@@ -20,3 +20,21 @@ fun normalizedLocalPlus(local: String): String =
  */
 fun normalizedLocal(local: String): String =
     normalizedLocalDot(normalizedLocalPlus(local))
+
+/**
+ * Represents an email address consisting of a local part and a domain name.
+ * The local part may contain periods (".") or plus signs ("+"), where any
+ * content after a plus sign ("+") and any additional periods (".") are
+ * ignored for the purpose of determining email equality.
+ */
+data class Email(val local: String, val domain: String) {
+    val normalized: String = "${normalizedLocal(local)}@$domain"
+
+    override fun toString(): String = "$local@$domain"
+
+    override fun hashCode(): Int = normalized.hashCode()
+
+    override fun equals(other: Any?): Boolean = other is Email
+      && domain == other.domain
+      && normalizedLocal(local) == normalizedLocal(other.local)
+}
