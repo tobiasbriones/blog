@@ -38,3 +38,25 @@ data class Email(val local: String, val domain: String) {
       && domain == other.domain
       && normalizedLocal(local) == normalizedLocal(other.local)
 }
+
+/**
+ * Defines a regex for valid email addresses, capturing the "local" and
+ * "domain" groups.
+ */
+val emailPattern: Regex = """
+        (?<local>^[a-zA-Z0-9._%+-]+)@(?<domain>[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$)
+        """
+    .trimIndent()
+    .toRegex()
+
+/**
+ * Returns the number of unique email addresses.
+ */
+fun uniqueEmailsNum(emails: Array<String>): Int = emails
+    .mapNotNull { emailPattern.find(it) }
+    .map { match ->
+        val (local, domain) = match.destructured
+        Email(local, domain)
+    }
+    .toSet()
+    .size
