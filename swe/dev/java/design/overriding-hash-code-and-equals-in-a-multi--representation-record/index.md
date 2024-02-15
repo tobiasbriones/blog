@@ -155,10 +155,11 @@ fun uniqueEmailsNum(emails: Array<String>): Int = emails
     .size
 ```
 
-The generic email list is mapped to matching expressions, that is, strings that
-belong to the email language given by the regex. The two groups are destructured
-to map the `String` to the domain type `Email` and then converted to a `Set` to
-remove redundant values, providing the required count. This works
+The solution maps the generic email list to matching expressions, representing
+strings belonging to the email language defined by the regex. By destructuring
+the two groups, it maps the original `String` to the `Email` domain type.
+Subsequently, it converts the `Email` list to a `Set` to eliminate redundant
+entries, thus resolving the count required for uniqueness. This works
 because `Email` already has the implementation for equality.
 
 #### Testing Email Values
