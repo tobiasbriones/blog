@@ -18,3 +18,45 @@ In programming terms, an email model can be a record with multiple
 representations. That is different email values for readability or testing
 purposes but corresponding to the same functionality. Therefore, emails can be
 equal (or not) depending on your abstraction.
+
+## Email Type
+
+I created the `Email` record in Kotlin, thus using a `data class` and
+overriding `toString`, `hashCode`, and `equals`.
+
+`Email Implementation | Email.kt`
+
+```kotlin
+/**
+ * Represents an email address consisting of a local part and a domain name.
+ * The local part may contain periods (".") or plus signs ("+"), where any
+ * content after a plus sign ("+") and any additional periods (".") are
+ * ignored for the purpose of determining email equality.
+ */
+data class Email(val local: String, val domain: String) {
+    val normalized: String = "${normalizedLocal(local)}@$domain"
+
+    override fun toString(): String = "$local@$domain"
+
+    override fun hashCode(): Int = normalized.hashCode()
+
+    override fun equals(other: Any?): Boolean = other is Email
+      && domain == other.domain
+      && normalizedLocal(local) == normalizedLocal(other.local)
+}
+```
+
+The function `normalizedLocal` will provide the base form of the `local`
+field to remove the redundancy, so enabling **uniqueness** for that value.
+
+The `equals` implementation matches the `other` generic object to an `Email`
+type to check the rest of the field matching. This would be done via
+`instanceof` (JDK16) in Java. The `hashCode` equals the normalized (main form
+without repetition or canonical) email value.
+
+Implementing `hashCode` is a key (pun intended) for discerning among `Email`
+objects, like in a `Set` or `Map`.
+
+The `hashCode` and `equals` methods have to be overridden in this case since
+the `Email` type has many representations of the same model, so all the
+redundant emails boil down to the main form and then compare for equality.
