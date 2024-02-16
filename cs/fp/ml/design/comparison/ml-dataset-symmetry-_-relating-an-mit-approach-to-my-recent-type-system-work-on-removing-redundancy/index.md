@@ -66,9 +66,14 @@ domain spec. If they're mildly linear, you'll still have symmetries requiring
 duplications (more data, code, and technical debt). Therefore, the wrong
 abstraction is over-engineering. In my words, "if you're not doing something
 right[^1], don't do it at all," because doing it wrong turns more expensive than
-refraining from doing it.
+refraining from doing it[^2].
 
 [^1]: It's indeed pretty accurate, "right" and "orthogonal" in this context
+
+[^2]: This is relative and also applies to taking risks, committing mistakes,
+    or breaking something purposefully for testing stages, as long as you do it
+    rightfully, so even when failing, you still have to do it right or fail
+    successfully
 
 Also, notice how **the symmetries and the engineering are *relative* to the
 domain**. Engineers measure with respect to the domain of expertise.
