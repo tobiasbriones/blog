@@ -108,9 +108,9 @@ potential **engineering-grade** software.
 Expanding these results further, notice the ML conclusion of the MIT side:
 
 > ...the approach presented in the paper "diverges substantially from related
-> previous works, adopting a geometric perspective and employing tools from
-> differential geometry. This theoretical contribution lends mathematical
-> support to the emerging subfield of 'Geometric Deep Learning,' which has
+> previous works, adopting a **geometric perspective** and employing tools from
+> **differential geometry**. This theoretical contribution lends mathematical
+> support to the emerging subfield of '**Geometric Deep Learning**,' which has
 > applications in graph learning, 3D data, and more. The paper helps establish a
 > theoretical basis to guide further developments in this rapidly expanding
 > research area."
