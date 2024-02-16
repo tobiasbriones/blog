@@ -97,8 +97,8 @@ angles `0, 90, 180, 270`, composing any angle in `[0, 360)deg` in the plane
 
 Therefore, my design is correct and efficient as per domain. Not to say the
 powerful abstractions like GADTs, type classes/families, etc., that remove more
-code redundancies and make ill-code not compile. In other words, I'm
-describing potential **engineering-grade** software.
+code redundancies and make ill-code not compile. In other words, I'm describing
+potential **engineering-grade** software.
 
 Expanding these results further, notice the ML conclusion of the MIT side:
 
