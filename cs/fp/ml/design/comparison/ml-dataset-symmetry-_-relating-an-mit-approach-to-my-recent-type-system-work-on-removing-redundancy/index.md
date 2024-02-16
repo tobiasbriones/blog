@@ -247,28 +247,28 @@ mathematical principles I emphasized in my last works. This opened an
 opportunity to expand on these essential concepts by relating the MIT article in
 the ML field to my articles in FP terms.
 
-I restated the importance of taking FP concepts like **sum/refinement/isomorphic
-types, GADTs, and type families/classes** to leverage domain patterns as an
+I restated the importance of taking FP concepts like sum/refinement/isomorphic
+types, GADTs, and type families/classes to leverage domain patterns as an
 efficient design without redundancies.
 
-I reemphasized the concepts of **expressions, factorization, orthogonality,
+I reemphasized the concepts of expressions, factorization, orthogonality,
 perpendicularity, dimensionality, partitions, symmetries/patterns/invariants,
-and engineering-grade software**.
+and engineering-grade software.
 
 From my articles and the MIT reference, I've shown many redundancy cases to
-optimize with the above concepts, including but not limited to inefficiencies
-**affecting the domain types, runtime execution, *and now* deep learning
+optimize with the above concepts, including but not limited to **inefficiencies
+affecting the domain types, runtime execution, *and now* deep learning
 training time**. We can keep adding, like database persistence (we already have
 normal forms for relational DBs), etc.
 
 Whenever you find an invariant, you can apply its underlying transformations
 without changing the property. Such pattern detection skills are leveraged for
-optimizing domains, thus **helping reach the engineering grade since engineering
+optimizing domains, thus helping reach the engineering grade since **engineering
 is a function of its domain**.
 
 It's also clear how engineering results are empowered whenever its domain is
 optimized, with theoretical results like theorems and research. Therefore,
-optimizing the domain is the first key for reaching the engineering grade
+**optimizing the domain is the first key for reaching the engineering grade**
 (in software and any other engineering discipline).
 
 Newer extraordinary undertakings will always be available for MathSwe, like the
