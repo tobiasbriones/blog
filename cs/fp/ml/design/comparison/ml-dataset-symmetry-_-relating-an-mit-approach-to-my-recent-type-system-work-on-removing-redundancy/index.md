@@ -132,6 +132,89 @@ engineering grade (whenever possible).
 By engineering mathematical software, the latest theoretical results will open
 extraordinary opportunities for MathSwe to undertake.
 
+## Data Symmetries
+
+Besides the previous conclusion of the MIT article about geometric affairs,
+there are points to complement how these findings got my attention.
+
+I list the other relevant points of data symmetries I found worth noting from
+the MIT article.
+
+> ➕ ...modifying Weyl’s law so that symmetry can be **factored** into the
+> assessment of a dataset’s complexity...
+>
+> ➕ ...symmetries, or so-called "**invariances**," could benefit machine
+> learning...
+>
+> ➕ How many fewer data are needed to train a machine learning model if the
+> data contain symmetries?
+>
+> ➕ ...the image can be **partitioned** into 10 identical parts, you can get a
+> factor of 10 improvement.
+>
+> ➕ ...symmetries of higher **dimension** are more important because they can
+> give us an exponential gain...
+>
+> Source: *How symmetry can come to the aid of machine learning* \| MIT News [1]
+> (under fair use)
+
+It shows how you **factorize** patterns or symmetries. If you often read me,
+you'll find I teach this by connecting the same polynomial or expression
+factorization skills corresponding to elementary math courses to the
+factorization of actual functional programming expressions corresponding to
+engineering solutions.
+
+For instance, I explained how records that only differ in their logical variants
+are optimized by factorizing the common data representation and extracting the
+changing variants into sum types:
+
+> The sum type removing the redundancy of the previous `HSegment` and `VSegment`
+> records is `QuadrantalOrientation`. That’s what I mean by what I mean by
+> *factorizing expressions to simplify them*.
+>
+> Source: *Factorizing the Duplication with Sum Types* \| MSW Engineer Blog [3]
+
+Any symmetry or pattern can be seen as an **invariant** —a mathematical property
+that remains unchanged after certain transformations. Such properties are often
+concerning, but not limited, to geometry and topology.
+
+Then, they suggest we can require fewer data by leveraging the symmetry found in
+a dataset, so if we **partition** it into as many symmetries found, we get
+proportionate gains. Moreover, when the symmetry is **dimensional**, the gain is
+clearly exponential.
+
+The partition part is what I've emphasized in my latest articles to apply
+orthogonality. It's clear if you have orthogonal concepts, you open new
+dimensions mathematically. For example, when I mention:
+
+> ...the sum types induce a partition of orthogonal products that simplifies the
+> programs since all physical and logical redundancies are eliminated.
+>
+> Source: *High-Level Angles* \| MSW Engineer Blog [5]
+
+> I've been enforcing the proper understanding of the theory with concepts like
+> orthogonality to produce quality software.
+>
+> Source: *Engineering Geometry Languages in Haskell with Insights* \| MSW
+> Engineer Blog [6]
+
+All engineering fields require a major level of math. Particularly, SWE requires
+the most math because it's logical, so there's nothing physical, so *you must
+create the laws*. Even more particularly, MSWE requires the highest possible
+grade in math, not only applied CS but the whole math specialization. In MSWE,
+the SWE part is logical per se, but the underlying domain is also math. So, the
+domain and engineering are both mathematical, unlike, for example, Medical SWE,
+where you always need much math to *engineer* the software —like any other
+software— but the domain requires little math.
+
+SWE requires scientific research, which is a transitive property since requiring
+much math implies research, too. The same applies to ML, so one more time, here
+I am doing my work.
+
+The collection of points about optimizing datasets with symmetries from the MIT
+article helped articulate further the theoretical concepts I applied in the last
+months to my works.
+
 ## References
 
 [1] [How symmetry can come to the aid of machine learning.](https://news.mit.edu/2024/how-symmetry-can-aid-machine-learning-0205)
