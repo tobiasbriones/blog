@@ -70,10 +70,10 @@ refraining from doing it[^2].
 
 [^1]: It's indeed pretty accurate, "right" and "orthogonal" in this context
 
-[^2]: This is relative and also applies to taking risks, committing mistakes,
-    or breaking something purposefully for testing stages, as long as you do it
-    rightfully, so even when failing, you still have to do it right or fail
-    successfully
+[^2]: This is relative and also applies to taking risks, committing mistakes, or
+breaking something purposefully for testing stages, as long as you do it
+rightfully, so even when failing, you still have to do it right or fail
+successfully
 
 Also, notice how **the symmetries and the engineering are *relative* to the
 domain**. Engineers measure with respect to the domain of expertise.
@@ -219,6 +219,31 @@ I am doing my work.
 The collection of points about optimizing datasets with symmetries from the MIT
 article helped articulate further the theoretical concepts I applied in the last
 months to my works.
+
+## Domain Optimization by Invariant Detection
+
+I found an article in MIT News about symmetries in machine learning datasets and
+how they can proportionally and exponentially optimize them by applying
+mathematical principles I emphasized in my last works. This opened an
+opportunity to expand on these essential concepts by relating the MIT article in
+the ML field to my articles in FP terms.
+
+I restated the importance of taking FP concepts like **sum/refinement/isomorphic
+types, GADTs, and type families/classes** to leverage domain patterns as an
+efficient design without redundancies.
+
+I reemphasized the concepts of **expressions, factorization, orthogonality,
+perpendicularity, dimensionality, partitions, symmetries/patterns/invariants,
+and engineering-grade software**.
+
+Whenever you find an invariant, you can apply its underlying transformations
+without changing the property. Such pattern detection skills are leveraged for
+optimizing domains, thus **helping reach the engineering grade since engineering
+is a function of its domain**.
+
+Newer extraordinary undertakings will always be available for MathSwe, like the
+emerging geometric deep learning field, so the mathematical domain and the
+engineering grade is always a commitment to keep the MSWE industry leadership.
 
 ## References
 
