@@ -136,6 +136,23 @@ As I [said above](#how-the-functional-type-system-reduces-complexity),
 more than implementation details. MathSwe optimizes for the domain and the
 engineering grade (whenever possible).
 
+It's smarter to get newer theoretical results like theorems than to get lost in
+low-level tricks for performance.
+
+You've seen how removing dimensionally symmetric redundancies in the data space
+leads to exponential optimization guarantees [1].
+
+You can apply theorems, like formulas, to any high-level language, and you'll
+get high performance akin to complicated raw lower-level optimizations lacking
+credibility. The key is **empowering engineering by optimizing its domain**
+(e.g., theorems and research) as much as possible. *The more optimal domain you
+have, the more engineering grade you will achieve* (e.g., zero-cost
+abstractions[^3]).
+
+[^3]: See how the borrow checker **research** allowed Rust zero-cost
+    abstractions **without requiring bloat, like garbage collectors** —necessary
+    for the engineering grade as it gives runtime predictability guarantees
+
 By engineering mathematical software, the latest theoretical results will open
 extraordinary opportunities for MathSwe to undertake.
 
@@ -242,6 +259,11 @@ Whenever you find an invariant, you can apply its underlying transformations
 without changing the property. Such pattern detection skills are leveraged for
 optimizing domains, thus **helping reach the engineering grade since engineering
 is a function of its domain**.
+
+It's also clear how engineering results are empowered whenever its domain is
+optimized, with theoretical results like theorems and research. Therefore,
+optimizing the domain is the first key for reaching the engineering grade
+(in software and any other engineering discipline).
 
 Newer extraordinary undertakings will always be available for MathSwe, like the
 emerging geometric deep learning field, so the mathematical domain and the
