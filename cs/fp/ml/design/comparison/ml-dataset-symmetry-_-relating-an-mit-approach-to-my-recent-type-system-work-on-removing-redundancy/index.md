@@ -71,9 +71,9 @@ refraining from doing it[^2].
 [^1]: It's indeed pretty accurate, "right" and "orthogonal" in this context
 
 [^2]: This is relative and also applies to taking risks, committing mistakes, or
-breaking something purposefully for testing stages, as long as you do it
-rightfully, so even when failing, you still have to do it right or fail
-successfully
+    breaking something purposefully for testing stages, as long as you do it
+    rightfully, so even when failing, you still have to do it right or fail
+    successfully
 
 Also, notice how **the symmetries and the engineering are *relative* to the
 domain**. Engineers measure with respect to the domain of expertise.
