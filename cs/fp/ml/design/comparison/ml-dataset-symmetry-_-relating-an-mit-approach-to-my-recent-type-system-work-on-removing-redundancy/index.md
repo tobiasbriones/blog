@@ -271,6 +271,12 @@ optimized, with theoretical results like theorems and research. Therefore,
 **optimizing the domain is the first key for reaching the engineering grade**
 (in software and any other engineering discipline).
 
+Finally, **the domain is an invariant** by definition. Engineering
+implementations (i.e., transformations) change over time, but the domain (e.g.,
+math, medicine, etc.) never changes (ideally). Hence, the importance of
+optimizing for the domain. You can understand what I described with the theory
+of relativity or a functional approach.
+
 Newer extraordinary undertakings will always be available for MathSwe, like the
 emerging geometric deep learning field, so the mathematical domain and the
 engineering grade is always a commitment to keep the MSWE industry leadership.
