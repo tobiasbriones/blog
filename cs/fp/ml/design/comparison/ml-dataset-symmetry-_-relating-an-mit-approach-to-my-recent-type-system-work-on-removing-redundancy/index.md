@@ -147,5 +147,15 @@ Removing Record Redundancy with Sum and Refinement Types | Blog | Math Software
 Engineer.
 
 [4] Briones, T. (2024, January 4).
-[Designing the Angle Geometry for an Oriented Segment](/designing-the-angle-geometry-for-an-oriented-segment)
+[Designing the Angle Geometry for an Oriented Segment.](/designing-the-angle-geometry-for-an-oriented-segment)
 Blog | Math Software Engineer.
+
+[5] Briones, T. (2024, January 4).
+[High-Level Angles.](/designing-the-angle-geometry-for-an-oriented-segment#high-level-angles)
+Designing the Angle Geometry for an Oriented Segment | Blog | Math Software
+Engineer.
+
+[6] Briones, T. (2024, January 4).
+[Engineering Geometry Languages in Haskell with Insights.](/designing-the-angle-geometry-for-an-oriented-segment#engineering-geometry-languages-in-haskell-with-insights)
+Designing the Angle Geometry for an Oriented Segment | Blog | Math Software
+Engineer.
