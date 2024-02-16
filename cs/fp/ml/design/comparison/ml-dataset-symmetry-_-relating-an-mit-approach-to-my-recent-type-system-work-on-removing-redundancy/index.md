@@ -255,6 +255,12 @@ I reemphasized the concepts of **expressions, factorization, orthogonality,
 perpendicularity, dimensionality, partitions, symmetries/patterns/invariants,
 and engineering-grade software**.
 
+From my articles and the MIT reference, I've shown many redundancy cases to
+optimize with the above concepts, including but not limited to inefficiencies
+**affecting the domain types, runtime execution, *and now* deep learning
+training time**. We can keep adding, like database persistence (we already have
+normal forms for relational DBs), etc.
+
 Whenever you find an invariant, you can apply its underlying transformations
 without changing the property. Such pattern detection skills are leveraged for
 optimizing domains, thus **helping reach the engineering grade since engineering
