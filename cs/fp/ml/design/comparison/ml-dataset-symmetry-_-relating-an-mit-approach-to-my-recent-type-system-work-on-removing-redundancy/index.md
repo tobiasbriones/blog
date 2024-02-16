@@ -176,7 +176,7 @@ are optimized by factorizing the common data representation and extracting the
 changing variants into sum types:
 
 > The sum type removing the redundancy of the previous `HSegment` and `VSegment`
-> records is `QuadrantalOrientation`. That’s what I mean by what I mean by
+> records is `QuadrantalOrientation`. That's what I mean by
 > *factorizing expressions to simplify them*.
 >
 > Source: *Factorizing the Duplication with Sum Types* \| MSW Engineer Blog [3]
