@@ -121,6 +121,8 @@ Expanding these results further, notice the ML conclusion of the MIT side:
 Eventually, this concludes with **geometric perspectives**, **differential
 geometry** (i.e., calculus), and the emerging **geometric deep learning** field.
 
+### Embracing Emerging Abstractions
+
 Recall that generic tools and software will never have the engineering grade of
 proper mathematical software. They manage to compute low-level math, but the
 abstractions are what really matters.
