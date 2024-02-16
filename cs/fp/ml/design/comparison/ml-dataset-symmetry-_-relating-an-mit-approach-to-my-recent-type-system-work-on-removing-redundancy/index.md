@@ -79,7 +79,7 @@ Also, notice how **the symmetries and the engineering are *relative* to the
 domain**. Engineers measure with respect to the domain of expertise.
 
 There's a myriad of functional abstractions to simplify programs, others like
-GADs and type families. Since you must be wise when applying them, you'll need
+GADTs and type families. Since you must be wise when applying them, you'll need
 mathematical and domain skills to catch symmetries and patterns first.
 
 ## Symmetries for the Angle DSL and ML
