@@ -54,8 +54,8 @@ redundantly.
 As you read, engineering can get challenging. For example, when performance
 optimizations are required, leaving the compiler behind. In these cases, the
 engineer has to compromise between the DSL and implementation details. It's when
-you find your **memory layout** is redundant and called frequently, although the
-DSL was perfect.
+you find your **memory layout** is redundant in runtime and allocated
+frequently, although the DSL was perfect.
 
 I also state how **expression factorization** is the key skill to catch these
 flaws. For example, if types are repeating, you grab the duplication and make
