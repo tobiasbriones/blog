@@ -6,7 +6,7 @@
 
 ## How Symmetry Reduces Complexity
 
-I was reading an MIT article about
+I was reading an MIT News article about
 [How symmetry can come to the aid of machine learning](https://news.mit.edu/2024/how-symmetry-can-aid-machine-learning-0205)[1].
 It struck my attention due to the last works I wrote about removing redundancy
 in records with functional abstractions while designing the API of Canvas Play.
