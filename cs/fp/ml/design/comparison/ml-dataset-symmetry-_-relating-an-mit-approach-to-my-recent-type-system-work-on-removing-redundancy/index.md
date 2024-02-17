@@ -4,6 +4,12 @@
 
 # ML Dataset Symmetry: Relating an MIT Approach to my Recent Type System Work on Removing Redundancy
 
+In domain optimization, pattern detection, like symmetries, with functional
+programming reduces complexity. I relate math concepts from my last works in FP
+about redundancy removal to a recent MIT article about data space symmetries.
+Emerging abstractions will keep proving how crucial the theoretical results of
+the domain are for engineering implementations.
+
 ## How Symmetry Reduces Complexity
 
 I was reading an MIT News article about
