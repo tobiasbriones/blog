@@ -101,6 +101,8 @@ axes. Of course, the unit vectors $$i,\, j$$ are orthogonal (from abstract
 linear algebra) and perpendicular (from geometry), so you have the pleasure of
 depicting these abstractions graphically.
 
+![](visually-partitioning-the-plane.svg)
+
 I spotted the obvious symmetry in the plane and *partitioned* the data types
 into the four quadrants `QI, QII, QIII, QIV`, and the four quadrantal
 angles `0, 90, 180, 270`, composing any angle in `[0, 360)deg` in the plane
