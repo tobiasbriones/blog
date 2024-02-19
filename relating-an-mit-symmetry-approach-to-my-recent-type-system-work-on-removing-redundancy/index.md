@@ -2,7 +2,7 @@
 permalink: relating-an-mit-symmetry-approach-to-my-recent-type-system-work-on-removing-redundancy
 title: "Relating an MIT Symmetry Approach to my Recent Type System Work on Removing Redundancy"
 description: "In domain optimization, pattern detection, like symmetries, with functional programming reduces complexity. I relate math concepts from my last works in FP about redundancy removal to a recent MIT article about data space symmetries. Emerging abstractions will keep proving how crucial the theoretical results of the domain are for engineering implementations."
-ogimage: ""
+ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/relating-an-mit-symmetry-approach-to-my-recent-type-system-work-on-removing-redundancy/relating-an-mit-symmetry-approach-to-my-recent-type-system-work-on-removing-redundancy.png"
 ---
 
 
@@ -11,6 +11,8 @@ ogimage: ""
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Relating an MIT Symmetry Approach to my Recent Type System Work on Removing Redundancy
+
+![](relating-an-mit-symmetry-approach-to-my-recent-type-system-work-on-removing-redundancy.png)
 
 In domain optimization, pattern detection, like symmetries, with functional
 programming reduces complexity. I relate math concepts from my last works in FP
@@ -330,6 +332,7 @@ Engineer.
 [Engineering Geometry Languages in Haskell with Insights.](/designing-the-angle-geometry-for-an-oriented-segment#engineering-geometry-languages-in-haskell-with-insights)
 Designing the Angle Geometry for an Oriented Segment | Blog | Math Software
 Engineer.
+
 
 
 
