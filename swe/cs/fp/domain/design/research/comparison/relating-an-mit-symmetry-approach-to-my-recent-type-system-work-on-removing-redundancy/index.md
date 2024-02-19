@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# ML Dataset Symmetry: Relating an MIT Approach to my Recent Type System Work on Removing Redundancy
+# Relating an MIT Symmetry Approach to my Recent Type System Work on Removing Redundancy
 
 In domain optimization, pattern detection, like symmetries, with functional
 programming reduces complexity. I relate math concepts from my last works in FP
