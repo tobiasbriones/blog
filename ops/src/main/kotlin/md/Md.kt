@@ -52,7 +52,7 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             getSvgDimensions(fullPath) == Pair(1920, 1440)
         ) """
                 <figure>
-                    <div class="16-9">
+                    <div class="a16-9">
                         <img src="$path" alt="$altValue" />
                     </div>
                     <figcaption>$title</figcaption>
