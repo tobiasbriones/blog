@@ -6,7 +6,6 @@ import Entry
 import arrow.core.*
 import name
 import path
-import java.io.File
 import java.io.IOException
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
@@ -53,9 +52,8 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
             getSvgDimensions(fullPath) == Pair(1920, 1440)
         ) """
                 <figure>
-                    <div>
+                    <div class="16-9">
                         <img src="$path" alt="$altValue" />
-                        <span></span>
                     </div>
                     <figcaption>$title</figcaption>
                 </figure>

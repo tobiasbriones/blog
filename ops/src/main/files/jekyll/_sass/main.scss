@@ -94,7 +94,7 @@ video ~ figcaption {
   border-right: none;
 }
 
-figure > div {
+figure > div.16-9 {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
