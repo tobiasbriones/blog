@@ -94,6 +94,12 @@ video ~ figcaption {
   border-right: none;
 }
 
+figure > div {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
 .show {
   opacity: 1;
 }

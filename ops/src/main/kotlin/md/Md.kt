@@ -6,10 +6,12 @@ import Entry
 import arrow.core.*
 import name
 import path
+import java.io.File
 import java.io.IOException
 import java.nio.file.*
 import java.nio.file.attribute.BasicFileAttributes
 import javax.imageio.ImageIO
+import javax.xml.parsers.DocumentBuilderFactory
 import kotlin.io.path.*
 import kotlin.system.exitProcess
 
@@ -38,10 +40,25 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
     fun imageHtml(path: String, alt: String): String {
         val title = Entry(Path.of(path)).toTitleCase(dic).removeExtension()
         val altValue = alt.ifBlank { title }
+        val fullPath = entry.path.resolve(path)
 
         // Cover image //
         return if (path.contains(entry.name())) """
                 <img src="$path" alt="$altValue" />
+            """.trimIndent()
+        // Image has FHD res with embedded captions to add context hidden
+        // when displaying, and available when downloading it
+        else if (
+            getImageDimensions(fullPath) == Pair(1920, 1440) ||
+            getSvgDimensions(fullPath) == Pair(1920, 1440)
+        ) """
+                <figure>
+                    <div>
+                        <img src="$path" alt="$altValue" />
+                        <span></span>
+                    </div>
+                    <figcaption>$title</figcaption>
+                </figure>
             """.trimIndent()
         // Normal Image //
         else """
@@ -308,6 +325,7 @@ fun parseAutomaticCoverImage(value: String, entry: Entry): String {
                     state = CoverImageState.Heading
                 }
             }
+
             CoverImageState.Heading -> {
                 sb.append("\n")
                 sb.append(coverImageMd)
@@ -315,6 +333,7 @@ fun parseAutomaticCoverImage(value: String, entry: Entry): String {
 
                 state = CoverImageState.Cover
             }
+
             CoverImageState.Cover -> {}
         }
 
@@ -693,5 +712,35 @@ fun findFile(root: Path, name: String): Option<Path> {
     return when {
         searchResult.isEmpty() -> None
         else -> Some(searchResult.first())
+    }
+}
+
+
+fun getImageDimensions(path: Path): Pair<Int, Int>? {
+    try {
+        val image = ImageIO.read(path.toFile())
+        val width = image?.getWidth(null) ?: return null
+        val height = image.getHeight(null)
+        return Pair(width, height)
+    } catch (e: Exception) {
+        e.printStackTrace()
+        return null
+    }
+}
+
+fun getSvgDimensions(path: Path): Pair<Int, Int>? {
+    try {
+        val factory = DocumentBuilderFactory.newInstance()
+        val builder = factory.newDocumentBuilder()
+        val doc = builder.parse(path.toFile())
+
+        val root = doc.documentElement
+        val width = root.getAttribute("width").toFloatOrNull() ?: return null
+        val height = root.getAttribute("height").toFloatOrNull() ?: return null
+
+        return Pair(width.toInt(), height.toInt())
+    } catch (e: Exception) {
+        e.printStackTrace()
+        return null
     }
 }
