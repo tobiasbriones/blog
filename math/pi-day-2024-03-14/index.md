@@ -12,9 +12,9 @@ this set algebra to computer science via product types. The symbol Π appears in
 math, and via type theory we can employ it in ATDs (Algebra Data Types) like
 product types.
 
-Similarly, we can denote the summation via the uppercase sigma letter (Σ). Thus,
-we can denote sum types (like enums) under Σ and product types (like tuples or
-records) under Π.
+Similar to how Π is used for the product operator, we can denote the summation
+via the uppercase sigma letter (Σ) [5]. Thus, we can denote sum types (like
+enums) under Σ and product types (like tuples or records) under Π.
 
 Let $$A, \, B$$ be types.
 
@@ -76,3 +76,6 @@ nLab.
 
 [4] [2.1 Product Types \| Lecture 04.1: Algebraic Data Types and General Recursion](https://stanford-cs242.github.io/f17/assets/slides/04.1-adt-recursion.pdf).
 CS 242: Programming Languages, Fall 2017 | Stanford.
+
+[5] Contributors to Wikimedia projects. (2023, October 22).
+[Pi (letter). Simple English Wikipedia, the Free Encyclopedia](https://simple.wikipedia.org/wiki/Pi_(letter)).
