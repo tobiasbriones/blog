@@ -745,7 +745,7 @@ fun findFile(root: Path, name: String): Option<Path> {
 
 
 fun getImageDimensions(path: Path): Pair<Int, Int>? {
-    if (!path.endsWith(".png") && !path.endsWith(".jpg")) {
+    if (!path.toString().endsWith(".png") && !path.toString().endsWith(".jpg")) {
         return null
     }
 
@@ -761,7 +761,7 @@ fun getImageDimensions(path: Path): Pair<Int, Int>? {
 }
 
 fun getSvgDimensions(path: Path): Pair<Int, Int>? {
-    if (!path.endsWith(".svg")) {
+    if (!path.toString().endsWith(".svg")) {
         return null
     }
 
