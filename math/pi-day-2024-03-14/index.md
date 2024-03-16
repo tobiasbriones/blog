@@ -22,9 +22,12 @@ $$S = A + B = \sum_{\{ T_j \} \in \{ A, B \, \} } T_j$$
 
 $$P = A * B = \prod_{\{ T_j \} \in \{ A, B \, \}} T_j$$
 
-The disjoint union or sum type $$S$$ induces a partition of $$A, \, B$$. The
-product type $$P$$ is a basic type that can be defined under the Π symbol and
-defines the pairs $$(a, b)$$ where $$a \in A \land b \in B$$.
+The disjoint union or sum type $$S$$ induces a partition of $$A, \, B$$.
+
+A product type $$A * B$$ represents a term that has both an element of $$A$$ and
+an element of $$B$$ [4]. So, the product type $$P$$ is a basic type that can be
+defined under the Π symbol and defines the pairs $$(a, b)$$ where $$a \in A
+\land b \in B$$.
 
 A program defining data types for `Color` components and values can depict basic
 types like these.
