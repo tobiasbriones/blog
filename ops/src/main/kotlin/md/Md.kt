@@ -4,6 +4,7 @@ import `$`
 import `---`
 import Entry
 import arrow.core.*
+import dic
 import name
 import path
 import java.io.IOException
@@ -41,13 +42,9 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
         val altValue = alt.ifBlank { title }
         val fullPath = entry.path.resolve(path)
 
-        // Cover image //
-        return if (path.contains(entry.name())) """
-                <img src="$path" alt="$altValue" />
-            """.trimIndent()
         // Image has FHD res with embedded captions to add context hidden
         // when displaying, and available when downloading it
-        else if (
+        return if (
             getImageDimensions(fullPath) == Pair(1920, 1440) ||
             getSvgDimensions(fullPath) == Pair(1920, 1440)
         ) """
@@ -301,15 +298,48 @@ fun parseImages(value: String, dic: Dictionary, entry: Entry): String {
     return sb.toString()
 }
 
+fun parseAutomaticCoverImageCaption(entry: Entry): Option<String> {
+    val coverDataName = "${entry.name()}.png.md"
+    val path = entry.path.resolve(coverDataName)
+
+    if (path.notExists()) {
+        return None
+    }
+    return path
+        .readText()
+        .lines()
+        .filter { it.startsWith("`") && it.endsWith("`") }
+        .firstOrNone()
+        .map { it.removePrefix("`").removeSuffix("`") }
+}
+
 fun parseAutomaticCoverImage(value: String, entry: Entry): String {
     val coverImageName = "${entry.name()}.png"
-    val path = entry.path.resolve(coverImageName)
-    val coverImageMd = "![]($coverImageName)"
+    val relPath = with(entry.path) {
+        if (resolve("images").resolve(coverImageName).exists())
+            Path.of("images", coverImageName)
+        else Path.of(coverImageName)
+    }
+    val path = entry.path.resolve(relPath)
+    val coverCaption = parseAutomaticCoverImageCaption(entry)
+    val alt = entry.toTitleCase(dic)
+    val coverImageHtml = when (coverCaption) {
+        None -> """
+            |<img src="$relPath" alt="$alt"/>
+            |""".trimMargin()
+
+        is Some -> """
+            |<figure>
+            |    <img src="$relPath" alt="$alt" />
+            |    <figcaption>${coverCaption.value}</figcaption>
+            |</figure>
+        """.trimMargin()
+    }
 
     if (path.notExists()) {
         return value
     }
-    if (value.contains(coverImageMd)) {
+    if (value.contains(coverImageHtml)) {
         return value
     }
 
@@ -326,7 +356,7 @@ fun parseAutomaticCoverImage(value: String, entry: Entry): String {
 
             CoverImageState.Heading -> {
                 sb.append("\n")
-                sb.append(coverImageMd)
+                sb.append(coverImageHtml)
                 sb.append("\n")
 
                 state = CoverImageState.Cover
@@ -715,6 +745,10 @@ fun findFile(root: Path, name: String): Option<Path> {
 
 
 fun getImageDimensions(path: Path): Pair<Int, Int>? {
+    if (!path.endsWith(".png") && !path.endsWith(".jpg")) {
+        return null
+    }
+
     try {
         val image = ImageIO.read(path.toFile())
         val width = image?.getWidth(null) ?: return null
@@ -727,6 +761,10 @@ fun getImageDimensions(path: Path): Pair<Int, Int>? {
 }
 
 fun getSvgDimensions(path: Path): Pair<Int, Int>? {
+    if (!path.endsWith(".svg")) {
+        return null
+    }
+
     try {
         val factory = DocumentBuilderFactory.newInstance()
         val builder = factory.newDocumentBuilder()

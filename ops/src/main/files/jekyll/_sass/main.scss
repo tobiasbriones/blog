@@ -94,6 +94,10 @@ video ~ figcaption {
   border-right: none;
 }
 
+h1 ~ figure > figcaption {
+  border: none;
+}
+
 figure > div.a16-9 {
   width: 100%;
   aspect-ratio: 16 / 9;
