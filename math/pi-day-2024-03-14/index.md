@@ -51,7 +51,7 @@ newtype B = B Int  -- [0, 255]
 
 data ColorComponent = Red R | Green G | Blue B
 
-data Color = Color { red :: R, green :: Green, blue :: Blue }
+data Color = Color { red :: R, green :: G, blue :: B }
 ```
 
 The product type `Color` is defined as a record or nominal tuple to add fields
