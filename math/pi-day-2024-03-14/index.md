@@ -60,7 +60,9 @@ associated accessor function).
 
 Further, notice that a product type can be seen as an ADT with only one data
 constructor or sum type with one only variant in Haskell since a product type is
-isomorphic to such ADT.
+isomorphic to such ADT. That is, algebraic data types with one constructor are
+isomorphic to a product type, and product types are also the dual of sum types
+[6].
 
 The dualities mentioned show how Π is ubiquitous in mathematics and computer
 science.
@@ -85,3 +87,6 @@ CS 242: Programming Languages, Fall 2017 | Stanford.
 
 [5] Contributors to Wikimedia projects. (2023, October 22).
 [Pi (letter). Simple English Wikipedia, the Free Encyclopedia](https://simple.wikipedia.org/wiki/Pi_(letter)).
+
+[6] Wikipedia contributors. (2023, November 12).
+[Product type. Wikipedia](https://en.wikipedia.org/wiki/Product_type).
