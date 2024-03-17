@@ -55,9 +55,15 @@ data Color = Color { red :: R, green :: G, blue :: B }
 ```
 
 The product type `Color` is defined as a record or nominal tuple to add fields
-enhancing the underlying language semantics. Further, notice that a product type
-is a trivial sum type with one only variant. The duality mentioned shows how Π
-is ubiquitous in mathematics and computer science.
+enhancing the underlying language semantics (each tuple component has a label or
+associated accessor function).
+
+Further, notice that a product type can be seen as an ADT with only one data
+constructor or sum type with one only variant in Haskell since a product type is
+isomorphic to such ADT.
+
+The dualities mentioned show how Π is ubiquitous in mathematics and computer
+science.
 
 ---
 
