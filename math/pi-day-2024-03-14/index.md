@@ -90,3 +90,6 @@ CS 242: Programming Languages, Fall 2017 | Stanford.
 
 [6] Wikipedia contributors. (2023, November 12).
 [Product type. Wikipedia](https://en.wikipedia.org/wiki/Product_type).
+
+[7] [Idea \| Dependent Sum Type](https://ncatlab.org/nlab/show/dependent+sum+type#Idea)
+nLab.
