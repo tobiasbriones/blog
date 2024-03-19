@@ -137,6 +137,19 @@ $$\prod_{n=1}^\infty \frac{2n}{2n - 1} \frac{2n}{2n + 1} = \frac{2}{1} \cdot
 \frac{2}{3} \cdot \frac{4}{3} \cdot \frac{4}{5} \cdot \frac{6}{5} \cdot
 \frac{6}{7} \cdot \ldots = \frac{\pi}{2}$$
 
+While some proofs require integral calculus and trigonometry, others are
+straightforward and require elementary math, like the Pythagorean theorem, basic
+algebra, and the circle area $$\pi r^2$$. Others use complex trigonometric
+identities while still avoiding calculus. This formula can also involve
+geometric constructs and proofs with inequalities and sequences. There are a
+variety of proofs with different requirements, either involving elementary math,
+geometry, and also calculus for the advanced ones.
+
+The Wallis infinite product that denotes the number $$\pi$$ under its own
+capital letter $$\prod$$.
+
+---
+
 ## References
 
 [1] Johan Wästlund (2007) An Elementary Proof of the Wallis Product Formula for
