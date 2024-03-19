@@ -6,15 +6,15 @@
 
 ---
 
-The uppercase letter **Π (capital pi)** is particularly used for denoting the
-product operator in math. Sets have the *cartesian product*, and we can apply
-this set algebra to computer science via product types. The symbol Π appears in
-math, and via type theory we can employ it in ATDs (Algebra Data Types) like
-product types.
+The uppercase letter **Π (capital pi)** denotes the product operator in math.
+While sets have the *cartesian product* operation, we can apply such an algebra
+of sets to computer science via product types. While the symbol Π appears in
+math, we can also employ it in ATDs (Algebra Data Types) like product types, and
+much more.
 
-Similar to how Π is used for the product operator, we can denote the summation
-via the uppercase sigma letter (Σ) [5]. Thus, we can denote sum types (like
-enums) under Σ and product types (like tuples or records) under Π.
+Similar to how math notation uses Π for the product operator, we can denote the
+summation via the uppercase sigma letter (Σ) [5]. Thus, we can denote sum
+types (like enums) under Σ and product types (like tuples or records) under Π.
 
 Let $$A, \, B$$ be types.
 
@@ -24,19 +24,18 @@ $$P = A * B = \prod_{\{ T_j \} \in \{ A, B \, \}} T_j$$
 
 The disjoint union or sum type $$S$$ induces a partition of $$A, \, B$$.
 
-A product type $$A * B$$ represents a term that has both an element of $$A$$ and
-an element of $$B$$ [4]. So, the product type $$P$$ is a basic type that can be
-defined under the Π symbol and defines the pairs $$(a, b)$$ where $$a \in A
-\land b \in B$$.
+A product type $$A * B$$ represents a term with an element of $$A$$ and an
+element of $$B$$ [4]. So, the Π symbol can denote the basic product type $$P$$
+defining the pairs $$(a, b)$$ where $$a \in A \land b \in B$$.
 
 A program defining data types for `Color` components and values can depict basic
 types like these.
 
 ![](sum-and-product-types.svg)
 
-An `RGB` color can be partitioned into orthogonal components, `R`, `G`, and
-`B`. So `S` defines a (useful) partition of how a `Color` can be created. On the
-other hand, `Color` is a product type defining the set of all colors `(r, g, b)`
+The orthogonal components `R`, `G`, and `B` can partition an `RGB` color. So,
+`S` defines an adequate partition to create a `Color`. On the other hand,
+`Color`, is a product type defining the set of all colors `(r, g, b)`
 where $$r \in R, g \in G, B \in B$$.
 
 The theoretical concepts above can be efficiently implemented in a purely
