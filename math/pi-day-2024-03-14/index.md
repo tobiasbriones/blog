@@ -69,9 +69,9 @@ science.
 
 ---
 
-A dependent type is an advanced abstraction essential to formalize information
-of our types that depend on runtime values. Some of them can be dependent
-products or dependent sums.
+A **dependent type** is an advanced abstraction essential to formalize
+information of our types that depend on runtime values. Some of them can be
+dependent products or dependent sums.
 
 A function codomain (or return type) can vary according to its argument value.
 For example, a function that takes a non-negative integer `n` and returns a list
@@ -95,9 +95,9 @@ engineering-grade/certified software is essential.
 
 ---
 
-Some important dependent types are the dependent product types that generalize
-product types. A type $$B$$ is a function of (or depends on) the value of a type
-$$A$$.
+Some important dependent types are the **dependent product types** that
+generalize product types. A type $$B$$ is a function of (or depends on) the
+value of a type $$A$$.
 
 A dependent product type is defined under the Π symbol, and thus called a
 **Pi type**.
