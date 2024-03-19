@@ -95,6 +95,40 @@ engineering-grade/certified software is essential.
 
 ---
 
+Some important dependent types are the dependent product types that generalize
+product types. A type $$B$$ is a function of (or depends on) the value of a type
+$$A$$.
+
+A dependent product type is defined under the Π symbol, and thus called a
+**Pi type**.
+
+$$\prod_{x : A} B(x)$$
+
+They can also be denoted as $$\prod(x: A) B(x) $$.
+
+A **dependent product type** $$\prod_{x: A} B(x)$$ is the type of
+"dependently typed functions" assigning to each $$x: A$$ an element of $$B
+(x)$$, for the dependent type $$x: A \vdash B(x): Type$$ [3].
+
+Product types are thus a particular case where $$B$$ is constant, so $$\forall x
+\in A \implies B(x)=B$$.
+
+A product type can be related to logical conjunction and, in predicate logic, to
+a universal quantification model (∀). Similarly, a sum type or disjoint union
+can be related to logical disjunctions and, in predicate logic, to an
+existential quantification model (∃). [2]
+
+The duality in both product and sum types is also reflected in their notations
+since both can use the capital pi letter. Dependent product types are denoted
+under $$\prod$$, while dependent sum types, or **dependent coproducts**, are
+denoted under $$\sum$$ but also $$\coprod$$ [7].
+
+The capital pi symbol (Π) is present in a vast amount of math and computer
+science, as shown with dependent products/coproducts with their duality and
+further relations in other domains like logic.
+
+---
+
 ## References
 
 [1] Johan Wästlund (2007) An Elementary Proof of the Wallis Product Formula for
