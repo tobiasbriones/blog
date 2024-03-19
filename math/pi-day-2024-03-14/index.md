@@ -69,6 +69,32 @@ science.
 
 ---
 
+A dependent type is an advanced abstraction essential to formalize information
+of our types that depend on runtime values. Some of them can be dependent
+products or dependent sums.
+
+A function codomain (or return type) can vary according to its argument value.
+For example, a function that takes a non-negative integer `n` and returns a list
+of length `n` at type level.
+
+Dependent types can be like the type $$A^n$$ of length $$n$$ vectors, $$A^{n
+\times m}$$ of $$n \times m$$ matrices, trees of height $$n$$, and sorted lists
+and sorted binary trees. Also, notice that dependent types can also be index
+sets. For example, $$A^n$$ is a type family indexed by $$n$$. [2]
+
+One may define a tree of height $$n$$ as 3-tuple where the height of its root
+node is $$n$$, that is, $$(V, children : V \to \mathcal {P} (V), root \in V)$$
+and $$height : V \to \mathbb{Z}^{noneg}$$ where $$height(r) = n$$. Therefore, we
+can *engineer the height-$$n$$ trees into the type system*, resulting in
+engineering-grade software.
+
+Dependent types are specialized abstractions where a type can be a function of
+runtime values, thus fully encoding the domain into the type system. Therefore,
+their role in computationally verifying mathematical proofs and building
+engineering-grade/certified software is essential.
+
+---
+
 ## References
 
 [1] Johan Wästlund (2007) An Elementary Proof of the Wallis Product Formula for
