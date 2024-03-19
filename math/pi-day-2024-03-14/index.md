@@ -150,6 +150,35 @@ capital letter $$\prod$$.
 
 ---
 
+The product operator $$\prod$$ (capital pi, or Π) and the constant $$\pi$$ are
+ubiquitous in math and computer science.
+
+In type theory and functional programming, dependent types, like dependent
+products, employ the capital Pi symbol Π. Thus, dependent product types are
+called Pi types since the Π symbol denotes the math product. Moreover, the
+symbols $$\prod$$ and $$\coprod$$ depict the duality between products and
+coproducts.
+
+Advanced formal computer science constructs like dependent types enable
+comprehensive domain engineering at the type level. Since types can depend on
+runtime values, dependent types are particularly remarkable in computational
+theorem proof and enabling software engineering-grade capabilities such as
+program verification.
+
+Project implementations may cover engineering-grade software such as
+mathematical software (MSW) and others that must be mathematically certified,
+like aircraft software.
+
+While Π and π don't have a direct relation since the former is a symbol and the
+latter is a number, an infinite product under the symbol $$\prod$$ can express
+the number $$\pi$$, thus giving us a philosophical relation between both. So,
+the constant π shows us its ubiquitousness when expressed in terms of its own
+capital symbol Π through an infinite product.
+
+The remarkable presence of the symbol Π and the constant π in math and computer
+science gives us plenty of insight to fulfill engineering-grade project
+implementations.
+
 ## References
 
 [1] Johan Wästlund (2007) An Elementary Proof of the Wallis Product Formula for
