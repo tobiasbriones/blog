@@ -1,7 +1,7 @@
 ---
 permalink: pi-day-2024-03-14
 title: "Pi Day (2024/03/14)"
-description: "On Pi Day 2024, there's a focus on rigorous project implementation, meaningfully remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the product operator. Dependent product types or Pi types are advanced formalizations defined under Π. Moreover, Π can also define π through an infinite Wallis product."
+description: "On Pi Day 2024, there's a focus on rigorous project implementation, meaningfully remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the product operator. While dependent product types, or Pi types, are advanced formalizations defined under Π in computer science, Π can also express the number π through an infinite Wallis product in math."
 ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/pi-day-2024-03-14/pi-day-2024-03-14.png"
 ---
 
@@ -19,13 +19,13 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/pi-day-2
 
 On Pi Day 2024, there's a focus on rigorous project implementation, meaningfully
 remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the
-product operator. Dependent product types or Pi types are advanced
-formalizations defined under Π. Moreover, Π can also define π through an
-infinite Wallis product.
+product operator. While dependent product types, or Pi types, are advanced
+formalizations defined under Π in computer science, Π can also express the
+number π through an infinite Wallis product in math.
 
 ---
 
-The uppercase letter **Π (capital pi)** denotes the product operator in math.
+The uppercase letter **Π (capital Pi)** denotes the product operator in math.
 While sets have the *cartesian product* operation, we can apply such an algebra
 of sets to computer science via product types. While the symbol Π appears in
 math, we can also employ it in ATDs (Algebra Data Types) like product types and
@@ -59,7 +59,7 @@ types like these.
 
 The orthogonal components `R`, `G`, and `B` can partition an `RGB` color. So,
 `S` defines an adequate partition to create a `Color`. On the other hand,
-`Color`, is a product type defining the set of all colors `(r, g, b)`
+`Color` is a product type defining the set of all colors `(r, g, b)`
 where $$r \in R, g \in G, B \in B$$.
 
 The theoretical concepts above can be efficiently implemented in a purely
@@ -120,8 +120,8 @@ associated accessor function).
 Further, notice that a product type can be seen as an ADT with only one data
 constructor or sum type with one only variant in Haskell since a product type is
 isomorphic to such ADT. That is, algebraic data types with one constructor are
-isomorphic to a product type, and product types are also the dual of sum types
-[6].
+isomorphic to a product type, and product types are also the dual of sum types.
+[6]
 
 The dualities mentioned show how Π is ubiquitous in mathematics and computer
 science.
@@ -141,11 +141,14 @@ Dependent types can be like the type $$A^n$$ of length $$n$$ vectors, $$A^{n
 and sorted binary trees. Also, notice that dependent types can also be index
 sets. For example, $$A^n$$ is a type family indexed by $$n$$. [2]
 
-One may define a tree of height $$n$$ as 3-tuple where the height of its root
-node is $$n$$, that is, $$(V, children : V \to \mathcal {P} (V), root \in V)$$
-and $$height : V \to \mathbb{Z}^{noneg}$$ where $$height(r) = n$$. Therefore, we
-can *engineer the height-$$n$$ trees into the type system*, resulting in
-engineering-grade software.
+One may define a tree of height $$n$$ as a 3-tuple[^1] where the height of its
+root node is $$n$$, that is, $$(V, children : V \to \mathcal {P} (V), root \in
+V)$$ and $$height : V \to \mathbb{Z}^{noneg}$$ where $$height(r) = n$$.
+Therefore, we can *engineer the height-n trees into the type system*, resulting
+in engineering-grade software where the type of the tree *depends*
+on a runtime value `n`, specifying how "tall" the tree will be at type level.
+
+[^1]: Or as a record with three fields since records are nominal tuples
 
 Dependent types are specialized abstractions where a type can be a function of
 runtime values, thus fully encoding the domain into the type system. Therefore,
@@ -178,39 +181,52 @@ can be related to logical disjunctions and, in predicate logic, to an
 existential quantification model (∃). [2]
 
 The duality in both product and sum types is also reflected in their notations
-since both can use the capital pi letter. Dependent product types are denoted
+since both can use the capital Pi letter. Dependent product types are denoted
 under $$\prod$$, while dependent sum types, or **dependent coproducts**, are
 denoted under $$\sum$$ but also $$\coprod$$ [7].
 
-The capital pi symbol (Π) is present in a vast amount of math and computer
+The capital Pi symbol (Π) is present in a vast amount of math and computer
 science, as shown with dependent products/coproducts with their duality and
 further relations in other domains like logic.
 
 ---
 
 After noticing the magnificence of the symbol Π, we can explore how the constant
-pi (π) can be expressed as an infinite product.
+Pi (π) can be expressed as an infinite product.
 
-The number π equals the Wallis product [1]:
+The number π can be found in the Wallis product [1]:
 
-$$\prod_{n=1}^\infty \frac{2n}{2n - 1} \frac{2n}{2n + 1} = \frac{2}{1} \cdot
-\frac{2}{3} \cdot \frac{4}{3} \cdot \frac{4}{5} \cdot \frac{6}{5} \cdot
-\frac{6}{7} \cdot \ldots = \frac{\pi}{2}$$
+$$
+\begin{align*}
 
-While some proofs require integral calculus and trigonometry, others are
+W &= \prod_{n=1}^\infty \frac{4n^2}{4n^2 - 1} \\
+
+&= \prod_{n=1}^\infty \left( \frac{2n}{2n - 1} \cdot \frac{2n}{2n + 1}
+\right) \\
+
+&= \left( \frac{2}{1} \cdot \frac{2}{3} \right) \cdot \left( \frac{4}{3} \cdot
+\frac{4}{5} \right) \cdot \left( \frac{6}{5} \cdot \frac{6}{7} \right)
+\cdot \ldots \\
+
+&= \frac{\pi}{2}
+
+\end{align*}
+$$
+
+While some proofs require integral calculus and trigonometry, others are more
 straightforward and require elementary math, like the Pythagorean theorem, basic
 algebra, and the circle area $$\pi r^2$$. Others use complex trigonometric
 identities while still avoiding calculus. This formula can also involve
 geometric constructs and proofs with inequalities and sequences. There are a
 variety of proofs with different requirements, either involving elementary math,
-geometry, and also calculus for the advanced ones.
+geometry, and also calculus for the advanced ones. [1]
 
-The Wallis infinite product that denotes the number $$\pi$$ under its own
-capital letter $$\prod$$.
+The Wallis infinite product defines the number $$\pi$$ under its own capital
+letter $$\prod$$, which shows a relation of Π and π in math.
 
 ---
 
-The product operator $$\prod$$ (capital pi, or Π) and the constant $$\pi$$ are
+The product operator $$\prod$$ (capital Pi, or Π) and the constant $$\pi$$ are
 ubiquitous in math and computer science.
 
 In type theory and functional programming, dependent types, like dependent
