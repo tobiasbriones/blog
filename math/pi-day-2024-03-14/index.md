@@ -12,7 +12,7 @@ number π through an infinite Wallis product in math.
 
 ---
 
-The uppercase letter **Π (capital pi)** denotes the product operator in math.
+The uppercase letter **Π (capital Pi)** denotes the product operator in math.
 While sets have the *cartesian product* operation, we can apply such an algebra
 of sets to computer science via product types. While the symbol Π appears in
 math, we can also employ it in ATDs (Algebra Data Types) like product types and
@@ -124,18 +124,18 @@ can be related to logical disjunctions and, in predicate logic, to an
 existential quantification model (∃). [2]
 
 The duality in both product and sum types is also reflected in their notations
-since both can use the capital pi letter. Dependent product types are denoted
+since both can use the capital Pi letter. Dependent product types are denoted
 under $$\prod$$, while dependent sum types, or **dependent coproducts**, are
 denoted under $$\sum$$ but also $$\coprod$$ [7].
 
-The capital pi symbol (Π) is present in a vast amount of math and computer
+The capital Pi symbol (Π) is present in a vast amount of math and computer
 science, as shown with dependent products/coproducts with their duality and
 further relations in other domains like logic.
 
 ---
 
 After noticing the magnificence of the symbol Π, we can explore how the constant
-pi (π) can be expressed as an infinite product.
+Pi (π) can be expressed as an infinite product.
 
 The number π equals the Wallis product [1]:
 
