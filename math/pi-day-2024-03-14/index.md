@@ -145,9 +145,11 @@ The number π can be found in the Wallis product [1]:
 $$
 \begin{align*}
 W &= \prod_{n=1}^\infty \frac{4n^2}{4n^2 - 1} \\
-&= \prod_{n=1}^\infty \frac{2n}{2n - 1} \frac{2n}{2n + 1} \\
-&= \frac{2}{1} \cdot \frac{2}{3} \cdot \frac{4}{3} \cdot \frac{4}{5} \cdot
-\frac{6}{5} \cdot \frac{6}{7} \cdot \ldots \\
+&= \prod_{n=1}^\infty \left( \frac{2n}{2n - 1} \cdot \frac{2n}{2n + 1}
+\right) \\
+&= \left( \frac{2}{1} \cdot \frac{2}{3} \right) \cdot \left( \frac{4}{3}
+\cdot \frac{4}{5} \right) \cdot \left( \frac{6}{5} \cdot \frac{6}{7} \right)
+\cdot \ldots \\
 &= \frac{\pi}{2}
 \end{align*}
 $$
