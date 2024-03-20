@@ -6,9 +6,9 @@
 
 On Pi Day 2024, there's a focus on rigorous project implementation, meaningfully
 remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the
-product operator. Dependent product types or Pi types are advanced
-formalizations defined under Π. Moreover, Π can also define π through an
-infinite Wallis product.
+product operator. While dependent product types, or Pi types, are advanced
+formalizations defined under Π in computer science, Π can also express the
+number π through an infinite Wallis product in math.
 
 ---
 
