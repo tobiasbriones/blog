@@ -66,8 +66,8 @@ associated accessor function).
 Further, notice that a product type can be seen as an ADT with only one data
 constructor or sum type with one only variant in Haskell since a product type is
 isomorphic to such ADT. That is, algebraic data types with one constructor are
-isomorphic to a product type, and product types are also the dual of sum types
-[6].
+isomorphic to a product type, and product types are also the dual of sum types.
+[6]
 
 The dualities mentioned show how Π is ubiquitous in mathematics and computer
 science.
