@@ -11,8 +11,10 @@ import io.ktor.server.netty.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import jekyll.*
+import kotlinx.coroutines.runBlocking
 import md.*
 import java.io.File
+import java.io.IOException
 import java.nio.charset.MalformedInputException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -58,7 +60,7 @@ fun main(args: Array<String>) {
                 }
                 """.trimIndent()
             },
-            { execute(it, root, arg(1), arg(2)) }
+            { execute(it, root, arg(1), arg(2), arg(3), arg(4)) }
         )
 }
 
@@ -67,13 +69,34 @@ fun execute(
     root: Path,
     arg1: String,
     arg2: String,
+    arg3: String,
+    arg4: String,
 ): Unit = when (cmd) {
     Entries -> execEntries(root)
     Build -> execBuild(root, arg1, arg2 == "jekyll")
     Deploy -> execDeploy(root, arg1)
     Serve -> execServe(root)
     Create -> execCreate(root, arg1, arg2)
+    AddPr -> execAddPr(root, arg1, arg2, arg3, arg4)
     Notice -> execNotice(root)
+}
+
+fun execAddPr(
+    root: Path,
+    entryName: String,
+    tags: String,
+    path: String,
+    fromPr: String,
+) {
+    val from = try {
+        fromPr.toInt()
+    } catch (e: NumberFormatException) {
+        printError `$` "Arg 'fromPr' is NaN: ${e.message}"
+        return
+    }
+
+    execCreate(root, entryName, tags)
+    addPr(root, entryName, path, from)
 }
 
 fun execCreate(root: Path, entryName: String, tags: String) {
@@ -808,6 +831,87 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
     runCommand("""git commit -m "Deploy ${entry.name()}"""")
         .onLeft(handleError `$` "Failed to commit files to Git")
         .onRight { println("✔ Commit files to Git") }
+        .getOrNull() ?: return
+}
+
+// Meant to be run immediately after "create"
+fun addPr(root: Path, entryName: String, url: String, from: Int) {
+    val entry = Entry(root)
+        .loadEntries()
+        .map { entries -> entries.firstOrNull { it.name() == entryName } }
+        .onLeft(handleError `$` "Failed to load entries at $root")
+        .getOrNull() ?: return
+    val indexPath = entry.path.resolve("index.md")
+
+    if (indexPath.notExists()) {
+        printError("Entry $entry does not exist")
+        return
+    }
+
+    val prs = runBlocking { fetchClosedPullRequests(url, from) }
+        .mapLeft { "Status code ${it.value}" }
+        .onLeft(handleError `$` "Fail to fetch GitHub API with status")
+        .onRight { println("✔ Fetch GitHub PRs") }
+        .getOrNull() ?: return
+
+    data class PrMd(val pr: String, val ref: String)
+
+    val prMd = prs
+        .mapIndexed { idx, pr ->
+            PrMd(
+                pr = """
+                    |---
+                    |
+                    |**PR: ${pr.title}** [${idx + 1}]
+                    |
+                    |${pr.body?.wrapText()?.removeSuffix("\n")}
+                    """.trimMargin("|"),
+                ref = """
+                    |${pr.createReferenceItem(idx + 1)}
+                    """.trimMargin("|"),
+            )
+        }.reduce { (pr1, ref1), (pr2, ref2) ->
+            PrMd(
+                pr = """
+                |${pr1}
+                |
+                |${pr2}
+                |
+            """.trimMargin("|"),
+                ref = """
+                    |${ref1}
+                    |
+                    |${ref2}
+                """.trimMargin("|")
+            )
+        }
+
+    val content = """
+        |
+        |${prMd.pr}
+        |---
+        |
+        |## References
+        |
+        |${prMd.ref}
+        |
+    """.trimMargin("|")
+
+    try {
+        indexPath.appendText(content)
+    } catch (e: IOException) {
+        printError `$` "Fail to save changes: ${e.message}"
+        return
+    }
+
+    runCommand("git add $indexPath", root)
+        .onLeft(handleError `$` "Failed to add root files to Git")
+        .onRight { println("✔ Add root files to Git") }
+        .getOrNull() ?: return
+
+    runCommand("""git commit -m "Add pull request bodies and references"""")
+        .onLeft(handleError `$` "Failed to commit PR content to article")
+        .onRight { println("✔ Commit PR content") }
         .getOrNull() ?: return
 }
 

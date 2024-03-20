@@ -1,4 +1,3 @@
-
 import arrow.core.Either
 import arrow.core.left
 import arrow.core.right
@@ -18,13 +17,25 @@ data class Base(
 )
 
 @Serializable
+data class Repo(
+    val full_name: String
+)
+
+@Serializable
 data class Head(
-    val ref: String
+    val ref: String,
+    val repo: Repo,
+)
+
+@Serializable
+data class User(
+    val login: String
 )
 
 @Serializable
 data class PullRequest(
     val url: String,
+    val html_url: String,
     val id: Int,
     val number: Int,
     val state: String,
@@ -36,6 +47,7 @@ data class PullRequest(
     val merged_at: String,
     val base: Base,
     val head: Head,
+    val user: User,
 )
 
 suspend fun fetchClosedPullRequests(
@@ -65,3 +77,11 @@ suspend fun fetchClosedPullRequests(
         else -> response.status.left()
     }
 }
+
+fun PullRequest.referenceLinkTitle() =
+    "$title by ${user.login} · Pull Request #$number · ${head.repo.full_name}"
+
+fun PullRequest.createReferenceItem(idx: Int) = """
+    |[$idx] [${referenceLinkTitle()}]($html_url).
+    |GitHub.
+""".trimMargin("|")
