@@ -140,9 +140,9 @@ further relations in other domains like logic.
 After noticing the magnificence of the symbol Π, we can explore how the constant
 Pi (π) can be expressed as an infinite product.
 
-The number π equals the Wallis product [1]:
+The number π can be found in the Wallis product [1]:
 
-$$\prod_{n=1}^\infty \frac{2n}{2n - 1} \frac{2n}{2n + 1} = \frac{2}{1} \cdot
+$$W = \prod_{n=1}^\infty \frac{2n}{2n - 1} \frac{2n}{2n + 1} = \frac{2}{1} \cdot
 \frac{2}{3} \cdot \frac{4}{3} \cdot \frac{4}{5} \cdot \frac{6}{5} \cdot
 \frac{6}{7} \cdot \ldots = \frac{\pi}{2}$$
 
