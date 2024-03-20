@@ -151,8 +151,8 @@ geometric constructs and proofs with inequalities and sequences. There are a
 variety of proofs with different requirements, either involving elementary math,
 geometry, and also calculus for the advanced ones. [1]
 
-The Wallis infinite product that denotes the number $$\pi$$ under its own
-capital letter $$\prod$$.
+The Wallis infinite product denotes the number $$\pi$$ under its own capital
+letter $$\prod$$.
 
 ---
 
