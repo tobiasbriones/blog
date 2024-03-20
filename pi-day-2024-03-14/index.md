@@ -1,7 +1,7 @@
 ---
 permalink: pi-day-2024-03-14
 title: "Pi Day (2024/03/14)"
-description: "On Pi Day 2024, there's focus on rigorous project implementation, meaningfully remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the product operator. Dependent product types or Pi types are advanced formalizations defined under Π. Moreover, Π can also define π though an infinite Wallis product."
+description: "On Pi Day 2024, there's a focus on rigorous project implementation, meaningfully remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the product operator. Dependent product types or Pi types are advanced formalizations defined under Π. Moreover, Π can also define π through an infinite Wallis product."
 ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/pi-day-2024-03-14/pi-day-2024-03-14.png"
 ---
 
@@ -17,18 +17,18 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/pi-day-2
     <figcaption>Piaxid Monochromatic 2/4: Project Implementation</figcaption>
 </figure>
 
-On Pi Day 2024, there's focus on rigorous project implementation, meaningfully
+On Pi Day 2024, there's a focus on rigorous project implementation, meaningfully
 remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the
 product operator. Dependent product types or Pi types are advanced
-formalizations defined under Π. Moreover, Π can also define π though an infinite
-Wallis product.
+formalizations defined under Π. Moreover, Π can also define π through an
+infinite Wallis product.
 
 ---
 
 The uppercase letter **Π (capital pi)** denotes the product operator in math.
 While sets have the *cartesian product* operation, we can apply such an algebra
 of sets to computer science via product types. While the symbol Π appears in
-math, we can also employ it in ATDs (Algebra Data Types) like product types, and
+math, we can also employ it in ATDs (Algebra Data Types) like product types and
 much more.
 
 Similar to how math notation uses Π for the product operator, we can denote the
