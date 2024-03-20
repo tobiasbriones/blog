@@ -87,11 +87,13 @@ Dependent types can be like the type $$A^n$$ of length $$n$$ vectors, $$A^{n
 and sorted binary trees. Also, notice that dependent types can also be index
 sets. For example, $$A^n$$ is a type family indexed by $$n$$. [2]
 
-One may define a tree of height $$n$$ as a 3-tuple where the height of its root
-node is $$n$$, that is, $$(V, children : V \to \mathcal {P} (V), root \in V)$$
-and $$height : V \to \mathbb{Z}^{noneg}$$ where $$height(r) = n$$. Therefore, we
-can *engineer the height-$$n$$ trees into the type system*, resulting in
-engineering-grade software.
+One may define a tree of height $$n$$ as a 3-tuple[^1] where the height of its
+root node is $$n$$, that is, $$(V, children : V \to \mathcal {P} (V), root \in
+V)$$ and $$height : V \to \mathbb{Z}^{noneg}$$ where $$height(r) = n$$.
+Therefore, we can *engineer the height-$$n$$ trees into the type system*,
+resulting in engineering-grade software.
+
+[^1]: Or as a record with three fields since records are nominal tuples
 
 Dependent types are specialized abstractions where a type can be a function of
 runtime values, thus fully encoding the domain into the type system. Therefore,
