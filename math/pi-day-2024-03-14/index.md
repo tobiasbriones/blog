@@ -164,7 +164,7 @@ letter $$\prod$$, which shows a relation of Π and π in math.
 
 ---
 
-The product operator $$\prod$$ (capital pi, or Π) and the constant $$\pi$$ are
+The product operator $$\prod$$ (capital Pi, or Π) and the constant $$\pi$$ are
 ubiquitous in math and computer science.
 
 In type theory and functional programming, dependent types, like dependent
