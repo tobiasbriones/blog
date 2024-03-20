@@ -9,6 +9,7 @@
 - [Celebrating the Possibility of Having a Computer to Work with (2023/09/11)](celebrating-the-possibility-of-having-a-computer-to-work-with-2023-09-11)
 - [Pi Day (2022/03/14)](pi-day-2022-03-14)
 - [Pi Day (2023/03/14)](pi-day-2023-03-14)
+- [Pi Day (2024/03/14)](pi-day-2024-03-14)
 - [An Excited Time Drawing Mandala Fractals Today (2023-04-06)](an-excited-time-drawing-mandala-fractals-today-2023-04-06)
 - [Updating from Angular V15 to V17 \| 2DP Repsymo (2023/12/06)](updating-from-angular-v15-to-v17---2dp-repsymo-2023-12-06)
 - [Automating the Platform Operations and Beyond (2023/08/31)](automating-the-platform-operations-and-beyond-2023-08-31)
