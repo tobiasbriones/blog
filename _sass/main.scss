@@ -88,10 +88,27 @@ video {
 }
 
 img ~ figcaption,
-video ~ figcaption {
+video ~ figcaption,
+div.a16-9 ~ figcaption {
   border-top: none;
   border-left: none;
   border-right: none;
+}
+
+h1 + figure > figcaption {
+  border: none;
+}
+
+figure > div.a16-9 {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+figure > div.a16-9 > img {
+  border: none;
 }
 
 .show {
