@@ -41,7 +41,7 @@ types like these.
 
 The orthogonal components `R`, `G`, and `B` can partition an `RGB` color. So,
 `S` defines an adequate partition to create a `Color`. On the other hand,
-`Color`, is a product type defining the set of all colors `(r, g, b)`
+`Color` is a product type defining the set of all colors `(r, g, b)`
 where $$r \in R, g \in G, B \in B$$.
 
 The theoretical concepts above can be efficiently implemented in a purely
