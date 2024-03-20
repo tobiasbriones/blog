@@ -21,16 +21,19 @@ enum class Cmd {
     Deploy,
     Serve,
     Create,
+    AddPr,
     Notice,
 }
 
 fun newOp(value: String): Either<None, Cmd> = try {
-    Cmd
-        .valueOf(value.replaceFirstChar {
-            if (it.isLowerCase())
-                it.titlecase(Locale.getDefault())
-            else it.toString()
-        })
+    value
+        .split("-")
+        .joinToString(separator = "") { str ->
+            str.replaceFirstChar { ch ->
+                ch.titlecase(Locale.getDefault())
+            }
+        }
+        .let { Cmd.valueOf(it) }
         .right()
 } catch (e: IllegalArgumentException) {
     Left(None)

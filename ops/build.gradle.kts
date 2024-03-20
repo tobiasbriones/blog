@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.8.21"
+    kotlin("plugin.serialization") version "1.9.23"
     application
     distribution
 }
@@ -14,10 +15,19 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-client-cio-jvm:2.3.9")
+    val ktorVersion = "2.3.9"
+
     implementation("io.arrow-kt:arrow-core:1.2.0")
     implementation("io.arrow-kt:arrow-fx-coroutines:1.2.0")
-    implementation("io.ktor:ktor-server-core:2.3.3")
-    implementation("io.ktor:ktor-server-netty:2.3.3")
+    implementation("io.ktor:ktor-server-core:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+    implementation("io.ktor:ktor-client-json:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.ktor:ktor-client-logging:$ktorVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
     implementation("org.slf4j:slf4j-simple:2.0.7")
     testImplementation(kotlin("test"))
 }
