@@ -4,6 +4,12 @@
 
 # Pi Day (2024/03/14)
 
+On Pi Day 2024, there's focus on rigorous project implementation, meaningfully
+remarking the number Pi (π) and the capital Pi (Π) symbol, which denotes the
+product operator. Dependent product types or Pi types are advanced
+formalizations defined under Π. Moreover, Π can also define π though an infinite
+Wallis product.
+
 ---
 
 The uppercase letter **Π (capital pi)** denotes the product operator in math.
