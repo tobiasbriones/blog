@@ -79,7 +79,7 @@ suspend fun fetchClosedPullRequests(
 }
 
 fun PullRequest.titleMd(citation: Int) =
-    "**${title}** | `${base.ref} <- ${head.ref}` PR [#$number]($html_url) [$citation]"
+    "**${title}** \\| `${base.ref} <- ${head.ref}` PR [#$number]($html_url) [$citation]"
 
 fun PullRequest.referenceLinkTitle() =
     "$title by ${user.login} · Pull Request #$number · ${head.repo.full_name}"
