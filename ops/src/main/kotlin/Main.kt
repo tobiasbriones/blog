@@ -96,6 +96,11 @@ fun execAddPr(
     }
 
     execCreate(root, entryName, tags)
+
+    if (Error.failed) {
+        return
+    }
+
     addPr(root, entryName, path, from)
 }
 
@@ -835,7 +840,7 @@ fun commitFromBuild(entry: Entry, config: BuildConfig) {
 }
 
 // Meant to be run immediately after "create"
-fun addPr(root: Path, entryName: String, url: String, from: Int) {
+fun addPr(root: Path, entryName: String, path: String, from: Int) {
     val entry = Entry(root)
         .loadEntries()
         .map { entries -> entries.firstOrNull { it.name() == entryName } }
@@ -848,41 +853,37 @@ fun addPr(root: Path, entryName: String, url: String, from: Int) {
         return
     }
 
-    val prs = runBlocking { fetchClosedPullRequests(url, from) }
+    val prs = runBlocking { fetchClosedPullRequests(path, from) }
         .mapLeft { "Status code ${it.value}" }
         .onLeft(handleError `$` "Fail to fetch GitHub API with status")
         .onRight { println("✔ Fetch GitHub PRs") }
         .getOrNull() ?: return
 
-    data class PrMd(val pr: String, val ref: String)
+    data class PrMd(val pr: String)
 
+    val to = from + prs.size - 1
     val prMd = prs
-        .mapIndexed { idx, pr ->
+        .sortedWith { pr1, pr2 -> pr1.number - pr2.number }
+        .map { pr ->
             PrMd(
                 pr = """
                     |---
                     |
-                    |${pr.titleMd(idx + 1)}
+                    |${pr.titleMd()}
+                    |
+                    |${pr.subtitleMd()}
                     |
                     |${pr.body?.wrapText()?.removeSuffix("\n") ?: ""}
                     """.trimMargin("|"),
-                ref = """
-                    |${pr.referenceItemMd(idx + 1)}
-                    """.trimMargin("|"),
             )
-        }.reduce { (pr1, ref1), (pr2, ref2) ->
+        }.reduce { (pr1), (pr2) ->
             PrMd(
                 pr = """
                 |${pr1}
                 |
                 |${pr2}
                 |
-            """.trimMargin("|"),
-                ref = """
-                    |${ref1}
-                    |
-                    |${ref2}
-                """.trimMargin("|")
+                """.trimMargin("|"),
             )
         }
 
@@ -890,10 +891,6 @@ fun addPr(root: Path, entryName: String, url: String, from: Int) {
         |
         |${prMd.pr}
         |---
-        |
-        |## References
-        |
-        |${prMd.ref}
         |
     """.trimMargin("|")
 
@@ -913,6 +910,8 @@ fun addPr(root: Path, entryName: String, url: String, from: Int) {
         .onLeft(handleError `$` "Failed to commit PR content to article")
         .onRight { println("✔ Commit PR content") }
         .getOrNull() ?: return
+
+    println("✔ Add GitHub PRs from #$from to #$to")
 }
 
 fun execNotice(root: Path) {

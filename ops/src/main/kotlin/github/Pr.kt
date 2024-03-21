@@ -10,6 +10,9 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 @Serializable
 data class Base(
@@ -29,7 +32,8 @@ data class Head(
 
 @Serializable
 data class User(
-    val login: String
+    val login: String,
+    val html_url: String,
 )
 
 @Serializable
@@ -78,13 +82,26 @@ suspend fun fetchClosedPullRequests(
     }
 }
 
-fun PullRequest.titleMd(citation: Int) =
-    "**${title}** \\| `${base.ref} <- ${head.ref}` PR [#$number]($html_url) [$citation]"
+fun PullRequest.titleMd() = "**${title}**"
 
-fun PullRequest.referenceLinkTitle() =
-    "$title by ${user.login} · Pull Request #$number · ${head.repo.full_name}"
+fun PullRequest.subtitleMd(): String {
+    val date = mergedShortDate()
+    val branch = "`${base.ref} <- ${head.ref}`"
+    val pr = "PR [#$number]($html_url)"
+    val user = "[${user.login}](${user.html_url})"
+    val content = "$date: $pr merged into $branch by $user"
+    return """
+        |$content
+        |{: .pr-subtitle }
+        """.trimMargin("|")
+}
 
-fun PullRequest.referenceItemMd(idx: Int) = """
-    |[$idx] [${referenceLinkTitle()}]($html_url).
-    |GitHub.
-""".trimMargin("|")
+fun PullRequest.mergedShortDate(): String? {
+    val formatter = DateTimeFormatter
+        .ofPattern("yyyy-MM-dd'T'HH:mm:ssX", Locale.ENGLISH)
+    val zonedDateTime = ZonedDateTime.parse(merged_at, formatter)
+
+    return zonedDateTime.format(
+        DateTimeFormatter.ofPattern("MMM d", Locale.ENGLISH)
+    )
+}
