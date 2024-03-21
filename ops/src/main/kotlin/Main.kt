@@ -862,7 +862,7 @@ fun addPr(root: Path, entryName: String, url: String, from: Int) {
                 pr = """
                     |---
                     |
-                    |**PR: ${pr.title}** [${idx + 1}]
+                    |**PR: ${pr.title}** `${pr.base.ref} <- ${pr.head.ref}` [${idx + 1}]
                     |
                     |${pr.body?.wrapText()?.removeSuffix("\n")}
                     """.trimMargin("|"),
