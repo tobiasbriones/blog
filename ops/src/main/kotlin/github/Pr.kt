@@ -78,10 +78,13 @@ suspend fun fetchClosedPullRequests(
     }
 }
 
+fun PullRequest.titleMd(citation: Int) =
+    "**${title}** | `${base.ref} <- ${head.ref}` PR [#$number]($html_url) [$citation]"
+
 fun PullRequest.referenceLinkTitle() =
     "$title by ${user.login} · Pull Request #$number · ${head.repo.full_name}"
 
-fun PullRequest.createReferenceItem(idx: Int) = """
+fun PullRequest.referenceItemMd(idx: Int) = """
     |[$idx] [${referenceLinkTitle()}]($html_url).
     |GitHub.
 """.trimMargin("|")

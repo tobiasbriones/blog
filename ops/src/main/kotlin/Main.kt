@@ -862,12 +862,12 @@ fun addPr(root: Path, entryName: String, url: String, from: Int) {
                 pr = """
                     |---
                     |
-                    |**PR: ${pr.title}** `${pr.base.ref} <- ${pr.head.ref}` [${idx + 1}]
+                    |${pr.titleMd(idx + 1)}
                     |
-                    |${pr.body?.wrapText()?.removeSuffix("\n")}
+                    |${pr.body?.wrapText()?.removeSuffix("\n") ?: ""}
                     """.trimMargin("|"),
                 ref = """
-                    |${pr.createReferenceItem(idx + 1)}
+                    |${pr.referenceItemMd(idx + 1)}
                     """.trimMargin("|"),
             )
         }.reduce { (pr1, ref1), (pr2, ref2) ->
