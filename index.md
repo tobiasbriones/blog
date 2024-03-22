@@ -11,6 +11,7 @@
 - [Pi Day (2023/03/14)](pi-day-2023-03-14)
 - [Pi Day (2024/03/14)](pi-day-2024-03-14)
 - [An Excited Time Drawing Mandala Fractals Today (2023-04-06)](an-excited-time-drawing-mandala-fractals-today-2023-04-06)
+- [Initializing Ops with a Cookie Banner \| MathSwe Com (2024/03/21)](initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21)
 - [Updating from Angular V15 to V17 \| 2DP Repsymo (2023/12/06)](updating-from-angular-v15-to-v17---2dp-repsymo-2023-12-06)
 - [Automating the Platform Operations and Beyond (2023/08/31)](automating-the-platform-operations-and-beyond-2023-08-31)
 - [Visualization Caption (2023/10/01)](visualization-caption-2023-10-01)
