@@ -119,6 +119,13 @@ This implementation:
 The remaining task is implementing this via SSR in the head tag (removing the
 react-ga lib).
 
+I had to test and reverse-engineer some libs like `@types/gtag.js`,
+and `react-ga4` various times 😣 to get to the correct implementation. The
+correct Google Analytics implementation was complicated and still has some
+non-functional requirements pending, like loading the script with SSR in the
+head (when Next.js is available for the app) instead of using the `ReactGA`
+lib.
+
 ![](images/gtag-assistance-test.png)
 
 I don't plan to use other modes than `analytics_storage`, but I configured all
