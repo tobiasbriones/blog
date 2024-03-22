@@ -152,4 +152,11 @@ button in the cookie banner, besides the existing "Accept All" CTA button.
 
 It improves some styles for better readability in the cookie banner.
 
+![](images/cookie-banner.png)
+
+The cookie banner component is done with these changes and complies with cookie
+laws —as you can see. The next additions are being oriented to the preference
+dialog (the expanded version) and the Rust microservice (in MathSwe Lambda) to
+store the consents (required to comply with cookie laws, too).
+
 ---
