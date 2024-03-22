@@ -119,6 +119,16 @@ This implementation:
 The remaining task is implementing this via SSR in the head tag (removing the
 react-ga lib).
 
+![](images/gtag-assistance-test.png)
+
+I don't plan to use other modes than `analytics_storage`, but I configured all
+of them according to the Google documentation and cookie categories, so they
+will scale trivially if ever needed. For example, if you only give
+`analytics` consent, then only the `analytics_storage` state will be `Granted`.
+
+The GA implementation was tested with the Google Tag Assistance tool, and worked
+correctly when the consent was updated from the banner in mathswe.com.
+
 ---
 
 **Fix build with missing dep @types/gtag.js**
