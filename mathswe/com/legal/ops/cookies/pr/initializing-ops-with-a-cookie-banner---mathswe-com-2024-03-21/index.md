@@ -4,9 +4,9 @@
 
 # Initializing Ops with a Cookie Banner | MathSwe Com (2024/03/21)
 
-Almost a month of development was applied to the new MathSwe website to open
-legal operations providing an international compliance of cookie laws to recent
-projects like Math Software. Results encompass a complete cookie banner, Google
+Almost a month of development was applied to the new MathSwe website (staging)
+to open legal operations providing international compliance with cookie laws to
+MathSwe websites/apps. Results encompass a complete cookie banner, Google
 Analytics 4 (with consent mode v2) implementation, ongoing redaction of the
 cookie privacy, and further compliance requirements.
 
