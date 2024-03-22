@@ -177,3 +177,40 @@ dialog (the expanded version) and the Rust microservice (in MathSwe Lambda) to
 store the consents (required to comply with cookie laws, too).
 
 ---
+
+The 11 PRs merged from Feb 5 to Mar 2 of 2024 addressed the initialization of
+the mathswe.com repository with a React app following the other recent
+developments of the math.software MVP. The purpose of initializing mathswe.com
+is to open the `legal/cookie-privacy` path and provide a branded cookie banner
+and preference system complying with international cookie law regulations.
+
+The cookie banner was iterated from a basic UI with initial options. Animations
+were implemented to show/hide it (that will standardize the UX/UI of other
+config components), persistence in cookies, and enhancements like customizing
+the underlying domain to let the user know where exactly their consent applies.
+
+Environment variables were enabled, so values like `VITE_DOMAIN_NAME`
+and `VITE_ANALYTICS_GTAG_ID` which open access to the staging environment
+at [staging.mathswe.com](https://staging.mathswe.com). Despite the rumor that
+cross-site cookies can only be applied from the APEX domain, I tried to set
+them (all domains and subdomains `.mathswe.com`) from the staging subdomain, and
+it worked for both staging and the APEX domain.
+
+The Google Consent mode v2 was implemented according to the docs and tested
+further with the Google Tag Assistance. So, GA is ready to run safely with the
+integration to the cookie banner preferences.
+
+The mathswe.com project initiated, and its legal domain is under development,
+complying with cookie regulations. Legal developments include a complete cookie
+banner aligned to current MathSwe UI/UX standards, Google Analytics 4 with
+Google Consent Mode v2 implementation, and redaction of the cookie privacy.
+Further, the staging platform for mathswe.com is available for testing before
+merging to `main` (prod).
+
+I have to say, **there are a bunch more of developments in `legal` that didn't
+merge to `dev` yet** (19 commits) from Feb 29.
+
+These developments will enable other recent projects like math.software MVP to
+resume operations, but still, there's much more burden to complete, like the
+cookie (expanded) preference, updating the cookie policy, and initialization of
+microservices with a database included.
