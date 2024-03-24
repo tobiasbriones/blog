@@ -120,3 +120,29 @@ smoothly finished with less technical updates and published at
 The command leaves everything committed, so you can directly focus on high-level
 content like the conclusion and abstract sections, thus removing most of the
 overhead for fast technical communication.
+
+## PR Article Operations
+
+PR articles are blog updates providing a sync with the technical results of a
+certain development period or sprint. They can replace unnecessary meetings and
+formalize the engineering work for future reference.
+
+PR articles have a high return on the investment from quality engineering works
+since they infer the development context already available that the developer
+addressed at its moment. In the domain-specific system, you must have a
+functional mindset to leverage such powerful inference capabilities. Commit and
+PR messages can be defined as "nano-articles" or functions for composition via
+SWAM ops automation.
+
+It's clear that order matters to avoid *work redundancy*; otherwise, you create
+a cycle. It's best to invest in well-done, shorter results, like nano-articles,
+to increase the tooling assistance via inference that will return the maximum
+value out of the essential components. I just described what I mean by "axioms
+of development" in Piaxid.
+
+The Add PR command, now included in SWAM ops, creates the given entry and
+fetches the information from the requested PRs on GitHub to enable a formal and
+efficient sync of technical results. The author should focus on completing the
+inferred article with higher-level details like screenshots, demos, the cover
+image (which the tool may also infer), and, most importantly, the conclusion and
+abstract.
