@@ -62,6 +62,20 @@ Therefore, *I'm automatically writing a blog when I commit or merge anything*,
 even when they're deep technical areas. That enables my communication skills to
 show and *prove* my work.
 
+One more essential aspect of this homogenous system, where everything is a
+function, is that **you do your work at *the right moment,* and it *immediately*
+becomes part of the system**. So, instead of waiting for a centralized "end of
+sprint" bureaucratic moment where, again, you have to load the overhead
+*you already did*, you adopt a progressive approach to decentralize the work so
+**you eliminate work redundancy**.
+
+For example, if you already explained a new feature in a PR with proper commits,
+you had the inertia of the underlying work at that very moment. Completed work
+must also be *immediately* available for the changelog, when versioning the
+repository and for blog updates, so clients or anyone involved gets efficient
+updates. You must not go back to that overhead again when you lose the inertia,
+so you must certainly not repeat what you already did.
+
 Connecting primitive work efficiently to the next abstraction level (e.g., from
 commits to PRs and then to blog updates) relativizes them, which results in a
 high ROI, provided the system keeps the functional principles. That is, if we
