@@ -29,3 +29,6 @@ for anyone.
 I have to say I've been devising the name `text` when I publish the tooling
 regarding "Markdown/DSL to Website," so it'll get deployed to the premium
 subdomain text.math.software.
+
+The constant implementations and innovations are getting MathSwe Text closer to
+production to keep enriching the quality math products portfolio.
