@@ -32,3 +32,39 @@ subdomain text.math.software.
 
 The constant implementations and innovations are getting MathSwe Text closer to
 production to keep enriching the quality math products portfolio.
+
+## Communication from Technical Development to Engineering Results
+
+I've ascertained how to communicate technical work, like commits, as a cohesive
+whole so engineering efforts fully scale from technical to product results. In
+this case, from GitHub to MSW Engineer blogs with concise updates.
+
+It's crucial to recall that in MathSwe, **everything is a function**. A
+paragraph, an image, a table, an article, **a commit or PR message**,
+engineering itself, etc., are all a function. So, this can be trivially composed
+to create the highest quality content via the DSL.
+
+For example, I can bring my technical work (from a development context on
+GitHub) to a high-level publication (in MSW Engineer with domain engineering
+context). Working with a formal DSL means **the system automatically understands
+the semantics to automate the workflow**.
+
+Therefore, **work is *continuous***. When I write good commit messages,
+high-level PRs containing those commits, and *semantic branches*[^1] I can scale
+that primitive/technical system to a greater cohesive whole with domain
+abstractions. The system is engineered to work for the domain.
+
+[^1]: Semantic branch names instead of banal ticket IDs, or others which are an
+    implementation detail, side effects, or workarounds
+
+Commit and PR messages are **nano-articles** or functions, like anything else.
+Therefore, *I'm automatically writing a blog when I commit or merge anything*,
+even when they're deep technical areas. That enables my communication skills to
+show and *prove* my work.
+
+Connecting primitive work efficiently to the next abstraction level (e.g., from
+commits to PRs and then to blog updates) relativizes them, which results in a
+high ROI, provided the system keeps the functional principles. That is, if we
+first invest in quality and concise work (e.g., good PRs, well-designed commits,
+etc.) and create relations among those functions, then we can get the most out
+of our work by the advanced inference capabilities of our system.
