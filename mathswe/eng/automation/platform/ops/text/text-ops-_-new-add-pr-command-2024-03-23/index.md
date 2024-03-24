@@ -76,6 +76,12 @@ repository and for blog updates, so clients or anyone involved gets efficient
 updates. You must not go back to that overhead again when you lose the inertia,
 so you must certainly not repeat what you already did.
 
+You also get burned out with the overhead of **creating a cycle when you return
+to work already done**. Suppose you don't focus on a functional mindset with a
+minimal immutable state and getting small parts properly done. In that case, you
+will mess with random side effects or workarounds that can only end up in
+centralized bureaucracy.
+
 Connecting primitive work efficiently to the next abstraction level (e.g., from
 commits to PRs and then to blog updates) relativizes them, which results in a
 high ROI, provided the system keeps the functional principles. That is, if we
