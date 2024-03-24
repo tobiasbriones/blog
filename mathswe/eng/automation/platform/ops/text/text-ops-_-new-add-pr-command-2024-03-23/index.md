@@ -68,3 +68,35 @@ high ROI, provided the system keeps the functional principles. That is, if we
 first invest in quality and concise work (e.g., good PRs, well-designed commits,
 etc.) and create relations among those functions, then we can get the most out
 of our work by the advanced inference capabilities of our system.
+
+## Add-PR Command
+
+It creates a new entry by executing the `create` command with the given
+arguments and then adds the requested GitHub pull requests as sections of a
+structureless article.
+
+Syntax: `ops add-pr { entry-id } { class_1,class_2,...,class_n } { path } { from-pr }`.
+
+Where:
+
+- `entry-id` and `class_n` are the same arguments of
+  [create](/automating-the-platform-operations-and-beyond-2023-08-31#create).
+- `path` is the repo's full name, like `tobiasbriones/blog`
+  (i.e., `{ user } / { repo }`).
+- `from-pr` is the first PR number to take (inclusive), and the program will
+  fetch the rest of the PRs until the last one. This option doesn't provide more
+  flexibility yet.
+
+*Example:*
+
+`ops add-pr initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21 mathswe,com,legal,ops,cookies,pr mathswe/mathswe.com 1`
+
+![](command-_-add-pr.png)
+
+The command generated [this article source](demo/demo.md), which was
+smoothly finished with less technical updates and published at
+[Initializing Ops with a Cookie Banner | MathSwe Com (2024/03/21)](/initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21).
+
+The command leaves everything committed, so you can directly focus on high-level
+content like the conclusion and abstract sections, thus removing most of the
+overhead for fast technical communication.
