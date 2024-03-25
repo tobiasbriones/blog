@@ -14,6 +14,7 @@
 - [Initializing Ops with a Cookie Banner \| MathSwe Com (2024/03/21)](initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21)
 - [Updating from Angular V15 to V17 \| 2DP Repsymo (2023/12/06)](updating-from-angular-v15-to-v17---2dp-repsymo-2023-12-06)
 - [Automating the Platform Operations and Beyond (2023/08/31)](automating-the-platform-operations-and-beyond-2023-08-31)
+- [Text Ops: New Add PR Command (2024/03/23)](text-ops-_-new-add-pr-command-2024-03-23)
 - [Visualization Caption (2023/10/01)](visualization-caption-2023-10-01)
 - [How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
 - [License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)](license-change-from-mit-to-bsd--3--clause-for-code-snippets-2023-04-13)
