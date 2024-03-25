@@ -32,9 +32,9 @@ I'm slowly removing). Although there'll be a priority (in a few months or so)
 for this project to officially standardize and publish it so it'll be available
 for anyone.
 
-I have to say I've been devising the name `text` when I publish the tooling
-regarding "Markdown/DSL to Website," so it'll get deployed to the premium
-subdomain text.math.software.
+I have to say I've been devising the name `text` when I publish the tooling I
+use to build the website article from a source like Markdown, so it'll get
+deployed to the premium subdomain text.math.software.
 
 The constant implementations and innovations are getting MathSwe Text closer to
 production to keep enriching the quality math products portfolio.
