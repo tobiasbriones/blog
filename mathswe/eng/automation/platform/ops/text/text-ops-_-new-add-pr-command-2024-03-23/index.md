@@ -77,10 +77,11 @@ sprint" bureaucratic moment where, again, you have to load the overhead
 
 For example, if you already explained a new feature in a PR with proper commits,
 you had the inertia of the underlying work at that very moment. Completed work
-must also be *immediately* available for the changelog, when versioning the
-repository and for blog updates, so clients or anyone involved gets efficient
-updates. You must not go back to that overhead again when you lose the inertia,
-so you must certainly not repeat what you already did.
+must also be *immediately* available for the changelog when versioning the
+repository and for blog updates so clients or anyone involved gets efficient
+updates. If the sync or release happens later, you must not go back to open up
+that overhead again and remember what you did when you lost the inertia, so you
+must certainly not repeat what you already did.
 
 You also get burned out with the overhead of **creating a cycle when you return
 to work already done**. Suppose you don't focus on a functional mindset with a
