@@ -36,6 +36,48 @@ It provides the API established in the `README.md` file in the root directory of
 the `cookie-consent` service. It is ready to support processing the consent
 records in production for storage from the cookie banners.
 
+The cookie consent microservice is available in production with its initial
+version `0.1.0`.
+
+![](images/cookie-consent-v0.1.0-deployment.png)
+
+Recall that cookies are going to be used minimally in MathSwe websites or web
+apps. Even though, formal redaction of a cookie policy and implementations of
+all these requirements, such as cookie banner and consent proof, are still
+mandatory to proceed.
+
+The service stores the proof of consent as per
+[its documentation](https://github.com/mathswe/legal/tree/0eabd7fed082fe59e325236ff338a5ca7ee7bc38/cookie-consent#cookie-consent-1),
+which considers the requirements established in
+[What information does Proof of Consent hold? \| CookieYes](https://www.cookieyes.com/documentation/proof-of-consent/)
+and [Storing consent records \| Finsweet Cookie Consent for WebFlow](https://finsweet.com/cookie-consent#store-consents).
+
+Regarding how long these records have to be stored, one educated value would be
+2 years since the consent cookie expires in 1 year (then the banner shows
+again). I still don't have a mechanism for eliminating old consents.
+
+With a simple `POST` request from the client with the user preference as its
+body, *the consent will be stored as legal proof*, thus **complying with the
+most advanced cookie law requirements** that most websites won't even care to
+implement.
+
+`Body Sample Required for Storing Consent Proof | Cookie Consent Preference`
+
+```json
+{
+    "essential": true,
+    "functional": true,
+    "analytics": true,
+    "targeting": true
+}
+```
+
+The server takes the other information from the HTTP request, so the client
+doesn't have to send anything else.
+
+Now, I can finish the cookie banner development on the React side, and comply
+with the international regulations about cookie usage.
+
 ---
 
 **Move cookie-consent to root dir**
