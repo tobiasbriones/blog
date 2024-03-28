@@ -8,14 +8,17 @@
 
 **Publish cookie-consent v0.1.0**
 
-Mar 28: PR [#1](https://github.com/mathswe/legal/pull/1) merged into `main <- cookie-consent` by [tobiasbriones](https://github.com/tobiasbriones)
+Mar 28: PR [#1](https://github.com/mathswe/legal/pull/1) merged
+into `main <- cookie-consent`
+by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 It creates and thoroughly implements the `cookie-consent` microservice that
 allows the storage of consent records.
 
 It implements the following general plan:
-- Create Rust `lib` project and WASM.
+
+- Create Rust `lib` project with WASM.
 - Initialize Cloudflare Worker.
 - Integrate Cloudflare KV.
 - Support staging environment.
@@ -37,7 +40,9 @@ records in production for storage from the cookie banners.
 
 **Move cookie-consent to root dir**
 
-Mar 28: PR [#2](https://github.com/mathswe/legal/pull/2) merged into `main <- cookie-consent` by [tobiasbriones](https://github.com/tobiasbriones)
+Mar 28: PR [#2](https://github.com/mathswe/legal/pull/2) merged
+into `main <- cookie-consent`
+by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 The repository was renamed from "lambda" to "legal" to include only first-class
@@ -48,7 +53,8 @@ legal microservices instead of all microservices.
 
 **Add README.md to root project**
 
-Mar 28: PR [#3](https://github.com/mathswe/legal/pull/3) merged into `main <- legal/docs` by [tobiasbriones](https://github.com/tobiasbriones)
+Mar 28: PR [#3](https://github.com/mathswe/legal/pull/3) merged
+into `main <- legal/docs` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 It adds an updated `README.md` to the project's root.
@@ -58,7 +64,8 @@ It adds an updated `README.md` to the project's root.
 
 **Update copyright header with new repo link**
 
-Mar 28: PR [#4](https://github.com/mathswe/legal/pull/4) merged into `main <- legal/legal` by [tobiasbriones](https://github.com/tobiasbriones)
+Mar 28: PR [#4](https://github.com/mathswe/legal/pull/4) merged
+into `main <- legal/legal` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 The repo changed from "mathswe/lambda" to "mathswe/legal."
