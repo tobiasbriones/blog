@@ -4,6 +4,10 @@
 
 # New Cookie Consent Microservice Ready | MathSwe Legal (2024/03/28)
 
+The new cookie consent service is finished in the brand-new legal repository of
+MathSwe. The service deployment to production will provide advanced compliance
+by storing consent proofs to support the front-end banner with user preferences.
+
 ---
 
 **Publish cookie-consent v0.1.0**
@@ -118,9 +122,9 @@ The `mathswe/legal` repository was initialized with the `cookie-consent`
 service, and it's meant to serve any legal responsibilities, such as privacy
 policies in the future.
 
-The repository has no license yet, so the code is proprietary. You can
-still read the code since the repo is public, but I'm not currently providing
-any license to the repo.
+The repository has no license yet, so the code is proprietary. You can still
+read the code since the repo is public, but I'm not currently providing any
+license to the repo.
 
 The cookie consent microservice version `0.1.0` is available in production to
 enable finishing the cookie banner on the front-end and complying with the most
