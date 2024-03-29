@@ -113,3 +113,15 @@ into `main <- legal/legal` by [tobiasbriones](https://github.com/tobiasbriones)
 The repo changed from "mathswe/lambda" to "mathswe/legal."
 
 ---
+
+The `mathswe/legal` repository was initialized with the `cookie-consent`
+service, and it's meant to serve any legal responsibilities, such as privacy
+policies in the future.
+
+The repository has no license yet, so the code is proprietary. You can
+still read the code since the repo is public, but I'm not currently providing
+any license to the repo.
+
+The cookie consent microservice version `0.1.0` is available in production to
+enable finishing the cookie banner on the front-end and complying with the most
+advanced requirements of cookie laws by storing consent record proofs.
