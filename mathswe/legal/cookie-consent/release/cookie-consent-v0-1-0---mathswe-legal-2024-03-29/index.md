@@ -2,4 +2,4 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Cookie Consent V0 1 0 | MathSwe Legal (2024/03/29)
+# Cookie Consent v0.1.0 | MathSwe Legal (2024/03/29)
