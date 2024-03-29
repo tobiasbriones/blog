@@ -101,3 +101,19 @@ The release and deployment of the Cookie Consent v0.1.0 service enable client
 cookie banners to finish most of the remaining compliance requirements after
 users consent to how the underlying website or web app  
 may use their cookie data.
+
+## References
+
+[1] [#11 \| Art. 4 GDPR – Definitions](https://gdpr-info.eu/art-4-gdpr/).
+(2018, March 29). General Data Protection Regulation (GDPR).
+
+[2] [#1 \| Art. 7 GDPR – Conditions for consent](https://gdpr-info.eu/art-7-gdpr/).
+(2018, March 28). General Data Protection Regulation (GDPR).
+
+[3] [#3 \| Art. 7 GDPR – Conditions for consent](https://gdpr-info.eu/art-7-gdpr/).
+(2018, March 28). General Data Protection Regulation (GDPR).
+
+[4] M. (2024, March 14).
+[What information does Proof of Consent hold? \| Proof of consent \| CookieYes](https://www.cookieyes.com/documentation/proof-of-consent/).
+
+[5] [For technical people \| For super cookie consent GDPR compliance \| Storing consent records \| Finsweet cookie consent for webflow](https://finsweet.com/cookie-consent).
