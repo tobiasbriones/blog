@@ -62,8 +62,7 @@ again). I still don't have a mechanism for eliminating old consents.
 
 With a simple `POST` request from the client with the user preference as its
 body, *the consent will be stored as legal proof*, thus **complying with the
-most advanced cookie law requirements** that most websites won't even care to
-implement.
+most advanced cookie law requirements**, which many websites overlook.
 
 `Body Sample Required for Storing Consent Proof | Cookie Consent Preference`
 
