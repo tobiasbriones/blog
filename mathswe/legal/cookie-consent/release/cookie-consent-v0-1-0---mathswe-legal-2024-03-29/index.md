@@ -99,8 +99,8 @@ has further details to integrate it with a client.
 
 The release and deployment of the Cookie Consent v0.1.0 service enable client
 cookie banners to finish most of the remaining compliance requirements after
-users consent to how the underlying website or web app  
-may use their cookie data.
+users consent to how the underlying website or web app may use their cookie
+data.
 
 ## References
 
