@@ -102,6 +102,13 @@ cookie banners to finish most of the remaining compliance requirements after
 users consent to how the underlying website or web app may use their cookie
 data.
 
+## Complying with the GDPR
+
+Complying with the **General Data Protection Regulation (GDPR)** is often an
+advanced requirement to allow business operations in some EU countries. The work
+of the new Cookie Consent service helps with the advanced requirement of consent
+demonstration.
+
 ## References
 
 [1] [#11 \| Art. 4 GDPR – Definitions](https://gdpr-info.eu/art-4-gdpr/).
