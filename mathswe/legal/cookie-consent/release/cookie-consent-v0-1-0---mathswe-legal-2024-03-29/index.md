@@ -120,7 +120,16 @@ demonstration.
 [3] [#3 \| Art. 7 GDPR – Conditions for consent](https://gdpr-info.eu/art-7-gdpr/).
 (2018, March 28). General Data Protection Regulation (GDPR).
 
-[4] M. (2024, March 14).
-[What information does Proof of Consent hold? \| Proof of consent \| CookieYes](https://www.cookieyes.com/documentation/proof-of-consent/).
+[4] Wolford, B. (2023, September 14).
+[What is GDPR, the EU’s new data protection law?](https://gdpr.eu/what-is-gdpr/)
+GDPR.eu.
 
-[5] [For technical people \| For super cookie consent GDPR compliance \| Storing consent records \| Finsweet cookie consent for webflow](https://finsweet.com/cookie-consent).
+[5] M. (2024, March 14).
+[What information does Proof of Consent hold? \| Proof of consent](https://www.cookieyes.com/documentation/proof-of-consent/).
+CookieYes.
+
+[6] M. (2022, February 8).
+[What is IP Anonymizer? \| Is Google Analytics GDPR compliant? [Checklist for compliance]](https://www.cookieyes.com/blog/google-analytics-gdpr/).
+CookieYes.
+
+[7] [For technical people \| For super cookie consent GDPR compliance \| Storing consent records \| Finsweet cookie consent for webflow](https://finsweet.com/cookie-consent).
