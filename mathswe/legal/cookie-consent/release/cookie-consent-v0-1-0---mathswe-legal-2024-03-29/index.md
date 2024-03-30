@@ -109,6 +109,52 @@ advanced requirement to allow business operations in some EU countries. The work
 of the new Cookie Consent service helps with the advanced requirement of consent
 demonstration.
 
+### Consent Definition and Implementations
+
+User consent is necessary to process their personal data. The client
+applications must request consent transparently and allow users to update
+consent preferences at any time.
+
+The GDPR defines **consent** as follows:
+
+> ‘consent’ of the data subject means any freely given, specific, informed and
+> unambiguous indication of the data subject’s wishes by which he or she, by a
+> statement or by a clear affirmative action, signifies agreement to the
+> processing of personal data relating to him or her;
+>
+> Source: #11 \| Art. 4 GDPR – Definitions [1]
+
+Moreover, the GDPR is an upper boundary to take as a reference, as said by
+GDPR.eu:
+
+> The General Data Protection Regulation (GDPR) is the toughest privacy and
+> security law in the world. Though it was drafted and passed by the European
+> Union (EU), it imposes obligations onto organizations anywhere, so long as
+> they target or collect data related to people in the EU.
+>
+> Source: What is GDPR, the EU’s new data protection law? \| GDPR.eu [4]
+
+These definitions are general for legally processing personal data; they're not
+limited to cookie usage. So, the process applied to the Cookie Consent
+microservice and the cookie banner has *started building a framework for further
+consent requirements in MathSwe*.
+
+For example, if you want users to leave their email, which is personal data, you
+can update them with a newsletter. So, in other cases besides cookies, I can
+leverage the experience and standards of the cookie legal implementations
+developed so far to comply more easily with more kinds of data protection
+regulations in the future.
+
+As always, MathSwe supports first-class open-source standards with thorough
+transparency, and the current cookie legal implementations are one more proof of
+that.
+
+The GDPR definitions can be leveraged as raw legal facts to keep implementing
+the most robust compliance in the future. Moreover, the existing progress with
+the Cookie Consent service, the coming front-end details left to finish, and the
+coming redaction of the cookie policy will act as a powerful framework to
+maintain a robust legal basis in MathSwe.
+
 ## References
 
 [1] [#11 \| Art. 4 GDPR – Definitions](https://gdpr-info.eu/art-4-gdpr/).
