@@ -86,9 +86,14 @@ pub struct Geolocation {
 pub struct AnonymousIpv4(String);
 ```
 
-The client must store that response, probably in the cookies itself, to provide
-the user with the ID generated for the applying consent and the updated cookie
-banner preferences.
+The client must store at least the essential parts of that response, probably in
+the cookies itself, to provide the user with the ID generated for the effective
+consent and the updated cookie banner preferences.
+
+Essential response data is **the `id: String`, `pref: CookieConsentPref`,
+and `created_at: DateTime<Utc>`** fields. The ID is the key to claiming a
+consent record. Recall that anyone who enters a website can give consent without
+any login, so the consent ID identifies *who gave consent*.
 
 The current production deployment is available at
 `https://mathswe-cookie-consent.tobiasbriones-dev.workers.dev`, where it'll
