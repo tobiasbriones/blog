@@ -341,6 +341,41 @@ Therefore, the MathSwe Cookie Consent `v0.1.0` service, compared to dedicated
 cookie compliance providers, adheres to robust standards regarding cookie legal
 requirements for advanced and secure compliance.
 
+## Initial Release of the MathSwe Cookie Consent Service
+
+MathSwe is thoroughly developing cookie compliance to support using cookie
+technology in their websites and web apps when necessary. Even though MathSwe
+plans cookie usage to be minimal, it's strategic to implement advanced
+compliance with the most demanding regulations like the GDPR to be future-proof
+and scale operations smoothly.
+
+MathSwe will keep demonstrating rigor and transparency, not only for
+mathematical software itself but for anything relating to business and legal
+operations.
+
+The Cookie Consent microservice is available, documented, and validated against
+remarkable cookie compliance providers like CookieYes. To enhance its informed
+designs, major sources like the GDPR itself were also reviewed.
+
+There are some minor improvements spotted while reviewing this version to
+consider for the next Cookie Consent release to keep providing a quality service
+with rigor.
+
+The Cookie Consent service belongs to the `mathswe/legal` repository, which will
+contain all the MathSwe legal developments. Therefore, the cookie and privacy
+policies will also be redacted and served from this legal space.
+
+The purpose of the Cookie Consent service is to apply user consent from allowed
+MathSwe origins so it can store consent records. Consent records or proofs serve
+as legal documents that can help demonstrate the process of obtaining user
+consent.
+
+The ongoing cookie banner development can progress to finish it now that the
+server side is available for MathSwe origins, such as mathswe.com,
+math.software, and mathsoftware.engineer. The coming front-end integration to
+the Cookie Consent service will accelerate the last developments to finish
+implementing the cookie compliance process.
+
 ## References
 
 [1] [#11 \| Art. 4 GDPR – Definitions](https://gdpr-info.eu/art-4-gdpr/).
