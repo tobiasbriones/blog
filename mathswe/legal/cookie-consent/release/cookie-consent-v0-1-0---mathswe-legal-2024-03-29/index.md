@@ -114,6 +114,9 @@ The current production deployment is available at
 `https://mathswe-cookie-consent.tobiasbriones-dev.workers.dev`, where it'll
 receive allowed MathSwe client requests via the method `POST`.
 
+The server will reject any requests from other domains (including Postman tests)
+with a `Forbidden 403` status.
+
 The [Cookie Consent v0.1.0 documentation](https://github.com/mathswe/legal/tree/v0.1.0/cookie-consent#cookie-consent-1)
 has further details to integrate it with a client.
 
