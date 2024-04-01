@@ -259,6 +259,34 @@ consent, but it also must be minimized to avoid collecting unnecessary data.
 It's then crucial to verify the Cookie Consent design on the details of the
 information it collects.
 
+### References on Cookie Compliance Services
+
+I took references from companies like CookieYes and others that provide
+dedicated support for cookie compliance so I could make appropriate design
+decisions.
+
+First, we have CookieYes:
+
+> CookieYes is an all-in-one cookie consent management platform for businesses.
+> We empower millions of websites around the world to comply with data privacy
+> laws with our dynamic products and outstanding support.
+>
+> Source: About CookieYes \| CookieYes [8] (under fair use)
+
+We also have Finsweet Cookie Consent:
+
+> Incredibly powerful cookie consent plugin built specifically for Webflow
+>
+> Create a custom cookie consent UI that complies with GDPR law
+>
+> Source: Finsweet cookie consent for webflow [9] (under fair use)
+
+I'm taking many other references under the hood, but the above are enough for
+this validation.
+
+Now, I can validate the records applied by the Cookie Consent `v0.1.0`
+against the documentation of the mentioned sources.
+
 ## References
 
 [1] [#11 \| Art. 4 GDPR – Definitions](https://gdpr-info.eu/art-4-gdpr/).
