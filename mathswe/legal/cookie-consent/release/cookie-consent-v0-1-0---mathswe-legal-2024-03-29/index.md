@@ -59,6 +59,9 @@ pub struct CookieConsentValue {
 }
 ```
 
+The `id` field is a unique `String` value that identifies a cookie consent
+record.
+
 The other specific values correspond to:
 
 `Specific Response Values`
