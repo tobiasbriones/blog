@@ -287,6 +287,60 @@ this validation.
 Now, I can validate the records applied by the Cookie Consent `v0.1.0`
 against the documentation of the mentioned sources.
 
+### Validating the Data Stored in Consent Records
+
+The Cookie Consent `v0.1.0` service stores
+[the `CookieConsent` record](#requesting-a-consent) as compliance proof to
+show (if asked) whether there was user consent at a particular moment with other
+details that enrich the record with accurate information.
+
+The following table compares the information CookieYes stores as consent
+proof [5] with the MathSwe Cookie Consent `v0.1.0` service implementation.
+
+| CookieYes                    | MathSwe Cookie Consent v0.1.0                                                                                                                                      |
+|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Consented domain             | It stores the `Domain` where the request <br/>comes from (MathSwe origins only). Consent is valid for all subdomains, explicitly stated in the cookie banner side. |
+| Consent date                 | It stores the `created_at` field with the UTC date and time when the service applies the consent.                                                                  |
+| Consent ID                   | It stores the `id` field, which is a unique `String` securely generated for each consent request.                                                                  |
+| Location                     | It stores the `Geolocation` of the client request.                                                                                                                 |
+| Anonymized IP address        | It implements and stores the `AnonymousIpv4` with last-digit anonymization. Handling the full IP is avoided in the process as much as possible.                    |
+| Consent status               | It can be inferred with the "category-wise status."                                                                                                                |
+| Category-wise consent status | It stores the `CookieConsentPref` with consent by cookie categories. It does not collect granular consent by individual cookie though (probably unnecessary).      |
+
+Several cookie compliance sources define the Anonymized IP address as:
+
+> IP anonymizer is a tool or feature to anonymize IP addresses, i.e. to make
+> them unidentifiable to protect user privacy. It usually sets the last octet of
+> IP address to zero. E.g. 92.168.12.144 will be set to 92.168.12.0.
+>
+> Source: What is IP Anonymizer? \| CookieYes [6] (under fair use)
+
+> The user's IP with the last digit replaced with a 0 to maintain anonymity.
+>
+> Source: For super cookie consent GDPR compliance \| Finsweet cookie consent
+> for webflow [7] (under fair use)
+
+Therefore, the Cookie Consent `v0.1.0` implementation of `AnonymousIpv4` is
+correct for creating the consent records.
+
+In addition, according to Finsweet, you should also store the browser user agent
+and banner text [7]. The MathSwe service stores the `user_agent` value, and
+regarding "banner text" or "information provided at the consent moment,"
+that information can be inferred, [as explained above](#proof-of-consent).
+
+Minor improvements like granular cookie-wise consent are neither a priority nor
+seem important. If you notice, most websites don't allow you to opt-in cookie by
+cookie, and *no user is losing time doing that anyway*. The existing
+category-wise consent covers the needs well since MathSwe doesn't plan to use
+cookies heavily anyway.
+
+Some improvements can be addressed later, like data minimization in the
+geolocation stored.
+
+Therefore, the MathSwe Cookie Consent `v0.1.0` service, compared to dedicated
+cookie compliance providers, adheres to robust standards regarding cookie legal
+requirements for advanced and secure compliance.
+
 ## References
 
 [1] [#11 \| Art. 4 GDPR – Definitions](https://gdpr-info.eu/art-4-gdpr/).
