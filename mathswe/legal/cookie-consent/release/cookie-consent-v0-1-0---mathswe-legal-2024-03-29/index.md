@@ -274,4 +274,4 @@ CookieYes.
 [What is IP Anonymizer? \| Is Google Analytics GDPR compliant? [Checklist for compliance]](https://www.cookieyes.com/blog/google-analytics-gdpr/).
 CookieYes.
 
-[7] [For technical people \| For super cookie consent GDPR compliance \| Storing consent records \| Finsweet cookie consent for webflow](https://finsweet.com/cookie-consent).
+[7] [For technical people \| For super cookie consent GDPR compliance \| Storing consent records \| Finsweet cookie consent for webflow](https://finsweet.com/cookie-consent#store-consents).
