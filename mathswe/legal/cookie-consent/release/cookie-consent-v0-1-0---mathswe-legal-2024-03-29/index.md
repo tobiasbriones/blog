@@ -169,9 +169,9 @@ leverage the experience and standards of the cookie legal implementations
 developed so far to comply more easily with more kinds of data protection
 regulations in the future.
 
-As always, MathSwe supports first-class open-source standards with thorough
-transparency, and the current cookie legal implementations are one more proof of
-that.
+As always (while open-source is feasible), MathSwe supports first-class
+open-source standards with thorough transparency, and the current cookie legal
+implementations are one more proof of that.
 
 The GDPR definitions can be leveraged as raw legal facts to keep implementing
 the most robust compliance in the future. Moreover, the existing progress with
