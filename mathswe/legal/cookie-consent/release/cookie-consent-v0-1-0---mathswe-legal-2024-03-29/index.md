@@ -86,6 +86,13 @@ pub struct Geolocation {
 pub struct AnonymousIpv4(String);
 ```
 
+Regarding the `Geolocation` type, I've been reviewing it and found many
+unnecessary details that I will remove for `v0.2.0`. That is because I modeled
+all the geolocation data Cloudflare provides in an HTTP request in case "it's
+needed," but it includes many nonsensical fields to remove, and many seem to
+be `null` anyway. Therefore, the next release will apply data minimization to
+this geolocation information.
+
 The client must store at least the essential parts of that response, probably in
 the cookies itself, to provide the user with the ID generated for the effective
 consent and the updated cookie banner preferences.
@@ -203,7 +210,8 @@ Demonstrating consent records requires complete information. It also requires
 data minimization to avoid collecting more than needed. In that regard, you can
 check [the `CookieConsent` response](#requesting-a-consent) to see how
 accurately data is stored but minimized, like the `AnnonymousIpv4` that avoids
-storing the full IP address while still being serviceable.
+storing the full IP address while still serviceable. As said, the next release
+effort will also apply data minimization to the `Geolocation` type.
 
 One more challenge is to keep the reference of the information provided to the
 user at that moment, that is, the cookie banner info and the cookie and privacy
