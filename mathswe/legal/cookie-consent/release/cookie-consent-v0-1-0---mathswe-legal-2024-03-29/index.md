@@ -142,7 +142,7 @@ The GDPR defines **consent** as follows:
 > statement or by a clear affirmative action, signifies agreement to the
 > processing of personal data relating to him or her;
 >
-> Source: #11 \| Art. 4 GDPR – Definitions [1]
+> Source: #11 \| Art. 4 GDPR – Definitions [1] (under fair use)
 
 Moreover, the GDPR is an upper boundary to take as a reference, as said by
 GDPR.eu:
@@ -152,7 +152,8 @@ GDPR.eu:
 > Union (EU), it imposes obligations onto organizations anywhere, so long as
 > they target or collect data related to people in the EU.
 >
-> Source: What is GDPR, the EU’s new data protection law? \| GDPR.eu [4]
+> Source: What is GDPR, the EU’s new data protection law? \| GDPR.eu [4] (under
+> fair use)
 
 These definitions are general for legally processing personal data; they're not
 limited to cookie usage. So, the process applied to the Cookie Consent
@@ -184,7 +185,7 @@ records as proof demonstrating you're requesting proper users' consent.
 > demonstrate that the data subject has consented to processing of his or her
 > personal data.
 >
-> Source: #1 \| Art. 7 GDPR – Conditions for consent [2]
+> Source: #1 \| Art. 7 GDPR – Conditions for consent [2] (under fair use)
 
 The Cookie Consent service will receive requests from MathSwe websites and web
 apps to process and store the famous **proof of consent** to demonstrate user
@@ -195,7 +196,7 @@ Users can also update their consent at any time.
 > The data subject shall have the right to withdraw his or her consent at any
 > time.
 >
-> Source: #3 \| Art. 7 GDPR – Conditions for consent [3]
+> Source: #3 \| Art. 7 GDPR – Conditions for consent [3] (under fair use)
 
 The client app allows the user to set their preferences to update their
 consent [^1], so it will emit a new consent through the microservice, and the
@@ -250,6 +251,13 @@ demonstrate user preferences with rich proofs that can determine any user
 consent. Its functionality gets extended by other tools like the banner and more
 advanced tools that MathSwe can create in the future to keep providing the
 service with rigor.
+
+## Validating the Design of Consent Records
+
+Website operators must store complete and accurate information to prove user
+consent, but it also must be minimized to avoid collecting unnecessary data.
+It's then crucial to verify the Cookie Consent design on the details of the
+information it collects.
 
 ## References
 
