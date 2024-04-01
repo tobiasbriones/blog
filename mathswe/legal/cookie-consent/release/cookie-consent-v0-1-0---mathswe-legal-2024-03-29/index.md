@@ -93,6 +93,11 @@ needed," but it includes many nonsensical fields to remove, and many seem to
 be `null` anyway. Therefore, the next release will apply data minimization to
 this geolocation information.
 
+Regarding the `AnonymousIpv4` type, it applies data minimization by converting
+the user IP into the last-digit anonymous IP. The technique makes the last IP
+octet zero to minimize storing the full IP address, for example, it
+turns `xxx.yyy.zzz.www` to `xxx.yyy.zzz.0`.
+
 The client must store at least the essential parts of that response, probably in
 the cookies itself, to provide the user with the ID generated for the effective
 consent and the updated cookie banner preferences.
