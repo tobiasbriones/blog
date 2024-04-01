@@ -155,6 +155,81 @@ the Cookie Consent service, the coming front-end details left to finish, and the
 coming redaction of the cookie policy will act as a powerful framework to
 maintain a robust legal basis in MathSwe.
 
+### Proof of Consent
+
+Advanced legal requirements in some EU countries encompass storing consent
+records as proof demonstrating you're requesting proper users' consent.
+
+> Where processing is based on consent, the controller shall be able to
+> demonstrate that the data subject has consented to processing of his or her
+> personal data.
+>
+> Source: #1 \| Art. 7 GDPR – Conditions for consent [2]
+
+The Cookie Consent service will receive requests from MathSwe websites and web
+apps to process and store the famous **proof of consent** to demonstrate user
+consent on cookie preferences.
+
+Users can also update their consent at any time.
+
+> The data subject shall have the right to withdraw his or her consent at any
+> time.
+>
+> Source: #3 \| Art. 7 GDPR – Conditions for consent [3]
+
+The client app allows the user to set their preferences to update their
+consent [^1], so it will emit a new consent through the microservice, and the
+client app will overwrite the old consent.
+
+[^1]: Via the footer's "Cookie Preference" button
+
+Notice that the service gives a unique ID to each consent.
+
+Consents can come from any user, like anonymous users without a personal
+account. So, the consent ID defines *who gave it*. Therefore, you can claim the
+consent record with the provided ID stored in the client app, so it is key[^2]
+*to show this ID in the cookie banner* when consent is effective for that
+client.
+
+[^2]: Pun intended since the consent ID is *the key* to the consent value in the
+    KV (Key Value) database
+
+Demonstrating consent records requires complete information. It also requires
+data minimization to avoid collecting more than needed. In that regard, you can
+check [the `CookieConsent` response](#requesting-a-consent) to see how
+accurately data is stored but minimized, like the `AnnonymousIpv4` that avoids
+storing the full IP address while still being serviceable.
+
+One more challenge is to keep the reference of the information provided to the
+user at that moment, that is, the cookie banner info and the cookie and privacy
+policies. The Cookie Consent service doesn't store this boilerplate but can be
+inferred thanks to the `mathswe/legal` repository, which will contain the policy
+redactions versioned with Git.
+
+The release celebrated in this article is a clear example of how MathSwe
+open-source standards are rigorous and transparent. Tools can use information,
+like repository tags, where microservices are versioned, to infer the privacy
+and cookie policies at a given time. The process is then cohesive[^3]
+and efficient[^4].
+
+[^3]: The repository `legal` is only for legal microservices
+
+[^4]: It's neither necessary nor wanted to store redundant data to comply;
+    tracking the version of the privacy/cookie policies should work well, so the
+    system is efficient without storing any massive boilerplate
+
+Regarding "Storing consent records," Finsweet says, "Most websites do not have
+this level of compliance. However, storing consent records is mandatory for some
+countries under GDPR." [7]. Therefore, that's what I mention by
+**advanced compliance**, and this is another point to celebrate in this release
+🎉.
+
+The Cookie Consent service does its best to store cookie consent records to
+demonstrate user preferences with rich proofs that can determine any user
+consent. Its functionality gets extended by other tools like the banner and more
+advanced tools that MathSwe can create in the future to keep providing the
+service with rigor.
+
 ## References
 
 [1] [#11 \| Art. 4 GDPR – Definitions](https://gdpr-info.eu/art-4-gdpr/).
