@@ -359,9 +359,9 @@ MathSwe will keep demonstrating rigor and transparency, not only for
 mathematical software itself but for anything relating to business and legal
 operations.
 
-The Cookie Consent microservice is available, documented, and validated against
-remarkable cookie compliance providers like CookieYes. To enhance its informed
-designs, major sources like the GDPR itself were also reviewed.
+The Cookie Consent `v0.1.0` microservice is available, documented, and validated
+against remarkable cookie compliance providers like CookieYes. To enhance its
+informed designs, major sources like the GDPR itself were also reviewed.
 
 There are some minor improvements spotted while reviewing this version to
 consider for the next Cookie Consent release to keep providing a quality service
