@@ -265,7 +265,7 @@ consent, but it also must be minimized to avoid collecting unnecessary data.
 It's then crucial to verify the Cookie Consent design on the details of the
 information it collects.
 
-### References on Cookie Compliance Services
+### References on Cookie Compliance Providers
 
 I took references from companies like CookieYes and others that provide
 dedicated support for cookie compliance so I could make appropriate design
