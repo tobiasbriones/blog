@@ -4,6 +4,12 @@
 
 # Cookie Consent v0.1.0 | MathSwe Legal (2024/03/29)
 
+The Cookie Consent service enables advanced cookie compliance to MathSwe
+websites and web apps. Although cookie usage will be minimal, the study and
+validation of its design is crucial to comply with the most demanding
+regulations like the GDPR. Its initial release provides the endpoint for the
+cookie banners to finish the compliance process by storing consent proofs.
+
 ## New Cookie Consent Microservice
 
 The new Cookie Consent service was delivered as per the
