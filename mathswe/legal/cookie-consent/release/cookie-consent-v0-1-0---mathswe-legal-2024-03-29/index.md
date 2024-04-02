@@ -16,6 +16,9 @@ The new Cookie Consent service was delivered as per the
 [New Cookie Consent Microservice Ready | MathSwe Legal (2024/03/28)](/new-cookie-consent-microservice-ready---mathswe-legal-2024-03-28)
 development, reaching its `v0.1.0` release.
 
+The release is available at GitHub
+[Cookie Consent v0.1.0: Implements a new service for storing cookie consent proofs](https://github.com/mathswe/legal/releases/tag/v0.1.0).
+
 ## Requesting a Consent
 
 Allowed MathSwe website and web apps can now send cookie consent requests for
