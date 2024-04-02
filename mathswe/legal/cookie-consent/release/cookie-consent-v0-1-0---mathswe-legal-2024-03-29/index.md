@@ -174,10 +174,13 @@ open-source standards with thorough transparency, and the current cookie legal
 implementations are one more proof of that.
 
 The GDPR definitions can be leveraged as raw legal facts to keep implementing
-the most robust compliance in the future. Moreover, the existing progress with
-the Cookie Consent service, the coming front-end details left to finish, and the
-coming redaction of the cookie policy will act as a powerful framework to
-maintain a robust legal basis in MathSwe.
+robust compliance in the future. It's also crucial to monitor and adapt to
+evolving regulations and interpretations to maintain compliance effectively.
+
+The study and implementation of the Cookie Consent service, the coming front-end
+details left to finish, and the coming redaction of the cookie policy are taking
+place. All of them will act as a powerful framework to maintain a robust legal
+basis in MathSwe in the future.
 
 ### Proof of Consent
 
