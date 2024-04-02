@@ -290,7 +290,7 @@ We also have Finsweet Cookie Consent:
 I'm taking many other references under the hood, but the above are enough for
 this validation.
 
-Now, I can validate the records applied by the Cookie Consent `v0.1.0`
+Now, I can validate the records applied by the MathSwe Cookie Consent `v0.1.0`
 against the documentation of the mentioned sources.
 
 ### Validating the Data Stored in Consent Records
