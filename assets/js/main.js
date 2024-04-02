@@ -337,6 +337,10 @@ function onOpenCodeSnippetLink(button) {
 }
 
 function updateFilePath() {
+  if (!pathHasMultipleLevels()) {
+    return;
+  }
+  
   const pageTitle = document.querySelector('h1').textContent;
 
   // It's a file like DataTest.java
@@ -350,6 +354,13 @@ function updateFilePath() {
 
     history.replaceState(null, null, newPath);
   }
+}
+
+function pathHasMultipleLevels() {
+  const path = window.location.pathname;
+  let segments = path.split("/");
+  segments = segments.filter(segment => segment !== "");
+  return segments.length > 1;
 }
 
 function selectHeadings() {
