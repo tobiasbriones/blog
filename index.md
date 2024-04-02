@@ -22,6 +22,7 @@
 - [New Code Snippet Feature (2023/10/11)](new-code-snippet-feature-2023-10-11)
 - [Cleaning up Details (2023/10/06)](cleaning-up-details-2023-10-06)
 - [New Cookie Consent Microservice Ready \| MathSwe Legal (2024/03/28)](new-cookie-consent-microservice-ready---mathswe-legal-2024-03-28)
+- [Cookie Consent v0.1.0 \| MathSwe Legal (2024/03/29)](cookie-consent-v0-1-0---mathswe-legal-2024-03-29)
 - [Initializing the New Math Software MVP App (2024/01/30)](initializing-the-new-msw-mvp-app-2024-01-30)
 - [Incremental Deployments and Researching Cookie Laws (2024/02/09)](incremental-deployments-and-researching-cookie-laws-2024-02-09)
 - [Initializing Operations \| Math Software MVP App (2024/02/01)](initializing-operations---msw-mvp-app-2024-02-01)
