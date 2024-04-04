@@ -38,6 +38,10 @@ cookie information in a responsive table:
   provider can be first class, like *mathswe.com*.
 - **Retention:** Retention period or duration of the cookie.
 
+Users can open the **Cookie Customization** pane
+via [the Cookie Banner](/initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21),
+from its "Customize" button.
+
 The table with detailed cookie information is rendered such that you can read it
 vertically from top to bottom. This way, you read the items in key-value pairs.
 It also has a maximum height to avoid losing the context.
