@@ -4,6 +4,11 @@
 
 # New Cookie Customization Pane | MathSwe Com (2024/04/03)
 
+The existing Cookie Banner shows users brief information and a request form with
+cookie categories to obtain consent. This PR integrates the Cookie Customization
+pane with granular information and advanced options, expanding the banner to
+allow users a complete experience in the consent process.
+
 ---
 
 **Implement component CookieCustomization with advanced options**
