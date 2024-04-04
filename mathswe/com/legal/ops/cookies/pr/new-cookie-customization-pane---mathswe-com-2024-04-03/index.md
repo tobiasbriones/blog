@@ -38,28 +38,27 @@ cookie information in a responsive table:
   provider can be first class, like *mathswe.com*.
 - **Retention:** Retention period or duration of the cookie.
 
-The preference pane is shown to the right space on desktop size, as per MathSwe
-standard (design from left to right).
-
-Since the right space is always small, the table styles are mobile. The table is
-rendered such that you can read it vertically from top to bottom. This way, you
-read the items in key-value pairs. It also has a maximum height to avoid losing
-the context.
-
-![](images/cookie-customization-desktop-1.png)
-
-![](images/cookie-customization-desktop-2.png)
-
-When the desktop layout is unavailable but the screen size is not mobile, the
-table has the chance to render normally in four columns.
-
-![](images/cookie-customization-medium.png)
-
-The design is also adapted for mobile.
+The table is rendered such that you can read it vertically from top to bottom.
+This way, you read the items in key-value pairs. It also has a maximum height to
+avoid losing the context.
 
 ![](images/cookie-customization-mobile-1.png)
 
 ![](images/cookie-customization-mobile-2.png)
+
+When the screen size is neither mobile nor desktop, the table has the chance to
+render normally in four columns.
+
+![](images/cookie-customization-medium.png)
+
+The preference pane is shown to the right space on desktop size, as per MathSwe
+standard (design from left to right).
+
+Since the right space is always small, the table styles are mobile-like.
+
+![](images/cookie-customization-desktop-1.png)
+
+![](images/cookie-customization-desktop-2.png)
 
 Finally, I implemented a button to delete all the cookies if the user wants.
 It's not quite necessary, but it struck me as an interesting extracurricular
