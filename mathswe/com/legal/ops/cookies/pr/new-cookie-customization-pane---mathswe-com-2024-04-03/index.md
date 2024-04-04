@@ -78,3 +78,20 @@ The new component `CookieCustomization` expands the functionality of the
 `CookieBanner` with more detailed information and features.
 
 ---
+
+The Cookie Customization pane is a big step forward to finishing complying with
+cookie laws on the front-end side. It expands the existing Cookie Banner so
+users can understand details about the cookies the underlying site uses in a
+smooth experience.
+
+Users can select cookies per purpose (i.e., essential, functional, analytical,
+and targeting). They can expand a category to display a table with detailed
+information per cookie. It also presents a feature to delete all
+(non-`httpOnly`) cookies.
+
+Its UI/UX was tested from mobile to desktop to display properly. Its
+functionality is also integrated correctly by extending the cookie banner
+capacities.
+
+The Cookie Customization component is available in the branch `dev`, providing
+support to the Cookie Banner with detailed information and advanced options.
