@@ -51,6 +51,10 @@ The table with detailed cookie information is rendered such that you can read it
 vertically from top to bottom. This way, you read the items in key-value pairs.
 It also has a maximum height to avoid losing the context.
 
+It also gives a link to the cookie/privacy policy of the corresponding provider
+so you can read how they use cookies. If the cookie is first-party, it'll link
+to the same mathswe.com cookie policy.
+
 ![](images/cookie-customization-mobile-1.png)
 
 ![](images/cookie-customization-mobile-2.png)
