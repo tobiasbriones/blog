@@ -57,7 +57,9 @@ table has the chance to render normally in four columns.
 
 The design is also adapted for mobile.
 
-![](images/cookie-customization-mobile.png)
+![](images/cookie-customization-mobile-1.png)
+
+![](images/cookie-customization-mobile-2.png)
 
 Finally, I implemented a button to delete all the cookies if the user wants.
 It's not quite necessary, but it struck me as an interesting extracurricular
