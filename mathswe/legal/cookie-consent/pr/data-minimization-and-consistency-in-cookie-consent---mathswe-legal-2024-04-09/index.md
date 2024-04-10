@@ -22,7 +22,7 @@ schemes for posting consents.
   vocabulary consistency.
 
 - Defines the `ClientCookieConsent` to respond with more appropriate information
-  to consume by the client. It prevents sending all the data back to the client
+  to consume by the client. It prevents sending all the data back to the client,
   which is unnecessary.
 
 ---
