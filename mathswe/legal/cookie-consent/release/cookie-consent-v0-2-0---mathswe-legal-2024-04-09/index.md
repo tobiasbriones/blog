@@ -4,6 +4,12 @@
 
 # Cookie Consent V0.2.0 | MathSwe Legal (2024/04/09)
 
+The Cookie Consent service was previously initiated in "mathswe/legal" at v0.1.0
+with a robust implementation, documentation, and validation. Version 0.2.0
+removes unnecessary geolocation fields that v0.1.0 added by default, renames
+the "analytical" field for consistency, and provides a new minimalistic body
+response.
+
 ## Data Minimization and Focused API
 
 Previously, in
