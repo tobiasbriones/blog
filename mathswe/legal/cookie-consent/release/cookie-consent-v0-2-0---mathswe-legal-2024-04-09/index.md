@@ -43,7 +43,7 @@ cookie consent from client banners.
 
 The request body becomes:
 
-`Request Body | CookieConsentPref`
+`Request Body`
 
 ```rust
 pub struct CookieConsentPref {
@@ -61,12 +61,14 @@ they must update the `analytical` field name to function.
 The new response simplifies the original `CookieConsent` with all the record
 data, which is unnecessary for the client.
 
-`Simplified Response | ClientCookieConsent`
+`Simplified Response`
 
 ```rust
-pub struct ClientCookieConsent { // integrate focused response 🆕 //
+pub struct ClientCookieConsent {
+//         ^^^^^^^^^^^^^^^^^^^ integrate new focused response body 🆕 //
     id: String,
     pref: CookieConsentPref,
+//  ^^^^^^^^^^^^^^^^^^^^^^^ field pref includes breaking changes 🆕 //
     created_at: DateTime<Utc>,
     geolocation: Geolocation,
 }
