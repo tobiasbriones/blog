@@ -26,3 +26,13 @@ schemes for posting consents.
   which is unnecessary.
 
 ---
+
+The new updates to the Cookie Consent service changed some implementation by
+choosing the geolocation fields to store since the last version `0.1.0` stored
+all the fields by default. So, its design required a good data minimization to
+avoid storing unnecessary or meaningless data.
+
+It also had API breaking changes by adopting the `analitical` field name for
+requests (and responses), and it introduced a better data type to respond to the
+client, namely `ClientCookieConsent`, to send only meaningful data as a
+response.
