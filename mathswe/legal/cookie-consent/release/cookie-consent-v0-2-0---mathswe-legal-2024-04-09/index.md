@@ -55,6 +55,9 @@ pub struct CookieConsentPref {
 }
 ```
 
+Moreover, since `CookieConsentPref` is part of the response and banner model,
+they must update the `analytical` field name to function.
+
 The new response simplifies the original `CookieConsent` with all the record
 data, which is unnecessary for the client.
 
