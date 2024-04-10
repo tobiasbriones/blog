@@ -4,6 +4,10 @@
 
 # Data Minimization and Consistency in Cookie Consent | MathSwe Legal (2024/04/09)
 
+The Cookie Consent service is ready for version 0.2.0 with moderate private and
+public design improvements by minimizing the geolocation data to store and
+providing a more focused API.
+
 ---
 
 **Tune API for data minimization and consistency**
