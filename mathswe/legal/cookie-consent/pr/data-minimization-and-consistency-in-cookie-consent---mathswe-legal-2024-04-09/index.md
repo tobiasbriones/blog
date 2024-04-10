@@ -8,19 +8,21 @@
 
 **Tune API for data minimization and consistency**
 
-Apr 10: PR [#5](https://github.com/mathswe/legal/pull/5) merged into `main <- cookie-consent` by [tobiasbriones](https://github.com/tobiasbriones)
+Apr 10: PR [#5](https://github.com/mathswe/legal/pull/5) merged into `main
+<- cookie-consent` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 It applies data minimization to `Geolocation` and tunes the API request/response
 schemes for posting consents.
 
 - Removes many unnecessary fields from the `Geolocation` record that were placed
-as defaults in `v0.1.0`.
+  as defaults in `v0.1.0`.
 
 - Changes the `analytics` field to `analytical` in `CookieConsentPref` for
-vocabulary consistency.
+  vocabulary consistency.
 
 - Defines the `ClientCookieConsent` to respond with more appropriate information
-to consume by the client. It prevents sending all the data back to the client
-which is unnecessary.
+  to consume by the client. It prevents sending all the data back to the client
+  which is unnecessary.
+
 ---
