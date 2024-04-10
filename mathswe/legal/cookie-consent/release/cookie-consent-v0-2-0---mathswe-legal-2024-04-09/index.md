@@ -68,3 +68,9 @@ Documentation available at
 
 Version 0.2.0 demands minor updates on the client side for the request and
 response processing, but they're still breaking changes from version 0.1.0.
+
+## API Stabilization
+
+With the enhanced request and response bodies in version 0.2.0, client banners
+and customization panes can safely integrate the post-consent endpoint with a
+more stable, future-proof API.
