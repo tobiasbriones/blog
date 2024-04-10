@@ -26,3 +26,45 @@ new `ClientCookieConsent` body.
 
 The release is available at GitHub
 [Cookie Consent v0.2.0: Removes unnecessary geolocation data and provides a more focused API](https://github.com/mathswe/legal/releases/tag/v0.2.0).
+
+## Request and Response Integration
+
+The request body changed the field `analytics` to `analytical` to keep naming
+consistency (mathematical, statistical, analytical, etc.), and the response
+adopted the `ClientCookieConsent` body that avoids sending too much unnecessary
+data back to the client. It affects the `post_consent` endpoint that applies
+cookie consent from client banners.
+
+The request body becomes:
+
+`Request Body | CookieConsentPref`
+
+```rust
+pub struct CookieConsentPref {
+    essential: bool,
+    functional: bool,
+    analytical: bool,
+//  ^^^^^^^^^^ rename field from analytics to analytical 🆕 //
+    targeting: bool,
+}
+```
+
+The new response simplifies the original `CookieConsent` with all the record
+data, which is unnecessary for the client.
+
+`Simplified Response | ClientCookieConsent`
+
+```rust
+pub struct ClientCookieConsent { // integrate focused response 🆕 //
+    id: String,
+    pref: CookieConsentPref,
+    created_at: DateTime<Utc>,
+    geolocation: Geolocation,
+}
+```
+
+Documentation available at
+[Cookie Consent \| v0.2.0 \| GitHub](https://github.com/mathswe/legal/tree/v0.2.0/cookie-consent).
+
+Version 0.2.0 demands minor updates on the client side for the request and
+response processing, but they're still breaking changes from version 0.1.0.
