@@ -25,6 +25,7 @@
 - [Data Minimization and Consistency in Cookie Consent \| MathSwe Legal (2024/04/09)](data-minimization-and-consistency-in-cookie-consent---mathswe-legal-2024-04-09)
 - [New Cookie Consent Microservice Ready \| MathSwe Legal (2024/03/28)](new-cookie-consent-microservice-ready---mathswe-legal-2024-03-28)
 - [Cookie Consent v0.1.0 \| MathSwe Legal (2024/03/29)](cookie-consent-v0-1-0---mathswe-legal-2024-03-29)
+- [Cookie Consent V0.2.0 \| MathSwe Legal (2024/04/09)](cookie-consent-v0-2-0---mathswe-legal-2024-04-09)
 - [Initializing the New Math Software MVP App (2024/01/30)](initializing-the-new-msw-mvp-app-2024-01-30)
 - [Incremental Deployments and Researching Cookie Laws (2024/02/09)](incremental-deployments-and-researching-cookie-laws-2024-02-09)
 - [Initializing Operations \| Math Software MVP App (2024/02/01)](initializing-operations---msw-mvp-app-2024-02-01)
