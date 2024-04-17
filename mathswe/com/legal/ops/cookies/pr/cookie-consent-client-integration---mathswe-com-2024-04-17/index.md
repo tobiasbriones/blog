@@ -26,7 +26,7 @@ into `dev <- legal` by [tobiasbriones](https://github.com/tobiasbriones)
 
 It pairs with the last naming convention adopted by MathSwe Cookie Consent
 v0.2.0. See more:
-https://blog.mathsoftware.engineer/cookie-consent-v0-2-0---mathswe-legal-2024-04-09#request-and-response-integration.
+[Request and Response Integration \| Cookie Consent v0.2.0](/cookie-consent-v0-2-0---mathswe-legal-2024-04-09#request-and-response-integration).
 
 ---
 
