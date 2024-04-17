@@ -4,6 +4,10 @@
 
 # Cookie Consent Client Integration | MathSwe Com (2024/04/17)
 
+The relatively stable version 0.2.0 of the Cookie Consent service is available,
+but the banner and customization pane require front-end integration to complete
+the process.
+
 ---
 
 **Create env var for service cookie-consent and update deps**
