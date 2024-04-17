@@ -4,3 +4,5 @@
   Contains `faCookie` Font Awesome icon.
 - [effective-consent-on-the-customization-pane.png](effective-consent-on-the-customization-pane.png):
   Contains `faCookie` Font Awesome icon.
+- [new-effective-consent-id.png](new-effective-consent-id.png):
+  Contains `faCookie` Font Awesome icon and MS Edge context menu.
