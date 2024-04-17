@@ -6,3 +6,5 @@
   Contains `faCookie` Font Awesome icon.
 - [new-effective-consent-id.png](new-effective-consent-id.png):
   Contains `faCookie` Font Awesome icon and MS Edge context menu.
+- [requesting-a-consent-record-by-id-from-the-database.png](requesting-a-consent-record-by-id-from-the-database.png):
+  Screenshot from Cloudflare KV.
