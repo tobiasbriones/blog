@@ -95,9 +95,49 @@ integration:
   preference.
 - Refactors inconsistent definitions with improvements in the internal API.
 
+Users can give new consent either if there's none or if there's an existing one
+so they can update their preferences. If the user saves a new preference
+(different from the previous, if any), **the app requests the consent to the
+Cookie Consent service to make it effective**.
+
+In the following case, the banner shows the current or **effective consent**
+ID the system applied before. Now, it will be renewed by a new preference (i.e.,
+opt-out of "targeting") where the user unchecked the "targeting" option.
+
+![](images/saving-new-consent.png)
+
+The app shows a `NotificationToast` (component integrated by PR #15 above)
+with the successful confirmation when applying the server response. If there's
+any error, or it wasn't necessary to post the consent due to unchanged
+preferences, the toast will notify accordingly.
+
+![](images/consent-applied-successfully.png)
+
+After the app applies the new consent, when opening the banner again (from
+the Legal footer section), it'll show *the new consent ID*.
+
+![](images/new-effective-consent-id.png)
+
+The ID is the key of a cookie consent, as
+[Proof of Consent \| Cookie Consent v0.1.0 | MathSwe Legal (2024/03/29)](/cookie-consent-v0-1-0---mathswe-legal-2024-03-29#proof-of-consent)
+says, which also gives in-depth details about consent records.
+
+One can get the consent record by searching its ID in the database (admin only).
+
+![](images/requesting-a-consent-record-by-id-from-the-database.png)
+
+Finally, and quite importantly, in this integration, the customization pane
+shows the detailed effective consent, thus expanding the banner functionality.
+
+![](images/effective-consent-on-the-customization-pane.png)
+
+A new minor feature in the backlog will add the expiration date to the details
+so the user can see how much is left for the `cookie-consent` cookie to expire
+and then prompt the banner to renew the consent.
+
 The Cookie Service integration into the Cookie Banner and Customization pane
 makes the user preferences effective. It enriches the client-side consent
-behavior and transparency with the new details presented to the user about
-their effective consent.
+behavior and transparency with the new details presented to the user about their
+effective consent.
 
 ---
