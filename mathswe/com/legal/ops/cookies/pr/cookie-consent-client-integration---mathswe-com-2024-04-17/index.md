@@ -133,7 +133,7 @@ shows the detailed effective consent, thus expanding the banner functionality.
 
 A new minor feature in the backlog will add the expiration date to the details
 so the user can see how much is left for the `cookie-consent` cookie to expire
-and then prompt the banner to renew the consent.
+(it lasts 1 year) and then prompt the banner to renew the consent.
 
 The Cookie Service integration into the Cookie Banner and Customization pane
 makes the user preferences effective. It enriches the client-side consent
