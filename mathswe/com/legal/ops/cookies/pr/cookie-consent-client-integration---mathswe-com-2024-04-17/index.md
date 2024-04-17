@@ -36,7 +36,7 @@ Apr 15: PR [#15](https://github.com/mathswe/mathswe.com/pull/15) merged
 into `dev <- mathswe/ui` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
-It integrates the "NotificationToast" component from the UI library to allow the
+It integrates the `NotificationToast` component from the UI library to allow the
 app to show brief update messages.
 
 ---
@@ -47,7 +47,7 @@ Apr 16: PR [#16](https://github.com/mathswe/mathswe.com/pull/16) merged
 into `dev <- mathswe/ui` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
-It shows the details from the "ClientCookieConsent" server response, such as
+It shows the details from the `ClientCookieConsent` server response, such as
 consent id, date, and geolocation.
 
 ---
@@ -59,9 +59,9 @@ Apr 16: PR [#17](https://github.com/mathswe/mathswe.com/pull/17) merged
 into `dev <- mathswe/ui` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
-It enhances the sizing of the cookie consent ID/"see more" detail in the Cookie
-Banner component. It fixes the public directory path to load the Notification
-Toast component icon in production.
+It enhances the sizing of the cookie consent ID/"see more" detail in
+the `CookieBanner` component. It fixes the public directory path to load the
+Notification Toast component icon in production.
 
 ---
 
@@ -113,8 +113,8 @@ preferences, the toast will notify accordingly.
 
 ![](images/consent-applied-successfully.png)
 
-After the app applies the new consent, when opening the banner again (from
-the Legal footer section), it'll show *the new consent ID*.
+After the app applies the new consent, when opening the banner again (from the
+Legal footer section), it'll show *the new consent ID*.
 
 ![](images/new-effective-consent-id.png)
 
