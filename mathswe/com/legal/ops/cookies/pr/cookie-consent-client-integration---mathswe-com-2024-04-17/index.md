@@ -141,3 +141,26 @@ behavior and transparency with the new details presented to the user about their
 effective consent.
 
 ---
+
+The Cookie Consent v0.2.0 service was released recently, and the cookie banner
+and customization pane had their integration on the client side to complete the
+consent process.
+
+It added the environment variable to get the hostname to connect to the
+microservice and renamed the `analytics` field to match properly with the
+established `analytical` naming.
+
+The `ui` path implemented a new `NotificationToast` component and added the new
+features to the `CookieBanner` and `CookieCustomization` to integrate with the
+service.
+
+Finally, the integration requests to process consents to make them effective and
+apply them on the client side by storing the `cookie-consent` cookie consisting
+of the `ClientCookieConsent` service response. It further displays the effective
+consent ID in the banner and all the details in the pane.
+
+Besides minor technical details left, with the client integration, we can
+consider the current MathSwe Cookie Consent finished in development terms. Now,
+the focus should be more on completing the privacy redaction with the
+cookies-used report and integrate it to MSW to restore its initialization of
+operations.
