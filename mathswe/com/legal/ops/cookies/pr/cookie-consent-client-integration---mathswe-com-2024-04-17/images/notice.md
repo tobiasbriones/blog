@@ -1,4 +1,6 @@
 # Notice
 
-- [consent-applied-successfully.png](consent-applied-successfully.png): 
+- [consent-applied-successfully.png](consent-applied-successfully.png):
+  Contains `faCookie` Font Awesome icon.
+- [effective-consent-on-the-customization-pane.png](effective-consent-on-the-customization-pane.png):
   Contains `faCookie` Font Awesome icon.
