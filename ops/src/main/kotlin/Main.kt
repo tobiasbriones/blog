@@ -13,6 +13,7 @@ import io.ktor.server.routing.*
 import jekyll.*
 import kotlinx.coroutines.runBlocking
 import md.*
+import react.buildReact
 import java.io.File
 import java.io.IOException
 import java.nio.charset.MalformedInputException
@@ -73,7 +74,7 @@ fun execute(
     arg4: String,
 ): Unit = when (cmd) {
     Entries -> execEntries(root)
-    Build -> execBuild(root, arg1, arg2 == "jekyll")
+    Build -> execBuild(root, arg1, arg2 == "jekyll", arg3 == "react")
     Deploy -> execDeploy(root, arg1)
     Serve -> execServe(root)
     Create -> execCreate(root, arg1, arg2)
@@ -181,8 +182,14 @@ fun execEntries(root: Path) {
         }
 }
 
-fun execBuild(root: Path, target: String, jekyll: Boolean = false) {
+fun execBuild(
+    root: Path,
+    target: String,
+    jekyll: Boolean = false,
+    react: Boolean = false,
+) {
     val config = buildConfigOf(root)
+    var entry: Option<Entry> = None
 
     val buildAll: (List<Entry>) -> Unit = { entries ->
         println("⚙ Building ${entries.size} articles at $root...")
@@ -193,7 +200,10 @@ fun execBuild(root: Path, target: String, jekyll: Boolean = false) {
         println("⚙ Building $entryName at $root...")
         entries
             .firstOrNone { it.name() == entryName }
-            .onSome { build(it, config) }
+            .onSome {
+                build(it, config)
+                entry = it.some()
+            }
             .onNone {
                 printError `$` "Failed to build, entry not found: $entryName"
             }
@@ -233,6 +243,12 @@ fun execBuild(root: Path, target: String, jekyll: Boolean = false) {
 
     if (jekyll) {
         buildJekyll(config.outDir)
+    }
+
+    if (react) {
+        entry.onSome {
+            buildReact(it, config.outDir)
+        }
     }
 }
 
