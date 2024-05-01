@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.8.21"
     kotlin("plugin.serialization") version "1.9.23"
+    id("application")
+    id("org.openjfx.javafxplugin") version "0.1.0"
     application
     distribution
 }
@@ -33,12 +35,17 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+javafx {
+    version = "22.0.1"
+    modules = listOf("javafx.controls", "javafx.swing").toMutableList()
+}
+
 tasks.test {
     useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "19"
+    kotlinOptions.jvmTarget = "22"
 }
 
 tasks.jar {
@@ -48,7 +55,7 @@ tasks.jar {
 }
 
 kotlin {
-    jvmToolchain(19)
+    jvmToolchain(22)
 }
 
 application {
