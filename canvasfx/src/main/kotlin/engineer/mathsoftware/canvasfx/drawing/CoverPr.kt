@@ -7,11 +7,10 @@ import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.Group
 import javafx.scene.SnapshotParameters
-import javafx.scene.control.Button
+import javafx.scene.control.Label
 import javafx.scene.effect.BoxBlur
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
-import javafx.scene.image.WritableImage
 import javafx.scene.layout.*
 import javafx.scene.paint.Color
 import javafx.scene.shape.Circle
@@ -109,33 +108,70 @@ fun commentBox(): StackPane = StackPane().apply {
     """.trimIndent()
 
     children.addAll(
-//        StackPane().apply {
-//            backdropBlurBackground.parentBorderRadiusRem = borderRadiusRem
-//            backdropBlurBackground.parentBorderWidthRem = borderWidthRem
-//            backdropBlurBackground.destination = this
-//        },
-//        commentBoxContent(),
+        StackPane().apply {
+            backdropBlurBackground.parentBorderRadiusRem = borderRadiusRem
+            backdropBlurBackground.parentBorderWidthRem = borderWidthRem
+            backdropBlurBackground.destination = this
+        },
+        commentBoxContent(),
     )
 }
 
 fun commentBoxContent(): VBox = VBox().apply {
+    val abstract = "It integrates the Cookie Consent v0.2.0 into the banner" +
+      " and customization pane:"
+    val items = listOf("Item 1", "Item 2", "Item 3")
+
     children.addAll(
-        HBox().apply {// .user-info
-            padding = padding(1.0, 3.0)
-            style = """
-                -fx-background-color: #263238;
-                -fx-background-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
-                -fx-border-width: 0 0 ${toPx(0.25)} 0;
-                -fx-border-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
-                -fx-border-color: $accentColorBlueHex;
-            """.trimIndent()
-            children.add(
-                Text("Title @Apoapans").apply {
-                    style = boldTextCss(2.0)
+        heading(text = "texsydo/@MVP"),
+        VBox().apply {// .comment-content
+            padding = padding(2.0, 3.0)
+            spacing = toPx(1.0)
+            children.addAll(
+                heading(text = "CanvasFX", small = true),
+                Label(abstract).apply {
+                    isWrapText = true
+                    style = textCss(1.5)
+                },
+                VBox().apply {
+                    children.addAll(
+                        items
+                            .map {
+                                HBox().apply {
+                                    spacing = toPx(0.75)
+                                    alignment = Pos.CENTER_LEFT
+                                    children.addAll(
+                                        Circle().apply {
+                                            radius = toPx(0.25)
+                                            fill = Color.WHITE
+                                        },
+                                        Label(it).apply {
+                                            style = textCss(1.5)
+                                        },
+                                    )
+                                }
+                            })
                 }
             )
-        },
-        Button("asdasda")
+        }
+    )
+}
+
+fun heading(text: String, small: Boolean = false): HBox = HBox().apply {
+    val pxRem = if (small) 1.5 else 3.0
+
+    padding = padding(1.0, pxRem)
+    style = """
+        -fx-background-color: #263238;
+        -fx-background-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
+        -fx-border-width: 0 0 ${toPx(0.25)} 0;
+        -fx-border-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
+        -fx-border-color: $accentColorBlueHex;
+    """.trimIndent()
+    children.add(
+        Text(text).apply {
+            style = boldTextCss(2.0)
+        }
     )
 }
 
@@ -256,9 +292,6 @@ class BackdropBlurBackground {
             clip = clipRect
 //            effect = GaussianBlur(toPx(1.25))
             effect = BoxBlur(toPx(0.25), toPx(0.25), 3)
-//            effect = Blend(BlendMode.EXCLUSION).apply {
-//                topInput = BoxBlur(toPx(0.25), toPx(0.25), 3)
-//            }
         }
 
         val writableImage = group.snapshot(
@@ -293,6 +326,7 @@ class BackdropBlurBackground {
 fun textCss(sizeRem: Double = 1.0): String = """
     |-fx-font-family: "Poppins Medium", sans-serif;
     |-fx-fill: white;
+    |-fx-text-fill: white;
     |-fx-font-size: ${toPx(sizeRem)};
     |-fx-font-smoothing-type: gray;
 """.trimMargin()
@@ -300,6 +334,7 @@ fun textCss(sizeRem: Double = 1.0): String = """
 fun boldTextCss(sizeRem: Double = 1.0): String = """
     |-fx-font-family: "Poppins Bold", sans-serif;
     |-fx-fill: white;
+    |-fx-text-fill: white;
     |-fx-font-size: ${toPx(sizeRem)};
     |-fx-font-smoothing-type: gray;
 """.trimMargin()
@@ -313,29 +348,4 @@ fun loadFonts() {
         resPath("fonts/Poppins/Poppins-Bold.ttf"),
         fontSizePx
     )
-}
-
-fun cropImage(
-    originalImage: Image?,
-    x: Double,
-    y: Double,
-    width: Double,
-    height: Double,
-): Image? {
-    if (originalImage == null) {
-        return null
-    }
-
-    val reader = originalImage.pixelReader
-    val writableImage = WritableImage(width.toInt(), height.toInt())
-    val writer = writableImage.pixelWriter
-
-    for (i in 0 until width.toInt()) {
-        for (j in 0 until height.toInt()) {
-            val color = reader.getColor((x + i).toInt(), (y + j).toInt())
-            writer.setColor(i, j, color)
-        }
-    }
-
-    return writableImage
 }
