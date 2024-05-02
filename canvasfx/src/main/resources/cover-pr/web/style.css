@@ -1,0 +1,194 @@
+/* Default */
+* {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --accent-color-blue: #1976D2;
+    --accent-color: #455A64;
+    --background-color: #333;
+}
+
+html {
+    font-size: 32px;
+    color: white;
+}
+
+html,
+body {
+    width: 100%;
+    min-width: 320px;
+    aspect-ratio: 16 / 9;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul {
+    margin-left: 1rem;
+}
+
+h1 {
+    margin: 0 8rem;
+    font-weight: lighter;
+    color: #212121;
+}
+
+/* CSS for the GitHub PR comment */
+.content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 3rem;
+}
+
+.comment {
+    border-radius: 1rem;
+    margin-left: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    border: 0.25rem solid var(--accent-color);
+}
+
+.comment::before {
+    content: "";
+    position: absolute;
+    top: 52px;
+    margin-left: -58px;
+    border-width: 0 44px 40px 44px;
+    border-style: solid;
+    border-color: transparent transparent var(--accent-color) transparent;
+    transform: rotate(-90deg);
+}
+
+.comment::after {
+    content: "";
+    position: absolute;
+    top: 58px;
+    margin-left: -40px;
+    border-width: 0 32px 28px 32px;
+    border-style: solid;
+    border-color: transparent transparent #263238 transparent;
+    transform: rotate(-90deg);
+}
+
+.comment .bg {
+    position: absolute;
+    width: calc(100% + 0.5rem);
+    height: calc(100% + 0.5rem);
+    left: -0.25rem;
+    top: -0.25rem;
+    background-color: #333;
+    border-radius: 1rem;
+    border: 0.25rem solid var(--accent-color);
+    opacity: 0.9;
+}
+
+.comment .blur {
+    position: absolute;
+    width: calc(100% + 0.5rem);
+    height: calc(100% + 0.5rem);
+    left: -0.25rem;
+    top: -0.25rem;
+    border-radius: 1rem;
+    border: 0.25rem solid var(--accent-color);
+    backdrop-filter: blur(0.125rem);
+}
+
+.user-info {
+    display: flex;
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    align-items: center;
+    background-color: #263238;
+    border: 0.25rem solid var(--accent-color-blue);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0.75rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.user-photo {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.comment-content {
+    width: 100%;
+    padding: 2rem 3rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+}
+
+.comment-content ul {
+    width: calc(100% - 5rem);
+}
+
+/* Background for MSW */
+.profile-pic {
+    height: 10rem;
+    padding: 0.5rem;
+    background-image: url(mswe.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.profile-pic img {
+    border: 0.125rem solid #212121;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    background-image: url(data/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mswe-logo {
+    width: 100%;
+    height: 100%;
+    background-image: url(mswe-radial.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.user-info.small {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+img.subdomain {
+    position: absolute;
+    width: 7rem;
+    height: auto;
+    right: 0;
+    bottom: 0;
+    border-bottom-right-radius: 0.75rem;
+    opacity: 0.6;
+}
