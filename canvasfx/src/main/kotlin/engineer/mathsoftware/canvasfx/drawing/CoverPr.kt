@@ -16,7 +16,6 @@ import javafx.scene.paint.Color
 import javafx.scene.shape.Circle
 import javafx.scene.shape.Rectangle
 import javafx.scene.text.Font
-import javafx.scene.text.Text
 
 
 val fontSizePx = 32.0
@@ -120,37 +119,66 @@ fun commentBox(): StackPane = StackPane().apply {
 fun commentBoxContent(): VBox = VBox().apply {
     val abstract = "It integrates the Cookie Consent v0.2.0 into the banner" +
       " and customization pane:"
-    val items = listOf("Item 1", "Item 2", "Item 3")
+    val items = listOf(
+        "Item 1", "Item 2",
+        "Item 3 sssssssssss ssssssssssssffffff fffffff ffffffttrhssss"
+    )
 
     children.addAll(
         heading(text = "texsydo/@MVP"),
-        VBox().apply {// .comment-content
-            padding = padding(2.0, 3.0)
-            spacing = toPx(1.0)
+        StackPane().apply {
             children.addAll(
-                heading(text = "CanvasFX", small = true),
-                Label(abstract).apply {
-                    isWrapText = true
-                    style = textCss(1.5)
-                },
-                VBox().apply {
+                VBox().apply {// .comment-content
+                    padding = padding(2.0, 3.0)
+                    spacing = toPx(1.0)
+
                     children.addAll(
-                        items
-                            .map {
-                                HBox().apply {
-                                    spacing = toPx(0.75)
-                                    alignment = Pos.CENTER_LEFT
-                                    children.addAll(
-                                        Circle().apply {
-                                            radius = toPx(0.25)
-                                            fill = Color.WHITE
-                                        },
-                                        Label(it).apply {
-                                            style = textCss(1.5)
-                                        },
-                                    )
-                                }
-                            })
+                        heading(text = "CanvasFX", small = true),
+                        Label(abstract).apply {
+                            isWrapText = true
+                            style = textCss(1.5)
+                        },
+                        VBox().apply {
+                            padding = Insets(0.0, toPx(5.0), 0.0, 0.0)
+
+                            children.addAll(
+                                items
+                                    .map {
+                                        HBox().apply {
+                                            spacing = toPx(0.75)
+                                            alignment = Pos.CENTER_LEFT
+                                            children.addAll(
+                                                Circle().apply {
+                                                    radius = toPx(0.25)
+                                                    fill = Color.WHITE
+                                                },
+                                                Label(it).apply {
+                                                    style = textCss(1.5)
+                                                },
+                                            )
+                                        }
+                                    })
+                        }
+                    )
+                },
+
+                StackPane().apply {
+                    alignment = Pos.BOTTOM_RIGHT
+
+                    children.add(
+                        ImageView().apply {
+                            fitWidth = toPx(7.0)
+                            fitHeight = toPx(7.0)
+                            image = Image(resPath("data/subdomain.png"))
+                            opacity = 0.6
+                            clip = Rectangle().apply {
+                                width = fitWidth
+                                height = fitWidth
+                                arcWidth = toPx(1.5)
+                                arcHeight = toPx(1.5)
+                            }
+                        }
+                    )
                 }
             )
         }
@@ -169,7 +197,7 @@ fun heading(text: String, small: Boolean = false): HBox = HBox().apply {
         -fx-border-color: $accentColorBlueHex;
     """.trimIndent()
     children.add(
-        Text(text).apply {
+        Label(text).apply {
             style = boldTextCss(2.0)
         }
     )
@@ -340,6 +368,8 @@ fun boldTextCss(sizeRem: Double = 1.0): String = """
 """.trimMargin()
 
 fun loadFonts() {
+    System.setProperty("prism.lcdtext", "false")
+
     Font.loadFont(
         resPath("fonts/Poppins/Poppins-Medium.ttf"),
         fontSizePx
