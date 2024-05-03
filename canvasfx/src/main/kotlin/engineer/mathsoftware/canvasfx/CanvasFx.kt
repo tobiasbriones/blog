@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox
 import javafx.stage.Stage
 import java.io.File
 import java.io.IOException
+import java.nio.file.Path
 import javax.imageio.ImageIO
 
 
@@ -29,6 +30,9 @@ class CanvasFx : Application() {
             return
         }
 
+        println("Rendering $coverPr")
+        println()
+
         val drawing = coverPr(coverPr)
         val preview = false
         val scene = when (preview) {
@@ -36,20 +40,21 @@ class CanvasFx : Application() {
             false -> Scene(drawing, drawing.prefWidth, drawing.prefHeight)
         }
 
-        primaryStage.title = "Canvas FX"
-        primaryStage.scene = scene
-
         if (preview) {
+            primaryStage.title = "Canvas FX"
+            primaryStage.scene = scene
             primaryStage.show()
         }
         else {
-            takeSnapshot(drawing)
+            val output = getOutputPath()
+
+            takeSnapshot(drawing, output)
             Platform.exit()
         }
     }
 
-    private fun takeSnapshot(root: Pane) {
-        val outputFile = File("snapshot.png")
+    private fun takeSnapshot(root: Pane, output: String) {
+        val outputFile = File(output)
         val writableImage = WritableImage(
             root.width.toInt(), root.height.toInt()
         )
@@ -62,13 +67,19 @@ class CanvasFx : Application() {
                 "png",
                 outputFile
             )
+
+            println("Image saved at ${outputFile.toPath().toUri()}")
         }
         catch (e: IOException) {
-            println(e)
+            printError(e)
         }
     }
-}
 
+    private fun getOutputPath(): String = parameters
+        .named["output"]
+        ?.let { absPath(it) }
+        ?: absPath("cover.png")
+}
 
 fun remToPx(fontSizePx: Double): (Double) -> Double =
     { rem -> rem * fontSizePx }
@@ -79,6 +90,33 @@ fun resPath(path: String): String = CanvasFx::class
     .getResource("cover-pr/$path")
     ?.toURI()
     .let { it.toString() }
+
+fun absPath(inputPath: String): String = with(Path.of(inputPath)) {
+    if (isAbsolute) toString()
+    else {
+        val root = System.getProperty("user.dir")
+        Path.of(root, inputPath).toString()
+    }
+}
+
+fun absUri(inputPath: String): String = with(Path.of(inputPath)) {
+    if (isAbsolute) toUri().toString()
+    else {
+        val root = System.getProperty("user.dir")
+        Path.of(root, inputPath).toUri().toString()
+    }
+}
+
+fun printError(msg: String) {
+    println("Error: $msg")
+    println()
+}
+
+fun printError(e: Exception) {
+    println("Exception Error:")
+    e.printStackTrace()
+    println()
+}
 
 fun main() {
     Application.launch(CanvasFx::class.java)

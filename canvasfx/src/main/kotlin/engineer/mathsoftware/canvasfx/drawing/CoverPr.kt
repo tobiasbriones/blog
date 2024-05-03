@@ -1,5 +1,7 @@
 package engineer.mathsoftware.canvasfx.drawing
 
+import engineer.mathsoftware.canvasfx.absUri
+import engineer.mathsoftware.canvasfx.printError
 import engineer.mathsoftware.canvasfx.remToPx
 import engineer.mathsoftware.canvasfx.resPath
 import javafx.beans.property.SimpleObjectProperty
@@ -18,8 +20,6 @@ import javafx.scene.shape.Polygon
 import javafx.scene.shape.Rectangle
 import javafx.scene.shape.StrokeType
 import javafx.scene.text.Font
-import java.nio.file.Path
-import kotlin.math.abs
 import kotlin.math.sqrt
 
 val fontSizePx = 32.0
@@ -48,24 +48,19 @@ fun extractCoverPr(parameters: Map<String, String>): CoverPr? {
     val subdomainSrc = parameters["subdomain"]
 
     if (bgSrc == null || profilePhotoSrc == null || heading == null || abstract == null) {
-        println("Missing required parameters.")
+        printError("Missing required parameters.")
         return null
     }
 
-    fun absPath(relPath: String): String {
-        val root = System.getProperty("user.dir")
-        return Path.of(root, relPath).toUri().toString()
-    }
-
     return CoverPr(
-        bgSrc = absPath(bgSrc),
-        profilePhotoSrc = absPath(profilePhotoSrc),
+        bgSrc = absUri(bgSrc),
+        profilePhotoSrc = absUri(profilePhotoSrc),
         commentBox = CommentBox(
             heading = heading,
             abstract = abstract,
             footer = footer,
             subheading = subheading,
-            subdomainSrc = subdomainSrc?.let { absPath(it) }
+            subdomainSrc = subdomainSrc?.let { absUri(it) }
         )
     )
 }
