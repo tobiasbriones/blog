@@ -18,6 +18,8 @@ import javafx.scene.shape.Polygon
 import javafx.scene.shape.Rectangle
 import javafx.scene.shape.StrokeType
 import javafx.scene.text.Font
+import java.nio.file.Path
+import kotlin.math.abs
 import kotlin.math.sqrt
 
 val fontSizePx = 32.0
@@ -50,15 +52,20 @@ fun extractCoverPr(parameters: Map<String, String>): CoverPr? {
         return null
     }
 
+    fun absPath(relPath: String): String {
+        val root = System.getProperty("user.dir")
+        return Path.of(root, relPath).toUri().toString()
+    }
+
     return CoverPr(
-        bgSrc = bgSrc,
-        profilePhotoSrc = profilePhotoSrc,
+        bgSrc = absPath(bgSrc),
+        profilePhotoSrc = absPath(profilePhotoSrc),
         commentBox = CommentBox(
             heading = heading,
             abstract = abstract,
             footer = footer,
             subheading = subheading,
-            subdomainSrc = subdomainSrc
+            subdomainSrc = subdomainSrc?.let { absPath(it) }
         )
     )
 }
