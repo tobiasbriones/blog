@@ -14,8 +14,10 @@ import javafx.scene.image.ImageView
 import javafx.scene.layout.*
 import javafx.scene.paint.Color
 import javafx.scene.shape.Circle
+import javafx.scene.shape.Polygon
 import javafx.scene.shape.Rectangle
 import javafx.scene.text.Font
+import kotlin.math.sqrt
 
 
 val fontSizePx = 32.0
@@ -162,7 +164,7 @@ fun commentBoxContent(): VBox = VBox().apply {
                     )
                 },
 
-                StackPane().apply {
+                StackPane().apply {// subdomain
                     alignment = Pos.BOTTOM_RIGHT
 
                     children.add(
@@ -185,23 +187,74 @@ fun commentBoxContent(): VBox = VBox().apply {
     )
 }
 
-fun heading(text: String, small: Boolean = false): HBox = HBox().apply {
-    val pxRem = if (small) 1.5 else 3.0
+fun heading(text: String, small: Boolean = false): StackPane =
+    StackPane().apply {
+        children.add(
+            HBox().apply {
+                val pxRem = if (small) 1.5 else 3.0
 
-    padding = padding(1.0, pxRem)
-    style = """
-        -fx-background-color: #263238;
-        -fx-background-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
-        -fx-border-width: 0 0 ${toPx(0.25)} 0;
-        -fx-border-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
-        -fx-border-color: $accentColorBlueHex;
-    """.trimIndent()
-    children.add(
-        Label(text).apply {
-            style = boldTextCss(2.0)
+                padding = padding(1.0, pxRem)
+                style = """
+                    -fx-background-color: #263238;
+                    -fx-background-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
+                    -fx-border-width: 0 0 ${toPx(0.25)} 0;
+                    -fx-border-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
+                    -fx-border-color: $accentColorBlueHex;
+                """.trimIndent()
+                children.add(
+                    Label(text).apply {
+                        style = boldTextCss(2.0)
+                    }
+                )
+            }
+        )
+
+        if (!small) {
+
+            children.add(
+                Group().apply {// triangle
+                    val triangleWidth = toPx(1.25)
+                    val triangleHeight = 0.5 * sqrt(3.0) * triangleWidth
+                    val borderSize = toPx(0.25)
+                    val bgColor = Color.web("#263238")
+
+                    alignment = Pos.CENTER_LEFT
+                    translateX = -triangleWidth - triangleHeight/2
+                    rotate = -90.0
+
+                    children.addAll(
+                        Polygon().apply {
+                            fill = accentColor
+                            points.addAll(
+                                0.0,
+                                0.0,
+                                -triangleWidth,
+                                triangleHeight,
+                                triangleWidth,
+                                triangleHeight
+                            )
+                        },
+                        Polygon().apply {
+                            val innerWidth =
+                                triangleWidth - 2 * sqrt(3.0) * borderSize +
+                                  2 * borderSize / sqrt(3.0)
+                            val innerHeight = triangleHeight - 3 * borderSize
+
+                            fill = bgColor
+                            points.addAll(
+                                0.0,
+                                triangleHeight - borderSize - innerHeight,
+                                -innerWidth,
+                                triangleHeight + 1,
+                                innerWidth,
+                                triangleHeight + 1
+                            )
+                        },
+                    )
+                },
+            )
         }
-    )
-}
+    }
 
 fun padding(pyRem: Double, pxRem: Double): Insets =
     Insets(toPx(pyRem), toPx(pxRem), toPx(pyRem), toPx(pxRem))
