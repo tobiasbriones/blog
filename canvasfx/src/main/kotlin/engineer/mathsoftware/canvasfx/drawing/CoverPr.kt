@@ -16,9 +16,9 @@ import javafx.scene.paint.Color
 import javafx.scene.shape.Circle
 import javafx.scene.shape.Polygon
 import javafx.scene.shape.Rectangle
+import javafx.scene.shape.StrokeType
 import javafx.scene.text.Font
 import kotlin.math.sqrt
-
 
 val fontSizePx = 32.0
 val toPx: (Double) -> Double = remToPx(fontSizePx)
@@ -101,20 +101,80 @@ fun createCommentBox(): StackPane {
 fun commentBox(): StackPane = StackPane().apply {
     val borderRadiusRem = 1.0
     val borderWidthRem = 0.25
-
-    style = """
-        -fx-border-radius: ${toPx(borderRadiusRem)};
-        -fx-border-width: ${toPx(borderWidthRem)};
-        -fx-border-color: $accentColorHex;
-    """.trimIndent()
+    val w = widthProperty()
+    val h = heightProperty()
 
     children.addAll(
         StackPane().apply {
-            backdropBlurBackground.parentBorderRadiusRem = borderRadiusRem
-            backdropBlurBackground.parentBorderWidthRem = borderWidthRem
-            backdropBlurBackground.destination = this
+            padding = padding(borderWidthRem, borderWidthRem)
+            children.addAll(
+                StackPane().apply {
+                    backdropBlurBackground.parentBorderRadiusRem =
+                        borderRadiusRem - 0.125// border will be overridden
+                    backdropBlurBackground.parentBorderWidthRem = borderWidthRem
+                    backdropBlurBackground.destination = this
+
+                },
+                commentBoxContent(),
+            )
         },
-        commentBoxContent(),
+        Rectangle().apply {
+            widthProperty().bind(w)
+            heightProperty().bind(h)
+            fill = Color.TRANSPARENT
+            arcWidth = toPx(borderRadiusRem) * 2
+            arcHeight = toPx(borderRadiusRem) * 2
+            stroke = accentColor
+            strokeWidth = toPx(borderWidthRem)
+            strokeType = StrokeType.INSIDE
+        },
+        StackPane().apply {
+            padding = padding(borderWidthRem, borderWidthRem)
+
+            children.addAll(
+                Group().apply {// triangle
+                    val triangleWidth = toPx(1.25)
+                    val triangleHeight = 0.5 * sqrt(3.0) * triangleWidth
+                    val borderSize = toPx(0.25)
+                    val bgColor = Color.web("#263238")
+
+                    alignment = Pos.TOP_LEFT
+                    translateX = -triangleWidth - triangleHeight / 2
+                    translateY = toPx(5.0) / 2 - triangleWidth / 2
+                    rotate = -90.0
+
+                    children.addAll(
+                        Polygon().apply {
+                            fill = accentColor
+                            points.addAll(
+                                0.0,
+                                0.0,
+                                -triangleWidth,
+                                triangleHeight,
+                                triangleWidth,
+                                triangleHeight
+                            )
+                        },
+                        Polygon().apply {
+                            val innerWidth =
+                                triangleWidth - 2 * sqrt(3.0) * borderSize +
+                                  2 * borderSize / sqrt(3.0)
+                            val innerHeight = triangleHeight - 3 * borderSize
+
+                            fill = bgColor
+                            points.addAll(
+                                0.0,
+                                triangleHeight - borderSize - innerHeight,
+                                -innerWidth,
+                                triangleHeight + 1,
+                                innerWidth,
+                                triangleHeight + 1
+                            )
+                        },
+                    )
+                },
+            )
+        },
     )
 }
 
@@ -211,48 +271,6 @@ fun heading(text: String, small: Boolean = false): StackPane =
 
         if (!small) {
 
-            children.add(
-                Group().apply {// triangle
-                    val triangleWidth = toPx(1.25)
-                    val triangleHeight = 0.5 * sqrt(3.0) * triangleWidth
-                    val borderSize = toPx(0.25)
-                    val bgColor = Color.web("#263238")
-
-                    alignment = Pos.CENTER_LEFT
-                    translateX = -triangleWidth - triangleHeight/2
-                    rotate = -90.0
-
-                    children.addAll(
-                        Polygon().apply {
-                            fill = accentColor
-                            points.addAll(
-                                0.0,
-                                0.0,
-                                -triangleWidth,
-                                triangleHeight,
-                                triangleWidth,
-                                triangleHeight
-                            )
-                        },
-                        Polygon().apply {
-                            val innerWidth =
-                                triangleWidth - 2 * sqrt(3.0) * borderSize +
-                                  2 * borderSize / sqrt(3.0)
-                            val innerHeight = triangleHeight - 3 * borderSize
-
-                            fill = bgColor
-                            points.addAll(
-                                0.0,
-                                triangleHeight - borderSize - innerHeight,
-                                -innerWidth,
-                                triangleHeight + 1,
-                                innerWidth,
-                                triangleHeight + 1
-                            )
-                        },
-                    )
-                },
-            )
         }
     }
 
