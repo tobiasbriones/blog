@@ -30,18 +30,60 @@ val accentColor = Color.web("#455A64")
 val backgroundColor = Color.web("#333")
 val backdropBlurBackground = BackdropBlurBackground()
 
-fun coverPr(): Pane = StackPane().apply {// root background
+data class CoverPr(
+    val commentBox: CommentBox,
+    val bgSrc: String,
+    val profilePhotoSrc: String,
+)
+
+fun extractCoverPr(parameters: Map<String, String>): CoverPr? {
+    val bgSrc = parameters["bg"]
+    val profilePhotoSrc = parameters["profile-photo"]
+    val heading = parameters["heading"]
+    val abstract = parameters["abstract"]
+    val footer = parameters["footer"]?.split(",") ?: listOf()
+    val subheading = parameters["subheading"]
+    val subdomainSrc = parameters["subdomain"]
+
+    if (bgSrc == null || profilePhotoSrc == null || heading == null || abstract == null) {
+        println("Missing required parameters.")
+        return null
+    }
+
+    return CoverPr(
+        bgSrc = bgSrc,
+        profilePhotoSrc = profilePhotoSrc,
+        commentBox = CommentBox(
+            heading = heading,
+            abstract = abstract,
+            footer = footer,
+            subheading = subheading,
+            subdomainSrc = subdomainSrc
+        )
+    )
+}
+
+data class CommentBox(
+    val heading: String,
+    val abstract: String,
+    val footer: List<String> = listOf(),
+    val subheading: String? = null,
+    val subdomainSrc: String? = null,
+)
+
+fun coverPr(coverPr: CoverPr): Pane = StackPane().apply {
     loadFonts()
 
+    val (commentBox, bgSrc, profilePhotoSrc) = coverPr
     prefWidth = 1920.0
     prefHeight = 1080.0
-    background = imageBackground("data/bg.png")
+    background = imageBackground(bgSrc)
     backdropBlurBackground.addSource(this)
 
     children.add(StackPane().apply { // MSWE background
         prefWidth = 1920.0
         prefHeight = 1080.0
-        background = imageBackground("mswe-radial.png")
+        background = localImageBackground("mswe-radial.png")
         backdropBlurBackground.addSource(this)
 
         children.addAll(VBox().apply { // content
@@ -53,8 +95,8 @@ fun coverPr(): Pane = StackPane().apply {// root background
             children.addAll(
                 HBox().apply {
                     children.addAll(
-                        profilePhoto(),
-                        createCommentBox()
+                        profilePhoto(profilePhotoSrc),
+                        createCommentBox(commentBox)
                     )
                 }
             )
@@ -62,13 +104,13 @@ fun coverPr(): Pane = StackPane().apply {// root background
     })
 }
 
-fun profilePhoto(): StackPane = StackPane().apply {
+fun profilePhoto(profileSrc: String): StackPane = StackPane().apply {
     prefWidth = toPx(10.0)
     prefHeight = toPx(10.0)
     maxWidth = toPx(10.0)
     maxHeight = toPx(10.0)
     padding = Insets(toPx(0.5))
-    background = imageBackground("mswe.png")
+    background = localImageBackground("mswe.png")
 
     children.addAll(
         Circle().apply {
@@ -78,7 +120,7 @@ fun profilePhoto(): StackPane = StackPane().apply {
         ImageView().apply {
             fitWidth = toPx(8.75)
             fitHeight = toPx(8.75)
-            image = Image(resPath("data/profile.jpeg"))
+            image = Image(profileSrc)
             clip = Rectangle(fitWidth, fitHeight).apply {
                 arcWidth = toPx(fitWidth / 2)
                 arcHeight = toPx(fitHeight / 2)
@@ -87,18 +129,18 @@ fun profilePhoto(): StackPane = StackPane().apply {
     )
 }
 
-fun createCommentBox(): StackPane {
-    val commentBox = commentBox()
+fun createCommentBox(commentBox: CommentBox): StackPane {
+    val commentBoxPane = commentBox.commentBox()
 
     HBox.setMargin(
-        commentBox,
+        commentBoxPane,
         Insets(0.0, 0.0, 0.0, toPx(2.0))
     )
-    HBox.setHgrow(commentBox, Priority.ALWAYS)
-    return commentBox
+    HBox.setHgrow(commentBoxPane, Priority.ALWAYS)
+    return commentBoxPane
 }
 
-fun commentBox(): StackPane = StackPane().apply {
+fun CommentBox.commentBox(): StackPane = StackPane().apply {
     val borderRadiusRem = 1.0
     val borderWidthRem = 0.25
     val w = widthProperty()
@@ -110,12 +152,18 @@ fun commentBox(): StackPane = StackPane().apply {
             children.addAll(
                 StackPane().apply {
                     backdropBlurBackground.parentBorderRadiusRem =
-                        borderRadiusRem - 0.125// border will be overridden
+                        borderRadiusRem - 0.125 // border will be overridden
                     backdropBlurBackground.parentBorderWidthRem = borderWidthRem
                     backdropBlurBackground.destination = this
 
                 },
-                commentBoxContent(),
+                commentBoxContent(
+                    heading,
+                    abstract,
+                    footer,
+                    subheading,
+                    subdomainSrc
+                ),
             )
         },
         Rectangle().apply {
@@ -178,30 +226,29 @@ fun commentBox(): StackPane = StackPane().apply {
     )
 }
 
-fun commentBoxContent(): VBox = VBox().apply {
-    val abstract = "It integrates the Cookie Consent v0.2.0 into the banner" +
-      " and customization pane:"
-    val items = listOf(
-        "Item 1", "Item 2",
-        "Item 3 sssssssssss ssssssssssssffffff fffffff ffffffttrhssss"
-    )
-
+fun commentBoxContent(
+    heading: String,
+    abstract: String,
+    items: List<String>,
+    subheading: String?,
+    subdomainSrc: String?,
+): VBox = VBox().apply {
     children.addAll(
-        heading(text = "texsydo/@MVP"),
+        heading(text = heading),
         StackPane().apply {
             children.addAll(
                 VBox().apply {// .comment-content
                     padding = padding(2.0, 3.0)
                     spacing = toPx(1.0)
 
+                    subheading?.let {
+                        children.add(heading(text = subheading, small = true))
+                    }
+
                     children.addAll(
-                        heading(text = "CanvasFX", small = true),
-                        Label(abstract).apply {
-                            isWrapText = true
-                            style = textCss(1.5)
-                        },
+                        abstract.parseMd(textCss(1.5), boldTextCss(1.5)),
                         VBox().apply {
-                            padding = Insets(0.0, toPx(5.0), 0.0, 0.0)
+                            padding = Insets(0.0, toPx(4.0), 0.0, 0.0)
 
                             children.addAll(
                                 items
@@ -209,14 +256,17 @@ fun commentBoxContent(): VBox = VBox().apply {
                                         HBox().apply {
                                             spacing = toPx(0.75)
                                             alignment = Pos.CENTER_LEFT
+
                                             children.addAll(
                                                 Circle().apply {
                                                     radius = toPx(0.25)
                                                     fill = Color.WHITE
                                                 },
-                                                Label(it).apply {
-                                                    style = textCss(1.5)
-                                                },
+                                                // TODO 42 chars max = one line
+                                                it.parseMd(
+                                                    textCss(1.5),
+                                                    boldTextCss(1.5)
+                                                ),
                                             )
                                         }
                                     })
@@ -231,7 +281,9 @@ fun commentBoxContent(): VBox = VBox().apply {
                         ImageView().apply {
                             fitWidth = toPx(7.0)
                             fitHeight = toPx(7.0)
-                            image = Image(resPath("data/subdomain.png"))
+                            subdomainSrc?.let {
+                                image = Image(subdomainSrc)
+                            }
                             opacity = 0.6
                             clip = Rectangle().apply {
                                 width = fitWidth
@@ -268,10 +320,6 @@ fun heading(text: String, small: Boolean = false): StackPane =
                 )
             }
         )
-
-        if (!small) {
-
-        }
     }
 
 fun padding(pyRem: Double, pxRem: Double): Insets =
@@ -279,7 +327,7 @@ fun padding(pyRem: Double, pxRem: Double): Insets =
 
 fun imageBackground(src: String): Background = Background(
     BackgroundImage(
-        Image(resPath(src)),
+        Image(src),
         BackgroundRepeat.NO_REPEAT,
         BackgroundRepeat.NO_REPEAT,
         BackgroundPosition.CENTER,
@@ -293,6 +341,10 @@ fun imageBackground(src: String): Background = Background(
         )
     )
 )
+
+fun localImageBackground(src: String): Background =
+    imageBackground(resPath(src))
+
 
 class BackdropBlurBackground {
     var destination: Pane? = null

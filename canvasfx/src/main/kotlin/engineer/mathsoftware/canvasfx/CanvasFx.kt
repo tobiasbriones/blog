@@ -1,6 +1,7 @@
 package engineer.mathsoftware.canvasfx
 
 import engineer.mathsoftware.canvasfx.drawing.coverPr
+import engineer.mathsoftware.canvasfx.drawing.extractCoverPr
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.embed.swing.SwingFXUtils
@@ -16,7 +17,19 @@ import javax.imageio.ImageIO
 
 class CanvasFx : Application() {
     override fun start(primaryStage: Stage) {
-        val drawing = coverPr()
+        if (parameters.named.isEmpty()) {
+            println("No command-line arguments provided.")
+            Platform.exit()
+        }
+
+        val coverPr = extractCoverPr(parameters.named)
+
+        if (coverPr == null) {
+            Platform.exit()
+            return
+        }
+
+        val drawing = coverPr(coverPr)
         val preview = false
         val scene = when (preview) {
             true  -> Scene(VBox(drawing))
