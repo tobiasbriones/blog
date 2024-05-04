@@ -32,13 +32,13 @@ val accentColor = Color.web("#455A64")
 val backgroundColor = Color.web("#333")
 val backdropBlurBackground = BackdropBlurBackground()
 
-data class CoverPr(
+data class PrCover(
     val commentBox: CommentBox,
     val bgSrc: String,
     val profilePhotoSrc: String,
 )
 
-fun extractCoverPr(parameters: Map<String, String>): CoverPr? {
+fun extractPrCover(parameters: Map<String, String>): PrCover? {
     val bgSrc = parameters["bg"]
     val profilePhotoSrc = parameters["profile-photo"]
     val heading = parameters["heading"]
@@ -52,7 +52,7 @@ fun extractCoverPr(parameters: Map<String, String>): CoverPr? {
         return null
     }
 
-    return CoverPr(
+    return PrCover(
         bgSrc = absUri(bgSrc),
         profilePhotoSrc = absUri(profilePhotoSrc),
         commentBox = CommentBox(
@@ -73,10 +73,10 @@ data class CommentBox(
     val subdomainSrc: String? = null,
 )
 
-fun coverPr(coverPr: CoverPr): Pane = StackPane().apply {
+fun coverPr(prCover: PrCover): Pane = StackPane().apply {
     loadFonts()
 
-    val (commentBox, bgSrc, profilePhotoSrc) = coverPr
+    val (commentBox, bgSrc, profilePhotoSrc) = prCover
     prefWidth = 1920.0
     prefHeight = 1080.0
     background = imageBackground(bgSrc)

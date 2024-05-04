@@ -10,7 +10,7 @@ import javafx.stage.Stage
 class CoverPrKtTest : Application() {
     override fun start(primaryStage: Stage) {
         val drawing = coverPr(
-            CoverPr(
+            PrCover(
                 bgSrc = resPath("data/bg.png"),
                 profilePhotoSrc = resPath("data/profile.jpeg"),
                 commentBox = CommentBox(
@@ -30,9 +30,9 @@ class CoverPrKtTest : Application() {
 
         val scene = Scene(VBox(drawing))
 
-        primaryStage.title = "Canvas FX: Cover PR"
+        primaryStage.title = "Texsydo FX: PR Cover"
         primaryStage.scene = scene
-        primaryStage.setMaximized(true);
+        primaryStage.setMaximized(true)
         primaryStage.show()
     }
 }

@@ -1,7 +1,7 @@
 package engineer.mathsoftware.canvasfx
 
 import engineer.mathsoftware.canvasfx.drawing.coverPr
-import engineer.mathsoftware.canvasfx.drawing.extractCoverPr
+import engineer.mathsoftware.canvasfx.drawing.extractPrCover
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.embed.swing.SwingFXUtils
@@ -18,32 +18,51 @@ import javax.imageio.ImageIO
 
 class CanvasFx : Application() {
     override fun start(primaryStage: Stage) {
-        if (parameters.named.isEmpty()) {
-            println("No command-line arguments provided.")
-            Platform.exit()
-        }
+        val cmd = parameters.unnamed.firstOrNull()
 
-        val coverPr = extractCoverPr(parameters.named)
-
-        if (coverPr == null) {
+        if (cmd == null) {
+            printError(
+                "No command-line arguments provided: Missing command " +
+                  "to render."
+            )
             Platform.exit()
             return
         }
 
-        println("Rendering $coverPr")
-        println()
+        if (parameters.named.isEmpty()) {
+            printError(
+                "No command-line arguments provided: Missing command args."
+            )
+            Platform.exit()
+            return
+        }
 
-        val drawing = coverPr(coverPr)
-        val preview = false
+
+        val drawing = when (cmd) {
+            "pr-cover" -> prCoverDrawing()
+            else       -> {
+                printError("Invalid command: $cmd")
+                null
+            }
+        }
+
+        if (drawing == null) {
+            Platform.exit()
+            return
+        }
+
+        val preview = isPreview()
         val scene = when (preview) {
             true  -> Scene(VBox(drawing))
             false -> Scene(drawing, drawing.prefWidth, drawing.prefHeight)
         }
 
         if (preview) {
-            primaryStage.title = "Canvas FX"
+            primaryStage.title = "Texsydo FX"
             primaryStage.scene = scene
+            primaryStage.isMaximized = true
             primaryStage.show()
+            primaryStage.toFront()
         }
         else {
             val output = getOutputPath()
@@ -51,6 +70,19 @@ class CanvasFx : Application() {
             takeSnapshot(drawing, output)
             Platform.exit()
         }
+    }
+
+    private fun isPreview(): Boolean = parameters
+        .unnamed
+        .contains("preview")
+
+    private fun prCoverDrawing(): Pane? {
+        val coverPr = extractPrCover(parameters.named) ?: return null
+
+        println("Rendering $coverPr")
+        println()
+
+        return coverPr(coverPr)
     }
 
     private fun takeSnapshot(root: Pane, output: String) {
