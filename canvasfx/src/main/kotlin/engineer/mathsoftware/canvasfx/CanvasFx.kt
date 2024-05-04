@@ -140,12 +140,12 @@ fun absUri(inputPath: String): String = with(Path.of(inputPath)) {
 }
 
 fun printError(msg: String) {
-    println("Error: $msg")
+    System.err.println("Error: $msg")
     println()
 }
 
 fun printError(e: Exception) {
-    println("Exception Error:")
+    System.err.println("Exception Error:")
     e.printStackTrace()
     println()
 }
