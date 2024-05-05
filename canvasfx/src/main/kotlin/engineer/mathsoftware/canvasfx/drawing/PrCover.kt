@@ -15,10 +15,7 @@ import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.*
 import javafx.scene.paint.Color
-import javafx.scene.shape.Circle
-import javafx.scene.shape.Polygon
-import javafx.scene.shape.Rectangle
-import javafx.scene.shape.StrokeType
+import javafx.scene.shape.*
 import javafx.scene.text.Font
 import kotlin.math.sqrt
 
@@ -73,22 +70,51 @@ data class CommentBox(
     val subdomainSrc: String? = null,
 )
 
-fun coverPr(prCover: PrCover): Pane = StackPane().apply {
+data class Release(val version: String, val subVersion: String?)
+
+fun prCover(
+    prCover: PrCover,
+    release: Release? = null,
+): Pane = StackPane().apply {
     loadFonts()
 
     val (commentBox, bgSrc, profilePhotoSrc) = prCover
+    val coverWidth = widthProperty()
+    val coverHeight = heightProperty()
     prefWidth = 1920.0
+    minWidth = 1920.0
     prefHeight = 1080.0
-    background = imageBackground(bgSrc)
-    backdropBlurBackground.addSource(this)
+    minHeight = 1080.0
 
-    children.add(StackPane().apply { // MSWE background
-        prefWidth = 1920.0
-        prefHeight = 1080.0
-        background = localImageBackground("mswe-radial.png")
-        backdropBlurBackground.addSource(this)
+    children.addAll(
+        StackPane().apply {
+            background = localImageBackground("mswe-radial.png")
 
-        children.addAll(VBox().apply { // content
+            backdropBlurBackground.addSource(this)
+        },
+        StackPane().apply {
+            val updateClip = {
+                // Clip the MSWE logo by removing the center circle to the BG
+                clip = Shape.subtract(
+                    Rectangle().apply {
+                        widthProperty().bind(coverWidth)
+                        heightProperty().bind(coverHeight)
+                    },
+                    Circle().apply {
+                        radiusProperty().bind(coverHeight.divide(2))
+                        centerXProperty().bind(coverWidth.divide(2))
+                        centerYProperty().bind(coverHeight.divide(2))
+                    }
+                )
+            }
+
+            background = imageBackground(bgSrc)
+            backdropBlurBackground.addSource(this)
+
+            widthProperty().addListener { _ -> updateClip() }
+            heightProperty().addListener { _ -> updateClip() }
+        },
+        VBox().apply { // content
             prefWidth = 1920.0
             prefHeight = 1080.0
             padding = Insets(toPx(1.0), toPx(3.0), toPx(1.0), toPx(3.0))
@@ -98,12 +124,33 @@ fun coverPr(prCover: PrCover): Pane = StackPane().apply {
                 HBox().apply {
                     children.addAll(
                         profilePhoto(profilePhotoSrc),
-                        createCommentBox(commentBox)
+                        createCommentBox(commentBox, release)
                     )
                 }
             )
         })
-    })
+}
+
+// Release cover is a PR cover extension
+data class ReleaseCover(
+    val prCover: PrCover,
+    val release: Release,
+)
+
+fun extractReleaseCover(parameters: Map<String, String>): ReleaseCover? {
+    val prCover = extractPrCover(parameters) ?: return null
+    val version = parameters["version"]
+    val subversion = parameters["subversion"]
+
+    if (version == null) {
+        printError("Missing required parameters.")
+        return null
+    }
+    return ReleaseCover(prCover, Release(version, subversion))
+}
+
+fun releaseCover(releaseCover: ReleaseCover): Pane = with(releaseCover) {
+    prCover(prCover, release)
 }
 
 fun profilePhoto(profileSrc: String): StackPane = StackPane().apply {
@@ -131,8 +178,8 @@ fun profilePhoto(profileSrc: String): StackPane = StackPane().apply {
     )
 }
 
-fun createCommentBox(commentBox: CommentBox): StackPane {
-    val commentBoxPane = commentBox.commentBox()
+fun createCommentBox(commentBox: CommentBox, release: Release?): StackPane {
+    val commentBoxPane = commentBox.commentBox(release)
 
     HBox.setMargin(
         commentBoxPane,
@@ -142,7 +189,7 @@ fun createCommentBox(commentBox: CommentBox): StackPane {
     return commentBoxPane
 }
 
-fun CommentBox.commentBox(): StackPane = StackPane().apply {
+fun CommentBox.commentBox(release: Release?): StackPane = StackPane().apply {
     val borderRadiusRem = 1.0
     val borderWidthRem = 0.25
     val w = widthProperty()
@@ -157,14 +204,14 @@ fun CommentBox.commentBox(): StackPane = StackPane().apply {
                         borderRadiusRem - 0.125 // border will be overridden
                     backdropBlurBackground.parentBorderWidthRem = borderWidthRem
                     backdropBlurBackground.destination = this
-
                 },
                 commentBoxContent(
                     heading,
                     abstract,
                     footer,
                     subheading,
-                    subdomainSrc
+                    subdomainSrc,
+                    release,
                 ),
             )
         },
@@ -234,9 +281,14 @@ fun commentBoxContent(
     items: List<String>,
     subheading: String?,
     subdomainSrc: String?,
+    release: Release?,
 ): VBox = VBox().apply {
     children.addAll(
-        heading(text = heading),
+        heading(
+            text = heading,
+            version = release?.version,
+            celeb = release?.subVersion == null,
+        ),
         StackPane().apply {
             children.addAll(
                 VBox().apply {// .comment-content
@@ -244,7 +296,14 @@ fun commentBoxContent(
                     spacing = toPx(1.0)
 
                     subheading?.let {
-                        children.add(heading(text = subheading, small = true))
+                        children.add(
+                            heading(
+                                text = subheading,
+                                small = true,
+                                version = release?.subVersion,
+                                celeb = true,
+                            )
+                        )
                     }
 
                     children.addAll(
@@ -301,13 +360,22 @@ fun commentBoxContent(
     )
 }
 
-fun heading(text: String, small: Boolean = false): StackPane =
+fun heading(
+    text: String,
+    small: Boolean = false,
+    version: String? = null,
+    celeb: Boolean? = false,
+): StackPane =
     StackPane().apply {
+        prefWidth = toPx(5.0)
+        prefHeight = toPx(5.0)
+
         children.add(
             HBox().apply {
                 val pxRem = if (small) 1.5 else 3.0
+                val pyRem = 1.0
 
-                padding = padding(1.0, pxRem)
+                padding = padding(pyRem, pxRem)
                 style = """
                     -fx-background-color: #263238;
                     -fx-background-radius: ${toPx(0.75)} ${toPx(0.75)} 0 0;
@@ -320,9 +388,37 @@ fun heading(text: String, small: Boolean = false): StackPane =
                         style = boldTextCss(2.0)
                     }
                 )
+
+                version?.let {
+                    children.add(
+                        version(version, celeb ?: true)
+                    )
+                }
             }
         )
     }
+
+fun version(version: String, celeb: Boolean) = HBox().apply {
+    alignment = Pos.CENTER_RIGHT
+    spacing = toPx(0.5)
+
+    HBox.setHgrow(this, Priority.ALWAYS)
+    if (celeb) {
+        children.add(
+            ImageView().apply {
+                fitWidth = toPx(3.0)
+                fitHeight = toPx(3.0)
+                image =
+                    Image(resPath("data/celebration.png"))
+            }
+        )
+    }
+    children.add(
+        Label("v$version").apply {
+            style = boldTextCss(2.0)
+        }
+    )
+}
 
 fun padding(pyRem: Double, pxRem: Double): Insets =
     Insets(toPx(pyRem), toPx(pxRem), toPx(pyRem), toPx(pxRem))

@@ -12,7 +12,7 @@ import java.nio.file.Path
 
 class CoverPrKtTest : Application() {
     override fun start(primaryStage: Stage) {
-        val drawing = coverPr(
+        val drawing = prCover(
             PrCover(
                 bgSrc = resPath("data/bg.png"),
                 profilePhotoSrc = resPath("data/profile.jpeg"),

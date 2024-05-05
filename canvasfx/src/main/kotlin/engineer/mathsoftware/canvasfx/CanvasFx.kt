@@ -1,11 +1,14 @@
 package engineer.mathsoftware.canvasfx
 
-import engineer.mathsoftware.canvasfx.drawing.coverPr
 import engineer.mathsoftware.canvasfx.drawing.extractPrCover
+import engineer.mathsoftware.canvasfx.drawing.extractReleaseCover
+import engineer.mathsoftware.canvasfx.drawing.prCover
+import engineer.mathsoftware.canvasfx.drawing.releaseCover
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.embed.swing.SwingFXUtils
 import javafx.scene.Scene
+import javafx.scene.control.ScrollPane
 import javafx.scene.image.WritableImage
 import javafx.scene.layout.Pane
 import javafx.scene.layout.VBox
@@ -37,10 +40,10 @@ class CanvasFx : Application() {
             return
         }
 
-
         val drawing = when (cmd) {
-            "pr-cover" -> prCoverDrawing()
-            else       -> {
+            "pr-cover"      -> prCoverDrawing()
+            "release-cover" -> releaseCoverDrawing()
+            else            -> {
                 printError("Invalid command: $cmd")
                 null
             }
@@ -53,7 +56,7 @@ class CanvasFx : Application() {
 
         val preview = isPreview()
         val scene = when (preview) {
-            true  -> Scene(VBox(drawing))
+            true  -> Scene(VBox(ScrollPane(drawing)))
             false -> Scene(drawing, drawing.prefWidth, drawing.prefHeight)
         }
 
@@ -82,7 +85,16 @@ class CanvasFx : Application() {
         println("Rendering $coverPr")
         println()
 
-        return coverPr(coverPr)
+        return prCover(coverPr)
+    }
+
+    private fun releaseCoverDrawing(): Pane? {
+        val releaseCover = extractReleaseCover(parameters.named) ?: return null
+
+        println("Rendering $releaseCover")
+        println()
+
+        return releaseCover(releaseCover)
     }
 
     private fun takeSnapshot(root: Pane, output: String) {
