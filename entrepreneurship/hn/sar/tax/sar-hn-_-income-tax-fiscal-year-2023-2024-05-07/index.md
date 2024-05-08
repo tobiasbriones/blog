@@ -13,3 +13,13 @@ Image by
 <a href="https://pixabay.com/photos/income-tax-calculation-calculate-491626/">Pixabay</a>
 </b>
 </p>
+
+{% include iframe.html title = "Income Tax Diploma"
+src = "static/my-income-tax-diploma.pdf"
+%}
+
+<p align="center">
+<b>
+My Income Tax Diploma
+</b>
+</p>
