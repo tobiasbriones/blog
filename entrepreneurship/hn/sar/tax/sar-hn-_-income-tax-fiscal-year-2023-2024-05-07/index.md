@@ -43,3 +43,15 @@ from [www.sefin.gob.hn](https://www.sefin.gob.hn/wp-content/uploads/2018/06/Text
 [Texto consolidado Ley Impuesto Sobre la Renta, hasta el Acuerdo SAR-020-2022, Preparado por el Departamento de Asesoría Legal de la Dirección Nacional Jurídica. – SAR](https://www.sar.gob.hn/download/texto-consolidado-ley-impuesto-sobre-la-renta-hasta-el-acuerdo-sar-020-2022-preparado-por-el-departamento-de-asesoria-legal-de-la-direccion-nacional-juridica/).
 
 [5] [Declaración Jurada del Impuesto sobre la Renta - Persona Natural V2 \| DET Live](http://detlive.sar.gob.hn/?q=ISR_PN_V2).
+
+[6] [Curso: Impuesto Sobre la Renta - Período Fiscal 2023](https://escuelavirtualtributaria.sar.gob.hn/course/view.php?id=30).
+
+[7] [Eventos en mayo 2024 – SAR](https://www.sar.gob.hn/events/categoria/webinars-capacitaciones/).
+
+[8] Webinar Impuesto sobre la Renta y Pagos a Cuenta aplicado a profesionales de
+la salud. (2024, January 23)
+[EduSalud \| Facultad de Ciencias Médicas \| UNAH](https://edusaludfcm.com/curso.php?i=49).
+
+[9] EduSalud FCM UNAH. (2024, February 8). WEBINAR2024- ISR y pagos a cuenta
+aplicado a profesionales de la salud [Video].
+[YouTube](https://www.youtube.com/watch?v=bEUatolCXJk).
