@@ -14,6 +14,36 @@ Image by
 </b>
 </p>
 
+## Leveraging the Law as the Ultimate Source
+
+Taxation resources can be educational, professional advice, and the very law.
+
+Educational ones can be the SAR course on income tax for the 2023 fiscal year[6]
+I recently took, informative blogs like this article where I save references and
+my experience, etc. They can also be webinars such as SAR webinars they give
+throughout the year for free[7] and paid courses or webinars like the one I took
+from EduSalud UNAH 3 months ago[8].
+
+Advanced sources can come from the dedicated professional advice of licensed
+accountants or lawyers with expertise in taxes in your country (or state), such
+as SAR staff or contractors/employees working for an organization.
+
+When studying tax matters, you must frequently go to the updated laws
+corresponding to your inquiries since the law is the source of truth. Therefore,
+as an entrepreneur, you have the responsibility to understand what the law says.
+Then, you will also be able to process results from collaborators like
+accountants.
+
+Taking laws as the source of truth is like taking the source code and generating
+the diagrams in SWE (not the other way around) or taking postulates in physics
+or math to infer specific cases.
+
+There are many educational resources for learning about income taxes in
+Honduras, and the most advanced ones will include dedicated professional advice
+grounded in the very laws. Whether you're a professional or run a business, you
+must keep up to date with underlying laws since you will always have part of the
+liability in your operations.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
