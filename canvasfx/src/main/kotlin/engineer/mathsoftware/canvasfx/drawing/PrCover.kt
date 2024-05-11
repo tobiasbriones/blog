@@ -5,6 +5,7 @@ import engineer.mathsoftware.canvasfx.printError
 import engineer.mathsoftware.canvasfx.remToPx
 import engineer.mathsoftware.canvasfx.resPath
 import javafx.beans.property.SimpleObjectProperty
+import javafx.embed.swing.SwingFXUtils
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.Group
@@ -15,8 +16,14 @@ import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.*
 import javafx.scene.paint.Color
+import javafx.scene.paint.CycleMethod
+import javafx.scene.paint.RadialGradient
+import javafx.scene.paint.Stop
 import javafx.scene.shape.*
 import javafx.scene.text.Font
+import java.io.File
+import javax.imageio.ImageIO
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 val fontSizePx = 32.0
@@ -28,6 +35,7 @@ val accentColorBlue = Color.web("#1976D2")
 val accentColor = Color.web("#455A64")
 val backgroundColor = Color.web("#333")
 val backdropBlurBackground = BackdropBlurBackground()
+val gradientCenterColor = Color.web("#9ac5db")
 
 data class PrCover(
     val commentBox: CommentBox,
@@ -88,7 +96,7 @@ fun prCover(
 
     children.addAll(
         StackPane().apply {
-            background = localImageBackground("mswe-radial.png")
+            background = createMsweRadialBackground()
 
             backdropBlurBackground.addSource(this)
         },
@@ -123,7 +131,7 @@ fun prCover(
             children.addAll(
                 HBox().apply {
                     children.addAll(
-                        profilePhoto(profilePhotoSrc),
+                        profilePhoto(profilePhotoSrc, bg = release == null),
                         createCommentBox(commentBox, release)
                     )
                 }
@@ -153,30 +161,34 @@ fun releaseCover(releaseCover: ReleaseCover): Pane = with(releaseCover) {
     prCover(prCover, release)
 }
 
-fun profilePhoto(profileSrc: String): StackPane = StackPane().apply {
-    prefWidth = toPx(10.0)
-    prefHeight = toPx(10.0)
-    maxWidth = toPx(10.0)
-    maxHeight = toPx(10.0)
-    padding = Insets(toPx(0.5))
-    background = localImageBackground("mswe.png")
+fun profilePhoto(profileSrc: String, bg: Boolean = true): StackPane =
+    StackPane().apply {
+        prefWidth = toPx(10.0)
+        prefHeight = toPx(10.0)
+        maxWidth = toPx(10.0)
+        maxHeight = toPx(10.0)
+        padding = Insets(toPx(0.5))
 
-    children.addAll(
-        Circle().apply {
-            radius = toPx(4.5)
-            fill = Color.web("#212121")
-        },
-        ImageView().apply {
-            fitWidth = toPx(8.75)
-            fitHeight = toPx(8.75)
-            image = Image(profileSrc)
-            clip = Rectangle(fitWidth, fitHeight).apply {
-                arcWidth = toPx(fitWidth / 2)
-                arcHeight = toPx(fitHeight / 2)
-            }
+        if (bg) {
+            background = localImageBackground("mswe.png")
         }
-    )
-}
+
+        children.addAll(
+            Circle().apply {
+                radius = toPx(4.5)
+                fill = Color.web("#212121")
+            },
+            ImageView().apply {
+                fitWidth = toPx(8.75)
+                fitHeight = toPx(8.75)
+                image = Image(profileSrc)
+                clip = Rectangle(fitWidth, fitHeight).apply {
+                    arcWidth = toPx(fitWidth / 2)
+                    arcHeight = toPx(fitHeight / 2)
+                }
+            }
+        )
+    }
 
 fun createCommentBox(commentBox: CommentBox, release: Release?): StackPane {
     val commentBoxPane = commentBox.commentBox(release)
@@ -570,6 +582,74 @@ class BackdropBlurBackground {
                 )
             )
     }
+}
+
+fun createMsweRadialBackground(): Background {
+    val bgWidth = 1920.0
+    val bgHeight = 1080.0
+    val gradientRadius = sqrt((bgWidth.pow(2.0) + bgHeight.pow(2.0)) / 4)
+    val group = Group().apply {
+        children.addAll(
+            Rectangle().apply {
+                width = bgWidth
+                height = bgHeight
+                fill = Color.WHITE
+            },
+            ImageView().apply {
+                fitWidth = bgHeight
+                fitHeight = bgHeight
+                x = (bgWidth - bgHeight) / 2
+                image = Image(resPath("mswe-1080.png"))
+            },
+            Circle().apply {
+                radius = gradientRadius
+                fill = RadialGradient(
+                    0.0,
+                    0.0,
+                    0.5,
+                    0.5,
+                    1.0,
+                    true,
+                    CycleMethod.NO_CYCLE,
+                    Stop(0.0, gradientCenterColor),
+                    Stop(0.5, Color.TRANSPARENT)
+                )
+                clip = Rectangle(bgWidth, bgHeight)
+                centerX = bgWidth / 2
+                centerY = bgHeight / 2
+            }
+        )
+    }
+
+    val writableImage = group.snapshot(
+        SnapshotParameters().apply {
+            fill = Color.TRANSPARENT
+        },
+        null
+    )
+
+    ImageIO.write(
+        SwingFXUtils.fromFXImage(writableImage, null),
+        "png",
+        File("image.png")
+    )
+
+    return Background(
+        BackgroundImage(
+            writableImage,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.CENTER,
+            BackgroundSize(
+                100.0,
+                100.0,
+                true,
+                true,
+                true,
+                false
+            )
+        )
+    )
 }
 
 fun textCss(sizeRem: Double = 1.0): String = """
