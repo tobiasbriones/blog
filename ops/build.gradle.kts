@@ -45,7 +45,7 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "22"
+    kotlinOptions.jvmTarget = "21"
 }
 
 tasks.jar {
@@ -55,7 +55,7 @@ tasks.jar {
 }
 
 kotlin {
-    jvmToolchain(22)
+    jvmToolchain(21)
 }
 
 application {

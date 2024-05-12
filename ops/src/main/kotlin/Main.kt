@@ -394,6 +394,7 @@ fun build(entry: Entry, config: BuildConfig) {
     buildIndex(srcDir, outDir)
     buildSubdirectories(outDir, entry)
     copyStaticFiles()
+    generateCoverImageIfNeeded(entry, config)
 
     println("✔ Build article ${entry.name()}")
 }

@@ -9,10 +9,11 @@ import printError
 import java.io.IOException
 import java.nio.file.Path
 
+
 fun buildReact(entry: Entry, outDir: Path) {
     val body = readHtmlBodyFromBuild(entry, outDir)
 
-    println(body)
+//    println(body)
 }
 
 fun readHtmlBodyFromBuild(entry: Entry, outDir: Path): String = outDir
