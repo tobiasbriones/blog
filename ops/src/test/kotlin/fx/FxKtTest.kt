@@ -32,7 +32,8 @@ class FxKtTest {
 
     @Test
     fun extractFooter() {
-        val footer = "Item 1., Item 2., Item 3.".some()
+        val footer = "Item 1., Item 2., Item 3."
+        val footerWrapped = "\"$footer\"".some()
         val tokensWithOnlyAbstract = listOf("Abstract paragraph.")
         val tokensWithDataNoFooter = listOf(
             "`Heading | Project X`",
@@ -59,8 +60,8 @@ class FxKtTest {
 
         assertEquals(None, getFooter(tokensWithOnlyAbstract))
         assertEquals(None, getFooter(tokensWithDataNoFooter))
-        assertEquals(footer, getFooter(tokensWithAbstractAndFooter))
-        assertEquals(footer, getFooter(tokensWithDataAndFooter))
+        assertEquals(footerWrapped, getFooter(tokensWithAbstractAndFooter))
+        assertEquals(footerWrapped, getFooter(tokensWithDataAndFooter))
     }
 
     @Test
@@ -213,7 +214,7 @@ class FxKtTest {
         """.trimIndent()
 
         assertEquals(
-            "v0.12.1".some(), inferRepoVersion(index, "mathswe/lambda")
+            "0.12.1".some(), inferRepoVersion(index, "mathswe/lambda")
         )
     }
 
@@ -224,7 +225,7 @@ class FxKtTest {
         val onlyRepoRelease = "Cookie Banner v1.23.0"
 
         assertEquals(
-            "v0.23.5".some(),
+            "0.23.5".some(),
             inferSubheadingVersion(articleTitleWithSubheading)
         )
 

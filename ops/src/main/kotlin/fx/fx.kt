@@ -193,8 +193,10 @@ fun getFooter(tokens: List<String>): Option<String> = tokens
     .firstOrNone { it.startsWith("- ") }
     .fold({ listOf() }, { it.split("\n") })
     .map { it.removePrefix("-").trim() }
+    .filterNot(String::isBlank)
     .reduceOrNull { acc: String, s: String -> "$acc, $s" }
     .toOption()
+    .map { "\"$it\"" }
 
 fun getFilePath(resourceName: String): Option<String> {
     val path = AppFiles.pathOf(Path.of(resourceName))
@@ -263,7 +265,8 @@ fun extractBranchNames(text: String): List<String> {
         .findAll(text)
         .forEach { match ->
             val extractedText = match.groupValues[1]
-            val branchPattern = Regex("""`main <- ([\w/-]+)`""")
+
+            val branchPattern = Regex("""`[\w/-]+ <- ([\w/-]+)`""")
             val branchMatchResult = branchPattern.find(extractedText)
             branchMatchResult?.let { branchNames.add(it.groupValues[1]) }
         }
