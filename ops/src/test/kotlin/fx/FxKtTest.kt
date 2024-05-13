@@ -2,12 +2,7 @@ package fx
 
 import arrow.core.None
 import arrow.core.some
-import extractOrgAndRepo
-import getAbstract
-import getFooter
-import getResourceFilePath
 import org.junit.jupiter.api.Test
-import splitPipe
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -110,5 +105,128 @@ class FxKtTest {
             "mathswe/@.com",
             "${extractedWithoutRedundancy?.first}/${extractedWithoutRedundancy?.second}"
         )
+    }
+
+    @Test
+    fun extractsSourceBranchNames() {
+        val textNone = """
+            # Article
+
+            Par.
+
+            ---
+
+            **Publish cookie-consent v0.1.0**
+
+            Mar 28: PR [#1](https://github.com/mathswe/legal/pull/1) merged
+            by [tobiasbriones](https://github.com/tobiasbriones)
+            {: .pr-subtitle }
+        """.trimIndent()
+
+        val textSimple = """
+            ---
+
+            **Publish cookie-consent v0.1.0**
+
+            Mar 28: PR [#1](https://github.com/mathswe/legal/pull/1) merged
+            into `main <- cookie-consent`
+            by [tobiasbriones](https://github.com/tobiasbriones)
+            {: .pr-subtitle }
+        """.trimIndent()
+
+        val textMultiple = """
+            # Article
+
+            Abstract.
+
+            ---
+
+            **Publish cookie-consent v0.1.0**
+
+            Mar 28: PR [#1](https://github.com/mathswe/legal/pull/1) merged
+            into `main <- cookie-consent`
+            by [tobiasbriones](https://github.com/tobiasbriones)
+            {: .pr-subtitle }
+
+            Par.
+
+            ---
+
+            **Publish cookie-consent v0.1.0**
+
+            Mar 28: PR [#1](https://github.com/mathswe/legal/pull/1) merged
+            into `main <- cookie-consent`
+            by [tobiasbriones](https://github.com/tobiasbriones)
+            {: .pr-subtitle }
+
+            Par.
+
+            ---
+
+            **Publish cookie-consent v0.1.0**
+
+            Mar 28: PR [#1](https://github.com/mathswe/legal/pull/1) merged
+            into `main <- legal/ops`
+            by [tobiasbriones](https://github.com/tobiasbriones)
+            {: .pr-subtitle }
+
+            Par.
+        """.trimIndent()
+
+        assertEquals(
+            listOf(),
+            extractBranchNames(textNone)
+        )
+        assertEquals(
+            listOf("cookie-consent"),
+            extractBranchNames(textSimple)
+        )
+        assertEquals(
+            listOf("cookie-consent", "cookie-consent", "legal/ops"),
+            extractBranchNames(textMultiple)
+        )
+    }
+
+    @Test
+    fun infersRepoVersion() {
+        val index = """
+            # Title
+            
+            Abstract text.
+            
+            ## Intro
+            
+            Release for [Feature](https://github.com/mathswe/lambda/tag/v0.12.1)
+            with refactorizations and features.
+            
+            ## Feature X
+            
+            Par.
+            
+            Difference 
+            [link](https://github.com/mathswe/mathswe.com/tag/v0.2.0) here.
+            
+            ## Done
+            
+            Par.
+        """.trimIndent()
+
+        assertEquals(
+            "v0.12.1".some(), inferRepoVersion(index, "mathswe/lambda")
+        )
+    }
+
+    @Test
+    fun infersMicroserviceVersion() {
+        val articleTitleWithSubheading =
+            "Workforce Model v0.23.5 | MathSwe Lambda"
+        val onlyRepoRelease = "Cookie Banner v1.23.0"
+
+        assertEquals(
+            "v0.23.5".some(),
+            inferSubheadingVersion(articleTitleWithSubheading)
+        )
+
+        assertEquals(None, inferSubheadingVersion(onlyRepoRelease))
     }
 }

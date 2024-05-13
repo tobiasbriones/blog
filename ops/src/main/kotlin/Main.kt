@@ -1,6 +1,7 @@
 import Cmd.*
 import arrow.core.*
 import fs.*
+import fx.generateCoverImageIfNeeded
 import html.Attribute
 import html.Div
 import html.Img
@@ -394,7 +395,7 @@ fun build(entry: Entry, config: BuildConfig) {
     buildIndex(srcDir, outDir)
     buildSubdirectories(outDir, entry)
     copyStaticFiles()
-    generateCoverImageIfNeeded(entry, config)
+    generateCoverImageIfNeeded(entry, config, title)
 
     println("✔ Build article ${entry.name()}")
 }
