@@ -5,7 +5,6 @@ import engineer.mathsoftware.canvasfx.printError
 import engineer.mathsoftware.canvasfx.remToPx
 import engineer.mathsoftware.canvasfx.resPath
 import javafx.beans.property.SimpleObjectProperty
-import javafx.embed.swing.SwingFXUtils
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.Group
@@ -21,8 +20,6 @@ import javafx.scene.paint.RadialGradient
 import javafx.scene.paint.Stop
 import javafx.scene.shape.*
 import javafx.scene.text.Font
-import java.io.File
-import javax.imageio.ImageIO
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -40,6 +37,7 @@ val gradientCenterColor = Color.web("#9ac5db")
 data class PrCover(
     val commentBox: CommentBox,
     val bgSrc: String,
+    val bgColor: Color,
     val profilePhotoSrc: String,
 )
 
@@ -48,9 +46,13 @@ fun extractPrCover(parameters: Map<String, String>): PrCover? {
     val profilePhotoSrc = parameters["profile-photo"]
     val heading = parameters["heading"]
     val abstract = parameters["abstract"]
-    val footer = parameters["footer"]?.split(",") ?: listOf()
+    val footer = parameters["footer"]
+        ?.split(",")
+        ?.map { it.trim() }
+        ?: listOf()
     val subheading = parameters["subheading"]
     val subdomainSrc = parameters["subdomain"]
+    val bgColor = parameters["bg-color"] ?: "white"
 
     if (bgSrc == null || profilePhotoSrc == null || heading == null || abstract == null) {
         printError("Missing required parameters.")
@@ -59,6 +61,7 @@ fun extractPrCover(parameters: Map<String, String>): PrCover? {
 
     return PrCover(
         bgSrc = absUri(bgSrc),
+        bgColor = Color.web(bgColor),
         profilePhotoSrc = absUri(profilePhotoSrc),
         commentBox = CommentBox(
             heading = heading,
@@ -86,7 +89,7 @@ fun prCover(
 ): Pane = StackPane().apply {
     loadFonts()
 
-    val (commentBox, bgSrc, profilePhotoSrc) = prCover
+    val (commentBox, bgSrc, bgColor, profilePhotoSrc) = prCover
     val coverWidth = widthProperty()
     val coverHeight = heightProperty()
     prefWidth = 1920.0
@@ -96,7 +99,7 @@ fun prCover(
 
     children.addAll(
         StackPane().apply {
-            background = createMsweRadialBackground()
+            background = createMsweRadialBackground(bgColor)
 
             backdropBlurBackground.addSource(this)
         },
@@ -584,7 +587,7 @@ class BackdropBlurBackground {
     }
 }
 
-fun createMsweRadialBackground(): Background {
+fun createMsweRadialBackground(bgColor: Color): Background {
     val bgWidth = 1920.0
     val bgHeight = 1080.0
     val gradientRadius = sqrt((bgWidth.pow(2.0) + bgHeight.pow(2.0)) / 4)
@@ -593,7 +596,7 @@ fun createMsweRadialBackground(): Background {
             Rectangle().apply {
                 width = bgWidth
                 height = bgHeight
-                fill = Color.WHITE
+                fill = bgColor
             },
             ImageView().apply {
                 fitWidth = bgHeight
@@ -615,6 +618,7 @@ fun createMsweRadialBackground(): Background {
                     Stop(0.5, Color.TRANSPARENT)
                 )
                 clip = Rectangle(bgWidth, bgHeight)
+                opacity = 0.4
                 centerX = bgWidth / 2
                 centerY = bgHeight / 2
             }
@@ -626,12 +630,6 @@ fun createMsweRadialBackground(): Background {
             fill = Color.TRANSPARENT
         },
         null
-    )
-
-    ImageIO.write(
-        SwingFXUtils.fromFXImage(writableImage, null),
-        "png",
-        File("image.png")
     )
 
     return Background(
