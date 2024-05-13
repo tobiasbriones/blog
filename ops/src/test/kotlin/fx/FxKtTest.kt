@@ -10,6 +10,7 @@ class FxKtTest {
     @Test
     fun extractsAbstract() {
         val abstract = "Abstract paragraph."
+        val abstractWrap = "\"$abstract\"".some()
         val tokensWithOnlyAbstract = listOf(abstract)
         val tokensWithDataNoFooter = listOf(
             "`Heading | Project X`",
@@ -24,9 +25,9 @@ class FxKtTest {
             """.trimMargin("|")
         )
 
-        assertEquals(abstract.some(), getAbstract(tokensWithOnlyAbstract))
-        assertEquals(abstract.some(), getAbstract(tokensWithDataNoFooter))
-        assertEquals(abstract.some(), getAbstract(tokensWithDataAndFooter))
+        assertEquals(abstractWrap, getAbstract(tokensWithOnlyAbstract))
+        assertEquals(abstractWrap, getAbstract(tokensWithDataNoFooter))
+        assertEquals(abstractWrap, getAbstract(tokensWithDataAndFooter))
     }
 
     @Test
@@ -64,9 +65,9 @@ class FxKtTest {
 
     @Test
     fun resourcePathWorks() {
-        val res = getResourceFilePath("cover/bg.png")
+        val res = getFilePath("cover/bg.png")
 
-        assertTrue { res?.contains("/resources/main/cover/bg.png") ?: false }
+        assertTrue(res.isSome())
     }
 
     @Test
@@ -102,7 +103,7 @@ class FxKtTest {
             "${extractedNormal?.first}/${extractedNormal?.second}"
         )
         assertEquals(
-            "mathswe/@.com",
+            "mathswe/mathswe.com",
             "${extractedWithoutRedundancy?.first}/${extractedWithoutRedundancy?.second}"
         )
     }
@@ -196,7 +197,7 @@ class FxKtTest {
             
             ## Intro
             
-            Release for [Feature](https://github.com/mathswe/lambda/tag/v0.12.1)
+            Release for [Feature](https://github.com/mathswe/lambda/releases/tag/v0.12.1)
             with refactorizations and features.
             
             ## Feature X
@@ -204,7 +205,7 @@ class FxKtTest {
             Par.
             
             Difference 
-            [link](https://github.com/mathswe/mathswe.com/tag/v0.2.0) here.
+            [link](https://github.com/mathswe/mathswe.com/releases/tag/v0.2.0) here.
             
             ## Done
             

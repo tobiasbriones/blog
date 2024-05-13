@@ -315,6 +315,7 @@ fun parseAutomaticCoverImageCaption(entry: Entry): Option<String> {
 
 fun parseAutomaticCoverImage(value: String, entry: Entry): String {
     val coverImageName = "${entry.name()}.png"
+    val coverSrcPath = entry.path.resolve("$coverImageName.md")
     val relPath = with(entry.path) {
         if (resolve("images").resolve(coverImageName).exists())
             Path.of("images", coverImageName)
@@ -336,7 +337,10 @@ fun parseAutomaticCoverImage(value: String, entry: Entry): String {
         """.trimMargin()
     }
 
-    if (path.notExists()) {
+    // path: Normal cover image the user added to Git in the article
+    // coverSrcPath: Generated Cover, like PR/Release article (assume it will
+    // exist)
+    if (path.notExists() && coverSrcPath.notExists()) {
         return value
     }
     if (value.contains(coverImageHtml)) {

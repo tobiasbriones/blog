@@ -4,6 +4,7 @@ import `$`
 import BuildConfig
 import Entry
 import arrow.core.*
+import fs.AppFiles
 import fx.CoverCmd.PrCover
 import fx.CoverCmd.ReleaseCover
 import handleError
@@ -12,6 +13,7 @@ import path
 import runCommand
 import java.nio.file.Files
 import java.nio.file.Path
+import java.util.*
 import java.util.regex.Pattern
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.exists
@@ -62,15 +64,30 @@ fun texsydoFx(
     outDir: Path,
 ) {
     val index = Files.readString(entry.path.resolve("index.md"))
+    val orgRepoPair = extractOrgAndRepo(index) ?: return
+    val repoPath = "${orgRepoPair.first}/${orgRepoPair.second}"
 
     fun opt(name: String, value: Option<String>) = value
         .fold({ "" }, { "--$name=$it" })
 
-    fun getOutputDir(): String =
-        outDir.resolve(entry.name()).absolutePathString()
+    fun getTempOutputDir(): String =
+        Files
+            .createTempFile("tsf-fx_", "_${entry.name()}")
+            .absolutePathString()
+
+    fun getBuildOutput(): Path =
+        outDir
+            .resolve(entry.name())
+            .resolve("${entry.name()}.png")
 
     fun getHeading(): String {
-        val pair = extractOrgAndRepo(index) ?: return ""
+        val pair = orgRepoPair
+            .let {
+                if (it.second.startsWith(it.first)) {
+                    Pair(it.first, "@${it.second.removePrefix(it.first)}")
+                } else it
+            }
+
         return "${pair.first}/${pair.second}"
     }
 
@@ -89,7 +106,7 @@ fun texsydoFx(
     fun inferSubheadingFromRelease(): Option<String> =
         with(splitPipe(title)) {
             if (second.isNotBlank())
-                removeSuffixAfterVersion(first).some()
+                removeSuffixAfterVersion(first).some().map { "\"$it\"" }
             else None
         }
 
@@ -99,19 +116,36 @@ fun texsydoFx(
         .maxByOrNull { it.value.size }
         .toOption()
         .map { it.key }
+        .map { title -> // Capitalize Title
+            title
+                .split("-")
+                .joinToString(" ") { word -> // Capitalize First Word
+                    word.replaceFirstChar { ch ->
+                        if (ch.isLowerCase()) ch.titlecase(Locale.getDefault())
+                        else ch.toString()
+                    }
+                }
+        }
+        .map { "\"$it\"" }
 
     fun getSubdomainLogo(): Option<String> {
-        val pair = extractOrgAndRepo(index) ?: return None
-        val repo = pair.first
-        return getResourceFilePath("cover/repo/$repo.png").toOption()
+        return getFilePath("cover/repo/${orgRepoPair.second}.png")
     }
 
-    val bg = getResourceFilePath("cover/bg.png")
-    val profile = getResourceFilePath("cover/profile.jpeg")
+    val bg = getFilePath("cover/bg.png").getOrNull() ?: return
+    val profile = when (coverCmd) {
+        PrCover -> getFilePath("cover/profile.jpeg")
+            .getOrNull()
+            ?: return
+
+        ReleaseCover -> getFilePath("cover/org/${orgRepoPair.first}.png")
+            .getOrNull()
+            ?: return
+    }
     val heading = getHeading()
     val tokens = getCoverMdTokens()
-    val abstract = getAbstract(tokens)
-    val output = getOutputDir()
+    val abstract = getAbstract(tokens).getOrNull() ?: return
+    val output = getTempOutputDir()
     val footer = getFooter(tokens)
     val subheading = when (coverCmd) {
         PrCover -> inferSubHeadingFromPr()
@@ -120,34 +154,40 @@ fun texsydoFx(
     val subdomain = getSubdomainLogo()
     val version = when (coverCmd) {
         PrCover -> None
-        ReleaseCover -> inferRepoVersion(index, heading)
+        ReleaseCover -> inferRepoVersion(index, repoPath)
     }
     val subversion = when (coverCmd) {
         PrCover -> None
         ReleaseCover -> inferSubheadingVersion(title)
     }
-    val cmd = """
-        | tsd-fx $coverCmd \
-        | --bg=$bg \
-        | --profile=$profile \
-        | --heading=$heading \
-        | --abstract=$abstract \
-        | --output=$output \
-        | ${opt("footer", footer)} \
-        | ${opt("subheading", subheading)} \
-        | ${opt("subdomain", subdomain)} \
-        | ${opt("version", version)} \
-        | ${opt("subversion", subversion)} \
-    """.trimMargin("|")
+    val cmd = listOf(
+        "tsd-fx $coverCmd",
+        "--bg=$bg",
+        "--profile-photo=$profile",
+        "--heading=$heading",
+        "--abstract=$abstract",
+        "--output=$output",
+        opt("footer", footer),
+        opt("subheading", subheading),
+        opt("subdomain", subdomain),
+        opt("version", version),
+        opt("subversion", subversion),
+    )
+        .filter { it.isNotBlank() }
+        .reduce { acc, s -> "$acc $s" }
 
     runCommand(cmd)
         .onLeft(handleError `$` "Failed to generate cover image")
         .onRight { println("✔ Generate cover image") }
         .getOrNull() ?: return
+
+    Files.move(Path.of(output), getBuildOutput())
 }
 
 fun getAbstract(tokens: List<String>): Option<String> = tokens
     .firstOrNone { !it.startsWith("`") }
+    .map { it.replace("\n", "") }
+    .map { "\"$it\"" }
 
 fun getFooter(tokens: List<String>): Option<String> = tokens
     .firstOrNone { it.startsWith("- ") }
@@ -156,9 +196,11 @@ fun getFooter(tokens: List<String>): Option<String> = tokens
     .reduceOrNull { acc: String, s: String -> "$acc, $s" }
     .toOption()
 
-fun getResourceFilePath(resourceName: String): String? {
-    val resourceUrl = object {}.javaClass.classLoader.getResource(resourceName)
-    return resourceUrl?.toExternalForm()?.removePrefix("file:")
+fun getFilePath(resourceName: String): Option<String> {
+    val path = AppFiles.pathOf(Path.of(resourceName))
+
+    return if (path.exists()) path.absolutePathString().some()
+    else None
 }
 
 fun splitPipe(data: String): Pair<String, String> = with(data.split("|")) {
@@ -174,9 +216,9 @@ fun removeSuffixAfterVersion(input: String): String {
     } ?: input
 }
 
-fun inferRepoVersion(index: String, heading: String): Option<String> {
+fun inferRepoVersion(index: String, repoPath: String): Option<String> {
     val githubUrlPattern =
-        "https://github.com/$heading/tag/(v\\d+\\.\\d+\\.\\d+)"
+        "https://github.com/$repoPath/releases/tag/v(\\d+\\.\\d+\\.\\d+)"
     val pattern = Pattern.compile(githubUrlPattern)
     val matcher = pattern.matcher(index)
 
@@ -186,23 +228,27 @@ fun inferRepoVersion(index: String, heading: String): Option<String> {
 fun inferSubheadingVersion(title: String): Option<String> = splitPipe(title)
     .let {
         if (it.second.isNotBlank()) { // has context or subheading
-            val pattern = Regex("""v\d+\.\d+\.\d+""")
-            val matchResult = pattern.find(it.first)
+            val pattern = Pattern.compile("""v(\d+\.\d+\.\d+)""")
+            val matcher = pattern.matcher(title)
 
-            matchResult?.let { version -> Some(version.value) } ?: None
+            return if (matcher.find()) Some(matcher.group(1)) else None
         } else None
     }
 
-fun extractOrgAndRepo(link: String): Pair<String, String>? {
-    val pattern = Regex("""https://github\.com/([^/]+)/([^/]+)/pull/(\d+)""")
-    val matchResult = pattern.find(link)
+fun extractOrgAndRepo(index: String): Pair<String, String>? {
+    val pattern = Regex(
+        """https://github\.com/([^/]+)/([^/]+)/(pull|releases)/"""
+    )
+    val matchResult = pattern.find(index)
+
     return matchResult?.let {
         val (org, repo, _) = it.destructured
         org to repo
-    }?.let {
-        if (it.second.startsWith(it.first)) {
-            Pair(it.first, "@${it.second.removePrefix(it.first)}")
-        } else it
+    }.let {
+        if (it == null) {
+            println("Fail to infer Org and Repo from Article")
+        }
+        it
     }
 }
 
