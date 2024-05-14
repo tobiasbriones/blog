@@ -322,7 +322,15 @@ fun commentBoxContent(
                     }
 
                     children.addAll(
-                        abstract.parseMd(textCss(1.5), boldTextCss(1.5)),
+                        abstract
+                            .parseMd(textCss(1.5), boldTextCss(1.5))
+                            .apply {
+                                // Add padding if there are no items below
+                                // to avoid collision with the right-bottom logo
+                                if (items.isEmpty()) {
+                                    padding = Insets(0.0, toPx(3.0), 0.0, 0.0)
+                                }
+                            },
                         VBox().apply {
                             padding = Insets(0.0, toPx(4.0), 0.0, 0.0)
 
