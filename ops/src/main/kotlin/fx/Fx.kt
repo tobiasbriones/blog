@@ -169,8 +169,10 @@ fun texsydoFx(
 }
 
 fun getAbstract(tokens: List<String>): Option<String> = tokens
+    // a heading may start with an "`info`" line (unused currently)
+    // the first content after that is the abstract paragraph
     .firstOrNone { !it.startsWith("`") }
-    .map { it.replace("\n", "") }
+    .map { it.replace("\n", " ").trim() }
     .map { "\"$it\"" }
 
 fun getFooter(tokens: List<String>): Option<String> = tokens
