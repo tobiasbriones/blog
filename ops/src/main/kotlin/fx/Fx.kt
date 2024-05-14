@@ -64,8 +64,8 @@ fun texsydoFx(
     outDir: Path,
 ) {
     val index = Files.readString(entry.path.resolve("index.md"))
-    val orgRepoPair = extractOrgAndRepo(index) ?: return
-    val repoPath = "${orgRepoPair.first}/${orgRepoPair.second}"
+    val (org, repo) = extractOrgAndRepo(index) ?: return
+    val repoPath = "$org/$repo"
 
     fun opt(name: String, value: Option<String>) = value
         .fold({ "" }, { "--$name=$it" })
@@ -80,16 +80,9 @@ fun texsydoFx(
             .resolve(entry.name())
             .resolve("${entry.name()}.png")
 
-    fun getHeading(): String {
-        val pair = orgRepoPair
-            .let {
-                if (it.second.startsWith(it.first)) {
-                    Pair(it.first, "@${it.second.removePrefix(it.first)}")
-                } else it
-            }
-
-        return "${pair.first}/${pair.second}"
-    }
+    fun getHeading(): String =
+        if (repo.startsWith(org)) "$org/@${repo.removePrefix(org)}"
+        else "$org/$repo"
 
     fun getCoverMdTokens(): List<String> {
         val coverPath = entry.path.resolve("${entry.name()}.png.md")
@@ -128,20 +121,10 @@ fun texsydoFx(
         }
         .map { "\"$it\"" }
 
-    fun getSubdomainLogo(): Option<String> {
-        return getFilePath("cover/repo/${orgRepoPair.second}.png")
-    }
-
-    val bg = getFilePath("cover/bg.png").getOrNull() ?: return
-    val profile = when (coverCmd) {
-        PrCover -> getFilePath("cover/profile.jpeg")
-            .getOrNull()
-            ?: return
-
-        ReleaseCover -> getFilePath("cover/org/${orgRepoPair.first}.png")
-            .getOrNull()
-            ?: return
-    }
+    val bg = getBg().getOrNull() ?: return
+    val bgColor = getBgColor(repo)
+    val profile = getProfilePhoto(coverCmd, org)
+        .getOrNull() ?: return
     val heading = getHeading()
     val tokens = getCoverMdTokens()
     val abstract = getAbstract(tokens).getOrNull() ?: return
@@ -151,7 +134,7 @@ fun texsydoFx(
         PrCover -> inferSubHeadingFromPr()
         ReleaseCover -> inferSubheadingFromRelease()
     }
-    val subdomain = getSubdomainLogo()
+    val subdomain = getSubdomainLogo(repo)
     val version = when (coverCmd) {
         PrCover -> None
         ReleaseCover -> inferRepoVersion(index, repoPath)
@@ -163,6 +146,7 @@ fun texsydoFx(
     val cmd = listOf(
         "tsd-fx $coverCmd",
         "--bg=$bg",
+        "--bg-color=$bgColor",
         "--profile-photo=$profile",
         "--heading=$heading",
         "--abstract=$abstract",
@@ -218,15 +202,6 @@ fun removeSuffixAfterVersion(input: String): String {
     } ?: input
 }
 
-fun inferRepoVersion(index: String, repoPath: String): Option<String> {
-    val githubUrlPattern =
-        "https://github.com/$repoPath/releases/tag/v(\\d+\\.\\d+\\.\\d+)"
-    val pattern = Pattern.compile(githubUrlPattern)
-    val matcher = pattern.matcher(index)
-
-    return if (matcher.find()) Some(matcher.group(1)) else None
-}
-
 fun inferSubheadingVersion(title: String): Option<String> = splitPipe(title)
     .let {
         if (it.second.isNotBlank()) { // has context or subheading
@@ -236,23 +211,6 @@ fun inferSubheadingVersion(title: String): Option<String> = splitPipe(title)
             return if (matcher.find()) Some(matcher.group(1)) else None
         } else None
     }
-
-fun extractOrgAndRepo(index: String): Pair<String, String>? {
-    val pattern = Regex(
-        """https://github\.com/([^/]+)/([^/]+)/(pull|releases)/"""
-    )
-    val matchResult = pattern.find(index)
-
-    return matchResult?.let {
-        val (org, repo, _) = it.destructured
-        org to repo
-    }.let {
-        if (it == null) {
-            println("Fail to infer Org and Repo from Article")
-        }
-        it
-    }
-}
 
 fun extractBranchNames(text: String): List<String> {
     val branchNames = mutableListOf<String>()
