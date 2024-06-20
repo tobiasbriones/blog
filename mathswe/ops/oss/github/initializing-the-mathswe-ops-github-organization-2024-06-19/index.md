@@ -56,3 +56,37 @@ and top to bottom.
 Furthermore, deploying mathematical software will be a requirement in the
 future. Unlike generic tools for ordinary DevOps, MSW must be deployed
 properly to ensure the engineering grade with MathSwe support.
+
+As said, the software will need to be engineering grade, despite the impurity
+of OS mutable state, side effects, etc., described before, compared to pure MSW.
+
+The software must be an *open standard* with its DSL *specifying*
+the domain, which must be of mathematical or scientific roots. Then, the DSL is
+extended or implemented via SWAM[^2], and the engineer must ensure using only
+*open standards* in that implementation and pass the general SWE process to
+finally achieve the **engineering grade**.
+
+[^2]: Hence, "SWAM, Special Models" since it implements the DSL, which is the
+    "pure model," into a concrete special model in the wild that passes the
+    tests to comply with the DSL
+
+For example, with tools such as Linux and Git, the software can reach the
+engineering grade since these are open-source global standards[^3]. Even though
+an OS has many side effects, with standards like Rust, the software can be
+well-tested to pass a **general software production grade**. Hence, the
+"Special" in SWAM since the implementation grade is generalist, but the whole
+(DSL + SWAM) is safe to consider engineering grade.
+
+[^3]: It's like the scientific method where science must be open to reproduce
+    and study it
+
+It's important to notice that *SWAM is not limited to MathSwe Ops*. MathSwe Ops
+covers a wide form of SWAM since it operates on the whole OS rather than a
+particular app. In other cases, a project has its spec
+(DSL) and particular SWAM integrating its DSL[^4]. Therefore, MathSwe Ops
+happens to be a wide-spectrum that operates models along the OS to empower the
+engineering process rather than an implementation of a particular MSW directly.
+
+[^4]: For example, Repsymo can take the OR definitions from MSW Sci
+    (mathematical science software), which constitutes the DSL, and multiple
+    SWAM implementations to realize it
