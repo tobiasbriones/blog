@@ -108,3 +108,7 @@ as per MathSwe standard (i.e., one MVP per org. max), and provides the GPL-3.0
 License since it can contain any code for experimentation, so it's ready to
 comply with any possible integration with Linux friendly software, which is
 usually copyleft.
+
+The new MathSwe Ops GitHub organization will establish a better focalization for
+the system automation code while eventually reaching the engineering grade via
+SWAM to develop and deploy mathematical software.
