@@ -4,6 +4,11 @@
 
 # Initializing the MathSwe Ops GitHub Organization (2024/06/19)
 
+Linux's system automation can enable productive mathematical software
+development and further deployment. The new MathSwe Ops project will implement a
+broad form of SWAM (Special Software and Models) to operate in the OS for
+mathematical purposes.
+
 I was testing some automation code I wrote in Rust last year to create software
 images you can install and restore. For instance, you need to restore the system
 state if you lose your OS and need to reinstall due to a fatal issue on your
