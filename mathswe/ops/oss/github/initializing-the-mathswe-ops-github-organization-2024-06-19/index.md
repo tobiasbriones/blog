@@ -36,3 +36,23 @@ Besides, third-party tools are not open standards. Contrary, you can consider
 software like Linux and Git open standards since everyone
 uses/audits/tests/etc., and they're open source *without any business bias*.
 Only employing open standards is required to get the software engineering grade.
+
+The first implementations that come into mind are about automating the Linux
+workstation or VMs, as described before.
+
+I've had many ideas of what to automate but little focus before. With the new
+MathSwe Ops project, these will start coming out.
+
+One of the goals is to automate the system restoration to install configured
+software with zero human interaction. Everything has to handle the vast mutable
+states, side effects, and imperatives to operate the OS and keep up to date with
+esoteric by-package instructions.
+
+It's necessary to perform some system setup for daily work, like opening the
+workstation software, such as IDE with internal windows. It must follow the UX
+standards with visuals optimized to the center and navigation from left to right
+and top to bottom.
+
+Furthermore, deploying mathematical software will be a requirement in the
+future. Unlike generic tools for ordinary DevOps, MSW must be deployed
+properly to ensure the engineering grade with MathSwe support.
