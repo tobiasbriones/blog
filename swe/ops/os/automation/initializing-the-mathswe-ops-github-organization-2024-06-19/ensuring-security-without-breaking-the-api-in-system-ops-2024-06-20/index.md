@@ -2,4 +2,4 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Ensuring Security Without Breaking the Api in System Ops (2024/06/20)
+# Ensuring Security Without Breaking the API in System Ops (2024/06/20)
