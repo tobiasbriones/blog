@@ -340,7 +340,7 @@ function updateFilePath() {
   if (!pathHasMultipleLevels()) {
     return;
   }
-  
+
   const pageTitle = document.querySelector('h1').textContent;
 
   // It's a file like DataTest.java
