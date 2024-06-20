@@ -90,3 +90,21 @@ engineering process rather than an implementation of a particular MSW directly.
 [^4]: For example, Repsymo can take the OR definitions from MSW Sci
     (mathematical science software), which constitutes the DSL, and multiple
     SWAM implementations to realize it
+
+Finally, the licenses *expected* to be provided to the projects will be
+BSD-3-Clause as much as possible and GPLv3.0 for better compatibility in
+projects that require calling or using Linux tools that are usually copyleft,
+like Git. *The Affero version is not an option* for this project to avoid
+scaring away cloud providers[^5]. So, permissive for the independent standards
+and copyleft for lower level code.
+
+[^5]: It's crucial to put minimal friction for everyone with permissive
+    licenses to develop and deploy mathematical software, as well as providing
+    support everywhere while leaving copyleft ones for final software 💡
+
+The first [organization](https://github.com/mathswe-ops) project
+is [its MVP `mathswe-ops---mvp`](https://github.com/mathswe-ops/mathswe-ops---mvp),
+as per MathSwe standard (i.e., one MVP per org. max), and provides the GPL-3.0
+License since it can contain any code for experimentation, so it's ready to
+comply with any possible integration with Linux friendly software, which is
+usually copyleft.
