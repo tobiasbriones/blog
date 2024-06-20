@@ -11,3 +11,14 @@ machine. Also, you might use VMs in the cloud that delete everything when you
 exit [^1], and you have to install and set up your software every time.
 
 [^1]: So you have to pay 💲 to save the machine state
+
+Remarkable non-functional requirements are **security** and
+**correctness** (error, global state, side effect, third-party documentation,
+and fetch repository handling) are essential in this project. While correctness
+is always a must in MSW, there are challenges because of the imperative nature
+of OS system programming. The security aspect is an additional challenge
+extrinsic to MSW. Hence, I designed the SWAM concept to address these special
+scenarios.
+
+Regarding functional requirements, it'll have DSLs based on MSWE principles,
+thus reaching the engineering grade, but for now, it's starting as another MVP.
