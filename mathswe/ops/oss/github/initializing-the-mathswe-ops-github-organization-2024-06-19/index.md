@@ -68,7 +68,7 @@ well-tested to pass a **general software production grade**. Hence, the
 "Special" in SWAM since the implementation grade is generalist, but the whole
 (DSL + SWAM) is safe to consider engineering grade.
 
-[^3]: It's like the scientific method where science must be open to reproduce
+[^3]: It's like the scientific method, where science must be open to reproduce
     and study it
 
 It's important to notice that *SWAM is not limited to MathSwe Ops*. MathSwe Ops
