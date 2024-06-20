@@ -28,20 +28,6 @@ scenarios.
 Regarding functional requirements, it'll have DSLs based on MSWE principles,
 thus reaching the engineering grade, but for now, it's starting as another MVP.
 
-To speed up matters right now, I thought maybe some existing tools could help,
-but it didn't work well.
-
-I reviewed tools like Packer (by HashiCorp), but I think these DevOps tools are
-more appropriate for the cloud and won't integrate well with mathematical
-software. I'm not losing efforts in over-engineered DevOps tools just to find
-out you can't handle errors rigorously. Third-party tools may be leveraged
-independently for personal use instead.
-
-Besides, third-party tools are not open standards. Contrary, you can consider
-software like Linux and Git open standards since everyone
-uses/audits/tests/etc., and they're open source *without any business bias*.
-Only employing open standards is required to get the software engineering grade.
-
 The first implementations that come into mind are about automating the Linux
 workstation or VMs, as described before.
 
