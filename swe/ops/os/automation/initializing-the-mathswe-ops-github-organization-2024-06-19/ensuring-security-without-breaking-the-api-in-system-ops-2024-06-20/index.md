@@ -4,6 +4,11 @@
 
 # Ensuring Security Without Breaking the API in System Ops (2024/06/20)
 
+The new MathSwe Ops project will focus on security specifications while
+addressing challenges such as smooth DSL integrations via SWAM and avoiding
+unnecessary side effects. Acceptable tools must be open standards with domain
+expertise when relying on software engineered by other organizations.
+
 In [Initializing the MathSwe Ops GitHub Organization (2024/06/19)](/initializing-the-mathswe-ops-github-organization-2024-06-19),
 I updated about the `mathswe-ops` organization to focus on the system automation
 code and how to eventually reach the engineering grade with SWAM for developing
@@ -84,7 +89,7 @@ requirements by enforcing a DSL with efficient machine implementations.
 
 While I will start updating the new MathSwe Ops project by experimenting with
 its MVP repository, I'll keep reviewing open standard tools that can help MSW
-development and deployment. Using open standards is mandatory for 
+development and deployment. Using open standards is mandatory for
 engineering-grade software.
 
 Tempting more system side effects by calling external terminal or CLI
