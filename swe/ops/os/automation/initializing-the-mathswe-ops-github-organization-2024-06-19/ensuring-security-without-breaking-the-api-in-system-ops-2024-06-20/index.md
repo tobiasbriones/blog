@@ -3,3 +3,7 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Ensuring Security Without Breaking the API in System Ops (2024/06/20)
+
+## References
+
+[1] [copilot. Hackage.](https://hackage.haskell.org/package/copilot)
