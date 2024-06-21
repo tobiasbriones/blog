@@ -75,12 +75,32 @@ code is imperative for the engineer.
 Imperative code is at the wrong level of abstraction, hence the side effects.
 
 Whether it is declarative or imperative *depends on the observer*, and that's
-what engineers must address by letting tools (i.e., SWAM) work with the
-machine while engineers work with the DSL.
+what engineers must address by letting tools (i.e., SWAM) work with the machine
+while engineers work with the DSL.
 
 Engineers should use tools written in purely functional languages like Haskell
 and PureScript to keep engineering standards, as they will give the security
 requirements by enforcing a DSL with efficient machine implementations.
+
+While I will start updating the new MathSwe Ops project by experimenting with
+its MVP repository, I'll keep reviewing open standard tools that can help MSW
+development and deployment. Using open standards is mandatory for 
+engineering-grade software.
+
+Tempting more system side effects by calling external terminal or CLI
+applications should be discouraged for engineering-grade settings as they
+require an imperative focus on esoteric outputs and third-party documentation.
+Spawning more processes (i.e., more side effects) hinders proper error handling
+and builds more boundaries that also break the DSL, create runtime overhead, and
+programming logic over-engineering (e.g., you have to *try to* parse strings to
+actual errors, etc.).
+
+DSLs and SWAM make systems relative by making them declarative for engineers and
+machines.
+
+MathSwe Ops should stress security specifications as a crucial feature, where
+functional languages will help as they have done before with many organizations
+with rigorous engineering standards.
 
 ## References
 
