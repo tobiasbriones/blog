@@ -16,8 +16,8 @@ and deploying mathematical software.
 
 One can use available tools or build news if existing ones don't fit the
 criteria. Namely, rigorous error handling given the stateful OS nature and
-long-term impact on automated software that will live in the system for a long
-term; thus, it must be thoroughly secure.
+long-term impact on automated software that will stay and live in the system;
+thus, it must be thoroughly secure.
 
 To speed up matters right now, I thought maybe some existing tools could help,
 but it didn't work well.
