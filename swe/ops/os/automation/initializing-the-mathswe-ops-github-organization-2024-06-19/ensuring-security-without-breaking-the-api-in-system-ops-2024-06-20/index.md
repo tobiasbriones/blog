@@ -22,13 +22,14 @@ thus, it must be thoroughly secure.
 To speed up matters right now, I thought maybe some existing tools could help,
 but it didn't work well.
 
-I reviewed tools like Packer (by HashiCorp), but I think these DevOps tools are
-more appropriate for the cloud and won't integrate well with mathematical
-software. I'm not losing efforts in over-engineered DevOps tools just to find
-out you can't handle errors rigorously. Third-party tools may be leveraged
-independently for personal use instead.
+I think these DevOps tools are more appropriate for the cloud and won't
+integrate well with mathematical software. I'm not losing efforts in
+over-engineered DevOps tools just to find out you can't handle errors
+rigorously.
 
-Third-party generic tools won't integrate well.
+Third-party generic tools won't integrate well, and you should check if they
+were originally designed to fit your specific work so they **fit your API or
+DSL to avoid breaking it and over-engineering**.
 
 For example, you would have to use a list of system commands to install software
 in cold OS installation rather than reusing them per needs.
