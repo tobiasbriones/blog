@@ -87,7 +87,8 @@ engineer while C or low-level code is declarative for the machine. Conversely,
 the DSL is imperative for the machine, which cannot execute concepts, while
 machine code is imperative for the engineer.
 
-Imperative code is at the wrong level of abstraction, hence the side effects.
+When you measure imperative code, you're at the wrong level of abstraction,
+hence the side effects.
 
 Whether it is declarative or imperative *depends on the observer*, and that's
 what engineers must address by letting tools (i.e., SWAM) work with the machine
