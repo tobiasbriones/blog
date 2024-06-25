@@ -94,15 +94,15 @@ Whether it is declarative or imperative *depends on the observer*, and that's
 what engineers must address by letting tools (i.e., SWAM) work with the machine
 while engineers work with the DSL.
 
-Engineers should use tools written in purely functional languages like Haskell
-and PureScript to keep engineering standards since programs will meet the
-security requirements by enforcing a DSL capable of rigorous and efficient
+Engineers should use tools written in **purely functional languages** like
+Haskell and PureScript to keep engineering standards since programs will meet
+the security requirements by enforcing a DSL capable of rigorous and efficient
 machine-level implementations if needed.
 
 While I will start updating the new MathSwe Ops project by experimenting with
 its MVP repository, I'll keep reviewing open standard tools that can help MSW
-development and deployment. Using open standards is mandatory for
-engineering-grade software.
+development and deployment. Using **open standards is mandatory for
+engineering-grade** software.
 
 Tempting more system side effects by calling external terminal or CLI
 applications should be discouraged for engineering-grade settings as they
