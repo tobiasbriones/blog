@@ -84,8 +84,8 @@ machine languages.
 
 Its **relativism** makes it efficient since the DSL is declarative for the
 engineer while C or low-level code is declarative for the machine. Conversely,
-the DSL is imperative for the machine that can't execute concepts, while machine
-code is imperative for the engineer.
+the DSL is imperative for the machine, which cannot execute concepts, while
+machine code is imperative for the engineer.
 
 Imperative code is at the wrong level of abstraction, hence the side effects.
 
