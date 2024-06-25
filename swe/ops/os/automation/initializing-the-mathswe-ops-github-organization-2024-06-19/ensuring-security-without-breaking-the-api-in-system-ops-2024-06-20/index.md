@@ -16,32 +16,41 @@ and deploying mathematical software.
 
 One can use available tools or build news if existing ones don't fit the
 criteria. Namely, *rigorous error handling* given the *stateful OS nature* and
-long-term impact on automated software that will stay and live in the system;
+long-term impact on automated software that will stay operating in the system;
 thus, **tools must be thoroughly secure**.
 
 To speed up matters right now, I thought maybe some existing tools could help,
 but it didn't work well.
 
-I think these DevOps tools are more appropriate for the cloud and won't
-integrate well with mathematical software. I'm not losing efforts in
-over-engineered DevOps tools just to find out you can't handle errors
-rigorously.
+I think these DevOps tools are more appropriate for the cloud, which means
+they're final solutions and won't integrate well with mathematical software. I'm
+not losing efforts in over-engineered DevOps tools just to find out you can't
+handle errors rigorously.
 
-Third-party generic tools won't integrate well, and you should check if they
-were originally designed to fit your specific work so they **fit your API or
-DSL to avoid breaking it and over-engineering**.
+Third-party generic tools won't integrate well. You should check if they were
+originally designed to fit your specific work. So, they **fit your API or DSL to
+avoid breaking and over-engineering it** while recalling that integrations with
+tools or implementation details go to the system boundaries. **System boundaries
+are a focus of side effects**. Hence, it's crucial to make tooling integrations
+fit your design, whether they're a third or first party.
 
-For example, you would have to use a list of system commands to install software
-in cold OS installation rather than reusing them per needs.
+For example, you'd have to pass a list of system commands to generic tools in a
+generic config file (instead of application code) to install some software in
+cold OS installation, which, further, you can't reuse for other needs. You get a
+shell script quality but the complexity of setting up a DevOps suite while
+pushing more boundaries on your system.
 
-Furthermore, these tools will —hopefully— provide generic error handling (what
-guarantees that?). Spawning new processes (by using the terminal) only increases
-the side effects, reducing the API domain (turns more imperative/esoteric) and
-speeding up complexity.
+Furthermore, generic tools will —hopefully— provide generic error handling (what
+guarantees that?). Spawning new processes when using the terminal only increases
+the side effects, creating more boundaries, reducing the API domain (turns more
+imperative/esoteric), and speeding up complexity.
 
 Then, you'll have to read esoteric command outputs as primitive values (strings
-or int) according to their version instead of an actual API that runs in the
-same process with no alien message passing via CLI.
+or int) according to their CLI version instead of interacting with an actual API
+that runs in the same process with no alien message passing via CLI.
+
+Computing is chock-full of side effects, but *there are many we should avoid*
+with proper systems engineering.
 
 Besides, third-party tools are not open standards. Contrary, you can consider
 software like Linux and Git **open standards** since everyone
