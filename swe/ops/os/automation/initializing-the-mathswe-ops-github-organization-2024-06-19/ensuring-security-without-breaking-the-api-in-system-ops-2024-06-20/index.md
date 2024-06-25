@@ -61,7 +61,7 @@ since it resembles how science works.
 
 Unlike tools written in imperative languages by generic programmers, a tool
 written in a functional language requires **domain expertise** to design its
-DSL, which is required for the engineering grade.
+DSL for successful compilation, which is required for the engineering grade.
 
 In systems engineering, you can use a functional language as the frontend
 (DSL) and compile it down, like
