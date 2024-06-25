@@ -112,8 +112,9 @@ and builds more boundaries that also break the DSL, create runtime overhead, and
 programming logic over-engineering (e.g., you have to *try to* parse strings to
 actual errors, etc.).
 
-DSLs and SWAM make systems relative by making them declarative for engineers and
-machines.
+DSLs and SWAM relativize systems by making them declarative for engineers and
+machines. It gives us the principle of closure, where everything is declarative
+at its corresponding abstraction level.
 
 MathSwe Ops should stress security specifications as a crucial feature, where
 functional languages will help as they have done before with many organizations
