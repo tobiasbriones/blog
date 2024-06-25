@@ -95,8 +95,9 @@ what engineers must address by letting tools (i.e., SWAM) work with the machine
 while engineers work with the DSL.
 
 Engineers should use tools written in purely functional languages like Haskell
-and PureScript to keep engineering standards, as they will give the security
-requirements by enforcing a DSL with efficient machine implementations.
+and PureScript to keep engineering standards since programs will meet the
+security requirements by enforcing a DSL capable of rigorous and efficient
+machine-level implementations if needed.
 
 While I will start updating the new MathSwe Ops project by experimenting with
 its MVP repository, I'll keep reviewing open standard tools that can help MSW
