@@ -20,6 +20,7 @@
 - [Visualization Caption (2023/10/01)](visualization-caption-2023-10-01)
 - [How I Standardized Hyphen and Pipe Symbols on File Names](how-i-standardized-hyphen-and-pipe-symbols-on-file-names)
 - [License Change from MIT to BSD-3-Clause for Code Snippets (2023/04/13)](license-change-from-mit-to-bsd--3--clause-for-code-snippets-2023-04-13)
+- [Ensuring Security Without Breaking the API in System Ops (2024/06/20)](ensuring-security-without-breaking-the-api-in-system-ops-2024-06-20)
 - [New Article and Code Navigation Features (2023/09/09)](new-article-and-code-navigation-features-2023-09-09)
 - [New Code Snippet Feature (2023/10/11)](new-code-snippet-feature-2023-10-11)
 - [Cleaning up Details (2023/10/06)](cleaning-up-details-2023-10-06)
