@@ -14,7 +14,7 @@ I updated about the `mathswe-ops` organization to focus on the system automation
 code and how to eventually reach the engineering grade with SWAM for developing
 and deploying mathematical software.
 
-One can use available tools or build news if existing ones don't fit the
+One can use available tools or build new ones if existing ones don't fit the
 criteria. Namely, *rigorous error handling* given the *stateful OS nature* and
 long-term impact on automated software that will stay operating in the system;
 thus, **tools must be thoroughly secure**.
