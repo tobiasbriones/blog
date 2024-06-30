@@ -69,6 +69,20 @@ mistranslations or misinterpretations.
 The income tax law gives many articles, yet you may find the most popular ones
 more useful, mostly in the beginning.
 
+### The First Article
+
+The first article establishes the annual income tax and defines the essentials,
+such as what "income" means. It taxes the incomes from work, capital, or both
+determined by the body of this law.
+
+It states that this tax is ruled by the payment capacity. So, you'll see later
+how the rich will pay more taxes while the poor or elderly will be charged
+progressively with exemption benefits.
+
+The first article on the income tax in Honduras is obviously one of the
+essentials you must read when you start learning about income tax. It gives you
+the base definitions that will expand later within the rest of the law body.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
