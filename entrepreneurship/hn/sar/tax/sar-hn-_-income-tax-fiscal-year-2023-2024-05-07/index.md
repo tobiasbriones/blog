@@ -44,6 +44,31 @@ grounded in the very laws. Whether you're a professional or run a business, you
 must keep up to date with underlying laws since you will always have part of the
 liability in your operations.
 
+## Income Tax in Honduras
+
+Legal documents such as the income tax law or "Ley de Impuesto Sobre la Renta"
+in Spanish and the tax code provide the source to address the income tax in
+Honduras.
+
+Honduras' tax system is territorial, as stated by the tax code, article 1 Item 2
+[1].
+
+If you need to learn about income tax, you should read the income tax law [2]
+and the tax code [1] that state the legal facts to apply to your inquiries or
+necessities.
+
+Always ensure to access updated versions of these legal documents. Old versions
+might be intricate to read, but the one I left in the references is easy to
+follow and "consolidated," so you don't have to read the original text and the
+updates separately.
+
+Recall that legal documents, such as the income law, are written in Spanish, so
+you should use this language while applying technicalities to avoid
+mistranslations or misinterpretations.
+
+The income tax law gives many articles, yet you may find the most popular ones
+more useful, mostly in the beginning.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
