@@ -151,3 +151,10 @@ la salud. (2024, January 23)
 [9] EduSalud FCM UNAH. (2024, February 8). WEBINAR2024- ISR y pagos a cuenta
 aplicado a profesionales de la salud [Video].
 [YouTube](https://www.youtube.com/watch?v=bEUatolCXJk).
+
+[10] Secretaría de Finanzas. (2014, February 14). REGLAMENTO DEL RÉGIMEN DE
+FACTURACIÓN, OTROS DOCUMENTOS FISCALES y REGISTRO FISCAL DE IMPRENTAS. La
+Gaceta, 2.
+
+[11] Registro Tributario Nacional Numérico (RTN). (2017, May 16).
+[Secretaría De Desarrollo Económico](https://sde.gob.hn/registro-tributario-nacional-numerico-rtn/)
