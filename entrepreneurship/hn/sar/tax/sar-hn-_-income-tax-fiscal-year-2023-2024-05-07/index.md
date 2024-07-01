@@ -83,6 +83,33 @@ The first article on the income tax in Honduras is obviously one of the
 essentials you must read when you start learning about income tax. It gives you
 the base definitions that will expand later within the rest of the law body.
 
+### Deductions
+
+When you declare your income tax, you should include all your valid deductions
+or expenses in its computation to minimize the tax to pay at last, as the law
+gives you these credits.
+
+It's crucial to understand what a *valid deduction* is, because you may not add
+anything you want but only the expenses the law allows you to consider.
+
+If you don't include deductions (even minimal ones) in your tax declarations,
+you will pay more taxes than fair, and the government will accept these
+shamelessly and happily. Conversely, if you make up deductions and pay fewer
+taxes than fair, you'll get into trouble; hence, it is crucial to keep
+documentation to protect you.
+
+Therefore, you're responsible for deducting all your expenses carefully and
+following the law with proper documentation to save that extra money you
+shouldn't pay in taxes while ensuring you pay the correct amount.
+
+If you pay more taxes than mandatory, they will receive it happily, but if you
+pay less because you add altered deductions or random expenses, you'll probably
+get into trouble.
+
+Finally, if you have proper documentation, play fair, and are well-informed by
+following what the law gives you, then you should be all right while minimizing
+your taxes to pay.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
