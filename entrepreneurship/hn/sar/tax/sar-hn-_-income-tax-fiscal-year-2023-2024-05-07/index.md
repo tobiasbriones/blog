@@ -110,6 +110,18 @@ Finally, if you have proper documentation, play fair, and are well-informed by
 following what the law gives you, then you should be all right while minimizing
 your taxes to pay.
 
+### Deduction Criteria
+
+You must follow some articles from the law to determine the expenses to deduct
+when filing your income tax and get this right the law gives you.
+
+The underlying articles correspond to the #11, #12 and #13. So, you read the
+income law to get the details about these criteria.
+
+Article #11 introduces and addresses the deductibles for businesses, article #12
+gives non-deductible expenses, and article #13 gives acceptable deductibles for
+natural persons.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
