@@ -122,6 +122,70 @@ Article #11 introduces and addresses the deductibles for businesses, article #12
 gives non-deductible expenses, and article #13 gives acceptable deductibles for
 natural persons.
 
+#### Deduction for Businesses and Generalities
+
+First, you must understand an essential basis for identifying a deductible
+expense. As per article #11, the **net taxable income (renta neta gravable)** is
+the **gross income (renta bruta)** minus deductions. Where deductions must (be):
+
+- Ordinary and necessary expenses to generate the income.
+- Belong to the underlying period or year.
+- Properly demonstrated/documented.
+- Already paid.
+
+Moreover, article #11 enumerates instances of these deductions in its items a-n.
+
+Your deductions to determine your net taxable income must be **necessary to
+generate your income**, for example, office expenses since you can't provide
+your professional services without a computer or internet connection.
+
+You must be careful when taking an expense as necessary when it actually isn't.
+Personal expenses are invalid since they must be directly related to those that
+generate your income.
+
+There are subtle cases, too. For example, someone who charges for beauty
+services but pays their college fees as an accountant. Then, the accountant's
+license or fees are invalid expenses since the person generates the income with
+beauty services and not as an accountant.
+
+Further, the law (article #13) will give natural persons a fixed amount for
+health and educational expenses, so you may not report your medical bills as
+deductibles since these are a fixed part they granted to you already.
+
+Your deductions must belong to **the fiscal year you're filling them**. For
+example, you fill in the income tax for 2023, and it's April 2024. Then, your
+deductions go for expenses from 2023 (Jan 1 to Dec 31) unless you work with a
+different period (e.g., agriculture).
+
+You must **duly verify** your deductions with proper documentation. You need to
+get your expenses billed with **CAI (Clave de Autorización de Impresión)**[10],
+which local companies implement in their billings, and on behalf of your **RTN
+(Registro Tributario Nacional)**[11], which is your identity number as a
+taxpayer.
+
+If you have expenses from non-local business, you'll have to figure out how to
+document it properly.
+
+For special cases, I asked in a webinar[8] about public services, such as water
+and electricity billings, since these don't add your RTN number to the billing.
+These services are considered special expenses, where you document the billing
+with your payment transaction, then SAR or the "fisco" or government won't
+reject the expense.
+
+Finally, article #11 says that you must have **already paid the expenses**, so
+you may only register the deductibles you paid in the underlying period, not
+expenses you will pay (or paid already) in another fiscal period.
+
+The examples are many, and you must read the law articles to get a complete
+insight into what these expenses encompass.
+
+Article #11 of the income law provides the essential insight for deducing
+expenses that apply to businesses but also anyone else. You define the taxable
+income by subtracting the expenses from your gross income. When defining what
+expenses the law accepts, you must follow four pillar criteria to ensure the
+deductibles are necessary to generate the income, belong to the underlying
+period, are properly documented, and are completely paid in such a period.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
