@@ -186,6 +186,21 @@ expenses the law accepts, you must follow four pillar criteria to ensure the
 deductibles are necessary to generate the income, belong to the underlying
 period, are properly documented, and are completely paid in such a period.
 
+#### Unacceptable Deductions
+
+Article #12 states some deduction instances you may not use when filling your
+declaration.
+
+It includes maintenance expenses for natural damage to assets that are already
+part of depreciation deductions. Also, investments, personal expenses (with
+exceptions given by article #13), gifts, capital losses, etc. The items a-f
+expand on these rules for complete information.
+
+Article #12 enumerates the items a-f, stating what you may not deduct from your
+income tax. While together with article #11, you get a greater image of how
+deductions work, there's still article #13 to complement deductions regarding
+natural persons.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
