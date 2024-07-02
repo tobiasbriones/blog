@@ -115,7 +115,7 @@ your taxes to pay.
 You must follow some articles from the law to determine the expenses to deduct
 when filing your income tax and get this right the law gives you.
 
-The underlying articles correspond to the #11, #12 and #13. So, you read the
+The underlying articles correspond to the #11, #12 and #13 [4]. So, you read the
 income law to get the details about these criteria.
 
 Article #11 introduces and addresses the deductibles for businesses, article #12
