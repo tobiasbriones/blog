@@ -201,6 +201,32 @@ income tax. While together with article #11, you get a greater image of how
 deductions work, there's still article #13 to complement deductions regarding
 natural persons.
 
+#### Deductions for Natural Persons
+
+Article #13 states acceptable deductions for natural persons.
+
+It gives you a fixed amount for educational and medical expenses. It currently
+consists of up to L.40,000.00 (~ USD 1,616). You don't need to have any
+documentation for these expenses. You always have that amount granted without
+justification or documentation, which is an exception to the rule seen in
+Article #11 above. If your medical expenses exceed that amount, you won't be
+able to deduce the extra.
+
+The above is complemented by setting a greater amount of up to L.80,000.00 for
+persons older than 65.
+
+You may deduct expenses as a professional as long as they're properly
+documented (recall what was said in Article #11).
+
+Other deductibles include particulars about farmers and certain donations.
+Donations may not exceed 10% of the net taxable income.
+
+Article #13 closes up the statements about deductions with those accepted for
+natural persons. Personal deductions such as medical and educational ones are an
+exception, not requiring documentation, and have a bound limit. We also have
+professional expenses if you provide professional services with proper
+documentation.
+
 {% include iframe.html title = "Income Tax Diploma"
 src = "static/my-income-tax-diploma.pdf"
 %}
