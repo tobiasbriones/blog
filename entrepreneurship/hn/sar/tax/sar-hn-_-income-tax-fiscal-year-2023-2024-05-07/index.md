@@ -87,7 +87,7 @@ the base definitions that will expand later within the rest of the law body.
 
 When you declare your income tax, you should include all your valid deductions
 or expenses in its computation to minimize the tax to pay at last, as the law
-gives you these credits.
+gives you these rights.
 
 It's crucial to understand what a *valid deduction* is, because you may not add
 anything you want but only the expenses the law allows you to consider.
