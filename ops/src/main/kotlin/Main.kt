@@ -987,6 +987,7 @@ fun execServe(root: Path) {
     embeddedServer(
         Netty,
         port = 8080,
+        host = "localhost",
         module = { serve(root) }
     ).start(wait = true)
 }
