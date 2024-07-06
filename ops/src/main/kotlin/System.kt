@@ -4,14 +4,15 @@ import arrow.core.right
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.nio.file.Path
+import java.util.*
 
 fun runCommand(
     command: String,
     workingDir: Path? = null
 ): Either<String, String> {
-    val winCommand = "cmd /c $command"
+    val terminalCommand = terminalCommand(command)
     val processBuilder = ProcessBuilder(
-        *winCommand
+        *terminalCommand
             .split("\\s+".toRegex())
             .toTypedArray()
     )
@@ -50,4 +51,9 @@ fun runCommand(
         e.printStackTrace()
         e.message.orEmpty().left()
     }
+}
+
+fun terminalCommand(command: String): String {
+    val os = System.getProperty("os.name").lowercase(Locale.getDefault())
+    return if (os.contains("win")) "cmd /c $command" else "sh -c $command"
 }
