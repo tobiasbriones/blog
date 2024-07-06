@@ -10,12 +10,7 @@ fun runCommand(
     command: String,
     workingDir: Path? = null
 ): Either<String, String> {
-    val terminalCommand = terminalCommand(command)
-    val processBuilder = ProcessBuilder(
-        *terminalCommand
-            .split("\\s+".toRegex())
-            .toTypedArray()
-    )
+    val processBuilder = getProcessBuilder(command)
 
     processBuilder.redirectErrorStream(false)
 
@@ -53,7 +48,12 @@ fun runCommand(
     }
 }
 
-fun terminalCommand(command: String): String {
+fun getProcessBuilder(command: String): ProcessBuilder {
     val os = System.getProperty("os.name").lowercase(Locale.getDefault())
-    return if (os.contains("win")) "cmd /c $command" else "sh -c $command"
+    return if (os.contains("win")) ProcessBuilder(
+        *"cmd /c $command"
+            .split("\\s+".toRegex())
+            .toTypedArray()
+    )
+    else ProcessBuilder("sh", "-c", command)
 }
