@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Designing Image Ops | MathSwe Ops Mvp (2024/08/08)
+# Designing Image Ops | MathSwe Ops MVP (2024/08/08)
 
 ---
 
