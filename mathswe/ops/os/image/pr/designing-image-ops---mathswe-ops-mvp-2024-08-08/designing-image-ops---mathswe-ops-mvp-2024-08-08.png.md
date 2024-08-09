@@ -1,5 +1,5 @@
-Designing **ImageOps** for software automation:
+It designs **ImageOps** for software automation, implementing:
 
 - Safe downloads and system tools.
-- Clean abstractions of Image and its Ops.
+- Clean Image + Ops abstractions.
 - CLI app with install and uninstall Ops.
