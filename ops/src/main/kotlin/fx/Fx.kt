@@ -81,7 +81,7 @@ fun texsydoFx(
             .resolve("${entry.name()}.png")
 
     fun getHeading(): String =
-        if (repo.startsWith(org)) "$org/@${repo.removePrefix(org)}"
+        if (repo.startsWith(org)) "$org/@${repo.removePrefix(org).removePrefix("---")}"
         else "$org/$repo"
 
     fun getCoverMdTokens(): List<String> {
