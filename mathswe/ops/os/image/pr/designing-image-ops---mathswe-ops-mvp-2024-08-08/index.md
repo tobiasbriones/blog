@@ -118,7 +118,7 @@ program messages while consuming abstractions like `ImageOps` with traits such
 as `Image`, `Install`, and `Uninstall`.
 
 Modules `image::desktop` and `image::server` demonstrated the system design with
-(currently side-effect) automated and manual testing. Adding more images is
+(currently side effect) automated and manual testing. Adding more images is
 maintainable and relatively stable from now on.
 
 ---
