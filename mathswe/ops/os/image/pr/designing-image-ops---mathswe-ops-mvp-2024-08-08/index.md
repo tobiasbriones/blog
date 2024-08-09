@@ -4,6 +4,12 @@
 
 # Designing Image Ops | MathSwe Ops MVP (2024/08/08)
 
+After initializing the MathSwe Ops project, new designs arise to support the
+implementation of software images in Ubuntu for automated operations such as
+installing, uninstalling, and reinstalling. The first MVP project is a CLI
+application called "System," featuring a modular repository of server and
+desktop images that will keep scaling over time.
+
 ---
 
 **Add test_file.txt with lorem ipsum**
