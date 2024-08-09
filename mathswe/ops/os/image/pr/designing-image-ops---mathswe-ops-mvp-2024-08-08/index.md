@@ -219,8 +219,18 @@ as many other insights.
 In the application side, modules `image::*`, provide the repository and modular
 organization of concrete software images. The project organizes images into two
 high-level categories, namely, desktop and server. Desktop images are software
-like Zoom that only works with GUI, while server images are the rest that work
-on any machine (including desktop) like Rust.
+like Zoom (`ZoomImage`) that only works with GUI, while server images are the
+rest that work on any machine (including desktop) like Rust (`RustImage`).
+
+`Each Image belongs to a Submodule | Scalability of Software Images`
+
+```
+├── image
+│   ├── desktop.rs      -- mod zoom
+│   ├── repository.rs
+│   └── server.rs       -- mods rust, go, sdkman, java, gradle
+├── image.rs            -- Abstraction
+```
 
 Modules such as `main`, `system`, and `exec` implement terminal client code
 employing the mentioned abstractions, such as `ImageOps`, as the CLI application
