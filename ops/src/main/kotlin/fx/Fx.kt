@@ -70,6 +70,9 @@ fun texsydoFx(
     fun opt(name: String, value: Option<String>) = value
         .fold({ "" }, { "--$name=$it" })
 
+    fun optWrap(name: String, value: Option<String>) = value
+        .fold({ "" }, { "--$name=\\\"$it\\\"" })
+
     fun getTempOutputDir(): String =
         Files
             .createTempFile("tsf-fx_", "_${entry.name()}")
@@ -144,14 +147,14 @@ fun texsydoFx(
         ReleaseCover -> inferSubheadingVersion(title)
     }
     val cmd = listOf(
-        "tsd-fx $coverCmd",
+        "tsdfx $coverCmd",
         "--bg=$bg",
         "--bg-color=$bgColor",
         "--profile-photo=$profile",
         "--heading=$heading",
         "--abstract=$abstract",
         "--output=$output",
-        opt("footer", footer),
+        optWrap("footer", footer),
         opt("subheading", subheading),
         opt("subdomain", subdomain),
         opt("version", version),
@@ -173,7 +176,7 @@ fun getAbstract(tokens: List<String>): Option<String> = tokens
     // the first content after that is the abstract paragraph
     .firstOrNone { !it.startsWith("`") }
     .map { it.replace("\n", " ").trim() }
-    .map { "\"$it\"" }
+    .map { "\\\"$it\\\"" }
 
 fun getFooter(tokens: List<String>): Option<String> = tokens
     .firstOrNone { it.startsWith("- ") }
