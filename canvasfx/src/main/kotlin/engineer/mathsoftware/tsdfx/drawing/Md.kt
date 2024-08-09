@@ -1,4 +1,4 @@
-package engineer.mathsoftware.canvasfx.drawing
+package engineer.mathsoftware.tsdfx.drawing
 
 import javafx.scene.text.Text
 import javafx.scene.text.TextFlow

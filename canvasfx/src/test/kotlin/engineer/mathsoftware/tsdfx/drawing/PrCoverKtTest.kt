@@ -1,9 +1,10 @@
-package engineer.mathsoftware.canvasfx.drawing
+package engineer.mathsoftware.tsdfx.drawing
 
-import engineer.mathsoftware.canvasfx.resPath
+import engineer.mathsoftware.tsdfx.resPath
 import javafx.application.Application
 import javafx.scene.Scene
 import javafx.scene.layout.VBox
+import javafx.scene.paint.Color
 import javafx.stage.Stage
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -15,6 +16,7 @@ class CoverPrKtTest : Application() {
         val drawing = prCover(
             PrCover(
                 bgSrc = resPath("data/bg.png"),
+                bgColor = Color.WHITE,
                 profilePhotoSrc = resPath("data/profile.jpeg"),
                 commentBox = CommentBox(
                     heading = "mathswe/@.com",
@@ -26,7 +28,7 @@ class CoverPrKtTest : Application() {
                         "**@ui:** Displays effective consent details."
                     ),
                     subheading = "/legal",
-                    subdomainSrc = resPath("data/subdomain.png")
+                    subdomainSrc = resPath("data/subdomain.png"),
                 )
             )
         )

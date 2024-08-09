@@ -1,9 +1,9 @@
-package engineer.mathsoftware.canvasfx
+package engineer.mathsoftware.tsdfx
 
-import engineer.mathsoftware.canvasfx.drawing.extractPrCover
-import engineer.mathsoftware.canvasfx.drawing.extractReleaseCover
-import engineer.mathsoftware.canvasfx.drawing.prCover
-import engineer.mathsoftware.canvasfx.drawing.releaseCover
+import engineer.mathsoftware.tsdfx.drawing.extractPrCover
+import engineer.mathsoftware.tsdfx.drawing.extractReleaseCover
+import engineer.mathsoftware.tsdfx.drawing.prCover
+import engineer.mathsoftware.tsdfx.drawing.releaseCover
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.embed.swing.SwingFXUtils
@@ -19,7 +19,7 @@ import java.nio.file.Path
 import javax.imageio.ImageIO
 
 
-class CanvasFx : Application() {
+class TexsydoFx : Application() {
     override fun start(primaryStage: Stage) {
         val cmd = parameters.unnamed.firstOrNull()
 
@@ -128,7 +128,7 @@ class CanvasFx : Application() {
 fun remToPx(fontSizePx: Double): (Double) -> Double =
     { rem -> rem * fontSizePx }
 
-fun resPath(path: String): String = CanvasFx::class
+fun resPath(path: String): String = TexsydoFx::class
     .java
     .classLoader
     .getResource("cover-pr/$path")
@@ -163,5 +163,5 @@ fun printError(e: Exception) {
 }
 
 fun main() {
-    Application.launch(CanvasFx::class.java)
+    Application.launch(TexsydoFx::class.java)
 }

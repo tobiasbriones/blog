@@ -5,5 +5,5 @@ module engineer.mathsoftware.canvasfx {
     requires java.desktop;
     requires javafx.swing;
 
-    exports engineer.mathsoftware.canvasfx;
+    exports engineer.mathsoftware.tsdfx;
 }

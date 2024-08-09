@@ -1,9 +1,9 @@
-package engineer.mathsoftware.canvasfx.drawing
+package engineer.mathsoftware.tsdfx.drawing
 
-import engineer.mathsoftware.canvasfx.absUri
-import engineer.mathsoftware.canvasfx.printError
-import engineer.mathsoftware.canvasfx.remToPx
-import engineer.mathsoftware.canvasfx.resPath
+import engineer.mathsoftware.tsdfx.absUri
+import engineer.mathsoftware.tsdfx.printError
+import engineer.mathsoftware.tsdfx.remToPx
+import engineer.mathsoftware.tsdfx.resPath
 import javafx.beans.property.SimpleObjectProperty
 import javafx.geometry.Insets
 import javafx.geometry.Pos

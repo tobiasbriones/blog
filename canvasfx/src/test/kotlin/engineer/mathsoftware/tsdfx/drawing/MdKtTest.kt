@@ -1,4 +1,4 @@
-package engineer.mathsoftware.canvasfx.drawing
+package engineer.mathsoftware.tsdfx.drawing
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

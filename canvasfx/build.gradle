@@ -23,8 +23,8 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 application {
-    mainModule = 'engineer.mathsoftware.canvasfx'
-    mainClass = 'engineer.mathsoftware.canvasfx.CanvasFx'
+    mainModule = 'engineer.mathsoftware.tsdfx'
+    mainClass = 'engineer.mathsoftware.tsdfx.TexsydoFx'
 }
 
 kotlin {
