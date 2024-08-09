@@ -73,9 +73,9 @@ It defines and implements modules required for the program's structure,
 robustness, and ability to scale and maintain software images.
 
 - `mod package:` It defines what a high-level package needs. It defines:
-- Serializable version types such as `SemVer` and `SemVerRev`.
-- A `Software` record, an essential software product model.
-- A `Package` record to model a high-level software package.
+  - Serializable version types such as `SemVer` and `SemVerRev`.
+  - A `Software` record, an essential software product model.
+  - A `Package` record to model a high-level software package.
 - Performs various module redesigns to fit scalability and maintenance needs
   with type safety.
 - Implements GPG signature verification with `download::Integrity::Gpg(GpgKey)`
