@@ -43,16 +43,16 @@ The `JetBrainsIdeImage` supports all the IDEs with common operations.
 
 ```rust
 pub enum JetBrainsIdeImageId {
-IntelliJIdea,
-WebStorm,
-RustRover,
-CLion,
-PyCharm,
-DataGrip,
-Goland,
-Rider,
-PhpStorm,
-RubyMine,
+    IntelliJIdea,
+    WebStorm,
+    RustRover,
+    CLion,
+    PyCharm,
+    DataGrip,
+    Goland,
+    Rider,
+    PhpStorm,
+    RubyMine,
 }
 ```
 
@@ -64,9 +64,9 @@ JetBrainsIdeInfo`
 
 ```json
 {
-"version": "2024.2.0",
-"hash_sha256":
-"f059c9fd965a9dbf520381ee4119408f96c336eaa3b69a8c31abd1d716dbbfb4"
+    "version": "2024.2.0",
+    "hash_sha256":
+    "f059c9fd965a9dbf520381ee4119408f96c336eaa3b69a8c31abd1d716dbbfb4"
 }
 ```
 
@@ -76,23 +76,24 @@ operate well with the `ImageLoadContext` a previous PR introduced.
 `IDE Images Loaded via JetBrainsIdeImage Constructors`
 
 ```rust
-let info_loader = ImageInfoLoader::from(&self.id, PathBuf::from("image"),
-PathBuf::from(""));
+let info_loader = ImageInfoLoader::from(
+    &self.id, PathBuf::from("image"), PathBuf::from("")
+);
 let ctx = ImageLoadContext::new(&os, info_loader);
 let image = match self.id {
-Zoom => ctx.load(ZoomImage::new)?,
-VsCode => ctx.load(VsCodeImage::new)?,
-JetBrainsToolbox => ctx.load(JetBrainsToolboxImage::new)?,
-IntelliJIdea => ctx.load(JetBrainsIdeImage::intellij_idea())?,
-WebStorm => ctx.load(JetBrainsIdeImage::webstorm())?,
-RustRover => ctx.load(JetBrainsIdeImage::rustrover())?,
-CLion => ctx.load(JetBrainsIdeImage::clion())?,
-DataGrip => ctx.load(JetBrainsIdeImage::datagrip())?,
-PyCharm => ctx.load(JetBrainsIdeImage::pycharm())?,
-Goland => ctx.load(JetBrainsIdeImage::goland())?,
-Rider => ctx.load(JetBrainsIdeImage::rider())?,
-PhpStorm => ctx.load(JetBrainsIdeImage::phpstorm())?,
-RubyMine => ctx.load(JetBrainsIdeImage::rubymine())?,
+    Zoom             => ctx.load(ZoomImage::new)?,
+    VsCode           => ctx.load(VsCodeImage::new)?,
+    JetBrainsToolbox => ctx.load(JetBrainsToolboxImage::new)?,
+    IntelliJIdea     => ctx.load(JetBrainsIdeImage::intellij_idea())?,
+    WebStorm         => ctx.load(JetBrainsIdeImage::webstorm())?,
+    RustRover        => ctx.load(JetBrainsIdeImage::rustrover())?,
+    CLion            => ctx.load(JetBrainsIdeImage::clion())?,
+    DataGrip         => ctx.load(JetBrainsIdeImage::datagrip())?,
+    PyCharm          => ctx.load(JetBrainsIdeImage::pycharm())?,
+    Goland           => ctx.load(JetBrainsIdeImage::goland())?,
+    Rider            => ctx.load(JetBrainsIdeImage::rider())?,
+    PhpStorm         => ctx.load(JetBrainsIdeImage::phpstorm())?,
+    RubyMine         => ctx.load(JetBrainsIdeImage::rubymine())?,
 };
 ```
 
