@@ -4,10 +4,10 @@
 
 # New Image Catalog and Landing Page | MathSwe Ops Mvp (2024/08/22)
 
-The System CLI app requires more images to add enough value before its initial
-release, like Miniconda and JetBrains IDEs. It's crucial not to leave behind its
-documentation right now, as the new MSW Ops web home must also move forward to
-reach end users to achieve a complete product.
+The System app repository requires more images to add enough value before its
+initial release, like Miniconda and JetBrains IDEs. It's crucial not to leave
+behind its documentation right now, as the new MSW Ops web home must also move
+forward to reach end users to achieve a complete product.
 
 ---
 
