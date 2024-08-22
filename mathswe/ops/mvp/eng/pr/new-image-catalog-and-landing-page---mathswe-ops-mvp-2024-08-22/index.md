@@ -179,3 +179,17 @@ commands in the System CLI app, so it presents the initial fully-featured
 version of that project to the public.
 
 ---
+
+Implementing new images to the System CLI required more low-level challenges and
+care to keep the project maintainable as an MVP. It brought a milestone before
+the coming `v0.1.0` release to the project as it superseded the major technical
+issues. Further, it will provide end-user value soon, which the new `README`
+documentation updates.
+
+The MSW Ops home page is available with a clean presentation
+at [ops.math.software](https://ops.math.software). It already has the current
+pre-release documentation of the MathSwe System Ops CLI application.
+
+The MathSwe Ops MVP repository has two MVP projects after this PR. Namely, the
+existing System CLI app that has new images in its catalog and the MSW Ops
+landing page that covers the end-user home and documentation of MathSwe Ops.
