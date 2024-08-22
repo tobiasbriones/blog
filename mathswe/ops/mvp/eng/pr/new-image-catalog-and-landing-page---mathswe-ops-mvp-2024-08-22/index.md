@@ -101,8 +101,8 @@ There's a significant boilerplate yet, but considering the process is complex,
 with many abstractions behind, it scales well and is still readable.
 
 While plain constructors like `JetBrainsToolboxImage::new` build images
-directly, the higher-order constructors, like
-`JetBrainsIdeImage::intellij_idea()`, `JetBrainsIdeImage::webstorm()`, etc.,
+directly, the **higher-order constructors**, like
+`JetBrainsIdeImage::intellij_idea`, `JetBrainsIdeImage::webstorm`, etc.,
 will build `JetBrainsIdeImage`s to encapsulate the same behavior in that module.
 
 After the program completes the low-level installation in the Toolbox
