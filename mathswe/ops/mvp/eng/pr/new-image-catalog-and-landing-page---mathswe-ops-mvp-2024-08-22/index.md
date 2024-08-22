@@ -169,6 +169,10 @@ gradient background to the section** according to semantics. The first section
 doesn't need the border, but the others that expand in more content need it to
 separate the sections accordingly and give a well-crafter appeal.
 
+![](section-border-landscape.png)
+
+![](images/section-system-on-mobile.png)
+
 I'm launching MathSwe's new major project at
 [ops.math.software](https://ops.math.software), which uses the UX/UI standards
 developed in iterations of MSW MVP and MathSwe Com.
