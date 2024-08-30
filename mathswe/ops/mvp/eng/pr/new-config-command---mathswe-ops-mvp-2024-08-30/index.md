@@ -150,3 +150,23 @@ A new project will automate updating the badges, so this work should not be done
 manually for future releases.
 
 ---
+
+The new `config` operation required a significant refactorization of the
+CLI-facing modules so that the app could support the `config` command and any
+other commands it may need.
+
+The `config` command is a key feature of MathSwe System Ops since it sets up the
+software users install with their needs, configurations, or dependencies out of
+the box. It ***restores* images**.
+
+I can release the System CLI app via GitHub releases and a `deb` package with
+checksum. While there are more pending tasks, the current changes make the app
+productive and give an idea of what it is.
+
+Finally, the **MSW Ops web home** is ready with up-to-date essentials of MSW Ops
+and MathSwe Ops concepts, as well as the System app documentation for end users.
+
+The current developments can provide production value. The latest changes allow
+the initial release of the MVP projects to cool down and not leave behind other
+tasks pending from other projects that cover other MSW and MathSwe requirements
+to reach production as a whole.
