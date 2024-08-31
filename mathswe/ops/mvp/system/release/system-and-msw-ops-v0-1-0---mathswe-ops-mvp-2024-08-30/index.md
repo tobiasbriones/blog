@@ -29,3 +29,20 @@ MathSwe System Ops is a new CLI app for Ubuntu that implements the image concept
 with operations such as installation, uninstallation, reinstallation, and
 configuration to automate software. The MSW Ops web home presents the essential
 concepts and the System app documentation.
+
+## New System CLI App
+
+The System CLI application is a part of the MathSwe Ops MVP to automate software
+operations in Linux, such as installation, uninstallation, and configuration,
+allowing you to set up server VMs and desktop Workstations by running a command.
+
+An image is a model of a software package with OS operations to install,
+uninstall, or reinstall it.
+
+The technical documentation of this release is at
+[MathSwe System Ops MVP v0.1.0 \| GitHub](https://github.com/mathswe-ops/mathswe-ops---mvp/tree/v0.1.0/system).
+
+System is a CLI application with a reliable and evolving design that makes
+**cloud VMs and desktop work machines productive from cold OS installation**. It
+automates cold-start DevOps and staff onboarding as per your organization's
+standards.
