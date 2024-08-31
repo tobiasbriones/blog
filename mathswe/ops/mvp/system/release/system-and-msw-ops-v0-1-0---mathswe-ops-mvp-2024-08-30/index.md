@@ -52,3 +52,150 @@ standards.
 MathSwe System Ops MVP is compatible with Ubuntu. Its
 [release](https://github.com/mathswe-ops/mathswe-ops---mvp/releases/tag/v0.1.0)
 attaches the `deb` installer and its `sha256` checksum.
+
+### Image Operations
+
+The System app currently provides commands to install, uninstall, reinstall, and
+configure software on your OS.
+
+*Syntax:*
+
+<figure>
+    <div>
+        <code class="d-block language-plaintext highlighter-rouge" 
+            style="
+                position: relative;
+                background-color:#fafafa;
+                border:1px solid #e0e0e0;
+                border-radius:.25rem;
+                padding:0.5rem 1rem !important;
+                border-bottom: none !important;
+            ">
+            <i class="fa fa-terminal" style="
+                color: #fafafa;
+                background: #212121;
+                padding: 2px 4px;
+                border-radius: 4px;
+                position: relative;
+                top: -2px;
+                margin-left: 8px;
+                margin-right: 8px;
+                font-size: 10px;">
+            </i>
+            system install { image_1, ..., image_n }
+        </code>
+    </div>
+    <figcaption>Installation</figcaption>
+</figure>
+
+
+The flag --config provides image restoration (if available). For example,
+`system install --config miniconda`.
+
+<figure>
+    <div>
+        <code class="d-block language-plaintext highlighter-rouge" 
+            style="
+                position: relative;
+                background-color:#fafafa;
+                border:1px solid #e0e0e0;
+                border-radius:.25rem;
+                padding:0.5rem 1rem !important;
+                border-bottom: none !important;
+            ">
+            <i class="fa fa-terminal" style="
+                color: #fafafa;
+                background: #212121;
+                padding: 2px 4px;
+                border-radius: 4px;
+                position: relative;
+                top: -2px;
+                margin-left: 8px;
+                margin-right: 8px;
+                font-size: 10px;">
+            </i>
+            system uninstall { image_1, ..., image_n }
+        </code>
+    </div>
+    <figcaption>Uninstallation</figcaption>
+</figure>
+
+<figure>
+    <div>
+        <code class="d-block language-plaintext highlighter-rouge" 
+            style="
+                position: relative;
+                background-color:#fafafa;
+                border:1px solid #e0e0e0;
+                border-radius:.25rem;
+                padding:0.5rem 1rem !important;
+                border-bottom: none !important;
+            ">
+            <i class="fa fa-terminal" style="
+                color: #fafafa;
+                background: #212121;
+                padding: 2px 4px;
+                border-radius: 4px;
+                position: relative;
+                top: -2px;
+                margin-left: 8px;
+                margin-right: 8px;
+                font-size: 10px;">
+            </i>
+            system reinstall { image_1, ..., image_n }
+        </code>
+    </div>
+    <figcaption>Reinstallation</figcaption>
+</figure>
+
+<figure>
+    <div>
+        <code class="d-block language-plaintext highlighter-rouge" 
+            style="
+                position: relative;
+                background-color:#fafafa;
+                border:1px solid #e0e0e0;
+                border-radius:.25rem;
+                padding:0.5rem 1rem !important;
+                border-bottom: none !important;
+            ">
+            <i class="fa fa-terminal" style="
+                color: #fafafa;
+                background: #212121;
+                padding: 2px 4px;
+                border-radius: 4px;
+                position: relative;
+                top: -2px;
+                margin-left: 8px;
+                margin-right: 8px;
+                font-size: 10px;">
+            </i>
+            system config { image_1, ..., image_n }
+        </code>
+    </div>
+    <figcaption>Configuration</figcaption>
+</figure>
+
+The program encodes official image information internally to keep this sensible
+data safe, like download URL domain names and protocols.
+
+The variable part, like software versions and checksums, currently belongs to
+JSON files in its
+[image directory](https://github.com/mathswe-ops/mathswe-ops---mvp/tree/v0.1.0/system/image).
+The `image/` internal directory of the program contains the volatile data about
+images. Volatile information also contains the configuration to restore when
+running the `config` command.
+
+For example, `miniconda.json` contains the version, hash, and python version the
+program will `install`, while `miniconda.config.json` contains the conda
+environment and packages the program will `config`.
+
+You can't currently change image customization (JSON) since it is part of the
+installer unless you fork, update your changes, and build.
+
+Therefore, the image repository consists of the **program modules** that support
+concrete software images plus their **JSON information** with volatile data that
+requires maintenance.
+
+The System app automates **ad-hoc** steps in a case-by-case image basis that
+otherwise you must figure out manually.
