@@ -18,5 +18,6 @@ fun getBgColor(repo: String) = when(repo) {
     "mathswe.com" -> "#90A4AE"
     "legal" -> "#A1887F"
     "repsymo---mvp" -> "#4DD0E1"
+    "mathswe-ops---mvp" -> "B0BEC5"
     else -> "white"
 }
