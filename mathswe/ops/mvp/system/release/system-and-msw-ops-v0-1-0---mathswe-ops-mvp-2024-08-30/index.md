@@ -2,4 +2,4 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# System and Msw Ops V0 1 0 | MathSwe Ops Mvp (2024/08/30)
+# System and MSW Ops V0.1.0 | MathSwe Ops MVP (2024/08/30)
