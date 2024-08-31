@@ -4,6 +4,12 @@
 
 # New Config Command | MathSwe Ops Mvp (2024/08/30)
 
+The System app needs a command to configure or restore software the user
+installs. The CLI entry modules require a redesign for command scalability. The
+MSW Ops web home will also provide the System app documentation. The MathSwe Ops
+MVP should have its initial release soon to cool down and help other tasks 
+across MathSwe.
+
 ---
 
 **Refactor CLI app module before implementing more commands**
