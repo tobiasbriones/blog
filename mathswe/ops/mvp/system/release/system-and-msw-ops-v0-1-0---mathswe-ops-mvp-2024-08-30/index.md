@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# System and MSW Ops V0.1.0 | MathSwe Ops MVP (2024/08/30)
+# System and MSW Ops v0.1.0 | MathSwe Ops MVP (2024/08/30)
 
 MathSwe Ops is a wide form of SWAM (Special Software and Models) that integrates
 lower-level operations closer to the OS to develop and deploy MSW (Mathematical
