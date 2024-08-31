@@ -199,3 +199,45 @@ requires maintenance.
 
 The System app automates **ad-hoc** steps in a case-by-case image basis that
 otherwise you must figure out manually.
+
+### Available Images
+
+The initial release supports many images.
+
+`Available Server Images`
+
+- Rust
+- Go
+- Sdkman
+- Java
+- Gradle
+- Nvm
+- Node
+- Miniconda
+
+`Available Desktop Images`
+
+- Zoom
+- VsCode
+- JetBrainsToolbox
+
+`Available JetBrainsIde Images`
+
+- IntelliJIdea
+- WebStorm
+- RustRover
+- CLion
+- PyCharm
+- DataGrip
+- Goland
+- Rider
+- PhpStorm
+- RubyMine
+
+The app implements the `Config` operation for the `Miniconda` and `Git` images.
+
+Notice the image ID you pass to the CLI argument is the lowercase and
+hyphen-separated value, for example, `JetBrainsToolbox => jetbrains-toolbox`.
+
+The app's robust modular design will allow the repository to support many more
+images and features.
