@@ -204,7 +204,7 @@ otherwise you must figure out manually.
 
 The initial release supports many images.
 
-`Available Server Images`
+**Available Server Images**
 
 - Rust
 - Go
@@ -215,13 +215,13 @@ The initial release supports many images.
 - Node
 - Miniconda
 
-`Available Desktop Images`
+**Available Desktop Images**
 
 - Zoom
 - VsCode
 - JetBrainsToolbox
 
-`Available JetBrainsIde Images`
+**Available JetBrainsIde Images**
 
 - IntelliJIdea
 - WebStorm
