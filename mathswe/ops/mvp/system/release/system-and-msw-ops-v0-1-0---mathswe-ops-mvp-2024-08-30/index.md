@@ -4,6 +4,11 @@
 
 # System and MSW Ops V0.1.0 | MathSwe Ops MVP (2024/08/30)
 
+MathSwe Ops is a wide form of SWAM (Special Software and Models) that integrates
+lower-level operations closer to the OS to develop and deploy MSW (Mathematical
+Software). Its MVP (Minimum Viable Project) currently features undertakings to
+automate OS operations for fast system cold-start.
+
 ## CLI App for OS Automation and the MSW Ops Web Home
 
 One of the MathSwe Ops MVP challenges is automating onboarding and setup for
