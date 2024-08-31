@@ -11,6 +11,7 @@
 - [Designing Image Ops \| MathSwe Ops MVP (2024/08/08)](designing-image-ops---mathswe-ops-mvp-2024-08-08)
 - [Initializing the MathSwe Ops GitHub Organization (2024/06/19)](initializing-the-mathswe-ops-github-organization-2024-06-19)
 - [New Image Catalog and Landing Page \| MathSwe Ops Mvp (2024/08/22)](new-image-catalog-and-landing-page---mathswe-ops-mvp-2024-08-22)
+- [New Config Command \| MathSwe Ops Mvp (2024/08/30)](new-config-command---mathswe-ops-mvp-2024-08-30)
 - [New Cookie Customization Pane \| MathSwe Com (2024/04/03)](new-cookie-customization-pane---mathswe-com-2024-04-03)
 - [Cookie Consent Client Integration \| MathSwe Com (2024/04/17)](cookie-consent-client-integration---mathswe-com-2024-04-17)
 - [Initializing Ops with a Cookie Banner \| MathSwe Com (2024/03/21)](initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21)
