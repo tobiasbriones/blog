@@ -46,3 +46,9 @@ System is a CLI application with a reliable and evolving design that makes
 **cloud VMs and desktop work machines productive from cold OS installation**. It
 automates cold-start DevOps and staff onboarding as per your organization's
 standards.
+
+### Getting Started
+
+MathSwe System Ops MVP is compatible with Ubuntu. Its
+[release](https://github.com/mathswe-ops/mathswe-ops---mvp/releases/tag/v0.1.0)
+attaches the `deb` installer and its `sha256` checksum.
