@@ -241,3 +241,34 @@ hyphen-separated value, for example, `JetBrainsToolbox => jetbrains-toolbox`.
 
 The app's robust modular design will allow the repository to support many more
 images and features.
+
+## MSW Ops Home
+
+The new projects from MathSwe Ops need a web home or landing page to formalize
+abstractions like SWAM and present resulting products.
+
+The ***abstract*** part of the page defines **MSW Ops (Mathematical Software
+Operations)** and **SWAM (Special Software and Models)**.
+
+It concludes with the ***concrete*** concepts of **MathSwe**, like
+**MathSwe Ops** and **MathSwe Com**.
+
+![](msw-ops-web-_-top.jpg)
+
+The later sections will present concrete products, like **MathSwe System Ops**
+`v0.1.0`, with clean end-user documentation.
+
+![](images/msw-ops-web-_-system-section.jpg)
+
+**Page Snapshot**
+
+- [MVP: MathSwe Ops Web v0.1.0](images/mvp-_-mathswe-ops-web-v0-1-0.jpeg).
+
+- [MVP: MathSwe Ops Web Desktop v0.1.0](images/mvp-_-mathswe-ops-web-desktop-v0-1-0.jpeg).
+
+MSW Ops is running at its subdomain
+[Ops.Math.Software](https://ops.math.software).
+
+The MSW Ops page defines the essential concepts behind mathematical software
+operations I've figured out in the past. It also presents upcoming products like
+MathSwe System Ops with its end-user documentation.
