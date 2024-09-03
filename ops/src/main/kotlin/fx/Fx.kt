@@ -162,6 +162,8 @@ fun texsydoFx(
     )
         .filter { it.isNotBlank() }
         .reduce { acc, s -> "$acc $s" }
+println(subheading)
+    println(subdomain)
 
     runCommand(cmd)
         .onLeft(handleError `$` "Failed to generate cover image")

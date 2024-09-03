@@ -1,8 +1,6 @@
 package fx
 
-import arrow.core.Option
-import arrow.core.getOrElse
-import arrow.core.recover
+import arrow.core.*
 import fx.CoverCmd.PrCover
 import fx.CoverCmd.ReleaseCover
 
@@ -15,11 +13,11 @@ fun getSubdomainLogo(repo: String, subheading: Option<String>): Option<String> =
             .removePrefix("\"")
             .removeSuffix("\"")
     }
-    .map {
+    .flatMap {
         getFilePath("cover/repo/$repo/${it}.png")
     }
-    .getOrElse {
-        getFilePath("cover/repo/$repo.png")
+    .recover {
+        getFilePath("cover/repo/$repo.png").bind()
     }
 
 fun getProfilePhoto(coverCmd: CoverCmd, org: String) = when (coverCmd) {
