@@ -10,8 +10,8 @@ fun getSubdomainLogo(repo: String, subheading: Option<String>): Option<String> =
     .map {
         it
             .lowercase()
-            .removePrefix("\"")
-            .removeSuffix("\"")
+            .removePrefix("\\\"")
+            .removeSuffix("\\\"")
     }
     .flatMap {
         getFilePath("cover/repo/$repo/${it}.png")
