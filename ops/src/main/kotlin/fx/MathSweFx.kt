@@ -1,13 +1,26 @@
 package fx
 
 import arrow.core.Option
+import arrow.core.getOrElse
+import arrow.core.recover
 import fx.CoverCmd.PrCover
 import fx.CoverCmd.ReleaseCover
 
 fun getBg(): Option<String> = getFilePath("cover/bg.png")
 
-fun getSubdomainLogo(repo: String): Option<String> =
-    getFilePath("cover/repo/$repo.png")
+fun getSubdomainLogo(repo: String, subheading: Option<String>): Option<String> = subheading
+    .map {
+        it
+            .lowercase()
+            .removePrefix("\"")
+            .removeSuffix("\"")
+    }
+    .map {
+        getFilePath("cover/repo/$repo/${it}.png")
+    }
+    .getOrElse {
+        getFilePath("cover/repo/$repo.png")
+    }
 
 fun getProfilePhoto(coverCmd: CoverCmd, org: String) = when (coverCmd) {
     PrCover -> getFilePath("cover/profile.jpeg")

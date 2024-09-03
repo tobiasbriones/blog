@@ -137,7 +137,7 @@ fun texsydoFx(
         PrCover -> inferSubHeadingFromPr()
         ReleaseCover -> inferSubheadingFromRelease()
     }
-    val subdomain = getSubdomainLogo(repo)
+    val subdomain = getSubdomainLogo(repo, subheading)
     val version = when (coverCmd) {
         PrCover -> None
         ReleaseCover -> inferRepoVersion(index, repoPath)
