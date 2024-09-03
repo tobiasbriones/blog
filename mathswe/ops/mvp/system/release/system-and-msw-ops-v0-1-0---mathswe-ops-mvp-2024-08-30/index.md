@@ -278,3 +278,25 @@ MSW Ops is running at its subdomain
 The MSW Ops page defines the essential concepts behind mathematical software
 operations I've figured out in the past. It also presents upcoming products like
 MathSwe System Ops with its end-user documentation.
+
+## Reaching Production with MSW Ops and OS Automation
+
+The previous initialization of the MathSwe Ops GitHub organization led to the
+value this release provides: a tangible product and home for organizing and
+deploying the operational products.
+
+The System CLI MVP is a robust application written in Rust that will help
+satisfy the demands of developing MSW in local Workstations and deploying it to
+cloud VMs. It currently **provides image operations** to fasten a recently
+installed OS.
+
+Even though the System CLI is an OS-level project or OS-level SWAM, it also
+serves as a *foundation* for growing more high-level mathematical tools by
+enforcing MSWE principles, like SWAM. Therefore, while a particular MSW can have
+its SWAM, MathSwe Ops provides the foundational (umbrella) SWAM to empower the
+particular high-level SWAM of a MSW.
+
+While the System app in its initial release can automate onboarding and OS
+cold-start operations for Workstations and VMs, the MSW Ops web home is also in
+production, providing the abstract behind it and the new products, like the
+System app, completing the engineering process from theory to production.
