@@ -295,7 +295,7 @@ Even though the System CLI is an OS-level project or OS-level SWAM, it also
 serves as a *foundation* for growing more high-level mathematical tools by
 enforcing MSWE principles, like SWAM. Therefore, while a particular MSW can have
 its SWAM, MathSwe Ops provides the foundational (umbrella) SWAM to empower the
-particular high-level SWAM of a MSW.
+particular SWAM of that MSW.
 
 While the System app in its initial release can automate onboarding and OS
 cold-start operations for Workstations and VMs, the MSW Ops web home is also in
