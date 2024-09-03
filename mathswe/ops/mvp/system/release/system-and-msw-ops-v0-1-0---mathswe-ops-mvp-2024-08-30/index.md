@@ -33,11 +33,12 @@ concepts and the System app documentation.
 ## New System CLI App
 
 The System CLI application is a part of the MathSwe Ops MVP to automate software
-operations in Linux, such as installation, uninstallation, and configuration,
-allowing you to set up server VMs and desktop Workstations by running a command.
+operations in Linux, allowing you to set up server VMs and desktop Workstations
+by running a command.
 
 An image is a model of a software package with OS operations to install,
-uninstall, or reinstall it.
+uninstall, or reinstall it. It can expand to include other operations, like
+configuring (restoring software state).
 
 The technical documentation of this release is at
 [MathSwe System Ops MVP v0.1.0 \| GitHub](https://github.com/mathswe-ops/mathswe-ops---mvp/tree/v0.1.0/system).
@@ -89,7 +90,7 @@ configure software on your OS.
 </figure>
 
 
-The flag --config provides image restoration (if available). For example,
+The flag `--config` provides image restoration (if available). For example,
 `system install --config miniconda`.
 
 <figure>
@@ -186,9 +187,10 @@ The `image/` internal directory of the program contains the volatile data about
 images. Volatile information also contains the configuration to restore when
 running the `config` command.
 
-For example, `miniconda.json` contains the version, hash, and python version the
-program will `install`, while `miniconda.config.json` contains the conda
-environment and packages the program will `config`.
+For example, `miniconda.json` contains the version, hash, and Python version the
+program will `install`, while `miniconda.config.json` contains the Conda
+environment and packages the program will `config` into the Miniconda software
+(or image).
 
 You can't currently change image customization (JSON) since it is part of the
 installer unless you fork, update your changes, and build.
@@ -234,10 +236,10 @@ The initial release supports many images.
 - PhpStorm
 - RubyMine
 
-The app implements the `Config` operation for the `Miniconda` and `Git` images.
-
 Notice the image ID you pass to the CLI argument is the lowercase and
 hyphen-separated value, for example, `JetBrainsToolbox => jetbrains-toolbox`.
+
+The app implements the `Config` operation for the `Miniconda` and `Git` images.
 
 The app's robust modular design will allow the repository to support many more
 images and features.
