@@ -4,11 +4,10 @@
 
 # System and MSW Ops v0.1.0 | MathSwe Ops MVP (2024/08/30)
 
-MathSwe Ops is a wide form of SWAM (Special Software and Models) that integrates
-extrinsic operations undertaking its MVP to automate OS operations for fast
-system cold-start. This initial release brings a new CLI app to operate Ubuntu
-software and the new MSW Ops landing page featuring these new concepts and
-products.
+MathSwe Ops is a wide form of SWAM (Special Software and Models) undertaking its
+new MVP that automates extrinsic OS image operations for fast system cold-start.
+This initial release brings a new CLI app to operate Ubuntu software and the new
+MSW Ops landing page featuring these new concepts and products.
 
 ## CLI App for OS Automation and the MSW Ops Web Home
 
