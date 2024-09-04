@@ -54,6 +54,33 @@ on.
 It means that the Texsydo project as a whole is finally coming with the Web and
 FX MVPs 🎉 after internal prototype stages.
 
+## Texsydo FX Prototype
+
+I started writing the cover image graphics with HTML and CSS to make it easier
+to understand. Then, I manually "compiled" that into JavaFX and Kotlin to
+leverage its powerful toolset I also know well.
+
+JavaFX code is ugly and slow to write and test, even with Kotlin. So, using HTML
+with manual screenshots first to understand the specs was a good decision. I
+just wrote the well-defined web specs into the JavaFX scene.
+
+Its CLI requires an unnamed parameter denoting **the cover it will generate**.
+It can be `pr-cover` or `release-cover`.
+
+It accepts a `preview` unnamed parameter to open the JavaFX window to see the
+rendered image.
+
+According to the last prototype throw-away commit, I finished the app on August
+8th, which generates the cover image for PR and releases blogs through a JavaFX
+application.
+
+It even **supports Markdown syntax to add bold text** using JavaFX `Text` within
+`TextFlow`.
+
+I generated the cover image for my last PR and Release updates after I ensured
+all the metrics were optimal with many observations and tests. Together with
+up-to-date MSW styles, I could finish this graphical-demanding work.
+
 `Generating a PR Cover Image`
 
 ```
@@ -75,3 +102,6 @@ When you omit the `preview` flag, the program will write the image to the
 specified output directory.
 
 ![](texsydo-fx-cover_seq-1.png)
+
+If you map the command to the resulting image, you will find all the
+compositions on the cover the app automatically rendered.
