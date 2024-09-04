@@ -4,6 +4,23 @@
 
 # Testing the Texsydo FX Prototype for over a Month (2024/09/03)
 
+## PR and Release Articles
+
+I designed the cover for PR and release blogs. These blogs are updates on
+MathSwe developments for GitHub PRs and repository releases. They contain
+valuable high-level information to *communicate* from the lowest-level technical
+detail to the product's high-level engineering.
+
+Commits, PRs, and releases (from lower-level to higher-level) *must be as
+productive as possible* to avoid *burning out repeating banal work*, so therein
+lies the urgency of moving tools on, like MathSwe Ops and, in this case,
+Texsydo (Web and FX).
+
+MathSwe PRs and releases introduce this semantic information progressively, so
+there's much data that tools like Texsydo Web/FX can infer. Tools can infer a
+substantial part of an article's cover image when the article belongs to a
+class, like PRs or releases.
+
 `Generating a PR Cover Image`
 
 ```
