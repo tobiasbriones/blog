@@ -22,7 +22,7 @@ This initial release provides results to the
 insight.
 
 - [Designing Image Ops \| MathSwe Ops MVP (2024/08/08)](/designing-image-ops---mathswe-ops-mvp-2024-08-08).
-- [New Image Catalog and Landing Page \| MathSwe Ops Mvp (2024/08/22)](/new-image-catalog-and-landing-page---mathswe-ops-mvp-2024-08-22).
+- [New Image Catalog and Landing Page \| MathSwe Ops MVP (2024/08/22)](/new-image-catalog-and-landing-page---mathswe-ops-mvp-2024-08-22).
 - [New Config Command \| MathSwe Ops MVP (2024/08/30)](/new-config-command---mathswe-ops-mvp-2024-08-30).
 
 MSW Ops deployment at [Ops.Math.Software](https://ops.math.software).
