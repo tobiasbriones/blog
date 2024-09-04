@@ -17,3 +17,11 @@ gradle run --args="pr-cover preview \
   --abstract='Shows **Textual System Documenting** with the new **Texsydo FX** prototype.' \
   --footer='Generates **PR** and **Release** covers.,Supports Markdown bold style.,Provides MVP-ready prototype.'"
 ```
+
+Since the command has the `preview` parameter, it will just open a window with
+the image the program rendered.
+
+When you omit the `preview` flag, the program will write the image to the
+specified output directory.
+
+![](texsydo-fx-cover_seq-1.png)
