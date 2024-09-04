@@ -10,6 +10,7 @@
 - [Initializing the New Math Software MVP App (2024/01/30)](initializing-the-new-msw-mvp-app-2024-01-30)
 - [Designing Image Ops \| MathSwe Ops MVP (2024/08/08)](designing-image-ops---mathswe-ops-mvp-2024-08-08)
 - [Initializing the MathSwe Ops GitHub Organization (2024/06/19)](initializing-the-mathswe-ops-github-organization-2024-06-19)
+- [System and MSW Ops v0.1.0 \| MathSwe Ops MVP (2024/08/30)](system-and-msw-ops-v0-1-0---mathswe-ops-mvp-2024-08-30)
 - [New Image Catalog and Landing Page \| MathSwe Ops Mvp (2024/08/22)](new-image-catalog-and-landing-page---mathswe-ops-mvp-2024-08-22)
 - [New Config Command \| MathSwe Ops Mvp (2024/08/30)](new-config-command---mathswe-ops-mvp-2024-08-30)
 - [New Cookie Customization Pane \| MathSwe Com (2024/04/03)](new-cookie-customization-pane---mathswe-com-2024-04-03)
