@@ -21,6 +21,39 @@ there's much data that tools like Texsydo Web/FX can infer. Tools can infer a
 substantial part of an article's cover image when the article belongs to a
 class, like PRs or releases.
 
+## Introducing Texsydo
+
+In MathSwe, everything optimizes for the source code to leverage MSWE principles
+like the mathematical inference that even articles (i.e., English text) are
+subject to.
+
+I introduced the **Texsydo (Textual System Documenting)** concept, similar to
+the Repsymo (Representational System Modeling) I introduced much before[^1].
+
+[^1]: I introduced the MRM EP in 2019 for my OR class, then Repsymo under
+    different names before I figured out the "Repsymo" one
+
+Texsydo is a major project, specifically Applied MSW, like Repsymo.
+
+I've conceptualized and prototyped it for the last few months of testing code
+and years of validating concepts. I use its prototype to deploy articles and
+render models in my Canvas Play project.
+
+Texsydo is officially **reaching the prototype stage** with this blog, and 
+**it's ready to become an MVP**[^2].
+
+[^2]: It goes to MVP since its DSL (not the JavaFX implementation) aims for the
+    engineering grade, which requires MVP first to fasten results
+
+I just released the
+[initial version of the MathSwe Ops MVP](/system-and-msw-ops-v0-1-0---mathswe-ops-mvp-2024-08-30)
+with the MathSwe System Ops CLI app. I can employ my experience initializing the
+MathSwe Ops project to move the MVPs of Texsydo (and then Repsymo, MSW, etc.)
+on.
+
+It means that the Texsydo project as a whole is finally coming with the Web and
+FX MVPs 🎉 after internal prototype stages.
+
 `Generating a PR Cover Image`
 
 ```
