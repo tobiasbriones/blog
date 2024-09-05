@@ -4,6 +4,13 @@
 
 # Testing the Texsydo FX Prototype (2024/09/03)
 
+Communicating daily engineering, such as PRs and releases, is crucial for
+MathSwe OSS, which demands domain-specific design to empower inference and
+automate the workflow. The resulting project, Texsydo (Textual System
+Documenting) with "Web" and "FX" versions, is ready to move from prototype to
+MVP. While Texsydo Web currently deploys articles, Texsydo FX generates cover
+images for PR and Release blogs through a JavaFX with Kotlin CLI application.
+
 ## PR and Release Articles
 
 I designed the cover for PR and release blogs. These blogs are updates on
