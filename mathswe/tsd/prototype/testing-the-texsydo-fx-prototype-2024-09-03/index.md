@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Testing the Texsydo FX Prototype for over a Month (2024/09/03)
+# Testing the Texsydo FX Prototype (2024/09/03)
 
 ## PR and Release Articles
 
