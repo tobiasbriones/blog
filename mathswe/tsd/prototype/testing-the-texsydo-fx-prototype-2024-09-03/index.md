@@ -157,3 +157,24 @@ Textual systems, like articles including natural language, are also source code.
 Removing work and code redundancy by leveraging inference is required by MSWE,
 the engineering grade. Integrating Texsydo FX into Web was successful leading to
 prioritizing the transition to MVP stage.
+
+### Texsydo FX with a JavaFX Implementation
+
+Texsydo FX (DSL) aims for the engineering grade, but its implementation
+(SWAM) may be limited to the production grade.
+
+Its current JavaFX implementation and any other "high-level" implementations
+(web, etc.) *cannot be engineering-grade*.
+
+Also, notice that "FX" has nothing to do with "JavaFX" (which goes altogether).
+I started the project with HTML and CSS and chose JavaFX to settle.
+
+I use JavaFX due to its backend and Java2D capabilities, Kotlin, and my
+significant experience with the technology. Besides, JavaFX is probably the best
+choice when it comes to niches.
+
+Despite there being software, like Texsydo FX, which spec (DSL) aims for the
+engineering grade, some of its implementations (SWAM) may be limited to the
+production-grade. The project results in an MVP because the DSL will be
+engineering grade. Therefore, even if the SWAM implementation is not engineering
+grade, it still needs to integrate the DSL, which is engineering grade.
