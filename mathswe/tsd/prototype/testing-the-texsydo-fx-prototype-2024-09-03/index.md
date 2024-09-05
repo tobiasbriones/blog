@@ -16,6 +16,11 @@ productive as possible* to avoid *burning out repeating banal work*, so therein
 lies the urgency of moving tools on, like MathSwe Ops and, in this case,
 Texsydo (Web and FX).
 
+I introduced this feature in
+[Text Ops: New Add PR Command (2024/03/23)](/text-ops-_-new-add-pr-command-2024-03-23)
+with insights about the new "MathSwe Text" project, which was an idea I matured
+over the last months to unify it into "Texsydo Web."
+
 MathSwe PRs and releases introduce this semantic information progressively, so
 there's much data that tools like Texsydo Web/FX can infer. Tools can infer a
 substantial part of an article's cover image when the article belongs to a
