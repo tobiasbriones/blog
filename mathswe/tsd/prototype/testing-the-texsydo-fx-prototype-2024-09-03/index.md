@@ -111,7 +111,7 @@ specified output directory.
 If you map the command to the resulting image, you will find all the
 compositions on the cover the app automatically rendered.
 
-### Integration of Texsydo FX into Texsydo Web
+### Integrating Texsydo FX into Web
 
 Another Texsydo tool with context, like Texsydo Web, will integrate Texsydo FX,
 which just generates what you pass to it.
