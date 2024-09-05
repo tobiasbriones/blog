@@ -105,3 +105,55 @@ specified output directory.
 
 If you map the command to the resulting image, you will find all the
 compositions on the cover the app automatically rendered.
+
+### Integration of Texsydo FX into Texsydo Web
+
+Another Texsydo tool with context, like Texsydo Web, will integrate Texsydo FX,
+which just generates what you pass to it.
+
+I've used and developed the
+[Texsydo Web prototype](/automating-the-platform-operations-and-beyond-2023-08-31)
+for over a year.
+
+Texsydo Web calls Texsydo FX to build the final artifact that goes to
+production, that is, the web article. So, I had to integrate the Texsydo Web
+prototype to **infer** most of the cover values from the article and call
+Texsydo FX to generate the cover image.
+
+As I always say, MathSwe is all about domain-specific systems. My articles are
+semantic, so these *cohesive* settings **enable tools to automate or
+*infer*** anything. If the article is a GitHub PR or Release update, the system
+will *infer* everything I've done before.
+
+Engineering discourages inefficient and error-prone repetition of the work you
+already did since it **creates a cycle**[^3].
+
+[^3]: You describe the cycle when you *go down* to low-level details, then *go
+    up* to your work
+
+Top engineering standards, like MSWE, require the application of mathematical
+inference to optimize as much as possible and, therefore, to remove cycles or
+anti-patterns. When you design your domain-specific system, you start inducing
+formalities. Then, you can apply these mathematical techniques.
+
+The Texsydo Web prototype currently deduces most of the values to employ the new
+Texsydo FX prototype that automates the cover images.
+
+On the other hand, integrating and testing all these tools has been a
+complicated endeavor sometimes due to their prototype stage.
+
+I covered sensitive parts of Texsydo Web with unit testing to ensure I wouldn't
+find nonsense later, but there are always out-of-hand challenges.
+
+External changes when writing articles included supporting new article variants
+or syntaxes, updating the smart dictionary, figuring out and fixing CLI
+arguments that worked on Windows but not on Ubuntu, etc.
+
+These "live" challenges required me to go back to debug the problem, *removing
+much energy from the actual tasks* I had to do. Therefore, **it's crucial and
+about time to move the Texsydo prototypes to MVP grade**.
+
+Textual systems, like articles including natural language, are also source code.
+Removing work and code redundancy by leveraging inference is required by MSWE,
+the engineering grade. Integrating Texsydo FX into Web was successful leading to
+prioritizing the transition to MVP stage.
