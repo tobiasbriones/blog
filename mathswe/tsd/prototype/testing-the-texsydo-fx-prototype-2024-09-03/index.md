@@ -184,3 +184,40 @@ engineering grade, some of its implementations (SWAM), like the JavaFX one, may
 not. Therefore, even if its SWAM implementation is not engineering grade, it
 still needs to integrate its DSL, which it is. Consequently, the project needs
 to be an MVP because of its DSL.
+
+## MVP-Ready Texsydo FX and Web Prototypes
+
+I early validated the Markdown-to-Web concepts I used to generate my articles
+over a year ago. Then, I developed a Kotlin CLI with an automation focus. After
+all, I've employed this tool with internal upgrades to keep deploying my
+domain-specific articles.
+
+A few months ago, I implemented a new command to the "Ops CLI" or "MathSwe Text
+CLI," which has now evolved into **Texsydo Web**. It infers a given PR or
+Release context from GitHub to generate a blog article. Constantly and
+*formally* publishing PRs and releases is a MathSwe standard to keep up with the
+OSS, from technical to final product 💯.
+
+The new workflow automation required a compelling **cover image**
+since MathSwe articles optimize for quality (as always). So, an article cover
+*must* reflect its abstract graphically. It required validating its graphic
+design with an HTML with CSS page, where I took manual screenshots to copy to
+the article cover. The need to automate **graphics into articles** led to the
+**Texsydo FX** concept.
+
+Finally, I passed the HTML prototype to a JavaFX with Kotlin CLI app that
+generates the final cover image for PR and Release blogs. I integrated
+`tsd-fx` into `tsd-web`, so Texsydo Web reads the workflow and leverages Texsydo
+FX to create the graphics. In **Texsydo**, articles are *textual systems* the
+tool can infer due to its domain-specific design.
+
+Regarding the software grade, Texsydo is an Applied MSW aiming for the
+engineering grade, although its (JavaFX) implementation can only be limited to a
+baseline production grade. I must upgrade the prototypes to MVP-grade rather
+than ordinary "pre-release -> production-grade" software.
+
+The Texsydo Web and FX prototypes led me to write better articles faster but
+with an ad-hoc maintenance burden. Therefore, they're ready to become MVPs,
+which also became an urgency after all the validation and testing, so I can
+formalize my daily engineering tasks and enrich MathSwe with another substantial
+product.
