@@ -15,7 +15,7 @@ images for PR and Release blogs through a JavaFX with Kotlin CLI application.
 
 I designed the cover for PR and release blogs. These blogs are updates on
 MathSwe developments for GitHub PRs and repository releases. They contain
-valuable high-level information to *communicate* from the lowest-level technical
+valuable high-level information to communicate from the lowest-level technical
 detail to the product's high-level engineering.
 
 Commits, PRs, and releases (from lower-level to higher-level) *must be as
@@ -45,14 +45,14 @@ the Repsymo (Representational System Modeling) I introduced much before[^1].
 [^1]: I introduced the MRM EP in 2019 for my OR class, then Repsymo under
     different names before I figured out the "Repsymo" one
 
-Texsydo is a major project, specifically Applied MSW, like Repsymo.
+Texsydo is a major project, specifically Applied MSW, similar to Repsymo.
 
 I've conceptualized and prototyped it for the last few months of testing code
 and years of validating concepts. I use its prototype to deploy articles and
 render models in my Canvas Play project.
 
-Texsydo is officially **reaching the prototype stage** with this blog, and 
-**it's ready to become an MVP**[^2].
+Texsydo is officially **reaching the prototype stage** with this blog, and
+**it's ready to become an MVP**[^2] 🎉.
 
 [^2]: It goes to MVP since its DSL (not the JavaFX implementation) aims for the
     engineering grade, which requires MVP first to fasten results
@@ -64,7 +64,7 @@ MathSwe Ops project to move the MVPs of Texsydo (and then Repsymo, MSW, etc.)
 on.
 
 It means that the Texsydo project as a whole is finally coming with the Web and
-FX MVPs 🎉 after internal prototype stages.
+FX MVPs after internal prototype stages.
 
 ## Texsydo FX Prototype
 
@@ -72,9 +72,13 @@ I started writing the cover image graphics with HTML and CSS to make it easier
 to understand. Then, I manually "compiled" that into JavaFX and Kotlin to
 leverage its powerful toolset I also know well.
 
-JavaFX code is ugly and slow to write and test, even with Kotlin. So, using HTML
-with manual screenshots first to understand the specs was a good decision. I
-just wrote the well-defined web specs into the JavaFX scene.
+JavaFX code is ugly and slow to write and test[^3], even with Kotlin. So, using
+HTML with manual screenshots first to understand the specs was a good decision.
+I just wrote the well-defined web specs into the JavaFX scene.
+
+[^3]: Regarding "SceneBuilder," I can't obviously use "fast-food" static tools
+    like that since I need higher-order abstractions with pure code instead of
+    raw final results with archaic generated XML
 
 Its CLI requires an unnamed parameter denoting **the cover it will generate**.
 It can be `pr-cover` or `release-cover`.
@@ -138,9 +142,9 @@ semantic, so these *cohesive* settings **enable tools to automate or
 will *infer* everything I've done before.
 
 Engineering discourages inefficient and error-prone repetition of the work you
-already did since it **creates a cycle**[^3].
+already did since it **creates a cycle**[^4].
 
-[^3]: You describe the cycle when you *go down* to low-level details, then *go
+[^4]: You describe the cycle when you *go down* to low-level details, then *go
     up* to your work
 
 Top engineering standards, like MSWE, require the application of mathematical
@@ -154,8 +158,9 @@ Texsydo FX prototype that automates the cover images.
 On the other hand, integrating and testing all these tools has been a
 complicated endeavor sometimes due to their prototype stage.
 
-I covered sensitive parts of Texsydo Web with unit testing to ensure I wouldn't
-find nonsense later, but there are always out-of-hand challenges.
+I covered sensitive parts of Texsydo Web with unit testing (and side effect
+tests) to ensure I wouldn't find nonsense later, but there are always
+out-of-hand challenges.
 
 External changes when writing articles included supporting new article variants
 or syntaxes, updating the smart dictionary, figuring out and fixing CLI
@@ -185,6 +190,10 @@ settle.
 I use JavaFX due to its Java backend, Graphics API with shapes and Canvas,
 Kotlin, and my significant experience with the technology. Besides, JavaFX is
 probably the best choice when it comes to niches.
+
+Texsydo FX is a CLI app. While *JavaFX is not the correct tool for the problem*
+since it is meant for client apps and can't run headless (unlike Swing), it is
+the only viable option I have for automating GUI-like graphics.
 
 Despite there being software, like Texsydo FX, which spec (DSL) aims for the
 engineering grade, some of its implementations (SWAM), like the JavaFX one, may
