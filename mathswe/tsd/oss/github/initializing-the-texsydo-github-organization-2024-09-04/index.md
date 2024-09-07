@@ -3,3 +3,9 @@
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
 # Initializing the Texsydo GitHub Organization (2024/09/04)
+
+![](images/older-texsydo-logo-draft.png)
+
+![](images/editing-the-texsydo-logo.png)
+
+![](texsydo.svg)
