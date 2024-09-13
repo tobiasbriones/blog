@@ -101,3 +101,23 @@ implementations will be AGPL as they provide concrete products.
 
 The Texsydo MVP repository is currently AGPL, so it takes the copyleft boundary
 to cover any kind of code.
+
+## Moving Texsydo Forward as a New Applied MSW
+
+While Texsydo Web is essential to creating mathematical text and deploying it to
+web articles, Texsydo FX helps it by automating graphical models, like MathSwe
+cover images. Mathematical text is ubiquitously applied, so Texsydo is an
+integral project to MSWE.
+
+I just finished the Texsydo logo now that I'm formalizing this project. As
+always, I apply Piaxid/MathSwe abstractions.
+
+Piaxid or MathSwe logos are mathematical arts in which Texsydo FX plays an
+essential role since, for example, I'll be able to write the logo definitions in
+Texsydo FX (DSL) to create this abstract art and leave generic tools like
+Photoshop behind.
+
+The initialization of the Texsydo GitHub organization opens the OSS space to
+work on Texsydo projects, like the other MathSwe organizations I've worked on.
+The Texsydo Web and FX prototypes will be the first to make it to MVPs, which
+will provide new MathSwe products enriching applied MSW.
