@@ -76,3 +76,17 @@ represents the robustness of the MSW and MSWE concepts. The new logo lets me
 start producing Texsydo with its coming MVPs, Web, and FX. As a fun fact, I
 initially used Photopea to draw, but it's Texsydo FX, the one that will engineer
 mathematical art.
+
+## New Projects
+
+As I've recently introduced, the first projects, Texsydo Web and FX, are ready
+to be featured in the Texsydo space as the first MVPs. Given their current
+prototype stage, I just have to progressively migrate their code from the
+throw-away branch to the actual repository.
+
+Texsydo FX is the fastest to turn into a product as its prototype is only about
+3 files of code. Conversely, Texsydo Web is quite complex, and I've written its
+prototype for over a year according to needs.
+
+The Texsydo FX and Web prototypes will make it to the first Texsydo MVPs and the
+next MathSwe products.
