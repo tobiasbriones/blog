@@ -17,6 +17,7 @@
 - [Cookie Consent Client Integration \| MathSwe Com (2024/04/17)](cookie-consent-client-integration---mathswe-com-2024-04-17)
 - [Initializing Ops with a Cookie Banner \| MathSwe Com (2024/03/21)](initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21)
 - [Testing the Texsydo FX Prototype (2024/09/03)](testing-the-texsydo-fx-prototype-2024-09-03)
+- [Initializing the Texsydo GitHub Organization (2024/09/04)](initializing-the-texsydo-github-organization-2024-09-04)
 - [Data Minimization and Consistency in Cookie Consent \| MathSwe Legal (2024/04/09)](data-minimization-and-consistency-in-cookie-consent---mathswe-legal-2024-04-09)
 - [New Cookie Consent Microservice Ready \| MathSwe Legal (2024/03/28)](new-cookie-consent-microservice-ready---mathswe-legal-2024-03-28)
 - [Cookie Consent v0.1.0 \| MathSwe Legal (2024/03/29)](cookie-consent-v0-1-0---mathswe-legal-2024-03-29)
