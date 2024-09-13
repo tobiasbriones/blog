@@ -90,3 +90,14 @@ prototype for over a year according to needs.
 
 The Texsydo FX and Web prototypes will make it to the first Texsydo MVPs and the
 next MathSwe products.
+
+### OSS License Model
+
+Texsydo is an Applied MSW that follows the same licensing idea as Repsymo,
+considering I still must update Repsymo's MVP license from GPL to AGPL.
+
+The specs or DSLs will be permissive BSD-3, as usual, while the special
+implementations will be AGPL as they provide concrete products.
+
+The Texsydo MVP repository is currently AGPL, so it takes the copyleft boundary
+to cover any kind of code.
