@@ -72,7 +72,7 @@ Hence, we can claim that **the axiom is invariant** as it's always the
 "center" of *any* article.
 
 The Texsydo logo is, like all MathSwe logos I've devised, mathematical art that
-represents the robustness of the MSW and MSWE concepts. The new logo, enables me
-to start producing Texsydo with its coming MVPs, Web, and FX. As a fun fact, I
-initially used Photopea to draw, but it's Texsydo FX the one that will engineer
+represents the robustness of the MSW and MSWE concepts. The new logo lets me
+start producing Texsydo with its coming MVPs, Web, and FX. As a fun fact, I
+initially used Photopea to draw, but it's Texsydo FX, the one that will engineer
 mathematical art.
