@@ -117,7 +117,7 @@ integral project to MSWE.
 I just finished the Texsydo logo now that I'm formalizing this project. As
 always, I apply Piaxid/MathSwe abstractions.
 
-Piaxid or MathSwe logos are mathematical arts in which Texsydo FX plays an
+Piaxid or MathSwe logos are **mathematical arts** in which Texsydo FX plays an
 essential role since, for example, I'll be able to write the logo definitions in
 Texsydo FX (DSL) to create this abstract art and leave generic tools like
 Photoshop behind.
