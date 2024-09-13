@@ -4,6 +4,11 @@
 
 # Initializing the Texsydo GitHub Organization (2024/09/04)
 
+New prototypes are ready to become MVPs and part of the Texsydo (Textual System
+Documenting) project with its new GitHub organization and logo. They already
+provide substantial value for developing, automating, and deploying mathematical
+articles with graphics to the web.
+
 ## Texsydo Web and FX Prototypes
 
 The two prototypes are Web, which I use to deploy my articles, and FX, which
