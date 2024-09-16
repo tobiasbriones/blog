@@ -4,6 +4,11 @@
 
 # In-House MathSwe-TS-and-Client Libraries | MathSwe Ops Services (2024/09/15)
 
+It provides two new in-house libraries in the MathSwe Ops Services application
+that will become MathSwe standard libraries for any TypeScript and server
+projects. While MathSwe-TS leverages the FP-TS library to add extended support
+for FP, MathSwe-Client will be standard for server applications.
+
 ---
 
 **Add in-house libs mathswe-ts, mathswe-client**
@@ -12,13 +17,6 @@ Sep 15: PR [#2](https://github.com/mathswe-ops/services/pull/2) merged into
 `services/dev <- services/mathswe-ts-and-client`
 by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
-
-It provides two new in-house libraries in the MathSwe Ops Services application
-that will become MathSwe standard libraries for any TypeScript and server
-projects. While MathSwe-TS leverages the FP-TS library to add extended support
-for FP, MathSwe-Client will be standard for server applications.
-
----
 
 The `mathswe-ts/adt` module defines the **general pattern matching for sum types
 **. You also must follow manual guides to correctly build a sum type in
@@ -342,7 +340,10 @@ only allowed origins according to domain rules.
 The new features of MathSwe-TS complement general and exhausting (when piping)
 pattern matching for sum types. While it's not perfect, it works better than
 expected, complimenting FP-TS, which only has ad-hoc matching for monads like
-Option and Either. Further, the new MathSwe-Client supports Origin rules to only
-accept HTTP requests from accepted domains and paths. The purpose of these two
-libraries is to become MathSwe standards for TypeScript projects.
----
+Option and Either.
+
+Further, the new MathSwe-Client supports Origin rules to only accept HTTP
+requests from accepted domains and paths.
+
+The purpose of these two libraries is to become MathSwe standards for TypeScript
+projects.
