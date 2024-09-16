@@ -64,3 +64,11 @@ TS, which I figured out in about two days, and exhaustive communication tasks
 (i.e., publishing blogs). Following this, I will enable the endpoint for the
 version SVG badge, allowing for the release of well-documented projects with
 minimal overhead.
+
+MathSwe Ops Services is a TypeScript Node.js (modular) monolithic application
+designated to satisfy all the general-purpose needs involving
+non-engineering-grade development and deployment of MSW. As motivation, its
+initial endpoint will read a MathSwe project's version to respond with its
+version SVG badge to remove the overhead when releasing projects. The Services
+app will integrate any automation or service to support engineering processes
+extrinsic to MSW that are part of General SWE.
