@@ -4,6 +4,10 @@
 
 # Initializing MathSwe Ops Services (2024/09/15)
 
+MathSwe Ops Services is a new server application that will provide all
+general-purpose web services to facilitate the General SWE processes involved in
+mathematical software.
+
 While developing MVPs for MSW and MathSwe Ops, I found generic parts of the
 development process requiring automation. They enrich the general-purpose
 engineering process in MathSwe.
