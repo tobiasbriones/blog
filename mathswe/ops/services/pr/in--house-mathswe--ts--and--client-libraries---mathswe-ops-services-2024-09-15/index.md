@@ -8,7 +8,9 @@
 
 **Add in-house libs mathswe-ts, mathswe-client**
 
-Sep 15: PR [#2](https://github.com/mathswe-ops/services/pull/2) merged into `services/dev <- services/mathswe-ts-and-client` by [tobiasbriones](https://github.com/tobiasbriones)
+Sep 15: PR [#2](https://github.com/mathswe-ops/services/pull/2) merged into
+`services/dev <- services/mathswe-ts-and-client`
+by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 It provides two new in-house libraries in the MathSwe Ops Services application
@@ -18,8 +20,8 @@ for FP, MathSwe-Client will be standard for server applications.
 
 ---
 
-The `mathswe-ts/adt` module defines the **general pattern matching for sum
-types**. You also must follow manual guides to correctly build a sum type in
+The `mathswe-ts/adt` module defines the **general pattern matching for sum types
+**. You also must follow manual guides to correctly build a sum type in
 TypeScript, even with `fp-ts` and `mathswe-ts`.
 
 `Sum Type Pattern Matching`
@@ -27,32 +29,32 @@ TypeScript, even with `fp-ts` and `mathswe-ts`.
 ```ts
 
 describe("Lazy Rich SumType", () => {
-type Shape = { tag: "Point" } | { tag: "Circle", radius: number };
+    type Shape = { tag: "Point" } | { tag: "Circle", radius: number };
 
-const point: Shape = { tag: "Point" };
-const circle: Shape = { tag: "Circle", radius: 1 };
+    const point: Shape = { tag: "Point" };
+    const circle: Shape = { tag: "Circle", radius: 1 };
 
-it("computes the area via matching and destructure", () => {
-type Circle = { radius: number };
+    it("computes the area via matching and destructure", () => {
+        type Circle = { radius: number };
 
-const circleArea
-= ({ radius }: Circle) => Math.PI * Math.pow(radius, 2);
+        const circleArea
+            = ({ radius }: Circle) => Math.PI * Math.pow(radius, 2);
 
-const area = (shape: Shape): number => {
-const withShapeVariant = withMatchVariant<number>(shape);
+        const area = (shape: Shape): number => {
+            const withShapeVariant = withMatchVariant<number>(shape);
 
-return pipe(
-shape,
-match({
-Point: () => 0,
-Circle: withShapeVariant(circleArea),
-}),
-);
-};
+            return pipe(
+                shape,
+                match({
+                    Point: () => 0,
+                    Circle: withShapeVariant(circleArea),
+                }),
+            );
+        };
 
-expect(area(point)).toBe(0);
-expect(area(circle)).toBe(Math.PI);
-});
+        expect(area(point)).toBe(0);
+        expect(area(circle)).toBe(Math.PI);
+    });
 });
 ```
 
@@ -89,26 +91,26 @@ branches** eagerly.
 
 ```ts
 describe("PlainEnum", () => {
-type Color = { tag: "Red" } | { tag: "Green" } | { tag: "Blue" };
+    type Color = { tag: "Red" } | { tag: "Green" } | { tag: "Blue" };
 
-const red: Color = { tag: "Red" };
-const green: Color = { tag: "Green" };
-const blue: Color = { tag: "Blue" };
+    const red: Color = { tag: "Red" };
+    const green: Color = { tag: "Green" };
+    const blue: Color = { tag: "Blue" };
 
-it("should pipe match enum variants with type safe exhaustive map", () => {
-const label = (color: Color) => pipe(
-color,
-matchPlain({
-Red: "red-variant",
-Green: "green-variant",
-Blue: "blue-variant",
-}),
-);
+    it("should pipe match enum variants with type safe exhaustive map", () => {
+        const label = (color: Color) => pipe(
+            color,
+            matchPlain({
+                Red: "red-variant",
+                Green: "green-variant",
+                Blue: "blue-variant",
+            }),
+        );
 
-expect(label(red)).toBe("red-variant");
-expect(label(green)).toBe("green-variant");
-expect(label(blue)).toBe("blue-variant");
-});
+        expect(label(red)).toBe("red-variant");
+        expect(label(green)).toBe("green-variant");
+        expect(label(blue)).toBe("blue-variant");
+    });
 });
 ```
 
@@ -127,11 +129,11 @@ implementing them in TS programs as a standard practice (like the Rust way).
 
 ```ts
 export interface ToString<T> {
-toString(value: T): string;
+    toString(value: T): string;
 }
 
 export interface FromString<T> {
-fromString(string: string): Either<string, T>;
+    fromString(string: string): Either<string, T>;
 }
 ```
 
@@ -155,21 +157,21 @@ sum type to grant access to those domains.
 
 ```ts
 export interface ToDomainName<T> {
-toDomainName(domain: T): string;
+    toDomainName(domain: T): string;
 }
 
 export type Allowed
-= { tag: "FullAccess" }
- { tag: "PartialAccess", values: string[] }
+    = { tag: "FullAccess" }
+    | { tag: "PartialAccess", values: string[] }
 ```
 
 `MathSwe Module`
 
 ```ts
 export type MathSwe
-= "MathSweCom"
- "MathSoftware"
- "MathSoftwareEngineer";
+    = "MathSweCom"
+"MathSoftware"
+"MathSoftwareEngineer";
 ```
 
 `ThirdParty Module`
@@ -184,15 +186,15 @@ The `mathswe-client/req/http` module defines HTTP abstractions.
 
 ```ts
 export type Hostname = {
-domainName: string,
-subdomain: string,
+    domainName: string,
+    subdomain: string,
 }
 
 export type Path = string[];
 
 export type SecureUrl = {
-hostname: Hostname,
-path: Path,
+    hostname: Hostname,
+    path: Path,
 }
 ```
 
@@ -203,15 +205,15 @@ given request origin has access to the server.
 
 ```ts
 export type OriginDomain
-= { tag: "MathSweDomain", mathswe: MathSwe }
- { tag: "ThirdPartyDomain", thirdParty: ThirdParty };
+    = { tag: "MathSweDomain", mathswe: MathSwe }
+    | { tag: "ThirdPartyDomain", thirdParty: ThirdParty };
 
 export type OriginPath = Path;
 
 export type Origin = {
-domain: OriginDomain,
-path: OriginPath,
-url: SecureUrl,
+    domain: OriginDomain,
+    path: OriginPath,
+    url: SecureUrl,
 }
 ```
 
@@ -219,81 +221,81 @@ url: SecureUrl,
 
 ```ts
 describe("newOriginPathFromDomain", () => {
-it("should return path for FullAccess domain", () => {
-const domain: OriginDomain = pipe(
-"mathswe.com",
-originDomainFromString.fromString,
-requireRight,
-);
+    it("should return path for FullAccess domain", () => {
+        const domain: OriginDomain = pipe(
+            "mathswe.com",
+            originDomainFromString.fromString,
+            requireRight,
+        );
 
-const path = "/any-path";
-const expected = right(pipe(path, newPathFromString, requireRight));
-const result = pipe(path, newOriginPathFromDomain(domain));
+        const path = "/any-path";
+        const expected = right(pipe(path, newPathFromString, requireRight));
+        const result = pipe(path, newOriginPathFromDomain(domain));
 
-expect(result).toEqual(expected);
-});
+        expect(result).toEqual(expected);
+    });
 
-it("should return an error for a restricted domain path", () => {
-const domain: OriginDomain = pipe(
-"github.com",
-originDomainFromString.fromString,
-requireRight,
-);
+    it("should return an error for a restricted domain path", () => {
+        const domain: OriginDomain = pipe(
+            "github.com",
+            originDomainFromString.fromString,
+            requireRight,
+        );
 
-// github.com/restricted-path random user
-const path = "restricted-path";
-const expected = left(`Path ${ path } of domain ${ domain } is restricted.`);
-const result = pipe(path, newOriginPathFromDomain(domain));
+        // github.com/restricted-path random user
+        const path = "restricted-path";
+        const expected = left(`Path ${ path } of domain ${ domain } is restricted.`);
+        const result = pipe(path, newOriginPathFromDomain(domain));
 
-expect(result).toEqual(expected);
-});
+        expect(result).toEqual(expected);
+    });
 
-it("should accept partially allowed path", () => {
-const domain: OriginDomain = pipe(
-"github.com",
-originDomainFromString.fromString,
-requireRight,
-);
+    it("should accept partially allowed path", () => {
+        const domain: OriginDomain = pipe(
+            "github.com",
+            originDomainFromString.fromString,
+            requireRight,
+        );
 
-// github.com/mathswe organization
-const path = "mathswe";
-const expected = right(pipe(path, newPathFromString, requireRight));
-const result = pipe(path, newOriginPathFromDomain(domain));
+        // github.com/mathswe organization
+        const path = "mathswe";
+        const expected = right(pipe(path, newPathFromString, requireRight));
+        const result = pipe(path, newOriginPathFromDomain(domain));
 
-expect(result).toEqual(expected);
-});
+        expect(result).toEqual(expected);
+    });
 });
 
 describe("newOriginFromUrl", () => {
-it(
-"should return a valid Origin when domain and path are allowed",
-() => {
-const expectedUrl: SecureUrl = pipe(
-"https://mathswe.com/valid-path",
-newUrlFromString,
-requireRight,
-);
+    it(
+        "should return a valid Origin when domain and path are allowed",
+        () => {
+            const expectedUrl: SecureUrl = pipe(
+                "https://mathswe.com/valid-path",
+                newUrlFromString,
+                requireRight,
+            );
 
-const result = newOriginFromUrl(expectedUrl);
-const { domain, path, url } = requireRight(result);
-const expectedDomain = mathSweDomain("MathSweCom");
-const expectedPath = pipe(
-"valid-path",
-newPathFromString,
-requireRight,
-);
+            const result = newOriginFromUrl(expectedUrl);
+            const { domain, path, url } = requireRight(result);
+            const expectedDomain = mathSweDomain("MathSweCom");
+            const expectedPath = pipe(
+                "valid-path",
+                newPathFromString,
+                requireRight,
+            );
 
-expect(domain).toEqual(expectedDomain);
-expect(path).toEqual(expectedPath);
-expect(url).toEqual(expectedUrl);
-},
-);
+            expect(domain).toEqual(expectedDomain);
+            expect(path).toEqual(expectedPath);
+            expect(url).toEqual(expectedUrl);
+        },
+    );
 
-it("should return an error if the domain is disallowed", () => {
-const result = newOriginFromString("example.com/some-path");
+    it("should return an error if the domain is disallowed", () => {
+        const result = newOriginFromString("example.com/some-path");
 
-expect(isLeft(result)).toBe(true);
-});
+        expect(isLeft(result)).toBe(true);
+    });
 });
 ```
 
@@ -305,28 +307,28 @@ value means the underlying request is allowed.
 
 ```ts
 describe("getOrigin", () => {
-it(
-"should return Right(Origin) when a valid Origin header is provided",
-() => {
-const mockRequest = {
-headers: {
-get: (key: string) =>
-key === "Origin"
-? "https://mathswe.com"
-: null,
-},
-} as Request;
+    it(
+        "should return Right(Origin) when a valid Origin header is provided",
+        () => {
+            const mockRequest = {
+                headers: {
+                    get: (key: string) =>
+                        key === "Origin"
+                        ? "https://mathswe.com"
+                        : null,
+                },
+            } as Request;
 
-const result = getOrigin(mockRequest);
-const expectedOrigin = pipe(
-"https://mathswe.com",
-newOriginFromString,
-requireRight,
-);
+            const result = getOrigin(mockRequest);
+            const expectedOrigin = pipe(
+                "https://mathswe.com",
+                newOriginFromString,
+                requireRight,
+            );
 
-expect(result).toEqual(right(expectedOrigin));
-},
-);
+            expect(result).toEqual(right(expectedOrigin));
+        },
+    );
 });
 ```
 
