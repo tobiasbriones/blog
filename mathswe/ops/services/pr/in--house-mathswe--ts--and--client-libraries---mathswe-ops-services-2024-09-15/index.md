@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# In-House MathSwe-Ts-and-Client Libraries | MathSwe Ops Services (2024/09/15)
+# In-House MathSwe-TS-and-Client Libraries | MathSwe Ops Services (2024/09/15)
 
 ---
 
