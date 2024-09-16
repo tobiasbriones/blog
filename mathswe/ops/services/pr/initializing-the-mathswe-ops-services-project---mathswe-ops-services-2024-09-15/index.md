@@ -13,4 +13,12 @@ Sep 15: PR [#1](https://github.com/mathswe-ops/services/pull/1) merged into `ser
 
 It creates a new project with TS, Vitest, and a Cloudflare Worker template.
 
+I introduced the new MathSwe Ops Services project in
+[Initializing MathSwe Ops Services (2024/09/15)](/initializing-mathswe-ops-services-2024-09-15)
+with the concept, motivation, and tasks behind it.
+
+MathSwe Ops Services is a new server application designated to provide General
+SWE services, while PR #1 gets it started with the technology the project will
+employ.
+
 ---
