@@ -4,6 +4,10 @@
 
 # Initializing the MathSwe Ops Services Project | MathSwe Ops Services (2024/09/15)
 
+The new MathSwe Ops Services is a general-purpose server application designed to
+support General SWE tasks related to mathematical software. The project
+initialization is the first step to follow.
+
 ---
 
 **Initialize project services with Cloudflare Workers, TS, and vitest**
