@@ -22,3 +22,6 @@ SWE services, while PR #1 gets it started with the technology the project will
 employ.
 
 ---
+
+The Services application is initialized with the pertaining technologies,
+completing the getting started stage.
