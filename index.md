@@ -9,6 +9,7 @@
 - [Incremental Deployments and Researching Cookie Laws (2024/02/09)](incremental-deployments-and-researching-cookie-laws-2024-02-09)
 - [Initializing the New Math Software MVP App (2024/01/30)](initializing-the-new-msw-mvp-app-2024-01-30)
 - [Designing Image Ops \| MathSwe Ops MVP (2024/08/08)](designing-image-ops---mathswe-ops-mvp-2024-08-08)
+- [Initializing MathSwe Ops Services (2024/09/15)](initializing-mathswe-ops-services-2024-09-15)
 - [Initializing the MathSwe Ops GitHub Organization (2024/06/19)](initializing-the-mathswe-ops-github-organization-2024-06-19)
 - [System and MSW Ops v0.1.0 \| MathSwe Ops MVP (2024/08/30)](system-and-msw-ops-v0-1-0---mathswe-ops-mvp-2024-08-30)
 - [New Image Catalog and Landing Page \| MathSwe Ops Mvp (2024/08/22)](new-image-catalog-and-landing-page---mathswe-ops-mvp-2024-08-22)
