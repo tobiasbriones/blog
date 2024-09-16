@@ -25,7 +25,6 @@ TypeScript, even with `fp-ts` and `mathswe-ts`.
 `Sum Type Pattern Matching`
 
 ```ts
-
 describe("Lazy Rich SumType", () => {
     type Shape = { tag: "Point" } | { tag: "Circle", radius: number };
 
@@ -168,8 +167,8 @@ export type Allowed
 ```ts
 export type MathSwe
     = "MathSweCom"
-"MathSoftware"
-"MathSoftwareEngineer";
+    | "MathSoftware"
+    | "MathSoftwareEngineer";
 ```
 
 `ThirdParty Module`
