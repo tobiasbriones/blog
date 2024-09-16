@@ -5,3 +5,5 @@
   of [GitHub.Com](https://github.com).
 - [ms-ops-mvp-readme-badges.png](ms-ops-mvp-readme-badges.png): Screenshot
   of [GitHub.Com](https://github.com).
+- [ms-ops-services-_-first-prs.png](ms-ops-services-_-first-prs.png): Screenshot
+  of [GitHub.Com](https://github.com).
