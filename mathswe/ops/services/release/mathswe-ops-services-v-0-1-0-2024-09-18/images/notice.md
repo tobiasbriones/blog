@@ -10,3 +10,7 @@
 - [ms-ops-services-_-before-initial-release.png](ms-ops-services-_-before-initial-release.png): 
   Screenshot
   of [GitHub.Com](https://github.com).
+
+- [ms-ops-services-_-after-initial-release.png](ms-ops-services-_-after-initial-release.png): 
+  Screenshot
+  of [GitHub.Com](https://github.com).
