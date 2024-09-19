@@ -130,3 +130,25 @@ The badge/project endpoint provides the main badge for a given MathSwe project
 (including MVPs).
 
 ---
+
+The version badge endpoint required a relatively complex implementation to fetch
+a project version and return the SVG badge. It also required me to fix some
+styles in the SVG template. I also applied more FP with the FP-TS library and
+MathSwe-TS I designed in the previous PR #2, which was my first time using them.
+
+The `git-platform/git-platform` and `git-platform/project` modules provide
+GitHub support to get a repository version by reading it directly from the
+GitHub API. They also infer a subproject version, like a microservice or a
+project in a mono repository, by reading the version in their build tool file,
+such as `package.json` or `Cargo.toml`.
+
+Regarding the project badge, it accepts MathSwe projects with MVP variants
+(query param), which have their icon defined inside the Services app, so I just
+have to call the endpoint to keep `README.md` files clean.
+
+The integration adds two GET endpoints to the MathSwe Ops Services API to fetch
+the version/release and the project SVG badge. The version badge takes a GitHub
+repository in its route params and a "path" query if you want a subproject
+version, while the project badge takes a MathSwe project and an "MVP" query. The
+new badge endpoints provide automation steps when releasing and creating MathSwe
+projects by implementing their custom standards.
