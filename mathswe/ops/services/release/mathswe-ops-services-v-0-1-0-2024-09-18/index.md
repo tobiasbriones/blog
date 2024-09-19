@@ -87,3 +87,31 @@ Legal repository.
 The release badge endpoint automates the documentation of MathSwe projects when
 released by providing an online SVG badge URL that will infer the latest
 project's or subproject's version.
+
+## Project Badge
+
+Repository documentation shows the project badge to introduce its name and icon.
+While they don't require repetitive maintenance after you commit them to the
+repository files, they still slow you down when creating them and pollute the
+project's files.
+
+Since they are simpler to create, this release provides the `badge/project`
+endpoint for MathSwe projects.
+
+| Method | Endpoint                  | Description              | Parameters                                                          |
+|--------|---------------------------|--------------------------|---------------------------------------------------------------------|
+| GET    | `/badge/project/:project` | Main badge for a project | `:project` - MathSwe project name<br>`?mvp` - Flag for MVP versions |
+
+The service contains domain knowledge, like base64 icons and project names, so
+you only need the badge URL to display in your documentation.
+
+![](images/ms-system-ops-mvp-_-project-badge.png)
+
+With a call to `/badge/project/mathswe-system-ops?mvp`, which includes the
+`mvp` query, you can generate MathSwe project badges.
+
+A limitation is the quality of icons since they're base64 PNGs, but that will
+improve later and doesn't affect currently.
+
+The project badge endpoint provides facade badges for MathSwe projects and their
+MVP versions to eliminate these SVG files from the project's files.
