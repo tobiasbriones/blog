@@ -33,3 +33,57 @@ The release endpoint accepts GitHub repositories and their subprojects, while
 the other accepts MathSwe projects and their MVP versions. The new endpoints in
 the Services API remove significant manual maintenance overhead when releasing
 and creating MathSwe project documentation.
+
+## Version Badge
+
+MathSwe projects can be direct repositories or independent subprojects inside
+repositories such as microservices. A quality engineering process requires
+subproject versioning as they're independent, but badge providers like
+Shields.Io don't support these standards.
+
+The problem is that the current way to add these particular badges is by
+updating the SVG file in the repository every time you release it, which
+increases the *release overhead* and pollutes the project's files.
+
+Releasing (and developing) software must be as productive as possible to deliver
+value fast without burning out, which leads to automating these badges.
+
+![](images/manually-updating-repository-version-badge-before-release.png)
+
+The "trivial" version badge is that of the repository.
+
+Further, you can see there are repositories with subprojects, like `ops.math.
+software---mvp/` and `system/`. They needed various in-project badges, which
+required manual maintenance.
+
+![](images/manually-updating-subproject-version-badges-before-release.png)
+
+The `badge/version` endpoint automates this features.
+
+| Method | Endpoint                                  | Description                  | Parameters                                                                                                                                                                      |
+|--------|-------------------------------------------|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GET    | `/badge/version/:gitPlatform/:user/:repo` | Badge for repository version | `:gitPlatform` - Only GitHub supported<br>`:user` - Repository user or Org<br>`:repo` - Repository name<br> `?path` - Project's root subdirectory (e.g., a microservice or MVP) |
+
+With a call to `badge/version/github/mathswe-ops/services` you can get the
+version badge for the `services` repository of the `mathswe-ops`
+user/organization hosted on `github`.
+
+![](images/ms-ops-services-_-before-initial-release.png)
+
+![](images/ms-ops-services-_-after-initial-release.png)
+
+One minor limitation currently is the service doesn't provide cache settings, so
+the badge will take many hours to update on the GitHub side. There's a ticket to
+fix it later.
+
+The **compatibility for subprojects** encompasses those using NPM
+`package.json` or Cargo `Cargo.toml` build systems.
+
+You can specify subprojects with a query like
+`badge/version/github/mathswe/legal?path=cookie-consent`, which responds with
+the `release v0.2.0` badge for the Cookie Consent microservice of the MathSwe
+Legal repository.
+
+The release badge endpoint automates the documentation of MathSwe projects when
+released by providing an online SVG badge URL that will infer the latest
+project's or subproject's version.
