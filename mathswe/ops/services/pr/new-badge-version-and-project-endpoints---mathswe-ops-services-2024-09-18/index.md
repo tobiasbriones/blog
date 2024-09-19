@@ -4,6 +4,13 @@
 
 # New Badge Version and Project Endpoints | MathSwe Ops Services (2024/09/18)
 
+Getting a badge to show a project's version in its documentation is more
+difficult for MathSwe projects as these can be granular independent projects
+inside the same repository, like microservices. MathSwe also requires project
+badges with their icon to present them. The Services API needs to automate these
+badges for version and project to improve the development and (primarily)
+fasten the release of MathSwe projects.
+
 ---
 
 **Allow hyphens in Hostname**
