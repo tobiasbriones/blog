@@ -10,6 +10,7 @@
 - [Initializing the New Math Software MVP App (2024/01/30)](initializing-the-new-msw-mvp-app-2024-01-30)
 - [Designing Image Ops \| MathSwe Ops MVP (2024/08/08)](designing-image-ops---mathswe-ops-mvp-2024-08-08)
 - [Initializing the MathSwe Ops Services Project \| MathSwe Ops Services (2024/09/15)](initializing-the-mathswe-ops-services-project---mathswe-ops-services-2024-09-15)
+- [New Badge Version and Project Endpoints \| MathSwe Ops Services (2024/09/18)](new-badge-version-and-project-endpoints---mathswe-ops-services-2024-09-18)
 - [In-House MathSwe-TS-and-Client Libraries \| MathSwe Ops Services (2024/09/15)](in--house-mathswe--ts--and--client-libraries---mathswe-ops-services-2024-09-15)
 - [Initializing MathSwe Ops Services (2024/09/15)](initializing-mathswe-ops-services-2024-09-15)
 - [Initializing the MathSwe Ops GitHub Organization (2024/06/19)](initializing-the-mathswe-ops-github-organization-2024-06-19)
