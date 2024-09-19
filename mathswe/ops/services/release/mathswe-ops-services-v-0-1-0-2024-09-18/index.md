@@ -4,6 +4,11 @@
 
 # MathSwe Ops Services v0.1.0 (2024/09/18)
 
+MathSwe Ops Services is a web application supporting general-purpose software
+engineering related to mathematical software. Its initial release presents
+solutions to automate SVG badges for a more optimal project's documentation and
+release cycle.
+
 ## Web API to Generate SVG Badges for Release and MathSwe Project Name with Icon
 
 Some MathSwe projects, like microservices and MVPs, are subdirectories in their
