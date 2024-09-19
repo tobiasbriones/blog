@@ -12,6 +12,7 @@
 - [Initializing the MathSwe Ops Services Project \| MathSwe Ops Services (2024/09/15)](initializing-the-mathswe-ops-services-project---mathswe-ops-services-2024-09-15)
 - [New Badge Version and Project Endpoints \| MathSwe Ops Services (2024/09/18)](new-badge-version-and-project-endpoints---mathswe-ops-services-2024-09-18)
 - [In-House MathSwe-TS-and-Client Libraries \| MathSwe Ops Services (2024/09/15)](in--house-mathswe--ts--and--client-libraries---mathswe-ops-services-2024-09-15)
+- [MathSwe Ops Services v0.1.0 (2024/09/18)](mathswe-ops-services-v-0-1-0-2024-09-18)
 - [Initializing MathSwe Ops Services (2024/09/15)](initializing-mathswe-ops-services-2024-09-15)
 - [Initializing the MathSwe Ops GitHub Organization (2024/06/19)](initializing-the-mathswe-ops-github-organization-2024-06-19)
 - [System and MSW Ops v0.1.0 \| MathSwe Ops MVP (2024/08/30)](system-and-msw-ops-v0-1-0---mathswe-ops-mvp-2024-08-30)
