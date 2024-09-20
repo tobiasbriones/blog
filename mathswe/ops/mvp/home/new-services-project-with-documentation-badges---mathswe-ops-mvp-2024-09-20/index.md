@@ -4,6 +4,11 @@
 
 # New Services Project with Documentation Badges | MathSwe Ops MVP (2024/09/20)
 
+Old release and project badges requiring manual maintenance are no longer
+necessary, thanks to the new MathSwe Ops Services API that provides them to
+MathSwe projects. Being so, it should also feature space in the MSW Ops landing
+page to show how MathSwe also supports general-purpose engineering.
+
 ---
 
 **Update version and project badges with new MathSwe Ops Services badges**
