@@ -40,3 +40,12 @@ MSW Ops provides a new product that, unlike the other MSW, focuses on
 (cloud) general-purpose software engineering rather than domain-specific. You
 will need it when engineering some MSW, such as MVPs or production-grade
 applications that indirectly help MSW.
+
+## Featuring General-Purpose Engineering Services
+
+Mathematical software needs General SWE in practice, despite general-purpose
+being extrinsic to MSW. General SWE shows on base-standard production-grade
+projects and MVPs. Engineers and developers with high standards close to MSWE
+can leverage new software, like MathSwe Ops Services, now featured on the MSW
+Ops home page, to automate their workflow, even if the projects are not
+mathematical.
