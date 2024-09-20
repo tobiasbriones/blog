@@ -29,3 +29,8 @@ Sep 20: PR [#19](https://github.com/mathswe-ops/mathswe-ops---mvp/pull/19) merge
 It adds the new MathSwe Ops Services project that just had its initial release.
 
 ---
+
+The MathSwe Ops home page now includes the section for the Services API with its
+initial features, consisting of two endpoints to get release and project badges.
+Presenting the Services project is a way to show how MathSwe also supports
+General SWE (general-purpose), besides MSWE (mathematical domain-specific).
