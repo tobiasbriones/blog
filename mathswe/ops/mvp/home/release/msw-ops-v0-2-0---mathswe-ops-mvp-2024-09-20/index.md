@@ -25,3 +25,18 @@ GitHub release at
 Presenting the Services project on the MSW Ops home page is a way to show how
 MathSwe also supports General SWE (general-purpose), besides MSWE (mathematical
 domain-specific).
+
+## MathSwe Ops Services
+
+The new Services application features on the MSW Ops home page.
+
+![](images/ms-ops-services-v0-1-0.png)
+
+**Page Snapshot**
+
+- [MVP: MathSwe Ops Web v0.2.0](images/mvp-_-mathswe-ops-web-v0-2-0-desktop.png).
+
+MSW Ops provides a new product that, unlike the other MSW, focuses on
+(cloud) general-purpose software engineering rather than domain-specific. You
+will need it when engineering some MSW, such as MVPs or production-grade
+applications that indirectly help MSW.
