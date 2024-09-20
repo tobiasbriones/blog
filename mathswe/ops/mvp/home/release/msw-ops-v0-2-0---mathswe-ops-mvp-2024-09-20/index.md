@@ -4,6 +4,13 @@
 
 # MSW Ops v0.2.0 | MathSwe Ops MVP (2024/09/20)
 
+The new MathSwe Ops Services web API helps with general-purpose engineering on
+MathSwe projects, like providing practical badges to enhance documentation
+details and release workflow. The MSW Ops web home must present the new project
+to diversify operational products supporting base-standard software, which
+impacts the engineering of some implementations, like MVPs and non-mathematical
+projects.
+
 ## MSW Ops Home Page with the New Services Application
 
 This release adds the MathSwe Ops Services project to a section on the landing
