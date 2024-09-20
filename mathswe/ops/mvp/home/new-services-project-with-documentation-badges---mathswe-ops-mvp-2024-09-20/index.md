@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# New Services Project with Documentation Badges | MathSwe Ops Mvp (2024/09/20)
+# New Services Project with Documentation Badges | MathSwe Ops MVP (2024/09/20)
 
 ---
 
