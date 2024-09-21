@@ -4,6 +4,13 @@
 
 # Tagging Templates for Repetitive General-Purpose Projects (2024/09/20)
 
+I created a repository for storing project templates since I have to repeat the
+same web frontend ceremony for every MathSwe web app I create. Replicating the
+same project structure burns you out and adds inconsistencies, making everything
+hard to maintain and think about.
+
+---
+
 I have a problem where MathSwe must take (wrap) modular mathematical
 applications to deploy them. For example, the Math Software app (pure) will need
 a MathSwe final application to host it and become a tangible product in
