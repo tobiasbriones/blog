@@ -70,3 +70,10 @@ In short, I have many potential options, including:
 I will work with templates first to move on as fast as possible while
 understanding the requirements better.
 
+---
+
+The repository I created will be for hosting any significant template to apply
+to all projects as a base standard. I will include the template for a React +
+TS + SWC + Vite + Vitest + Bootstrap web application. I will experiment in this
+repository and will evolve the templates according to needs, considering them
+as, at least, a temporary help.
