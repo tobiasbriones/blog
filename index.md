@@ -16,6 +16,7 @@
 - [Initializing MathSwe Ops Services (2024/09/15)](initializing-mathswe-ops-services-2024-09-15)
 - [Initializing the MathSwe Ops GitHub Organization (2024/06/19)](initializing-the-mathswe-ops-github-organization-2024-06-19)
 - [New Services Project with Documentation Badges \| MathSwe Ops MVP (2024/09/20)](new-services-project-with-documentation-badges---mathswe-ops-mvp-2024-09-20)
+- [MSW Ops v0.2.0 \| MathSwe Ops MVP (2024/09/20)](msw-ops-v0-2-0---mathswe-ops-mvp-2024-09-20)
 - [System and MSW Ops v0.1.0 \| MathSwe Ops MVP (2024/08/30)](system-and-msw-ops-v0-1-0---mathswe-ops-mvp-2024-08-30)
 - [New Image Catalog and Landing Page \| MathSwe Ops Mvp (2024/08/22)](new-image-catalog-and-landing-page---mathswe-ops-mvp-2024-08-22)
 - [New Config Command \| MathSwe Ops Mvp (2024/08/30)](new-config-command---mathswe-ops-mvp-2024-08-30)
