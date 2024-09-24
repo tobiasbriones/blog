@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Tagging Templates for Repetitive General-Purpose Projects (2024/09/20)
+# Providing Templates for Repetitive General-Purpose Projects (2024/09/20)
 
 I created a repository for storing project templates since I have to repeat the
 same web frontend ceremony for every MathSwe web app I create. Replicating the
