@@ -4,6 +4,12 @@
 
 # New MathSwe Prototypes Repository (2024/10/06)
 
+Current prototypes are scattered across ad-hoc decentralized places, and they
+require a formal organization to keep them maintainable and upgrade them to
+higher standards, like production grade or MVP.
+
+---
+
 Prototypes are ultra-fast projects for development while you understand the
 requirements and shape an actual project. They provide the speed tradeoff by
 requiring no standard practices, like good commit messages.
