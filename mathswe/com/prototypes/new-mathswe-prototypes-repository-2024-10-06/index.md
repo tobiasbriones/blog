@@ -61,3 +61,34 @@ if they're minimal.
 
 Therefore, prototype development practices must be minimal while their code must
 hold a pre-release (or experimental) quality.
+
+---
+
+Prototypes are experimental projects with pre-release quality that can become
+real projects, like MVPs. They can evolve from "prototype to MVP to
+engineering-grade" or "prototype to production-grade." Prototypes should also
+touch production as experimental software to evolve them over time.
+
+It's crucial to organize prototypes to keep them maintainable. By noticing their
+centralized nature, you can understand they must belong to a global private
+mono-repository. Prototypes are not OSS since they don't have scope outside the
+organization, so they cannot be products.
+
+Creating a `prototypes` repository for each GitHub organization is
+overengineering since you don't even know the potential projects a prototype can
+produce. GitHub organizations can only have one MVP repository, but prototypes
+are significantly more centralized than MVPs. Therefore, the whole
+organization (MathSwe Com) must maintain the unique `prototypes`
+mono-repository.
+
+In MathSwe, there will always be quality standards. Prototypes are not
+low-quality projects but projects that optimize for other tradeoffs. Hence,
+**projects must be in their intended place**, like prototypes, MVPs,
+production-grade, or engineering-grade. A project's placement can be
+centralized, like prototypes; domain-centralized, like MVPs; or domain-specific,
+which is the final objective.
+
+Prototypes require minimal development standards to provide pre-release grade
+software that can evolve in production and originate potential projects.
+Engineers will understand their domain and address intricate pragmatic
+development challenges that projects of higher standards do not allow.
