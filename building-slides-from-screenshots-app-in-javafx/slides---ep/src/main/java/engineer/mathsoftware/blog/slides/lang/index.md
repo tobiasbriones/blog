@@ -11,6 +11,16 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
+    <a href="Spec.java">
+      Spec.java
+    </a>
+  </li>
+  <li>
+    <a href="SchemeColors.java">
+      SchemeColors.java
+    </a>
+  </li>
+  <li>
     <a href="ElementItem.java">
       ElementItem.java
     </a>
@@ -23,16 +33,6 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
   <li>
     <a href="Parser.java">
       Parser.java
-    </a>
-  </li>
-  <li>
-    <a href="SchemeColors.java">
-      SchemeColors.java
-    </a>
-  </li>
-  <li>
-    <a href="Spec.java">
-      Spec.java
     </a>
   </li>
 </ul>

@@ -6,13 +6,13 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main"
 # main
 <ul>
   <li>
-    <a href="java">
-      java
+    <a href="resources">
+      resources
     </a>
   </li>
   <li>
-    <a href="resources">
-      resources
+    <a href="java">
+      java
     </a>
   </li>
 </ul>

@@ -6,6 +6,11 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
 # ai
 <ul>
   <li>
+    <a href="SlideAI.java">
+      SlideAI.java
+    </a>
+  </li>
+  <li>
     <a href="Ocr.java">
       Ocr.java
     </a>
@@ -13,11 +18,6 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
   <li>
     <a href="package-info.java">
       package-info.java
-    </a>
-  </li>
-  <li>
-    <a href="SlideAI.java">
-      SlideAI.java
     </a>
   </li>
 </ul>

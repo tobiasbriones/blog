@@ -6,8 +6,8 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
 # ui
 <ul>
   <li>
-    <a href="AIController.java">
-      AIController.java
+    <a href="BackgroundStatus.java">
+      BackgroundStatus.java
     </a>
   </li>
   <li>
@@ -16,33 +16,18 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
-    <a href="AutoSave.java">
-      AutoSave.java
-    </a>
-  </li>
-  <li>
-    <a href="BackgroundStatus.java">
-      BackgroundStatus.java
-    </a>
-  </li>
-  <li>
-    <a href="ImageItemCell.java">
-      ImageItemCell.java
-    </a>
-  </li>
-  <li>
     <a href="Main.java">
       Main.java
     </a>
   </li>
   <li>
-    <a href="package-info.java">
-      package-info.java
+    <a href="AIController.java">
+      AIController.java
     </a>
   </li>
   <li>
-    <a href="SlideAIView.java">
-      SlideAIView.java
+    <a href="SlideDrawingView.java">
+      SlideDrawingView.java
     </a>
   </li>
   <li>
@@ -51,8 +36,23 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
-    <a href="SlideDrawingView.java">
-      SlideDrawingView.java
+    <a href="SlideAIView.java">
+      SlideAIView.java
+    </a>
+  </li>
+  <li>
+    <a href="AutoSave.java">
+      AutoSave.java
+    </a>
+  </li>
+  <li>
+    <a href="package-info.java">
+      package-info.java
+    </a>
+  </li>
+  <li>
+    <a href="ImageItemCell.java">
+      ImageItemCell.java
     </a>
   </li>
 </ul>

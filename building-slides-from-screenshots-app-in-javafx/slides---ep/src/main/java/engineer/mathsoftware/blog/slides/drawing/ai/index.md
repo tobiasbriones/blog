@@ -6,8 +6,8 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
 # ai
 <ul>
   <li>
-    <a href="AIDrawing.java">
-      AIDrawing.java
+    <a href="States.java">
+      States.java
     </a>
   </li>
   <li>
@@ -21,18 +21,18 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
-    <a href="package-info.java">
-      package-info.java
-    </a>
-  </li>
-  <li>
     <a href="Stateful.java">
       Stateful.java
     </a>
   </li>
   <li>
-    <a href="States.java">
-      States.java
+    <a href="AIDrawing.java">
+      AIDrawing.java
+    </a>
+  </li>
+  <li>
+    <a href="package-info.java">
+      package-info.java
     </a>
   </li>
 </ul>

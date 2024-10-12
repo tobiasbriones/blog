@@ -50,6 +50,7 @@
 - [Troubleshooting Diary](troubleshooting-diary)
 - [Overriding Hash Code and Equals in a Record with an Image Field](overriding-hash-code-and-equals-in-a-record-with-an-image-field)
 - [Drawing a Rounded Triangle via Quadratic Curves (2023/12/22)](drawing-a-rounded-triangle-via-quadratic-curves-2023-12-22)
+- [Domain and AI Engineering on Slides EP (2023/10/23)](domain-and-ai-engineering-on-slides-ep-2023-10-23)
 - [Finishing Writing the Documentation for my Next EP (2023-07-14)](finishing-writing-the-documentation-for-my-next-ep-2023-07-14)
 - [Building Slides from Screenshots App in JavaFX](building-slides-from-screenshots-app-in-javafx)
 - [Leveraging Git to Finish my Article (2023/10/09)](leveraging-git-to-finish-my-article-2023-10-09)

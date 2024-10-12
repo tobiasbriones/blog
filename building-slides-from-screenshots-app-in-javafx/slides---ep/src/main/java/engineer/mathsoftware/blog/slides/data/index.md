@@ -11,18 +11,18 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
-    <a href="DataRepository.java">
-      DataRepository.java
-    </a>
-  </li>
-  <li>
     <a href="Env.java">
       Env.java
     </a>
   </li>
   <li>
-    <a href="ImageItem.java">
-      ImageItem.java
+    <a href="package-info.java">
+      package-info.java
+    </a>
+  </li>
+  <li>
+    <a href="DataRepository.java">
+      DataRepository.java
     </a>
   </li>
   <li>
@@ -31,8 +31,8 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
-    <a href="package-info.java">
-      package-info.java
+    <a href="ImageItem.java">
+      ImageItem.java
     </a>
   </li>
 </ul>

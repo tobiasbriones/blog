@@ -12,9 +12,8 @@ ogimage: "https://raw.githubusercontent.com/tobiasbriones/blog/gh-pages/building
 
 # Building Slides from Screenshots App in JavaFX
 
-<img src="images/building-slides-from-screenshots-app-in-javafx.png" alt="Building Slides from Screenshots App in Javafx" />
+<img src="images/building-slides-from-screenshots-app-in-javafx.png" alt="Building Slides from Screenshots App in Javafx"/>
 
----
 
 Efficient and quality engineering communication is a daily challenge for
 creating value such as specs, documentation, content, or visualizations, which
@@ -53,103 +52,6 @@ I lately took this experience as the final motivation to start materializing the
 automation of these systems without requiring the monolithic products mentioned.
 I'm working this materialization out via my new —and first blog with project—
 **EP: Slides**, here in this article.
-
-### Domain Engineering
-
-These general-purpose software out there cannot be composed.
-
-Even if they have (bloated) AI assistance, macros, or even APIs
-(if at all), they're just products for profit. Photoshop can paint an image, but
-it'll never understand source code or your specific system. M$ Word or LaTeX
-**will never understand what an equation means, *as in mathematics***, etc.
-
-They need bloated features like AI that take huge deep learning models to
-develop and train and have heavy licensing and marketing because they're general
-purpose. For instance, products that suck need capitalism
-(marketing) to *sell them*, but *they're not the solution to the problems*.
-
-If you're a domain expert, you **simplify matters** to the specific domain, and
-**the more you simplify, the less bloated** AI, marketing, analytics and
-engineering you have because *you address the problems instead of the symptoms*.
-
-AI can have its place to automate *external systems* which I wanted to leave
-clear in this development, but it'll never replace the underlying domain as
-they're independent tools.
-
-That is, you need to *understand* **how AI should be useful to automate
-works *for* our domain language** instead of buying mundane general-purpose
-software that uses AI as magic. Notice *the difference between automation and
-magic*.
-
-For example, grammar checkers are not technical, so you get a lot of errors
-marked because they don't *understand* computer and math languages and idioms.
-They only want you to pay a subscription to fix all the "issues" ~~you have~~
-they sell you. Their dream is to remove all the "issues 💸," so your original
-tone even changes, and ends up sounding like a robotic agent or someone else.
-
-They won't even tell you the *real* enhancements of your technical text you
-should be fixing. They're not engineering grade. They tell you to remove
-something for "clarity issues," then it tells you to add it back again 🤯 for
-correctness.
-
-In the end, **you have to be proficient** in English (i.e., the domain) to know
-what you're doing because any "magic" tool was made just for the sake of a
-profit agenda, thus bloated under the hood. You have to compose your tools
-instead of paying for generic ones that turn into workarounds and will never
-return most of the investment.
-
-Another clear example is ChatGPT, which can generate mundane Python or any
-popular mainstream language or framework code but struggles with ultra-niche
-technologies like Purescript or even JavaFX. It makes up unexisting APIs and
-code that wouldn't compile. These unpopular techs require domain expertise, and
-there will be (hopefully) never enough data to train or fine-tune those
-ultra-bloated magic-based (and unethical with IP legal issues) models with
-technology that requires actual engineering.
-
-In the end, **you must be proficient in your domain** and realize that tools
-like ChatGPT are nothing but a faster way to *automate* what you otherwise have
-to search in Google results.
-
-General-purpose software is useful *but not engineering-grade*. On the other
-hand, mathematical software must be engineering-grade by nature.
-
-You should refrain from saying, "It was ~~generated~~ by AI" when, in fact, the
-reality of how AI should work comes to "It was *automated* by AI." The exception
-would be only when the whole tool (as a final product) is named after AI, e.g.,
-"AI generated image."
-
-There are likely possible ways to make AI work for our domain language (as said
-above).
-
-I figured out one simple way to leverage an AI application for this project, so
-it serves as a good example.
-
-Developing anything domain-specific here is natural but not the objective,
-though. Thus, the purpose is to blog a new example project to **start taking
-action, devising standards, and proving concepts**.
-
-Recall the domain engineering automation concepts of what this comes about even
-though my purpose this time is to develop these ideas conservatively in Java as
-an example project.
-
-#### Domain Composition Versus Magic
-
-It struck me as funny (after writing [Domain Engineering](#domain-engineering))
-when I read "Adobe Photoshop API magic, now available in the cloud" 😂 on the
-Photoshop developer page. It tells you to remove background via API, but you
-actually need **composition**, like in FP. You should "compose backgrounds"
-instead of removing them from a binary image. That contrasts *a simple solution
-for the former versus a complicated one for the latter*.
-
-Although you can compose layers in Photoshop or certain functionalities in
-general-purpose software, you just can't take some 10% of the monolith and pay
-10% of the price to actually compose it with a totally different domain like
-math or programming. As said before, *it won't return most of the investment
-since general-purpose software is not composable*.
-
-Hence, as math software engineers, we must compromise to build composable
-software to remove both needs for "magic" and for duplicating
-expensive-to-engineer features.
 
 ## Slides App
 
@@ -197,7 +99,9 @@ instead of a code snippet to take other screenshot elements like a Git diff or
 IDE special features.
 
 <figure>
-    <img src="images/codeshot-_-inspecting-video-rendering-race-condition.png" alt="Codeshot: Inspecting Video Rendering Race Condition" />
+    <div class="a16-9">
+        <img src="images/codeshot-_-inspecting-video-rendering-race-condition.png" alt="Codeshot: Inspecting Video Rendering Race Condition" />
+    </div>
     <figcaption>Codeshot: Inspecting Video Rendering Race Condition</figcaption>
 </figure>
 
@@ -461,7 +365,7 @@ Now, we move forward the main package.
     </div>
 
     <div class="menu">
-        <button type="button" data-path="slides---ep/src/main/java/engineer/mathsoftware/blog/slides/ai/package-info.java" onclick="onOpenCodeSnippetLink(this)">
+        <button type="button" data-path="slides---ep/src/main/java/engineer/mathsoftware/blog/slides/ui/package-info.java" onclick="onOpenCodeSnippetLink(this)">
     <span class="material-symbols-rounded">
     open_in_new
     </span>
@@ -1813,7 +1717,7 @@ come in handy a lot.
     @Override
     protected void updateItem(ImageItem item, boolean empty) {
         super.updateItem(item, empty);
-        if (item == null || empty) {
+        if (item == null &vert;&vert; empty) {
             setText(null);
             setGraphic(null);
         }
@@ -2819,7 +2723,7 @@ another item is being dragged to it.
     </div>
 
     <div class="menu">
-        <button type="button" data-path="slides---ep/out/production/slides---ep/app.css" onclick="onOpenCodeSnippetLink(this)">
+        <button type="button" data-path="slides---ep/src/main/resources/app.css" onclick="onOpenCodeSnippetLink(this)">
     <span class="material-symbols-rounded">
     open_in_new
     </span>
@@ -3155,7 +3059,7 @@ private void onOpenWDMenuItemAction() {
         try {
             Desktop.getDesktop().open(new File(DATA_ROOT));
         }
-        catch (IOException | UnsupportedOperationException e) {
+        catch (IOException &vert; UnsupportedOperationException e) {
             setStatus(e.getMessage());
         }
     }
@@ -3178,7 +3082,7 @@ private void onQuitMenuItemAction() {
 private void onAboutMenuItemAction() {
     var alert = new Alert(
         Alert.AlertType.INFORMATION,
-        &quot;Slides App | blog | mathsoftware.engineer&quot;,
+        &quot;Slides App &vert; blog &vert; mathsoftware.engineer&quot;,
         ButtonType.CLOSE
     );
 
@@ -4241,7 +4145,7 @@ I added a CSS class to style the title `Label`s for example.
     </div>
 
     <div class="menu">
-        <button type="button" data-path="slides---ep/out/production/slides---ep/app.css" onclick="onOpenCodeSnippetLink(this)">
+        <button type="button" data-path="slides---ep/src/main/resources/app.css" onclick="onOpenCodeSnippetLink(this)">
     <span class="material-symbols-rounded">
     open_in_new
     </span>
@@ -4905,7 +4809,7 @@ private void fitImageView(ImageView iv, Image originalImage) {
     iv.setFitHeight(h);
 
     &#x2F;&#x2F; If the original image is bigger (out of bound) resize the ImageView
-    if (size.width() &lt; w || size.height() &lt; h) {
+    if (size.width() &lt; w &vert;&vert; size.height() &lt; h) {
         if (size.width() &lt; w) {
             var hRatio = iv.getFitHeight() &#x2F; iv.getFitWidth();
 
@@ -5549,13 +5453,7 @@ Another insight I got about how to increase the productivity of these
 domain-specific systems is to pre-parse their input via AI.
 
 Notice **AI can be a bridge between the general-purpose input and the
-domain-specific one, but the underlying domain will always exist**[^5].
-
-[^5]: I mention this because many idiots believe the marketing idea that "AI is
-    everything" (same for other marketing-hyped concepts like capitalism or
-    OOP), while in fact, **everything is rooted in complex (usually "boring")
-    math, domain, and engineering facts**, so AI (capitalism, OOP, etc.) is
-    just one small part of a system, it's just one more tool
+domain-specific one, but the underlying domain will always exist**.
 
 Among the graphic rendering of the slide, they're all about JavaFX `Node`s like
 `Shape`s and normal GUI views. For backgrounds, a `Rectangle` shape is good. For
@@ -6244,9 +6142,9 @@ other mundane mixed-paradigm language, is *heterogeneous*, so an `enum` is a
 **different structure** than an `interface`. Not to say, OOP brings the whole
 jungle: interfaces are used as an all-in-one for many other affairs, too.
 
-I defined the keywords in a utility class[^6].
+I defined the keywords in a utility class[^5].
 
-[^6]: I used ChatGPT to generate the keywords, and GitHub language colors, i.e.,
+[^5]: I used ChatGPT to generate the keywords, and GitHub language colors, i.e.,
     the mechanical job
 
 
@@ -6416,15 +6314,15 @@ part of it: the regex.
     .compile(&quot;([&#x27;\&quot;])([^&#x27;\&quot;]*)([&#x27;\&quot;])&quot;);
 private static final Pattern SINGLE_LINE_COMMENT_PATTERN
     = Pattern
-    .compile(&quot;(&#x2F;&#x2F;)(.*)(\\r\\n|\\r|\\n)&quot;);
+    .compile(&quot;(&#x2F;&#x2F;)(.*)(\\r\\n&vert;\\r&vert;\\n)&quot;);
 private static final String PASCAL_CASE_GROUP_REGEX
     = &quot;([A-Z][a-zA-Z0-9]*)&quot;;
 private static final Pattern PASCAL_CASE_TYPE_PATTERN
     = Pattern
     .compile
-        ( &quot;([ (.,:]{1}|:{2}|::)&quot;
+        ( &quot;([ (.,:]{1}&vert;:{2}&vert;::)&quot;
         + PASCAL_CASE_GROUP_REGEX
-        + &quot;([ (.,:\\[]{1}|:{2}|::)&quot;
+        + &quot;([ (.,:\\[]{1}&vert;:{2}&vert;::)&quot;
         );
 
 public static List&lt;String&gt; tokens(String code){
@@ -6452,9 +6350,9 @@ public static List&lt;String&gt; tokens(String code){
         = delimiters
         .stream()
         .map(delimiter -&gt; &quot;\\&quot; + delimiter)
-        .collect(Collectors.joining(&quot;|&quot;));
+        .collect(Collectors.joining(&quot;&vert;&quot;));
     var delimiterPattern
-        = &quot;(?&lt;=&quot; + delimiterPatterns + &quot;)|(?=&quot; + delimiterPatterns + &quot;)&quot;;
+        = &quot;(?&lt;=&quot; + delimiterPatterns + &quot;)&vert;(?=&quot; + delimiterPatterns + &quot;)&quot;;
     &#x2F;* ... *&#x2F;
 }
 " onclick="onCopyCodeSnippet(this)">
@@ -8178,10 +8076,10 @@ module engineer.mathsoftware.blog.slides {
 It's important to follow the instructions I left in the
 [resources/readme.md](slides---ep/src/main/resources/readme.md) file since you
 must download and copy the `tessdata` directory from its repository to run the
-OCR model in the app [^7]. This directory contains the `eng.traineddata`
+OCR model in the app [^6]. This directory contains the `eng.traineddata`
 file with the English data to load the model.
 
-[^7]: I didn't track those files in Git because they're nasty binary files and
+[^6]: I didn't track those files in Git because they're nasty binary files and
     third-party on top of that, so you have to copy them manually
 
 The tess4j library will allow us to call the Tesseract OCR API in Java and infer
@@ -8420,9 +8318,9 @@ Then, the `tessdata` is loaded from the app resources directory, a new
 
 Notice how a `bufferedImage` is created with the `javafx.swing` package to
 convert the input JavaFX `Image` into a (AWT) `BufferedImage` that is required
-by the `tess4j` API [^8].
+by the `tess4j` API [^7].
 
-[^8]: This conversion from JavaFX to AWT is similar to when saving snapshots to
+[^7]: This conversion from JavaFX to AWT is similar to when saving snapshots to
     the disk
 
 This `BufferedImage` is passed to the `getWords` method, and the result is
@@ -9147,9 +9045,9 @@ reverting any scale or zoom in the `Group` view (i.e., the main slide view in
 the center of the app).
 
 In `loadOcr`, a virtual thread is used to infer the bounding boxes from the OCR
-model [^9].
+model [^8].
 
-[^9]: Make sure to implement a thread-safe implementation, see how I use the
+[^8]: Make sure to implement a thread-safe implementation, see how I use the
     `Platform.runLater` call to send updates to the JavaFX UI thread
 
 The status messages are the labels I implemented in the right-bottom of the app.
@@ -10062,20 +9960,6 @@ metrics, which are generic/popular and therefore meaningless**, so again, *you
 must be proficient in your domain*. AI is not magic. You must build the same
 good OL' engineering and math under the hood.
 
-It can be daunting to try to make ML models work. From my job experiences, we've
-had to use several OCR providers as fallbacks. They all suck, but some suck less
-for the underlying problem, so we might as well make that one the "primary
-provider 💸."
-
-One of the shoe stones you'll find is when the image quality is low or bad, and
-you can't make your users buy an iPhone 15 Pro MAX ULTRA and employ basic skills
-to shoot a photo 😣.
-
-Solutions you find out there are generic, and if you try to make them work for
-you by fine-tuning, they will just become the same over-engineered OOP
-inheritance garbage based on product type classes that were popular in the Java
-times, the same way "AI" is hyped today.
-
 If you know me, you know the answer: **engineer for the domain as much as
 possible first. The simplest designs are the best.** You don't need over-bloated
 AI or solutions most of the time. Of course, many businesses won't care about
@@ -10428,7 +10312,7 @@ The `SaveInvalidation` implementation takes place as a static nested class.
     }
 
     void validateLater() {
-        if (!isInvalid || !isEnabled) {
+        if (!isInvalid &vert;&vert; !isEnabled) {
             return;
         }
 
@@ -10449,7 +10333,7 @@ The `SaveInvalidation` implementation takes place as a static nested class.
     }
 
     void validateNow() {
-        if (!isInvalid || !isEnabled) {
+        if (!isInvalid &vert;&vert; !isEnabled) {
             return;
         }
         validator.run();
@@ -10615,6 +10499,7 @@ to fastening future undertakings.
 - [What is OCR? \| Northern Essex Community College](https://www.necc.mass.edu/wp-content/uploads/accessible-media-necc/uncategorized/resources/What-is-OCR.pdf).
 - [Tess4J \| SourceForge](https://tess4j.sourceforge.net/).
 - [Photopea \| GitHub](https://github.com/photopea/photopea).
+
 
 
 

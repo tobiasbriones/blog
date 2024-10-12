@@ -6,18 +6,8 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
 # drawing
 <ul>
   <li>
-    <a href="ai">
-      ai
-    </a>
-  </li>
-  <li>
-    <a href="CaptionRenderer.java">
-      CaptionRenderer.java
-    </a>
-  </li>
-  <li>
-    <a href="CodeSnippetDrawing.java">
-      CodeSnippetDrawing.java
+    <a href="ScreenshotDrawing.java">
+      ScreenshotDrawing.java
     </a>
   </li>
   <li>
@@ -26,18 +16,13 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
-    <a href="GroupSlideDrawing.java">
-      GroupSlideDrawing.java
+    <a href="CodeSnippetDrawing.java">
+      CodeSnippetDrawing.java
     </a>
   </li>
   <li>
-    <a href="package-info.java">
-      package-info.java
-    </a>
-  </li>
-  <li>
-    <a href="ScreenshotDrawing.java">
-      ScreenshotDrawing.java
+    <a href="CaptionRenderer.java">
+      CaptionRenderer.java
     </a>
   </li>
   <li>
@@ -46,8 +31,23 @@ title: "building-slides-from-screenshots-app-in-javafx/slides---ep/src/main/java
     </a>
   </li>
   <li>
+    <a href="GroupSlideDrawing.java">
+      GroupSlideDrawing.java
+    </a>
+  </li>
+  <li>
+    <a href="ai">
+      ai
+    </a>
+  </li>
+  <li>
     <a href="SlideDrawing.java">
       SlideDrawing.java
+    </a>
+  </li>
+  <li>
+    <a href="package-info.java">
+      package-info.java
     </a>
   </li>
 </ul>
