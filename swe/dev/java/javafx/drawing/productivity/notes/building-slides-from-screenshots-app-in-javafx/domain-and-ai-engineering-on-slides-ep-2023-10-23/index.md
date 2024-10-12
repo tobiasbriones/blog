@@ -7,6 +7,14 @@
 The development and blogging of the Slides EP was large, so this blog presents
 other notes related to the project.
 
+## Slides EP
+
+I exhaustively blogged the development of the Slides EP at
+[Building Slides from Screenshots App in JavaFX](/building-slides-from-screenshots-app-in-javafx)
+with an associated JavaFX application that implements a master-view-detail GUI
+with ORC assistance to create presentations from screenshots and code snippets.
+The app includes complex and exciting features along its development.
+
 ## Domain Engineering
 
 These general-purpose software out there cannot be composed.
