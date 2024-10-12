@@ -489,12 +489,12 @@ fun buildEp(epDir: Path, outDir: Path, entryName: String, entryPath: Path) {
             deleteDirectory(appSrc)
         }
 
-        runCommand("cmd.exe /c npm i", epRoot)
+        runCommand("npm i", epRoot)
             .onLeft(handleError `$` "Failed to install Node deps at $epDir")
             .onRight(::println)
             .getOrNull() ?: return
 
-        runCommand("cmd.exe /c npm run build:prod", epRoot)
+        runCommand("npm run build:prod", epRoot)
             .onLeft(handleError `$` "Failed to build $epDir")
             .onRight(::println)
             .getOrNull() ?: return
