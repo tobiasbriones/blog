@@ -4,10 +4,6 @@
 
 # Building Slides from Screenshots App in JavaFX
 
-![](images/building-slides-from-screenshots-app-in-javafx.png)
-
----
-
 Efficient and quality engineering communication is a daily challenge for
 creating value such as specs, documentation, content, or visualizations, which
 are essential for professional and educative standards, which I started
