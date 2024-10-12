@@ -138,3 +138,29 @@ everything" (same for other marketing-hyped concepts like capitalism or OOP),
 while in fact, **everything is rooted in complex (usually "boring")
 math, domain, and engineering facts**, so AI (capitalism, OOP, etc.) is just one
 small part of a system, it's just one more tool.
+
+## Applying AI to Automate your Domain
+
+There are two ways to see AI, as "magic" or automation. As an engineer, you must
+ensure you understand how to apply AI correctly since it is a heavy technology
+with huge responsibilities. Applying AI correctly means it will be a mean to
+automate your domain rather than using it as the "magic" that marketers,
+general-purpose providers or practitioners will tell you.
+
+There is a terrible misconception out there that anything hyped or trendy
+becomes "the whole thing." For example, they believe that every random product
+after the ChatGPT hype is an "AI." Any competent engineer must understand that
+the AI stereotype (or "the current thing") is not supposed to do the job for
+you. It becomes like the CEO or PhD who steals the credits because of their
+political status.
+
+Implementing complex features involving AI is expensive, and the Slides EP does
+a good job, but it still leaves areas to optimize. Even though, it does provide
+the design and documentation to solve the primary parts of the system.
+
+The way I applied ORC AI in the Slides EP shows a clear insight on how to apply
+AI properly, since it automates the slides when you only have raw inputs like
+screenshots by converting it into domain concepts. Conversely, if your user
+input is already efficient, like source code instead of screenshots, using AI is
+unnecessary, it is all about composition, a balanced system design, and
+optimizing for your domain.
