@@ -4,6 +4,9 @@
 
 # Domain and AI Engineering on Slides EP (2023/10/23)
 
+The development and blogging of the Slides EP was large, so this blog presents
+other notes related to the project.
+
 ## Domain Engineering
 
 These general-purpose software out there cannot be composed.
