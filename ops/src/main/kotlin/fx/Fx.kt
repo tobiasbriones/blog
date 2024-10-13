@@ -132,7 +132,7 @@ fun texsydoFx(
     val tokens = getCoverMdTokens()
     val abstract = getAbstract(tokens).getOrNull() ?: return
     val output = getTempOutputDir()
-    val footer = getFooter(tokens)
+    val details = getDetails(tokens)
     val subheading = when (coverCmd) {
         PrCover -> inferSubHeadingFromPr()
         ReleaseCover -> inferSubheadingFromRelease()
@@ -147,14 +147,14 @@ fun texsydoFx(
         ReleaseCover -> inferSubheadingVersion(title)
     }
     val cmd = listOf(
-        "tsdfx $coverCmd",
+        "tsd-fx---prototype $coverCmd",
         "--bg=$bg",
         "--bg-color=$bgColor",
         "--profile-photo=$profile",
         "--heading=$heading",
         "--abstract=$abstract",
         "--output=$output",
-        optWrap("footer", footer),
+        opt("footer", details),
         opt("subheading", subheading),
         opt("subdomain", subdomain),
         opt("version", version),
@@ -176,9 +176,9 @@ fun getAbstract(tokens: List<String>): Option<String> = tokens
     // the first content after that is the abstract paragraph
     .firstOrNone { !it.startsWith("`") }
     .map { it.replace("\n", " ").trim() }
-    .map { "\\\"$it\\\"" }
+    .map { "\"$it\"" }
 
-fun getFooter(tokens: List<String>): Option<String> = tokens
+fun getDetails(tokens: List<String>): Option<String> = tokens
     .firstOrNone { it.startsWith("- ") }
     .fold({ listOf() }, { it.split("\n") })
     .map { it.removePrefix("-").trim() }

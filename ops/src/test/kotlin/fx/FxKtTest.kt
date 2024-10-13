@@ -58,10 +58,10 @@ class FxKtTest {
             """.trimMargin("|")
         )
 
-        assertEquals(None, getFooter(tokensWithOnlyAbstract))
-        assertEquals(None, getFooter(tokensWithDataNoFooter))
-        assertEquals(footerWrapped, getFooter(tokensWithAbstractAndFooter))
-        assertEquals(footerWrapped, getFooter(tokensWithDataAndFooter))
+        assertEquals(None, getDetails(tokensWithOnlyAbstract))
+        assertEquals(None, getDetails(tokensWithDataNoFooter))
+        assertEquals(footerWrapped, getDetails(tokensWithAbstractAndFooter))
+        assertEquals(footerWrapped, getDetails(tokensWithDataAndFooter))
     }
 
     @Test
