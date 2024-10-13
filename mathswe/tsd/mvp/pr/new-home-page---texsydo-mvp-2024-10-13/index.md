@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# New Home Page | Texsydo Mvp (2024/10/13)
+# New Home Page | Texsydo MVP (2024/10/13)
 
 ---
 
