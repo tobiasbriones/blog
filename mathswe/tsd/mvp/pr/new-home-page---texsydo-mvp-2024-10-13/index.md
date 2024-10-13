@@ -4,6 +4,11 @@
 
 # New Home Page | Texsydo MVP (2024/10/13)
 
+Many internal prototypes migrating to the recent MathSwe Prototypes repository
+are part of Texsydo Web and FX. While they still haven't migrated to MVP, the
+Texsydo home page can present them so their documentation can reach production
+and complement esoteric technical results with their high-level products.
+
 ---
 
 **Initialize Texsydo app tsd.math.software**
