@@ -93,3 +93,17 @@ This PR finishes adding the content for the latest updates on Texsydo MVP and
 Prototypes, which makes the page available at production.
 
 ---
+
+It was crucial to formally define Texsydo so I could understand the roadmap and
+clearly explain these technical concepts to others.
+
+The new Texsydo web home provided components that other articles will reuse,
+although it still requires those from MSW Engineer. The collaboration with
+MathSwe Ops Templates is unifying the common code among React and JavaFX
+applications in MathSwe.
+
+The section Text conceptualizes Texsydo while the others present the latest
+results in its prototypes for a quick iteration that complements the deeply
+technical challenges from previous years with a high-level presentation.
+Prototype sections include Web, FX, and Canvas Play, which enable the Texsydo
+home page to reach production.
