@@ -68,3 +68,27 @@ and Release blogs, delivering graphical assistance in the development process.
 The Texsydo FX prototype will become MVP and available, like the Web prototype.
 It focuses on providing clean graphical documentation to streamline complex
 information.
+
+## Canvas Play
+
+The Canvas Play section is part of the Texsydo FX prototype that incorporates
+experimental APIs to innovate new products with visualizations.
+
+It supports Repsymo FX to render its model outputs. It shows how the machine
+replacement model passes through Repsymo internals (i.e., the solver)
+and ships results.
+
+It renders `FHD 9/16` with custom slide duration visualizations from the
+mathematical output of Repsymo to show all the steps to build the solution space
+via recursion. Everything is minimalistic and contains complete information.
+
+Moreover, Canvas Play also has APIs to build engineering specifications with
+rulers, captions, and further definitions. The "Flower" animation shows a
+step-by-step visualization of how to draw a flower with metrics.
+
+FX aims for graphical specifications but also art. The "BirdCat" drawing
+depicted a step-by-step animation teaching how to draw a cat that resembles a
+bird with shapes and effects.
+
+The Canvas Play project contains prototypes that enrich the scope of Texsydo FX
+to provide value for academic, professional, and artistic projects.
