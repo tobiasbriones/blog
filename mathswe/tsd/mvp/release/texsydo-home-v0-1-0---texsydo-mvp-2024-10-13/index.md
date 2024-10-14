@@ -20,3 +20,13 @@ Texsydo web home at [Tsd.Math.Software](https://tsd.math.software).
 
 The initial Texsydo MVP release provides the web home to deliver value in
 production for all the existing technical results.
+
+## Text
+
+The "Text" section is the page abstract that conceptualizes Texsydo.
+
+![](text.png)
+
+Texsydo unifies formal source code with natural and graphical languages in
+modern mathematical documentation. Formalizing Texsydo allows the existing
+technical results to deliver value and lead the project forward.
