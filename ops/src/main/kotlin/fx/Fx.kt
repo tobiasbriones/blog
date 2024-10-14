@@ -102,7 +102,7 @@ fun texsydoFx(
     fun inferSubheadingFromRelease(): Option<String> =
         with(splitPipe(title)) {
             if (second.isNotBlank())
-                removeSuffixAfterVersion(first).some().map { "\\\"$it\\\"" }
+                removeSuffixAfterVersion(first).some().map { "\"$it\"" }
             else None
         }
 
@@ -122,7 +122,7 @@ fun texsydoFx(
                     }
                 }
         }
-        .map { "\\\"$it\\\"" }
+        .map { "\"$it\"" }
 
     val bg = getBg().getOrNull() ?: return
     val bgColor = getBgColor(repo)
