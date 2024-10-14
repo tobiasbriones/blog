@@ -4,6 +4,14 @@
 
 # Texsydo Home v0.1.0 | Texsydo MVP (2024/10/13)
 
+Mathematics, engineering, and mathematical software (MSW) require formal and
+concise documentation to optimize the delivery of complex technical results to
+final users. Texsydo is an essential and ubiquitous MSW with existing prototypes
+to address modern mathematical text and art. Existing prototypes help ship
+articles to the web, automate graphics, and render visualizations. They will
+transition to MVP later, but the home page can present them to begin reaching
+production.
+
 ## New Home Page with Conceptualization and Prototypes
 
 Many ad-hoc Texsydo prototypes,
