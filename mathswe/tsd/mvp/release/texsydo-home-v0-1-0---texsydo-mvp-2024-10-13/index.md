@@ -92,3 +92,35 @@ bird with shapes and effects.
 
 The Canvas Play project contains prototypes that enrich the scope of Texsydo FX
 to provide value for academic, professional, and artistic projects.
+
+## Home Page with Results of Texsydo Prototypes
+
+Texsydo takes text, a source code specification of an article, and renders it
+into mathematical documentation and art. Texsydo's functional principles state
+that everything is an article specializing in specific domains. These
+mathematical properties make the process efficient for the system and the
+writer.
+
+Such efficiencies are already present in the smart dictionary, development
+workflow, and model visualization results this release publishes. Texsydo will
+streamline the **mathematical text** workflow for mathematics, engineering, and
+art.
+
+The text and domain-specific concepts allow results such as infinitely scalable
+visualization resolutions with other parameters like captions and automated
+assistance with total accuracy.
+
+Texsydo expands functional programming into articles for completeness. Cohesive
+articles empower multidisciplinary professionals to fill the **spectrum from
+academic to engineering**, denoting domain expertise.
+
+The web home presents all the new prototype features at
+[Tsd.Math.Software](https://tsd.math.software) with complete details.
+
+The new Texsydo web home conceptualizes definitions to address modern
+mathematical text and art. Then, it presents the latest prototype results across
+the Web, FX, and Canvas Play sections. The Web prototype helps write enriched
+Markdown articles for the web, the FX prototype automates cover images, and
+Canvas Play provides experimental APIs and features based on evolving needs. The
+prototypes will deliver value to final users when they transition to MVP,
+recalling that Texsydo aims to reach the engineering grade.
