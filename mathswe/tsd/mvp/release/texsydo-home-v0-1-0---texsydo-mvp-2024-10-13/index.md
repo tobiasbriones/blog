@@ -2,4 +2,4 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Texsydo Home V0 1 0 | Texsydo Mvp (2024/10/13)
+# Texsydo Home v0.1.0 | Texsydo MVP (2024/10/13)
