@@ -56,3 +56,15 @@ Release blogs, making the development life cycle more efficient and complete.
 The Texsydo Web prototype offers advanced features that have been refined over
 the years, helping write modern articles in MathSwe. Texsydo Web will become
 available to the public once its prototype transitions to an MVP.
+
+## FX
+
+Texsydo FX is currently another prototype that addresses the effects of
+documentation graphics.
+
+Texsydo Web calls FX to generate the cover images of standard articles, like PR
+and Release blogs, delivering graphical assistance in the development process.
+
+The Texsydo FX prototype will become MVP and available, like the Web prototype.
+It focuses on providing clean graphical documentation to streamline complex
+information.
