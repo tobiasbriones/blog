@@ -27,6 +27,7 @@
 - [Testing the Texsydo FX Prototype (2024/09/03)](testing-the-texsydo-fx-prototype-2024-09-03)
 - [Initializing the Texsydo GitHub Organization (2024/09/04)](initializing-the-texsydo-github-organization-2024-09-04)
 - [New Home Page \| Texsydo MVP (2024/10/13)](new-home-page---texsydo-mvp-2024-10-13)
+- [Texsydo Home v0.1.0 \| Texsydo MVP (2024/10/13)](texsydo-home-v0-1-0---texsydo-mvp-2024-10-13)
 - [Data Minimization and Consistency in Cookie Consent \| MathSwe Legal (2024/04/09)](data-minimization-and-consistency-in-cookie-consent---mathswe-legal-2024-04-09)
 - [New Cookie Consent Microservice Ready \| MathSwe Legal (2024/03/28)](new-cookie-consent-microservice-ready---mathswe-legal-2024-03-28)
 - [Cookie Consent v0.1.0 \| MathSwe Legal (2024/03/29)](cookie-consent-v0-1-0---mathswe-legal-2024-03-29)
