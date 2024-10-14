@@ -14,7 +14,8 @@ iterate quickly with high-level results.
 
 - [New Home Page \| Texsydo MVP (2024/10/13)](/new-home-page---texsydo-mvp-2024-10-13).
 
-Deployment preview `PR#5 v0.1.0` at [Netlify](https://deploy-preview-5--texsydo.netlify.app/).
+Deployment preview `PR#5 v0.1.0`
+at [Netlify](https://deploy-preview-5--texsydo.netlify.app/).
 
 Texsydo web home at [Tsd.Math.Software](https://tsd.math.software).
 
@@ -30,3 +31,28 @@ The "Text" section is the page abstract that conceptualizes Texsydo.
 Texsydo unifies formal source code with natural and graphical languages in
 modern mathematical documentation. Formalizing Texsydo allows the existing
 technical results to deliver value and lead the project forward.
+
+## Web
+
+Texsydo Web is currently a complex prototype that can help create mathematical
+articles for the web that follow MathSwe standards with Markdown and a
+domain-specific system, making the process efficient and formal.
+
+The [Web section](https://tsd.math.software#web) details all the existing
+features even though the program is still unavailable to the public.
+
+The Web CLI prototype provides article commands to create, list, build, serve
+for development, and deploy to GitHub Pages.
+
+The system provides a "Domain Dictionary" to define text transformations, which
+empowers inference and removes redundancy while writing.
+
+It supports "In-Article Projects" for articles that contain an example project
+or files.
+
+It supports development workflow to generate MathSwe cover images for PR and
+Release blogs, making the development life cycle more efficient and complete.
+
+The Texsydo Web prototype offers advanced features that have been refined over
+the years, helping write modern articles in MathSwe. Texsydo Web will become
+available to the public once its prototype transitions to an MVP.
