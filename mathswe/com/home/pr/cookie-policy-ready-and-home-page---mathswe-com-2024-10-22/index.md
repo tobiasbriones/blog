@@ -85,3 +85,22 @@ design will allow them to scale safely later. It also fixes some title cases in
 the application according to updated standards.
 
 ---
+
+There were old changes from May that included integrations of the cookie
+components and redaction updates to the policy with the domain and subdomains of
+MathSwe apps and the cookies used by Google Analytics.
+
+The project is synced with the React templates of MathSwe Templates and enhanced
+management of environment variables.
+
+Since MathSwe Com must be in production soon, I designed a minimal landing page
+to showcase MSW apps in a brief grid. Showcases encompass Math, Texsydo,
+Repsymo, and MathSwe Ops. It includes another section to show MSW Engineer with
+relevant links, including Engineer (home), My Page, and Blog.
+
+The last unification of old changes and new enhancements allows the MathSwe Com
+app to be ready for production at its initial release with complete integration
+of the cookies features, updated and effective cookie policy, and minimal home
+page. While cookie usage is fully available on the technical and legal sides at
+MathSweCom, cookies are still not technically reusable for other apps yet, so
+that will be the next priority.
