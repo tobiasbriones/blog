@@ -2,4 +2,4 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# MathSwe Com V0 1 0 (2024/10/23)
+# MathSwe Com v0.1.0 (2024/10/23)
