@@ -4,6 +4,10 @@
 
 # Cookie Policy Ready and Home Page | MathSwe Com (2024/10/22)
 
+Old changes involving cookies require attention to obtain an effective cookie
+policy for the initial release of MathSweCom, which will also include a brief
+home page showcasing MSW apps and MSW Engineer.
+
 ---
 
 **Update cookies used and refactor cookies code**
