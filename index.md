@@ -20,6 +20,7 @@
 - [System and MSW Ops v0.1.0 \| MathSwe Ops MVP (2024/08/30)](system-and-msw-ops-v0-1-0---mathswe-ops-mvp-2024-08-30)
 - [New Image Catalog and Landing Page \| MathSwe Ops Mvp (2024/08/22)](new-image-catalog-and-landing-page---mathswe-ops-mvp-2024-08-22)
 - [New Config Command \| MathSwe Ops Mvp (2024/08/30)](new-config-command---mathswe-ops-mvp-2024-08-30)
+- [Cookie Policy Ready and Home Page \| MathSwe Com (2024/10/22)](cookie-policy-ready-and-home-page---mathswe-com-2024-10-22)
 - [New MathSwe Prototypes Repository (2024/10/06)](new-mathswe-prototypes-repository-2024-10-06)
 - [New Cookie Customization Pane \| MathSwe Com (2024/04/03)](new-cookie-customization-pane---mathswe-com-2024-04-03)
 - [Cookie Consent Client Integration \| MathSwe Com (2024/04/17)](cookie-consent-client-integration---mathswe-com-2024-04-17)
