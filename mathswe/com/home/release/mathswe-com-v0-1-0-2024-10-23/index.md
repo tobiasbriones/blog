@@ -17,6 +17,10 @@ products to users.
 GitHub release at
 [MathSweCom v0.1.0: Publishes the Initial Cookie Policy and Provides a Brief Home Page Showcasing Existing Projects.](https://github.com/mathswe/mathswe.com/releases/tag/v0.1.0).
 
+The GitHub release also attaches the effective
+[MathSwe Cookie Policy (2024/10/21)](https://github.com/mathswe/mathswe.com/releases/download/v0.1.0/mathswe-cookie-policy-2024-10-21.pdf)
+document.
+
 Deployment preview at
 [Deploy Preview 25 \| Netlify](https://deploy-preview-25--mathswe.netlify.app).
 
