@@ -4,6 +4,13 @@
 
 # MathSwe Com v0.1.0 (2024/10/23)
 
+Many past developments on the MathSwe Cookie Consent system are waiting for
+production, so MathSwe Com enhances support for later operations that will
+benefit mathematical software. In addition, its home page needs a quick update
+to become serviceable at production and provide the new effective cookie policy.
+As a result, future business requirements will reuse cookie compliance
+implementations and standards.
+
 ## Initial Cookie Policy and Brief Home Page Showcasing Existing Projects
 
 MathSwe Com will introduce some commercial operations to help deliver final
