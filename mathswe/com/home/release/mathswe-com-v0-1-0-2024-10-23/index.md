@@ -88,3 +88,20 @@ is one of the latest and updated projects before this release with MathSwe Com.
 The current MathSwe Com page is even simpler than other homes, like Texsydo, so
 it satisfies priorities while enabling the implementation of more features on
 top of the existing site.
+
+## MathSwe Com Operations
+
+The new features on MathSwe Com initialize legal operations by integrating the
+MathSwe Cookie Consent system with its effective Cookie Policy, which complies
+with the GDPR according to research and industry practices. The system's rigor
+will allow MathSwe to continuously enhance compliance with future business
+operations while maintaining open-source transparency.
+
+The initial page needed a quick home page to be complete, so this release also
+presents the existing MSW projects and MSW Engineer links.
+
+The showcase made the page valuable at production while integrating cookies.
+While MathSwe apps will employ cookies to enhance operations, the objective of
+their developments and research was a practice to initialize legal operations
+with internal standards so MathSwe can generalize them for later business
+requirements.
