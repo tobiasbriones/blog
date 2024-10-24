@@ -31,3 +31,46 @@ existing projects in production and integrating the MathSwe Cookie Consent
 system with an effective cookie policy. Cookies integration is technically and
 legally complete at MathSweCom, but it will provide technical support for other
 web apps later.
+
+## Initial Cookie Policy
+
+The first developments in MathSwe Com involved technically and legally allowing
+cookies to properly use tools, like Google Analytics, embedded videos, or other
+business needs that can arise later. The extensive work on cookies was an
+important exercise to initialize standards and legal redactions in general
+rather than actually using cookies.
+
+The **MathSwe Cookie Consent** system is rigorous, as always. If you opt out of
+analytical cookies, the site will tell Google Analytics there are no permissions
+granted, so it adds no `ga` cookies at all. This behavior is also proven with
+the [Google Tag Assistance](https://tagassistant.google.com)
+to ensure the correct implementation of Google Analytics according to user
+choices on cookies.
+
+The new **Cookie Banner** asks for quick user consent when required.
+
+![](images/cookie-banner-fullwidth.png)
+
+The banner optionally leads to the **Cookie Customization Pane** with advanced
+options and information.
+
+![](images/cookie-customization.png)
+
+![](cookie-customization-choices.png)
+
+The development process involved research to validate a rigorous yet practical
+compliance with the GDPR, as the
+[Cookie Consent v0.1.0](/cookie-consent-v0-1-0---mathswe-legal-2024-03-29)
+service is particularly detailed in sections "Complying with the GDPR" and
+"Validating the Design of Consent Records" with an academic and industry
+review to validate it.
+
+The Cookie Policy text is attached above in
+[the release introduction](#initial-cookie-policy-and-brief-home-page-showcasing-existing-projects)
+to keep a record of the legal document.
+
+MathSwe Com provides a new cookie policy with total transparency about cookie
+usage in MathSwe apps. While only MathSwe Com integrates MathSwe Cookie Consent
+right now, other web apps will integrate it to show the banner to users,
+enabling tools like Google Analytics that can improve site insights,
+customization, or performance.
