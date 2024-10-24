@@ -74,3 +74,17 @@ usage in MathSwe apps. While only MathSwe Com integrates MathSwe Cookie Consent
 right now, other web apps will integrate it to show the banner to users,
 enabling tools like Google Analytics that can improve site insights,
 customization, or performance.
+
+## Introductory Home Page
+
+This initial release provides a minimal home page to showcase existing projects,
+which will allow the app to keep adding more features later.
+
+![](mathswe-com-quick-home-page.png)
+
+Projects receive attention according to MathSwe priorities. For example, Texsydo
+is one of the latest and updated projects before this release with MathSwe Com.
+
+The current MathSwe Com page is even simpler than other homes, like Texsydo, so
+it satisfies priorities while enabling the implementation of more features on
+top of the existing site.
