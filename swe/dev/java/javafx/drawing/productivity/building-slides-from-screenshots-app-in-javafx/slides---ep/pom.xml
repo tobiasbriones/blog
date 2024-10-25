@@ -72,7 +72,7 @@
                 <version>${javafx.maven.plugin.version}</version>
                 <configuration>
                     <jlinkImageName>slides</jlinkImageName>
-                    <launcher>launcher</launcher>
+                    <launcher>slides</launcher>
                     <mainClass>
                         engineer.mathsoftware.blog.slides/engineer.mathsoftware.blog.slides.ui.Main
                     </mainClass>
