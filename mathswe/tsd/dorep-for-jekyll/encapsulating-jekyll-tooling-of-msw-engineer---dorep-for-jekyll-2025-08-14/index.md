@@ -71,8 +71,7 @@ Aug 13: PR [#5](https://github.com/texsydo/dorep-for-jekyll/pull/5) merged into
 {: .pr-subtitle }
 
 It provides the Jekyll project setup that's been running in MSW Engineer (i.e.,
-Texsydo Web Prototype), adding data setup and docs aimed at final users. This
-module pipes
+Texsydo Web Prototype), adding data setup and docs aimed at final users.
 
 ---
 
