@@ -4,6 +4,13 @@
 
 # Encapsulating Jekyll Tooling of MSW Engineer | DoRep for Jekyll (2025/08/14)
 
+The Texsydo Web Prototype is transitioning to MVP with a product approach. One
+ongoing issue was the necessity to decouple the MSW Engineer site designs (CSS
+and JS) and the Jekyll static website tooling from Texsydo. It is crucial to
+decouple Jekyll for the licensing model, providing the resulting website
+under a permissive license (unlike the AGPL of Texsydo MVPs) and the development
+of more implementations, like DoRep for React.
+
 ---
 
 **Initialize project documentation**
