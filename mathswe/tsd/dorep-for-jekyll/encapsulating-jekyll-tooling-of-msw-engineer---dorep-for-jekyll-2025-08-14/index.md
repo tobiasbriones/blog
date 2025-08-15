@@ -90,3 +90,19 @@ directory to ensure that I keep track of the usage flow while integrating the
 tools.
 
 ---
+
+All the designs in CSS and JS elements I wrote for publishing my articles at
+MathSoftwareEngineer from the beginning are finally established in a formal
+project. They had to pass through the "orphan" prototype
+(throw-away branch `ops` of the `blog`), Text Ops incipient concept, Texsydo Web
+Prototype (in MathSwe Prototypes), and are now migrating to the Texsydo Web MVP.
+
+The migration from Texsydo Web Prototype to MVP led to decouple the
+implementation of Jekyll to a separate project, DoRep for Jekyll.
+
+DoRep for Jekyll will allow the migration of Texsydo MVP to happen smoothly by
+focusing on Texsydo rather than a monolithic ball of mud that would be harder to
+generalize when I implement React in Texsydo Web (as I've mentioned, the purpose
+is to leave Jekyll behind). Further, the presented concepts bring new MathSwe
+standards, like DoRep that connects Texsydo to Repsymo (there's more on this),
+and the "for" keyword in repository names.
