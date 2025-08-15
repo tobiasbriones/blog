@@ -100,6 +100,10 @@ Prototype (in MathSwe Prototypes), and are now migrating to the Texsydo Web MVP.
 The migration from Texsydo Web Prototype to MVP led to decouple the
 implementation of Jekyll to a separate project, DoRep for Jekyll.
 
+Besides **separating Jekyll from the Texsydo Prototype**, the DoRep project
+separates the license, **providing a permissive BSD-3-Clause license to final
+users**, which is crucial for the MVP due to its product approach.
+
 DoRep for Jekyll will allow the migration of Texsydo MVP to happen smoothly by
 focusing on Texsydo rather than a monolithic ball of mud that would be harder to
 generalize when I implement React in Texsydo Web (as I've mentioned, the purpose
