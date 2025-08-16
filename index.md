@@ -28,6 +28,7 @@
 - [Initializing Ops with a Cookie Banner \| MathSwe Com (2024/03/21)](initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21)
 - [Testing the Texsydo FX Prototype (2024/09/03)](testing-the-texsydo-fx-prototype-2024-09-03)
 - [Initializing the Texsydo GitHub Organization (2024/09/04)](initializing-the-texsydo-github-organization-2024-09-04)
+- [Encapsulating Jekyll Tooling of MSW Engineer \| DoRep for Jekyll (2025/08/14)](encapsulating-jekyll-tooling-of-msw-engineer---dorep-for-jekyll-2025-08-14)
 - [New Home Page \| Texsydo MVP (2024/10/13)](new-home-page---texsydo-mvp-2024-10-13)
 - [Texsydo Home v0.1.0 \| Texsydo MVP (2024/10/13)](texsydo-home-v0-1-0---texsydo-mvp-2024-10-13)
 - [Data Minimization and Consistency in Cookie Consent \| MathSwe Legal (2024/04/09)](data-minimization-and-consistency-in-cookie-consent---mathswe-legal-2024-04-09)
