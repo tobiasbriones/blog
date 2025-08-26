@@ -1,14 +1,15 @@
-<!-- Copyright (c) 2024 Tobias Briones. All rights reserved. -->
+<!-- Copyright (c) 2025 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Texsydo Web Mvp Initialization and Structure (2025/08/25)
+# Texsydo Web MVP Initialization and Structure (2025/08/25)
 
 ---
 
 **Initialize Texsydo Web MVP project operations**
 
-Aug 10: PR [#6](https://github.com/texsydo/texsydo---mvp/pull/6) merged into `tsd/dev <- tsd/ops` by [tobiasbriones](https://github.com/tobiasbriones)
+Aug 10: PR [#6](https://github.com/texsydo/texsydo---mvp/pull/6) merged into
+`tsd/dev <- tsd/ops` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 It begins the project migration from MathSwe Prototypes by creating the project
@@ -38,31 +39,34 @@ validated most of the code concerning this migration.
 
 **Add docs for project Texsydo Web MVP**
 
-Aug 18: PR [#7](https://github.com/texsydo/texsydo---mvp/pull/7) merged into `tsd/dev <- tsd/docs` by [tobiasbriones](https://github.com/tobiasbriones)
+Aug 18: PR [#7](https://github.com/texsydo/texsydo---mvp/pull/7) merged into
+`tsd/dev <- tsd/docs` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 Texsydo Web MVP is being migrated from MathSwe Prototypes, which contains
 implementations dating from 2023, and this PR reflects the subproject docs in
 the MVPs repository.
 
-
 ---
 
 **Enable CLI and System APIs from Texsydo Web Prototype**
 
-Aug 21: PR [#8](https://github.com/texsydo/texsydo---mvp/pull/8) merged into `tsd-web/tsd-web <- tsd-web/cli` by [tobiasbriones](https://github.com/tobiasbriones)
+Aug 21: PR [#8](https://github.com/texsydo/texsydo---mvp/pull/8) merged into
+`tsd-web/tsd-web <- tsd-web/cli`
+by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 It migrates the structure of the CLI code to allow commands to be implemented,
 and adds the System API to run commands, such as DoRep for Jekyll. The next
 features to migrate will require support from both APIs.
 
-
 ---
 
 **Set up Gradle multimodule project tsd-web---mvp with Kotest**
 
-Aug 24: PR [#9](https://github.com/texsydo/texsydo---mvp/pull/9) merged into `tsd-web/tsd-web <- tsd/ops` by [tobiasbriones](https://github.com/tobiasbriones)
+Aug 24: PR [#9](https://github.com/texsydo/texsydo---mvp/pull/9) merged into
+`tsd-web/tsd-web <- tsd/ops`
+by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 Texsydo Web MVP and others, like FX (and Dev), are migrating from their
