@@ -30,6 +30,7 @@
 - [Initializing the Texsydo GitHub Organization (2024/09/04)](initializing-the-texsydo-github-organization-2024-09-04)
 - [Encapsulating Jekyll Tooling of MSW Engineer \| DoRep for Jekyll (2025/08/14)](encapsulating-jekyll-tooling-of-msw-engineer---dorep-for-jekyll-2025-08-14)
 - [New Home Page \| Texsydo MVP (2024/10/13)](new-home-page---texsydo-mvp-2024-10-13)
+- [Texsydo Web MVP Initialization and Structure (2025/08/25)](texsydo-web-mvp-initialization-and-structure-2025-08-25)
 - [Texsydo Home v0.1.0 \| Texsydo MVP (2024/10/13)](texsydo-home-v0-1-0---texsydo-mvp-2024-10-13)
 - [Data Minimization and Consistency in Cookie Consent \| MathSwe Legal (2024/04/09)](data-minimization-and-consistency-in-cookie-consent---mathswe-legal-2024-04-09)
 - [New Cookie Consent Microservice Ready \| MathSwe Legal (2024/03/28)](new-cookie-consent-microservice-ready---mathswe-legal-2024-03-28)
