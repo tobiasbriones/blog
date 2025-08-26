@@ -4,6 +4,11 @@
 
 # Texsydo Web MVP Initialization and Structure (2025/08/25)
 
+The Texsydo MVP repository requires a new structure that supports modular Kotlin
+and Gradle projects, as the Web MVP is transitioning from the Prototype stage.
+Such a structure must be scalable to be adapted by coming MVPs with a product
+approach.
+
 ---
 
 **Initialize Texsydo Web MVP project operations**
