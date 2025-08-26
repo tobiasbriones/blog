@@ -83,3 +83,15 @@ Texsydo Web MVP to reach production after finishing its migration, as well as
 the next MVPs coming.
 
 ---
+
+The project organization keeps a Kotlin Gradle paradigm, introducing Gradle 9
+and a modular monolithic structure for the MVP. That structure is meant to be
+utilized by the next migrating MVPs (Texsydo FX and Dev).
+
+For testing, I settled on Kotest for its declarative and Kotlin-first design
+that aligns better with FP.
+
+The modular structure will allow the migration of Texsydo Web MVP from its
+Prototype with scalability in mind. I devised that TSD Web must be decoupled
+into Web and Dev (i.e., development workflow), so the project structures are
+ready to allow such a design.
