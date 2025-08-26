@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Texsydo Web MVP Initialization and Structure (2025/08/25)
+# Web MVP Initialization and Structure | Texsydo MVP (2025/08/25)
 
 The Texsydo MVP repository requires a new structure that supports modular Kotlin
 and Gradle projects, as the Web MVP is transitioning from the Prototype stage.
