@@ -1,14 +1,15 @@
-<!-- Copyright (c) 2024 Tobias Briones. All rights reserved. -->
+<!-- Copyright (c) 2025 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/tobiasbriones/blog -->
 
-# Fix Client Ergonomics When Running Jekyll Internally | Dorep for Jekyll (2025/09/05)
+# Fix Client Ergonomics When Running Jekyll Internally | DoRep for Jekyll (2025/09/05)
 
 ---
 
 **Recommend clients to build before running the script**
 
-Aug 16: PR [#7](https://github.com/texsydo/dorep-for-jekyll/pull/7) merged into `dorep/dev <- dorep/ops` by [tobiasbriones](https://github.com/tobiasbriones)
+Aug 16: PR [#7](https://github.com/texsydo/dorep-for-jekyll/pull/7) merged into
+`dorep/dev <- dorep/ops` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 The client (Texsydo Web MVP) should implement a more serious way of running the
@@ -26,7 +27,8 @@ more professional or production experience.
 
 **Add environment param to runCommand**
 
-Sep 6: PR [#8](https://github.com/texsydo/dorep-for-jekyll/pull/8) merged into `dorep/dev <- dorep/ops` by [tobiasbriones](https://github.com/tobiasbriones)
+Sep 6: PR [#8](https://github.com/texsydo/dorep-for-jekyll/pull/8) merged into
+`dorep/dev <- dorep/ops` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 Some commands need shell environment variables to find scripts or paths (e.g.,
@@ -35,9 +37,10 @@ Some commands need shell environment variables to find scripts or paths (e.g.,
 
 ---
 
-**Drop cmd bundle and set Jekyll env vars **
+**Drop cmd bundle and set Jekyll env vars**
 
-Sep 6: PR [#9](https://github.com/texsydo/dorep-for-jekyll/pull/9) merged into `dorep/dev <- jekyll` by [tobiasbriones](https://github.com/tobiasbriones)
+Sep 6: PR [#9](https://github.com/texsydo/dorep-for-jekyll/pull/9) merged into
+`dorep/dev <- jekyll` by [tobiasbriones](https://github.com/tobiasbriones)
 {: .pr-subtitle }
 
 The program doesn't find the `bundle` or `jekyll` binaries when running from
@@ -48,3 +51,5 @@ will fail to build out of a Git repository because of a GitHub Pages plugin,
 which is why the `PAGES_REPO_NWO` variable is set with a dummy value.
 
 ---
+
+
