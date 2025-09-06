@@ -52,4 +52,17 @@ which is why the `PAGES_REPO_NWO` variable is set with a dummy value.
 
 ---
 
+The Kotlin CLI program is meant to be used as a script, but it's technically
+not. So, it doesn't make sense to run a program in development mode (i.e.,
+`./gradlew run args=...`), in a production caller application (i.e., Texsydo
+Web).
 
+Running scripts or commands, like `bundle` and `jekyll`, brings more side effect
+problems, so after (separately) testing how DoRep for Jekyll integrates into the
+Texsydo Web MVP, I made the corresponding environment and usage fixes.
+
+The recommended approach to running the "script" is to build the project and run
+the binary, as stated in the documentation. On the other hand, I tested the
+project in a realistic environment to ensure proper Jekyll integration by
+setting process environment variables and calling Jekyll directly without
+Bundle.
