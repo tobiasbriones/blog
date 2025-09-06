@@ -4,6 +4,10 @@
 
 # Fix Client Ergonomics When Running Jekyll Internally | DoRep for Jekyll (2025/09/05)
 
+The DoRep for Jekyll implementation needs some testing on the Texsydo Web MVP
+side to validate how the website generation decouples from Texsydo modules
+before releasing DoRep for Jekyll and integrating it into the MVP.
+
 ---
 
 **Recommend clients to build before running the script**
