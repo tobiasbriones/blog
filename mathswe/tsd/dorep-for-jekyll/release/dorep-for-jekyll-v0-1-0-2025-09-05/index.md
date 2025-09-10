@@ -17,3 +17,18 @@ GitHub release at
 The CLI tool will allow the ongoing Texsydo Web MVP migration to decouple the
 Jekyll website generation from the Texsydo logic by providing a command to turn
 a Jekyll blog into a static website ready for deployment.
+
+## Website Generation Interface
+
+DoRep for Jekyll initially provides a basic Kotlin CLI tool so Texsydo Web MVP
+can call it.
+
+The command in this release is `./dorep-for-jekyll build {src} {dst}`, and the
+recommended way of running it is by building and running the binary, as given
+by [the documentation](https://github.com/texsydo/dorep-for-jekyll/tree/v0.1.0)
+and
+[manual test](https://github.com/texsydo/dorep-for-jekyll/tree/v0.1.0/test/src)
+of the project.
+
+The build command generates a static website from Markdown, while the tool
+integrates the MSW Engineer styles and logic, like navigation, footer, etc.
