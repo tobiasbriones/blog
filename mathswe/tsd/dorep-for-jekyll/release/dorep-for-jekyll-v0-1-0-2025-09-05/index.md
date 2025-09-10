@@ -32,3 +32,24 @@ of the project.
 
 The build command generates a static website from Markdown, while the tool
 integrates the MSW Engineer styles and logic, like navigation, footer, etc.
+
+## Supporting Web Standardization and Deployment for the Texsydo Web MVP Migration
+
+The initial release of DoRep for Jekyll encapsulates the web development part of
+MathSoftwareEngineer, encompassing styles and JS logic. The implemented command
+allows clients to generate a static website, ready for deployment, from an
+intermediate Markdown Jekyll source, in which the tool includes the MSW Engineer
+web standards out of the box.
+
+These web standards have evolved while I've designed and "inlined" them into
+production during these years. The medium-term goal is to keep formalizing them
+to migrate to React and work with proper web development across more powerful
+Texsydo integrations in MathSwe documentation and apps.
+
+Decoupling the systems not only allows a scalable and clean design of Texsydo
+Web (MVP), but also provides the "library" web frontend software under the
+permissive BSD-3 license rather than Texsydo MVP's AGPL. The website generation
+API of DoRep for Jekyll will allow the current Texsydo Web MVP version to ship
+as a product that converts mathematical text into a static website, enriching
+all apps and developments across MathSwe. 
+
