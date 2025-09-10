@@ -4,6 +4,10 @@
 
 # DoRep for Jekyll V0.1.0 (2025/09/05)
 
+Texsydo Web MVP requires MSW Engineer's frontend standards and implementations
+to function as a dedicated implementation, DoRep for Jekyll, to evolve the
+deployment operations when converting mathematical text into static websites.
+
 ## DoRep for Jekyll Migration from the Texsydo Web Prototype
 
 It migrates the Jekyll side tooling from the Texsydo Web Prototype.
