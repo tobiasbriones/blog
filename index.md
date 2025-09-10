@@ -30,6 +30,7 @@
 - [Initializing the Texsydo GitHub Organization (2024/09/04)](initializing-the-texsydo-github-organization-2024-09-04)
 - [Fix Client Ergonomics When Running Jekyll Internally \| DoRep for Jekyll (2025/09/05)](fix-client-ergonomics-when-running-jekyll-internally---dorep-for-jekyll-2025-09-05)
 - [Encapsulating Jekyll Tooling of MSW Engineer \| DoRep for Jekyll (2025/08/14)](encapsulating-jekyll-tooling-of-msw-engineer---dorep-for-jekyll-2025-08-14)
+- [DoRep for Jekyll V0.1.0 (2025/09/05)](dorep-for-jekyll-v0-1-0-2025-09-05)
 - [New Home Page \| Texsydo MVP (2024/10/13)](new-home-page---texsydo-mvp-2024-10-13)
 - [Web MVP Initialization and Structure \| Texsydo MVP (2025/08/25)](web-mvp-initialization-and-structure---texsydo-mvp-2025-08-25)
 - [Texsydo Home v0.1.0 \| Texsydo MVP (2024/10/13)](texsydo-home-v0-1-0---texsydo-mvp-2024-10-13)
