@@ -34,6 +34,7 @@
 - [Integrating Text to Web \| Texsydo MVP (2025/10/26)](integrating-text-to-web---texsydo-mvp-2025-10-26)
 - [New Home Page \| Texsydo MVP (2024/10/13)](new-home-page---texsydo-mvp-2024-10-13)
 - [Web MVP Initialization and Structure \| Texsydo MVP (2025/08/25)](web-mvp-initialization-and-structure---texsydo-mvp-2025-08-25)
+- [Texsydo Web v0.1.0 \| Texsydo MVP (2025/10/26)](texsydo-web-v0-1-0---texsydo-mvp-2025-10-26)
 - [Texsydo Home v0.1.0 \| Texsydo MVP (2024/10/13)](texsydo-home-v0-1-0---texsydo-mvp-2024-10-13)
 - [Data Minimization and Consistency in Cookie Consent \| MathSwe Legal (2024/04/09)](data-minimization-and-consistency-in-cookie-consent---mathswe-legal-2024-04-09)
 - [New Cookie Consent Microservice Ready \| MathSwe Legal (2024/03/28)](new-cookie-consent-microservice-ready---mathswe-legal-2024-03-28)
