@@ -4,6 +4,11 @@
 
 # Texsydo Web v0.1.0 | Texsydo MVP (2025/10/26)
 
+Texsydo Web Prototype, a long-running internal project at MathSwe, enabled the
+publication of technically rich MathSoftwareEngineer articles on the web. As
+Texsydo transitions into a well-defined MVP, it migrates prototype features,
+starting with plain text library support as the simplest article type.
+
 ## Texsydo Web Text-to-Web API
 
 Texsydo Web MVP is integrating features from its MathSwe Prototype version with
