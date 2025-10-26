@@ -5,7 +5,7 @@
 # Integrating Text to Web | Texsydo MVP (2025/10/26)
 
 Project priorities encompass shipping features from the prototype project to
-production as an MVP, and the starting point for migration and shipping is
+production as an MVP. The starting point for migration and shipping is
 converting plain text (TXT) articles into MSW Engineer static websites.
 
 ---
