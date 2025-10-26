@@ -50,3 +50,7 @@ the first feature in the web library to build a website for a plain-text
 article.
 
 ---
+
+The new library module `web` of Texsydo Web MVP integrates the features migrated
+from the Prototype to build static websites from plain text articles, leading to
+a *minimum* deliverable to start shipping Texsydo Web as a product. 
