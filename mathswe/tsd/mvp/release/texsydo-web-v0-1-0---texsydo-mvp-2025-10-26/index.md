@@ -66,3 +66,10 @@ GitHub project repository at
 
 Texsydo Web MVP clients will integrate the web module via Gradle to streamline
 these standards and features to final users.
+
+## Texsydo Web Reaching Production with Plain Text Support
+
+By integrating a streamlined API migrated from Texsydo Web Prototype, the new
+web module enables clients—including CLI and web server applications—to deliver
+Texsydo Web MVP as a product, enhancing project value through well-balanced
+development cycles.
