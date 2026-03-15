@@ -4,6 +4,11 @@
 
 # Pi Day 2025 (2026/03/14)
 
+Induction establishes complex constructions from the empty set, from which both
+number systems containing Pi and mathematical articles can emerge.
+
+---
+
 On March 14, 2025, I created the Pi Day entry, which remained empty while topic
 ideas flew in my head, and attended to other job duties, which reduced my
 availability at MathSwe.
