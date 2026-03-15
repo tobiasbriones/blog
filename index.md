@@ -66,6 +66,7 @@
 - [Leveraging Git to Finish my Article (2023/10/09)](leveraging-git-to-finish-my-article-2023-10-09)
 - [Overriding Hash Code and Equals in a Multi-Representation Record](overriding-hash-code-and-equals-in-a-multi--representation-record)
 - [FP in Kotlin](fp-in-kotlin)
+- [Pi Day 2025 (2026/03/14)](pi-day-2025-2026-03-14)
 - [Pi Day (2023/03/14)](pi-day-2023-03-14)
 - [Pi Day (2024/03/14)](pi-day-2024-03-14)
 - [An Excited Time Drawing Mandala Fractals Today (2023-04-06)](an-excited-time-drawing-mandala-fractals-today-2023-04-06)
