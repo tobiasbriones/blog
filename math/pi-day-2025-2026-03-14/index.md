@@ -32,6 +32,15 @@ equivalence classes of integer pairs, and finally the real numbers (e.g., via
 Dedekind cuts) [2]. Within the real numbers lies π, that
 is, $$\pi \in \mathbb{R}$$.
 
+Mathematically, π often emerges from a converging process. Pi is the common
+limit of the semi-perimeters (or areas) of regular polygons inscribed in and
+circumscribed around a unit circle as the number of sides tends to infinity. [3]
+
+$$\pi = \lim_{n \to \infty} n\sin\left(\frac{\pi}{n}\right)$$
+
+At the beginning there is only a crude approximation while the structure appears
+through iteration.
+
 ## References
 
 [1] Reimann, D. A. (2022). Artistic Depiction of Numbers Defined by Sets. The
