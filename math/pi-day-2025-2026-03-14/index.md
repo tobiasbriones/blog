@@ -54,6 +54,17 @@ $$\pi = \lim_{n \to \infty} n\sin\left(\frac{\pi}{n}\right)$$
 At the beginning there is only a crude approximation while the structure appears
 through iteration.
 
+In MathSwe, originally Piaxid, engineering is *axiomatic* and **centered** to
+**ensure balance**. Hence, we can observe the relations I induced when designing
+**Pi**axid and the centered axiom circle in the logos. Just as π is approached
+by refining polygon approximations of a circle, MathSwe is devised around its
+centered design.
+
+On Pi Day 2025, the empty article marked the position of the idea in this Pi
+sequence of blogs while its system (i.e., Texsydo) was still forming. Inducing
+the domain and system foundations will eventually provide a cohesive universe. A
+universe like the set of real numbers or mathematical software.
+
 ## References
 
 [1] Reimann, D. A. (2022). Artistic Depiction of Numbers Defined by Sets. The
