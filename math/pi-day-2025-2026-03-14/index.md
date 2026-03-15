@@ -4,6 +4,19 @@
 
 # Pi Day 2025 (2026/03/14)
 
+On March 14, 2025, I created the Pi Day entry, which remained empty while topic
+ideas flew in my head, and attended to other job duties, which reduced my
+availability at MathSwe.
+
+Previously, efforts shifted toward **Texsydo** as a product, aiming to
+transition my articles from semi-manual development to a domain-specific
+pipeline. The focus moved from writing articles to establishing the system that
+structures them.
+
+My Pi article for 2025 began as an *empty* entry I seeded on 2025/03/14. Now I'm
+back, committed to fulfilling it on 2026/03/14. I have also scheduled the
+upcoming Pi article for 2026.
+
 Mathematics shows that structures can emerge from *emptiness*. In
 Zermelo–Fraenkel set theory, the construction begins with the empty set [1]:
 
