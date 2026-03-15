@@ -54,6 +54,10 @@ $$\pi = \lim_{n \to \infty} n\sin\left(\frac{\pi}{n}\right)$$
 At the beginning there is only a crude approximation while the structure appears
 through iteration.
 
+$$
+\begin{aligned} a_1 &= 1\sin(\pi) = 0 \\ a_2 &= 2\sin(\pi/2) = 2 \\ a_3 &= 3\sin(\pi/3) \approx 2.598 \\ a_4 &= 4\sin(\pi/4) \approx 2.828 \\ a_6 &= 6\sin(\pi/6) = 3.000 \\ a_{12} &= 12\sin(\pi/12) \approx 3.106 \\ a_{24} &= 24\sin(\pi/24) \approx 3.133 \\ a_{48} &= 48\sin(\pi/48) \approx 3.139 \\ &\vdots \\ a_n &\to \pi \approx 3.14159 \end{aligned}
+$$
+
 In MathSwe, originally Piaxid, engineering is *axiomatic* and **centered** to
 **ensure balance**. Hence, we can observe the relations I induced when designing
 **Pi**axid and the centered axiom circle in the logos. Just as π is approached
