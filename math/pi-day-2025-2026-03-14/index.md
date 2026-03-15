@@ -4,7 +4,6 @@
 
 # Pi Day 2025 (2026/03/14)
 
-
 Mathematics shows that structures can emerge from *emptiness*. In
 Zermelo–Fraenkel set theory, the construction begins with the empty set [1]:
 
@@ -27,6 +26,11 @@ Thus, the natural numbers are
 $$
 \mathbb{N} = {0,1,2,3,\ldots}.
 $$
+
+From the natural numbers, one constructs the integers, the rationals as
+equivalence classes of integer pairs, and finally the real numbers (e.g., via
+Dedekind cuts) [2]. Within the real numbers lies π, that
+is, $$\pi \in \mathbb{R}$$.
 
 ## References
 
